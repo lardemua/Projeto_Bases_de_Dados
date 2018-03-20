@@ -8,7 +8,7 @@ O programa só termina pressionando ctrl+c.
  *     @author  Bruno Ramos, B.Ramos@ua.pt
  *
  *   @internal
- *     Created  09-Fev-2018
+ *     Created  20-Mar-2018
  *     Company  University of Aveiro
  *   Copyright  Copyright (c) 2018, Bruno Ramos
  *
@@ -22,7 +22,7 @@ O programa só termina pressionando ctrl+c.
 static char *host = "127.0.0.1"; //ip da base de dados
 static char *user = "sapofree";
 static char *pass = "naopossodizer";
-static char *dbname = "simulador";
+static char *dbname = "cliente1";
 
 unsigned int port = 3306;
 static char *unix_socket = NULL;
@@ -31,7 +31,7 @@ unsigned int flag = 0;
 int main(void)
 {
 	connG = mysql_init(NULL);
-	if(!mysql_real_connect(connG, host, user, pass, dbname, port, unix_socket, flag))
+	if (!mysql_real_connect(connG, host, user, pass, dbname, port, unix_socket, flag))
 	{
 		fprintf(stderr, "Error: %s [%d]\n", mysql_error(connG), mysql_errno(connG));
 		exit(1);
