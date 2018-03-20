@@ -46,7 +46,7 @@ void QUERY_INSERT_INTO_TABLE(void)
 {
 	static int i = 0;
 
-	int seg, miliseg;
+	int seg, miliseg, molde, sensor;
 	char query[100];
 	struct timeval t1;
 
@@ -62,15 +62,106 @@ void QUERY_INSERT_INTO_TABLE(void)
 	https://stackoverflow.com/questions/3068397/finding-the-length-of-an-integer-in-c*/
 
 	//Termometro
+	//Identificação do sensor
+	molde = 1;
+	sensor = 1;
 	//dados da onda
 	O = 500;
 	A = 10.5;
-	t = 60; //Em segundos
+	t = 240; //Em segundos
 	G = 0;
 	//Expressão seno em função do tempo
 	valor = O + A * sin(2 * PI * (1 / t) * (seg + miliseg * 0.01) + G);
 	//Inserir na tabela 'variável' os valores (Data atual, Hora atual,'valor')
-	sprintf(query, "INSERT INTO Registos VALUES(1,1,NOW(),%d,%.02f)", miliseg, valor);
+	sprintf(query, "INSERT INTO Registos VALUES(%d,%d,NOW(),%d,%.02f)", molde, sensor, miliseg, valor);
+	printf("%s\n", query);
+
+	if (mysql_real_query(connG, query, (unsigned long)strlen(query)))
+	{
+		i++;
+		fprintf(stderr, "Error %d: %s [%d]\n", i, mysql_error(connG), mysql_errno(connG));
+		//exit(1);
+	}
+
+	//Dinamómetro 1
+	//Identificação do sensor
+	molde = 1;
+	sensor = 2;
+	//dados da onda
+	O = 1500;
+	A = 1500;
+	t = 10; //Em segundos
+	G = -2.5;
+	//Expressão seno em função do tempo
+	valor = O + A * sin(2 * PI * (1 / t) * (seg + miliseg * 0.01) + G);
+	//Inserir na tabela 'variável' os valores (Data atual, Hora atual,'valor')
+	sprintf(query, "INSERT INTO Registos VALUES(%d,%d,NOW(),%d,%.02f)", molde, sensor, miliseg, valor);
+	printf("%s\n", query);
+
+	if (mysql_real_query(connG, query, (unsigned long)strlen(query)))
+	{
+		i++;
+		fprintf(stderr, "Error %d: %s [%d]\n", i, mysql_error(connG), mysql_errno(connG));
+		//exit(1);
+	}
+
+	//Dinamómetro 2
+	//Identificação do sensor
+	molde = 1;
+	sensor = 3;
+	//dados da onda
+	O = 1500;
+	A = 1500;
+	t = 10; //Em segundos
+	G = -2.5;
+	//Expressão seno em função do tempo
+	valor = O + A * sin(2 * PI * (1 / t) * (seg + miliseg * 0.01) + G);
+	//Inserir na tabela 'variável' os valores (Data atual, Hora atual,'valor')
+	sprintf(query, "INSERT INTO Registos VALUES(%d,%d,NOW(),%d,%.02f)", molde, sensor, miliseg, valor);
+	printf("%s\n", query);
+
+	if (mysql_real_query(connG, query, (unsigned long)strlen(query)))
+	{
+		i++;
+		fprintf(stderr, "Error %d: %s [%d]\n", i, mysql_error(connG), mysql_errno(connG));
+		//exit(1);
+	}
+
+	//Dinamómetro 3
+	//Identificação do sensor
+	molde = 1;
+	sensor = 4;
+	//dados da onda
+	O = 1500;
+	A = 1500;
+	t = 10; //Em segundos
+	G = -2.5;
+	//Expressão seno em função do tempo
+	valor = O + A * sin(2 * PI * (1 / t) * (seg + miliseg * 0.01) + G);
+	//Inserir na tabela 'variável' os valores (Data atual, Hora atual,'valor')
+	sprintf(query, "INSERT INTO Registos VALUES(%d,%d,NOW(),%d,%.02f)", molde, sensor, miliseg, valor);
+	printf("%s\n", query);
+
+	if (mysql_real_query(connG, query, (unsigned long)strlen(query)))
+	{
+		i++;
+		fprintf(stderr, "Error %d: %s [%d]\n", i, mysql_error(connG), mysql_errno(connG));
+		//exit(1);
+	}
+
+	//Dinamómetro 4
+	//Identificação do sensor
+	molde = 1;
+	sensor = 5;
+	//dados da onda
+	O = 1500;
+	A = 1500;
+	t = 10; //Em segundos
+	G = -2.5;
+	//Expressão seno em função do tempo
+	valor = O + A * sin(2 * PI * (1 / t) * (seg + miliseg * 0.01) + G);
+	//Inserir na tabela 'variável' os valores (Data atual, Hora atual,'valor')
+	sprintf(query, "INSERT INTO Registos VALUES(%d,%d,NOW(),%d,%.02f)", molde, sensor, miliseg, valor);
 	printf("%s\n", query);
 
 	if (mysql_real_query(connG, query, (unsigned long)strlen(query)))
