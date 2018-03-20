@@ -63,13 +63,13 @@ void QUERY_INSERT_INTO_TABLE(void)
 
 	//Termometro
 	//Identificação do sensor
-	molde = 1;
+	molde = 20;
 	sensor = 1;
 	//dados da onda
 	O = 500;
-	A = 10.5;
+	A = 10;
 	t = 240; //Em segundos
-	G = 0;
+	G = 5;
 	//Expressão seno em função do tempo
 	valor = O + A * sin(2 * PI * (1 / t) * (seg + miliseg * 0.01) + G);
 	//Inserir na tabela 'variável' os valores (Data atual, Hora atual,'valor')
@@ -85,7 +85,7 @@ void QUERY_INSERT_INTO_TABLE(void)
 
 	//Dinamómetro 1
 	//Identificação do sensor
-	molde = 1;
+	molde = 20;
 	sensor = 2;
 	//dados da onda
 	O = 1500;
@@ -107,7 +107,7 @@ void QUERY_INSERT_INTO_TABLE(void)
 
 	//Dinamómetro 2
 	//Identificação do sensor
-	molde = 1;
+	molde = 20;
 	sensor = 3;
 	//dados da onda
 	O = 1500;
@@ -129,13 +129,13 @@ void QUERY_INSERT_INTO_TABLE(void)
 
 	//Dinamómetro 3
 	//Identificação do sensor
-	molde = 1;
+	molde = 20;
 	sensor = 4;
 	//dados da onda
 	O = 1500;
 	A = 1500;
 	t = 60; //Em segundos
-	G = 0;
+	G = PI / 2;
 	//Expressão seno em função do tempo
 	valor = O + A * sin(2 * PI * (1 / t) * (seg + miliseg * 0.01) + G);
 	//Inserir na tabela 'variável' os valores (Data atual, Hora atual,'valor')
@@ -151,13 +151,13 @@ void QUERY_INSERT_INTO_TABLE(void)
 
 	//Dinamómetro 4
 	//Identificação do sensor
-	molde = 1;
+	molde = 20;
 	sensor = 5;
 	//dados da onda
 	O = 1500;
 	A = 1500;
 	t = 60; //Em segundos
-	G = 0;
+	G = PI / 2;
 	//Expressão seno em função do tempo
 	valor = O + A * sin(2 * PI * (1 / t) * (seg + miliseg * 0.01) + G);
 	//Inserir na tabela 'variável' os valores (Data atual, Hora atual,'valor')
