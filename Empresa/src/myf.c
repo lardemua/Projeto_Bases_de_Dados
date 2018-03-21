@@ -43,14 +43,15 @@ void COPY_VALUES(void)
 	MYSQL_RES *res;
 	MYSQL_ROW row;
 
-	unsigned int num_fields;
-	unsigned int i;
+	unsigned int num_fields, num_rows;
+	unsigned int i, j = 1;
 	unsigned long *lengths;
 
-	char local_query[100], str[100], central_query[100000];
+	unsigned int central_query_size = 100000;
+	char local_query[100], str[100], central_query[central_query_size];
 
 	//Lê todos os valores da tabela parametros
-	sprintf(local_query, "SELECT * FROM Registos ORDER BY data_hora");
+	sprintf(local_query, "SELECT * FROM Registos ORDER BY data_hora, milisegundos, numero_sensor");
 	if (mysql_real_query(connG_local, local_query, (unsigned long)strlen(local_query)))
 	{
 		fprintf(stderr, "Error: %s [%d]\n", mysql_error(connG_local), mysql_errno(connG_local));
@@ -58,15 +59,19 @@ void COPY_VALUES(void)
 
 	res = mysql_store_result(connG_local);
 	num_fields = mysql_num_fields(res);
+	num_rows = mysql_num_rows(res);
+	sprintf(central_query, "INSERT INTO Registos VALUES");
 	while (row = mysql_fetch_row(res))
 	{
-		sprintf(central_query, "INSERT INTO Registos VALUES(");
+		sprintf(str, "(");
+		strcat(central_query, str);
 		lengths = mysql_fetch_lengths(res);
 		for (i = 0; i < num_fields; i++)
 		{
 			sprintf(str, "\"%.*s\"", (int)lengths[i],
 					row[i] ? row[i] : "NULL");
 			strcat(central_query, str);
+			//Adiciona a "," entre os valores, não adicionando depois do último valor
 			if (i < num_fields - 1)
 			{
 				sprintf(str, ",");
@@ -75,16 +80,42 @@ void COPY_VALUES(void)
 		}
 		sprintf(str, ")");
 		strcat(central_query, str);
-		printf("\n");
 
-		//Query para inserir os valores na base de dados central
-		printf("%s", central_query);
-		if (mysql_real_query(connG_central, central_query, (unsigned long)strlen(central_query)))
+		//Adiciona a "," entre os tuplos, não adicionando depois do último tuplo
+		if (j < num_rows && strlen(central_query) <= central_query_size - 100)
 		{
-			fprintf(stderr, "Error: %s [%d]\n", mysql_error(connG_central), mysql_errno(connG_central));
+			sprintf(str, ",");
+			strcat(central_query, str);
 		}
+		//Se por acaso a query for demasiado grande para o tamanho da string vai divindo e submetendo até chegar ao fim da query
+		else if (strlen(central_query) > central_query_size - 100)
+		{
+			sprintf(str, ")");
+			strcat(central_query, str);
+			printf("%s", central_query);
+
+			printf("     %d\n", (int)strlen(central_query));
+			// //Query para inserir os valores na base de dados central
+			// if (mysql_real_query(connG_central, central_query, (unsigned long)strlen(central_query)))
+			// {
+			// 	fprintf(stderr, "Error: %s [%d]\n", mysql_error(connG_central), mysql_errno(connG_central));
+			// }
+			sprintf(central_query, "INSERT INTO Registos VALUES");
+		}
+		else
+		{
+			sprintf(str, ")");
+			strcat(central_query, str);
+			printf("%s", central_query);
+			// //Query para inserir os valores na base de dados central
+			// if (mysql_real_query(connG_central, central_query, (unsigned long)strlen(central_query)))
+			// {
+			// 	fprintf(stderr, "Error: %s [%d]\n", mysql_error(connG_central), mysql_errno(connG_central));
+			// }
+			printf("     %d\n", (int)strlen(central_query));
+		}
+		j++;
 	}
-	printf("\n\n\n\n\n\n\n\n");
 	mysql_free_result(res);
 }
 
