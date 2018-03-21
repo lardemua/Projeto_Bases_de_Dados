@@ -19,24 +19,45 @@ O programa só termina pressionando ctrl+c.
 #include <signal.h>
 #include "myf.h"
 
-static char *host = "127.0.0.1"; //ip da base de dados
-static char *user = "sapofree";
-static char *pass = "naopossodizer";
-static char *dbname = "central";
+//Dados da base de dados central
+static char *host_central = "127.0.0.1"; //ip da base de dados
+static char *user_central = "sapofree";
+static char *pass_central = "naopossodizer";
+static char *dbname_central = "central";
 
-unsigned int port = 3306;
-static char *unix_socket = NULL;
-unsigned int flag = 0;
+unsigned int port_central = 3306;
+static char *unix_socket_central = NULL;
+unsigned int flag_central = 0;
+
+//Dados das bases de dados locais
+static char *host_local = "127.0.0.1"; //ip da base de dados
+static char *user_local = "sapofree";
+static char *pass_local = "naopossodizer";
+static char *dbname_local = "cliente1";
+
+unsigned int port_local = 3306;
+static char *unix_socket_local = NULL;
+unsigned int flag_local = 0;
 
 int main(void)
 {
-	connG = mysql_init(NULL);
-	if (!mysql_real_connect(connG, host, user, pass, dbname, port, unix_socket, flag))
+	//Conectar à base de dados central
+	connG_central = mysql_init(NULL);
+	if (!mysql_real_connect(connG_central, host_central, user_central, pass_central, dbname_central, port_central, unix_socket_central, flag_central))
 	{
-		fprintf(stderr, "Error: %s [%d]\n", mysql_error(connG), mysql_errno(connG));
+		fprintf(stderr, "Error: %s [%d]\n", mysql_error(connG_central), mysql_errno(connG_central));
 		exit(1);
 	}
-	printf("Connection Successfull\n");
+	printf("Central Connection Successfull\n");
+
+	//Conectar à base de dados local
+	connG_local = mysql_init(NULL);
+	if (!mysql_real_connect(connG_local, host_local, user_local, pass_local, dbname_local, port_local, unix_socket_local, flag_local))
+	{
+		fprintf(stderr, "Error: %s [%d]\n", mysql_error(connG_local), mysql_errno(connG_local));
+		exit(1);
+	}
+	printf("Local Connection Successfull\n");
 
 	//callback para o sinal ctrl+c para terminar ciclo infinito
 	signal(SIGINT, InterceptCTRL_C);
@@ -44,7 +65,9 @@ int main(void)
 	//Ciclo infinito
 	START_CYCLE();
 
-	printf("\nDisconnected\n");
-	mysql_close(connG);
+	printf("\nDisconnected Central\n");
+	mysql_close(connG_central);
+	printf("\nDisconnected Local\n");
+	mysql_close(connG_local);
 	return 0;
 }
