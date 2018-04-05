@@ -14,6 +14,7 @@
  * =====================================================================================
  */
 
+#include <unistd.h>
 #include <string.h>
 #include "myf.h"
 
@@ -28,7 +29,7 @@ void START_CYCLE(void)
 	{
 		MOVE_VALUES();
 		//intervalo entre valores obtidos, actualmente 1s
-		//usleep(200000);
+		usleep(1000000);
 		//Variável alterada na callback ctrl+c
 	} while (keep_goingG);
 }
