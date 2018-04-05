@@ -105,6 +105,72 @@ void CONNECT_CENTRAL_DATABASE(void)
 }
 
 /**
+ * @brief Conectar à base de dados local
+ * @param void
+ * @return void
+ */
+void CONNECT_LOCAL_DATABASE(int client_number)
+{
+	MYSQL_RES *res;
+	MYSQL_ROW row;
+
+	unsigned int num_fields;
+	unsigned int i, j = 1;
+	unsigned long *lengths;
+
+	char central_query[100], str[100], IP[20], port[10];
+
+	//Lê todos os valores da base de dados local
+	sprintf(central_query, "SELECT INET_NTOA(IP), port FROM Clientes");
+	if (mysql_real_query(connG_central, central_query, (unsigned long)strlen(central_query)))
+	{
+		fprintf(stderr, "Error: %s [%d]\n", mysql_error(connG_central), mysql_errno(connG_central));
+	}
+
+	res = mysql_store_result(connG_central);
+	num_fields = mysql_num_fields(res);
+	while (row = mysql_fetch_row(res))
+	{
+		lengths = mysql_fetch_lengths(res);
+		for (i = 0; i < num_fields; i++)
+		{
+			sprintf(str, "%.*s", (int)lengths[i],
+					row[i] ? row[i] : "NULL");
+			//Guarda o valor do tempo para depois se apagar os valores mais antigos na base de dados local
+			if (j == client_number && i == 0)
+				sprintf(IP, "%s", str);
+			else if (j == client_number && i == 1)
+				sprintf(port, "%s", str);
+		}
+		j++;
+	}
+	mysql_free_result(res);
+
+	//Dados das bases de dados locais
+	char *host_local = IP; //ip da base de dados
+	static char *user_local = "sapofree";
+	static char *pass_local = "naopossodizer";
+
+	sprintf(str, "cliente%d", client_number);
+	char *dbname_local = str;
+
+	unsigned int port_local = atoi(port);
+	static char *unix_socket_local = NULL;
+	unsigned int flag_local = 0;
+
+	printf("IP = %s, port = %d, dbname = %s\n", host_local, port_local, dbname_local);
+
+	//Conectar à base de dados local
+	connG_local = mysql_init(NULL);
+	if (!mysql_real_connect(connG_local, host_local, user_local, pass_local, dbname_local, port_local, unix_socket_local, flag_local))
+	{
+		fprintf(stderr, "Error: %s [%d]\n", mysql_error(connG_local), mysql_errno(connG_local));
+		exit(1);
+	}
+	return;
+}
+
+/**
  * @brief Ciclo infinito a cada ciclo ele introduz um valor na base de dados e a cada cinco ciclos ele atualiza as tabelas
  * @param void
  * @return void

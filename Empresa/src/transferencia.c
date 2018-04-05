@@ -44,23 +44,7 @@ int main(void)
 		CONNECT_CENTRAL_DATABASE();
 		printf("Central Connection Successfull %d\n", client_number);
 
-		//Dados das bases de dados locais
-		static char *host_local = "127.0.0.1"; //ip da base de dados
-		static char *user_local = "sapofree";
-		static char *pass_local = "naopossodizer";
-		static char *dbname_local = "cliente1";
-
-		unsigned int port_local = 3306;
-		static char *unix_socket_local = NULL;
-		unsigned int flag_local = 0;
-
-		//Conectar à base de dados local
-		connG_local = mysql_init(NULL);
-		if (!mysql_real_connect(connG_local, host_local, user_local, pass_local, dbname_local, port_local, unix_socket_local, flag_local))
-		{
-			fprintf(stderr, "Error: %s [%d]\n", mysql_error(connG_local), mysql_errno(connG_local));
-			exit(1);
-		}
+		CONNECT_LOCAL_DATABASE(client_number);
 		printf("Local Connection Successfull %d\n", client_number);
 
 		//callback para o sinal ctrl+c para terminar ciclo infinito
