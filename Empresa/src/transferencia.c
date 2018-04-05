@@ -19,55 +19,57 @@ O programa só termina pressionando ctrl+c.
 #include <signal.h>
 #include "myf.h"
 
-//Dados da base de dados central
-static char *host_central = "127.0.0.1"; //ip da base de dados
-static char *user_central = "sapofree";
-static char *pass_central = "naopossodizer";
-static char *dbname_central = "central";
-
-unsigned int port_central = 3306;
-static char *unix_socket_central = NULL;
-unsigned int flag_central = 0;
-
-//Dados das bases de dados locais
-static char *host_local = "127.0.0.1"; //ip da base de dados
-static char *user_local = "sapofree";
-static char *pass_local = "naopossodizer";
-static char *dbname_local = "cliente1";
-
-unsigned int port_local = 3306;
-static char *unix_socket_local = NULL;
-unsigned int flag_local = 0;
+int client_number = 0, num_clients = 0;
 
 int main(void)
 {
-	//Conectar à base de dados central
-	connG_central = mysql_init(NULL);
-	if (!mysql_real_connect(connG_central, host_central, user_central, pass_central, dbname_central, port_central, unix_socket_central, flag_central))
+	num_clients = numberOfClients();
+	client_number = forkChildren(2);
+	printf("client number = %d\n", client_number);
+
+	if (client_number == 0)
 	{
-		fprintf(stderr, "Error: %s [%d]\n", mysql_error(connG_central), mysql_errno(connG_central));
-		exit(1);
+		//Programa pai vai funcionar como uma pequena interface para o programa a desenvolver no futuro
+		while (keep_goingG)
+			;
 	}
-	printf("Central Connection Successfull\n");
-
-	//Conectar à base de dados local
-	connG_local = mysql_init(NULL);
-	if (!mysql_real_connect(connG_local, host_local, user_local, pass_local, dbname_local, port_local, unix_socket_local, flag_local))
+	else
 	{
-		fprintf(stderr, "Error: %s [%d]\n", mysql_error(connG_local), mysql_errno(connG_local));
-		exit(1);
+		//Cada programa child vai representar um cliente assim vai ser possível transferir os valores dos clientes todos ao mesmo tempo
+
+		//Conectar à base de dados central
+		CONNECT_CENTRAL_DATABASE();
+		printf("Central Connection Successfull %d\n", client_number);
+
+		//Dados das bases de dados locais
+		static char *host_local = "127.0.0.1"; //ip da base de dados
+		static char *user_local = "sapofree";
+		static char *pass_local = "naopossodizer";
+		static char *dbname_local = "cliente1";
+
+		unsigned int port_local = 3306;
+		static char *unix_socket_local = NULL;
+		unsigned int flag_local = 0;
+
+		//Conectar à base de dados local
+		connG_local = mysql_init(NULL);
+		if (!mysql_real_connect(connG_local, host_local, user_local, pass_local, dbname_local, port_local, unix_socket_local, flag_local))
+		{
+			fprintf(stderr, "Error: %s [%d]\n", mysql_error(connG_local), mysql_errno(connG_local));
+			exit(1);
+		}
+		printf("Local Connection Successfull\n");
+
+		//callback para o sinal ctrl+c para terminar ciclo infinito
+		signal(SIGINT, InterceptCTRL_C);
+
+		//Ciclo infinito
+		START_CYCLE();
+
+		printf("\nDisconnected Central\n");
+		mysql_close(connG_central);
+		printf("\nDisconnected Local\n");
+		mysql_close(connG_local);
 	}
-	printf("Local Connection Successfull\n");
-
-	//callback para o sinal ctrl+c para terminar ciclo infinito
-	signal(SIGINT, InterceptCTRL_C);
-
-	//Ciclo infinito
-	START_CYCLE();
-
-	printf("\nDisconnected Central\n");
-	mysql_close(connG_central);
-	printf("\nDisconnected Local\n");
-	mysql_close(connG_local);
 	return 0;
 }
