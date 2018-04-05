@@ -1,6 +1,6 @@
 /**
  *       @file  myf.c
- *      @brief  Contém as funções para a execução do ciclo infinito
+ *      @brief  Contém as funções para a execução do programa transferencia.c, as funções estão ordenadas por ordem de aparecimento no main
  *
  * 
  *
