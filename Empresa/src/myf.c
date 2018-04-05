@@ -25,11 +25,29 @@
  */
 int numberOfClients(void)
 {
-	int n;
+	MYSQL_RES *res;
+	MYSQL_ROW row;
 
+	unsigned int num_rows;
+
+	char central_query[100];
+
+	//Conecção temporária à base de dados central
 	CONNECT_CENTRAL_DATABASE();
+
+	//Lê os ips e os ports dos clientes na base de dados central
+	sprintf(central_query, "SELECT * FROM Clientes");
+	if (mysql_real_query(connG_central, central_query, (unsigned long)strlen(central_query)))
+	{
+		fprintf(stderr, "Error: %s [%d]\n", mysql_error(connG_central), mysql_errno(connG_central));
+	}
+
+	res = mysql_store_result(connG_central);
+	num_rows = mysql_num_rows(res);
+
+	mysql_free_result(res);
 	mysql_close(connG_central);
-	return n;
+	return num_rows;
 }
 
 /**

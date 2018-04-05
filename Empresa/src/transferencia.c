@@ -23,8 +23,11 @@ int client_number = 0, num_clients = 0;
 
 int main(void)
 {
+	//Contar o número de clientes
 	num_clients = numberOfClients();
-	client_number = forkChildren(2);
+
+	//Criar ramos no programa para cada cliente
+	client_number = forkChildren(num_clients);
 	printf("client number = %d\n", client_number);
 
 	if (client_number == 0)
@@ -58,7 +61,7 @@ int main(void)
 			fprintf(stderr, "Error: %s [%d]\n", mysql_error(connG_local), mysql_errno(connG_local));
 			exit(1);
 		}
-		printf("Local Connection Successfull\n");
+		printf("Local Connection Successfull %d\n", client_number);
 
 		//callback para o sinal ctrl+c para terminar ciclo infinito
 		signal(SIGINT, InterceptCTRL_C);
@@ -66,9 +69,9 @@ int main(void)
 		//Ciclo infinito
 		START_CYCLE();
 
-		printf("\nDisconnected Central\n");
+		printf("\nDisconnected Central %d\n", client_number);
 		mysql_close(connG_central);
-		printf("\nDisconnected Local\n");
+		printf("\nDisconnected Local %d\n", client_number);
 		mysql_close(connG_local);
 	}
 	return 0;
