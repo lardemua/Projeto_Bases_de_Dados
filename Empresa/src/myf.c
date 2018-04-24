@@ -120,7 +120,7 @@ void CONNECT_LOCAL_DATABASE(int client_number)
 
 	char central_query[100], str[100], IP[20], port[10];
 
-	//Lê todos os valores da base de dados local
+	//Lê os IPs dos clientes na base de dados central
 	sprintf(central_query, "SELECT INET_NTOA(IP), port FROM Clientes");
 	if (mysql_real_query(connG_central, central_query, (unsigned long)strlen(central_query)))
 	{
@@ -136,7 +136,7 @@ void CONNECT_LOCAL_DATABASE(int client_number)
 		{
 			sprintf(str, "%.*s", (int)lengths[i],
 					row[i] ? row[i] : "NULL");
-			//Guarda o valor do tempo para depois se apagar os valores mais antigos na base de dados local
+			//Guarda o valor do IP e port
 			if (j == client_number && i == 0)
 				sprintf(IP, "%s", str);
 			else if (j == client_number && i == 1)
@@ -181,7 +181,7 @@ void START_CYCLE(void)
 	{
 		MOVE_VALUES();
 		//intervalo entre valores obtidos, actualmente 1s
-		usleep(1000000);
+		//usleep(1000000);
 		//Variável alterada na callback ctrl+c
 	} while (keep_goingG);
 	return;
@@ -204,8 +204,30 @@ void MOVE_VALUES(void)
 	unsigned int central_query_size = 100000;
 	char local_query[100], str[100], central_query[central_query_size], datetime_limit[22];
 
+	//Vê a data e hora da base de dados para evitar mover valores repetidos
+	sprintf(local_query, "SELECT CURRENT_TIMESTAMP");
+	if (mysql_real_query(connG_local, local_query, (unsigned long)strlen(local_query)))
+	{
+		fprintf(stderr, "Error: %s [%d]\n", mysql_error(connG_local), mysql_errno(connG_local));
+	}
+
+	res = mysql_store_result(connG_local);
+	num_fields = mysql_num_fields(res);
+	while (row = mysql_fetch_row(res))
+	{
+		lengths = mysql_fetch_lengths(res);
+		for (i = 0; i < num_fields; i++)
+		{
+			sprintf(str, "\"%.*s\"", (int)lengths[i],
+					row[i] ? row[i] : "NULL");
+			//Guarda o valor do tempo para depois se apagar os valores mais antigos na base de dados local
+			sprintf(datetime_limit, "%s", str);
+		}
+	}
+	mysql_free_result(res);
+
 	//Lê todos os valores da base de dados local
-	sprintf(local_query, "SELECT * FROM Registos ORDER BY data_hora, milisegundos, numero_sensor, ID_molde");
+	sprintf(local_query, "SELECT * FROM Registos WHERE data_hora < %s ORDER BY data_hora, milisegundos, numero_sensor, ID_molde", datetime_limit);
 	if (mysql_real_query(connG_local, local_query, (unsigned long)strlen(local_query)))
 	{
 		fprintf(stderr, "Error: %s [%d]\n", mysql_error(connG_local), mysql_errno(connG_local));
@@ -225,9 +247,6 @@ void MOVE_VALUES(void)
 			sprintf(str, "\"%.*s\"", (int)lengths[i],
 					row[i] ? row[i] : "NULL");
 			strcat(central_query, str);
-			//Guarda o valor do tempo para depois se apagar os valores mais antigos na base de dados local
-			if (i == 2)
-				sprintf(datetime_limit, "%s", str);
 			//Adiciona a "," entre os valores, não adicionando depois do último valor
 			if (i < num_fields - 1)
 			{
@@ -248,7 +267,7 @@ void MOVE_VALUES(void)
 		else
 		{
 			printf("%s", central_query);
-			// //Query para inserir os valores na base de dados central
+			//Query para inserir os valores na base de dados central
 			if (mysql_real_query(connG_central, central_query, (unsigned long)strlen(central_query)))
 			{
 				fprintf(stderr, "Error: %s [%d]\n", mysql_error(connG_central), mysql_errno(connG_central));

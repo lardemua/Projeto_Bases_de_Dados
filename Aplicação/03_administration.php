@@ -1,12 +1,9 @@
-<! DOCTYPE html>
 <html lang="pt">
-
 <head>
     <meta charset="UTF-8" />
     <title>Administração</title>
 </head>
-
-<body style="background-color:azure;">
+<body>
 
     <h1>Aplicação</h1>
     <form action="index.html" style="float: left;">
@@ -131,6 +128,73 @@
         <input type="submit" value="Adicionar_Sensor" style="float: right;">
     </form>
 
-</body>
+<?php
+    if(isset($_POST['Adicionar_Cliente']))
+    {
+        $data_missing = array();
 
+        if(empty($_POST['cl_id']))
+        {
+            $data_missing[] = 'ID Cliente';
+        }else{
+            $cl_id = trim($POST['cl_id']);
+        }
+
+        if(empty($_POST['cl_nome']))
+        {
+            $data_missing[] = 'Nome Cliente';
+        }else{
+            $cl_nome = trim($POST['cl_nome']);
+        }
+
+        if(empty($_POST['cl_morada']))
+        {
+            $cl_morada = "NULL";
+        }else{
+            $cl_morada = trim($POST['cl_morada']);
+        }
+
+        if(empty($_POST['cl_ip']))
+        {
+            $data_missing[] = 'IP Cliente';
+        }else{
+            $cl_ip = trim($POST['cl_ip']);
+        }
+
+        if(empty($_POST['cl_port']))
+        {
+            $data_missing[] = 'Port Cliente';
+        }else{
+            $cl_port = trim($POST['cl_port']);
+        }
+
+        if(empty($data_missing))
+        {
+            require_once('central_connect.php');
+
+            $query = "INSERT INTO Clientes VALUES (?,?,?,INET_ATON(?),?)";
+
+            $statement = mysqli_prepare($dbc,$query);
+
+            mysqli_stmt_bind_param($statement,"isssi",$cl_id,$cl_nome,$cl_morada,$cl_ip,$cl_port);
+
+            mysqli_stmt_execute($statement);
+
+            $affected_rows = mysqli_stmt_affected_rows($statement);
+
+            echo $affected_rows;
+            mysqli_stmt_close($stmt);
+            mysqli_close($dbc);
+
+        }else
+        {
+            echo "Faltam os seguintes campos <br/>";
+            foreach($data_missing as $missing)
+            {
+                echo "$missing<br/>";
+            }
+        }
+    }
+?>
+</body>
 </html>
