@@ -1,16 +1,12 @@
-<! DOCTYPE html>
 <html lang="pt">
-
 <head>
     <meta charset="UTF-8" />
-    <title>Main</title>
+    <title>Administração</title>
 </head>
-
 <body style="background-color:azure;">
 
     <h1>Aplicação</h1>
-
-    <form style="float: left;">
+    <form action="index.html" style="float: left;">
         <input type="submit" value="Home">
     </form>
     <form action="02_consultas.html" style="float: left;">
@@ -19,17 +15,22 @@
     <form action="03_administracao.php" style="float: left;">
         <input type="submit" value="Administração">
     </form>
-    <form action="04_login.html" style="float: left;">
+    <form action="04_login.html">
         <input type="submit" value="Login">
     </form>
-    <br>
-    <br>
-    <br>
+    <form action="031_admin_cliente.php" style="float: left;">
+        <input type="submit" value="Clientes">
+    </form>
+    <form action="032_admin_molde.php" style="float: left;">
+        <input type="submit" value="Moldes">
+    </form>
+    <form action="033_admin_sensor.php">
+        <input type="submit" value="Sensores">
+    </form>
 
-    <img src="logo_ua.png" alt="logo ua" style="height:15%">
-
-    <p>Aplicação experimental em PHP e HTML para utilizar a base de dados</p>
+<?php
+    require('query.php');
+?>
 
 </body>
-
 </html>
