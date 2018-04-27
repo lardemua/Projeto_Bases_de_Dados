@@ -1,0 +1,240 @@
+CREATE DATABASE cl_10001;
+USE cl_10001;
+CREATE TABLE moldes
+(
+    m_ID INT NOT NULL,
+    m_nome VARCHAR(30),
+    m_descricao VARCHAR(200),
+    CONSTRAINT REPETIDO_ID_MOLDE
+	PRIMARY KEY(m_ID)
+);
+CREATE TABLE tipo
+(
+    tipo_ID INT NOT NULL,
+    tipo_nome VARCHAR(50) NOT NULL,
+    CONSTRAINT REPETIDO_ID_TIPO
+	PRIMARY KEY(tipo_ID),
+    CONSTRAINT REPETIDO_NOME_TIPO
+	UNIQUE(tipo_nome)
+);
+CREATE TABLE sensores
+(
+    s_IDMolde INT NOT NULL,
+    s_num INT NOT NULL,
+    s_tipo INT NOT NULL,
+    s_nome varchar(30),
+    s_descricao varchar(200),
+    CONSTRAINT REPETIDO_NUM_SENSOR
+	PRIMARY KEY(s_IDMolde,s_num),
+    CONSTRAINT SENSOR_MAU_ID_MOLDE_SENSOR
+	FOREIGN KEY(s_IDMolde) REFERENCES moldes(m_ID)
+		ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT SENSOR_MAU_NOME_TIPO
+	FOREIGN KEY(s_tipo) REFERENCES tipo(tipo_ID)
+		ON DELETE NO ACTION ON UPDATE CASCADE
+);
+CREATE TABLE registos
+(
+    r_IDMolde INT NOT NULL,
+    r_numSensor INT NOT NULL,
+    r_data_hora DATETIME NOT NULL,
+    r_milisegundos TINYINT NOT NULL,
+    r_valor FLOAT,
+    CONSTRAINT REPETIDO_REGISTO
+	PRIMARY KEY(r_IDMolde, r_numSensor, r_data_hora, r_milisegundos),
+    CONSTRAINT REGISTOS_MAU_ID_MOLDE_SENSOR
+FOREIGN KEY(r_IDMolde,r_numSensor) REFERENCES sensores(s_IDMolde,s_num)
+		ON DELETE CASCADE ON UPDATE CASCADE
+);
+CREATE DATABASE cl_10002;
+USE cl_10002;
+CREATE TABLE moldes
+(
+    m_ID INT NOT NULL,
+    m_nome VARCHAR(30),
+    m_descricao VARCHAR(200),
+    CONSTRAINT REPETIDO_ID_MOLDE
+	PRIMARY KEY(m_ID)
+);
+CREATE TABLE tipo
+(
+    tipo_ID INT NOT NULL,
+    tipo_nome VARCHAR(50) NOT NULL,
+    CONSTRAINT REPETIDO_ID_TIPO
+	PRIMARY KEY(tipo_ID),
+    CONSTRAINT REPETIDO_NOME_TIPO
+	UNIQUE(tipo_nome)
+);
+CREATE TABLE sensores
+(
+    s_IDMolde INT NOT NULL,
+    s_num INT NOT NULL,
+    s_tipo INT NOT NULL,
+    s_nome varchar(30),
+    s_descricao varchar(200),
+    CONSTRAINT REPETIDO_NUM_SENSOR
+	PRIMARY KEY(s_IDMolde,s_num),
+    CONSTRAINT SENSOR_MAU_ID_MOLDE_SENSOR
+	FOREIGN KEY(s_IDMolde) REFERENCES moldes(m_ID)
+		ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT SENSOR_MAU_NOME_TIPO
+	FOREIGN KEY(s_tipo) REFERENCES tipo(tipo_ID)
+		ON DELETE NO ACTION ON UPDATE CASCADE
+);
+CREATE TABLE registos
+(
+    r_IDMolde INT NOT NULL,
+    r_numSensor INT NOT NULL,
+    r_data_hora DATETIME NOT NULL,
+    r_milisegundos TINYINT NOT NULL,
+    r_valor FLOAT,
+    CONSTRAINT REPETIDO_REGISTO
+	PRIMARY KEY(r_IDMolde, r_numSensor, r_data_hora, r_milisegundos),
+    CONSTRAINT REGISTOS_MAU_ID_MOLDE_SENSOR
+FOREIGN KEY(r_IDMolde,r_numSensor) REFERENCES sensores(s_IDMolde,s_num)
+		ON DELETE CASCADE ON UPDATE CASCADE
+);
+CREATE DATABASE cl_10003;
+USE cl_10003;
+CREATE TABLE moldes
+(
+    m_ID INT NOT NULL,
+    m_nome VARCHAR(30),
+    m_descricao VARCHAR(200),
+    CONSTRAINT REPETIDO_ID_MOLDE
+	PRIMARY KEY(m_ID)
+);
+CREATE TABLE tipo
+(
+    tipo_ID INT NOT NULL,
+    tipo_nome VARCHAR(50) NOT NULL,
+    CONSTRAINT REPETIDO_ID_TIPO
+	PRIMARY KEY(tipo_ID),
+    CONSTRAINT REPETIDO_NOME_TIPO
+	UNIQUE(tipo_nome)
+);
+CREATE TABLE sensores
+(
+    s_IDMolde INT NOT NULL,
+    s_num INT NOT NULL,
+    s_tipo INT NOT NULL,
+    s_nome varchar(30),
+    s_descricao varchar(200),
+    CONSTRAINT REPETIDO_NUM_SENSOR
+	PRIMARY KEY(s_IDMolde,s_num),
+    CONSTRAINT SENSOR_MAU_ID_MOLDE_SENSOR
+	FOREIGN KEY(s_IDMolde) REFERENCES moldes(m_ID)
+		ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT SENSOR_MAU_NOME_TIPO
+	FOREIGN KEY(s_tipo) REFERENCES tipo(tipo_ID)
+		ON DELETE NO ACTION ON UPDATE CASCADE
+);
+CREATE TABLE registos
+(
+    r_IDMolde INT NOT NULL,
+    r_numSensor INT NOT NULL,
+    r_data_hora DATETIME NOT NULL,
+    r_milisegundos TINYINT NOT NULL,
+    r_valor FLOAT,
+    CONSTRAINT REPETIDO_REGISTO
+	PRIMARY KEY(r_IDMolde, r_numSensor, r_data_hora, r_milisegundos),
+    CONSTRAINT REGISTOS_MAU_ID_MOLDE_SENSOR
+FOREIGN KEY(r_IDMolde,r_numSensor) REFERENCES sensores(s_IDMolde,s_num)
+		ON DELETE CASCADE ON UPDATE CASCADE
+);
+CREATE DATABASE cl_10004;
+USE cl_10004;
+CREATE TABLE moldes
+(
+    m_ID INT NOT NULL,
+    m_nome VARCHAR(30),
+    m_descricao VARCHAR(200),
+    CONSTRAINT REPETIDO_ID_MOLDE
+	PRIMARY KEY(m_ID)
+);
+CREATE TABLE tipo
+(
+    tipo_ID INT NOT NULL,
+    tipo_nome VARCHAR(50) NOT NULL,
+    CONSTRAINT REPETIDO_ID_TIPO
+	PRIMARY KEY(tipo_ID),
+    CONSTRAINT REPETIDO_NOME_TIPO
+	UNIQUE(tipo_nome)
+);
+CREATE TABLE sensores
+(
+    s_IDMolde INT NOT NULL,
+    s_num INT NOT NULL,
+    s_tipo INT NOT NULL,
+    s_nome varchar(30),
+    s_descricao varchar(200),
+    CONSTRAINT REPETIDO_NUM_SENSOR
+	PRIMARY KEY(s_IDMolde,s_num),
+    CONSTRAINT SENSOR_MAU_ID_MOLDE_SENSOR
+	FOREIGN KEY(s_IDMolde) REFERENCES moldes(m_ID)
+		ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT SENSOR_MAU_NOME_TIPO
+	FOREIGN KEY(s_tipo) REFERENCES tipo(tipo_ID)
+		ON DELETE NO ACTION ON UPDATE CASCADE
+);
+CREATE TABLE registos
+(
+    r_IDMolde INT NOT NULL,
+    r_numSensor INT NOT NULL,
+    r_data_hora DATETIME NOT NULL,
+    r_milisegundos TINYINT NOT NULL,
+    r_valor FLOAT,
+    CONSTRAINT REPETIDO_REGISTO
+	PRIMARY KEY(r_IDMolde, r_numSensor, r_data_hora, r_milisegundos),
+    CONSTRAINT REGISTOS_MAU_ID_MOLDE_SENSOR
+FOREIGN KEY(r_IDMolde,r_numSensor) REFERENCES sensores(s_IDMolde,s_num)
+		ON DELETE CASCADE ON UPDATE CASCADE
+);
+CREATE DATABASE cl_10005;
+USE cl_10005;
+CREATE TABLE moldes
+(
+    m_ID INT NOT NULL,
+    m_nome VARCHAR(30),
+    m_descricao VARCHAR(200),
+    CONSTRAINT REPETIDO_ID_MOLDE
+	PRIMARY KEY(m_ID)
+);
+CREATE TABLE tipo
+(
+    tipo_ID INT NOT NULL,
+    tipo_nome VARCHAR(50) NOT NULL,
+    CONSTRAINT REPETIDO_ID_TIPO
+	PRIMARY KEY(tipo_ID),
+    CONSTRAINT REPETIDO_NOME_TIPO
+	UNIQUE(tipo_nome)
+);
+CREATE TABLE sensores
+(
+    s_IDMolde INT NOT NULL,
+    s_num INT NOT NULL,
+    s_tipo INT NOT NULL,
+    s_nome varchar(30),
+    s_descricao varchar(200),
+    CONSTRAINT REPETIDO_NUM_SENSOR
+	PRIMARY KEY(s_IDMolde,s_num),
+    CONSTRAINT SENSOR_MAU_ID_MOLDE_SENSOR
+	FOREIGN KEY(s_IDMolde) REFERENCES moldes(m_ID)
+		ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT SENSOR_MAU_NOME_TIPO
+	FOREIGN KEY(s_tipo) REFERENCES tipo(tipo_ID)
+		ON DELETE NO ACTION ON UPDATE CASCADE
+);
+CREATE TABLE registos
+(
+    r_IDMolde INT NOT NULL,
+    r_numSensor INT NOT NULL,
+    r_data_hora DATETIME NOT NULL,
+    r_milisegundos TINYINT NOT NULL,
+    r_valor FLOAT,
+    CONSTRAINT REPETIDO_REGISTO
+	PRIMARY KEY(r_IDMolde, r_numSensor, r_data_hora, r_milisegundos),
+    CONSTRAINT REGISTOS_MAU_ID_MOLDE_SENSOR
+FOREIGN KEY(r_IDMolde,r_numSensor) REFERENCES sensores(s_IDMolde,s_num)
+		ON DELETE CASCADE ON UPDATE CASCADE
+);

@@ -36,7 +36,7 @@ int numberOfClients(void)
 	CONNECT_CENTRAL_DATABASE();
 
 	//Lê os ips e os ports dos clientes na base de dados central
-	sprintf(central_query, "SELECT * FROM Clientes");
+	sprintf(central_query, "SELECT * FROM clientes");
 	if (mysql_real_query(connG_central, central_query, (unsigned long)strlen(central_query)))
 	{
 		fprintf(stderr, "Error: %s [%d]\n", mysql_error(connG_central), mysql_errno(connG_central));
@@ -118,10 +118,10 @@ void CONNECT_LOCAL_DATABASE(int client_number)
 	unsigned int i, j = 1;
 	unsigned long *lengths;
 
-	char central_query[100], str[100], IP[20], port[10];
+	char central_query[100], str[100], ID[10], IP[20], port[10];
 
 	//Lê os IPs dos clientes na base de dados central
-	sprintf(central_query, "SELECT INET_NTOA(IP), port FROM Clientes");
+	sprintf(central_query, "SELECT cl_ID, cl_IP, cl_port FROM clientes ORDER BY cl_ID");
 	if (mysql_real_query(connG_central, central_query, (unsigned long)strlen(central_query)))
 	{
 		fprintf(stderr, "Error: %s [%d]\n", mysql_error(connG_central), mysql_errno(connG_central));
@@ -136,10 +136,12 @@ void CONNECT_LOCAL_DATABASE(int client_number)
 		{
 			sprintf(str, "%.*s", (int)lengths[i],
 					row[i] ? row[i] : "NULL");
-			//Guarda o valor do IP e port
+			//Guarda o valor do ID, IP e port
 			if (j == client_number && i == 0)
-				sprintf(IP, "%s", str);
+				sprintf(ID, "%s", str);
 			else if (j == client_number && i == 1)
+				sprintf(IP, "%s", str);
+			else if (j == client_number && i == 2)
 				sprintf(port, "%s", str);
 		}
 		j++;
@@ -151,7 +153,7 @@ void CONNECT_LOCAL_DATABASE(int client_number)
 	static char *user_local = "sapofree";
 	static char *pass_local = "naopossodizer";
 
-	sprintf(str, "cliente%d", client_number);
+	sprintf(str, "cl_%s", ID);
 	char *dbname_local = str;
 
 	unsigned int port_local = atoi(port);
@@ -201,7 +203,7 @@ void MOVE_VALUES(void)
 	unsigned int i, j = 1;
 	unsigned long *lengths;
 
-	unsigned int central_query_size = 100000;
+	unsigned int central_query_size = 100000, tuplo_size = 100;
 	char local_query[100], str[100], central_query[central_query_size], datetime_limit[22];
 
 	//Vê a data e hora da base de dados para evitar mover valores repetidos
@@ -227,7 +229,7 @@ void MOVE_VALUES(void)
 	mysql_free_result(res);
 
 	//Lê todos os valores da base de dados local
-	sprintf(local_query, "SELECT * FROM Registos WHERE data_hora < %s ORDER BY data_hora, milisegundos, numero_sensor, ID_molde", datetime_limit);
+	sprintf(local_query, "SELECT * FROM registos WHERE r_data_hora < %s ORDER BY r_data_hora, r_milisegundos, r_numSensor, r_IDMolde", datetime_limit);
 	if (mysql_real_query(connG_local, local_query, (unsigned long)strlen(local_query)))
 	{
 		fprintf(stderr, "Error: %s [%d]\n", mysql_error(connG_local), mysql_errno(connG_local));
@@ -236,7 +238,7 @@ void MOVE_VALUES(void)
 	res = mysql_store_result(connG_local);
 	num_fields = mysql_num_fields(res);
 	num_rows = mysql_num_rows(res);
-	sprintf(central_query, "INSERT IGNORE Registos VALUES");
+	sprintf(central_query, "INSERT IGNORE registos VALUES");
 	while (row = mysql_fetch_row(res))
 	{
 		sprintf(str, "(");
@@ -258,7 +260,7 @@ void MOVE_VALUES(void)
 		strcat(central_query, str);
 
 		//Adiciona a "," entre os tuplos, não adicionando depois do último tuplo
-		if (j < num_rows && strlen(central_query) <= central_query_size - 100)
+		if (j < num_rows && strlen(central_query) <= central_query_size - tuplo_size)
 		{
 			sprintf(str, ",");
 			strcat(central_query, str);
@@ -273,14 +275,14 @@ void MOVE_VALUES(void)
 				fprintf(stderr, "Error: %s [%d]\n", mysql_error(connG_central), mysql_errno(connG_central));
 			}
 			printf("     %d\n", (int)strlen(central_query));
-			sprintf(central_query, "INSERT IGNORE Registos VALUES");
+			sprintf(central_query, "INSERT IGNORE registos VALUES");
 		}
 		j++;
 	}
 	mysql_free_result(res);
 
 	//Apaga os valores da base de dados local já movidos para a base de dados central
-	sprintf(local_query, "DELETE FROM Registos WHERE data_hora < %s", datetime_limit);
+	sprintf(local_query, "DELETE FROM registos WHERE r_data_hora < %s", datetime_limit);
 	if (mysql_real_query(connG_local, local_query, (unsigned long)strlen(local_query)))
 	{
 		fprintf(stderr, "Error: %s [%d]\n", mysql_error(connG_local), mysql_errno(connG_local));
