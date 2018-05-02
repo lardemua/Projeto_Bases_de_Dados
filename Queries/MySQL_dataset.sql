@@ -1,10 +1,13 @@
 ﻿INSERT INTO tipo
 VALUES
-	(1, "Termómetro"),
-	(2, "Dinamómetro"),
-	(3, "Extensómetro"),
-	(4, "Vibrómetro"),
-	(5, "Pressão");
+    (1, "Termómetro"),
+    (2, "Dinamómetro"),
+    (3, "Extensómetro"),
+    (4, "Vibrómetro"),
+    (5, "Pressão"),
+    (6, "Acelerómetro X"),
+    (7, "Acelerómetro Y"),
+    (8, "Acelerómetro Z");
 INSERT INTO clientes
 VALUES
 	(10001, "Autocolismos & Company", "Rua das sanita, nº 2", "127.0.0.1", 3306),

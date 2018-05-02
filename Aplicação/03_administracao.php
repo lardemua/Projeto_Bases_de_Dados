@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <html lang="pt">
 <head>
     <meta charset="UTF-8" />
@@ -6,7 +9,7 @@
 <body style="background-color:azure;">
 
     <h1>Aplicação</h1>
-    <form action="index.html" style="float: left;">
+    <form action="index.php" style="float: left;">
         <input type="submit" value="Home">
     </form>
     <form action="02_consultas.html" style="float: left;">
@@ -15,8 +18,8 @@
     <form action="03_administracao.php" style="float: left;">
         <input type="submit" value="Administração">
     </form>
-    <form action="04_login.html">
-        <input type="submit" value="Login">
+    <form action="04_login.php">
+        <input type="submit" value="<?php echo $_SESSION['central_status']; ?>">
     </form>
     <form action="031_admin_cliente.php" style="float: left;">
         <input type="submit" value="Clientes">

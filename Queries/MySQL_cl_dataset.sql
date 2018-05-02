@@ -5,7 +5,10 @@ VALUES
     (2, "Dinamómetro"),
     (3, "Extensómetro"),
     (4, "Vibrómetro"),
-    (5, "Pressão");
+    (5, "Pressão"),
+    (6, "Acelerómetro X"),
+    (7, "Acelerómetro Y"),
+    (8, "Acelerómetro Z");
 INSERT INTO moldes
 VALUES
     (9000, NULL, NULL),
