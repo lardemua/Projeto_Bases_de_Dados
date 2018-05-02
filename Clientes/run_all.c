@@ -21,7 +21,7 @@
 void main(void)
 {
     char *command = malloc(200);
-    strcpy(command, "./Cliente01/build/simulador & ./Cliente02/build/simulador & ./Cliente03/build/simulador");
+    strcpy(command, "./cl_10001/build/simulador & ./cl_10002/build/simulador & ./cl_10003/build/simulador & ./cl_10004/build/simulador");
     FILE *out = popen(command, "w");
     pclose(out);
     free(command);

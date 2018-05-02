@@ -57,6 +57,7 @@ int main(void)
 		mysql_close(connG_central);
 		printf("\nDisconnected Local %d\n", client_number);
 		mysql_close(connG_local);
+		mysql_library_end();
 	}
 	return 0;
 }

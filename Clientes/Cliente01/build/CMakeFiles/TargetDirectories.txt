@@ -1,3 +1,0 @@
-/home/sapofree/Projeto_Bases_de_Dados/Clientes/Cliente01/build/CMakeFiles/edit_cache.dir
-/home/sapofree/Projeto_Bases_de_Dados/Clientes/Cliente01/build/CMakeFiles/rebuild_cache.dir
-/home/sapofree/Projeto_Bases_de_Dados/Clientes/Cliente01/build/CMakeFiles/simulador.dir
