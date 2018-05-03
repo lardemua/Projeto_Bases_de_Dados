@@ -20,11 +20,27 @@ session_start();
     <form action="03_administracao.php" style="float: left;">
         <input type="submit" value="Administração">
     </form>
-    <form action="05_login_local.php" style="float: left;">
-        <input type="submit" value="Conectar Local">
-    </form>
+    <?php
+        if($_SESSION['central_status'] == "Logout" && $_SESSION['local_status'] == "Disconnect")
+        {
+            echo "<form action=\"05_login_local.php\" style=\"float: left;\">
+            <input type=\"submit\" value=\"" . $_SESSION['local_name'] . "\">
+            </form>";
+        }else if($_SESSION['central_status'] == "Logout" && $_SESSION['local_status'] != "Disconnect")
+        {
+            echo "<form action=\"05_login_local.php\" style=\"float: left;\">
+            <input type=\"submit\" value=\"Conectar Local\">
+            </form>";
+        }
+    ?>
     <form action="04_login.php">
         <input type="submit" value="<?php echo $_SESSION['central_status']; ?>">
+    </form>
+    <form action="05_login_local.php" style="float: left;">
+        <input type="submit" value="Escolher">
+    </form>
+    <form action="051_intalar_local.php">
+        <input type="submit" value="Instalar">
     </form>
 
 
@@ -41,7 +57,8 @@ session_start();
         </td>
     </tr>
     </table>
-    <input type="submit" name="Select_Database" value="Conectar">
+    <input type="submit" name="Select_Database" value="Conectar" style="float:left;">
+    <input type="submit" name="Deselect_Database" value="Desconectar">
 </form>
 
 <?php
@@ -74,7 +91,37 @@ session_start();
         {
             require('local_connect.php');
             mysqli_close($dbc2);
+
+            ob_start(); // ensures anything dumped out will be caught
+            $url = 'index.php'; // this can be set based on whatever
+
+            // clear out the output buffer
+            while (ob_get_status()) 
+            {
+                ob_end_clean();
+            }
+
+            // no redirect
+            header( "Location: $url" );
         }
+    }
+
+    if(isset($_POST['Deselect_Database']))
+    {
+            $_SESSION['local_name'] = "";
+            $_SESSION['local_status'] = "Connect";
+
+            ob_start(); // ensures anything dumped out will be caught
+            $url = 'index.php'; // this can be set based on whatever
+
+            // clear out the output buffer
+            while (ob_get_status()) 
+            {
+                ob_end_clean();
+            }
+
+            // no redirect
+            header( "Location: $url" );
     }
 
 ?>

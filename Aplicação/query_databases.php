@@ -18,10 +18,8 @@
 
     // Check connection
     if (!$dbc2) {
-        $_SESSION['local_status'] = "Connect";
         die('Could not connect to MySQL ' . mysqli_connect_error());
     }else {
-        $_SESSION['local_status'] = "Disconnect";
     }
 
     // Change character set to utf8

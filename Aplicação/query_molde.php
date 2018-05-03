@@ -25,6 +25,7 @@ if($response)
         <td align="left"><b>ID Molde</b></td>
         <td align="left"><b>Nome</b></td>
         <td align="left"><b>Descrição</b></td>
+        <td align="left"><b>Nº de Sensores</b></td>
     </tr>';
     while($row = mysqli_fetch_array($response))
     {

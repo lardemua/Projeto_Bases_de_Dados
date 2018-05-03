@@ -24,13 +24,21 @@ session_start();
             </form>
             <form action=\"03_administracao.php\" style=\"float: left;\">
             <input type=\"submit\" value=\"Administração\">
-            </form>
-            <form action=\"05_login_local.php\" style=\"float: left;\">
-            <input type=\"submit\" value=\"Conectar Local\">
             </form>";
     }else
     {
         $_SESSION['central_status'] = "Login";
+    }
+    if($_SESSION['central_status'] == "Logout" && $_SESSION['local_status'] == "Disconnect")
+    {
+        echo "<form action=\"05_login_local.php\" style=\"float: left;\">
+        <input type=\"submit\" value=\"" . $_SESSION['local_name'] . "\">
+        </form>";
+    }else if($_SESSION['central_status'] == "Logout" && $_SESSION['local_status'] != "Disconnect")
+    {
+        echo "<form action=\"05_login_local.php\" style=\"float: left;\">
+        <input type=\"submit\" value=\"Conectar Local\">
+        </form>";
     }
     ?>
     <form action="04_login.php" style="float: left;">
