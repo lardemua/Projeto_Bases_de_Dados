@@ -1,5 +1,6 @@
 <?php
 session_start();
+echo "status is: " . $_SESSION['central_status'];
 ?>
 <! DOCTYPE html>
 <html lang="pt">
@@ -32,6 +33,9 @@ session_start();
     ?>
     <form action="04_login.php" style="float: left;">
         <input type="submit" value="<?php echo $_SESSION['central_status']; ?>">
+    </form>
+    <form action="05_login_local.php" style="float: left;">
+        <input type="submit" value="Connect">
     </form>
     <br>
     <br>
