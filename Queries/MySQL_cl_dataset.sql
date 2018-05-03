@@ -9,12 +9,15 @@ VALUES
     (6, "Acelerómetro X"),
     (7, "Acelerómetro Y"),
     (8, "Acelerómetro Z");
+INSERT INTO clientes
+VALUES
+    (10001, "Autocolismos & Company", "Rua das sanita, nº 2", "127.0.0.1", 3306);
 INSERT INTO moldes
 VALUES
-    (9000, NULL, NULL),
-    (9001, NULL, NULL),
-    (9002, NULL, NULL),
-    (9003, NULL, NULL);
+    (10001, 9000, NULL, NULL),
+    (10001, 9001, NULL, NULL),
+    (10001, 9002, NULL, NULL),
+    (10001, 9003, NULL, NULL);
 INSERT INTO sensores
 VALUES
     (9000, 1, 1, NULL, NULL),
@@ -40,15 +43,21 @@ VALUES
     (2, "Dinamómetro"),
     (3, "Extensómetro"),
     (4, "Vibrómetro"),
-    (5, "Pressão");
+    (5, "Pressão"),
+    (6, "Acelerómetro X"),
+    (7, "Acelerómetro Y"),
+    (8, "Acelerómetro Z");
+INSERT INTO clientes
+VALUES
+    (10002, "Máscaras de Carnaval LDA", "Rua de Elm street, nº 13", "127.0.0.1", 3306);
 INSERT INTO moldes
 VALUES
-    (9004, NULL, NULL),
-    (9005, NULL, NULL),
-    (9006, NULL, NULL),
-    (9010, NULL, NULL),
-    (9011, NULL, NULL),
-    (9012, NULL, NULL);
+    (10002, 9004, NULL, NULL),
+    (10002, 9005, NULL, NULL),
+    (10002, 9006, NULL, NULL),
+    (10002, 9010, NULL, NULL),
+    (10002, 9011, NULL, NULL),
+    (10002, 9012, NULL, NULL);
 INSERT INTO sensores
 VALUES
     (9004, 1, 1, NULL, NULL),
@@ -88,11 +97,17 @@ VALUES
     (2, "Dinamómetro"),
     (3, "Extensómetro"),
     (4, "Vibrómetro"),
-    (5, "Pressão");
+    (5, "Pressão"),
+    (6, "Acelerómetro X"),
+    (7, "Acelerómetro Y"),
+    (8, "Acelerómetro Z");
+INSERT INTO clientes
+VALUES
+    (10003, "Aperture Science", "Travessa de bolo, nº 404", "127.0.0.1", 3306);
 INSERT INTO moldes
 VALUES
-    (9007, NULL, NULL),
-    (9008, NULL, NULL);
+    (10003, 9007, NULL, NULL),
+    (10003, 9008, NULL, NULL);
 INSERT INTO sensores
 VALUES
     (9007, 1, 5, NULL, NULL),
@@ -104,10 +119,16 @@ VALUES
     (2, "Dinamómetro"),
     (3, "Extensómetro"),
     (4, "Vibrómetro"),
-    (5, "Pressão");
+    (5, "Pressão"),
+    (6, "Acelerómetro X"),
+    (7, "Acelerómetro Y"),
+    (8, "Acelerómetro Z");
+INSERT INTO clientes
+VALUES
+    (10004, "Black Mesa", "Área 51", "127.0.0.1", 3306);
 INSERT INTO moldes
 VALUES
-    (9009, NULL, NULL);
+    (10004, 9009, NULL, NULL);
 INSERT INTO sensores
 VALUES
     (9009, 1, 1, NULL, NULL),
@@ -127,10 +148,16 @@ VALUES
     (2, "Dinamómetro"),
     (3, "Extensómetro"),
     (4, "Vibrómetro"),
-    (5, "Pressão");
+    (5, "Pressão"),
+    (6, "Acelerómetro X"),
+    (7, "Acelerómetro Y"),
+    (8, "Acelerómetro Z");
+INSERT INTO clientes
+VALUES
+    (10005, "Vault-Tec Corporation", "Rua da caixa-forte, nº 1234", "127.0.0.1", 3306);
 INSERT INTO moldes
 VALUES
-    (9013, NULL, NULL);
+    (10005, 9013, NULL, NULL);
 INSERT INTO sensores
 VALUES
     (9013, 1, 3, NULL, NULL);

@@ -10,11 +10,11 @@
 </head>
 <body>
 <?php
-require('central_connect.php');
+require('local_connect.php');
 
 $query = "SELECT m_IDCliente, s_IDMolde, s_num, tipo_nome, s_nome, s_descricao FROM moldes INNER JOIN sensores ON m_ID = s_IDMolde INNER JOIN tipo ON s_tipo = tipo_id ORDER BY m_IDCliente, s_IDMolde, s_num";
 
-$response = @mysqli_query($dbc,$query);
+$response = @mysqli_query($dbc2,$query);
 
 if($response)
 {
@@ -52,10 +52,10 @@ if($response)
 } else{
     echo "Error";
 
-    echo mysqli_error($dbc);
+    echo mysqli_error($dbc2);
 }
 
-mysqli_close($dbc);
+mysqli_close($dbc2);
 
 ?>
 </body>

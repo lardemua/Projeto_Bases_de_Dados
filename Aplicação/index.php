@@ -1,6 +1,5 @@
 <?php
 session_start();
-echo "status is: " . $_SESSION['central_status'];
 ?>
 <! DOCTYPE html>
 <html lang="pt">
@@ -25,6 +24,9 @@ echo "status is: " . $_SESSION['central_status'];
             </form>
             <form action=\"03_administracao.php\" style=\"float: left;\">
             <input type=\"submit\" value=\"Administração\">
+            </form>
+            <form action=\"05_login_local.php\" style=\"float: left;\">
+            <input type=\"submit\" value=\"Conectar Local\">
             </form>";
     }else
     {
@@ -33,9 +35,6 @@ echo "status is: " . $_SESSION['central_status'];
     ?>
     <form action="04_login.php" style="float: left;">
         <input type="submit" value="<?php echo $_SESSION['central_status']; ?>">
-    </form>
-    <form action="05_login_local.php" style="float: left;">
-        <input type="submit" value="Connect">
     </form>
     <br>
     <br>

@@ -18,6 +18,9 @@ session_start();
     <form action="03_administracao.php" style="float: left;">
         <input type="submit" value="Administração">
     </form>
+    <form action="05_login_local.php" style="float: left;">
+        <input type="submit" value="Conectar Local">
+    </form>
     <form action="04_login.php">
         <input type="submit" value="<?php echo $_SESSION['central_status']; ?>">
     </form>
