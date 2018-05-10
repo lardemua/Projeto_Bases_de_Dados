@@ -1,0 +1,13 @@
+CREATE USER 'sensores'@'localhost' IDENTIFIED BY 'sensores1234';
+GRANT INSERT ON cl_%.registos TO 'sensores'@'localhost';
+FLUSH PRIVILEGES;
+CREATE USER 'transferencia'@'centralhostname' IDENTIFIED BY 'transferencia1234';
+GRANT SELECT, DELETE ON cl_%.registos TO 'transferencia'@'centralhostname';
+FLUSH PRIVILEGES;
+CREATE USER 'user'@'localhost' IDENTIFIED BY 'password';
+GRANT CREATE, DROP ON cl_%.* TO 'user'@'localhost';
+GRANT SELECT ON cl_%.clientes TO 'user'@'localhost';
+GRANT SELECT, INSERT, DELETE ON cl_%.moldes TO 'user'@'localhost';
+GRANT SELECT, INSERT, DELETE ON cl_%.sensores TO 'user'@'localhost';
+GRANT SELECT ON cl_%.registos TO 'user'@'localhost';
+FLUSH PRIVILEGES;

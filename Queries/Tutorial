@@ -1,0 +1,60 @@
+sudo apt-get install mysql-server
+mysql -u root -p
+mysql root naopossodizer
+
+show databases;
+use xxxxx;
+show tables;
+exit
+
+sudo apt-get install libmysqlclient-dev
+
+
+https://stackoverflow.com/questions/1559955/host-xxx-xx-xxx-xxx-is-not-allowed-to-connect-to-this-mysql-server
+
+https://stackoverflow.com/questions/6687933/cant-access-remote-mysql-server-need-help
+
+https://kyup.com/tutorials/create-new-user-grant-permissions-mysql/
+
+Para ligar ao servidor mysql sem ser via local host é necessário criar um utlizador com acesso a partir desse IP
+
+CREATE USER 'user'@'%' IDENTIFIED BY 'some_pass';
+GRANT ALL PRIVILEGES ON *.* TO 'user'@'%'
+     WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+
+'user'@'%' é um utilizador em todos os IPs, podemos limitar aos IPs da rede de PARI com 'user'@'192.165.0.%'
+
+GRANT ALL PRIVILEGES ON *.* TO 'user'@'%'
+*.* são todas as bases de dados com todas as tabelas, se só quisermos uma base de dados e todas as tabelas é database.* se só quisermos uma base de dados e uma tabela então fica database.table
+
+mas isto não chega ainda é necessário permitir ligações externas para isto é preciso ir às configurações do mysql com
+sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
+comentar a linha "bind-address = 127.0.0.1" que é o servidor local
+e por fim reiiniciar o servidor com por exemplo:
+sudo /etc/init.d/mysql restart
+
+alteração do cmake para linkar às bibliotecas de mysql
+https://stackoverflow.com/questions/35068444/add-and-link-mysql-libraries-in-a-cmakelist-txt
+
+////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+criar bases de dados
+
+SHOW DATABASES;
+CREATE DATABASE potato;
+USE potato
+SHOW TABLES;
+CREATE TABLE pet (name VARCHAR(20), owner VARCHAR(20),
+    -> species VARCHAR(20), sex CHAR(1), birth DATE, death DATE);
+DESCRIBE pet;
+LOAD DATA LOCAL INFILE '/home/sapofree/Desktop/pet.txt' INTO TABLE pet;
+INSERT INTO pet VALUES('Puffball','Diane','hamster','f','1999-03-30',NULL);
+UPDATE pet SET birth = '1989-08-31' WHERE name = 'Bowser';
+SELECT * FROM pet;
+SELECT name, birth, CURDATE(),
+    -> TIMESTAMPDIFF(YEAR,birth,CURDATE()) AS age
+    -> FROM pet;
+DROP TABLE pet;
+DROP DATABASE potato;

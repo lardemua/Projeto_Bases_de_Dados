@@ -1,7 +1,6 @@
 <?php
 session_start();
 ?>
-<! DOCTYPE html>
 <html lang="pt">
 
 <head>
@@ -19,7 +18,7 @@ session_start();
     <?php
     if($_SESSION['central_status'] == "Logout")
     {
-        echo "<form action=\"02_consultas.html\" style=\"float: left;\">
+        echo "<form action=\"02_consultas.php\" style=\"float: left;\">
         <input type=\"submit\" value=\"Consultas\">
             </form>
             <form action=\"03_administracao.php\" style=\"float: left;\">

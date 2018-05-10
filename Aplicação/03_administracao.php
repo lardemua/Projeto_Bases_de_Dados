@@ -29,7 +29,7 @@ session_start();
     <form action="index.php" style="float: left;">
         <input type="submit" value="Home">
     </form>
-    <form action="02_consultas.html" style="float: left;">
+    <form action="02_consultas.php" style="float: left;">
         <input type="submit" value="Consultas">
     </form>
     <form action="03_administracao.php" style="float: left;">
