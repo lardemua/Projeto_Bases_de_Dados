@@ -1,6 +1,6 @@
 sudo apt-get install mysql-server
 mysql -u root -p
-mysql root naopossodizer
+mysql -u root -pnaopossodizer
 
 show databases;
 use xxxxx;

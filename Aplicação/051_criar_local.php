@@ -48,39 +48,71 @@ session_start();
 
 
 <?php
-    require('query_databases.php');
+    $id_clientes = array();
+    require('query_criar_cliente.php');
 ?>
 
-<form action="05_login_local.php" method="post">
+<form action="051_criar_local.php" method="post">
     <table>
-        <tr>
-        <td>Database Name:</td>
+    <tr>
+        <td>ID Cliente:</td>
         <td>
-            <input type="text" name="database" value="">
+            <input type="text" name="cl_id" value="">
+        </td>
+    </tr>
+    <tr>
+        <td>Root Password:</td>
+        <td>
+            <input type="password" name="root_pass" value="">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="submit" name="Criar" value="Criar">
         </td>
     </tr>
     </table>
-    <input type="submit" name="Select_Database" value="Conectar" style="float:left;">
-    <input type="submit" name="Deselect_Database" value="Desconectar">
 </form>
 
 <?php
-    if(isset($_POST['Select_Database']))
+    if(isset($_POST['Criar']))
     {
         $data_missing = array();
         $data_wrong = array();
         $go = 0;
 
-        if(empty($_POST['database']))
+        if(empty($_POST['cl_id']))
         {
-            $data_missing[] = 'Nome da Base de Dados';
+            $data_missing[] = 'ID Cliente';
         }else{
-            $_SESSION['local_name'] = trim($_POST['database']);
+            $cl_id = trim($_POST['cl_id']);
+        }
+        if(!is_numeric($cl_id))
+        {
+            $data_wrong[] = 'ID Cliente';
+        }
+
+        if(empty($_POST['root_pass']))
+        {
+            $data_missing[] = 'Root Password';
+        }else{
+            $root_pass = trim($_POST['root_pass']);
         }
 
         if(empty($data_missing))
         {
-            $go = 1;
+            if(empty($data_wrong))
+            {
+                $go = 1;
+            }else
+            {
+                echo "Não são aceites os seguintes campos: <br/>";
+                foreach($data_wrong as $wrong)
+                {
+                    echo "$wrong <br/>";
+                }
+                $go = 0;
+            }
         }else
         {
             echo "Faltam os seguintes campos: <br/>";
@@ -92,41 +124,16 @@ session_start();
         }
         if($go)
         {
-            require('local_connect.php');
-            mysqli_close($dbc2);
-
-            ob_start(); // ensures anything dumped out will be caught
-            $url = 'index.php'; // this can be set based on whatever
-
-            // clear out the output buffer
-            while (ob_get_status()) 
+            if (in_array($_POST['cl_id'], $id_clientes))
             {
-                ob_end_clean();
+                require('query_instalar_local.php');
+            }else
+            {
+                echo "Cliente não existente na base de dados";
             }
 
-            // no redirect
-            header( "Location: $url" );
         }
     }
-
-    if(isset($_POST['Deselect_Database']))
-    {
-            $_SESSION['local_name'] = "";
-            $_SESSION['local_status'] = "Connect";
-
-            ob_start(); // ensures anything dumped out will be caught
-            $url = 'index.php'; // this can be set based on whatever
-
-            // clear out the output buffer
-            while (ob_get_status()) 
-            {
-                ob_end_clean();
-            }
-
-            // no redirect
-            header( "Location: $url" );
-    }
-
 ?>
 
 </body>

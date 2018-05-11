@@ -65,67 +65,6 @@ session_start();
 </form>
 
 <?php
-    if(isset($_POST['Select_Database']))
-    {
-        $data_missing = array();
-        $data_wrong = array();
-        $go = 0;
-
-        if(empty($_POST['database']))
-        {
-            $data_missing[] = 'Nome da Base de Dados';
-        }else{
-            $_SESSION['local_name'] = trim($_POST['database']);
-        }
-
-        if(empty($data_missing))
-        {
-            $go = 1;
-        }else
-        {
-            echo "Faltam os seguintes campos: <br/>";
-            foreach($data_missing as $missing)
-            {
-                echo "$missing<br/>";
-            }
-            $go = 0;
-        }
-        if($go)
-        {
-            require('local_connect.php');
-            mysqli_close($dbc2);
-
-            ob_start(); // ensures anything dumped out will be caught
-            $url = 'index.php'; // this can be set based on whatever
-
-            // clear out the output buffer
-            while (ob_get_status()) 
-            {
-                ob_end_clean();
-            }
-
-            // no redirect
-            header( "Location: $url" );
-        }
-    }
-
-    if(isset($_POST['Deselect_Database']))
-    {
-            $_SESSION['local_name'] = "";
-            $_SESSION['local_status'] = "Connect";
-
-            ob_start(); // ensures anything dumped out will be caught
-            $url = 'index.php'; // this can be set based on whatever
-
-            // clear out the output buffer
-            while (ob_get_status()) 
-            {
-                ob_end_clean();
-            }
-
-            // no redirect
-            header( "Location: $url" );
-    }
 
 ?>
 
