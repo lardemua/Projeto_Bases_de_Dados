@@ -1,3 +1,12 @@
+sudo apt-get install mysql-server
+sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
+comentar a linha "bind-address = 127.0.0.1"
+sudo /etc/init.d/mysql restart
+mysql -u root -p
+CREATE USER 'user'@'%' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON *.* TO 'user'@'%';
+FLUSH PRIVILEGES;
+sudo apt-get install libmysqlclient-dev
 sudo apt-get install apache2
 sudo apt-get -y install php7.0 libapache2-mod-php7.0
 sudo apt-get install php-mysql

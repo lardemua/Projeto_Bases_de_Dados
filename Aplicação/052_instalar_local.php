@@ -46,27 +46,22 @@ session_start();
         <input type="submit" value="Instalar MySQL">
     </form>
 
-
-<?php
-    require('query_databases.php');
-?>
-
-<form action="05_login_local.php" method="post">
-    <table>
-        <tr>
-        <td>Database Name:</td>
-        <td>
-            <input type="text" name="database" value="">
-        </td>
-    </tr>
-    </table>
-    <input type="submit" name="Select_Database" value="Conectar" style="float:left;">
-    <input type="submit" name="Deselect_Database" value="Desconectar">
-</form>
-
-<?php
-
-?>
+        <p>Para instalar o MySQL abrir o terminal com Ctrl+Shift+t e introduzir o seguinte comando:</p>
+        <pre>       sudo apt-get install mysql-server</pre>
+        <p>Permitir ligações externas ao MySQL:</p>
+        <pre>      sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf</pre>
+        <p>Comentar com # a linha:</p>
+        <pre>       bind-address = 127.0.0.1</pre>
+        <p>Reiniciar o servidor:</p>
+        <pre>      sudo /etc/init.d/mysql restart</pre>
+        <p>Inciar sessão no MySQL:</p>
+        <pre>      mysql -u root -p</pre>
+        <p>Introduzir a query:</p>
+        <pre>      CREATE USER 'user'@'%' IDENTIFIED BY 'password';
+      GRANT ALL PRIVILEGES ON *.* TO 'user'@'%';
+      FLUSH PRIVILEGES;</pre>
+        <p>Terminar sessão:</p>
+        <pre>      quit</pre>
 
 </body>
 
