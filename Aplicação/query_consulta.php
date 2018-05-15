@@ -48,7 +48,7 @@ switch($queryOption)
         }
         break;
     case 4:
-        $query = "SELECT " . $projecao . " FROM clientes INNER JOIN moldes ON cl_ID = m_IDCliente INNER JOIN sensores ON m_ID = s_IDMolde  INNER JOIN tipo ON s_tipo = tipo_ID INNER JOIN registos ON s_IDMolde = r_IDMolde AND s_num = r_numSensor";
+        $query = "SELECT " . $projecao . " FROM clientes INNER JOIN moldes ON cl_ID = m_IDCliente INNER JOIN sensores ON m_ID = s_IDMolde  INNER JOIN tipo ON s_tipo = tipo_ID INNER JOIN registos ON s_IDMolde = r_IDMolde AND s_num = r_numSensor INNER JOIN fase ON r_fase = fase_ID";
         if(!empty($selecao))
         {
             $query .= " WHERE " . $selecao;

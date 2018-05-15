@@ -65,25 +65,25 @@ session_start();
                 <td align="left"><input type="checkbox" name="cl_ID" value="cl_ID"> cl_ID</td>
                 <td align="left"><input type="checkbox" name="m_ID" value="m_ID"> m_ID</td>
                 <td align="left"><input type="checkbox" name="s_num" value="s_num"> s_num</td>
-                <td align="left"><input type="checkbox" name="r_data_hora" value="r_data_hora"> r_data_hora</td>
+                <td align="left"><input type="checkbox" name="fase_nome" value="fase_nome"> fase_nome</td>
             </tr>
             <tr>
                 <td align="left"><input type="checkbox" name="cl_nome" value="cl_nome"> cl_nome</td>
                 <td align="left"><input type="checkbox" name="m_nome" value="m_nome"> m_nome</td>
                 <td align="left"><input type="checkbox" name="tipo_nome" value="tipo_nome"> tipo_nome</td>
-                <td align="left"><input type="checkbox" name="r_milisegundos" value="r_milisegundos"> r_milisegundos</td>
+                <td align="left"><input type="checkbox" name="r_data_hora" value="r_data_hora"> r_data_hora</td>
             </tr>
             <tr>
                 <td align="left"><input type="checkbox" name="cl_morada" value="cl_morada"> cl_morada</td>
                 <td align="left"><input type="checkbox" name="m_descricao" value="m_descricao"> m_descricao</td>
                 <td align="left"><input type="checkbox" name="s_nome" value="s_nome"> s_nome</td>
-                <td align="left"><input type="checkbox" name="r_valor" value="r_valor"> r_valor</td>
+                <td align="left"><input type="checkbox" name="r_milissegundos" value="r_milissegundos"> r_milissegundos</td>
             </tr>
             <tr>
                 <td align="left"><input type="checkbox" name="cl_IP" value="cl_IP"> cl_IP</td>
                 <td align="left"></td>
                 <td align="left"><input type="checkbox" name="s_descricao" value="s_descricao"> s_descricao</td>
-                <td align="left"></td>
+                <td align="left"><input type="checkbox" name="r_valor" value="r_valor"> r_valor</td>
             </tr>
             <tr>
                 <td align="left"><input type="checkbox" name="cl_port" value="cl_port"> cl_port</td>

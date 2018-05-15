@@ -90,13 +90,17 @@ session_start();
             $atributos['s_descricao'] = trim($_GET['s_descricao']);
             $queryOption = 3;
         }
+        if(!empty($_GET['fase_nome']))
+        {
+            $atributos['fase_nome'] = trim($_GET['fase_nome']);
+        }
         if(!empty($_GET['r_data_hora']))
         {
             $atributos['r_data_hora'] = trim($_GET['r_data_hora']);
         }
-        if(!empty($_GET['r_milisegundos']))
+        if(!empty($_GET['r_milissegundos']))
         {
-            $atributos['r_milisegundos'] = trim($_GET['r_milisegundos']);
+            $atributos['r_milissegundos'] = trim($_GET['r_milissegundos']);
             $queryOption = 4;
         }
         if(!empty($_GET['r_valor']))
@@ -112,6 +116,10 @@ session_start();
         }else if(!empty($_GET['r_data_hora']) && $queryOption == 0)
         {
             $atributos['r_data_hora'] = "DISTINCT(" . trim($_GET['r_data_hora']) . ")";
+            $queryOption = 4;
+        }else if(!empty($_GET['fase_nome']) && $queryOption == 0)
+        {
+            $atributos['fase_nome'] = "DISTINCT(" . trim($_GET['fase_nome']) . ")";
             $queryOption = 4;
         }
 
