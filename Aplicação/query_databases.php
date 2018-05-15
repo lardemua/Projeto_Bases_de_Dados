@@ -12,7 +12,7 @@
 <?php
     DEFINE('DB_USER_Local',$_SESSION['user']);
     DEFINE('DB_PASSWORD_Local',$_SESSION['password']);
-    DEFINE('DB_HOST_Local','localhost');
+    DEFINE('DB_HOST_Local',$_SERVER['REMOTE_ADDR']);
 
     $dbc2 = @mysqli_connect(DB_HOST_Local,DB_USER_Local,DB_PASSWORD_Local);
 

@@ -46,7 +46,7 @@ void QUERY_INSERT_INTO_TABLE(void)
 {
 	static int i = 0;
 
-	int seg, miliseg, molde1;
+	int seg, miliseg, molde1, fase;
 	char query[1000];
 	struct timeval t1;
 
@@ -60,6 +60,33 @@ void QUERY_INSERT_INTO_TABLE(void)
 	seg = tm->tm_hour * 3600 + tm->tm_min * 60 + tm->tm_sec;
 	miliseg = t1.tv_usec / pow(10, floor(log10(abs(t1.tv_usec))) - 1); /*pow(10, floor(log10(abs(t1.tv_usec))) - 1) para retirar os dois digitos mais altos dos micro segundos porque não me lembrei que 1ms = 1000us
 	https://stackoverflow.com/questions/3068397/finding-the-length-of-an-integer-in-c*/
+
+	i++;
+	if (i < 50)
+	{
+		fase = 1;
+	}
+	else if (i >= 50 && i < 100)
+	{
+		fase = 2;
+	}
+	else if (i >= 100 && i < 150)
+	{
+		fase = 3;
+	}
+	else if (i >= 150 && i < 200)
+	{
+		fase = 4;
+	}
+	else if (i >= 200 && i < 250)
+	{
+		fase = 5;
+	}
+	else if (i >= 250)
+	{
+		fase = 5;
+		i = 0;
+	}
 
 	//Identificação do molde
 	molde1 = 9009;
@@ -144,7 +171,7 @@ void QUERY_INSERT_INTO_TABLE(void)
 	valor10 = O + A * sin(2 * PI * (1 / t) * (seg + miliseg * 0.01) + G);
 
 	//Inserir na tabela 'variável' os valores (Data atual, Hora atual,'valor')
-	sprintf(query, "INSERT IGNORE registos VALUES(%d,%d,NOW(),%d,%.02f),(%d,%d,NOW(),%d,%.02f),(%d,%d,NOW(),%d,%.02f),(%d,%d,NOW(),%d,%.02f),(%d,%d,NOW(),%d,%.02f),(%d,%d,NOW(),%d,%.02f),(%d,%d,NOW(),%d,%.02f),(%d,%d,NOW(),%d,%.02f),(%d,%d,NOW(),%d,%.02f),(%d,%d,NOW(),%d,%.02f)", molde1, 1, miliseg, valor1, molde1, 2, miliseg, valor2, molde1, 3, miliseg, valor3, molde1, 4, miliseg, valor4, molde1, 5, miliseg, valor5, molde1, 6, miliseg, valor6, molde1, 7, miliseg, valor7, molde1, 8, miliseg, valor8, molde1, 9, miliseg, valor9, molde1, 10, miliseg, valor10);
+	sprintf(query, "INSERT IGNORE registos VALUES(%d,%d,%d,NOW(),%d,%.02f),(%d,%d,%d,NOW(),%d,%.02f),(%d,%d,%d,NOW(),%d,%.02f),(%d,%d,%d,NOW(),%d,%.02f),(%d,%d,%d,NOW(),%d,%.02f),(%d,%d,%d,NOW(),%d,%.02f),(%d,%d,%d,NOW(),%d,%.02f),(%d,%d,%d,NOW(),%d,%.02f),(%d,%d,%d,NOW(),%d,%.02f),(%d,%d,%d,NOW(),%d,%.02f)", molde1, 1, fase, miliseg, valor1, molde1, 2, fase, miliseg, valor2, molde1, 3, fase, miliseg, valor3, molde1, 4, fase, miliseg, valor4, molde1, 5, fase, miliseg, valor5, molde1, 6, fase, miliseg, valor6, molde1, 7, fase, miliseg, valor7, molde1, 8, fase, miliseg, valor8, molde1, 9, fase, miliseg, valor9, molde1, 10, fase, miliseg, valor10);
 	printf("%s\n", query);
 
 	if (mysql_real_query(connG, query, (unsigned long)strlen(query)))

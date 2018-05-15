@@ -20,8 +20,8 @@ O programa só termina pressionando ctrl+c.
 #include "myf.h"
 
 static char *host = "127.0.0.1"; //ip da base de dados
-static char *user = "sapofree";
-static char *pass = "naopossodizer";
+static char *user = "sensores";
+static char *pass = "sensores1234";
 static char *dbname = "cl_10005";
 
 unsigned int port = 3306;

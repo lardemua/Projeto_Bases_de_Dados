@@ -9,7 +9,23 @@ session_start();
 </head>
 
 <body style="background-color:azure;">
+<?php
+    if($_SESSION['central_status'] != "Logout")
+        {
+            ob_start(); // ensures anything dumped out will be caught
+            $url = 'index.php'; // this can be set based on whatever
 
+            // clear out the output buffer
+            while (ob_get_status()) 
+            {
+                ob_end_clean();
+            }
+
+            // no redirect
+            header( "Location: $url" );
+
+        }
+?>
     <h1>Aplicação</h1>
     <form action="index.php" style="float: left;">
         <input type="submit" value="Home">

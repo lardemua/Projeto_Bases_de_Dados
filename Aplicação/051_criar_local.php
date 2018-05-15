@@ -9,7 +9,23 @@ session_start();
 </head>
 
 <body style="background-color:azure;">
+<?php
+    if($_SESSION['central_status'] != "Logout")
+        {
+            ob_start(); // ensures anything dumped out will be caught
+            $url = 'index.php'; // this can be set based on whatever
 
+            // clear out the output buffer
+            while (ob_get_status()) 
+            {
+                ob_end_clean();
+            }
+
+            // no redirect
+            header( "Location: $url" );
+
+        }
+?>
     <h1>Aplicação</h1>
     <form action="index.php" style="float: left;">
         <input type="submit" value="Home">
@@ -60,12 +76,14 @@ session_start();
             <input type="text" name="cl_id" value="">
         </td>
     </tr>
+    <!--
     <tr>
         <td>Root Password:</td>
         <td>
             <input type="password" name="root_pass" value="">
         </td>
     </tr>
+    -->
     <tr>
         <td>
             <input type="submit" name="Criar" value="Criar">
@@ -91,13 +109,14 @@ session_start();
         {
             $data_wrong[] = 'ID Cliente';
         }
-
+        /*
         if(empty($_POST['root_pass']))
         {
             $data_missing[] = 'Root Password';
         }else{
             $root_pass = trim($_POST['root_pass']);
         }
+        */
 
         if(empty($data_missing))
         {

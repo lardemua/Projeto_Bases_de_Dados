@@ -150,8 +150,8 @@ void CONNECT_LOCAL_DATABASE(int client_number)
 
 	//Dados das bases de dados locais
 	char *host_local = IP; //ip da base de dados
-	static char *user_local = "sapofree";
-	static char *pass_local = "naopossodizer";
+	static char *user_local = "transferencia";
+	static char *pass_local = "transferencia1234";
 
 	sprintf(str, "cl_%s", ID);
 	char *dbname_local = str;
@@ -229,7 +229,7 @@ void MOVE_VALUES(void)
 	mysql_free_result(res);
 
 	//Lê todos os valores da base de dados local
-	sprintf(local_query, "SELECT * FROM registos WHERE r_data_hora < %s ORDER BY r_data_hora, r_milisegundos, r_numSensor, r_IDMolde", datetime_limit);
+	sprintf(local_query, "SELECT * FROM registos WHERE r_data_hora < %s ORDER BY r_data_hora, r_milissegundos, r_numSensor, r_IDMolde", datetime_limit);
 	if (mysql_real_query(connG_local, local_query, (unsigned long)strlen(local_query)))
 	{
 		fprintf(stderr, "Error: %s [%d]\n", mysql_error(connG_local), mysql_errno(connG_local));

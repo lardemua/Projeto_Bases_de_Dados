@@ -10,9 +10,9 @@
 </head>
 <body>
 <?php
-    DEFINE('DB_USER_Local','root');
-    DEFINE('DB_PASSWORD_Local',$_POST['root_pass']);
-    DEFINE('DB_HOST_Local','localhost');
+    DEFINE('DB_USER_Local',$_SESSION['user']);
+    DEFINE('DB_PASSWORD_Local',$_SESSION['password']);
+    DEFINE('DB_HOST_Local',$_SERVER['REMOTE_ADDR']);
 
     $dbc3 = @mysqli_connect(DB_HOST_Local,DB_USER_Local,DB_PASSWORD_Local);
 
@@ -61,18 +61,6 @@
     {
         echo("Erro: " . mysqli_error($dbc3) . "<br>");
     }
-    mysqli_close($dbc3);
-
-    $dbc3 = @mysqli_connect(DB_HOST_Local,DB_USER_Local,DB_PASSWORD_Local,$db);
-
-    // Check connection
-    if (!$dbc3) {
-        die('Could not connect to MySQL ' . mysqli_connect_error() . "<br>");
-    }else {
-    }
-
-    // Change character set to utf8
-    mysqli_set_charset($dbc3,"utf8");
 
     $query = "CREATE TABLE moldes
     (
@@ -91,18 +79,6 @@
     {
         echo("Erro: " . mysqli_error($dbc3) . "<br>");
     }
-    mysqli_close($dbc3);
-
-    $dbc3 = @mysqli_connect(DB_HOST_Local,DB_USER_Local,DB_PASSWORD_Local,$db);
-
-    // Check connection
-    if (!$dbc3) {
-        die('Could not connect to MySQL ' . mysqli_connect_error() . "<br>");
-    }else {
-    }
-
-    // Change character set to utf8
-    mysqli_set_charset($dbc3,"utf8");
 
     $query = "CREATE TABLE tipo
     (
@@ -118,18 +94,6 @@
     {
         echo("Erro: " . mysqli_error($dbc3) . "<br>");
     }
-    mysqli_close($dbc3);
-
-    $dbc3 = @mysqli_connect(DB_HOST_Local,DB_USER_Local,DB_PASSWORD_Local,$db);
-
-    // Check connection
-    if (!$dbc3) {
-        die('Could not connect to MySQL ' . mysqli_connect_error() . "<br>");
-    }else {
-    }
-
-    // Change character set to utf8
-    mysqli_set_charset($dbc3,"utf8");
 
     $query = "CREATE TABLE sensores
     (
@@ -152,31 +116,38 @@
     {
         echo("Erro: " . mysqli_error($dbc3) . "<br>");
     }
-    mysqli_close($dbc3);
 
-    $dbc3 = @mysqli_connect(DB_HOST_Local,DB_USER_Local,DB_PASSWORD_Local,$db);
+    $query = "CREATE TABLE fase
+    (
+        fase_ID INT NOT NULL,
+        fase_nome VARCHAR(50) NOT NULL,
+        CONSTRAINT REPETIDO_ID_FASE
+        PRIMARY KEY(FASE_ID),
+        CONSTRAINT REPETIDO_NOME_FASE
+        UNIQUE(fase_nome)
+    )";
 
-    // Check connection
-    if (!$dbc3) {
-        die('Could not connect to MySQL ' . mysqli_connect_error() . "<br>");
-    }else {
-    }
-
-    // Change character set to utf8
-    mysqli_set_charset($dbc3,"utf8");
+    if (!mysqli_query($dbc3,$query))
+    {
+        echo("Erro: " . mysqli_error($dbc3) . "<br>");
+    }    
 
     $query = "CREATE TABLE registos
     (
         r_IDMolde INT NOT NULL,
         r_numSensor INT NOT NULL,
+        r_fase INT NOT NULL,
         r_data_hora DATETIME NOT NULL,
-        r_milisegundos TINYINT NOT NULL,
+        r_milissegundos TINYINT NOT NULL,
         r_valor FLOAT,
         CONSTRAINT REPETIDO_REGISTO
-        PRIMARY KEY(r_IDMolde, r_numSensor, r_data_hora, r_milisegundos),
+        PRIMARY KEY(r_IDMolde, r_numSensor, r_data_hora, r_milissegundos),
         CONSTRAINT REGISTOS_MAU_ID_MOLDE_SENSOR
     FOREIGN KEY(r_IDMolde,r_numSensor) REFERENCES sensores(s_IDMolde,s_num)
-            ON DELETE CASCADE ON UPDATE CASCADE
+            ON DELETE CASCADE ON UPDATE CASCADE,
+        CONSTRAINT REGISTOS_MAU_ID_FASE
+    FOREIGN KEY(r_fase) REFERENCES fase(fase_ID)
+            ON DELETE NO ACTION ON UPDATE CASCADE
     )";
 
     if (!mysqli_query($dbc3,$query))
@@ -184,37 +155,40 @@
         echo("Erro: " . mysqli_error($dbc3) . "<br>");
     }
     mysqli_close($dbc3);
-
-    $dbc3 = @mysqli_connect(DB_HOST_Local,DB_USER_Local,DB_PASSWORD_Local,$db);
-
-    // Check connection
-    if (!$dbc3) {
-        die('Could not connect to MySQL ' . mysqli_connect_error() . "<br>");
-    }else {
-    }
-
-    // Change character set to utf8
-    mysqli_set_charset($dbc3,"utf8");
-
-    $query = "INSERT INTO tipo
-    VALUES
-        (1, \"Termómetro\"),
-        (2, \"Dinamómetro\"),
-        (3, \"Extensómetro\"),
-        (4, \"Vibrómetro\"),
-        (5, \"Pressão\"),
-        (6, \"Acelerómetro X\"),
-        (7, \"Acelerómetro Y\"),
-        (8, \"Acelerómetro Z\")";
-
-    if (!mysqli_query($dbc3,$query))
-    {
-        echo("Erro: " . mysqli_error($dbc3) . "<br>");
-    }
-    mysqli_close($dbc3);
-
-    echo "Base de dados local criada"
-
 ?>
+
+<p>Base de dados local criada</p>
+<p>Inciar sessão no MySQL:</p>
+<pre>      mysql -u root -p</pre>
+<p>Inserir as queries</p>
+<pre>    GRANT SELECT, UPDATE, ON <?php echo  "cl_" . $_POST['cl_id'];?>.clientes TO 'user'@'%';
+    GRANT SELECT, INSERT, DELETE ON <?php echo  "cl_" . $_POST['cl_id'];?>.moldes TO 'user'@'%';
+    GRANT SELECT, INSERT, DELETE ON <?php echo  "cl_" . $_POST['cl_id'];?>.sensores TO 'user'@'%';
+    GRANT SELECT ON <?php echo  "cl_" . $_POST['cl_id'];?>.registos TO 'user'@'%';
+    CREATE USER 'sensores'@'localhost' IDENTIFIED BY 'sensores1234';
+    GRANT INSERT ON <?php echo  "cl_" . $_POST['cl_id'];?>.registos TO 'sensores'@'localhost';
+    CREATE USER 'transferencia'@'%' IDENTIFIED BY 'transferencia1234';
+    GRANT SELECT, DELETE ON <?php echo  "cl_" . $_POST['cl_id'];?>.registos TO 'transferencia'@'%';
+    FLUSH PRIVILEGES;
+    INSERT INTO tipo
+    VALUES
+    (1, "Termómetro"),
+    (2, "Dinamómetro"),
+    (3, "Extensómetro"),
+    (4, "Vibrómetro"),
+    (5, "Pressão"),
+    (6, "Acelerómetro X"),
+    (7, "Acelerómetro Y"),
+    (8, "Acelerómetro Z");
+    INSERT INTO fase
+    VALUES
+    (1, "Fecho"),
+    (2, "Enchimento"),
+    (3, "Compactação"),
+    (4, "Abertura"),
+    (5, "Extração");<pre>
+<p>Terminar sessão:</p>
+<pre>      quit</pre>
+
 </body>
 </html>

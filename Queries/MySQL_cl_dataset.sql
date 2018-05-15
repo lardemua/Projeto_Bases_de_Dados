@@ -9,6 +9,13 @@ VALUES
     (6, "Acelerómetro X"),
     (7, "Acelerómetro Y"),
     (8, "Acelerómetro Z");
+INSERT INTO fase
+VALUES
+    (1, "Fecho"),
+    (2, "Enchimento"),
+    (3, "Compactação"),
+    (4, "Abertura"),
+    (5, "Extração");
 INSERT INTO clientes
 VALUES
     (10001, "Autocolismos & Company", "Rua das sanita, nº 2", "127.0.0.1", 3306);
@@ -47,6 +54,13 @@ VALUES
     (6, "Acelerómetro X"),
     (7, "Acelerómetro Y"),
     (8, "Acelerómetro Z");
+INSERT INTO fase
+VALUES
+    (1, "Fecho"),
+    (2, "Enchimento"),
+    (3, "Compactação"),
+    (4, "Abertura"),
+    (5, "Extração");
 INSERT INTO clientes
 VALUES
     (10002, "Máscaras de Carnaval LDA", "Rua de Elm street, nº 13", "127.0.0.1", 3306);
@@ -101,6 +115,13 @@ VALUES
     (6, "Acelerómetro X"),
     (7, "Acelerómetro Y"),
     (8, "Acelerómetro Z");
+INSERT INTO fase
+VALUES
+    (1, "Fecho"),
+    (2, "Enchimento"),
+    (3, "Compactação"),
+    (4, "Abertura"),
+    (5, "Extração");
 INSERT INTO clientes
 VALUES
     (10003, "Aperture Science", "Travessa de bolo, nº 404", "127.0.0.1", 3306);
@@ -123,6 +144,13 @@ VALUES
     (6, "Acelerómetro X"),
     (7, "Acelerómetro Y"),
     (8, "Acelerómetro Z");
+INSERT INTO fase
+VALUES
+    (1, "Fecho"),
+    (2, "Enchimento"),
+    (3, "Compactação"),
+    (4, "Abertura"),
+    (5, "Extração");
 INSERT INTO clientes
 VALUES
     (10004, "Black Mesa", "Área 51", "127.0.0.1", 3306);
@@ -152,6 +180,13 @@ VALUES
     (6, "Acelerómetro X"),
     (7, "Acelerómetro Y"),
     (8, "Acelerómetro Z");
+INSERT INTO fase
+VALUES
+    (1, "Fecho"),
+    (2, "Enchimento"),
+    (3, "Compactação"),
+    (4, "Abertura"),
+    (5, "Extração");
 INSERT INTO clientes
 VALUES
     (10005, "Vault-Tec Corporation", "Rua da caixa-forte, nº 1234", "127.0.0.1", 3306);

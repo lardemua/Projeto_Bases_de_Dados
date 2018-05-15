@@ -1,7 +1,6 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	NOT TESTED	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-mysqldump --no-create-info --no-create-db --user=user1 --password=password1 database1 table1 \
-| sed -e 's/`table1`/`table2`/' \
-| mysql --user=user2 --password=password2 database2
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	   BACKUPS 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+mysqldump -u sapofree -pnaopossodizer backups > ~/Backups/backup3.sql
+mysql -u sapofree -pnaopossodizer backups < Backups/backup2.sql
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 SELECT table_schema                                        "DB Name", 

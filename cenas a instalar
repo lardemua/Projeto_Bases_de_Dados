@@ -1,6 +1,8 @@
 sudo apt-get install mysql-server
 sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
 comentar a linha "bind-address = 127.0.0.1"
+sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
+adicionar no fim secure_file_priv=""
 sudo /etc/init.d/mysql restart
 mysql -u root -p
 CREATE USER 'user'@'%' IDENTIFIED BY 'password';
