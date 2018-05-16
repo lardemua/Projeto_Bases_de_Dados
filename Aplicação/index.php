@@ -52,6 +52,9 @@ session_start();
     <p>Aplicação experimental em PHP e HTML para utilizar a base de dados</p>
 
     <?php
+        $ID = str_replace("cl_"," ",$_SESSION['local_name']);
+        echo $ID;
+        echo "<br>";
          echo "\$_SERVER['PHP_SELF'] => " . $_SERVER['PHP_SELF'];
          echo "<br>";
          echo "\$_SERVER['GATEWAY_INTERFACE'] => " . $_SERVER['GATEWAY_INTERFACE'];

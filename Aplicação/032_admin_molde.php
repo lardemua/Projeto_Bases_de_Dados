@@ -23,6 +23,149 @@ session_start();
             header( "Location: $url" );
 
         }
+
+        if(isset($_POST['Adicionar_Molde']))
+        {
+            $data_missing = array();
+            $data_wrong = array();
+            $go = 0;
+    
+            if(empty($_POST['m_cliente']))
+            {
+                $data_missing[] = 'ID Cliente';
+            }else{
+                $m_cliente = trim($_POST['m_cliente']);
+            }
+            if(!is_numeric($m_cliente))
+            {
+                $data_wrong[] = 'ID Cliente';
+            }
+    
+            if(empty($_POST['m_molde']))
+            {
+                $data_missing[] = 'ID Molde';
+            }else{
+                $m_molde = trim($_POST['m_molde']);
+            }
+            if(!is_numeric($m_molde))
+            {
+                $data_wrong[] = 'ID Molde';
+            }
+    
+            if(empty($_POST['m_nome']))
+            {
+                $m_nome = "NULL";
+            }else{
+                $m_nome = trim($_POST['m_nome']);
+            }
+    
+            if(empty($_POST['m_descricao']))
+            {
+                $m_descricao = "NULL";
+            }else{
+                $m_descricao = trim($_POST['m_descricao']);
+            }
+    
+            if(empty($data_missing))
+            {
+                if(empty($data_wrong))
+                {
+                    $go = 1;
+                }else
+                {
+                    echo "Não são aceites os seguintes campos: <br/>";
+                    foreach($data_wrong as $wrong)
+                    {
+                        echo "$wrong <br/>";
+                    }
+                    $go = 0;
+                }
+            }else
+            {
+                echo "Faltam os seguintes campos: <br/>";
+                foreach($data_missing as $missing)
+                {
+                    echo "$missing<br/>";
+                }
+                $go = 0;
+            }
+            if($go)
+            {
+                require('temp_local_connect.php');
+    
+                $query = "INSERT INTO moldes VALUES (?,?,?,?)";
+    
+                $stmt = mysqli_prepare($dbc4,$query);
+    
+                mysqli_stmt_bind_param($stmt, "iiss", $m_cliente, $m_molde, $m_nome, $m_descricao);
+    
+                mysqli_stmt_execute($stmt);
+    
+                $affected_rows = mysqli_stmt_affected_rows($stmt);
+    
+                if($affected_rows == 1)
+                {
+                    //echo "Molde criado com sucesso";
+                }else
+                {
+                    echo "Erro: " . mysqli_error($dbc4);
+                }
+                mysqli_stmt_close($stmt);
+                mysqli_close($dbc4);
+            }
+        }
+    
+        if(isset($_POST['Eliminar_Molde']))
+        {
+            if(empty($_POST['m_molde']))
+            {
+                $data_missing[] = 'ID Molde';
+            }else{
+                $m_molde = trim($_POST['m_molde']);
+            }
+            if(!is_numeric($m_molde))
+            {
+                $data_wrong[] = 'ID Molde';
+            }
+    
+            if(empty($data_missing))
+            {
+                if(empty($data_wrong))
+                {
+                    $go = 1;
+                }else
+                {
+                    echo "Não são aceites os seguintes campos: <br/>";
+                    foreach($data_wrong as $wrong)
+                    {
+                        echo "$wrong <br/>";
+                    }
+                    $go = 0;
+                }
+            }else
+            {
+                echo "Faltam os seguintes campos: <br/>";
+                foreach($data_missing as $missing)
+                {
+                    echo "$missing<br/>";
+                }
+                $go = 0;
+            }
+           if($go)
+           {
+                require('temp_local_connect.php');
+                $query = "DELETE FROM moldes WHERE m_ID = " . $m_molde;
+
+                if (!mysqli_query($dbc4,$query))
+                {
+                    echo("Erro: " . mysqli_error($dbc4) . "<br>");
+                }else
+                {
+                //echo "molde eliminado";
+                }
+                mysqli_close($dbc4);
+           }
+       }
 ?>
 
     <h1>Aplicação</h1>
@@ -63,8 +206,15 @@ session_start();
     <form action="034_admin_eliminar.php">
         <input type="submit" value="Eliminar">
     </form>
+    <p><b>Temporária:</b></p>
+    <?php
+        require('query_molde_temp.php');
+    ?>
 
     <form action="032_admin_molde.php" method = "post">
+        <input type="submit" name="Validar" value="Validar">
+        <br>
+        <br>
         <legend>Molde:</legend>
         <table>
             <tr>
@@ -102,139 +252,6 @@ session_start();
     </form>
 
 <?php
-    if(isset($_POST['Adicionar_Molde']))
-    {
-        $data_missing = array();
-        $data_wrong = array();
-        $go = 0;
-
-        if(empty($_POST['m_cliente']))
-        {
-            $data_missing[] = 'ID Cliente';
-        }else{
-            $m_cliente = trim($_POST['m_cliente']);
-        }
-        if(!is_numeric($m_cliente))
-        {
-            $data_wrong[] = 'ID Cliente';
-        }
-
-        if(empty($_POST['m_molde']))
-        {
-            $data_missing[] = 'ID Molde';
-        }else{
-            $m_molde = trim($_POST['m_molde']);
-        }
-        if(!is_numeric($m_molde))
-        {
-            $data_wrong[] = 'ID Molde';
-        }
-
-        if(empty($_POST['m_nome']))
-        {
-            $m_nome = "NULL";
-        }else{
-            $m_nome = trim($_POST['m_nome']);
-        }
-
-        if(empty($_POST['m_descricao']))
-        {
-            $m_descricao = "NULL";
-        }else{
-            $m_descricao = trim($_POST['m_descricao']);
-        }
-
-        if(empty($data_missing))
-        {
-            if(empty($data_wrong))
-            {
-                $go = 1;
-            }else
-            {
-                echo "Não são aceites os seguintes campos: <br/>";
-                foreach($data_wrong as $wrong)
-                {
-                    echo "$wrong <br/>";
-                }
-                $go = 0;
-            }
-        }else
-        {
-            echo "Faltam os seguintes campos: <br/>";
-            foreach($data_missing as $missing)
-            {
-                echo "$missing<br/>";
-            }
-            $go = 0;
-        }
-        if($go)
-        {
-            require('central_connect.php');
-
-            $query = "INSERT INTO moldes VALUES (?,?,?,?)";
-
-            $stmt = mysqli_prepare($dbc,$query);
-
-            mysqli_stmt_bind_param($stmt, "iiss", $m_cliente, $m_molde, $m_nome, $m_descricao);
-
-            mysqli_stmt_execute($stmt);
-
-            $affected_rows = mysqli_stmt_affected_rows($stmt);
-
-            if($affected_rows == 1)
-            {
-                echo "Molde criado com sucesso";
-            }else
-            {
-                echo "Erro: " . mysqli_error($dbc);
-            }
-            mysqli_stmt_close($stmt);
-            mysqli_close($dbc);
-        }
-    }
-
-    if(isset($_POST['Eliminar_Molde']))
-    {
-        if(empty($_POST['m_molde']))
-        {
-            $data_missing[] = 'ID Molde';
-        }else{
-            $m_molde = trim($_POST['m_molde']);
-        }
-        if(!is_numeric($m_molde))
-        {
-            $data_wrong[] = 'ID Molde';
-        }
-
-        if(empty($data_missing))
-        {
-            if(empty($data_wrong))
-            {
-                $go = 1;
-            }else
-            {
-                echo "Não são aceites os seguintes campos: <br/>";
-                foreach($data_wrong as $wrong)
-                {
-                    echo "$wrong <br/>";
-                }
-                $go = 0;
-            }
-        }else
-        {
-            echo "Faltam os seguintes campos: <br/>";
-            foreach($data_missing as $missing)
-            {
-                echo "$missing<br/>";
-            }
-            $go = 0;
-        }
-       if($go)
-       {
-           //require('eliminar_molde.php');
-            echo "molde eliminado";
-       }
-   }
 
     if(!isset($_POST['Ver_Cliente']) && !isset($_POST['Ver_Molde']) && !isset($_POST['Ver_Sensor']))
     {
@@ -254,6 +271,29 @@ session_start();
     if(isset($_POST['Ver_Sensor']))
     {
         require('query_sensor.php');
+    }
+
+    if(isset($_POST['Validar']))
+    {
+            require('local_connect.php');
+            require('central_connect.php');
+            require('temp_local_connect.php');
+            require('query_validar.php');
+            mysqli_close($dbc2);
+            mysqli_close($dbc);
+            mysqli_close($dbc4);
+
+            ob_start(); // ensures anything dumped out will be caught
+            $url = '03_administracao.php'; // this can be set based on whatever
+
+            // clear out the output buffer
+            while (ob_get_status()) 
+            {
+                ob_end_clean();
+            }
+
+            // no redirect
+            header( "Location: $url" );
     }
 
 ?>

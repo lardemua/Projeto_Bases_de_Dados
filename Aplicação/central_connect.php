@@ -2,12 +2,12 @@
 session_start();
 ?>
 <?php
-    DEFINE('DB_USER',$_SESSION['user']);
-    DEFINE('DB_PASSWORD',$_SESSION['password']);
-    DEFINE('DB_HOST','127.0.0.1');
-    DEFINE('DB_NAME','central');
+    $DB_USER=$_SESSION['user'];
+    $DB_PASSWORD=$_SESSION['password'];
+    $DB_HOST='127.0.0.1';
+    $DB_NAME='central';
 
-    $dbc = @mysqli_connect(DB_HOST,DB_USER,DB_PASSWORD,DB_NAME);
+    $dbc = @mysqli_connect($DB_HOST,$DB_USER,$DB_PASSWORD,$DB_NAME);
 
     // Check connection
     if (!$dbc) {

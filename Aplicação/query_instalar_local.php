@@ -170,6 +170,7 @@
     CREATE USER 'transferencia'@'%' IDENTIFIED BY 'transferencia1234';
     GRANT SELECT, DELETE ON <?php echo  "cl_" . $_POST['cl_id'];?>.registos TO 'transferencia'@'%';
     FLUSH PRIVILEGES;
+    USE <?php echo  "cl_" . $_POST['cl_id'];?>;
     INSERT INTO tipo
     VALUES
     (1, "Termómetro"),
@@ -186,7 +187,7 @@
     (2, "Enchimento"),
     (3, "Compactação"),
     (4, "Abertura"),
-    (5, "Extração");<pre>
+    (5, "Extração");</pre>
 <p>Terminar sessão:</p>
 <pre>      quit</pre>
 

@@ -56,7 +56,7 @@ session_start();
         <input type="submit" value="Conectar">
     </form>
     <form action="051_criar_local.php" style="float: left;">
-        <input type="submit" value="Criar">
+        <input type="submit" value="Criar Local">
     </form>
     <form action="052_instalar_local.php">
         <input type="submit" value="Instalar MySQL">
@@ -109,7 +109,12 @@ session_start();
         if($go)
         {
             require('local_connect.php');
+            require('central_connect.php');
+            require('temp_local_connect.php');
+            require('query_copiar_cliente.php');
             mysqli_close($dbc2);
+            mysqli_close($dbc);
+            mysqli_close($dbc4);
 
             ob_start(); // ensures anything dumped out will be caught
             $url = 'index.php'; // this can be set based on whatever

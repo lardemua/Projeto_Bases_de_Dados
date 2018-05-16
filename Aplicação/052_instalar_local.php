@@ -56,7 +56,7 @@ session_start();
         <input type="submit" value="Conectar">
     </form>
     <form action="051_criar_local.php" style="float: left;">
-        <input type="submit" value="Criar">
+        <input type="submit" value="Criar Local">
     </form>
     <form action="052_instalar_local.php">
         <input type="submit" value="Instalar MySQL">

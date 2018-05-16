@@ -1,5 +1,5 @@
-CREATE DATABASE temp;
-USE temp;
+CREATE DATABASE temp_local;
+USE temp_local;
 CREATE TABLE clientes
 (
     cl_ID INT NOT NULL,
