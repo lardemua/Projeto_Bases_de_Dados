@@ -5,6 +5,8 @@
 %
 
 \documentclass[11pt,twoside,a4paper]{report}
+%\documentclass[11pt,twoside,a4paper,openright]{report}    % Estilo relatório
+% openright: página inicial de cada capítulo sempre ímpar
 \usepackage[DETI,newLogo]{uaThesis}
 
 \def\ThesisYear{2018}
@@ -15,6 +17,16 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{xspace}% used by \sigla
+
+\graphicspath{ {Pictures/} }
+    % Símbolos da American Mathematical Society
+    \usepackage{mathtools}
+    \usepackage{amsmath}
+    %\usepackage[citebordercolor={1 1 1},linkbordercolor={1 1 1}]{hyperref}
+    \usepackage{graphicx} % Required for the inclusion of images
+    \usepackage{subcaption}   
+    \usepackage{float}
+    \usepackage{listings}
 
 %encoding
 %--------------------------------------
@@ -162,14 +174,79 @@ arquivo e monitorização de moldes.
 
 \cleardoublepage
 \chapter{Aplicação}
+A aplicação desenvolvida em ambiente  \textit{Web} com o objetivo de ser multiplataforma, permitir acesso remoto com ligação à \textit{internet} e sem necessitar de instalar \textit{softwares} nos dispositivos dos utilizadores. Esta corre num servidor \textit{Apache} e foi desenvolvida usando \textit{PHP} e \textit{HTML}. Este capítulo descreve a adaptação da infraestrutura desenvolvida e as várias funcionalidades da aplicação.
 
 \section{Adaptação da infraestrutura}
+Afim de garantir uma maior integridade dos dados inseridos pela aplicação, instala-se no servidor local uma nova base de dados temporária local. Aqui os utilizadores têm a liberdade para adicionar, alterar e apagar informação sem consequências no sistema para depois serem introduzidas nas bases de dados central e local como representado na \autoref{fig:adap1}. Como referido anteriormente, esta base de dados difere das restantes, não contendo em si as tabelas fase e registos.
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.65\textwidth]{placeholder} % Include the image placeholder.png
+		\caption{Esquema ligação temporária}
+		\label{fig:adap1}
+	\end{center}
+\end{figure}
 
 \section{Interface gráfica}
+A aplicação divide-se em cinco partes distintas:
+\begin{itemize}
+	\item \textit{Main}
+	\item \textit{Login}
+	\item Consultas
+	\item Administração
+	\item Conexão Local
+\end{itemize}
+A aplicação foi realizada com vista a uma utilização geral e local. A primeira visa um uso a partir de qualquer dispositivo e acessível a qualquer momento e a segunda foca-se num acesso local com o objetivo de configurar e definir a informação no servidor local. As páginas Main, Login, Consultas e parte das funcionalidades da Administração foram realizadas para uma utilização geral. As páginas Conexão Local e as restantes funcionalidades da Administração foram realizadas para uma utilização local.
 
 \subsection{\textit{Main}}
+\begin{figure}[H]
+\centering
+	\begin{minipage}{.5\textwidth}
+		\begin{center}
+			\includegraphics[width=0.9\textwidth]{placeholder} % Include the image placeholder.png
+			\subcaption{Main sem Login}
+			\label{fig:main1}
+		\end{center}
+	\end{minipage}%
+	\begin{minipage}{.5\textwidth}
+		\begin{center}
+			\includegraphics[width=0.9\textwidth]{placeholder} % Include the image placeholder.png
+			\subcaption{Main com Login}
+			\label{fig:main2}
+		\end{center}
+	\end{minipage}
+	\caption{Main}
+	\label{fig:main0}
+\end{figure}
+A página \textit{Main} serve como página principal da aplicação. Se não houver sessão iniciada todas as restantes páginas redirecionam o utilizador para aqui. Contém apenas algumas informações gerais sobre a aplicação. Iniciar sessão na página de \textit{Login} desbloqueia funcionalidades na aplicação, como demonstrado nas Figuras \ref{fig:main1} e \ref*{fig:main2}. Depois de iniciada opção é possível com os botões navegar para as páginas de Consultas, Administração e Conexão Local.
 
 \subsection{\textit{Login}}
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.65\textwidth]{placeholder} % Include the image placeholder.png
+		\caption{Esquema ligação temporária}
+		\label{fig:login0}
+	\end{center}
+\end{figure}
+A página de \textit{Login} consiste num simples formulário constituído por duas caixas de texto e um botão, como demonstrado na \autoref*{fig:login0}. O botão \textit{Login} lê as credenciais introduzidas e realiza uma conexão de teste à base de dados central, validando a informação introduzida diretamente com \textit{MySQL}. Se as credenciais forem validadas com sucesso o utilizador é redirecionado para a página principal. Se as credenciais introduzidas não forem suficientes ou válidas são retornados erros de forma a informar o utilizador como demonstrado nas Figuras \ref{fig:login2} e \ref{fig:login3}.
+\begin{figure}[H]
+	\centering
+	\begin{minipage}{.5\textwidth}
+		\begin{center}
+			\includegraphics[width=0.9\textwidth]{placeholder} % Include the image placeholder.png
+			\subcaption{Main sem Login}
+			\label{fig:login2}
+		\end{center}
+	\end{minipage}%
+	\begin{minipage}{.5\textwidth}
+		\begin{center}
+			\includegraphics[width=0.9\textwidth]{placeholder} % Include the image placeholder.png
+			\subcaption{Main com Login}
+			\label{fig:login3}
+		\end{center}
+	\end{minipage}
+	\caption{Main}
+	\label{fig:login1}
+\end{figure}
 
 \subsection{Consultas}
 
