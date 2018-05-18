@@ -27,6 +27,8 @@
     \usepackage{subcaption}   
     \usepackage{float}
     \usepackage{listings}
+    
+    %\usepackage{texttt}
 
 %encoding
 %--------------------------------------
@@ -249,8 +251,82 @@ A página de \textit{Login} consiste num simples formulário constituído por du
 \end{figure}
 
 \subsection{Consultas}
+\begin{figure}[H]
+	\centering
+	\begin{minipage}{.5\textwidth}
+		\begin{center}
+			\includegraphics[width=0.9\textwidth]{placeholder} % Include the image placeholder.png
+			\subcaption{Main sem Login}
+			\label{fig:consultas1}
+		\end{center}
+	\end{minipage}%
+	\begin{minipage}{.5\textwidth}
+		\begin{center}
+			\includegraphics[width=0.9\textwidth]{placeholder} % Include the image placeholder.png
+			\subcaption{Main com Login}
+			\label{fig:consultas2}
+		\end{center}
+	\end{minipage}
+	\caption{Main}
+	\label{fig:consultas0}
+\end{figure}
+A página de Consultas assiste utilizadores sem conhecimentos de \textit{SQL} a criarem \textit{queries} para consultar a base de dados central. Na \autoref{fig:consultas1} observa-se várias \textit{checkboxes} e três caixas de texto. As \textit{checkboxes} permitem selecionar os atributos que se desejam consultar na base de dados, estes são guardados numa variável @atributos. Quando o botão \textit{Query} é premido é gerada uma das seguintes \textit{queries}:\\
+\begin{lstlisting}[language = SQL]
+	SELECT @atributos
+	FROM clientes;
+	
+	SELECT @atributos
+	FROM clientes
+	INNER JOIN moldes ON cl_ID = m_IDCliente;
+	
+	SELECT @atributos
+	FROM clientes
+	INNER JOIN moldes ON cl_ID = m_IDCliente
+	INNER JOIN sensores ON m_ID = s_IDMolde
+	INNER JOIN tipo ON s_tipo = tipo_ID;
+	
+	SELECT @atributos FROM clientes
+	INNER JOIN moldes ON cl_ID = m_IDCliente
+	INNER JOIN sensores ON m_ID = s_IDMolde 
+	INNER JOIN tipo ON s_tipo = tipo_ID
+	INNER JOIN registos ON s_IDMolde = r_IDMolde
+	AND s_num = r_numSensor
+	INNER JOIN fase ON r_fase = fase_ID;
+\end{lstlisting}
+Esta seleção é feita com base na coluna mais à esquerda a que os atributos pertencem. Explicando melhor com um exemplo: se o utilizador desejar consultar o cl\texttt{\char`_}ID e o cl\texttt{\char`_}nome da tabela clientes é gerada a primeira \textit{query} no entanto, se o utilizador desejar consultar os atributos cl\texttt{\char`_}ID, m\texttt{\char`_}ID e s\texttt{\char`_}num, a coluna mais à esquerda é a dos sensores logo, é gerada a terceira \textit{query}.\\
+Além destas, existem três \textit{queries} especificas quando os atributos tipo\texttt{\char`_}nome, fase\texttt{\char`_}nome e r\texttt{\char`_}data\texttt{\char`_}hora são selecionados sozinhos. As primeiras duas permitem consultar as opções disponíveis nos dicionários e a terceira devolve o primeiro e último registo.\\
+As caixas de texto Filtros e Ordem permitem adicionar às \textit{queries} geradas as cláusulas WHERE e ORDER BY, respetivamente. Para os utilizadores com conhecimentos em \textit{SQL} está disponibilizada a caixa de texto \textit{Query} que permite a criação direta de uma \textit{query}. Este campo está limitado apenas para \textit{queries} do tipo SELECT.\\
+Depois da \textit{query} ser gerada é retornada uma resposta num novo separador como demonstrado na \autoref{fig:consultas2}. O \textit{link} deste resposta contém toda a informação da \textit{query} gerada. Este pode ser arquivado ou enviado para outro utilizador sem ser necessário gerar a \textit{query} novamente, isto é útil para \textit{queries} com muitas cláusulas.\\
+Se a \textit{query} não for válida é retornado um erro de forma a informar o utilizador, como demonstrado nas Figuras \ref{fig:consultas4}, \ref{fig:consultas5} e \ref{fig:consultas6}.
+\begin{figure}[H]
+	\centering
+	\begin{minipage}{.5\textwidth}
+		\begin{center}
+			\includegraphics[width=0.9\textwidth]{placeholder} % Include the image placeholder.png
+			\subcaption{Main sem Login}
+			\label{fig:consultas4}
+		\end{center}
+	\end{minipage}%
+	\begin{minipage}{.5\textwidth}
+		\begin{center}
+			\includegraphics[width=0.9\textwidth]{placeholder} % Include the image placeholder.png
+			\subcaption{Main com Login}
+			\label{fig:consultas5}
+		\end{center}
+	\end{minipage}
+	\begin{minipage}{.5\textwidth}
+		\begin{center}
+			\includegraphics[width=0.9\textwidth]{placeholder} % Include the image placeholder.png
+			\subcaption{Main com Login}
+			\label{fig:consultas6}
+		\end{center}
+	\end{minipage}
+	\caption{Main}
+	\label{fig:consultas3}
+\end{figure}
 
 \subsection{Administração}
+
 
 \subsection{Conexão local}
 
