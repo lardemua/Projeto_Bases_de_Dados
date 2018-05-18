@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.5.18)  18 MAY 2018 09:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.5.18)  18 MAY 2018 12:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -581,27 +581,7 @@ Now handling font encoding PD1 ...
    defining Unicode char U+2026 (decimal 8230)
    defining Unicode char U+2122 (decimal 8482)
    defining Unicode char U+2423 (decimal 9251)
-))
-(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
-Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.def
-File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
-LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
-)
-! Font T1/cmr/m/n/10.95=ecrm1095 at 10.95pt not loadable: Metric (TFM) file not
- found.
-<to be read again> 
-                   relax 
-l.105 \fontencoding\encodingdefault\selectfont
-                                              
-I wasn't able to read the size data for this font,
-so I will ignore the font specification.
-[Wizards can fix TFM files using TFtoPL/PLtoTF.]
-You might try inserting a different font spec;
-e.g., type `I\font<same font id>=<substitute font name>'.
-
-) (./example.aux)
+)) (./example.aux)
 \openout1 = `example.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
@@ -618,7 +598,8 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 53.
 LaTeX Font Info:    ... okay on input line 53.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 53.
 LaTeX Font Info:    ... okay on input line 53.
- (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+
+(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count112
 \scratchdimen=\dimen119
@@ -671,134 +652,8 @@ File: uaLogoOld.pdf Graphic file (type pdf)
 <use uaLogoOld.pdf>
 Package pdftex.def Info: uaLogoOld.pdf used on input line 63.
 (pdftex.def)             Requested size: 136.5866pt x 170.71652pt.
-LaTeX Font Info:    Try loading font information for T1+cmss on input line 63.
- (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmss.fd
-File: t1cmss.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-! Font T1/cmss/m/n/10.95=ecss1095 at 10.95pt not loadable: Metric (TFM) file no
-t found.
-<to be read again> 
-                   relax 
-l.63          {\ThesisYear}
-                           
-I wasn't able to read the size data for this font,
-so I will ignore the font specification.
-[Wizards can fix TFM files using TFtoPL/PLtoTF.]
-You might try inserting a different font spec;
-e.g., type `I\font<same font id>=<substitute font name>'.
-
-! Font T1/cmss/bx/n/10.95=ecsx1095 at 10.95pt not loadable: Metric (TFM) file n
-ot found.
-<to be read again> 
-                   relax 
-l.63          {\ThesisYear}
-                           
-I wasn't able to read the size data for this font,
-so I will ignore the font specification.
-[Wizards can fix TFM files using TFtoPL/PLtoTF.]
-You might try inserting a different font spec;
-e.g., type `I\font<same font id>=<substitute font name>'.
-
-Missing character: There is no U in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no v in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no A in font nullfont!
-Missing character: There is no v in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no D in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no p in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no m in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no E in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no , in font nullfont!
-Missing character: There is no T in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no m in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no I in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no f in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no m in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no , in font nullfont!
-Missing character: There is no 2 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no 1 in font nullfont!
-Missing character: There is no 8 in font nullfont!
-Missing character: There is no U in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no v in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no A in font nullfont!
-Missing character: There is no v in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no o in font nullfont!
 LaTeX Font Info:    Try loading font information for U+msa on input line 63.
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 63.
@@ -811,234 +666,14 @@ File: uaLogoNew.pdf Graphic file (type pdf)
  <use uaLogoNew.pdf>
 Package pdftex.def Info: uaLogoNew.pdf used on input line 63.
 (pdftex.def)             Requested size: 20.48633pt x 25.60747pt.
-
-! Font T1/cmr/m/n/24.88=ecrm2488 at 24.88pt not loadable: Metric (TFM) file not
- found.
-<to be read again> 
-                   relax 
-l.63          {\ThesisYear}
-                           
-I wasn't able to read the size data for this font,
-so I will ignore the font specification.
-[Wizards can fix TFM files using TFtoPL/PLtoTF.]
-You might try inserting a different font spec;
-e.g., type `I\font<same font id>=<substitute font name>'.
-
-! Font T1/cmss/m/n/24.88=ecss2488 at 24.88pt not loadable: Metric (TFM) file no
-t found.
-<to be read again> 
-                   relax 
-l.63          {\ThesisYear}
-                           
-I wasn't able to read the size data for this font,
-so I will ignore the font specification.
-[Wizards can fix TFM files using TFtoPL/PLtoTF.]
-You might try inserting a different font spec;
-e.g., type `I\font<same font id>=<substitute font name>'.
-
-! Font T1/cmss/bx/n/24.88=ecsx2488 at 24.88pt not loadable: Metric (TFM) file n
-ot found.
-<to be read again> 
-                   relax 
-l.63          {\ThesisYear}
-                           
-I wasn't able to read the size data for this font,
-so I will ignore the font specification.
-[Wizards can fix TFM files using TFtoPL/PLtoTF.]
-You might try inserting a different font spec;
-e.g., type `I\font<same font id>=<substitute font name>'.
-
-Missing character: There is no D in font nullfont!
-Missing character: There is no O in font nullfont!
-Missing character: There is no C in font nullfont!
-Missing character: There is no U in font nullfont!
-Missing character: There is no M in font nullfont!
-Missing character: There is no E in font nullfont!
-Missing character: There is no N in font nullfont!
-Missing character: There is no T in font nullfont!
-Missing character: There is no O in font nullfont!
-Missing character: There is no P in font nullfont!
-Missing character: There is no R in font nullfont!
-Missing character: There is no O in font nullfont!
-Missing character: There is no V in font nullfont!
-Missing character: There is no I in font nullfont!
-Missing character: There is no S in font nullfont!
-Missing character: There is no O in font nullfont!
-Missing character: There is no R in font nullfont!
-Missing character: There is no I in font nullfont!
-Missing character: There is no O in font nullfont!
-! Font T1/cmr/m/n/14.4=ecrm1440 at 14.4pt not loadable: Metric (TFM) file not f
-ound.
-<to be read again> 
-                   relax 
-l.65 ...dustrial usando Bases de Dados MÃºltiplas}
-                                                  
-I wasn't able to read the size data for this font,
-so I will ignore the font specification.
-[Wizards can fix TFM files using TFtoPL/PLtoTF.]
-You might try inserting a different font spec;
-e.g., type `I\font<same font id>=<substitute font name>'.
-
-! Font T1/cmss/m/n/14.4=ecss1440 at 14.4pt not loadable: Metric (TFM) file not 
-found.
-<to be read again> 
-                   relax 
-l.65 ...dustrial usando Bases de Dados MÃºltiplas}
-                                                  
-I wasn't able to read the size data for this font,
-so I will ignore the font specification.
-[Wizards can fix TFM files using TFtoPL/PLtoTF.]
-You might try inserting a different font spec;
-e.g., type `I\font<same font id>=<substitute font name>'.
-
-! Font T1/cmss/bx/n/14.4=ecsx1440 at 14.4pt not loadable: Metric (TFM) file not
- found.
-<to be read again> 
-                   relax 
-l.65 ...dustrial usando Bases de Dados MÃºltiplas}
-                                                  
-I wasn't able to read the size data for this font,
-so I will ignore the font specification.
-[Wizards can fix TFM files using TFtoPL/PLtoTF.]
-You might try inserting a different font spec;
-e.g., type `I\font<same font id>=<substitute font name>'.
-
-Missing character: There is no B in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no M in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no M in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no R in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no m in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no S in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no m in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no R in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no h in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no A in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no m in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no z in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no m in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no R in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no m in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no I in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no f in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no m in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no ç in font nullfont!
-Missing character: There is no ã in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no S in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no m in font nullfont!
-Missing character: There is no P in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no I in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no B in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no D in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no M in font nullfont!
-Missing character: There is no ú in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no p in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no s in font nullfont!
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 66.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 66.
-[1
+ [1
 
- <./uaLogoOld.pdf> <./uaLogoNew.pdf>]
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./uaLogoOld.pdf> <./uaLogo
+New.pdf>]
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 67.
 Package babel Info: Redefining portuges shorthand "|
@@ -1049,333 +684,6 @@ been already used, duplicate ignored
                    \relax 
 l.67 \titlepage\ \endtitlepage
                                % empty page [1]
-Missing character: There is no o in font nullfont!
-Missing character: There is no j in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no / in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no h in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no j in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no y in font nullfont!
-Missing character: There is no p in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no / in font nullfont!
-Missing character: There is no p in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no A in font nullfont!
-Missing character: There is no B in font nullfont!
-Missing character: There is no C in font nullfont!
-
-! Font T1/cmss/m/n/10=ecss1000 at 10.0pt not loadable: Metric (TFM) file not fo
-und.
-<to be read again> 
-                   relax 
-l.77         Universidade de Aveiro)}}
-                                      
-I wasn't able to read the size data for this font,
-so I will ignore the font specification.
-[Wizards can fix TFM files using TFtoPL/PLtoTF.]
-You might try inserting a different font spec;
-e.g., type `I\font<same font id>=<substitute font name>'.
-
-Missing character: There is no P in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no f in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no C in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no U in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no v in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no A in font nullfont!
-Missing character: There is no v in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no ( in font nullfont!
-Missing character: There is no p in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no g in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no R in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no U in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no v in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no A in font nullfont!
-Missing character: There is no v in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no ) in font nullfont!
-
-Underfull \hbox (badness 10000) in paragraph at lines 77--77
-
- []
-
-Missing character: There is no v in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no g in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no / in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no x in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no m in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no m in font nullfont!
-Missing character: There is no m in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no D in font nullfont!
-Missing character: There is no E in font nullfont!
-Missing character: There is no F in font nullfont!
-Missing character: There is no P in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no f in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no C in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no U in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no v in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no A in font nullfont!
-Missing character: There is no v in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no ( in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no ) in font nullfont!
-
-Underfull \hbox (badness 10000) in paragraph at lines 81--81
-
- []
-
-Missing character: There is no G in font nullfont!
-Missing character: There is no H in font nullfont!
-Missing character: There is no I in font nullfont!
-Missing character: There is no P in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no f in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no U in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no v in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no J in font nullfont!
-Missing character: There is no ( in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no - in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no ) in font nullfont!
-
-Underfull \hbox (badness 10000) in paragraph at lines 85--85
-
- []
-
-Missing character: There is no K in font nullfont!
-Missing character: There is no L in font nullfont!
-Missing character: There is no M in font nullfont!
-Missing character: There is no P in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no f in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no C in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no U in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no v in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no N in font nullfont!
-
-Underfull \hbox (badness 10000) in paragraph at lines 89--89
-
- []
-
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 90.
 Package babel Info: Redefining portuges shorthand "|
@@ -1396,55 +704,6 @@ been already used, duplicate ignored
                    \relax 
 l.91 \titlepage\ \endtitlepage
                                % empty page [1]
-Missing character: There is no a in font nullfont!
-Missing character: There is no g in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no m in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no / in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no k in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no w in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no g in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no m in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no g in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no g in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no g in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no g in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no g in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no g in font nullfont!
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 99.
 Package babel Info: Redefining portuges shorthand "|
@@ -1465,34 +724,6 @@ been already used, duplicate ignored
                    \relax 
 l.100 \titlepage\ \endtitlepage
                                 % empty page [1]
-Missing character: There is no R in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no m in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no g in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no g in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no g in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no g in font nullfont!
-Missing character: There is no b in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no g in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no g in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no g in font nullfont!
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 108.
 Package babel Info: Redefining portuges shorthand "|
@@ -1513,50 +744,6 @@ been already used, duplicate ignored
                    \relax 
 l.109 \titlepage\ \endtitlepage
                                 % empty page [1]
-Missing character: There is no A in font nullfont!
-Missing character: There is no b in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no N in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no w in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no y in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no , in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no v in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no w in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no k in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no . in font nullfont!
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 115.
 Package babel Info: Redefining portuges shorthand "|
@@ -1577,555 +764,12 @@ been already used, duplicate ignored
                    \relax 
 l.116 \titlepage\ \endtitlepage
                                 % empty page [1]
-! Font T1/cmr/bx/n/24.88=ecbx2488 at 24.88pt not loadable: Metric (TFM) file no
-t found.
-<to be read again> 
-                   relax 
-l.124 \tableofcontents
-                      
-I wasn't able to read the size data for this font,
-so I will ignore the font specification.
-[Wizards can fix TFM files using TFtoPL/PLtoTF.]
-You might try inserting a different font spec;
-e.g., type `I\font<same font id>=<substitute font name>'.
-
-Missing character: There is no C in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no ú in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no o in font nullfont!
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 124.
-(./example.toc
-! Font T1/cmr/bx/n/10.95=ecbx1095 at 10.95pt not loadable: Metric (TFM) file no
-t found.
-<to be read again> 
-                   relax 
-l.2 ...sline {chapter}{Conte\'udo}{i}{section.0.1}
-                                                  
-I wasn't able to read the size data for this font,
-so I will ignore the font specification.
-[Wizards can fix TFM files using TFtoPL/PLtoTF.]
-You might try inserting a different font spec;
-e.g., type `I\font<same font id>=<substitute font name>'.
-
-Missing character: There is no C in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no ú in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no L in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no F in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no g in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no L in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no T in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no b in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no v in font nullfont!
-Missing character: There is no 1 in font nullfont!
-Missing character: There is no I in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no ç in font nullfont!
-Missing character: There is no ã in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no 1 in font nullfont!
-Missing character: There is no 2 in font nullfont!
-Missing character: There is no E in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no A in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no P in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no p in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no S in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no ç in font nullfont!
-Missing character: There is no ã in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no 5 in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 1 in font nullfont!
-Missing character: There is no I in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no f in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 5 in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 2 in font nullfont!
-Missing character: There is no B in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no D in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 5 in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 2 in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 1 in font nullfont!
-Missing character: There is no A in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no á in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no R in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no q in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 5 in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 2 in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 2 in font nullfont!
-Missing character: There is no D in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no h in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no p in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no q in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no m in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no ó in font nullfont!
-Missing character: There is no g in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 5 in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 2 in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no C in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no ç in font nullfont!
-Missing character: There is no ã in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no b in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 5 in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 2 in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 4 in font nullfont!
-Missing character: There is no P in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no g in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no m in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no f in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no ê in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 5 in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 2 in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 5 in font nullfont!
-Missing character: There is no G in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no ã in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no e in font nullfont!
-! Font T1/cmr/m/it/10.95=ecti1095 at 10.95pt not loadable: Metric (TFM) file no
-t found.
-<to be read again> 
-                   relax 
-l.14 ...de \textit {backups}}{5}{subsection.3.2.5}
-                                                  
-I wasn't able to read the size data for this font,
-so I will ignore the font specification.
-[Wizards can fix TFM files using TFtoPL/PLtoTF.]
-You might try inserting a different font spec;
-e.g., type `I\font<same font id>=<substitute font name>'.
-
-Missing character: There is no b in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no k in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no p in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 5 in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 2 in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 6 in font nullfont!
-Missing character: There is no S in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no m in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 5 in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 2 in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 7 in font nullfont!
-Missing character: There is no U in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no z in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 5 in font nullfont!
-Missing character: There is no 4 in font nullfont!
-Missing character: There is no A in font nullfont!
-Missing character: There is no p in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no ç in font nullfont!
-Missing character: There is no ã in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no 7 in font nullfont!
-Missing character: There is no 4 in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 1 in font nullfont!
-Missing character: There is no A in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no p in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no ç in font nullfont!
-Missing character: There is no ã in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no f in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 7 in font nullfont!
-Missing character: There is no 4 in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 2 in font nullfont!
-Missing character: There is no I in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no f in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no g in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no á in font nullfont!
-Missing character: There is no f in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 7 in font nullfont!
-Missing character: There is no 4 in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 2 in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 1 in font nullfont!
-Missing character: There is no M in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 7 in font nullfont!
-Missing character: There is no 4 in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 2 in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 2 in font nullfont!
-Missing character: There is no L in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no g in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 7 in font nullfont!
-Missing character: There is no 4 in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 2 in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no C in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 7 in font nullfont!
-Missing character: There is no 4 in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 2 in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 4 in font nullfont!
-Missing character: There is no A in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no m in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no ç in font nullfont!
-Missing character: There is no ã in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 7 in font nullfont!
-Missing character: There is no 4 in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 2 in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 5 in font nullfont!
-Missing character: There is no C in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no x in font nullfont!
-Missing character: There is no ã in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 7 in font nullfont!
-Missing character: There is no 5 in font nullfont!
-Missing character: There is no I in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no ç in font nullfont!
-Missing character: There is no ã in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no S in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no m in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no 9 in font nullfont!
-Missing character: There is no 6 in font nullfont!
-Missing character: There is no C in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no õ in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no 1 in font nullfont!
-Missing character: There is no 1 in font nullfont!
-Missing character: There is no B in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no b in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no g in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no f in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no 1 in font nullfont!
-Missing character: There is no 3 in font nullfont!
-)
+ (./example.toc)
 \tf@toc=\write4
 \openout4 = `example.toc'.
 
-Missing character: There is no i in font nullfont!
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 126.
 Package babel Info: Redefining portuges shorthand "|
@@ -2133,8 +777,6 @@ Package babel Info: Redefining portuges shorthand "|
  [1
 
 ]
-Missing character: There is no i in font nullfont!
-Missing character: There is no i in font nullfont!
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 126.
 Package babel Info: Redefining portuges shorthand "|
@@ -2142,29 +784,13 @@ Package babel Info: Redefining portuges shorthand "|
  [2
 
 ]
-Missing character: There is no L in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no F in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no g in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no s in font nullfont!
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 127.
- (./example.lof)
+
+(./example.lof)
 \tf@lof=\write5
 \openout5 = `example.lof'.
 
-Missing character: There is no i in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no i in font nullfont!
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 129.
 Package babel Info: Redefining portuges shorthand "|
@@ -2172,8 +798,6 @@ Package babel Info: Redefining portuges shorthand "|
  [3
 
 ]
-Missing character: There is no i in font nullfont!
-Missing character: There is no v in font nullfont!
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 129.
 Package babel Info: Redefining portuges shorthand "|
@@ -2181,27 +805,12 @@ Package babel Info: Redefining portuges shorthand "|
  [4
 
 ]
-Missing character: There is no L in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no T in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no b in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no s in font nullfont!
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 130.
  (./example.lot)
 \tf@lot=\write6
 \openout6 = `example.lot'.
 
-Missing character: There is no v in font nullfont!
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 135.
 Package babel Info: Redefining portuges shorthand "|
@@ -2209,8 +818,6 @@ Package babel Info: Redefining portuges shorthand "|
  [5
 
 ]
-Missing character: There is no v in font nullfont!
-Missing character: There is no i in font nullfont!
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 135.
 Package babel Info: Redefining portuges shorthand "|
@@ -2221,952 +828,187 @@ Package babel Info: Redefining portuges shorthand "|
 Cap\'{\i }tulo 1.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 137.
-! Font T1/cmr/m/n/20.74=ecrm2074 at 20.74pt not loadable: Metric (TFM) file not
- found.
-<to be read again> 
-                   relax 
-l.137 \chapter{IntroduÃ§Ã£o}
-                            
-I wasn't able to read the size data for this font,
-so I will ignore the font specification.
-[Wizards can fix TFM files using TFtoPL/PLtoTF.]
-You might try inserting a different font spec;
-e.g., type `I\font<same font id>=<substitute font name>'.
-
-! Font T1/cmr/bx/n/20.74=ecbx2074 at 20.74pt not loadable: Metric (TFM) file no
-t found.
-<to be read again> 
-                   relax 
-l.137 \chapter{IntroduÃ§Ã£o}
-                            
-I wasn't able to read the size data for this font,
-so I will ignore the font specification.
-[Wizards can fix TFM files using TFtoPL/PLtoTF.]
-You might try inserting a different font spec;
-e.g., type `I\font<same font id>=<substitute font name>'.
-
-Missing character: There is no C in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no p in font nullfont!
-Missing character: There is no í in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no 1 in font nullfont!
-Missing character: There is no I in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no ç in font nullfont!
-Missing character: There is no ã in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no 1 in font nullfont!
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 139.
+(babel)             in language  on input line 141.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 139.
+(babel)             in language  on input line 141.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.139 \cleardoublepage
+l.141 \cleardoublepage
                        [1
 
 ]
-Missing character: There is no 2 in font nullfont!
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 139.
+(babel)             in language  on input line 141.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 139.
+(babel)             in language  on input line 141.
  [2
 
 ]
 Cap\'{\i }tulo 2.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 140.
-Missing character: There is no C in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no p in font nullfont!
-Missing character: There is no í in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no 2 in font nullfont!
-Missing character: There is no E in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no A in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 142.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 142.
+(babel)             in language  on input line 144.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 144.
 [3
 
 ]
-Missing character: There is no 4 in font nullfont!
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 142.
+(babel)             in language  on input line 144.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 142.
+(babel)             in language  on input line 144.
  [4
 
 ]
 Cap\'{\i }tulo 3.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 143.
-Missing character: There is no C in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no p in font nullfont!
-Missing character: There is no í in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no P in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no p in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no S in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no ç in font nullfont!
-Missing character: There is no ã in font nullfont!
-Missing character: There is no o in font nullfont!
-! Font T1/cmr/bx/n/14.4=ecbx1440 at 14.4pt not loadable: Metric (TFM) file not 
-found.
-<to be read again> 
-                   relax 
-l.146 \section
-              {Base de Dados}
-I wasn't able to read the size data for this font,
-so I will ignore the font specification.
-[Wizards can fix TFM files using TFtoPL/PLtoTF.]
-You might try inserting a different font spec;
-e.g., type `I\font<same font id>=<substitute font name>'.
-
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 1 in font nullfont!
-Missing character: There is no I in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no f in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no s in font nullfont!
+(babel)             in language  on input line 145.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 146.
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 2 in font nullfont!
-Missing character: There is no B in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no D in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no s in font nullfont!
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 147.
-! Font T1/cmr/m/n/12=ecrm1200 at 12.0pt not loadable: Metric (TFM) file not fou
-nd.
-<to be read again> 
-                   relax 
-l.149 \subsection
-                 {Desenho conceptual e esquema lÃ³gico}
-I wasn't able to read the size data for this font,
-so I will ignore the font specification.
-[Wizards can fix TFM files using TFtoPL/PLtoTF.]
-You might try inserting a different font spec;
-e.g., type `I\font<same font id>=<substitute font name>'.
-
-! Font T1/cmr/bx/n/12=ecbx1200 at 12.0pt not loadable: Metric (TFM) file not fo
-und.
-<to be read again> 
-                   relax 
-l.149 \subsection
-                 {Desenho conceptual e esquema lÃ³gico}
-I wasn't able to read the size data for this font,
-so I will ignore the font specification.
-[Wizards can fix TFM files using TFtoPL/PLtoTF.]
-You might try inserting a different font spec;
-e.g., type `I\font<same font id>=<substitute font name>'.
-
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 2 in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 1 in font nullfont!
-Missing character: There is no A in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no á in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no R in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no q in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no s in font nullfont!
+(babel)             in language  on input line 148.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 149.
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 2 in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 2 in font nullfont!
-Missing character: There is no D in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no h in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no p in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no q in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no m in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no ó in font nullfont!
-Missing character: There is no g in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no o in font nullfont!
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 151.
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 2 in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no C in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no ç in font nullfont!
-Missing character: There is no ã in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no b in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no s in font nullfont!
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 153.
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 2 in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 4 in font nullfont!
-Missing character: There is no P in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no g in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no m in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no f in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no ê in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no a in font nullfont!
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 155.
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 2 in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 5 in font nullfont!
-Missing character: There is no G in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no ã in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no e in font nullfont!
-! Font T1/cmr/bx/it/12=ecbi1200 at 12.0pt not loadable: Metric (TFM) file not f
-ound.
-<to be read again> 
-                   relax 
-l.157 \subsection
-                 {Simulador}
-I wasn't able to read the size data for this font,
-so I will ignore the font specification.
-[Wizards can fix TFM files using TFtoPL/PLtoTF.]
-You might try inserting a different font spec;
-e.g., type `I\font<same font id>=<substitute font name>'.
-
-Missing character: There is no b in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no k in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no p in font nullfont!
-Missing character: There is no s in font nullfont!
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 157.
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 2 in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 6 in font nullfont!
-Missing character: There is no S in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no m in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no r in font nullfont!
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 159.
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 2 in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 7 in font nullfont!
-Missing character: There is no U in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no z in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 161.
-Missing character: There is no 5 in font nullfont!
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 161.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 161.
+(babel)             in language  on input line 163.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 163.
 [5
 
 ]
-Missing character: There is no 6 in font nullfont!
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 161.
+(babel)             in language  on input line 163.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 161.
+(babel)             in language  on input line 163.
  [6
 
 ]
 Cap\'{\i }tulo 4.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 162.
-Missing character: There is no C in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no p in font nullfont!
-Missing character: There is no í in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no 4 in font nullfont!
-Missing character: There is no A in font nullfont!
-Missing character: There is no p in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no ç in font nullfont!
-Missing character: There is no ã in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no 4 in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 1 in font nullfont!
-Missing character: There is no A in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no p in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no ç in font nullfont!
-Missing character: There is no ã in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no f in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no a in font nullfont!
+(babel)             in language  on input line 164.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 166.
-Missing character: There is no 4 in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 2 in font nullfont!
-Missing character: There is no I in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no f in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no g in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no á in font nullfont!
-Missing character: There is no f in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no a in font nullfont!
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 168.
-Missing character: There is no 4 in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 2 in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 1 in font nullfont!
-Missing character: There is no M in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no n in font nullfont!
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 170.
-Missing character: There is no 4 in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 2 in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 2 in font nullfont!
-Missing character: There is no L in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no g in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no n in font nullfont!
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 172.
-Missing character: There is no 4 in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 2 in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no C in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no s in font nullfont!
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 174.
-Missing character: There is no 4 in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 2 in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 4 in font nullfont!
-Missing character: There is no A in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no m in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no ç in font nullfont!
-Missing character: There is no ã in font nullfont!
-Missing character: There is no o in font nullfont!
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 176.
-Missing character: There is no 4 in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 2 in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 5 in font nullfont!
-Missing character: There is no C in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no x in font nullfont!
-Missing character: There is no ã in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no l in font nullfont!
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 179.
-Missing character: There is no 7 in font nullfont!
+(babel)             in language  on input line 178.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 179.
+(babel)             in language  on input line 181.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 179.
+(babel)             in language  on input line 181.
 [7
 
 ]
-Missing character: There is no 8 in font nullfont!
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 179.
+(babel)             in language  on input line 181.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 179.
+(babel)             in language  on input line 181.
  [8
 
 ]
 Cap\'{\i }tulo 5.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 180.
-Missing character: There is no C in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no p in font nullfont!
-Missing character: There is no í in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no 5 in font nullfont!
-Missing character: There is no I in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no ç in font nullfont!
-Missing character: There is no ã in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no S in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no m in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no 9 in font nullfont!
-Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 182.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 182.
+(babel)             in language  on input line 184.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 184.
 [9
 
 ]
-Missing character: There is no 1 in font nullfont!
-Missing character: There is no 0 in font nullfont!
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 182.
+(babel)             in language  on input line 184.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 182.
+(babel)             in language  on input line 184.
  [10
 
 ]
 Cap\'{\i }tulo 6.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 183.
-Missing character: There is no C in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no p in font nullfont!
-Missing character: There is no í in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no 6 in font nullfont!
-Missing character: There is no C in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no õ in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no 1 in font nullfont!
-Missing character: There is no 1 in font nullfont!
+(babel)             in language  on input line 185.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 189.
+(babel)             in language  on input line 191.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 189.
+(babel)             in language  on input line 191.
 [11
 
 ]
-Missing character: There is no 1 in font nullfont!
-Missing character: There is no 2 in font nullfont!
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 189.
+(babel)             in language  on input line 191.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 189.
+(babel)             in language  on input line 191.
  [12
 
 ]
-Missing character: There is no B in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no b in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no g in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no f in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no a in font nullfont!
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 200.
-Missing character: There is no [ in font nullfont!
-Missing character: There is no 1 in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no ] in font nullfont!
-Missing character: There is no [ in font nullfont!
-Missing character: There is no 1 in font nullfont!
-Missing character: There is no ] in font nullfont!
-Missing character: There is no S in font nullfont!
-Missing character: There is no h in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no m in font nullfont!
-Missing character: There is no E in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no h in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no T in font nullfont!
-Missing character: There is no h in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no p in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no b in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no m in font nullfont!
-Missing character: There is no : in font nullfont!
-Missing character: There is no N in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no w in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no w in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no b in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no v in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no y in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no g in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no h in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no D in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no M in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no h in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no m in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no , in font nullfont!
-Missing character: There is no 1 in font nullfont!
-Missing character: There is no 1 in font nullfont!
-Missing character: There is no 8 in font nullfont!
-Missing character: There is no ( in font nullfont!
-Missing character: There is no 1 in font nullfont!
-Missing character: There is no - in font nullfont!
-Missing character: There is no - in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no ) in font nullfont!
-Missing character: There is no : in font nullfont!
-Missing character: There is no 4 in font nullfont!
-Missing character: There is no 5 in font nullfont!
-Missing character: There is no - in font nullfont!
-Missing character: There is no - in font nullfont!
-Missing character: There is no 5 in font nullfont!
-Missing character: There is no 6 in font nullfont!
-Missing character: There is no , in font nullfont!
-Missing character: There is no 1 in font nullfont!
-Missing character: There is no 9 in font nullfont!
-Missing character: There is no 9 in font nullfont!
-Missing character: There is no 3 in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no [ in font nullfont!
-Missing character: There is no 2 in font nullfont!
-Missing character: There is no ] in font nullfont!
-Missing character: There is no L in font nullfont!
-Missing character: There is no y in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no E in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no G in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no O in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no h in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no z in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no g in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no h in font nullfont!
-Missing character: There is no m in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no P in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no g in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no f in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no h in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no A in font nullfont!
-Missing character: There is no m in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no M in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no h in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no m in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no S in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no y in font nullfont!
-Missing character: There is no , in font nullfont!
-Missing character: There is no 8 in font nullfont!
-Missing character: There is no 2 in font nullfont!
-Missing character: There is no ( in font nullfont!
-Missing character: There is no 1 in font nullfont!
-Missing character: There is no ) in font nullfont!
-Missing character: There is no : in font nullfont!
-Missing character: There is no 1 in font nullfont!
-Missing character: There is no 9 in font nullfont!
-Missing character: There is no - in font nullfont!
-Missing character: There is no - in font nullfont!
-Missing character: There is no 2 in font nullfont!
-Missing character: There is no 2 in font nullfont!
-Missing character: There is no , in font nullfont!
-Missing character: There is no M in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no y in font nullfont!
-Missing character: There is no 1 in font nullfont!
-Missing character: There is no 9 in font nullfont!
-Missing character: There is no 8 in font nullfont!
-Missing character: There is no 1 in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 1 in font nullfont!
-Missing character: There is no 3 in font nullfont!
+(babel)             in language  on input line 202.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 214.
+(babel)             in language  on input line 216.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 214.
+(babel)             in language  on input line 216.
  [13
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Missing character: There is no 1 in font nullfont!
-Missing character: There is no 4 in font nullfont!
+]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 214.
+(babel)             in language  on input line 216.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 214.
+(babel)             in language  on input line 216.
  [14
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 216.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 216.
-
-(./example.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 216.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 216.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 218.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 218.
+ (./example.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 218.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 218.
 Package rerunfilecheck Info: File `example.out' has not changed.
 (rerunfilecheck)             Checksum: 803244438C2C90845E2749666187E1AE;1666.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 216.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 218.
  ) 
 Here is how much of TeX's memory you used:
- 7134 strings out of 494929
- 98727 string characters out of 6180142
- 186275 words of memory out of 5000000
- 10246 multiletter control sequences out of 15000+600000
- 8288 words of font info for 32 fonts, out of 8000000 for 9000
+ 6921 strings out of 494929
+ 96582 string characters out of 6180142
+ 186925 words of memory out of 5000000
+ 10050 multiletter control sequences out of 15000+600000
+ 13828 words of font info for 50 fonts, out of 8000000 for 9000
  16 hyphenation exceptions out of 8191
- 34i,10n,30p,238b,410s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb>
-Output written on example.pdf (30 pages, 26727 bytes).
+ 34i,10n,32p,238b,412s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmti10.pfb>
+Output written on example.pdf (30 pages, 125558 bytes).
 PDF statistics:
- 288 PDF objects out of 1000 (max. 8388607)
- 249 compressed objects within 3 object streams
+ 312 PDF objects out of 1000 (max. 8388607)
+ 267 compressed objects within 3 object streams
  53 named destinations out of 1000 (max. 500000)
  219 words of extra memory for PDF output out of 10000 (max. 10000000)
 
