@@ -197,7 +197,11 @@ A aplicação divide-se em cinco partes distintas:
 	\item Administração
 	\item Conexão Local
 \end{itemize}
-A aplicação foi realizada com vista a uma utilização geral e local. A primeira visa um uso a partir de qualquer dispositivo e acessível a qualquer momento e a segunda foca-se num acesso local com o objetivo de configurar e definir a informação no servidor local. As páginas Main, Login, Consultas e parte das funcionalidades da Administração foram realizadas para uma utilização geral. As páginas Conexão Local e as restantes funcionalidades da Administração foram realizadas para uma utilização local.
+A aplicação foi realizada com vista a uma utilização geral e local. A primeira visa um uso a partir de qualquer dispositivo e acessível a qualquer momento e a segunda foca-se num acesso local com o objetivo de configurar e definir a informação no servidor local.\\
+\\
+DIZER QUE INSTALAR UM MOLDE É O CULMINAR DE MESES DE PROJETO E QUE ESTE METODO SSERVE PARA DIMNUIR FALHAS\\
+\\
+As páginas Main, Login, Consultas e parte das funcionalidades da Administração foram realizadas para uma utilização geral. As páginas Conexão Local e as restantes funcionalidades da Administração foram realizadas para uma utilização local.
 
 \subsection{\textit{Main}}
 \begin{figure}[H]
@@ -249,6 +253,7 @@ A página de \textit{Login} consiste num simples formulário constituído por du
 	\caption{Main}
 	\label{fig:login1}
 \end{figure}
+É PRECISO FALAR DO LOGOUT CARALHOOOOOOO
 
 \subsection{Consultas}
 \begin{figure}[H]
@@ -326,9 +331,78 @@ Se a \textit{query} não for válida é retornado um erro de forma a informar o 
 \end{figure}
 
 \subsection{Administração}
-
+\begin{figure}[H]
+	\centering
+	\begin{minipage}{.5\textwidth}
+		\begin{center}
+			\includegraphics[width=0.9\textwidth]{placeholder} % Include the image placeholder.png
+			\subcaption{Main sem Login}
+			\label{fig:admin1}
+		\end{center}
+	\end{minipage}%
+	\begin{minipage}{.5\textwidth}
+		\begin{center}
+			\includegraphics[width=0.9\textwidth]{placeholder} % Include the image placeholder.png
+			\subcaption{Main com Login}
+			\label{fig:admin2}
+		\end{center}
+	\end{minipage}
+	\caption{Main}
+	\label{fig:admin0}
+\end{figure}
+A área de Administração permite ao utilizador alterar informações sobre os clientes, moldes e sensores. A partir de qualquer dispositivo só é possível aceder à Gestão de Clientes como demonstrado na \autoref{fig:admin1}. Nesta área a informação dos clientes pode ser alterada com o formulário demonstrado na \autoref{fig:admin3}. Os botões Adicionar Cliente, Alterar Cliente e Eliminar Cliente executam \textit{queries} do tipo INSERT, UPDATE e DELETE, respetivamente.\\
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.65\textwidth]{placeholder} % Include the image placeholder.png
+		\caption{Esquema ligação temporária}
+		\label{fig:admin3}
+	\end{center}
+\end{figure}
+Como referido anteriormente a aplicação divide-se numa alteração geral e local, todas as funcionalidades descritas até agora têm em vista uma utilização geral. As restantes funcionalidades que são descritas até ao final do capítulo visam um uso local. Por outras palavras, para o utilizador usar estas funcionalidades tem de aceder à aplicação no servidor local que se situa no cliente.\\
+Após uma conexão bem sucedida ao servidor local do cliente são desbloqueadas novas áreas de gestão como mostra a \autoref{fig:admin2}. As áreas de Gestão de Moldes e Gestão de Sensores demonstradas nas Figuras \ref{fig:admin6} e \ref{fig:admin7}, permitem ao utilizador criar e apagar moldes e sensores, respetivamente. Estes dados são inseridos na base de dados temporária local, aqui o utilizador pode criar e apagar moldes e sensores sem afetar o sistema. Desta forma é possível confirmar a informação introduzida antes de a inserir no sistema. Os botões de Criar e Apagar nestes formulários realizam \textit{queries} do tipo INSERT e DELETE. Quando a informação dos moldes e sensores estiver completa o botão Validar tenta registar os valores presentes na base de dados temporária local nas bases de dados central e local.\\
+QUERY\\
+Se a ação não executar com sucesso é retornado um erro \textit{MySQL} de forma a informar o utilizador. Se a ação executar com sucesso a base de dados temporária local é limpa e os valores são registados permanentemente nas bases de dados central e local. Depois de criados, moldes e sensores, não podem ser eliminados via aplicação.\\
+PORQUE\\
+Voltando a área de Gestão Clientes, após a conexão local, é desbloqueada uma nova funcionalidade como demonstra a \autoref{fig:admin5}. O botão Atualizar permite reiniciar o programa de transferência de valores para que este crie um novo subprograma para o cliente em que se adicionou a informação dos moldes e sensores. Com o comando:\\
+grep\\
+É possível obter os números de processo dos programas que estão a transferir valores. Estes valores são armazenados na variável @pids. Para terminar os programas utiliza-se o seguinte comando:\\
+kill -2 @pids\\
+A opção -2 permite enviar para o processo escolhido o sinal SIGINT que é o sinal esperado pelo programa para que este termine as suas rotinas antes de encerrar. Para iniciar novamente o comando usar:\\
+~/path/transferencia
+\begin{figure}[H]
+	\centering
+	\begin{minipage}{.5\textwidth}
+		\begin{center}
+			\includegraphics[width=0.9\textwidth]{placeholder} % Include the image placeholder.png
+			\subcaption{Main sem Login}
+			\label{fig:admin5}
+		\end{center}
+	\end{minipage}%
+	\begin{minipage}{.5\textwidth}
+		\begin{center}
+			\includegraphics[width=0.9\textwidth]{placeholder} % Include the image placeholder.png
+			\subcaption{Main com Login}
+			\label{fig:admin6}
+		\end{center}
+	\end{minipage}
+	\begin{minipage}{.5\textwidth}
+		\begin{center}
+			\includegraphics[width=0.9\textwidth]{placeholder} % Include the image placeholder.png
+			\subcaption{Main com Login}
+			\label{fig:admin7}
+		\end{center}
+	\end{minipage}
+	\caption{Main}
+	\label{fig:admin4}
+\end{figure}
+Nas várias áreas de gestão é possível observar os botões Ver Clientes, Ver Moldes e Ver Sensores que executam respetivamente as \textit{queries}:\\
+QUERIES\\
+Estas fornecem algumas informações contextuais de forma a facilitar a navegação do utilizador.
 
 \subsection{Conexão local}
+só aparecem clientes com 0 moldes.\\
+criar local gera queries.\\
+passos para instalar o mysql no linux.
 
 
 \cleardoublepage
@@ -336,7 +410,18 @@ Se a \textit{query} não for válida é retornado um erro de forma a informar o 
 
 \cleardoublepage
 \chapter{Conclusões}
+\section{Observações sobre Infraestrutura}
+objetivos concluidos, consumo elevado de processador
 
+\section{Observações Aplicação}
+objetivos concluidos, baixa performance por causa do php.\\
+sugerir alterar para java e o metodo de instalação.
+
+\section{Observações gerais}
+Apesar de algumas quebras de performance o sistema está pronto a ser usado. So tem de ser denvolvido um programa para inserir a query especifica.
+
+\section{trabalhos futuros}
+Make over e sistema de notificações.
 
 %
 % The bibliography
