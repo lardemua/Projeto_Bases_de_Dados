@@ -6,7 +6,7 @@ adicionar no fim secure_file_priv=""
 sudo /etc/init.d/mysql restart
 mysql -u root -p
 CREATE USER 'user'@'%' IDENTIFIED BY 'password';
-GRANT ALL PRIVILEGES ON *.* TO 'user'@'%';
+GRANT ALL PRIVILEGES ON *.* TO 'user'@'%' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
 sudo apt-get install libmysqlclient-dev
 sudo apt-get install apache2

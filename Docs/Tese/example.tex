@@ -1,0 +1,216 @@
+%
+% uaThesis example (for a thesis written in Portuguese)
+%
+% the complete list of options and commands can be found in uaThesis.sty
+%
+
+\documentclass[11pt,twoside,a4paper]{report}
+\usepackage[DETI,newLogo]{uaThesis}
+
+\def\ThesisYear{2018}
+
+% optional packages
+\usepackage[portuguese]{babel}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{xspace}% used by \sigla
+
+%encoding
+%--------------------------------------
+\usepackage[utf8]{inputenc}
+%\usepackage[T1]{fontenc}
+%--------------------------------------
+
+% optional (comment to use default)s
+%   depth of the table of contents
+%     1 ... chapther and sections
+%     2 ... chapters, sections, and subsections
+%     3 ... chapters, sections, subsections, and subsubsections
+\setcounter{tocdepth}{3}
+
+% optional (comment to used default)
+%   horizontal line to separate floats (figures and tables) from text
+\def\topfigrule{\kern 7.8pt \hrule width\textwidth\kern -8.2pt\relax}
+\def\dblfigrule{\kern 7.8pt \hrule width\textwidth\kern -8.2pt\relax}
+\def\botfigrule{\kern -7.8pt \hrule width\textwidth\kern 8.2pt\relax}
+
+% custom macros (could also be defined using \newcommand)
+\def\I{\mathtt{i}}         % one possible way to represent $\sqrt{-1}$
+\def\Exp#1{e^{2\pi\I #1}}  % argument inside braces, i.e., "{}"
+\def\EXP#1.{e^{2\pi\I #1}} % argument finishes when a full stop is encountered, i.e., "."
+\def\sigla{\LaTeX\xspace}  % use as "blabla \sigla blabla (no need to do "blabla \sigla\ blabla"
+
+\def\AddVMargin#1{\setbox0=\hbox{#1}%
+                  \dimen0=\ht0\advance\dimen0 by 2pt\ht0=\dimen0%
+                  \dimen0=\dp0\advance\dimen0 by 2pt\dp0=\dimen0%
+                  \box0}   % add extra vertical space above and below the argument (#1)
+\def\Header#1#2{\setbox1=\hbox{#1}\setbox2=\hbox{#2}%
+           \ifdim\wd1>\wd2\dimen0=\wd1\else\dimen0=\wd2\fi%
+           \AddVMargin{\parbox{\dimen0}{\centering #1\\#2}}} % put #1 on top #2
+
+
+\begin{document}
+
+%
+% Cover page (use only one of the first two \TitlePage)
+%
+
+% First alternative, with a figure
+\TitlePage
+  %\GRID  % for debugging ONLY
+  \HEADER{\BAR\FIG{\includegraphics[height=60mm]{uaLogoOld}}} % the \FIG{} is optional
+         {\ThesisYear}
+  \TITLE{Bruno Manuel \newline de Moura Ramos}
+        {Sistema de Recolha e Armazenamento Remoto de Informação Sensorial de um Processo Industrial usando Bases de Dados Múltiplas}
+\EndTitlePage
+\titlepage\ \endtitlepage % empty page
+
+
+\TitlePage
+  \vspace*{55mm}
+  \TEXT{\textbf{o juri/the jury\newline}}
+       {}
+  \TEXT{presidente/president}
+       {\textbf{ABC}\newline {\small
+        Professor Catedratico da Universidade de Aveiro (por delegacao da Reitora da
+        Universidade de Aveiro)}}
+  \vspace*{5mm}
+  \TEXT{vogais/examiners committee}
+       {\textbf{DEF}\newline {\small
+        Professor Catedratico da Universidade de Aveiro (orientador)}}
+  \vspace*{5mm}
+  \TEXT{}
+       {\textbf{GHI}\newline {\small
+        Professor associado da Universidade J (co-orientador)}}
+  \vspace*{5mm}
+  \TEXT{}
+       {\textbf{KLM}\newline {\small
+        Professor Catedratico da Universidade N}}
+\EndTitlePage
+\titlepage\ \endtitlepage % empty page
+
+\TitlePage
+  \vspace*{55mm}
+  \TEXT{\textbf{agradecimentos~/\newline acknowledgements}}
+       {ergergerg}
+  \TEXT{}
+       {ergergerg}
+\EndTitlePage
+\titlepage\ \endtitlepage % empty page
+
+\TitlePage
+  \vspace*{55mm}
+  \TEXT{\textbf{Resumo}}
+       {ergergergerg}
+  \TEXT{}
+       {bergergerg}
+\EndTitlePage
+\titlepage\ \endtitlepage % empty page
+
+\TitlePage
+  \vspace*{55mm}
+  \TEXT{\textbf{Abstract}}
+       {Nowadays, it is usual to evaluate a work \ldots}
+\EndTitlePage
+\titlepage\ \endtitlepage % empty page
+
+
+%
+% Tables of contents, of figures, ...
+%
+
+\pagenumbering{roman}
+\tableofcontents
+
+\cleardoublepage
+\listoffigures
+
+\cleardoublepage
+\listoftables
+
+
+% The chapters (usually written using the isolatin font encoding ...)
+
+\cleardoublepage
+\pagenumbering{arabic}
+\chapter{Introdução}
+
+\cleardoublepage
+\chapter{Estado de Arte}
+
+\cleardoublepage
+\chapter{Proposta de Solução}
+\section{Infraestrutura de dados}
+
+\section{Base de Dados}
+\subsection{Análise de Requisitos}
+
+\subsection{Desenho conceptual e esquema lógico}
+
+\subsection{Construção da base de dados}
+
+\subsection{Programa de transferência}
+
+\subsection{Gestão de \textit{backups}}
+
+\subsection{Simulador}
+
+\subsection{Utilizadores}
+
+\cleardoublepage
+\chapter{Aplicação}
+
+\section{Adaptação da infraestrutura}
+
+\section{Interface gráfica}
+
+\subsection{\textit{Main}}
+
+\subsection{\textit{Login}}
+
+\subsection{Consultas}
+
+\subsection{Administração}
+
+\subsection{Conexão local}
+
+
+\cleardoublepage
+\chapter{Instalação do Sistema}
+
+\cleardoublepage
+\chapter{Conclusões}
+
+
+%
+% The bibliography
+%
+\cleardoublepage
+\iffalse
+  % Use this is the final version
+  %  unsrt produces numbered entries, sorted by order of citation
+  %  plain produces numbered entries, sorted alphabetically
+  %  other styles are possible (I recommend the harvard package)
+  \bibliographystyle{unsrt}
+  %\bibliographystyle{plain}
+  \bibliography{my-bib-file}% replace by the name of name of your .bib file
+\else
+  % An example (the contents of the .bbl file)
+  \begin{thebibliography}{10}
+
+  \bibitem{Eliahou-1-1993-CLBNCL}
+  Shalom Eliahou.
+  \newblock The $3x+1$ problem: New lower bounds on nontrivial cycle lengths.
+  \newblock {\em Discrete Mathematics}, 118(1--3):45--56, 1993.
+
+  \bibitem{Garner-1981-1-OCA}
+  Lynn~E. Garner.
+  \newblock On the collatz $3n+1$ algorithm.
+  \newblock {\em Proceedings of the American Mathematical Society}, 82(1):19--22,
+    May 1981.
+  \end{thebibliography}
+\fi
+\cleardoublepage
+
+\end{document}

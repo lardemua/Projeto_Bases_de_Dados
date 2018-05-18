@@ -1,0 +1,2182 @@
+% -------------------------------------------------------------
+% |  Template de tese da UA, em língua portuguesa             |
+% |  Lista completa de opções e comandos em uaThesis.sty      |
+% -------------------------------------------------------------
+% |  Fevereiro, 2011                                          |
+% |  Universidade de Aveiro                                   |
+% |  Criado por T. Oliveira e Silva                           |
+% |  Modificado/adaptado por F. Teixeira-Dias & M. Paulino    |
+% -------------------------------------------------------------
+\documentclass[11pt,twoside,a4paper,openright]{report}    % Estilo relatório
+                                                  % openright: página inicial de cada capítulo sempre ímpar
+
+% -------------------------------------------------------------
+% Preâmbulo do documento - pacotes
+% -------------------------------------------------------------
+% Package para teses UA
+\usepackage[usecolor,newLogo,DEM]{uaThesis}              % provisório
+%\usepackage[usecolor,newLogo,DEM,final]{uaThesis}       % final
+%
+\renewcommand\PackageError[3]{[[[ERROR FOR PACKAGE #1]]]}
+\usepackage{amssymb}                              % Símbolos da American Mathematical Society
+\usepackage{mathtools}
+\usepackage{amsmath}
+%\usepackage[citebordercolor={1 1 1},linkbordercolor={1 1 1}]{hyperref}      
+\usepackage{float}
+\usepackage{listings}
+\lstset{
+  basicstyle=\ttfamily,
+  columns=fullflexible,
+  showstringspaces=false,
+  commentstyle=\color{gray}\upshape
+}
+
+\usepackage[backend=bibtex, sorting=none]{biblatex}
+\addbibresource{bib/own/own_refs.bib}
+
+ % Links activos no pdf
+                                                  % Opção citebordercolor={0.9 0.9 0.9} para cor do border
+                                                  % Opção linkbordercolor={0.9 0.9 0.9} para cor do border
+\usepackage{textcomp}                             % Símbolos e caracteres especiais
+\usepackage{indentfirst}                         % Indentação do primeiro parágrafo de cada secção
+\usepackage{fancyhdr}                             % Utilização de fancy headings
+%\usepackage[square,sort&compress]{natbib}         % Ordenação e gestão de referências bibliográficas
+\usepackage{epsfig}                               % Permite utilização de figuras em formato EPS
+%\usepackage{subfig}                               % Ambiente para gestão de subfiguras
+\usepackage{multirow}                             % Agrupamento de linhas em tabelas
+\usepackage{layout}
+%\usepackage{citesort}
+\usepackage{graphicx} %imagens
+\graphicspath{ {Imagens/} }
+\usepackage{blindtext}
+\usepackage{subfig}
+\usepackage{forest}
+\usepackage{color}
+\usepackage{booktabs} % To thicken table lines
+\usepackage{tabularx}
+
+
+%diagranas:
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows,chains,calc,backgrounds}
+
+% Define block styles
+\tikzstyle{block} = [rectangle, draw, fill=white!20, 
+    text width=7em, text centered, minimum height=4em]
+\tikzstyle{line} = [draw, -latex']
+\tikzstyle{linha} = [draw, -latex', -]
+\tikzstyle{cloud} = [draw, ellipse,fill=white!20, node distance=3cm,
+    minimum height=2em]
+\tikzstyle{ball} = [draw, circle,fill=white!20, text centered]
+\tikzstyle{decision} = [diamond,draw, fill=white!20, node distance=3cm, minimum height=2em, text centered]
+\tikzstyle{vazio} = [rectangle, draw=white!20, fill=white!20, 
+    text width=7em, text centered, minimum height=4em]
+\tikzstyle{tracejado} = [draw, -latex', dashed]
+
+\usepackage{grafcet}
+\usepackage{fancyref}
+\usepackage{pgfplots} %grafico barra
+\usepackage{pgf-pie} %package pie
+\pgfplotsset{compat=1.8}
+\usepackage[toc,page]{appendix}
+\defbibnote{myprenote}{All the online references were visited between May 2017 and July 2017} %bibnote
+
+% -------------------------------------------------------------
+% Preâmbulo do documento - Escrita em língua portuguesa
+% -------------------------------------------------------------
+\usepackage[latin1]{inputenc}                     % Caracteres acentuados do Português
+\usepackage[portuguese,english]{babel}                    % Hifenização e títulos
+\usepackage[T1]{fontenc}                          % Codificação das fontes
+
+\usepackage[acronym,automake]{glossaries}
+\makeglossaries
+
+% --------------------
+% Acronimos
+% --------------------
+\newacronym{ROS}{ROS}{Robot Operating System}
+\newacronym{DoF}{DoF}{Degrees of Freedom}
+\newacronym{US}{US}{United States}
+\newacronym{NASA}{NASA}{National Aeronautics and Space Administration}
+\newacronym{FTS}{FTS}{Flight Telerobotic Servicer}
+\newacronym{NASREM}{NASREM}{NASA/NBS Standard Reference Model for Telerobot Control System Architecture}
+\newacronym{DKKI}{DKKI}{German Research Center for Artificial Intelligence}
+\newacronym{CNS}{CNS}{Central Nervous System}
+\newacronym{PNS}{PNS}{Peripheral Nervous System}
+\newacronym{USB}{USB}{Universal Serial Bus}
+\newacronym{ERM}{ERM}{Eccentric Rotating Mass}
+\newacronym{BLDC}{BLDC}{Brush-less Direct Current}
+\newacronym{LRA}{LRA}{Linear Resonant Actuator}
+\newacronym{PWM}{PWM}{Pulse Width Modulation}
+\newacronym{SAIL}{SAIL}{Stanford Artificial Intelligence Laboratory}
+\newacronym{MOC}{MOC}{Meta-Object Compiler}
+\newacronym{IDE}{IDE}{Integrated Development Environment}
+\newacronym{GUI}{GUI}{Graphical User Interface}
+\newacronym{CPU}{CPU}{Central Processing Unit}
+\newacronym{ISR}{ISR}{Interrupt Service Routine}
+\newacronym{CAD}{CAD}{Computer Aided Design}
+\newacronym{PCB}{PCB}{Printed Circuit Board}
+\newacronym{DETI}{DETI}{Department of Electronics, Telecommunications and Informatics}
+\newacronym{DC}{DC}{Direct Current}
+\newacronym{3D}{3D}{Three-Dimensional}
+\newacronym{DEM}{DEM}{Mechanical Engineering Department}
+\newacronym{UART}{UART}{Universal Asynchronous Receiver/Transmitter}
+\newacronym{uC}{$\mu$C}{Microcontroller}
+\newacronym{LAR}{LAR}{Laboratory for Automation and Robotics of the University of Aveiro}
+\newacronym{FAT}{FAT}{File Allocation Table}
+\newacronym{BMP}{BMP}{Bitmap image file}
+% -------------------------------------------------------------
+% Preâmbulo do documento - Definições da tese
+% -------------------------------------------------------------
+\newcommand{\authorname}{Joana Gil Távora de Almeida Ferreira}         % Nome do autor da tese
+\newcommand{\thesistitle}{Interface háptica distribuída para aplicações em teleoperação robótica e reabilitação \\ Distributed haptic interface for applications in robotic teleoperation and rehabilitation} % Título da tese
+\newcommand{\thesisyear}{2017}                                % Ano da tese
+\newcommand{\thesisdegree}{Mestrado}                          % Grau
+\newcommand{\sciarea}{Engenharia Mecânica}                    % Área científica da tese
+% -------------------------------------------------------------\usepackage{forest}
+
+% Preâmbulo do documento - Equipa de orientação
+% -------------------------------------------------------------
+\newcommand{\profdoc}{Prof. Doutor}                            % Grau geral
+\newcommand{\supervisor}{Vitor Manuel Ferreira dos Santos}                  % Orientador
+\newcommand{\supdegree}{Professor Associado}                   % Grau académico do orientador
+\newcommand{\supfili}{Departamento de Engenharia Mecânica}    % Filiação do orientador
+\newcommand{\cosupervisor}{Filipe Miguel Teixeira Pereira da Silva}        % Co-orientadorScreenshot from 2017-06-06 17-44-04
+\newcommand{\cosupdegree}{Professor Auxiliar}              % Grau académico do co-orientador
+\newcommand{\cosupfili}{Departamento de Eletronica e Telecomunicações}     % Filiação do co-orientador
+\newcommand{\cosupuni}{Universidade de Aveiro}                 % Instituição do co-orientador
+% -------------------------------------------------------------
+% Preâmbulo do documento - Membros do júri
+% -------------------------------------------------------------
+\newcommand{\tribpresident}{Presidente}                    % Presidente do júri
+\newcommand{\tribpresidentcat}{Professor Catedrático}         % Categoria do presidente do júri
+\newcommand{\tribi}{Juri1}                  % Elemento do júri 1
+\newcommand{\tribicat}{Professor Associado}                   % Categoria do elemento do júri 1
+\newcommand{\tribifili}{Universidade do Algarve}              % Filiação do elemento do júri 1
+\newcommand{\tribii}{Juri2}                      % Elemento do júri 2
+\newcommand{\tribiicat}{Professor Auxiliar}                   % Categoria do elemento do júri 2
+\newcommand{\tribiifili}{Instituto Superior de Gestão}        % Filiação do elemento do júri 2
+
+
+% -------------------------------------------------------------
+% Preâmbulo do documento - Outros comandos
+% -------------------------------------------------------------
+\newcommand{\dd}{\textrm{d}}                                  % Operador diferencial
+\newcommand{\ngs}{\sigma}                                     % Sigma minúsculo
+\newcommand{\nga}{\alpha}                                     % Alfa minúsculo
+\newcommand{\ngb}{\beta}                                      % Beta minúsculo
+
+
+% -------------------------------------------------------------
+% Preâmbulo do documento - Margens e mancha gráfica
+% -------------------------------------------------------------
+\setlength{\textwidth}{147mm}                                 % Largura da mancha gráfica
+\setlength{\textheight}{225mm}                                % Altura da mancha gráfica
+\setlength{\topmargin}{0mm}                                   % Margem de topo (default=1in)
+\setlength\oddsidemargin{5mm}                                 % Margem direita páginas direitas
+\setlength\evensidemargin{5mm}                                % Margem esquerda páginas esquerdas
+
+
+
+% -------------------------------------------------------------
+% Início do documento
+% -------------------------------------------------------------
+\begin{document}
+
+
+% -------------------------------------------------------------
+% Definição da capa (com e sem figuras)
+% -------------------------------------------------------------
+\iffalse                                  % \iffalse: capa sem imagem, \iftrue: capa com imagem
+   \TitlePage                             % Capa da tese com uma imagem
+%      \DRAFT                             % Escreve "Documento Provisório" na página inicial
+%      \GRID                              % Desenha grelha rectangular de 3mm
+      \HEADER{\BAR\FIG{\includegraphics{./Imagens/nice.pdf}}}    % Imagem para a capa
+             {\thesisyear}
+      \TITLE{\authorname}
+            {\thesistitle}
+   \EndTitlePage
+\else
+   \TitlePage                                    % Capa da tese sem imagens, com citação
+%      \DRAFT                                    % Escreve "Documento Provisório" na página inicial
+%      \GRID                                     % Desenha grelha rectangular de 3mm
+      \HEADER{\BAR\FIG{\begin{minipage}{100mm}   % Largura da caixa da citação (<120mm)
+             {}    % Citação 1. Colocar {} para retirar citação
+         \begin{flushright}
+             {}  % Citação 2. Colocar {} para retirar citação
+         \end{flushright}
+      \end{minipage}}}
+          {\thesisyear}
+      \TITLE{\authorname}
+            {\thesistitle}
+\EndTitlePage
+\fi
+\titlepage\ \endtitlepage                        % Página de verso em branco
+
+
+% -------------------------------------------------------------
+% Definição da capa interior
+% -------------------------------------------------------------
+\TitlePage
+%   \PGRID                                       % Desenha grelha rectangular de 3mm
+   \HEADER{}{\thesisyear}
+   \TITLE{\authorname}
+        {\thesistitle}
+  \vspace*{15mm}
+  \TEXT{}
+       {Dissertação apresentada à Universidade de Aveiro para cumprimento dos requisitos necessários à obtenção do grau de \thesisdegree{} em \sciarea, realizada sob orientação científica de \supervisor, \supdegree{} do \supfili{} da Universidade de Aveiro e de \cosupervisor, \cosupdegree{} do \cosupfili{} da \cosupuni.}
+\EndTitlePage
+\titlepage\ \endtitlepage                        % Página de verso em branco
+
+
+% -------------------------------------------------------------
+% Definição da página do júri da dissertação (PT/EN)
+% -------------------------------------------------------------
+\TitlePage
+  \vspace*{55mm}
+  \TEXT{\textbf{O júri~/~The jury\newline}}
+       {}
+  \TEXT{Presidente~/~President}
+       {\textbf{\profdoc{} \tribpresident}\newline {\small
+        \tribpresidentcat{} da Universidade de Aveiro}}
+  \vspace*{5mm}
+  \TEXT{Vogais~/~Committee}
+       {\textbf{\profdoc{} \supervisor}\newline {\small
+        \supdegree{} da Universidade de Aveiro (orientador)}}
+  \vspace*{5mm}
+  \TEXT{}
+       {\textbf{\profdoc{} \cosupervisor}\newline {\small
+        \cosupdegree{} da \cosupfili{} (co-orientador)}}
+  \vspace*{5mm}
+  \TEXT{}
+       {\textbf{\profdoc{} \tribi}\newline {\small
+        \tribicat{} da \tribifili}}
+\vspace*{5mm}
+  \TEXT{}
+       {\textbf{\profdoc{} \tribii}\newline {\small
+        \tribiicat{} da \tribiifili}}
+\EndTitlePage
+
+\titlepage\ \endtitlepage                        % Página de verso em branco
+
+
+% -------------------------------------------------------------
+% Definição da página dos agradecimentos
+% -------------------------------------------------------------
+\TitlePage
+  \vspace*{55mm}
+  \TEXT{\textbf{Agradecimentos~/\newline Acknowledgements}}
+       {Em primeiro lugar, um agradecimento aos professores Vitor Santos e Filipe Silva pela sua orientação e apoio dados durante todo este projecto.\\ \\
+      Um obrigada ao Professor Miguel Oliveira e ao Heber Sobreira pela partilha do seu conhecimento e disponibilidade.\\ \\
+      Um obrigada ao Professor António Amaro e ao Doutor Paulo Margalho pela sua ajuda e colaboração .\\ \\
+     Um obrigada aos meus colegas do Laboratório de Automação e Robótica por toda a ajuda.\\ \\
+      À minha tia Fátima, um enorme obrigada. Sem ela este projecto nunca teria ganho vida. Literalmente!\\ \\
+      Por ultimo, um muito obrigada aos meus pais. Sem eles, nunca teria sido possivel. Ao meu pai, pela referência que foi e por toda a ajuda e conselhos que me foi dando ao longo dos anos. À minha mãe, um obrigada por todo o apoio e por não me ter expulsado de casa depois de não me ver por uns quantos dias.\\ \\
+      A todos, muito obrigada!}
+      
+\EndTitlePage
+\titlepage\ \endtitlepage                        % Página de verso em branco
+
+% -------------------------------------------------------------
+% Definição da página do resumo (PT)
+% -------------------------------------------------------------
+\TitlePage
+   \vspace*{55mm}
+   \TEXT{\textbf{Palavras-chave}}
+        {Háptica; interface háptica; háptica distribuída; reabilitação; teleoperação robótica; motores vibratórios.}
+   \vspace*{5mm}
+   \TEXT{\textbf{Resumo}}  
+        {A tecnologia háptica está cada vez mais presente na sociedade em áreas tão diversas como a saúde, a robótica e o lazer. Nesta dissertação desenvolveu-se um dispositivo háptico com o objetivo de ser utilizado na teleoperação robótica e na reabilitação. O dispositivo desenvolvido permite ao utilizador, através de uma interface gráfica, controlar uma rede de mini-motores vibratórios individualmente ou utilizando estímulos previamente definidos. O utilizador consegue assim definir que motor, ou que conjunto de motores, pretende activar e a intensidade dos mesmos.\\
+        No desenvolvimento do sistema utilizou-se a arquitetura ROS e a arquitetura Qt para a implementação do sistema de comunicação e da interface gráfica, e a plataforma Arduino para o comando dos motores vibratórios. Para a funcionalidade do dispositivo na área da reabilitação foi desenvolvida uma luva/manga composta por dezasseis motores vibratórios dispostos em pontos estratégicos tendo em conta os nervos do ser humano.\\
+        Todo o sistema foi testado e avaliado por pessoal médico e por uma amostra de voluntários com vários \textit{backgrounds}.\\
+        Uma análise realizada aos dados recolhidos mostrou que o método proposto foi bem sucedido.}
+        
+\EndTitlePage
+\titlepage\ \endtitlepage                        % Página de verso em branco
+
+
+% -------------------------------------------------------------
+% Definição da página do resumo (EN)
+% -------------------------------------------------------------
+\TitlePage
+   \vspace*{55mm}
+   \TEXT{\textbf{Keywords}}
+        {Haptic; haptic interface; distributed haptic; rehabilitation; robotic teleoperation; vibration motors.}
+   \vspace*{5mm}
+   \TEXT{\textbf{Abstract}}
+        {The haptic technology is increasingly present in society in diverse areas such as health, robotics and recreation. In the present work, a haptic device with the objective of being used in robotic teleoperation and rehabilitation was developed. The developed device allows the user, through the use of a graphical interface, to control a network of mini vibration motors, either individually or using predefined stimuli. Therefore, the user can define which motor, or which group of motors, to turn on and its intensity.\\
+        In the development of the system the platform ROS and platform Qt were used in the implementation of the communication system and the graphical interface, and the platform Arduino was used to do the command of the vibration motors. To the functionality of the device, a glove/sleeve composed by sixteen vibration motors displayed in strategical points according the human being dermatomes was developed.\\
+        The entire system was tested and evaluated by clinicians and by a sample of volunteers with different backgrounds.\\
+        An analysis to the collected data showed that the proposed method was successful.}
+\EndTitlePage
+\titlepage\ \endtitlepage                        % Página de verso em branco
+
+
+% -------------------------------------------------------------
+% Listas e definições iniciais da dissertação
+% -------------------------------------------------------------
+\pagenumbering{roman}          % Numeração romana para as primeiras páginas
+\tableofcontents               % Índice da dissertação
+\listoftables                  % Lista de tabelas
+\listoffigures                 % Lista de figuras
+\printglossary[type=\acronymtype, title=List of Acronyms]
+\cleardoublepage
+%\titlepage\ \endtitlepage      % Página de verso em branco
+\pagenumbering{arabic}         % Numeração árabe para as páginas restantes
+
+
+% ----------------------------------------------------------------
+% Definicao de headers e footers
+% ----------------------------------------------------------------
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter.#1}{}} % Capítulos em minúsculas
+\fancyhf{}                                                  % Reset aos headers e footers
+  \fancyhead[LE,RO]{\thepage}                               % Header Left-Even (LE), Right-Odd (RO)
+  \fancyhead[LO]{\leftmark}                                 % Header Left-Odd (LO)
+  \fancyhead[RE]{\leftmark}                                 % Header Right-Even (RE)
+  \fancyfoot[LE]{\authorname}                               % Footer Left-Even (LE)
+  \fancyfoot[LO]{\authorname}                               % Footer Left-Odd (LO)
+  \fancyfoot[RE]{\textit{Dissertação de \thesisdegree}}     % Footer Right-Even (RE)
+  \fancyfoot[RO]{\textit{Dissertação de \thesisdegree}}     % Footer Right-Odd (RO)
+  \renewcommand{\headrulewidth}{0.25pt}                     % Espessura da linha de header
+  \renewcommand{\footrulewidth}{0.25pt}                     % Espessura da linha de footer
+  \addtolength{\headheight}{0.5pt}                          % Espaçamento para a linha
+
+
+% ----------------------------------------------------------------
+% Corpo da tese - Parte I - Introdução
+% ----------------------------------------------------------------
+
+\chapter{Introduction} 
+\label{chap:Intro}   
+\section{Motivation and background}
+\label{sec:motivation}
+The perception of the state of complex systems by an operator can be a huge challenge, either by the number of \gls{DoF} or by the way that information is conveyed to the operator senses. That is particularly relevant in robotic teleoperation of robots with several \gls{DoF}, but also in the evaluation of effort states, pain or discomfort of human beings in physical exercise like, for example, in medical rehabilitation.
+
+To allow the operator a richer perception of a complex system state (like a robotic system or some electromyographic parameters of a human being in a therapeutic rehabilitation process), the development of an equipment that allows the perception by contact in an area of the operator's body was thought. This contact should somehow reflect one or more extern quantities that can come either from real or simulated sensors, connected to a robotic system (or a human patient) like humanoid robots. These sensations in the operator can transmit a big wealth of information and can complement other traditional perception processes like vision or hearing.
+
+In Robotics (for instance in the case of humanoid robots) these sensations can translate mechanical efforts, motion resistance, current, force sensors in robots, etc. In the human being they can translate position states, cutaneous pressure or muscular effort (by electromyography, body temperature, etc), or just simply create sensations that can emulate states or perception contexts for virtual reality or immersive multimedia experiences like multidimensional cinema.
+
+Since not every person (operator) feels touch the same way, a system calibration is necessary. That calibration can be done by applying stimuli in the operator just like in a diagnostic exam and then comparing the applied stimulus to what the operator really feels.
+
+The stimulus can have several types like pressure, vibration, sound, temperature or electro-stimulation. In this project, it is planned to explore essentially a contact form based in vibrations with adjustable intensity. 
+
+On Section~\ref{subsec:principleshaptic} the principles of haptic will be reviewed, however, and for an easier comprehension on what will be done in this project, haptic can be divided by the goal of the stimulation as Figure~\ref{fig:hapticdiagram} shows. \textcolor{red}{On the left side of the figure is the force and motion part. On the right side is the vibration part}.
+
+\begin{figure}[H]
+\centering
+\includegraphics [width=1\textwidth]{hapticsconnectionsdiagram.pdf}
+\caption{Classification based on goal of the stimulation} \label{fig:hapticdiagram}
+\end{figure}
+
+
+This project is going to be focused in the right side of the scheme, on the vibration area.
+
+\section{Objectives}
+To summarize what was initialized in Section~\ref{sec:motivation}, the main objectives for this project can be defined as the following:
+\begin{itemize}
+\item Development of a control system for a network of \textcolor{red}{mini vibration motors} motors;
+\item Development of a usable prototype so that the haptic interface parameters can be tested in a human being;
+\item Definition and test of variable stimulation patterns.
+\end{itemize}
+\newpage
+\section{State of the Art}
+\subsection{Principles of Haptic}
+\label{subsec:principleshaptic}
+Traditionally, there are five perception methods, the famous \textit{five senses}: palate, vision, smell, hearing and touch. With the absence of some of these senses, very simple tasks like standing, walking, seating, grabbing an object and writing can become very tricky. It is known that patients with total loss of their tactile senses are unable to drink out of soft plastic cups since they are unable to grasp and hold to the cup. Furthermore, when we place an object on a surface we combine information from our memory regarding the weight, compliance of the object and the friction of the surface \cite{ballesteros_implicit_nodate} with the information we receive from our tactile sense and our visual sense (for example the distance between the object and surface) \cite{lederman_2009}. 
+
+The touch is the first sense to develop in infants \cite{atkinson} and Thomas Aquina said in \textit{De Anima} that, without the possibility of touch, no other sense could exist: touch is «the first sense, the root and ground, as it were, of the other senses» \cite{anima}, defining touch as the most important sense of all.
+
+Even though that in modern times vision is considered the dominant sense, the touch continues to be important to the human behavior\cite{bert}. To this sense of touch the concept of haptic is associated.
+ 
+The term \textit{haptic} comes from the Greek word \textit{haptikos} which means being able to lay a hold of, be able to perceive, to grasp \cite{minerva}. Since the early 20th century, psychologists have been using this term to label the subfield of their studies that addressed human touch-based perception and manipulation \cite{barros_cooperative_2014}.
+
+In 1892 Max Dessoire introduced the concept of haptic as "the science of the human touch" \cite{jutte}. In 1966 Gibson defined it as "the sensibility of the individual to the world adjacent to his body by use of his body" \cite{gibson}.
+ 
+In the 70s and 80s, the robotic community also began to focus on manipulation, perception and interaction by touch \cite{cruz_haptic_2012}.
+ 
+Haptic also includes kinesthesia, also known as proprioception, which is the ability to perceive one's body position, movement and weight, therefore becoming common to designate the sensory motor components of haptic as the haptic channel \cite{hayward_haptic_2004}. 
+
+Currently, there are already some gadgets that use the tactile perception channel as they send out vibratory signals. For example, the vibratory mode of mobile phones and rumble packs in gaming controls have been in our daily routines since a long time ago \cite{nitsch_haptic_2012}.
+
+Haptic is also used for example in the military, not only for military training and safety enhancement, but also to analyze military maneuvers and operate vehicles. More, in cars and flight simulators the operator can also control the vehicle using for example a joystick and feel the feedback that it gives to the user.
+
+Another example occurs in the medical training. Due to the haptic contact, it is possible to simulate the contact with organs, which allows medicine students (and doctors) to practice for surgeries with an hologram and the touch sensation. 
+
+More advanced haptic interfaces make use of force feedback devices that can not only measure the position and contact forces of the user's hand, but also feedback position and force signals to the user\cite{taneber}. Thus, haptic interfaces allows human-machine interaction through touch and mostly in response to user movements.
+\subsection{Virtual Reality}
+In the 90s the technology had improved and a new type of haptic began to emerge: the virtualized haptic (computer haptic). As the name indicates, this is no more than a virtual environment where the user can feel by applying forces, vibrations and/or motion on the user. This mechanical simulation may be used to assist in the creation of computed virtual objects that can be physically palpated and controlled and also to allow remote control of machines and devices.
+
+This new sensory display modality presents information by exerting controlled forces on the human hand through a haptic interface, rather than, as in computer graphics, in the form of visual and auditory signals \cite{salisbury}. Unlike computer graphics where audio and visual channels feature unidirectional information and energy flow (system to user), haptic interaction is bidirectional as humans send and receive haptic signals\cite{tahnz}.
+
+Figure~\ref{fig:hapticmachine} illustrates the subsystems and information flow related to the interactions between users and haptic interfaces. On the right side there is the dynamical system of the haptic interface with a computer, and on the left side there is a dynamical system of the user with the central nervous system \cite{virtualenvironments}.
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics [width=1.1\textwidth]{HapticInteraction.png}
+\caption{Haptic interaction between humans and machines (adapted \cite{virtualenvironments})} \label{fig:hapticmachine}
+\end{figure}
+\begin{itemize}
+\item \textit{Human sensorimotor loop:} when a human user touches a real or virtual object, forces are imposed on the skin. The associated sensory information is conveyed to the brain and leads to perception. After interpreting the environment, the brain motor commands activate the muscles and result in hand and arm motion.
+\item \textit{Machine sensorimotor loop:} when the human user manipulates the end-effector of the haptic interface device, the position sensors on the device convey its tip position to the computer. The models of objects in the computer calculate in real-time the torque commands to the actuators on the haptic interface, so that appropriate reaction forces are applied on the user, leading to tactual perception of virtual objects.
+\end{itemize}
+
+Virtual reality technology allows the user to interact with computer simulated objects in real time and under real or imaginary conditions, and it is one of the technologies where haptic is the most useful. It is used in gaming but also in medical activity(Section~\ref{subsec:rehab}), robotics (Section~\ref{subsec:teleoperation}) and graphical art applications \cite{applicationshaptic}. Figure~\ref{fig:hapticarch} shows the basic architecture for a virtual reality application incorporating visual, auditory and haptic feedback.
+
+Application's main elements include:
+\begin{itemize}
+\item \textit{simulation engine}, responsible for computing the virtual environment's behavior over time;
+\item \textit{visual, auditory and haptic rendering algorithms}, which compute the virtual environment's graphic, sound and force responses toward the user;
+\item \textit{transducers}, which convert visual, audio, and force signals from the computer into a form the operator can perceive;
+\item \textit{human operator}, who typically interacts (bidirectional) with the haptic interface device and perceives audio and visual feedback , from computer, headphones, visual displays, etc.
+\end{itemize}
+\begin{figure}[H]
+\centering
+\includegraphics [width=0.7\textwidth]{hapticarchi.png}
+\caption{Basic architecture for a virtual reality application incorporating visual, auditory and haptic feedback\cite{salisbury})} \label{fig:hapticarch}
+\end{figure}
+
+Being able to touch and manipulate objects in an environment, in addition to just seeing or hearing them, provides a sense of immersion in the environment to the user, otherwise not possible, making haptic very important to the concept of virtual reality.
+
+\subsection{Robotic Teleoperation}
+\label{subsec:teleoperation}
+Teleoperation is the technical term for the remote control of a robot at a distance \cite{teleoperation1}. A teleoperation system allows humans to perform tasks that can be in an inaccessible environment without putting themselves at risk.
+
+Usually, a single operator is in control of the robot and feels some level of immersion in the remote environment \cite{teleoperation2}.
+
+Figure~\ref{fig:teleoperationsetup} sketches a teleoperation system set-up. The core idea of teleoperation is the connection between two distinct spatial domains which can be referred as the operator environment (where the human user is) and the teleoperator environment (where the robot/manipulator is)\cite{nitsch_haptic_2012}.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\textwidth]{teleoperationsetup.jpg}
+  \caption{Teleoperation System (adapted \cite{teleoperation3})}
+  \label{fig:teleoperationsetup}
+\end{figure}
+As can be seen in Figure~\ref{fig:teleoperationsetup}, on the left, in the operator environment, a operator (human) interacts with the controls and displays which define the human-machine interface of the operator device. A communication channel links the operator to the teleoperator device in the remote environment, where it controls the teleoperator's manipulator via actuators. This actuator usually has clamps or grippers as an end-effector that interacts physically with the objects in the remote environment \cite{nitsch_haptic_2012}.
+
+The industrial teleoperation systems have been around since the 50s when the Argonne National Laboratory developed a manipulation system with the aim of handling radioactive materials safely\cite{goertz}. Later, in the 60s, a teleoperation system was also used in the \gls{US} Army in the decommissioning of a nuclear warhead \cite{aracil}. Both of these examples show how important robotic teleoperation is, in the sense that it allows the human being to do something that could be dangerous for its safety.
+
+For instance, in the space industry the robotic teleoperation is also frequently used. There are several contributions of the \gls{US} \gls{NASA} in that area, such as the \gls{FTS} program \cite{mccain} and the \gls{NASREM} \cite{albus}.
+
+Although that in these past projects the robotic teleoperation was made without haptic feedback, currently there are already a few ones that use this technology.
+
+One of those examples is the AILA robot (Figure~\ref{fig:aila}). The \gls{DKKI} developed a system that allows to control a robot using an interface called CAPIO that simulates an exoskeleton at a distance of around 4000 km. As the operator is in Magnitogorsk in Russia, the AILA robot is in Bremen in Germany.
+
+As the user moves, the CAPIO interface transfers those movements to the robot and returns haptic feedback of the robot movement \cite{ailarevista}.
+
+\begin{figure}[H]
+    \centering
+    \def\svgwidth{\columnwidth}
+	\includegraphics[scale=0.25]{aila.jpg}
+\caption{AILA with Operator \cite{ailarobot}} 	\label{fig:aila}
+\end{figure}
+Another example of a haptic system is the OCEAN ONE (Figure~\ref{fig:oceanone}) developed by the University of Stanford. The OCEAN ONE is a underwater humanoid robot with haptic feedback that allows the researchers access to the deepness of the ocean, which use to be impossible for the human beings.
+
+This robot is equipped with force sensors in each hand and, being controlled by an operator, thanks to the haptic feedback, this operator can feel the weight and shape of what it finds under the sea \cite{oceanrevista}.
+
+\begin{figure}[H]
+    \centering
+    \def\svgwidth{\columnwidth}
+	\includegraphics[scale=0.15]{oceanone.jpg}
+\caption{OCEAN ONE \cite{oceanonerobot}} 	\label{fig:oceanone}
+\end{figure}
+On the medical department, with the increasing of the preference for non-invasive surgeries, the surgeon stops having the perception and palpation that previously had with the conventional surgery. 
+ 
+Thankfully, there are already some tele-tactile feedback systems in which a sensor present in the equipment that the doctor is using, allows the recording of every aspect of the interactions with the tissues. Then, those details are processed and sent to the tactile display of a master robot. 
+ 
+One example of robotic teleoperation in medicine is the very well known Da Vinci robots (Figure~\ref{fig:davincirobot}).
+\begin{figure}[H]
+    \centering
+    \def\svgwidth{\columnwidth}
+	\includegraphics[scale=0.4]{davincirobot.jpg}
+\caption{Da Vinci Robotic Surgery System \cite{davinci}} 	\label{fig:davincirobot}
+\end{figure}
+
+
+\subsection{Rehabilitation}
+\label{subsec:rehab}
+Physical rehabilitation is the process of restoring and regaining physical strength and function \cite{physical}. It is used to return (or give) the maximum of functionality to a person that has an acquired condition (for instance, to help treat a simple ankle sprain or to help a stroke survivor walk, talk and eat again). In rehabilitation, what the doctor tries to do is to restore, in an anatomic way, but more important, give the patient autonomy and functionality executing daily routines with the maximum normality. Figure~\ref{fig:rehab} is an example of what rehabilitation does, allowing the patient to regain the capability of walking normally.
+
+It can be used in orthopedic cases, musculoskeletal, neurological, cardiorespiratory, palliative and so on. It is applied since birth till death. 
+\begin{figure}[ht!]
+    \centering
+    \def\svgwidth{\columnwidth}
+	\includegraphics[scale=0.4]{rehabilitation.png}
+\caption[Rehabilitation example]{Example of rehabilitation where the patient regains the capability of walking normally \cite{rehab}} 	\label{fig:rehab}
+\end{figure}
+
+Sometimes, only one part of the spinal cord gets injured and depending on which part a person can feel different symptoms. This happens because the information regarding vibration and position/proprioception sensitivity is sent to a different part of the spinal cord than the pain/temperature sensitivity. For instance, a person can be able to feel pain but not know how their foot is positioned or feel vibration. 
+
+Due to the fact that the vibration felt with this motors is considered a superficial vibration (like the superficial pressure and slight touch) the information received by this sense of vibration is transmitted through the same channels as the pain and temperature (spinothalamic tract or anterolateral system of the spinal cord).
+\subsection{Nervous System}
+\label{subsec:nervoussytem}
+The nervous system is basically a collection of nerves (cylindrical bundles of fibers that start at the brain and central cord) and specialized cells (neurons) that transmit signals between different parts of the body\cite{nervoussystem}.
+
+In vertebrates, it consists of two main parts: the \gls{CNS} that consists of the brain and spinal cord and the \gls{PNS} that consists mainly of nerves that connect the \gls{CNS} to every other part of the body.
+
+The nerves that transmit data from the body to the brain are called sensory nerves. On the other hand, the motor nerves work the other way around. The Spinal nerves can operate both to receive and send data from the body to the brain, so they are called mixed nerves.
+
+Neurons send signals to other cells through thin fibers called axons that cause chemicals known as neurotransmitters to be release at junctions called synapses \cite{NIH}. Then the synapse gives a command to the cell. This entire communication process usually only takes a fraction of a millisecond. 
+
+Sensory nerves react to physical stimulus and send feedback to the \gls{CNS} and the motor nerves transmit signals to active the muscles or glands \cite{nervoussystem}. 
+
+A stimulus is an external or internal signal capable of causing a reaction in a cell or body. Every stimulus has four important features:
+\begin{itemize}
+\item Type (sensory way);
+\item Intensity;
+\item Location;
+\item Duration.
+\end{itemize}
+
+The type of stimulus can be classified as pressure, vibration, temperature, electro-stimulation, among others.
+
+One of the most important part of the nervous system is the spinal cord (Figure~\ref{fig:spinalcord1}). It is a long structure with a cylindrical shape that begins at the end of the brain stem and continues down to the upper lumbar region. 
+
+Emerging from the spinal cord between the vertebrae are 31 pairs of spinal nerves \cite{anatomyspinal} \cite{spinalcordanatomy}:
+\begin{itemize} 
+\item 8 cervical (C);
+\item 12 thoracic (T);
+\item 5 lumbar (L);
+\item 5 sacral (S);
+\item 1 coccygeal (Co) - mainly vestigial.
+\end{itemize}
+Each nerve emerges in two short branches (roots):
+\begin{itemize}
+\item One at the front (motor or anterior/ventral root) of the spinal cord;
+\item One at the back (sensory or posterior/dorsal root) of the spinal cord.
+\end{itemize}
+\begin{figure}[hbtp]
+    \centering
+    \def\svgwidth{\columnwidth}
+	\includegraphics[scale=0.5]{spinalcenas.jpg}
+\caption{Spinal Cord and Peripheral Nerves \cite{netter}} 	\label{fig:spinalcord1}
+\end{figure}
+
+The spinal nerves consist of the sensory nerve roots (dorsal), which enter the spinal cord at each level, and the motor roots (ventral), which emerge from the cord at each level \cite{anatomyspinal}.
+ 
+The surface of the skin is divided into specific areas called dermatomes (Figure~\ref{fig:dermatomes}) in which sensory nerves derive from a single spinal nerve root. Dermatomes are useful to help localize neurological levels \cite{dermatomes} because when information is detected in a dermatome the data is then sent to one of the peripheral nerves. 
+\begin{figure}[ht!]
+    \centering
+    \def\svgwidth{\columnwidth}
+	\includegraphics[scale=0.6]{dermatomes.jpg}
+\caption{Schematic demarcation of dermatomes shown as distinc segments \cite{netter}} 	\label{fig:dermatomes}
+\end{figure}
+\newpage
+\section{Thesis Guide}
+The stages of this work are presented in the following chapters, organized as follows:
+
+\begin{itemize}
+\item Chapter 1 briefly explained the context and objectives of the current project. A state of the art review on the principles of haptic, robotic teleoperation, nervous system and rehabilitation were also exposed;
+\item Chapter 2 consists of the presentation and explanation of the hardware and software used;
+\item Chapter 3 explains the development of the application both in the hardware and software part;
+\item Chapter 4 presents the experiments undertaken to test and validate the methodologies described in this project;
+\item Chapter 5 discusses the conclusions of this project and also presents some proposals for future works.
+\end{itemize}
+
+% ----------------------------------------------------------------
+% Corpo da tese - Parte II 
+% ----------------------------------------------------------------
+\chapter{Hardware and Software of the Infrastructure}
+\label{chap:Solution}   
+The idea around the solution is to build a motor network that can be placed in a prototype and be tested. To do so, a micro-controller, vibration motors and a graphical interface are needed. The micro-controller used is an Arduino, the interface was developed using Qt and ROS is responsible for the communication between the components. This chapter describes all those components and their inter-connections. 
+\section{Hardware}
+\subsection{Arduino Mega}
+\label{subsec:Arduinomega}
+To control the motors a micro-controller is needed. The choice made was to use an Arduino. Arduino is an Italian open source computer hardware and software company that produces prototyping and testing boards. Arduino board designs use a variety of microprocessors and controllers, the most usual being ATMEL micro-controller. The boards have both digital and analog input/output (I/O) pins that may be expandable by stacking shields and other circuits to them. These boards feature serial communications interfaces, including \gls{USB} which are also used for loading programs from personal computers.
+It is a very affordable solution and also easily expandable\cite{Arduino_site}.
+
+There are several Arduino models available, such as Arduino UNO, Arduino Micro, Arduino Nano, Arduino Mega (Figure~\ref{fig:ArduinoMega}), Arduino DUE, Arduino Leonardo and others.
+
+\begin{figure}[hbtp]
+  \centering
+  \includegraphics[width=0.7\textwidth]{Arduino-Mega-2560.jpg}
+  \caption{Arduino Mega 2560 \cite{ArduinoMEGA}}
+  \label{fig:ArduinoMega}
+\end{figure}
+Table~\ref{tab:ArduinoMega} shows some important characteristics of Arduino Mega 2560.
+
+\begin{table}[ht!]
+\caption{Arduino Mega 2560 characteristics \cite{ArduinoMEGA}}
+\centering
+\label{tab:ArduinoMega}
+\begin{tabular}{l|l} %tabela com 3 colunas
+\toprule
+CPU & ATMega2560 \\
+Operation Voltage & 5V\\ 
+Input Voltage & 7-12V \\
+Digital I/O Pins & 54 (15 PWM output) \\
+Analog Input Pins & 16 \\
+Flash Memory & 256KB (8KB used by bootloader) \\
+EEPROM & 4KB \\
+SRAM & 8KB \\
+Clock Speed & 16 MHz \\
+Dimensions & 101.52x53.3mm \\
+Weight & 37g 
+\end{tabular}
+\end{table}
+The biggest reason to chose Mega over other Arduino is the fact that, besides Arduino DUE, Mega is the \gls{uC} with the most digital IO pins (both with 54). However, since the Mega operating voltage is 5V and the DUE is 3.3V \cite{ArduinoCompare}, Arduino Mega was selected. 
+\newpage
+\subsection{Vibration Motors}
+\label{subsec:vibrationmotors}
+As mentioned in Chapter~\ref{chap:Intro}, one of the main goals of this project is to make a control system of a network of vibration motors.
+
+There are several vibration motors in the market, such as \gls{ERM} motors (in which the weight found on the rotating motors are what produces the vibration), \gls{BLDC} motors (this motor does not have brushes) and \gls{LRA} motors (a unique type of vibration motor with a performance similar to a speaker) \cite{motorsComparison}.
+
+The motors used in this project are \gls{ERM} motors, more specifically \gls{DC} brush motors (permanent magnet and brushes).
+
+Brushed \gls{DC} motors are widely used in applications ranging from toys to push-button adjustable seats. A standard \gls{DC} brush motor consists of: \cite{motorsfundamentals}
+\begin{itemize}
+\setlength\itemsep{-0.5em}
+\item Stator;
+\item Rotor;
+\item Brushes;
+\item Commutator.
+\end{itemize}
+The conceptual construction of a standard brushed motor is shown in Figure~\ref{fig:bcdmotor}.
+\begin{figure}[H]
+\centering
+\includegraphics [width=0.6\textwidth]{bcdmotor.png}
+\caption{Simple Two-Pole Brushed DC Motor \cite{motorsfundamentals}} \label{fig:bcdmotor}
+\end{figure}
+The \gls{ERM} motors appear in different form factors, as shown in Figure~\ref{fig:Motorforms}.
+\begin{figure}[H]
+\centering
+\includegraphics [width=0.8\textwidth]{vibrationmotorform.png}
+\caption{Vibration Motor Form Factors \cite{motorsComparison}} \label{fig:Motorforms}
+\end{figure}
+Since the "Coin Vibration Motor" form (top left on Figure~\ref{fig:Motorforms} and motor on Figure~\ref{fig:MotorDC}) is compact and easy to use it was the chosen for this project.
+\begin{figure}[ht!]
+\centering
+\includegraphics [width=0.5\textwidth]{vibmotor.png}
+\caption{Mini DC Motor \cite{adafruits}} \label{fig:MotorDC}
+\end{figure}
+Table~\ref{tab:DCMotorChar} shows some important characteristics of these motors.
+
+\begin{table}[H]
+\caption{Mini DC Motor Characteristics \cite{adafruits}}
+\centering
+\label{tab:DCMotorChar}
+\begin{tabular}{l|l} %tabela com 3 colunas
+\toprule
+Voltage & 2V-5V \\
+Diameter & 10mm \\
+Thickness & 2.7mm\\
+5V current draw & 100mA\\
+4V current draw & 80mA\\
+3V current draw & 60mA\\
+2V current draw & 40mA\\
+Weight & 0.9g
+\end{tabular}
+\end{table}
+\newpage
+\subsubsection{Motor Operation}
+Figure~\ref{fig:MotorAberto} shows a disassembled motor.
+
+Typically, a \gls{ERM} motor is a \gls{DC} motor with an offset (non-symmetric) mass attached to the shaft. In the case of the coin vibration motor, the non-symmetric mass is inside the motor capsule.
+
+The stator inside the motor generates a stationary magnetic field that surrounds the rotor. The rotor (or armature) is made up of the windings. When these windings are energized they produce a magnetic field, and when the magnetic poles of the rotor field start to be attracted to the opposite poles generated by the stator, the rotor starts to rotate \cite{motorsfundamentals}.
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics [width=0.8\textwidth]{motoraberto2.jpg}
+\caption{Motor Disassembled where 1 and 3 are the motor housing (3 having the brushes), 2 is the rotor and 4 is the magnet (stator)} \label{fig:MotorAberto}
+\end{figure}
+
+As the motor rotates, due to the fact that the center of mass of the non-symmetric mass is not in the geometric centroid, there is a net centrifugal force, which causes a displacement of the motor. As the motor is constantly being displaced, that is perceived as vibration.
+
+On Figure~\ref{fig:coinmotor} there is a scheme by Precision Microdrives that explains how the motor is built. 
+\begin{figure}[hbtp]
+\centering
+\includegraphics [width=1.1\textwidth]{coinmotor.jpg}
+\caption{Scheme of the vibration Motor \cite{coinmotors}} \label{fig:coinmotor}
+\end{figure}
+\subsubsection{Voltage Control}
+A \gls{PWM} signal is a type of digital waveform. It alternates between bursts of high (on/1) and low (off/0) at a fixed frequency. The difference between \gls{PWM} signal and other digital signals is the fact that the time that the signal is high (and therefore low) can be varied \cite{pwmaverageduty}.
+
+When the pulse width is changed, what is actually being changed is the average voltage allowing any value between zero and the maximum voltage to be represented by increasing or decreasing the ON pulse width. 
+
+The \gls{PWM} signal has three properties:
+\begin{itemize}
+\item A voltage amplitude, $V_{PWM}$ - the value of the ON or high voltage level;
+\item A Frequency - the inverse of a period of one clock cycle (one high pulse and one low pulse);
+\item A duty cycle - the ratio of ON/period time.
+\end{itemize}
+
+The average voltage of a \gls{PWM} wave can be calculated using equation (\ref{eq:dutycycle}).
+\begin{equation}
+\label{eq:dutycycle}
+V_{avg} = V_{PWM} \times DutyCycle
+\end{equation}
+For instance, for a 5V \gls{PWM} signal (Arduino Mega has a 5V output signal) with a duty cycle of 50\%, the average output voltage is calculated according to equation (\ref{eq:averageVoltage}).
+\begin{eqnarray}
+\label{eq:averageVoltage}
+V_{out} = V_{avg} = V_{PWM} \times DutyCycle  \\
+= 5V \times 50\% \nonumber \\ 
+= 2.5V \nonumber
+\end{eqnarray}
+
+This is the voltage that the motors will perceive on average if the frequency is large enough.
+
+\section{Software}
+\subsection{ROS}
+\label{subsec:ROS}
+\gls{ROS} is an open source software used for the development of robot applications. Its philosophy is to make a piece of software that could work in other robots by making little changes in the code. \gls{ROS} was originally developed in 2007 by the \gls{SAIL} and in 2008 Willow Garage continued its development. Currently a lot of companies and research institutions use \gls{ROS} for the development of their projects (such as the NAO robot in Figure~\ref{fig:naorobot}) \cite{okane_gentle_2014}.
+
+\begin{figure}[H]
+    \centering
+    \def\svgwidth{\columnwidth}
+	\includegraphics[scale=0.2]{naorobot.jpg}
+\caption{NAO Robot \cite{naorobot}} 	\label{fig:naorobot}
+\end{figure} 
+The sensors and actuators used in robotics have also been adapted to be used with \gls{ROS}, and each day, there is an increasing number of devices that are supported by this framework.
+
+\gls{ROS} provides standard operating system facilities such as hardware abstraction, low-level device control, implementation of commonly used functionalities, message passing between processes, and package management \cite{okane_gentle_2014}.
+
+There are several fundamental \gls{ROS} concepts. The most important concepts for this project are the following:
+\begin{itemize}
+\item Nodes;
+\item Master;
+\item Messages;
+\item Topics.
+\end{itemize}
+
+A \textbf{node} is a process that performs computation or other operations. Nodes are combined together and communicate with each other. A robot control system usually comprises many nodes \cite{nodes}. For instance, if there is a camera in a robot and the goal is to have the image from the camera both on the robot itself and on a computer screen, then there should be at least three nodes: A Camera node that deals with the communication with the camera, a Image Processing node on the robot that processes image data, and a Image Display Node that displays images on a screen \cite{ros101}. A \gls{ROS} node is an executable compiled with the written code. This code can be written in C++ or Python \cite{barros_cooperative_2014}.
+  
+The \gls{ROS} \textbf{Master} provides naming and registration services to the rest of the nodes in the \gls{ROS} system. The role of the Master is to enable individual \gls{ROS} nodes to locate one another so they can communicate with each other peer-to-peer \cite{master}.
+
+Figure~\ref{fig:rossystem} shows how these two concepts are related.
+\begin{figure}[H]
+    \centering
+    \def\svgwidth{\columnwidth}
+	\includegraphics[scale=0.7]{rossystem.pdf}
+\caption{\gls{ROS} Master and \gls{ROS} Nodes relationship (adapted from \cite{ros101})} 	\label{fig:rossystem}
+\end{figure} 
+
+To communicate with each other, nodes publish \textbf{messages}. A message is a simple data structure, comprising typed fields. Standard primitive types (such as integer, floating point, boolean, etc) are supported, as well as arrays of primitive types. Custom messages defined by the user are also allowed \cite{messages}.
+
+To send a message, the \gls{ROS} node publishes it to a given \textbf{topic}. The topic is a name that is used to identify the content of the message \cite{barros_cooperative_2014}. Nodes that are interested in data subscribe to a relevant topic, while nodes that generate data publish it. There can be multiple publishers and subscribers to a topic \cite{topics}. 
+\begin{figure}[H]
+    \centering
+ %   \def\svgwidth{\columnwidth}
+%	\includegraphics[scale=0.7]{topics.pdf}
+\begin{tikzpicture}[node distance = 4cm,auto]
+    % Place nodes
+    \node [cloud] (node1) {Node 1};
+    \node [block,right of=node1, node distance = 5cm] (topic1) {Topic 1};
+    \node [cloud, right of=topic1, node distance = 5cm] (node2) {Node 2};
+	\path [line] (node1) -- (topic1);
+	\path [line] (topic1) -- (node2);
+	\draw (topic1) -- (node2) node [midway, above] {subscribe};
+	\draw (node1) -- (topic1) node [midway, above] {publish};
+
+\end{tikzpicture}
+\caption{Two \gls{ROS} nodes communicating with each other over a \gls{ROS} Topic} 	\label{fig:rostopic}
+\end{figure} 
+Figure~\ref{fig:rostopic} illustrates how two nodes communicate with each other over a \gls{ROS} topic (Topic 1). The Node 1 is publishing information on Topic 1, while Node 2 subscribes to it to receive that information.
+
+The main advantage of using \gls{ROS} is that nodes in \gls{ROS} do not have to be on the same system (multiple computers) or written on the same language. This makes \gls{ROS} very flexible and adaptable to the needs of the user \cite{rosintro}. That is the main reason why \gls{ROS} was chosen over, for example, the creation of a shared memory.
+The communication between nodes can be done through messages or services. In this work, the method used is based on messages. For this, a publisher and a subscriber to a topic must be created, in which the first publishes the message as the second receives it and acts according to it.
+\subsection{Arduino Development Environment}
+The Arduino controller comes with its own \gls{IDE}: the Arduino Integrated Development Environment. It contains a text editor for writing code, a message area, a text console, a toolbar with buttons for common functions and a series of menus. It connects to the Arduino hardware to upload programs and communicate with them \cite{arduinoIDE}.
+
+The programming language of the Arduino is C/C++.
+
+\subsection{ROS and Arduino}
+To make the connection between ROS and the Arduino, Rosserial was used. Rosserial is a protocol for wrapping standard \gls{ROS} serialized messages and multiplexing multiple topics and services over a character device such as a serial port or network socket \cite{rosserial}. %It allows electronic devices to talk directly to the rest of the \gls{ROS} system using topics (sending messages or even services over a serial interface).
+
+The reason why Rosserial was chosen over a simple serial connection is because it provides a communication protocol to work over the Arduino's \gls{UART}, allowing the Arduino to work as a \gls{ROS} node that can publish and subscribe to \gls{ROS} messages.
+
+The Rosserial protocol is compiled just like any other \gls{ROS} package and it contains several Client Libraries. The one used in this project is the \texttt{rosserial\_Arduino}. 
+
+To be able to make the Arduino communicate with \gls{ROS}, one must run the \texttt{rosserial\_python} package and the \texttt{serial\_node.py} node, mentioning the correct port where the Arduino is connected, just like the following, where \texttt{ACM0} is the port where the Arduino is connected \cite{rosserial_Arduino}:
+
+\begin{center}
+\texttt{rosrun \ rosserial\_python \ serial\_node.py \ /dev/ttyACM0}
+\end{center}
+\subsection{Timers library in Arduino}
+A timer is an internal counter of the \gls{uC} that controls the sequence of an event by counting in fixed intervals of time. It is used for producing precise time delay and measuring time events \cite{whattimer}. It can be programmed by some special registers.
+
+For the purpose which is going to be explained in Section~\ref{subsec:pwmgener}, for this project the use of timers and their features was necessary.
+
+The Arduino Mega 2560 \gls{CPU} is the Atmel AVR ATmega2560. As it can be seen in its datasheet \cite{atmegadatasheet}, Arduino Mega has 6 timers: Timer 0, Timer 1, Timer 2, Timer 3, Timer 4 and Timer 5, with all of them being 16 bits except Timer 2 which works with 8 bits. The biggest difference between a 8 bit and 16 bit timer is the timer resolution, as 8 bit means 256 values while 16 bits means 65536 values for higher resolution or longer counter \cite{megatimer}.
+
+Since timer 0 is used for the software sketch functions like \texttt{delay()}, \texttt{milis()}, \texttt{micros()} and timer 2 only has 8 bits, those could not be used in this project. 
+ 
+For this project two timers were needed. For reasons that will be explained in Section~\ref{subsec:pwmgener}, timer 1 and timer 4 were selected and configured.
+
+Obviously that configuration could be done by changing the timer registers by hand. However, there are already some libraries that do that. For this project, those libraries are \textit{TimerOne} \cite{timeronelib} and \textit{Timer4} \cite{timerfourlib}.
+ 
+This libraries have the following functions \cite{timeronelib}:
+\begin{itemize}
+\item \texttt{initialize(period)}: it needs to be called before any other. It initializes the timer with a desired period in $\mu$s (by default it is set at 1s);
+\item \texttt{setPeriod(period)}: sets the period in $\mu$s;
+\item \texttt{pwm(pin, duty, period)}: generates a \gls{PWM} waveform on the specified pin;
+\item \texttt{setPwmDuty(pin,duty)}: sets the \gls{PWM} duty cycle for a given pin if it was already set by calling $pwm()$ earlier;
+\item \texttt{attachInterrupt(function,period)}: calls a function at the specified interval in microseconds;
+\item \texttt{detachInterrupt()}: disables the attached interrupt;
+\item \texttt{disablePwm(pin)}: turns \gls{PWM} off for the specified pin;
+\item \texttt{read()}: reads the time since last rollover in microseconds;
+\item \texttt{start()};
+\item \texttt{stop()}:
+\item \texttt{restart()}.
+\end{itemize}
+
+In this project, the most used functions were \texttt{initialize()} and \texttt{attachInterrupt()}.
+
+The minimum period or highest frequency this library supports is 1$\mu$s or 1MHz.
+\subsection{Qt}
+\label{subsec:qt}
+To develop the \gls{GUI} Qt was chosen. Qt is a cross-platform application development framework for desktop, embedded and mobile\cite{qtintro} \cite{qtfoundations}. It is not a programming language but instead a framework written in C++. A preprocessor (\gls{MOC}) is used to extend the C++ language with features like signals and slots (mechanism used for communication between objects).
+
+Before the compilation, the \gls{MOC} parses the source files written in Qt-extended C++ and generates standard compliant C++ sources from them.
+
+Although any build system can be used with Qt, it brings its own \texttt{qmake} (that automates the generation of Makefiles). Even though \texttt{qmake} is the most used build system, \texttt{CMake} is also a popular alternative to build Qt projects.
+
+Qt comes with its own \gls{IDE} named Qt Creator.
+
+With Qt, \gls{GUI} can be written directly in C++ using its Widgets module. Qt also comes with an interactive graphical tool (Qt Designer) which works as a code generator for Widgets based \gls{GUI}. It can be used stand-alone but is also integrated into Qt Creator.
+
+The fact that Qt has its own \gls{IDE} and that it comes with the Qt Designer tool was the biggest factor to choose Qt over other \gls{GUI} softwares.
+\section{Components Integration}
+Figure~\ref{fig:interligacao} shows how the components that were previously mentioned in this chapter integrate the solution.
+
+\begin{figure}[ht!]
+\centering
+\begin{tikzpicture}[node distance = 3cm,auto=center]
+    % Place nodes
+    \node [block] (qt) {Qt};
+    \node [block, right of=qt, node distance = 5cm] (ros) {ROS};
+    \path [line] (qt) -- (ros);
+    \path [line] (ros) -- (qt);
+    \node [block, below of=ros] (computer) {Computer};
+    \path [line] (ros) -- (computer);
+    \path [line] (computer) -- (ros);
+    \node [block, below of=computer] (arduino) {Arduino};
+    \path [line] (computer) -- (arduino);
+    \node [ball, left of=arduino, node distance = 5cm] (motor) {Vibration Motors};
+    \path [line] (arduino) -- (motor);
+    \node [block, right of=ros, node distance = 5cm] (rosserial) {Rosserial};
+    \path [line] (ros) -- (rosserial);
+    \path [line] (rosserial) -- (ros);
+    \path [line] (arduino) -- (computer);
+	\draw [<->,dashed] (arduino) -| (rosserial);
+\end{tikzpicture}
+\caption{Diagram of all the components at the current development phase.} \label{fig:interligacao}
+\end{figure}
+
+In this project the user can control the motors using a computer a graphical interface designed with Qt. Using \gls{ROS}, the information given to the interface by the user is sent to the Arduino using the Rosserial protocol. The Arduino then proceeds to activate the vibration motors.
+
+However, the system must be able to operate independently of other hardware/software. For instance, the \gls{uC} doesn't necessary need to be Arduino, the communications can be done using bluetooth, the \gls{GUI} can be designed using another software and the user can, for example, control the \gls{GUI} via a smartphone and not a computer.
+
+% ----------------------------------------------------------------
+% Corpo da tese - Parte III - Solução
+% ----------------------------------------------------------------
+\chapter{Development of a Wearable Haptic Device}
+This chapter describes all the stages needed to develop a wearable haptic device. It explains the chosen location for the motors as well as the process of building a prototype. In this project the intensity, the location and the duration of the stimulus can be controlled and the type of stimulus can be classified as vibration. The first thing done was the generation of \gls{PWM} signals using the Arduino and its timers/interrupts. Secondly, the graphical interface for the motors actuation and the programming of the stimuli was created. At last, the wearable device --- a sleeve --- with all the components integrated was developed.
+
+Figure~\ref{fig:rosflowchar} shows a flowchart of the three \gls{ROS} nodes that were created to achieve that goal.
+\begin{figure}[ht!]
+\centering
+\begin{tikzpicture}[node distance = 6cm,auto=center]
+    % Place nodes
+    \node [block] (gui) {Interface node};
+    \node [block, right of=gui] (ros) {Communication node};
+    \path [line] (gui) -- (ros);
+    \draw  (gui) -- (ros) node [midway, above] {Message 1};
+\node [block, right of=ros] (Arduino){Controller node};
+ \path [line] (ros) -- (Arduino);
+ \draw (ros) -- (Arduino) node [midway, above] {Message 2};
+\end{tikzpicture}
+\caption{\gls{ROS} nodes flowchart} \label{fig:rosflowchar}
+\end{figure}
+
+The Interface node is a publisher node that sends information to the Communication node. This information is a message that contains the number of motors to turn on, their duty-cycle and their location (Message 1). In this node, the user can interact with the computer through a graphical interface and choose which motor to turn on and its intensity.
+
+The Communication node connects the Interface and Controller node, being both a publisher and a subscriber. It receives the message from the Interface node, converts the variables (more will be explained in detail in Section~\ref{subsec:communication}), thereafter sending the duty-cycle and the location of the motors to the Controller node (Message 2).
+
+At last, the Controller node acts as a subscriber. It receives Message 2 from the Communication node and then proceeds to activate the correct motors with the correct duty-cycle.
+
+Figure~\ref{fig:rosgraph} shows the \gls{ROS} nodes layout made with the \texttt{rqt\_graph} software where \texttt{qtguinode} is the interface node, \texttt{publish\_arduino} is the communication node, \texttt{serial\_node} is the controller node, \texttt{guichattergui} is the topic where interface node is publishing in and \texttt{chatter2} is the topic where the communication node is publishing.
+
+\begin{figure}[ht!]
+    \centering
+    \def\svgwidth{\columnwidth}
+	\includegraphics[scale=0.5]{rosgraph2.png}
+\caption{\gls{ROS} nodes layout made with \texttt{rqt\_graph}} 	\label{fig:rosgraph}
+\end{figure}
+\section{PWM Motor Control Using Arduino}
+\label{subsec:pwmgener}
+As stated in Section~\ref{subsec:Arduinomega}, Arduino Mega has only 15 \gls{PWM} outputs. Since in this project there are 16 vibration motors, those 15 outputs were not enough to control all the motors.
+
+To control all the motors individually, several solutions were thought about such as the use of multiplexers or decoders. Multiplexers has the limitation of only being able to turn ON one motor at a time or all of the motors together. The use of the decoders would oblige the use of several cables, having always the problem of finding a way to control the supply voltage of every motor to change their intensities. The use of a band pass filter was considered, however a simpler solution was found: to manually generate a \gls{PWM} wave using the Arduino timers and their interrupts. Using a PWM wave the supply voltage of each motor could be controlled using the PWM duty cycle.
+
+\subsection{PWM manually generated}
+The idea to generate the \gls{PWM} wave is to have an interrupt generating the HIGH/LOW signal. An interrupt is a periodic event that interrupts the main program code and runs a special function known as \gls{ISR}. After the \gls{ISR} has been finished, the running program continues \cite{megatimer}.
+According to the Arduino Mega data-sheet, the priority of the different timers is different \cite{atmegadatasheet}. The priority order of the timers is expressed below.
+\begin{enumerate}
+\setlength\itemsep{0em}
+\item Timer 2 (bigger priority);
+\item Timer 1;
+\item Timer 0;
+\item Timer 3;
+\item Timer 4;
+\item Timer 5 (smaller priority).
+\end{enumerate}
+
+Having in mind that two timers were needed, one with bigger priority to turn ON the motors and the other to turn OFF the motors, and due to the fact that timer 2 is a 8 bit timer so it should not be used, timer 1 and timer 4 were selected.
+
+\begin{itemize}
+\setlength\itemsep{0em}
+\item Timer 1: bigger priority and slower timer with a frequency of 1kHz (period of 1$\mu$s );
+\item Timer 4: faster timer with a frequency of 10kHz (period of 0.1$\mu$s).
+\end{itemize} 
+
+The slowest timer turns ON the desired motors and the faster timer will turn OFF the motors according to the duty cycle previously decided by the user. Figure~\ref{fig:Timersscheme} shows the timing diagram for 3 outputs. For example, if the duty cycle percentage of motor 1 is 50\%, motor 2 is 10\% and motor 3 is 90\%, the slowest timer will turn ON the 3 motors. Since the slowest timer is 10 times slower than the fastest timer, in the first call of the fastest timer \gls{ISR}, motor 2 (10\% duty cycle) turns OFF, in the fifth time slot of the \gls{ISR} motor 1 (50\% duty cycle) turns OFF and finally, on the  ninth time slot of the fastest \gls{ISR} motor 3 (90\% duty cycle) turns OFF. 
+
+\begin{figure}[ht!]
+    \centering
+\begin{tikzpicture}
+\draw [thick]
+	(0, 0)   node {out 1} ++(0.5,0)  -| ++(1,1) -| ++(3.0,-1) coordinate[pos=0.25] (A1) -| ++(3,1) -- ++(0.5,0)
+	(0,-1.25)node {out 2} ++(0.5,0)  -| ++(1,1) -| ++(0.6,-1) coordinate[pos=0.25] (A2) -| ++(5.4,1) -- ++(0.5,0)
+	(0,-2.5) node {out 3} ++(0.5,0)  -| ++(1,1) -| ++(5.4,-1) coordinate[pos=0.25] (A3) -| ++(0.6,1) -- ++(0.5,0);
+\foreach \x in{1.5,2.1,...,8} \draw [ultra thin,dashed] (\x, 1.2) -- ++(0,-4);
+\draw [<->, >=latex, thick](1.5,1.4) -- ++(6,0)node[above, midway]{\small slow timer period};
+\draw [<->, >=latex, thick](1.5,-2.8) -- ++(0.6,0)node[below,midway]{\small fast timer period};
+\node [below] at (A1) {\small 50\%};
+\node [below] at (A2) {\small 10\%};
+\node [below] at (A3) {\small 90\%};
+\end{tikzpicture}
+\caption{Timing diagram for 3 PWM outputs}
+\label{fig:Timersscheme}
+\end{figure}
+
+As mentioned before, two \gls{ISR} were creted to enable the creation of the \gls{PWM} wave manually and turn the motors on and off with the correct intensity.
+Every time timer 1 reaches its timeout, the interrupt function checks whether or not the motor should be on. If the motor is supposed to be on the value HIGH is given to the correspondent motor pin. Figure~\ref{fig:timeronegraf} illustrates the Interrupt Subroutine related to timer 1.
+
+\begin{figure}[ht!]
+\centering
+    \def\svgwidth{\columnwidth}
+%\begin{tikzpicture}[node distance = 2cm,auto]
+    % Place nodes
+ %   \node [cloud] (timer1) {ISR Timer 1};
+  %  \node [block, below of=timer1] (counter) {Cleans the duty-cycle counter};
+ %\path [line] (timer1) -- (counter);
+ %\node [decision, aspect = 1, node distance = 4cm, below of=counter] (mask){Turn Motor ON?};
+ %\path [line] (counter) -- (mask);
+  %  \node [block, below of=mask, node distance = 4cm] (turnON) {Turns ON the desired motors};
+ %\path [line] (mask) -- (turnON);
+ %\node [cloud, below of=turnON, node distance = 3cm] (return) {return};
+ %\path [line] (turnON) -- (return);
+ % \draw (mask) -- (turnON) node [midway, right] {YES?};
+%\end{tikzpicture}
+	\includegraphics[scale=0.8]{isrtimer1.pdf}
+\caption{Scheme of the Interrupt Subroutine Timer 1} \label{fig:timeronegraf}
+\end{figure}
+
+When timer 4 reaches its deadline, it verifies if the desired duty cycle (intensity) has been reached or not, turning the motors off if it is supposed to (giving the motor pin the value LOW). Figure~\ref{fig:timerfourgraf} shows the \gls{ISR} related to timer 4.
+
+\begin{figure}[ht!]
+\centering
+    \def\svgwidth{\columnwidth}
+
+%\begin{tikzpicture}[node distance = 2cm,auto]
+    % Place nodes
+%    \node [block] (timer4) {ISR Timer 4};
+%    \node [block, below of=timer1] (counter) {Duty-cycle counter increases by one};
+% \path [line] (timer4) -- (counter);
+% \node [decision, aspect = 1, node distance = 2.9cm,text width=2cm, below of=counter] (reached){Duty-cycle reached?};
+% \path [line] (counter) -- (reached);
+%    \node [block, node distance = 2.8cm, below of=reached] (turnOFF) {Turns OFF the motors};
+% \path [line] (reached) -- (turnOFF);
+
+%\end{tikzpicture}
+	\includegraphics[scale=0.8]{isrtimer4.pdf}
+\caption{Interrupt Subroutine: Motors OFF} \label{fig:timerfourgraf}
+\end{figure}
+
+Using this method there can be as many motor connected as the number of output Arduino has. In this case, since Arduino Mega has 54 digital outputs, there can be 54 motors connected.
+
+Due to the fact that timer 1 is 10 times slower than timer 4, the \gls{PWM} duty cycle can assume values from 0 (0\%) to 10 (100\%).
+
+Figure~\ref{fig:arduino_compare} shows the comparison between a \gls{PWM} with a duty cycle of 50\% using a standard \gls{PWM} from Arduino Mega (function \textit{analogWrite()}) in blue  and a \gls{PWM} wave with a duty cycle of 50\% created with this timer/interrupts method in yellow.
+
+\begin{figure}[ht!]
+  \centering
+  \includegraphics[width=1\textwidth]{000teste.png}
+  \caption[PWM wave comparison]{PWM wave with 50\% duty cycle comparison. In blue is the PWM generated using the standard Arduino method and in yellow is the PWM generated using the described method above}
+  \label{fig:arduino_compare}
+\end{figure}
+
+As Figure~\ref{fig:arduino_compare} shows, the generated wave is similar to a standard Arduino \gls{PWM} wave, which proves that this timer/interrupt method can be used.
+
+Figure~\ref{fig:arduino_compare} was taken using an UNI-T Digital Storage Oscilloscope, model UT3102C available at the \gls{LAR}. This oscilloscope has the capability of taking a picture of the screen, saving the image on a \gls{USB} stick formated in \gls{FAT}. This image is then saved in a \gls{BMP} file.
+\clearpage
+\subsection{Connection to the multiple motors}
+In this project the 16 motors are connected to the Arduino as the schematics in Figure~\ref{fig:electricscheme} demonstrates.
+
+\begin{figure}[ht!]
+  \centering
+  \includegraphics[width=1\textwidth]{testescheme.png}
+  \caption{Electrical Schematics with the connections of $\mu$C to the 16 motors}
+  \label{fig:electricscheme}
+\end{figure}
+To allow an easier connection of the motors to the controller a shield was developed using the Eagle \gls{CAD} software as shown in Figure~\ref{fig:board_shield}. In this shield, 16 Arduino digital outputs are connected to one side of a 20 pins pinhead and to the other side of the pinhead there is a line of grounds as Figure~\ref{fig:pinheadconnection} illustrates.
+\begin{figure}[ht!]
+  \centering
+  \includegraphics[width=0.6\textwidth]{brd_shield.jpg}
+  \caption{Eagle board design}
+  \label{fig:board_shield}
+\end{figure}
+
+\begin{figure}[ht!]
+  \centering
+  \includegraphics[width=1\textwidth]{pinhead.pdf}
+  \caption{Pinhead connections}
+  \label{fig:pinheadconnection}
+\end{figure}
+
+The \gls{PCB} (Figure~\ref{fig:PrintedShield}) was then printed at the \gls{DETI} of the University of Aveiro. The final result of this shield already with the soldered components can be seen in Figure~\ref{fig:shieldandArduino}.
+
+\begin{figure}[ht!]
+  \centering
+  \includegraphics[width=0.6\textwidth]{printed_shield.jpg}
+  \caption{Printed shield}
+  \label{fig:PrintedShield}
+\end{figure}
+\begin{figure}[ht!]
+  \centering
+  \includegraphics[width=0.7\textwidth]{shield_arduino.jpg}
+  \caption{Shield installed to the Arduino Controller}
+  \label{fig:shieldandArduino}
+\end{figure}
+
+Connected to the shield is a flat cable with a connector that fits into the pinhead (Figure~\ref{fig:cableshield}). The motors are then connected to the other side of the flat cable as Figure~\ref{fig:cablespinhead} illustrates. One of the advantages of the vibration motors used is that their polarity does not matter. In other words,the way they are connected to the pinhead is not important because there is no positive/negative side on the motor. 
+
+\begin{figure}[ht!]
+  \centering
+  \includegraphics[width=0.2\textwidth, angle = 90]{flatcable.jpg}
+  \caption{Flat cable with shield attached to the right}
+  \label{fig:cableshield}
+\end{figure}
+
+\begin{figure}[ht!]
+  \centering
+  \includegraphics[width=0.5\textwidth, angle = 90]{cabos.png}
+  \caption{Connection of the motor cables to the pinhead of the flatcable}
+  \label{fig:cablespinhead}
+\end{figure}
+
+Since the current consumed by these mini vibration motors is so small, no power drivers were used in this project. However, in a more advanced system the use of transistors or MOSFETs should be considered.
+
+\clearpage
+\section{Control System for Multiple Motors}
+\label{subsec:Controller}
+In Section~\ref{subsec:Arduinomega} Arduino Mega was defined as the controller for this project and the controller node was identified as a subscriber of the communication node. The message received is the intensity and the motors number (location), meaning, what motors to turn ON. 
+
+The location of the motors can be considered a set of objects. There are two forms to represent which objects to pick:
+\begin{itemize}
+\item Map (array of values);
+\item Bitmask.
+\end{itemize} 
+The Map associates with each object a boolean value, indicating whether the object is picked or not. However, this method takes up a lot of memory and it can be slower to transmit. Therefore a bitmask is more efficient since there is less overhead \cite{bitmask}. 
+
+A mask defines which bits to keep and which bits to clear and it is used for bitwise operations. Masking (the act of applying a mask to a value) can be accomplished by \cite{whatbit}:
+\begin{itemize}
+\item Bitwise ORing in order to set a subset of the bits in the value;
+\item Bitwise ANDing in order to extract a subset of the bits in the value;
+\item Bitwise XORing in order to toggle a subset of the bits in the value.
+\end{itemize}
+
+The mask that defines which motors to turn ON or OFF is created in the Communication Node and it is called \texttt{motorMask}. This mask is generated using the following code (Figure~\ref{fig:bitmask}) where the \texttt{motorsNumber} array is an array of 1s and 0s (1 if the motor is selected, 0 if the motor is not) and the \texttt{TOTALMOTORS} is 16.
+
+\begin{figure}[ht!]
+\begin{lstlisting}
+for(int totalMotors=0;totalMotors<TOTALMOTORS;totalMotors++)
+{
+    uint8_t motorMask |= motorsNumber[totalMotors] << totalMotors;
+}
+\end{lstlisting}
+\caption{Creation of the bitmask that represents the motors to turn ON} \label{fig:bitmask}
+\end{figure}
+\newpage
+
+For instance, if the motors to turn on are motor 1, motor 3 and motor 5, the bit mask has the value 21.
+
+Figure~\ref{fig:Arduinoflowchart} shows the main structure of the controller program. 
+\begin{figure}[ht!]
+\centering
+\begin{tikzpicture}[node distance = 4cm,auto]
+    % Place nodes
+    \node [cloud,minimum width = 15em] (primeiro) {Start};
+    \node [block,node distance = 3cm, minimum width = 15em,text width=14em, below of=primeiro] (inicio) {
+    \begin{itemize}  
+	\item Initialization of global variables. 
+	\item Defines ROS node. 
+	\item ROS Callbacks definition. 
+	\end{itemize} 
+	};
+ \path [line] (primeiro) -- (inicio);
+
+\node [block,minimum width = 15em,text width=14em,node distance = 5cm, below of=inicio] (setup){
+	\textbf{Setup}
+    \begin{itemize} 
+	\item Timer Configuration.
+	\item Set Subroutines (ISR).
+	\item Initializes Arduino node. 
+	\item Subscribes to ROS topics. 
+	\end{itemize} 
+	};
+ \path [line] (inicio) -- (setup); 
+ \node [decision, aspect = 2,node distance = 4cm, below of=setup] (loop){Main Loop};
+  %\path [line] (setup) -- (loop);
+    \path [line] (setup.south) -- (loop.north);
+    \node [vazio, below of=loop, node distance = 2cm] (emptysul) {};
+    \path [linha] (loop.south) -- (emptysul.north);
+    \node [vazio, right of=loop] (emptylado) {};
+    \path [linha] (emptysul.north) -| (emptylado.west);
+    \path [line] (emptylado.west) -- (loop.east);
+
+\end{tikzpicture}
+\caption{Flowchart of the program running in te Arduino unit} \label{fig:Arduinoflowchart}
+\end{figure}
+\newpage
+%\noindent The data structure of a motor i can be define as following:
+%\[ motor_i
+%  \begin{cases}
+%    motorMask_i\\
+%    pwm_i\\
+%    counter\\
+%  \end{cases}
+%\]
+%In here, $motorMask_i$ is the bit value of the motorMask on position i, $pwm_i$ is the reference duty-cycle value for motor i. As for $counter$ it represents the number of times the fastest interrupt subroutine was called (meaning the current duty-cycle value).
+
+%For example, if the motor number five is the only motor supposed to be ON, it has a duty cycle of three and the controller just received this information (making the counter still equal to zero), its data structure would be the following:
+%\[ motor_5
+%  \begin{cases}
+%    motorMask_5 = [0000000000100000]\ (binary)\ or\ 32\ (decimal)\\
+%    pwm_5 = 3\\
+%    counter = 0\\
+%  \end{cases}
+%\]
+\section{Vibration Motors Sleeve}
+\subsection{Placement of the vibration motors}
+\label{subsec:Placement}
+The prototype built in this project was developed to be used in the arm/hand. After medical advice, the motors were placed in strategical areas to affect the dermatomes C5, C6, C7 and C8 as shown in Figure~\ref{fig:rootarm}. In the placement of the motors on those places, it was also considered that the motors should have, at least, around 2 cm of distance between them, or else their effect is hard to distinguish.
+
+\begin{figure}[ht!]
+    \centering
+    \def\svgwidth{\columnwidth}
+	\includegraphics[scale=0.4]{dermatomeshand.jpg}
+\caption{Schematic demarcation of dermatomes in upper body \cite{netter}} 	\label{fig:rootarm}
+\end{figure}
+
+Considering this information, Figure~\ref{fig:motornumber} exhibits the proposed layout of the motors used in this project.
+
+There are nine motors placed in strategical dermatomes areas in the lower part of the arm/hand. On the upper part, the other seven motors were placed in the joints for diagnose purposes, also due to medical advice.
+\begin{figure}[ht!]
+\centering
+\def\svgwidth{\columnwidth}
+\includegraphics[scale=0.3]{handarmnumbers}
+\caption{Placement of the motors (image adapted from \cite{handimage})} 	\label{fig:motornumber}
+\end{figure}
+\subsection{Creation of the arm sleeve}
+The created sleeve can be seen in Figure~\ref{fig:Manga}. The sleeve was made with Lycra and it has a fastener and holes for the user fingers to facilitate the wearing.
+
+\begin{figure}[ht!]
+  \centering
+  \includegraphics[width=0.5\textwidth, angle = 270]{Manga.jpg}
+  \caption{Prototype of the Sleeve}
+  \label{fig:Manga}
+\end{figure}
+
+The motors were placed as it was stated in Section~\ref{subsec:Placement} and then sewn into the sleeve. To ensure a more robust prototype and also for hygienic reasons (so the motors are not directly touching the user skin), nylon was used as lining as sketched in Figure~\ref{fig:forromangasketch}. The final result of this process can be seen in Figure~\ref{fig:forromanga}.
+
+\begin{figure}[ht!]
+  \centering
+  \includegraphics[width=1\textwidth]{mangadesenho.png}
+  \caption{Sketch of the sleeve main components}
+  \label{fig:forromangasketch}
+\end{figure}
+
+\begin{figure}[ht!]
+  \centering
+  \includegraphics[width=0.8\textwidth]{ForroManga.jpg}
+  \caption{Inside of the Sleeve}
+  \label{fig:forromanga}
+\end{figure}
+
+Figure~\ref{fig:finalproto} represents the final prototype.
+
+\begin{figure}[ht!]
+  \centering
+  \includegraphics[width=0.6\textwidth, angle = 270]{cima.jpg}
+  \includegraphics[width=0.6\textwidth, angle = 270]{baixo.jpg}
+  \caption{Final Prototype}
+  \label{fig:finalproto}
+\end{figure}
+
+This arm sleeve was developed for applications in robotics teleoperation or rehabilitation.
+
+The interface that is described in the following section allows the activation of a group of motors from the sleeve and the variation of the stimulus intensity. In the current development phase, the identity of the motors and their intensity comes from the user decision, however, in the future this information can come from external factors (such as the use of force sensors positioned in the same place as the motors but in someone else's arm).
+
+\clearpage
+
+\section{Graphical user interface}
+\label{subsec:qtinterfacenode}
+Previously, the location of the motors (the motors number) and the intensity of their action were identified as the variables that the user would be able to control. To allow an easier control of these variables a graphical interface was developed. 
+
+\subsection{Interface Program}
+Due to the fact that the interface is in a \gls{ROS} node (\texttt{qtguinode}) a \gls{ROS} package was created. This package is called \texttt{qtgui} and it is there that all the interface was built and the message was defined.
+
+The design of the interface is made using a class that \texttt{QtDesigner} creates on its own: the \texttt{MainWindow} class. This is the class associated to the user interface. 
+
+\gls{ROS} requires a large amount of information to work properly. It needs to be initialized, the \gls{ROS} node needs to be named, a handler to that node needs to be created, among other things. To do so, the class \texttt{QtPublisher} was conceived inside the \texttt{qtgui} package. This  class is responsible for the creation of the handler and to tell the master what type of message is going to be published and where. The topic \texttt{guichattergui} was defined as the topic where the message is published. Furthermore, the function \texttt{SendMessage} was also established. This function is responsible for broadcasting the message to any node that is connected to the topic previously defined.
+
+Besides this class, the \texttt{qt\_ros\_interface} package was also created. In here, the \gls{ROS} initialization (\texttt{ros::init()}) is made and the node is named. 
+
+Figure~\ref{fig:interfaceflowchart} shows the organization of the interface node.
+\begin{figure}[ht!]
+\centering
+\begin{tikzpicture}[auto]
+    % Place nodes
+    \node [cloud, minimum height = 2cm] (packages) {Qt Interface};
+    \node [block, rounded corners, node distance = 3cm, below left of=packages] (qtgui) {Package qtgui};
+    \node [block, rounded corners, node distance = 3cm, minimum width = 4cm, below right of=packages] (qtros) {Package qt\_ros\_interface};
+    \path [line] (packages) -| (qtgui);
+    \path [line] (packages) -| (qtros);
+    
+   
+\node [block, node distance = 3cm, below left of=qtgui] (class1){QtPublisher class};
+ \path [line] (qtgui) -| (class1); 
+ \node [block, node distance = 3cm, below right of=qtgui] (class2){MainWindow class};
+ \path [line] (qtgui) -| (class2); 
+  \node [block, node distance = 3cm, below right of=qtros] (class3){TQtRosThread class};
+ \path [line] (qtros) -| (class3); 
+ 
+\end{tikzpicture}
+\caption{Interface organization} \label{fig:interfaceflowchart}
+\end{figure}
+
+The message created consists of the variables that the user can control, intensity and location. This message was named \texttt{GUIDados.msg}.
+
+\begin{figure}[ht!]
+\begin{center}
+\begin{tabular}{c}
+\begin{lstlisting}
+uint8[ ] intensity
+uint8[ ] location
+\end{lstlisting}
+\end{tabular}
+\end{center}
+\caption{Message \textit{GUIDados.msg}} \label{fig:guidadosmsg}
+\end{figure}
+
+Figure~\ref{fig:guidadosmsg} illustrates the created message. The type of variable \textit{uint8} (unsigned 8-bit int) was used due to the fact of being the smallest variable that \gls{ROS} messages works with. It is the equivalent of the variable type \textit{char} in \gls{ROS}. Both the intensity and location are an array of numbers. Since 16 motors are being used, the size given to the array is 16. However, if more motors were to be added, the size of the array should also be increased.
+
+Figure~\ref{fig:orgqtguipack} shows how the package \textit{qtgui} is organized. 
+\begin{figure}[ht!]
+\centering
+\begin{forest}
+ for tree={
+    font=\ttfamily,
+    grow'=0,
+    child anchor=west,
+    parent anchor=south,
+    anchor=west,
+    calign=first,
+    edge path={
+      \noexpand\path [draw, \forestoption{edge}]
+      (!u.south west) +(7.5pt,0) |- node[fill,inner sep=1.25pt] {} (.child anchor)\forestoption{edge label};
+    },
+    before typesetting nodes={
+      if n=1
+        {insert before={[,phantom]}}
+        {}
+    },
+    fit=band,
+    before computing xy={l=15pt},
+  }
+[qtgui
+  [msg
+    [GUIDados.msg]
+  ]
+  [src
+    [main.cpp]
+    [mainwindow.cpp]
+    [mainwindow.ui]
+    [QtPublisher.cpp]
+    [images]    
+  ]
+  [include
+     [globals.h]
+     [mainwindow.h]
+    [QtPublisher.h]
+  ]
+  [CMakeLists.txt]
+  [package.xml]
+]
+\end{forest}
+\caption{Organization of the qtgui package}
+\label{fig:orgqtguipack}
+\end{figure}
+
+\gls{ROS} is built using \texttt{catkin\_make} and Qt with \texttt{qmake}. The first thing done was to change the built option from \texttt{qmake} to \texttt{cmake}, so it would be easier to mix the Qt \texttt{CMakeLists} and the \gls{ROS} \texttt{CMakeLists}.
+
+Since \gls{ROS} is being used in the interface node, some important things such as the \texttt{catkin\_libraries} and \texttt{QT\_libraries} had to be added in the \texttt{CMakeLists} file. Important packages like \texttt{Qt4} and \texttt{qt\_ros\_interface} were also added. The final \texttt{CMakeLists} can be found in Appendix~\ref{chap:cmakelistanexo}.
+\newpage
+\subsection{Communication}
+\label{subsec:communication}
+Being both a subscriber and a publisher, the Communication node receives the message from the Interface node and processes that information to pass it over to the Controller node.
+
+The Communication node receives two \textit{uint8} arrays with size 16 (intensity and location).
+
+The intensity array is composed by numbers from 0(none) to 10(higher) and the location array is an array of 1s and 0s (1 if the motor is on and 0 if the motor is off). To make the communication and the processing faster, the size of the message is reduced. To achieve that reduction a bitmask that defines the motor behavior is created. The creation process of this mask was demonstrated previously on Section~\ref{subsec:Controller}.
+
+Regarding the location variable, the array received is an array of 16 \textit{uint8} numbers. After the conversion (the creation of the mask), the location variable becomes an \textit{uint8} number with 16-bits instead of an array.
+
+The new message file created was named \textit{Dados.msg} and it contains the same intensity array as before but a new location variable (Figure~\ref{fig:dadosh}).
+\begin{figure}[ht!]
+\begin{center}
+\begin{tabular}{c}
+\begin{lstlisting}
+uint8[ ] intensity
+uint8 location
+\end{lstlisting}
+\end{tabular}
+\end{center}
+\caption{Message \textit{Dados.msg}} \label{fig:dadosh}
+\end{figure}
+
+After the conversion these two variables are sent to the Controller node.
+The Communication node package organization is represented in Figure~\ref{fig:orgcommpack}.
+
+\begin{figure}[ht!]
+\centering
+\begin{forest}
+ for tree={
+    font=\ttfamily,
+    grow'=0,
+    child anchor=west,
+    parent anchor=south,
+    anchor=west,
+    calign=first,
+    edge path={
+      \noexpand\path [draw, \forestoption{edge}]
+      (!u.south west) +(7.5pt,0) |- node[fill,inner sep=1.25pt] {} (.child anchor)\forestoption{edge label};
+    },
+    before typesetting nodes={
+      if n=1
+        {insert before={[,phantom]}}
+        {}
+    },
+    fit=band,
+    before computing xy={l=15pt},
+  }
+[communication\_pkg
+  [msg
+    [Dados.msg]
+  ]
+  [src
+    [publish\_arduino.cpp]    
+  ]
+  [CMakeLists.txt]
+  [package.xml]
+]
+\end{forest}
+\caption{Organization of the communication package}
+\label{fig:orgcommpack}
+\end{figure}
+\newpage
+\subsection{User Interface}
+The interface offers the user two working modes:
+\begin{itemize}
+\item Motor control in which the user can select which motor (or group of motors) to turn ON and the intensity;
+\item Pattern control, in which the user can select from 3 standard stimulation pattern.
+\end{itemize}
+
+When the interface is launched, the operating mode that appears on the screen is the Motor control (Figure~\ref{fig:interfacemotors}). In this mode the user can select which motor to turn on and its intensity. It allows more than one motor functioning at the same time and it also has the option to activate and deactivate all the motors.
+
+\begin{figure}[ht!]
+\centering
+\def\svgwidth{\columnwidth}
+\includegraphics[scale=0.3]{interfacemotor.png}
+\caption{Interface: Motor Control} 	\label{fig:interfacemotors}
+\end{figure}
+
+Initially the intensity selection box is not visible, however, every time a motor is selected (button is pressed) that option appears. The same happens with the activate all option. When the "Activate ALL" button is clicked, all the motor's intensity selection box disappears and one general one emerges (therefore the chosen intensity is the same for every motor).
+
+Another aspect in the motor control mode is the fact that, when the motors are OFF (buttons unselected) the buttons are blue and when the motors are ON the buttons turn red. This gives the user a visual help and was done to make the interface more user friendly.
+
+To confirm which motors to turn on and their intensity the button "SEND" must be pressed. This will send the created message to the created topic as explained before.
+
+The "Deactivate ALL" button, just like the name indicates, turns OFF all the motors.
+
+When the button "Switch to Pattern" is pressed the window changes and so does the operation mode.
+
+\begin{figure}[ht!]
+\centering
+\def\svgwidth{\columnwidth}
+\includegraphics[scale=0.3]{pattern2.jpg}
+\caption{Interface: Pattern} 	\label{fig:interfacepattern}
+\end{figure}
+
+In the pattern option (Figure~\ref{fig:interfacepattern}) the user can choose from 3 standard stimulation pattern:
+\begin{itemize}
+\item Shiver;
+\item Tickle;
+\item Diagnose.
+\end{itemize}
+
+The shiver stimulus consists on turning the motors ON from the bottom to the top. That is done turning motor 8 on, followed by motor 1, 2, 3, 4, 5 and 6 like Table~\ref{tab:shiverpattern} shows. The activation of the motors have an interval of 0.5 seconds. After turning one motor on, the previously activated motor is turned off so the shiver sensation is produced, like someone is moving a finger through the user arm.
+
+\begin{table}[ht!]
+\caption{Shiver pattern table}
+\centering
+\label{tab:shiverpattern}
+\begin{tabular}{l|l|l} %tabela com 3 colunas
+\toprule
+\textbf{Motor Number} & \textbf{Intensity} & \textbf{Time ON} \\
+\toprule
+8 & 6 & 0.5s\\
+1 & 6 & 0.5s\\
+2 & 6 & 0.5s\\
+3 & 6 & 0.5s\\
+4 & 6 & 0.5s\\
+5 & 6 & 0.5s\\
+6 & 6 & 0.5s
+\end{tabular}
+\end{table}
+
+The tickle stimulus (Table~\ref{tab:ticklepattern}) dwells on the back and front movement. It starts on motor 6, goes to motor 5, 4 and 3 and then goes back to 4, 5 and 6 with a delay of 0.5s as well. 
+
+\begin{table}[ht!]
+\caption{Tickle pattern table}
+\centering
+\label{tab:ticklepattern}
+\begin{tabular}{l|l|l} %tabela com 3 colunas
+\toprule
+\textbf{Motor Number} & \textbf{Intensity} & \textbf{Time ON} \\
+\toprule
+6 & 6 & 0.5s\\
+5 & 6 & 0.5s\\
+4 & 6 & 0.5s\\
+3 & 6 & 0.5s\\
+4 & 6 & 0.5s\\
+5 & 6 & 0.5s\\
+6 & 6 & 0.5s
+\end{tabular}
+\end{table}
+
+The last pattern stimulus created is the diagnose. For this stimulus, the motors used are the motors placed in the user joints. Those are motor 10, 11, 12, 13, 14, 15 and 16.
+
+When the user selects the "Diagnose" button an option for the delay between the motors and the intensity pops up. That delay can go from 1s up to 5s and the intensity can be either LOW, MEDIUM or HIGH. After pressing the "OK" button, motor 12 is activated, followed by motor 13, 14, 15, 16, 10 and 11. The delay and intensity button were added in the interface because, for medical diagnose, the time between the motors activation is important, and so is the different intensities. For instance, a higher intensity is easily felt by everyone yet a lower intensity is not.
+
+\begin{table}[ht!]
+\caption{Shiver pattern table}
+\centering
+\label{tab:shiverpattern}
+\begin{tabular}{l|l|l} %tabela com 3 colunas
+\toprule
+\textbf{Motor Number} & \textbf{Intensity} & \textbf{Time ON} \\
+\toprule
+12 & Chosen by the user & Chosen by the user\\
+13 & Chosen by the user & Chosen by the user\\
+14 & Chosen by the user & Chosen by the user\\
+15 & Chosen by the user & Chosen by the user\\
+16 & Chosen by the user & Chosen by the user\\
+10 & Chosen by the user & Chosen by the user\\
+11 & Chosen by the user & Chosen by the user
+\end{tabular}
+\end{table}
+
+To go back to the motor control option the user has to press the "Switch to Motor Control" button.
+
+The process of associating the buttons and intensity boxes of the interface and the message to be sent is done using callbacks. Every time a button in the interface is clicked a callback is called giving values to the variables in the message.
+
+If a given motor is selected, then in the location array its value is going to be 1. If a motor is not selected then its value is 0. The same is done for the intensity array. The value of the intensity selection box is given to the intensity array in the motor position. For instance, if motor 1 button is clicked and an intensity of 5 is selected, then the variables are $intensity[0] = 5$ and $location[0] = 1$.
+
+When the "Send" button is pressed the \texttt{SendMessage()} explained previously is called and the message is then sent to the defined topic.
+
+\section{Alternative Approach}
+Sometimes, due to the huge amount of data being sent between the nodes, Rosserial loses the connection and the system also has some delay.
+
+With the aim of solving this problem, the Communication node was eliminated, leaving only the Interface and the Controller node, as shown in Figure~\ref{fig:newrosflowchar}.
+
+\begin{figure}[ht!]
+\centering
+\begin{tikzpicture}[node distance = 6cm,auto=center]
+    % Place nodes
+    \node [block] (gui) {Interface node};
+    \node [block, right of=gui] (arduino) {Controller node};
+    \path [line] (gui) -- (arduino);
+    \draw  (gui) -- (arduino) node [midway, above] {Message 1};
+\end{tikzpicture}
+\caption{New \gls{ROS} nodes flowchart} \label{fig:newrosflowchar}
+\end{figure}
+
+In this alternative approach the information from the interface goes straight to the controller, and the mask is created in the controller itself instead of in the Communication node.
+
+The message sent from the Interface node to the Controller node is only the duty cycle and the location of the motors (instead of the motor mask), and this message  in sent only when some change on the interface occurs.
+
+Besides making the system faster, this also allows for, in the future, the \gls{ROS} platform to be dropped.
+
+Figure~\ref{fig:newrosgraph} shows the new \gls{ROS} nodes layout made with the \texttt{rqt\_graph} software, where \texttt{qtguinode} is the interface node, \texttt{serial\_node} is the controller node and \texttt{guichattergui} is the topic where the message is published.
+
+\begin{figure}[ht!]
+    \centering
+    \def\svgwidth{\columnwidth}
+	\includegraphics[scale=0.5]{newrosgraph.png}
+\caption{New \gls{ROS} nodes layout made with $rqt\_graph$} 	\label{fig:newrosgraph}
+\end{figure}
+
+Figure~\ref{fig:newArduinoflowchart} illustrates the new main structure of the controller program.
+\begin{figure}[ht!]
+\centering
+\begin{tikzpicture}[node distance = 4cm,auto]
+    % Place nodes
+    \node [cloud,minimum width = 15em] (primeiro) {Start};
+    \node [block,node distance = 4cm, minimum width = 15em,text width=14em, below of=primeiro] (inicio) {
+    \begin{itemize}  
+	\item Initialization of global variables. 
+	\item Defines ROS node. 
+	\item ROS Callbacks definition. 
+	\item Creation of the motor mask.
+	\end{itemize} 
+	};
+ \path [line] (primeiro) -- (inicio);
+
+\node [block,minimum width = 15em,text width=14em,node distance = 5cm, below of=inicio] (setup){
+	\textbf{Setup}
+    \begin{itemize} 
+	\item Timer Configuration.
+	\item Set Subroutines (ISR).
+	\item Initializes Arduino node. 
+	\item Subscribes to ROS topics. 
+	\end{itemize} 
+	};
+ \path [line] (inicio) -- (setup); 
+ \node [decision, aspect = 2,node distance = 4cm, below of=setup] (loop){Main Loop};
+  %\path [line] (setup) -- (loop);
+    \path [line] (setup.south) -- (loop.north);
+    \node [vazio, below of=loop, node distance = 2cm] (emptysul) {};
+    \path [linha] (loop.south) -- (emptysul.north);
+    \node [vazio, right of=loop] (emptylado) {};
+    \path [linha] (emptysul.north) -| (emptylado.west);
+    \path [line] (emptylado.west) -- (loop.east);
+
+\end{tikzpicture}
+\caption{New flowchart of the program running in te Arduino unit} \label{fig:newArduinoflowchart}
+\end{figure}
+%
+% ----------------------------------------------------------------
+% Corpo da tese - Parte IV - Resultados
+% ----------------------------------------------------------------
+\chapter{Experiments and Results}
+\section{Plan of Experiments}
+\label{sec:planexperiments}
+To evaluate the success of the prototype experiments were made and a group of people was invited to participate in the trials of the haptic sleeve.
+
+The test is divided in three parts: Test of the motor control, of the pattern control and of the different intensities. The following plan was executed.
+\subsection{Test of the Motor Control}
+After the subject is comfortably sitting down with the sleeve in their arm, the first thing to test is the Motor Control part of the interface. 
+\begin{enumerate}
+\item Activate motor 8 with an intensity of 8. Ask the user if anything is felt and where. Take note if the user said the correct place. This will show if the user can feel the vibration and introduce the user to the feeling.
+\item Deactivate motor 8 and activate motor 7 and 9 simultaneously with the different intensities, such as 4 and 9, respectively. Ask if the user can differentiate the motors and their intensities, and if yes, which one does the user think is more intense?
+\item Deactivate all the motors and activate motor 2, 5 and 6 with the same intensity such as 6. Can the user spot the different motors? If the user can not, which ones are complicated to distinguish?
+\item Deactivate all the motors and activate motor 13 and 15 with the same intensity. Can the user locate them?
+\item Deactivate motor 13 and 15 and activate motor 8. Can the user distinguish and say which motors are on?
+\end{enumerate}
+For an easier comprehension, Figure~\ref{fig:motortest} is a state diagram that illustrates the test.
+\begin{figure}[ht!]
+  \centering
+  \includegraphics[width=0.9\textwidth]{motortestfinal.png}
+  \caption{State Diagram of Motor Control Test}
+  \label{fig:motortest}
+\end{figure}
+\clearpage
+\subsection{Test of the Pattern Control} 
+The second test is on the pattern control section of the interface. This aims to show if the user is receiving the desired stimulus.
+\begin{enumerate}
+\item Deactivate all the motors that were previously activated to check the motor control. Run the shiver pattern. Can the user replicate in the other arm the stimulus using a finger? This will show if the stimulus was well received.
+\item Run the tickle pattern. Can the user replicate in the other arm the stimuli using a finger?
+\item Run the diagnose pattern with a delay of 3s. Ask the user to tell when the motors change. 
+\end{enumerate}
+Figure~\ref{fig:patterntest} demonstrates the test in the form of a state diagram.
+\begin{figure}[ht!]
+  \centering
+  \includegraphics[width=1\textwidth]{patterntestfinal.png}
+  \caption{State Diagram of Pattern Control Test}
+  \label{fig:patterntest}
+\end{figure}
+\subsection{Test of different intensities}
+The last test (Figure~\ref{fig:dutytest}) serves to confirm that the intensity of the motor can be controlled. It also shows if the user can differentiate the contrasting intensities (which one is higher).
+\begin{enumerate}
+\item Activate motor 14 with an intensity of 3.
+\item Activate the same motor with an intensity of 10. Ask the user if difference is felt. Which one is more intense?
+\end{enumerate}
+\begin{figure}[ht!]
+  \centering
+  \includegraphics[width=1\textwidth]{dutytestfinal.png}
+  \caption{State Diagram of the Intensity Test}
+  \label{fig:dutytest}
+\end{figure}
+\newpage
+\section{Questionnaire}
+\label{sec:quest}
+After the test the subjects are asked to answer a small questionnaire created using Google forms. The questions can be found next. 
+
+
+\textbf{General questions:}
+\begin{enumerate}
+\item \textbf{What is your age?}
+\item \textbf{What is your sex?}
+
+$\circ$ Female\\
+$\circ$ Male
+\item \textbf{What is your main professional activity?}
+
+$\circ$ Student\\
+$\circ$ Teacher\\
+$\circ$ Doctor\\
+$\circ$ Other
+\end{enumerate}
+
+\textbf{Individual Motor Control questions:}
+\begin{enumerate}
+\item \textbf{Could you localize all the motors?}
+
+$\circ$ Yes\\
+$\circ$ No
+
+\item \textbf{If not, why do you think you couldn't?}
+
+(more than one answer allowed)
+
+$\square$ Motors were too close\\
+$\square$ Intensity was the same\\
+$\square$ Other
+
+\item \textbf{Could you feel the different intensities?}
+
+$\circ$ Yes\\
+$\circ$ No
+
+\item \textbf{Where do you think it's easier to detect the motors?}
+
+$\circ$ Upper hand\\
+$\circ$ Lower hand\\
+$\circ$ Arm\\
+$\circ$ None
+\end{enumerate}
+
+\textbf{Pattern Control questions:}
+\begin{enumerate}
+\item \textbf{Did you try the shiver pattern?}
+
+$\circ$ Yes\\
+$\circ$ No
+
+\item \textbf{What do you think about the shiver stimuli?}
+
+(more than one answer allowed)
+
+$\square$ Too fast\\
+$\square$ Too slow\\
+$\square$ Speed was ok\\
+$\square$ Too intense\\
+$\square$ Not intense enough\\
+$\square$ Could sense all the motors\\
+$\square$ Other
+
+\item \textbf{Did you try the tickle pattern?}
+
+$\circ$ Yes\\
+$\circ$ No
+
+\item \textbf{What do you think about the tickle stimuli?}
+
+(more than one answer allowed)
+
+$\square$ Too fast\\
+$\square$ Too slow\\
+$\square$ Speed was ok\\
+$\square$ Too intense\\
+$\square$ Not intense enough\\
+$\square$ Could sense all the motors\\
+$\square$ Other
+\end{enumerate}
+
+\textbf{Comments and Suggestions section:}
+\begin{enumerate}
+\item Do you have any comment/suggestion related to the individual motor control?
+\item Do you have any comment/suggestion related to the interface?
+\item Do you have any comment/suggestion related to the prototype?
+\item Other comments/suggestions
+\end{enumerate}
+\newpage
+\section{Results}
+To test the prototype and the validity of the method, 12 people were invited to participate in the experiments (Figure~\ref{fig:testsleeve}).
+\begin{figure}[ht!]
+  \centering
+  \includegraphics[width=0.5\textwidth]{yuki.jpg}
+  \caption{Test of the wearable device}
+  \label{fig:testsleeve}
+\end{figure}
+
+50\% of the people interviewed were women and the other 50\% were men and, from those 12 people, 16.7\% were teachers and 83.3\% were students as Figure~\ref{fig:whatjob} illustrates.
+
+\begin{figure}[ht!]
+\centering
+\begin{tikzpicture}
+\pie [rotate = 180] {83.3/Student, 16.7/Teacher}
+\end{tikzpicture}
+\caption{What is your main professional activity?}
+\label{fig:whatjob}
+\end{figure}
+
+As it was previously mentioned in Section~\ref{sec:planexperiments}, the test was divided in three parts: initially it was tested the individual motor control, secondly the pattern control, and lastly the different intensities.
+\newpage
+Regarding the individual motor control, it was asked to the subjects if they could localize all the motors that were active. Figure~\ref{fig:indmotor} shows that 33.3\% could not localize all the motors and 66.7\% could.
+\begin{figure}[ht!]
+\centering
+\begin{tikzpicture}
+\pie [rotate = 180] {66.7/Yes, 33.3/No}
+\end{tikzpicture}
+\caption{Individual Motor Control: Could you localize all the motors?}
+\label{fig:indmotor}
+\end{figure}
+
+The main reason why the subjects could not localize/differentiate all the motors was because the motors were too close or due to the fact that the motors were not always touching their skin, as shown in Figure~\ref{fig:whynot}.
+
+\begin{figure}[ht!]
+\centering
+\begin{tikzpicture}
+\pie [rotate = 180] {40/Motors were too close, 20/Intensity was the same, 40/Lack of contact}
+\end{tikzpicture}
+\caption{Individual Motor Control: Why do you think you could not localize the motors?}
+\label{fig:whynot}
+\end{figure}
+
+In the individual motor control test, several motors were activated in the upper hand, lower hand and arm. After the test, the subjects were asked where was it easier to detect the motors. Figure~\ref{fig:whereeasier} shows that, 41.7\% of the people interviewed think it is easier to detect the motors in the arm, 33.3\% in the upper hand and 16.7\% in the lower hand. 
+\begin{figure}[ht!]
+\centering
+\begin{tikzpicture}
+\pie [rotate = 180] {41.7/Arm, 16.7/Lower hand, 8.3/None, 33.3/Upper hand}
+\end{tikzpicture}
+\caption{Individual Motor Control: Where do you think it's easier to detect the motors?}
+\label{fig:whereeasier}
+\end{figure}
+
+Regarding the shiver stimuli there were several opinions. Most of the subjects said that the speed was ok (91.7\%) and that the intensity was also good (66.7\%). 66.7\% also said that they could sense all the motors and identified correctly the stimuli. More responses can be seen in Figure~\ref{fig:whatshiver}.
+
+\begin{figure}[ht!]
+\centering
+\begin{tikzpicture}
+\begin{axis}[ 
+xbar, xmin=0,
+xlabel={Percentage \%},
+symbolic y coords={%
+    {Too fast},
+    {Too slow},
+    {Speed was ok},
+    {Too intense},
+    {Not intense enough},
+    {Intensity was ok},
+    {Could sense all the motors},
+    Others},
+ytick=data,
+nodes near coords, 
+nodes near coords align={horizontal},
+ytick=data,
+]
+\addplot coordinates {
+    (0,{Too fast}) 
+    (8.3,{Too slow}) 
+    (91.7,{Speed was ok}) 
+    (0,{Too intense})
+    (8.3,{Not intense enough})
+    (66.7,{Intensity was ok})
+    (66.7,{Could sense all the motors})
+    (16.6,Others)};
+\end{axis}
+\end{tikzpicture} %width=6cm,height=7.59cm
+\caption{What do you think about the shiver stimuli?}
+\label{fig:whatshiver}
+\end{figure}
+
+As for the tickle pattern the majority thought the speed was ok (66.7\%), that the intensity was also ok (75\%) and that they could sense all the motors (66.7\%). More responses are available in Figure~\ref{fig:whattickle}.
+
+\begin{figure}[ht!]
+\centering
+\begin{tikzpicture}
+\begin{axis}[ 
+xbar, xmin=0,
+xlabel={Percentage \%},
+symbolic y coords={%
+    {Too fast},
+    {Too slow},
+    {Speed was ok},
+    {Too intense},
+    {Not intense enough},
+    {Intensity was ok},
+    {Could sense all the motors},
+    Others},
+ytick=data,
+nodes near coords, 
+nodes near coords align={horizontal},
+ytick=data,
+]
+\addplot coordinates {
+    (25,{Too fast}) 
+    (8.3,{Too slow}) 
+    (66.7,{Speed was ok}) 
+    (0,{Too intense})
+    (0,{Not intense enough})
+    (75,{Intensity was ok})
+    (66.7,{Could sense all the motors})
+    (8.3,Others)};
+\end{axis}
+\end{tikzpicture} %width=6cm,height=7.59cm
+\caption{What do you think about the tickle stimuli?}
+\label{fig:whattickle}
+\end{figure}
+
+Finally, in the intensity test the same motor was activated with different intensities (a duty cycle of 30\% versus a duty cycle of 100\%). In this part of the test, everyone could feel the different intensities and guess correctly which stimulus was more intense.
+
+In Appendix~\ref{chap:tableresults} a more complete view of the results of the experience can be seen.
+
+In the comments/suggestions section, some interesting ideas were given by the subjects.
+
+Respecting the motor control, the possibility of the definition of a pattern in the interface could be very useful, for example in medical rehabilitation/diagnosis. This would allow, for instance, the doctor to define a specific pattern (that the doctor thinks might be useful for the patient) and to have the possibility of repeatability. Another interesting suggestion is to create a random stimulus in the \gls{GUI}. 
+
+Regarding the interface, the comments mentioned that the interface was user friendly but maybe not at a consumer-level yet.
+
+As for the prototype, most of what was said is that the prototype should be more robust/adjustable.
+
+In analysis, since the motors could be activated correctly from the interface with the correct intensity, and that the subjects could feel that intensity change, the experimental tests proved that the concept worked.
+% ----------------------------------------------------------------
+% Corpo da tese - Parte V - Conclusoes
+% ----------------------------------------------------------------
+\chapter{Conclusions and Future Work}    
+The final conclusions of this project are explained on this chapter, evaluating the success of the proposed objectives. Some ideas for future works are also mentioned.
+\section{Conclusions}
+\label{sec:conc}
+The main objectives for this project were to develop and test a prototype of a network of mini vibration motors that would allow to create sensation due to haptic feedback.
+
+For the development of this motor network, a controller, vibration motors and a graphical interface were needed.  Both the \gls{ROS} and the Qt software proved that they can be used for this type of project even though that some changes can be made. The mini \gls{DC} vibration motors also showed to be perfect for this project due to their size and current consumption. The Arduino also proved to be a valid option to work as a \gls{uC} since the \gls{PWM} method using timers and interrupts works well.
+
+The first prototype was made using only a flat cable and with the motors connected along that cable. However, it was noted that this utilization was not practical and the prototype was changed to a sewn Lycra sleeve.
+
+After medical analysis it was recognized that this prototype can be used in the rehabilitation medicine, such as sensitive reeducation and diagnose. 
+
+Some experimental tests were made and they proved that the proposed concept was successful and that applications in robotic teleoperation and rehabilitation have potential.
+
+Within the framework of this project a provisional patent request is going to be made. 
+
+\section{Future Work}
+\label{sec:fut}
+In the future, the prototype should be made differently. For this project the sleeve was sewn with Lycra and Nylon. However, for a future project it is recommended that the sleeve is previously bought in an elastic material so the assembly of the motors is easier and more robust. That would also give users with different sizes a more accessible way to dress the sleeve. 
+
+For future applications, a more portable device can also be made. The \gls{ROS} software can be dropped and instead bluetooth or wireless communication can be used, and the interface can also be made so that it can be used in android or iOS. Some work regarding this situation already started to being make. More can be seen in Appendix~\ref{chap:apendixA}. 
+
+Right now, this project depends on the user control of the motors, where the user decides which motor to turn on or which pattern to activate. One suggestion for future work is the use of sensors to control the location and intensity of the motors. That would allow, for instance, the user to apply pressure in someone else's arm and feel the vibration on its own body, in the same place the pressure was applied.
+
+Another suggestion for future work is the creation of a data structure of the motors  and the possibility for the user to create its own stimulation pattern instead of having to use the 3 standard patterns. Also, the possibility of sending a random stimuli should also be considered.
+
+% ----------------------------------------------------------------
+% Referências bibliográficas - Base de dadods
+% ----------------------------------------------------------------
+%\bibliographystyle{plain}
+%\bibliography{myBib}
+
+
+% ----------------------------------------------------------------
+% Referências bibliográficas - Registo directo
+% ----------------------------------------------------------------
+
+\cleardoublepage
+\sloppy
+\printbibliography[prenote=myprenote,title=References]
+
+%%anexos
+\begin{appendices}
+\chapter{Interface Node CMakeLists}
+\label{chap:cmakelistanexo}
+
+\begin{lstlisting}
+#My CMakeLists.txt
+
+cmake_minimum_required (VERSION 2.8)
+project (qtgui)
+
+#---------------------------------
+find_package(catkin REQUIRED COMPONENTS
+  roscpp
+  rospy
+  std_msgs
+ message_generation
+  message_runtime
+qt_ros_interface
+)
+
+FIND_PACKAGE(Qt4 REQUIRED)
+INCLUDE(${QT_USE_FILE})
+ADD_DEFINITIONS(${QT_DEFINITIONS})
+
+SET(qtgui_SOURCES src/main.cpp src/mainwindow.cpp src/QtPublisher.cpp)
+SET(qtgui_FORMS src/mainwindow.ui)
+SET(qtgui_HEADERS src/mainwindow.h src/globals.h src/QtPublisher.h)
+set(QRC_RESOURCES src/qtgui.qrc)
+set(CMAKE_AUTOUIC ON)
+set(CMAKE_AUTOMOC ON)
+
+QT4_WRAP_CPP(qtgui_HEADERS_MOC ${SimpleProject_HEADERS})
+QT4_WRAP_UI(qtgui_FORMS_HEADERS ${SimpleProject_FORMS})
+QT4_ADD_RESOURCES(RESOURCES_RCC ${RESOURCE})
+
+## Generate messages in the 'msg' folder
+ add_message_files(
+   FILES
+   GUIDados.msg
+ )
+
+## Generate added messages and services with any dependencies listed here
+ generate_messages(
+  DEPENDENCIES
+   std_msgs  # Or other packages containing msgs
+ )
+
+## Declare a catkin package
+
+catkin_package(CATKIN_DEPENDS roscpp rospy std_msgs message_runtime)
+include_directories(${catkin_INCLUDE_DIRS})
+INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR})
+
+ADD_EXECUTABLE(qtgui
+    ${qtgui_SOURCES}
+    ${qtgui_HEADERS_MOC} 
+    ${qtgui_FORMS_HEADERS}
+    ${QRC_RESOURCES}
+)
+
+TARGET_LINK_LIBRARIES(qtgui ${QT_LIBRARIES} ${catkin_LIBRARIES})
+
+\end{lstlisting}
+
+\chapter{Table of Results of the Experimental Tests}
+\label{chap:tableresults}
+
+\textbf{General Questions}
+
+\begin{table}[ht!]
+\caption{What is your age?}
+\centering
+\label{tab:agetable}
+\begin{tabular}{l|l} %tabela com 3 colunas
+\toprule
+\textbf{Age} & \textbf{Percentage (\%)}\\
+\toprule
+22 & 33.3\%\\
+23 & 25\%\\
+18 & 8.3\%\\
+20 & 8.3\%\\
+24 & 8.3\%\\
+48 & 8.3\%\\
+52 & 8.3\%
+\end{tabular}
+\end{table}
+
+\begin{table}[ht!]
+\caption{What is your sex?}
+\centering
+\label{tab:sextable}
+\begin{tabular}{l|l} %tabela com 3 colunas
+\toprule
+\textbf{Genre} & \textbf{Percentage (\%)}\\
+\toprule
+Female & 50\%\\
+Male & 50\%
+\end{tabular}
+\end{table}
+
+\begin{table}[ht!]
+\caption{What is your main professional activity?}
+\centering
+\label{tab:activitytable}
+\begin{tabular}{l|l} %tabela com 3 colunas
+\toprule
+\textbf{Professional Activity} & \textbf{Percentage (\%)}\\
+\toprule
+Student & 83.3\%\\
+Teacher & 16.7\%\\
+Doctor & 0\%\\
+Other & 0\%
+\end{tabular}
+\end{table}
+
+\newpage
+\textbf{Individual Motor Control questions}
+
+\begin{table}[ht!]
+\caption{Could you localize all the motors?}
+\centering
+\label{tab:motorlocaltab}
+\begin{tabular}{l|l} %tabela com 3 colunas
+\toprule
+\textbf{Answer} & \textbf{Percentage (\%)}\\
+\toprule
+Yes & 66.7\%\\
+No & 33.3\%
+\end{tabular}
+\end{table}
+
+\begin{table}[ht!]
+\caption{If not, why do you think you couldn't?}
+\centering
+\label{tab:whynottab}
+\begin{tabular}{l|l} %tabela com 3 colunas
+\toprule
+\textbf{Reason} & \textbf{Percentage (\%)}\\
+\toprule
+Motors were too close & 40\%\\
+Lack of contact & 40\%\\
+Intensity was the same & 20\%
+\end{tabular}
+\end{table}
+
+\begin{table}[ht!]
+\caption{Could you feel the different intensities?}
+\centering
+\label{tab:intensitiestab}
+\begin{tabular}{l|l} %tabela com 3 colunas
+\toprule
+\textbf{Answer} & \textbf{Percentage (\%)}\\
+\toprule
+Yes & 100\%\\
+No & 0\%
+\end{tabular}
+\end{table}
+
+\begin{table}[ht!]
+\caption{Where do you think it's easier to detect the motors?}
+\centering
+\label{tab:easiertab}
+\begin{tabular}{l|l} %tabela com 3 colunas
+\toprule
+\textbf{Local} & \textbf{Percentage (\%)}\\
+\toprule
+Arm & 41.7\%\\
+Upper hand & 33.3\%\\
+Lower hand & 16.7\%\\
+None & 8.3\%
+\end{tabular}
+\end{table}
+
+\newpage
+\textbf{Pattern Control questions}
+
+\begin{table}[ht!]
+\caption{Did you try the shiver pattern?}
+\centering
+\label{tab:shivertabyes}
+\begin{tabular}{l|l} %tabela com 3 colunas
+\toprule
+\textbf{Answer} & \textbf{Percentage (\%)}\\
+\toprule
+Yes & 100\%\\
+No & 0\%
+\end{tabular}
+\end{table}
+
+\begin{table}[ht!]
+\caption{What do you think about the shiver stimuli?}
+\centering
+\label{tab:shiverpatterntab}
+\begin{tabular}{l|l} %tabela com 3 colunas
+\toprule
+\textbf{Answer} & \textbf{Percentage (\%)}\\
+\toprule
+Speed was ok & 91.7\%\\
+Intensity was ok & 66.7\%\\
+Could sense all the motors & 66.7\%\\
+Too slow & 8.3\%\\
+Not intense enough & 8.3\%\\
+Just noticed it at second time & 8.3\%\\
+Felt a little artificial & 8.3\%\\
+Too fast & 0\%\\
+Too intense & 0\%
+\end{tabular}
+\end{table}
+
+\begin{table}[ht!]
+\caption{Did you try the tickle pattern?}
+\centering
+\label{tab:tickletabyes}
+\begin{tabular}{l|l} %tabela com 3 colunas
+\toprule
+\textbf{Answer} & \textbf{Percentage (\%)}\\
+\toprule
+Yes & 100\%\\
+No & 0\%
+\end{tabular}
+\end{table}
+
+\begin{table}[ht!]
+\caption{What do you think about the tickle stimuli?}
+\centering
+\label{tab:ticklepatterntab}
+\begin{tabular}{l|l} %tabela com 3 colunas
+\toprule
+\textbf{Answer} & \textbf{Percentage (\%)}\\
+\toprule
+Intensity was ok & 75\%\\
+Speed was ok & 66.7\%\\
+Could sense all the motors & 66.7\%\\
+Too fast & 25\%\\
+Too slow & 8.3\%\\
+Felt a little artificial & 8.3\%\\
+Too intense & 0\%\\
+Not intense enough & 0\%
+\end{tabular}
+\end{table}
+
+\chapter{Hands-Free device}
+\label{chap:apendixA}
+As it was mentioned in Section~\ref{sec:fut}, the communication is meant to be bluetooth or wireless in the future. Since the communication is going to be hands-free, it makes no sense to have the Arduino connected to the computer to power it.
+
+To power the Arduino, a rechargeable 3.7V lithium battery (with 5V output) circuit  was made. The idea of a rechargeable battery came from the fact that, this way, there is no need to change the battery from time to time.
+
+\begin{figure}[ht!]
+  \centering
+  \includegraphics[width=0.9\textwidth]{chargingcircuit.png}
+  \caption{Recharging circuit}
+  \label{fig:chargcirc}
+\end{figure}
+
+To enclosure these components, a box was modeled using the \gls{CAD} software \textit{SolidWorks}. This box has a place to put the battery and its charging circuit, the bluetooth and the Arduino. It also offers the possibility of connecting the battery to a Micro-\gls{USB} cable to recharge it, a ON/OFF button to turn on the controller and the access to the Arduino serial cable in case some changes on the code need to be made.
+
+Figure~\ref{fig:box} and Figure~\ref{fig:assembly_box} show the interior of the box and an assembly of the box, respectively.
+\begin{figure}[ht!]
+  \centering
+  \includegraphics[width=0.6\textwidth]{caixa_pdf.pdf}
+  \caption{Interior of the box}
+  \label{fig:box}
+\end{figure}
+\begin{figure}[ht!]
+  \centering
+  \includegraphics[width=0.6\textwidth]{assembly_pdf.pdf}
+  \caption{Assembly of the Box}
+  \label{fig:assembly_box}
+\end{figure}
+
+This box was printed using a \gls{3D} printer at the \gls{DEM} of the University of Aveiro.
+
+
+\textbf{FALTA imagem da caixa impressa com os componentes montados }
+
+\end{appendices}
+% ----------------------------------------------------------------
+% Fim do documento
+% ----------------------------------------------------------------
+\end{document}
+
