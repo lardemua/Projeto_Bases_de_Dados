@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.5.18)  20 MAY 2018 14:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.5.18)  20 MAY 2018 21:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -983,187 +983,187 @@ Package babel Info: Redefining portuges shorthand "|
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 171.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 173.
+(babel)             in language  on input line 174.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 175.
+(babel)             in language  on input line 176.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 177.
+(babel)             in language  on input line 178.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 177.
+(babel)             in language  on input line 178.
 [5
 
 ]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 177.
+(babel)             in language  on input line 178.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 177.
+(babel)             in language  on input line 178.
  [6
 
 ]
 Cap\'{\i }tulo 4.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 178.
+(babel)             in language  on input line 179.
 
-Underfull \hbox (badness 10000) in paragraph at lines 179--182
+Underfull \hbox (badness 10000) in paragraph at lines 180--183
 
  []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 183.
-<Pictures/placeholder.jpg, id=278, 351.3125pt x 193.72375pt>
+(babel)             in language  on input line 184.
+<Pictures/placeholder.jpg, id=282, 351.3125pt x 193.72375pt>
 File: Pictures/placeholder.jpg Graphic file (type jpg)
 
 <use Pictures/placeholder.jpg>
-Package pdftex.def Info: Pictures/placeholder.jpg used on input line 187.
+Package pdftex.def Info: Pictures/placeholder.jpg used on input line 188.
 (pdftex.def)             Requested size: 287.72223pt x 158.67122pt.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 193.
+(babel)             in language  on input line 194.
 
 Underfull \vbox (badness 3815) has occurred while \output is active []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 196.
+(babel)             in language  on input line 197.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 196.
+(babel)             in language  on input line 197.
  [7
 
  <./Pictures/placeholder.jpg>]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 196.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 197.
 
  (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 196.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 197.
 
-Underfull \hbox (badness 10000) in paragraph at lines 202--204
+Underfull \hbox (badness 10000) in paragraph at lines 203--205
 
  []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 205.
+(babel)             in language  on input line 206.
 File: Pictures/placeholder.jpg Graphic file (type jpg)
 <use Pictures/placeholder.jpg>
-Package pdftex.def Info: Pictures/placeholder.jpg used on input line 210.
+Package pdftex.def Info: Pictures/placeholder.jpg used on input line 211.
 (pdftex.def)             Requested size: 199.19283pt x 109.8443pt.
 File: Pictures/placeholder.jpg Graphic file (type jpg)
  <use Pictures/placeholder.jpg>
-Package pdftex.def Info: Pictures/placeholder.jpg used on input line 217.
+Package pdftex.def Info: Pictures/placeholder.jpg used on input line 218.
 (pdftex.def)             Requested size: 199.19283pt x 109.8443pt.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 228.
+(babel)             in language  on input line 229.
 File: Pictures/placeholder.jpg Graphic file (type jpg)
 
 <use Pictures/placeholder.jpg>
-Package pdftex.def Info: Pictures/placeholder.jpg used on input line 231.
+Package pdftex.def Info: Pictures/placeholder.jpg used on input line 232.
 (pdftex.def)             Requested size: 287.72223pt x 158.67122pt.
 
 Underfull \vbox (badness 3557) has occurred while \output is active []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 236.
+(babel)             in language  on input line 237.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 236.
+(babel)             in language  on input line 237.
  [8]
 File: Pictures/placeholder.jpg Graphic file (type jpg)
 
 <use Pictures/placeholder.jpg>
-Package pdftex.def Info: Pictures/placeholder.jpg used on input line 242.
+Package pdftex.def Info: Pictures/placeholder.jpg used on input line 243.
 (pdftex.def)             Requested size: 199.19283pt x 109.8443pt.
 File: Pictures/placeholder.jpg Graphic file (type jpg)
  <use Pictures/placeholder.jpg>
-Package pdftex.def Info: Pictures/placeholder.jpg used on input line 249.
+Package pdftex.def Info: Pictures/placeholder.jpg used on input line 250.
 (pdftex.def)             Requested size: 199.19283pt x 109.8443pt.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 258.
+(babel)             in language  on input line 259.
 File: Pictures/placeholder.jpg Graphic file (type jpg)
 
 <use Pictures/placeholder.jpg>
-Package pdftex.def Info: Pictures/placeholder.jpg used on input line 263.
+Package pdftex.def Info: Pictures/placeholder.jpg used on input line 264.
 (pdftex.def)             Requested size: 199.19283pt x 109.8443pt.
 File: Pictures/placeholder.jpg Graphic file (type jpg)
  <use Pictures/placeholder.jpg>
-Package pdftex.def Info: Pictures/placeholder.jpg used on input line 270.
+Package pdftex.def Info: Pictures/placeholder.jpg used on input line 271.
 (pdftex.def)             Requested size: 199.19283pt x 109.8443pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 278.
+(babel)             in language  on input line 279.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 278.
+(babel)             in language  on input line 279.
  [9]
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
-Underfull \hbox (badness 10000) in paragraph at lines 278--279
+Underfull \hbox (badness 10000) in paragraph at lines 279--280
 
  []
 
 File: Pictures/placeholder.jpg Graphic file (type jpg)
 <use Pictures/placeholder.jpg>
-Package pdftex.def Info: Pictures/placeholder.jpg used on input line 310.
+Package pdftex.def Info: Pictures/placeholder.jpg used on input line 311.
 (pdftex.def)             Requested size: 199.19283pt x 109.8443pt.
 File: Pictures/placeholder.jpg Graphic file (type jpg)
  <use Pictures/placeholder.jpg>
-Package pdftex.def Info: Pictures/placeholder.jpg used on input line 317.
+Package pdftex.def Info: Pictures/placeholder.jpg used on input line 318.
 (pdftex.def)             Requested size: 199.19283pt x 109.8443pt.
 File: Pictures/placeholder.jpg Graphic file (type jpg)
 
 <use Pictures/placeholder.jpg>
-Package pdftex.def Info: Pictures/placeholder.jpg used on input line 324.
+Package pdftex.def Info: Pictures/placeholder.jpg used on input line 325.
 (pdftex.def)             Requested size: 199.19283pt x 109.8443pt.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 331.
+(babel)             in language  on input line 332.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 331.
+(babel)             in language  on input line 332.
  [10]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 333.
+(babel)             in language  on input line 334.
 File: Pictures/placeholder.jpg Graphic file (type jpg)
  <use Pictures/placeholder.jpg>
-Package pdftex.def Info: Pictures/placeholder.jpg used on input line 338.
+Package pdftex.def Info: Pictures/placeholder.jpg used on input line 339.
 (pdftex.def)             Requested size: 199.19283pt x 109.8443pt.
 File: Pictures/placeholder.jpg Graphic file (type jpg)
 
 <use Pictures/placeholder.jpg>
-Package pdftex.def Info: Pictures/placeholder.jpg used on input line 345.
+Package pdftex.def Info: Pictures/placeholder.jpg used on input line 346.
 (pdftex.def)             Requested size: 199.19283pt x 109.8443pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 353.
+(babel)             in language  on input line 354.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 353.
+(babel)             in language  on input line 354.
  [11]
 File: Pictures/placeholder.jpg Graphic file (type jpg)
 
 <use Pictures/placeholder.jpg>
-Package pdftex.def Info: Pictures/placeholder.jpg used on input line 356.
+Package pdftex.def Info: Pictures/placeholder.jpg used on input line 357.
 (pdftex.def)             Requested size: 287.72223pt x 158.67122pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 353--360
+Underfull \hbox (badness 10000) in paragraph at lines 354--361
 
  []
 
 File: Pictures/placeholder.jpg Graphic file (type jpg)
 <use Pictures/placeholder.jpg>
-Package pdftex.def Info: Pictures/placeholder.jpg used on input line 375.
+Package pdftex.def Info: Pictures/placeholder.jpg used on input line 377.
 (pdftex.def)             Requested size: 199.19283pt x 109.8443pt.
 File: Pictures/placeholder.jpg Graphic file (type jpg)
  <use Pictures/placeholder.jpg>
-Package pdftex.def Info: Pictures/placeholder.jpg used on input line 382.
+Package pdftex.def Info: Pictures/placeholder.jpg used on input line 384.
 (pdftex.def)             Requested size: 199.19283pt x 109.8443pt.
 File: Pictures/placeholder.jpg Graphic file (type jpg)
 
 <use Pictures/placeholder.jpg>
-Package pdftex.def Info: Pictures/placeholder.jpg used on input line 389.
+Package pdftex.def Info: Pictures/placeholder.jpg used on input line 391.
 (pdftex.def)             Requested size: 199.19283pt x 109.8443pt.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 396.
+(babel)             in language  on input line 398.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 396.
+(babel)             in language  on input line 398.
  [12]
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 402.
@@ -1171,124 +1171,146 @@ Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 402.
  [13]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 424.
+(babel)             in language  on input line 426.
 File: Pictures/placeholder.jpg Graphic file (type jpg)
  <use Pictures/placeholder.jpg>
-Package pdftex.def Info: Pictures/placeholder.jpg used on input line 429.
+Package pdftex.def Info: Pictures/placeholder.jpg used on input line 432.
 (pdftex.def)             Requested size: 199.19283pt x 109.8443pt.
 File: Pictures/placeholder.jpg Graphic file (type jpg)
 
 <use Pictures/placeholder.jpg>
-Package pdftex.def Info: Pictures/placeholder.jpg used on input line 436.
+Package pdftex.def Info: Pictures/placeholder.jpg used on input line 439.
 (pdftex.def)             Requested size: 199.19283pt x 109.8443pt.
 File: Pictures/placeholder.jpg Graphic file (type jpg)
  <use Pictures/placeholder.jpg>
-Package pdftex.def Info: Pictures/placeholder.jpg used on input line 443.
+Package pdftex.def Info: Pictures/placeholder.jpg used on input line 446.
 (pdftex.def)             Requested size: 199.19283pt x 109.8443pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 452.
+(babel)             in language  on input line 454.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 452.
+(babel)             in language  on input line 454.
  [14]
 File: Pictures/placeholder.jpg Graphic file (type jpg)
 
 <use Pictures/placeholder.jpg>
-Package pdftex.def Info: Pictures/placeholder.jpg used on input line 459.
-(pdftex.def)             Requested size: 287.72223pt x 158.67122pt.
-File: Pictures/placeholder.jpg Graphic file (type jpg)
- <use Pictures/placeholder.jpg>
-Package pdftex.def Info: Pictures/placeholder.jpg used on input line 478.
+Package pdftex.def Info: Pictures/placeholder.jpg used on input line 462.
 (pdftex.def)             Requested size: 287.72223pt x 158.67122pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 483.
+(babel)             in language  on input line 467.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 483.
+(babel)             in language  on input line 467.
  [15]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 485.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 485.
+File: Pictures/placeholder.jpg Graphic file (type jpg)
 
-[16]
+<use Pictures/placeholder.jpg>
+Package pdftex.def Info: Pictures/placeholder.jpg used on input line 481.
+(pdftex.def)             Requested size: 287.72223pt x 158.67122pt.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 488.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 488.
+ [16]
 Cap\'{\i }tulo 5.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 486.
+(babel)             in language  on input line 489.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 488.
+(babel)             in language  on input line 491.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 488.
+(babel)             in language  on input line 491.
 [17
 
 
 ]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 488.
+(babel)             in language  on input line 491.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 488.
+(babel)             in language  on input line 491.
  [18
 
 ]
 Cap\'{\i }tulo 6.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 489.
+(babel)             in language  on input line 492.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 490.
+(babel)             in language  on input line 495.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 493.
+(babel)             in language  on input line 496.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 497.
+(babel)             in language  on input line 505.
+File: Pictures/placeholder.jpg Graphic file (type jpg)
+<use Pictures/placeholder.jpg>
+Package pdftex.def Info: Pictures/placeholder.jpg used on input line 509.
+(pdftex.def)             Requested size: 287.72223pt x 158.67122pt.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 500.
+(babel)             in language  on input line 513.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 506.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 506.
-[19
-
-]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 506.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 506.
- [20
+(babel)             in language  on input line 513.
+ [19
 
 ]
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 517.
+File: Pictures/placeholder.jpg Graphic file (type jpg)
+ <use Pictures/placeholder.jpg>
+Package pdftex.def Info: Pictures/placeholder.jpg used on input line 522.
+(pdftex.def)             Requested size: 287.72223pt x 158.67122pt.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 531.
+(babel)             in language  on input line 526.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 531.
- [21
+(babel)             in language  on input line 526.
+ [20]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 533.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 533.
 
-]
+[21]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 531.
+(babel)             in language  on input line 533.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 531.
+(babel)             in language  on input line 533.
  [22
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 533.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 533.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 544.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 558.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 558.
+ [23
+
+]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 558.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 558.
+ [24
+
+]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 560.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 560.
  (./example.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 533.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 533.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 560.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 560.
 Package rerunfilecheck Info: File `example.out' has not changed.
-(rerunfilecheck)             Checksum: 1B1DFF97D53EC391439DB7C3769D75F5;1966.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 533.
+(rerunfilecheck)             Checksum: 7F3B557E0157B18EBE05BB5A5C407F50;1937.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 560.
  ) 
 Here is how much of TeX's memory you used:
- 10897 strings out of 494929
- 157575 string characters out of 6180142
- 271082 words of memory out of 5000000
- 13897 multiletter control sequences out of 15000+600000
+ 10915 strings out of 494929
+ 157837 string characters out of 6180142
+ 271317 words of memory out of 5000000
+ 13907 multiletter control sequences out of 15000+600000
  13996 words of font info for 51 fonts, out of 8000000 for 9000
  16 hyphenation exceptions out of 8191
- 42i,10n,42p,712b,1824s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,10n,42p,1212b,1824s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/te
@@ -1299,10 +1321,10 @@ nts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
 /amsfonts/cm/cmtt10.pfb>
-Output written on example.pdf (38 pages, 190357 bytes).
+Output written on example.pdf (40 pages, 197038 bytes).
 PDF statistics:
- 494 PDF objects out of 1000 (max. 8388607)
- 436 compressed objects within 5 object streams
- 132 named destinations out of 1000 (max. 500000)
+ 516 PDF objects out of 1000 (max. 8388607)
+ 456 compressed objects within 5 object streams
+ 140 named destinations out of 1000 (max. 500000)
  256 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -21,11 +21,11 @@
 \contentsline {subsection}{\numberline {4.2.2}\textit {Login}}{9}{subsection.4.2.2}
 \contentsline {subsection}{\numberline {4.2.3}Consultas}{10}{subsection.4.2.3}
 \contentsline {subsection}{\numberline {4.2.4}Administra\IeC {\c c}\IeC {\~a}o}{12}{subsection.4.2.4}
-\contentsline {subsection}{\numberline {4.2.5}Conex\IeC {\~a}o local}{14}{subsection.4.2.5}
+\contentsline {subsection}{\numberline {4.2.5}Conex\IeC {\~a}o local}{15}{subsection.4.2.5}
 \contentsline {chapter}{\numberline {5}Instala\IeC {\c c}\IeC {\~a}o do Sistema}{17}{chapter.5}
 \contentsline {chapter}{\numberline {6}Conclus\IeC {\~o}es}{19}{chapter.6}
-\contentsline {section}{\numberline {6.1}Observa\IeC {\c c}\IeC {\~o}es sobre Infraestrutura}{19}{section.6.1}
-\contentsline {section}{\numberline {6.2}Observa\IeC {\c c}\IeC {\~o}es Aplica\IeC {\c c}\IeC {\~a}o}{19}{section.6.2}
-\contentsline {section}{\numberline {6.3}Observa\IeC {\c c}\IeC {\~o}es gerais}{19}{section.6.3}
-\contentsline {section}{\numberline {6.4}trabalhos futuros}{19}{section.6.4}
-\contentsline {chapter}{Bibliografia}{21}{section.6.5}
+\contentsline {section}{\numberline {6.1}Coment\IeC {\'a}rios}{19}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Infraestrutura de dados}{19}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.2}Aplica\IeC {\c c}\IeC {\~a}o}{19}{subsection.6.1.2}
+\contentsline {section}{\numberline {6.2}Trabalhos Futuros}{20}{section.6.2}
+\contentsline {chapter}{Bibliografia}{23}{section.6.3}

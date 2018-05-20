@@ -117,7 +117,7 @@
   \vspace*{55mm}
   \TEXT{\textbf{Resumo}}
        {ergergergerg}
-  \TEXT{}
+  \TEXT{Potato}
        {bergergerg}
 \EndTitlePage
 \titlepage\ \endtitlepage % empty page
@@ -169,6 +169,7 @@ arquivo e monitorização de moldes.
 \subsection{Programa de transferência}
 
 \subsection{Gestão de \textit{backups}}
+\label{subchap:backups}
 
 \subsection{Simulador}
 
@@ -367,7 +368,8 @@ grep\\
 Obtém-se os números de processo dos programas que estão a transferir valores. Estes valores são armazenados na variável @pids. Para terminar os programas utiliza-se o seguinte comando:\\
 kill -2 @pids\\
 A opção -2 permite enviar para o processo escolhido o sinal SIGINT que é o sinal esperado pelo programa para que este termine as suas rotinas antes de encerrar. Para iniciar novamente o comando usar:\\
-~/path/transferencia
+~/path/transferencia\\
+É necessário garantir permissões ao servidor \textit{Apache} no sistema central para que este possa executar estes comandos.
 \begin{figure}[H]
 	\centering
 	\begin{minipage}{.5\textwidth}
@@ -422,6 +424,7 @@ Nas várias áreas de gestão existem os botões Ver Clientes, Ver Moldes e Ver 
 Estas fornecem algumas informações contextuais para facilitar a navegação do utilizador.
 
 \subsection{Conexão local}
+\label{subchap:local}
 \begin{figure}[H]
 	\centering
 	\begin{minipage}{.5\textwidth}
@@ -487,18 +490,42 @@ Terminado a análise das funcionalidades da aplicação com a área de Instalar 
 
 \cleardoublepage
 \chapter{Conclusões}
-\section{Observações sobre Infraestrutura}
-objetivos concluidos, consumo elevado de processador
+O desafio proposto consiste em monitorizar sensores remotamente. Para isto definiu-se como objetivos principais desenvolver uma rede de bases de dados e uma aplicação que permitisse interagir com estas. Estes objetivos foram concluídos com sucesso. Este capítulo contém comentários sobre o desempenho da solução desenvolvida e propostas para trabalhos futuros.
 
-\section{Observações Aplicação}
-objetivos concluidos, baixa performance por causa do php.\\
-sugerir alterar para java e o metodo de instalação.
+\section{Comentários}
+\subsection{Infraestrutura de dados}
+Em relação à infraestrutura proposta, esta cumpre todos os requisitos propostos de garantir uma transferência segura, confidencial e permanente de valores, criando um histórico dos moldes monitorizados. Os programas desenvolvidos em \textit{C} são simples e funcionais. No entanto, quando estão em funcionamento, o sistema executa-os sem restrições. Isto resulta num elevado consumo do processador e consequente perda de performance do sistema central. Esta perda de performance pode ser por causa do \textit{hardware} utilizado no projeto e a utilização de um sistema devidamente dimensionado para a tarefa em mão pode resolver este problema. Outra solução seria limitar a velocidade de processamento da execução destes programas.\\
+Como definido nos objetivos esta não impõe restrições na instrumentação dos moldes. Para introduzir dados nas bases de dados locais pode ser utilizado qualquer sistema operativo e linguagem de programação desde que esta tenha protocolos de comunicação com \textit{MySQL} e gere \textit{queries} do tipo:
+\begin{lstlisting}[language = SQL]
+	INSERT INTO registos
+	VALUES
+	(molde, sensor, fase, data_hora, milissegundos, valor);
+\end{lstlisting}
 
-\section{Observações gerais}
-Apesar de algumas quebras de performance o sistema está pronto a ser usado. So tem de ser denvolvido um programa para inserir a query especifica.
+\subsection{Aplicação}
+Em relação à aplicação, esta cumpre os objetivos propostos de ser multiplataforma e garantir um acesso remoto à base de dados central, bem como gerir as informações dos clientes, moldes e sensores. No entanto, o facto da aplicação ter sido desenvolvida na totalidade com \textit{PHP} e \textit{HTML}, causa uma perda de performance no servidor central. Isto aconteceu porque, durante o desenvolvimento do projeto, não foi percebido na totalidade o conceito de lado do servidor e lado do cliente. De forma a melhorar o desempenho sugere-se a alteração de algumas funcionalidades desenvolvidas em \textit{PHP} para \textit{JavaScript}, como por exemplo, as conexões às bases de dados que são particularmente pesadas no servidor. A alteração das conexões de \textit{PHP} para \textit{JavaScript} permite também alterar o método de instalação da base de dados local mencionado na \autoref{subchap:local}. Em vez de serem gerados comandos para o utilizador executar no \textit{MySQL} estes podem ser enviados diretamente pela aplicação desde que seja fornecida a \textit{password} para a \textit{root} do sistema como sugerido na \autoref{fig:conclusoes1}.
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.65\textwidth]{placeholder} % Include the image placeholder.png
+		\caption{Esquema ligação temporária}
+		\label{fig:conclusoes1}
+	\end{center}
+\end{figure}
+Além disto é necessário realizar uma revisão de segurança à aplicação. Por exemplo, o botão Atualizar na área Gestão de Clientes que reinicia o programa de transferência de valores através de comandos no terminal. Se as permissões garantidas ao servidor \textit{Apache} não forem bem definidas, pode constituir uma quebra de segurança. Um programador com intenções maliciosas pode acessar o sistema pela aplicação e realizar comandos no terminal de forma a comprometer o sistema. Para isto não acontecer é necessário garantir que o servidor \textit{Apache} só tem permissões sobre o programa de transferência ou então definir um sistema de notificações entre a aplicação e o programa em \textit{C}.\\
+Apesar de serem necessários alguns ajustes de forma a melhorar performance, a solução proposta da infraestrutura e aplicação é completamente funcional e pode ser já implementada numa fase experimental.
 
-\section{trabalhos futuros}
-Make over e sistema de notificações.
+\section{Trabalhos Futuros}
+Quanto à infraestrutura dos dados não foi definido como os sensores dos moldes serão ligados ao servidor local. No desenvolvimento deste projeto assumiu-se que todos os moldes estão ligados diretamente ao sistema local. Se esta proposta não se demonstrar viável é possível, em vez de se ter um servidor local por cliente, ter um servidor local por molde. Esta adaptação irá criar uma maior quantidade de bases de dados locais mas, isto não é problemático, se o modelo de dados e o programa de transferência forem adaptados para o efeito.\\
+Quanto à aplicação, sugere-se que após uma apresentação inicial desta à empresa promotora, seja iniciado um processo iterativo de desenvolvimento para escolher e desenvolver novas funcionalidades que possam ser úteis e que não tenham sido abrangidas neste projeto, como por exemplo, a criação de utilizadores baseado no ID de trabalhador demonstrado na \autoref{fig:conclusoes2}. Culminando numa estilização da aplicação para que esta tenha um aspeto mais amigável ao utilizador.
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.65\textwidth]{placeholder} % Include the image placeholder.png
+		\caption{Esquema ligação temporária}
+		\label{fig:conclusoes2}
+	\end{center}
+\end{figure}
+Além destas alterações sugere-se a criação de um sistema de notificações e monitorização automático dos moldes. É impossível para um utilizador analisar manualmente milhões de registos de um molde e concluir se este está a funcionar corretamente. Para este efeito criar um programa capaz de correr algoritmos que analisem o comportamento dos moldes. Este programa pode ser desenvolvido em \textit{softwares} mais sofisticados, como por exemplo \textit{MATLAB}, desde que estes tenham protocolos de comunicação com \textit{MySQL}.\\
+A gestão dos \textit{backups} descrita na \autoref{subchap:backups} onde se separa os registos dos moldes em vez de se realizar um \textit{backup} geral foi realizada com este sistema de notificações em mente. Se for necessário, para efeitos de cálculo, que o programa carregue os registos de um molde armazenados em \textit{backups}, este só necessita de carregar a informação do molde que está a ser analisado em vez de ter de carregar a informação de todos os moldes. Este programa deverá correr automaticamente no sistema de forma permanente ou com um temporizador e, no caso de ser necessário, notificar o utilizador via aplicação ou via email.
 
 %
 % The bibliography
