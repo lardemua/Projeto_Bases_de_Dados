@@ -54,7 +54,9 @@ session_start();
     </form>
 
 <form action="resultado_consulta.php" target="_blank" method="get">
-    <table table_align = "left" cellspacing = "5" cellpadding = "8">
+	<fieldset style="float: left;">
+	<legend>Escolher Atributos:</legend>
+    <table style="float: left;" cellspacing = "5" cellpadding = "8">
         <tr>
             <td align="left"><b>Clientes</b></td>
             <td align="left"><b>Moldes</b></td>
@@ -92,6 +94,7 @@ session_start();
                 <td align="left"></td>
             </tr>
     </table>
+	
     <table table_align = "left" cellspacing = "5" cellpadding = "8">
         <tr>
             <td>Filtros:</td>
@@ -105,6 +108,7 @@ session_start();
                     <input type="text" name="Ordem" value="" size="50">
             </td>
         </tr>
+	</fieldset>
         <tr>
             <td valign="top">Query:</td>
             <td>
