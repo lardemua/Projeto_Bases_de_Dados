@@ -49,7 +49,7 @@
             echo '<table class = "query" table_align = "left" cellspacing = "5" cellpadding = "8">
 
             <tr>
-                <td align="left"><b>Database Name</b></td>
+                <td align="left"><b>Nome Base de Dados</b></td>
             </tr>';
             foreach($db_names as $name)
             {

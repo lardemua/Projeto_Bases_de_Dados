@@ -73,7 +73,7 @@ session_start();
         <p>Inciar sessão no MySQL:</p>
         <pre>      mysql -u root -p</pre>
         <p>Introduzir a query:</p>
-        <pre>      CREATE USER 'user'@'%' IDENTIFIED BY 'password';
+        <pre>      CREATE USER 'user'@'%' IDENTIFIED BY '<font color="azure">password</font>';
       GRANT CREATE ON *.* TO 'user'@'%';
       FLUSH PRIVILEGES;</pre>
         <p>Terminar sessão:</p>

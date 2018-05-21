@@ -165,9 +165,9 @@
     GRANT SELECT, INSERT, DELETE ON <?php echo  "cl_" . $_POST['cl_id'];?>.moldes TO 'user'@'%';
     GRANT SELECT, INSERT, DELETE ON <?php echo  "cl_" . $_POST['cl_id'];?>.sensores TO 'user'@'%';
     GRANT SELECT ON <?php echo  "cl_" . $_POST['cl_id'];?>.registos TO 'user'@'%';
-    CREATE USER 'sensores'@'localhost' IDENTIFIED BY 'sensores1234';
+    CREATE USER 'sensores'@'localhost' IDENTIFIED BY '<font color="azure">sensores1234</font>';
     GRANT INSERT ON <?php echo  "cl_" . $_POST['cl_id'];?>.registos TO 'sensores'@'localhost';
-    CREATE USER 'transferencia'@'%' IDENTIFIED BY 'transferencia1234';
+    CREATE USER 'transferencia'@'%' IDENTIFIED BY '<font color="azure">transferencia1234</font>';
     GRANT SELECT, DELETE ON <?php echo  "cl_" . $_POST['cl_id'];?>.registos TO 'transferencia'@'%';
     FLUSH PRIVILEGES;
     USE <?php echo  "cl_" . $_POST['cl_id'];?>;

@@ -70,7 +70,7 @@ session_start();
 <form action="05_login_local.php" method="post">
     <table>
         <tr>
-        <td>Database Name:</td>
+        <td>Nome Base de Dados:</td>
         <td>
             <input type="text" name="database" value="">
         </td>

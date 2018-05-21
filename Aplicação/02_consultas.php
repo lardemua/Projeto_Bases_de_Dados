@@ -54,6 +54,8 @@ session_start();
     </form>
 
 <form action="resultado_consulta.php" target="_blank" method="get">
+	<fieldset>
+	<legend>Gerar Query</legend>
 	<fieldset style="float: left;">
 	<legend>Escolher Atributos:</legend>
     <table style="float: left;" cellspacing = "5" cellpadding = "8">
@@ -94,28 +96,45 @@ session_start();
                 <td align="left"></td>
             </tr>
     </table>
-	
+	</fieldset>
+	<fieldset style="float: left;">
+	<legend>Adicionar Condições:</legend>
     <table table_align = "left" cellspacing = "5" cellpadding = "8">
         <tr>
             <td>Filtros:</td>
             <td>
-                    <input type="text" name="Filtros" value="" size="50">
+                    <abbr title="Ex.: cl_ID = xxxxx AND m_ID = zzzz"><input type="text" name="Filtros" value="" size="43"></abbr>
             </td>
         </tr>
         <tr>
             <td>Ordenar:</td>
             <td>
-                    <input type="text" name="Ordem" value="" size="50">
+			<abbr title="Ex.: cl_ID, m_ID"><input type="text" name="Ordem" value="" size="43"></abbr>
             </td>
         </tr>
+	</table>
 	</fieldset>
+	</fieldset>
+	<fieldset style="float: left;">
+	<legend>Ou:</legend>
+    	<table table_align = "left" cellspacing = "5" cellpadding = "8">
         <tr>
             <td valign="top">Query:</td>
             <td>
                 <textarea name="Query_Text" rows="5" cols="71" ></textarea>
             </td>
+	</tr>
+	</table>
+	</fieldset>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<table table_align = "left" cellspacing = "5" cellpadding = "8">
+	<tr>
             <td valign="bottom">
-                <input type="submit" name="Query" value="Query">
+                <input type="submit" name="Query" value="Gerar Query">
             </td>
         </tr>
     </table>

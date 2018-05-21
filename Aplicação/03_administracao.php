@@ -55,21 +55,21 @@ session_start();
         if($_SESSION['central_status'] == "Logout" && $_SESSION['local_status'] == "Disconnect")
         {
             echo     "<form action=\"031_admin_cliente.php\" style=\"float: left;\">
-                    <input type=\"submit\" value=\"Clientes\">
+                    <input type=\"submit\" value=\"Gestão Clientes\">
                     </form>
                     <form action=\"032_admin_molde.php\" style=\"float: left;\">
-                    <input type=\"submit\" value=\"Moldes\">
+                    <input type=\"submit\" value=\"Gestão Moldes\">
                     </form>
-                    <form action=\"033_admin_sensor.php\" style=\"float: left;\">
-                    <input type=\"submit\" value=\"Sensores\">
+                    <form action=\"033_admin_sensor.php\">
+                    <input type=\"submit\" value=\"Gestão Sensores\">
                     </form>
-                    <form action=\"034_admin_eliminar.php\">
+                    <!-- <form action=\"034_admin_eliminar.php\">
                     <input type=\"submit\" value=\"Eliminar\">
-                    </form>";
+                    </form> -->";
         }else
         {  
             echo "<form action=\"031_admin_cliente.php\">
-            <input type=\"submit\" value=\"Clientes\">
+            <input type=\"submit\" value=\"Gestão Clientes\">
             </form>";
         }
     ?>

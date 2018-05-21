@@ -49,9 +49,18 @@ session_start();
 
     <img src="logo_ua.png" alt="logo ua" style="height:15%">
 
-    <p>Aplicação experimental em PHP e HTML para utilizar a base de dados</p>
+    <p>Aplicação experimental em PHP e HTML para utilizar a base de dados.</p>
 
     <?php
+
+
+    if($_SESSION['central_status'] == "Logout")
+    {
+        echo "<p>A área de Consultas assiste na geração queries para consultar a base de dados central.<br>
+		A área de Administração permite gerir a informação dos clientes, moldes e sensores.<br>
+		A área de Conectar Local acede informações no sistema local do cliente.";
+    }
+/*
         $ID = str_replace("cl_"," ",$_SESSION['local_name']);
         echo $ID;
         echo "<br>";
@@ -129,6 +138,7 @@ session_start();
             $_SERVER['SCRIPT_NAME']
             $_SERVER['SCRIPT_URI']
          */
+
     ?>
 
 </body>

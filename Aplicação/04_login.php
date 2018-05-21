@@ -29,7 +29,7 @@ session_start();
     <br>
 
     <form action="/04_login.php" method="post">
-        <fieldset>
+        <fieldset style="float: left;">
             <legend>Login:</legend>
             Utilizador:
             <br>
@@ -42,11 +42,23 @@ session_start();
             <input type="submit" name="Login_Central" value="Login">
         </fieldset>
     </form>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
+<!--
     <p>
         Não tem conta?
         <a href="05_registar.html">Registar</a>
     </p>
+-->
 
     <?php
     if(isset($_POST['Login_Central']))

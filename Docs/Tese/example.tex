@@ -117,7 +117,7 @@
   \vspace*{55mm}
   \TEXT{\textbf{Resumo}}
        {ergergergerg}
-  \TEXT{Potato}
+  \TEXT{}
        {bergergerg}
 \EndTitlePage
 \titlepage\ \endtitlepage % empty page
@@ -177,16 +177,14 @@ arquivo e monitorização de moldes.
 
 \cleardoublepage
 \chapter{Aplicação}
-Aplicação desenvolvida em ambiente  \textit{Web} com o objetivo de ser multiplataforma, permitir acesso remoto e sem recorrer a instalação de \textit{softwares} nos dispositivos dos utilizadores. Esta corre num servidor \textit{Apache} e foi desenvolvida com \textit{PHP} e \textit{HTML}. Este capítulo descreve a adaptação da infraestrutura desenvolvida e as várias funcionalidades da aplicação.\\
-\\
-CAPAZ DE CONSULTAR E INTRODUZIR VALORES NAS BASES DE DADOS
+Aplicação desenvolvida em ambiente  \textit{Web} com o objetivo de ser multiplataforma, permitir acesso remoto e sem recorrer a instalação de \textit{softwares} nos dispositivos dos utilizadores. Esta corre num servidor \textit{Apache} e foi desenvolvida com \textit{PHP} e \textit{HTML}. Este capítulo descreve a adaptação da infraestrutura desenvolvida e as várias funcionalidades da aplicação.
 
 \section{Adaptação da infraestrutura}
 Afim de garantir uma maior integridade dos dados inseridos pela aplicação, instala-se no servidor local uma nova base de dados temporária local. Aqui os utilizadores têm a liberdade para adicionar, alterar e apagar informação sem consequências no sistema antes destas serem introduzidas nas bases de dados central e local como representado na \autoref{fig:adap1}. Como referido anteriormente, esta base de dados difere das restantes, não contendo em si as tabelas fase e registos.
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=0.65\textwidth]{placeholder} % Include the image placeholder.png
-		\caption{Esquema ligação temporária}
+		\includegraphics[width=0.65\textwidth]{Aplicacao_temp_local_central} % Include the image placeholder.png
+		\caption{Esquema ligação Aplicação-bases de dados. A aplicação comunica com a base de dados temporária local e depois regista os valores desta nas bases de dados central e local}
 		\label{fig:adap1}
 	\end{center}
 \end{figure}
@@ -194,33 +192,34 @@ Afim de garantir uma maior integridade dos dados inseridos pela aplicação, ins
 \section{Interface gráfica}
 A aplicação divide-se em cinco partes distintas:
 \begin{itemize}[noitemsep]
-	\item Main
-	\item Login
+	\item \textit{Main}
+	\item \textit{Login}
 	\item Consultas
 	\item Administração
 	\item Conexão Local
 \end{itemize}
-As páginas Main, Login, Consultas e parte das funcionalidades da Administração foram realizadas para uma utilização geral. As páginas Conexão Local e as restantes funcionalidades da Administração foram realizadas para uma utilização local. A primeira visa um uso a partir de qualquer dispositivo e acessível a qualquer momento e a segunda foca-se num acesso local com o objetivo de configurar e definir a informação no servidor local. Por outras palavras, para o utilizador usar as funcionalidades destas páginas tem de aceder à aplicação no sistema local que se situa no cliente.\\
+As páginas \textit{Main}, \textit{Login}, Consultas e parte das funcionalidades da Administração foram realizadas para uma utilização geral. As páginas Conexão Local e as restantes funcionalidades da Administração foram realizadas para uma utilização local. A primeira visa um uso a partir de qualquer dispositivo e acessível a qualquer momento e a segunda foca-se num acesso local com o objetivo de configurar e definir a informação no servidor local. Por outras palavras, para o utilizador usar as funcionalidades destas páginas tem de aceder à aplicação no sistema local que se situa no cliente.\\
 Instalar um molde é culminar de um projeto de elevada responsabilidade, esta ideia junto com a criação da base de dados temporária local serve para melhorar a qualidade da informação introduzida no sistema e diminuir as falhas.\\
 
+\newpage
 \subsection{\textit{Main}}
 \begin{figure}[H]
 \centering
-	\begin{minipage}{.5\textwidth}
+	\begin{minipage}{1.\textwidth}
 		\begin{center}
-			\includegraphics[width=0.9\textwidth]{placeholder} % Include the image placeholder.png
-			\subcaption{Main sem Login}
+			\includegraphics[width=0.85\textwidth]{main01} % Include the image placeholder.png
+			\subcaption{Sem \textit{login}}
 			\label{fig:main1}
 		\end{center}
-	\end{minipage}%
-	\begin{minipage}{.5\textwidth}
+	\end{minipage}
+	\begin{minipage}{1.\textwidth}
 		\begin{center}
-			\includegraphics[width=0.9\textwidth]{placeholder} % Include the image placeholder.png
-			\subcaption{Main com Login}
+			\includegraphics[width=0.85\textwidth]{main02} % Include the image placeholder.png
+			\subcaption{Com \textit{login}}
 			\label{fig:main2}
 		\end{center}
 	\end{minipage}
-	\caption{Main}
+	\caption{Funcionalidades da página \textit{Main} com e sem \textit{login}}
 	\label{fig:main0}
 \end{figure}
 \textit{Main} serve como página principal da aplicação. Se não houver sessão iniciada todas as restantes páginas redirecionam o utilizador para aqui. Contém apenas algumas informações gerais sobre a aplicação.\\
@@ -229,8 +228,8 @@ Iniciar sessão na página de \textit{Login} desbloqueia funcionalidades na apli
 \subsection{\textit{Login}}
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=0.65\textwidth]{placeholder} % Include the image placeholder.png
-		\caption{Esquema ligação temporária}
+		\includegraphics[width=0.9\textwidth]{login01} % Include the image placeholder.png
+		\caption{Página de \textit{Login} para iniciar sessão na base de dados central}
 		\label{fig:login0}
 	\end{center}
 \end{figure}
@@ -240,43 +239,45 @@ Quando se acede à página como \textit{Logout} termina-se a sessão e redirecio
 	\centering
 	\begin{minipage}{.5\textwidth}
 		\begin{center}
-			\includegraphics[width=0.9\textwidth]{placeholder} % Include the image placeholder.png
-			\subcaption{Main sem Login}
+			\includegraphics[width=0.95\textwidth]{login02} % Include the image placeholder.png
+			\subcaption{Exemplo de erro de falta de informação}
 			\label{fig:login2}
 		\end{center}
 	\end{minipage}%
 	\begin{minipage}{.5\textwidth}
 		\begin{center}
-			\includegraphics[width=0.9\textwidth]{placeholder} % Include the image placeholder.png
-			\subcaption{Main com Login}
+			\includegraphics[width=0.95\textwidth]{login03} % Include the image placeholder.png
+			\subcaption{Exemplo de erro \textit{MySQL}}
 			\label{fig:login3}
 		\end{center}
 	\end{minipage}
-	\caption{Main}
+	\caption{Exemplos de erros retornados quando introduzidas credenciais não válidas na página \textit{Login}}
 	\label{fig:login1}
 \end{figure}
 
 \subsection{Consultas}
 \begin{figure}[H]
 	\centering
-	\begin{minipage}{.5\textwidth}
+	\begin{minipage}{1.\textwidth}
 		\begin{center}
-			\includegraphics[width=0.9\textwidth]{placeholder} % Include the image placeholder.png
-			\subcaption{Main sem Login}
+			\includegraphics[width=.9\textwidth]{consultas01} % Include the image placeholder.png
+			\subcaption{Página de Consultas}
 			\label{fig:consultas1}
 		\end{center}
-	\end{minipage}%
-	\begin{minipage}{.5\textwidth}
+	\end{minipage}
+	\begin{minipage}{1.\textwidth}
 		\begin{center}
-			\includegraphics[width=0.9\textwidth]{placeholder} % Include the image placeholder.png
-			\subcaption{Main com Login}
+			\includegraphics[width=0.9\textwidth]{consultas02} % Include the image placeholder.png
+			\subcaption{Exemplo de resposta de consulta}
 			\label{fig:consultas2}
 		\end{center}
 	\end{minipage}
-	\caption{Main}
+	\caption{Página de Consultas e exemplo de resposta a uma consulta}
 	\label{fig:consultas0}
 \end{figure}
-A página de Consultas assiste utilizadores sem conhecimentos de \textit{SQL} a criarem \textit{queries} para consultar a base de dados central. Na \autoref{fig:consultas1} observa-se várias \textit{checkboxes} e três caixas de texto. As \textit{checkboxes} permitem selecionar os atributos que se desejam consultar na base de dados, estes são guardados numa variável @atributos. Quando  se prime o botão \textit{Query} gera-se uma das seguintes \textit{queries}:\\
+A página de Consultas assiste utilizadores sem conhecimentos de \textit{SQL} a criarem \textit{queries} para consultar a base de dados central. Na \autoref{fig:consultas1} observa-se várias \textit{checkboxes} e três caixas de texto. As \textit{checkboxes} permitem selecionar os atributos que se desejam consultar na base de dados, estes são guardados numa variável @atributos.
+\newpage
+Quando  se prime o botão \textit{Query} gera-se uma das seguintes \textit{queries}:\\
 \begin{lstlisting}[language = SQL]
 	SELECT @atributos
 	FROM clientes;
@@ -304,97 +305,128 @@ Além destas, existem três \textit{queries} especificas quando os atributos tip
 As caixas de texto Filtros e Ordem permitem adicionar às \textit{queries} geradas as cláusulas WHERE e ORDER BY, respetivamente. Para os utilizadores com conhecimentos em \textit{SQL} está disponibilizada a caixa de texto \textit{Query} que permite a criação direta de uma \textit{query}. Este campo está limitado apenas para \textit{queries} do tipo SELECT.\\
 Depois da \textit{query} ser gerada retorna-se uma resposta num novo separador como demonstrado na \autoref{fig:consultas2}. O \textit{link} deste resposta contém toda a informação da \textit{query} gerada. Este pode ser arquivado ou enviado para outro utilizador sem ser necessário gerar a \textit{query} novamente, isto é útil para \textit{queries} com muitas cláusulas.\\
 Se a \textit{query} não for válida retorna-se um erro de forma a informar o utilizador, como demonstrado nas Figuras \ref{fig:consultas4}, \ref{fig:consultas5} e \ref{fig:consultas6}.
+\newpage
 \begin{figure}[H]
 	\centering
-	\begin{minipage}{.5\textwidth}
+	\begin{minipage}{1\textwidth}
 		\begin{center}
-			\includegraphics[width=0.9\textwidth]{placeholder} % Include the image placeholder.png
-			\subcaption{Main sem Login}
+			\includegraphics[width=0.7\textwidth]{consultas03} % Include the image placeholder.png
+			\subcaption{Erro de informação não introduzida}
 			\label{fig:consultas4}
 		\end{center}
-	\end{minipage}%
-	\begin{minipage}{.5\textwidth}
+	\end{minipage}
+	\begin{minipage}{1\textwidth}
 		\begin{center}
-			\includegraphics[width=0.9\textwidth]{placeholder} % Include the image placeholder.png
-			\subcaption{Main com Login}
+			\includegraphics[width=0.7\textwidth]{consultas04} % Include the image placeholder.png
+			\subcaption{Erro de \textit{query} que não é do tipo SELECT}
 			\label{fig:consultas5}
 		\end{center}
 	\end{minipage}
-	\begin{minipage}{.5\textwidth}
+	\begin{minipage}{1\textwidth}
 		\begin{center}
-			\includegraphics[width=0.9\textwidth]{placeholder} % Include the image placeholder.png
-			\subcaption{Main com Login}
+			\includegraphics[width=0.7\textwidth]{consultas05} % Include the image placeholder.png
+			\subcaption{Exemplo de erro \textit{MySQL}}
 			\label{fig:consultas6}
 		\end{center}
 	\end{minipage}
-	\caption{Main}
+	\caption{Exemplos de erros retornados na página de Resposta da Consulta}
 	\label{fig:consultas3}
 \end{figure}
 
 \subsection{Administração}
 \begin{figure}[H]
 	\centering
-	\begin{minipage}{.5\textwidth}
+	\begin{minipage}{1\textwidth}
 		\begin{center}
-			\includegraphics[width=0.9\textwidth]{placeholder} % Include the image placeholder.png
-			\subcaption{Main sem Login}
+			\includegraphics[width=0.9\textwidth]{administracao01} % Include the image placeholder.png
+			\subcaption{Sem conexão local}
 			\label{fig:admin1}
 		\end{center}
-	\end{minipage}%
-	\begin{minipage}{.5\textwidth}
+	\end{minipage}
+	\begin{minipage}{1\textwidth}
 		\begin{center}
-			\includegraphics[width=0.9\textwidth]{placeholder} % Include the image placeholder.png
-			\subcaption{Main com Login}
+			\includegraphics[width=0.9\textwidth]{administracao03} % Include the image placeholder.png
+			\subcaption{Com conexão local}
 			\label{fig:admin2}
 		\end{center}
 	\end{minipage}
-	\caption{Main}
+	\caption{Funcionalidades da página Administração com e sem conexão local}
 	\label{fig:admin0}
 \end{figure}
+\newpage
 A área de Administração permite ao utilizador alterar informações sobre os clientes, moldes e sensores. A partir de qualquer dispositivo só é possível aceder à Gestão de Clientes como demonstrado na \autoref{fig:admin1}. Nesta área a informação dos clientes pode ser alterada com o formulário demonstrado na \autoref{fig:admin3}. Os botões Adicionar Cliente, Alterar Cliente e Eliminar Cliente executam \textit{queries} do tipo INSERT, UPDATE e DELETE, respetivamente.\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=0.65\textwidth]{placeholder} % Include the image placeholder.png
-		\caption{Esquema ligação temporária}
+		\includegraphics[width=0.9\textwidth]{administracao02} % Include the image placeholder.png
+		\caption{Área de Gestão de Clientes sem conexão local}
 		\label{fig:admin3}
 	\end{center}
 \end{figure}
+\newpage
 Como referido anteriormente a aplicação divide-se numa utilização geral e local, todas as funcionalidades descritas até agora têm em vista uma utilização geral. As restantes funcionalidades que são descritas até ao final do capítulo visam um uso local.\\
-Após uma conexão bem sucedida ao servidor local do cliente são desbloqueadas novas áreas de gestão como mostra a \autoref{fig:admin2}. As áreas de Gestão de Moldes e Gestão de Sensores demonstradas nas Figuras \ref{fig:admin6} e \ref{fig:admin7}, permitem ao utilizador criar e apagar moldes e sensores, respetivamente. Estes dados são inseridos na base de dados temporária local, aqui o utilizador pode criar e apagar moldes e sensores sem afetar o sistema. Desta forma é possível confirmar a informação introduzida antes de a inserir no sistema. Os botões de Criar e Apagar nestes formulários realizam \textit{queries} do tipo INSERT e DELETE, respetivamente.\\
-Quando a informação dos moldes e sensores estiver completa o botão Validar tenta registar os valores presentes na base de dados temporária local nas bases de dados central e local. Se a ação não executar com sucesso é retornado um erro \textit{MySQL} de forma a informar o utilizador. Se a ação executar com sucesso a base de dados temporária local é limpa e os valores são registados permanentemente nas bases de dados central e local.\\
-Depois de inseridos, moldes e sensores, não podem ser eliminados via aplicação. Esta opção foi removida da aplicação para evitar erros, dado que apagar um molde em funcionamento faz com que se percam novos registos.\\
-Voltando a área de Gestão Clientes, após a conexão local, desbloqueia-se uma nova funcionalidade como demonstra a \autoref{fig:admin5}. O botão Atualizar permite reiniciar o programa de transferência de valores para que este atualize o número de clientes. Com o comando:\\
-grep\\
-Obtém-se os números de processo dos programas que estão a transferir valores. Estes valores são armazenados na variável @pids. Para terminar os programas utiliza-se o seguinte comando:\\
-kill -2 @pids\\
-A opção -2 permite enviar para o processo escolhido o sinal SIGINT que é o sinal esperado pelo programa para que este termine as suas rotinas antes de encerrar. Para iniciar novamente o comando usar:\\
-~/path/transferencia\\
-É necessário garantir permissões ao servidor \textit{Apache} no sistema central para que este possa executar estes comandos.
+Após uma conexão bem sucedida ao sistema local do cliente são desbloqueadas novas áreas de gestão como mostra a \autoref{fig:admin2}. As áreas de Gestão de Moldes e Gestão de Sensores demonstradas nas Figuras \ref{fig:admin9} e \ref{fig:admin10}, permitem ao utilizador criar e apagar moldes e sensores, respetivamente. Estes dados são inseridos na base de dados temporária local, aqui o utilizador pode criar e apagar moldes e sensores sem afetar o sistema. Desta forma é possível confirmar a informação introduzida antes de a inserir no sistema. Os botões de Criar e Apagar nestes formulários realizam \textit{queries} do tipo INSERT e DELETE, respetivamente.
+	\begin{figure}[H]
+		\centering
+			\includegraphics[width=0.8\textwidth]{administracao05} % Include the image placeholder.png
+			\caption{Área de Gestão de Moldes}
+			\label{fig:admin9}
+	\end{figure}
+	\begin{figure}[H]
+		\centering
+			\includegraphics[width=0.8\textwidth]{administracao06} % Include the image placeholder.png
+			\caption{Área de Gestão de Sensores}
+			\label{fig:admin10}
+	\end{figure}
+Quando a informação dos moldes e sensores estiver completa o botão Validar tenta registar os valores presentes na base de dados temporária local nas bases de dados central e local. Se a ação não executar com sucesso é retornado um erro \textit{MySQL} de forma a informar o utilizador. Se a ação executar com sucesso a base de dados temporária local é limpa e os valores são registados permanentemente nas bases de dados central e local, como representado nas Figuras \ref{fig:admin12} e \ref{fig:admin13}.\\
+Depois de inseridos, moldes e sensores, não podem ser eliminados via aplicação. Esta opção foi removida da aplicação para evitar erros, dado que apagar um molde em funcionamento faz com que se percam novos registos.
 \begin{figure}[H]
 	\centering
 	\begin{minipage}{.5\textwidth}
 		\begin{center}
-			\includegraphics[width=0.9\textwidth]{placeholder} % Include the image placeholder.png
-			\subcaption{Main sem Login}
-			\label{fig:admin5}
+			\includegraphics[width=0.9\textwidth]{administracao07} % Include the image placeholder.png
+			\subcaption{Dados antes de serem validados}
+			\label{fig:admin12}
 		\end{center}
 	\end{minipage}%
 	\begin{minipage}{.5\textwidth}
 		\begin{center}
-			\includegraphics[width=0.9\textwidth]{placeholder} % Include the image placeholder.png
-			\subcaption{Main com Login}
-			\label{fig:admin6}
+			\includegraphics[width=0.9\textwidth]{administracao08} % Include the image placeholder.png
+			\subcaption{Dados após serem validados}
+			\label{fig:admin13}
 		\end{center}
 	\end{minipage}
-	\begin{minipage}{.5\textwidth}
-		\begin{center}
-			\includegraphics[width=0.9\textwidth]{placeholder} % Include the image placeholder.png
-			\subcaption{Main com Login}
-			\label{fig:admin7}
-		\end{center}
-	\end{minipage}
-	\caption{Main}
-	\label{fig:admin4}
+	\caption{Função do botão Validar, onde os valores da base de dados temporária local são transferidos de forma permanente para as bases de dados central e local}
+	\label{fig:admin11}
+\end{figure}
+Voltando a área de Gestão de Clientes, após a conexão local, desbloqueia-se uma nova funcionalidade como demonstra a \autoref{fig:admin7}. O botão Atualizar permite reiniciar o programa de transferência de valores para que este atualize o número de clientes. Com o comando:
+\begin{lstlisting}[language = bash]
+	ps ax | grep transferencia
+\end{lstlisting}
+Obtém-se os números de processo dos programas que estão a transferir valores. Estes valores são armazenados na variável @pids. Para terminar os programas utiliza-se o seguinte comando:
+\begin{lstlisting}[language = bash]
+	kill -2 @pids
+\end{lstlisting}
+A opção -2 permite enviar para o processo escolhido o sinal SIGINT que é o sinal esperado pelo programa para que este termine as suas rotinas antes de encerrar. Para iniciar novamente o comando usar:
+\begin{lstlisting}[language = bash]
+	~/path/transferencia
+\end{lstlisting}
+É necessário garantir permissões ao servidor \textit{Apache} no sistema central para que este possa executar estes comandos.
+\newpage
+\begin{figure}[H]
+	\centering
+			\includegraphics[width=0.9\textwidth]{administracao04} % Include the image placeholder.png
+	\caption{Área de Gestão de Clientes após conexão local onde se visualiza o botão Atualizar}
+	\label{fig:admin7}
 \end{figure}
 Nas várias áreas de gestão existem os botões Ver Clientes, Ver Moldes e Ver Sensores que executam respetivamente as \textit{queries}:
 \begin{lstlisting}[language = SQL]
@@ -425,46 +457,34 @@ Estas fornecem algumas informações contextuais para facilitar a navegação do
 
 \subsection{Conexão local}
 \label{subchap:local}
-\begin{figure}[H]
-	\centering
-	\begin{minipage}{.5\textwidth}
-		\begin{center}
-			\includegraphics[width=0.9\textwidth]{placeholder} % Include the image placeholder.png
-			\subcaption{Main sem Login}
+	\begin{figure}[H]
+		\centering
+			\includegraphics[width=0.9\textwidth]{local01} % Include the image placeholder.png
+			\caption{Área Conectar Local onde se visualiza as bases de dados instaladas no sistema}
 			\label{fig:local1}
-		\end{center}
-	\end{minipage}%
-	\begin{minipage}{.5\textwidth}
-		\begin{center}
-			\includegraphics[width=0.9\textwidth]{placeholder} % Include the image placeholder.png
-			\subcaption{Main com Login}
-			\label{fig:local2}
-		\end{center}
-	\end{minipage}
-	\begin{minipage}{.5\textwidth}
-		\begin{center}
-			\includegraphics[width=0.9\textwidth]{placeholder} % Include the image placeholder.png
-			\subcaption{Main com Login}
-			\label{fig:local3}
-		\end{center}
-	\end{minipage}
-	\caption{Main}
-	\label{fig:local0}
-\end{figure}
+	\end{figure}
 A área de Conectar Local na \autoref{fig:local1} permite realizar uma conexão à base de dados local no servidor do cliente. Com recurso à \textit{query}:
 \begin{lstlisting}[language = SQL]
 	SHOW DATABASES
 \end{lstlisting}
-Obtém-se todas as bases de dados instaladas no servidor local. Do ponto de vista prático, cada cliente só terá uma base de dados local mas, para efeitos de desenvolvimento do projeto adotou-se esta vertente.\\
+Obtém-se todas as bases de dados instaladas no servidor local. Do ponto de vista prático, cada cliente só terá uma base de dados local mas, para efeitos de desenvolvimento do projeto adotou-se esta vertente.
 O botão Conectar inicia sessão na base de dados local escolhida e redireciona o utilizador para a página principal como se observar na \autoref{fig:local4}. O botão Desconectar termina esta sessão e redireciona o utilizador também, para a página principal.
+\newpage
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=0.65\textwidth]{placeholder} % Include the image placeholder.png
-		\caption{Esquema ligação temporária}
+		\includegraphics[width=0.9\textwidth]{main03} % Include the image placeholder.png
+		\caption{\textit{Main} com conexão local}
 		\label{fig:local4}
 	\end{center}
 \end{figure}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.9\textwidth]{local02} % Include the image placeholder.png
+		\caption{Área Criar Local cria a base de dados para o cliente selecionado no sistema em que se acede a aplicação}
+		\label{fig:local2}
+	\end{figure}
 A área Criar Local na \autoref{fig:local2} permite instalar uma base de dados para um novo cliente. São considerados novos clientes todos os que não tenham moldes associados a si, esta informação obtém-se com a \textit{query}:
+\newpage
 \begin{lstlisting}[language = SQL]
 	SELECT cl_ID, cl_nome, cl_morada, cl_IP, cl_port
 	FROM
@@ -478,12 +498,19 @@ A área Criar Local na \autoref{fig:local2} permite instalar uma base de dados p
 Escolhendo um cliente válido o botão Criar cria a base de dados local com as respetivas tabelas e gera ainda as \textit{queries} observadas na \autoref{fig:local5}.
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=0.65\textwidth]{placeholder} % Include the image placeholder.png
-		\caption{Esquema ligação temporária}
+		\includegraphics[width=0.9\textwidth]{local03} % Include the image placeholder.png
+		\caption{\textit{Queries} geradas para completar a instalação da base de dados no sistema local. Consistem nas permissões para os utilizadores que só podem ser garantidas via \textit{root} bem como informação para completar o sistema de dados}
 		\label{fig:local5}
 	\end{center}
 \end{figure}
+\newpage
 Terminado a análise das funcionalidades da aplicação com a área de Instalar \textit{MySQL} na \autoref{fig:local3} que contém os passos para instalar o \textit{MySQL} num sistema \textit{Linux}.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{local04} % Include the image placeholder.png
+	\caption{Área Instalar \textit{MySQL} para instalar o \textit{software} com os comandos em \textit{Linux}}
+	\label{fig:local3}
+\end{figure}
 
 \cleardoublepage
 \chapter{Instalação do Sistema}
@@ -501,13 +528,14 @@ Como definido nos objetivos esta não impõe restrições na instrumentação do
 	VALUES
 	(molde, sensor, fase, data_hora, milissegundos, valor);
 \end{lstlisting}
+Na realidade esta infraestrutura pode ser utilizada em qualquer contexto de monitorização remota de sensores desde que seja desenvolvido um modelo de dados apropriado.
 
 \subsection{Aplicação}
 Em relação à aplicação, esta cumpre os objetivos propostos de ser multiplataforma e garantir um acesso remoto à base de dados central, bem como gerir as informações dos clientes, moldes e sensores. No entanto, o facto da aplicação ter sido desenvolvida na totalidade com \textit{PHP} e \textit{HTML}, causa uma perda de performance no servidor central. Isto aconteceu porque, durante o desenvolvimento do projeto, não foi percebido na totalidade o conceito de lado do servidor e lado do cliente. De forma a melhorar o desempenho sugere-se a alteração de algumas funcionalidades desenvolvidas em \textit{PHP} para \textit{JavaScript}, como por exemplo, as conexões às bases de dados que são particularmente pesadas no servidor. A alteração das conexões de \textit{PHP} para \textit{JavaScript} permite também alterar o método de instalação da base de dados local mencionado na \autoref{subchap:local}. Em vez de serem gerados comandos para o utilizador executar no \textit{MySQL} estes podem ser enviados diretamente pela aplicação desde que seja fornecida a \textit{password} para a \textit{root} do sistema como sugerido na \autoref{fig:conclusoes1}.
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=0.65\textwidth]{placeholder} % Include the image placeholder.png
-		\caption{Esquema ligação temporária}
+		\includegraphics[width=0.9\textwidth]{futuro01} % Include the image placeholder.png
+		\caption{Área de Criar Local com criação via \textit{root} em vez de gerar \textit{queries} para o utilizador inserir manualmente no \textit{MySQL}}
 		\label{fig:conclusoes1}
 	\end{center}
 \end{figure}
@@ -519,12 +547,13 @@ Quanto à infraestrutura dos dados não foi definido como os sensores dos moldes
 Quanto à aplicação, sugere-se que após uma apresentação inicial desta à empresa promotora, seja iniciado um processo iterativo de desenvolvimento para escolher e desenvolver novas funcionalidades que possam ser úteis e que não tenham sido abrangidas neste projeto, como por exemplo, a criação de utilizadores baseado no ID de trabalhador demonstrado na \autoref{fig:conclusoes2}. Culminando numa estilização da aplicação para que esta tenha um aspeto mais amigável ao utilizador.
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=0.65\textwidth]{placeholder} % Include the image placeholder.png
-		\caption{Esquema ligação temporária}
+		\includegraphics[width=0.9\textwidth]{futuro02} % Include the image placeholder.png
+		\caption{Exemplo de área de Registar para criar utilizadores com base no ID de trabalhador e email}
 		\label{fig:conclusoes2}
 	\end{center}
 \end{figure}
-Além destas alterações sugere-se a criação de um sistema de notificações e monitorização automático dos moldes. É impossível para um utilizador analisar manualmente milhões de registos de um molde e concluir se este está a funcionar corretamente. Para este efeito criar um programa capaz de correr algoritmos que analisem o comportamento dos moldes. Este programa pode ser desenvolvido em \textit{softwares} mais sofisticados, como por exemplo \textit{MATLAB}, desde que estes tenham protocolos de comunicação com \textit{MySQL}.\\
+\vspace{-.82cm}
+Além destas alterações sugere-se a criação de um sistema de notificações e monitorização automático dos moldes. É impossível para um utilizador analisar manualmente milhões de registos de um molde e concluir se este está a funcionar corretamente. Para este efeito criar um programa capaz de correr algoritmos que analisem o comportamento dos moldes. Este programa pode ser desenvolvido em \textit{softwares} mais sofisticados, como por exemplo \textit{MATLAB}, desde que estes tenham protocolos de comunicação com \textit{MySQL}.\looseness=-1\\
 A gestão dos \textit{backups} descrita na \autoref{subchap:backups} onde se separa os registos dos moldes em vez de se realizar um \textit{backup} geral foi realizada com este sistema de notificações em mente. Se for necessário, para efeitos de cálculo, que o programa carregue os registos de um molde armazenados em \textit{backups}, este só necessita de carregar a informação do molde que está a ser analisado em vez de ter de carregar a informação de todos os moldes. Este programa deverá correr automaticamente no sistema de forma permanente ou com um temporizador e, no caso de ser necessário, notificar o utilizador via aplicação ou via email.
 
 %
