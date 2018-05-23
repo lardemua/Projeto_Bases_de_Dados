@@ -29,13 +29,18 @@
     \usepackage{listings}
     
     \usepackage{enumitem}
+    
+%    \usepackage[backend=bibtex, sorting=none]{biblatex}
+%    \addbibresource{bib/own/molde.bib}
 
 %encoding
 %--------------------------------------
 \usepackage[utf8]{inputenc}
-%\usepackage[T1]{fontenc}
+\usepackage[T1]{fontenc}
 %--------------------------------------
 
+
+\setlength{\parskip}{0em}
 % optional (comment to use default)s
 %   depth of the table of contents
 %     1 ... chapther and sections
@@ -116,9 +121,12 @@
 \TitlePage
   \vspace*{55mm}
   \TEXT{\textbf{Resumo}}
-       {ergergergerg}
+       {Moldes de injeção têm uma vasta aplicabilidade no mundo industrial. Afim de melhorar a qualidade do produto final e reduzir falhas surgiu a necessidade de instrumentar e monitorizar moldes remotamente. Neste projeto desenvolveu-se uma rede de bases de dados relacionais e uma aplicação em ambiente \textit{Web}. A primeira garante uma transferência de valores segura e permanente de forma a criar um histórico. A segunda permite ao utilizador interagir com as bases de dados desenvolvidas podendo edita-las e consulta-las de forma a gerar relatórios.\\
+       	No desenvolvimento deste projeto utilizou-se \textit{MySQL} e \textit{C} para criar e definir a rede de bases de dados resultando numa solução simples e funcional a baixo nível. Utilizou-se \textit{Apache}, \textit{PHP}, e \textit{HTML} para desenvolver e implementar a aplicação de forma a que esta seja multiplataforma e garanta um acesso remoto ao utilizador.\\
+       	A solução proposta cumpre todos os objetivos definidos podendo ser já utilizada numa fase experimental apesar de necessitar alguns melhoramentos a nível de desempenho.
+       	}
   \TEXT{}
-       {bergergerg}
+       {}
 \EndTitlePage
 \titlepage\ \endtitlepage % empty page
 
@@ -154,6 +162,46 @@ arquivo e monitorização de moldes.
 
 \cleardoublepage
 \chapter{Estado de Arte}
+\section{Moldes de injeção}
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.9\textwidth]{molde} % Include the image placeholder.png
+		\caption{Molde}
+		\label{fig:molde}
+	\end{center}
+\end{figure}
+Moldagem é o processo mecânico de dar forma a um material no estado líquido usando um molde\cite{definicao_moldagem,definicao_moldar}. Um molde é uma ferramenta sólida oca desenvolvida para efeitos de fundição\cite{definicao_molde}. Esta é enchida com um material em estado liquido ou em pó como plástico, metal, cerâmica ou vidro\cite{Williams1975,Trovant1998,JanneyMarkA.Knoxville1991,Yan2009}.\par
+A moldagem por injeção é particularmente útil na produção em massa de peças de plástico com elevada complexidade geométrica\cite{Shen,Shelesh}. Estas podem ser encontradas em todas as áreas da industria como por exemplo empacotamento, aviação, construção e eletrónica\cite{Ozcelik}. Neste processo, plástico quente é forçado para dentro de um molde frio com a forma desejada. O material cobre todas as feições do molde e vai endurecendo sobre o efeito de altas pressões. O processo de injeção pode ser divido em fases distintas\cite{Shen}:
+\begin{itemize}[noitemsep]
+	\item Fecho do molde
+	\item Enchimento
+	\item Compactação
+	\item Abertura do molde
+	\item Extração
+\end{itemize}
+Em 1868, John Wesley Hyatt inventou uma maneira de fazer bolas de bilhar injetando celuloide para dentro de um molde\cite{historia,patente1868}.\par
+Em 1872 Jonh e o seu irmão Isaiah patentearam a primeira máquina de moldes de injeção. Esta era relativamente simples comparada às que são usadas hoje em dia na indústria. Consistia de um pequeno embolo para injetar plástico num molde através de um cilindro quente\cite{historia,patente1872}.\par
+A indústria cresceu lentamente produzindo artigos de plástico como botões e pentes. Nos anos 40 a utilização de moldes de injeção cresceu por causa da Segunda Guerra Mundial que tinha uma grande procura de produtos baratos e produzidos em massa\cite{historia}.\par
+Em 1946, James Hendry construiu a primeira máquina de moldes de injeção com um sem fim, revolucionando a indústria dos plásticos com um design para substituir o embolo de Hyatt. Este sem fim é colocado dentro do cilindro e mistura o material a ser moldado antes de ser injetado no molde. Isto permitiu que cor ou plástico reciclado fossem adicionados à mistura\cite{historia,patente1946}.\par
+A indústria do moldes de injeção evoluiu bastante sendo desenvolvidos vários métodos de otimização, desde processos mecânicos a processos de monitorização por computador. Neste projeto é dado mais um passo no campo da monitorização remota de moldes, criando um histórico destes para efeitos de análise.\par
+
+
+\section{base de dados relacional}
+
+\section{SQL}
+
+\section{internet tcp/ip}
+
+\section{Software utilizado}
+\subsection{Linux}
+
+\subsection{MySQL}
+
+\subsection{C}
+
+\subsection{Apache}
+
+\subsection{PHP e HTML}
 
 \cleardoublepage
 \chapter{Proposta de Solução}
@@ -560,30 +608,35 @@ A gestão dos \textit{backups} descrita na \autoref{subchap:backups} onde se sep
 % The bibliography
 %
 \cleardoublepage
-\iffalse
-  % Use this is the final version
-  %  unsrt produces numbered entries, sorted by order of citation
-  %  plain produces numbered entries, sorted alphabetically
-  %  other styles are possible (I recommend the harvard package)
-  \bibliographystyle{unsrt}
-  %\bibliographystyle{plain}
-  \bibliography{my-bib-file}% replace by the name of name of your .bib file
-\else
-  % An example (the contents of the .bbl file)
-  \begin{thebibliography}{10}
+\bibliographystyle{unsrt}
+\bibliography{bib/own/molde.bib}
 
-  \bibitem{Eliahou-1-1993-CLBNCL}
-  Shalom Eliahou.
-  \newblock The $3x+1$ problem: New lower bounds on nontrivial cycle lengths.
-  \newblock {\em Discrete Mathematics}, 118(1--3):45--56, 1993.
-
-  \bibitem{Garner-1981-1-OCA}
-  Lynn~E. Garner.
-  \newblock On the collatz $3n+1$ algorithm.
-  \newblock {\em Proceedings of the American Mathematical Society}, 82(1):19--22,
-    May 1981.
-  \end{thebibliography}
-\fi
+%%\sloppy
+%%\printbibliography[prenote=myprenote,title=References]
+%\iffalse
+%  % Use this is the final version
+%  %  unsrt produces numbered entries, sorted by order of citation
+%  %  plain produces numbered entries, sorted alphabetically
+%  %  other styles are possible (I recommend the harvard package)
+%  \bibliographystyle{unsrt}
+%  %\bibliographystyle{plain}
+%  \bibliography{molde}% replace by the name of name of your .bib file
+%\else
+%  % An example (the contents of the .bbl file)
+%  \begin{thebibliography}{10}
+%
+%  \bibitem{Eliahou-1-1993-CLBNCL}
+%  Shalom Eliahou.
+%  \newblock The $3x+1$ problem: New lower bounds on nontrivial cycle lengths.
+%  \newblock {\em Discrete Mathematics}, 118(1--3):45--56, 1993.
+%
+%  \bibitem{Garner-1981-1-OCA}
+%  Lynn~E. Garner.
+%  \newblock On the collatz $3n+1$ algorithm.
+%  \newblock {\em Proceedings of the American Mathematical Society}, 82(1):19--22,
+%    May 1981.
+%  \end{thebibliography}
+%\fi
 \cleardoublepage
 
 \end{document}

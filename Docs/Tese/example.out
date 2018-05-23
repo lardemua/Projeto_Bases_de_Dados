@@ -3,28 +3,38 @@
 \BOOKMARK [0][-]{section.0.3}{Lista de Tabelas}{}% 3
 \BOOKMARK [0][-]{chapter.1}{Introdu\347\343o}{}% 4
 \BOOKMARK [0][-]{chapter.2}{Estado de Arte}{}% 5
-\BOOKMARK [0][-]{chapter.3}{Proposta de Solu\347\343o}{}% 6
-\BOOKMARK [1][-]{section.3.1}{Infraestrutura de dados}{chapter.3}% 7
-\BOOKMARK [1][-]{section.3.2}{Base de Dados}{chapter.3}% 8
-\BOOKMARK [2][-]{subsection.3.2.1}{An\341lise de Requisitos}{section.3.2}% 9
-\BOOKMARK [2][-]{subsection.3.2.2}{Desenho conceptual e esquema l\363gico}{section.3.2}% 10
-\BOOKMARK [2][-]{subsection.3.2.3}{Constru\347\343o da base de dados}{section.3.2}% 11
-\BOOKMARK [2][-]{subsection.3.2.4}{Programa de transfer\352ncia}{section.3.2}% 12
-\BOOKMARK [2][-]{subsection.3.2.5}{Gest\343o de backups}{section.3.2}% 13
-\BOOKMARK [2][-]{subsection.3.2.6}{Simulador}{section.3.2}% 14
-\BOOKMARK [2][-]{subsection.3.2.7}{Utilizadores}{section.3.2}% 15
-\BOOKMARK [0][-]{chapter.4}{Aplica\347\343o}{}% 16
-\BOOKMARK [1][-]{section.4.1}{Adapta\347\343o da infraestrutura}{chapter.4}% 17
-\BOOKMARK [1][-]{section.4.2}{Interface gr\341fica}{chapter.4}% 18
-\BOOKMARK [2][-]{subsection.4.2.1}{Main}{section.4.2}% 19
-\BOOKMARK [2][-]{subsection.4.2.2}{Login}{section.4.2}% 20
-\BOOKMARK [2][-]{subsection.4.2.3}{Consultas}{section.4.2}% 21
-\BOOKMARK [2][-]{subsection.4.2.4}{Administra\347\343o}{section.4.2}% 22
-\BOOKMARK [2][-]{subsection.4.2.5}{Conex\343o local}{section.4.2}% 23
-\BOOKMARK [0][-]{chapter.5}{Instala\347\343o do Sistema}{}% 24
-\BOOKMARK [0][-]{chapter.6}{Conclus\365es}{}% 25
-\BOOKMARK [1][-]{section.6.1}{Coment\341rios}{chapter.6}% 26
-\BOOKMARK [2][-]{subsection.6.1.1}{Infraestrutura de dados}{section.6.1}% 27
-\BOOKMARK [2][-]{subsection.6.1.2}{Aplica\347\343o}{section.6.1}% 28
-\BOOKMARK [1][-]{section.6.2}{Trabalhos Futuros}{chapter.6}% 29
-\BOOKMARK [0][-]{section.6.3}{Bibliografia}{}% 30
+\BOOKMARK [1][-]{section.2.1}{Moldes de inje\347\343o}{chapter.2}% 6
+\BOOKMARK [1][-]{section.2.2}{base de dados relacional}{chapter.2}% 7
+\BOOKMARK [1][-]{section.2.3}{SQL}{chapter.2}% 8
+\BOOKMARK [1][-]{section.2.4}{internet tcp/ip}{chapter.2}% 9
+\BOOKMARK [1][-]{section.2.5}{Software utilizado}{chapter.2}% 10
+\BOOKMARK [2][-]{subsection.2.5.1}{Linux}{section.2.5}% 11
+\BOOKMARK [2][-]{subsection.2.5.2}{MySQL}{section.2.5}% 12
+\BOOKMARK [2][-]{subsection.2.5.3}{C}{section.2.5}% 13
+\BOOKMARK [2][-]{subsection.2.5.4}{Apache}{section.2.5}% 14
+\BOOKMARK [2][-]{subsection.2.5.5}{PHP e HTML}{section.2.5}% 15
+\BOOKMARK [0][-]{chapter.3}{Proposta de Solu\347\343o}{}% 16
+\BOOKMARK [1][-]{section.3.1}{Infraestrutura de dados}{chapter.3}% 17
+\BOOKMARK [1][-]{section.3.2}{Base de Dados}{chapter.3}% 18
+\BOOKMARK [2][-]{subsection.3.2.1}{An\341lise de Requisitos}{section.3.2}% 19
+\BOOKMARK [2][-]{subsection.3.2.2}{Desenho conceptual e esquema l\363gico}{section.3.2}% 20
+\BOOKMARK [2][-]{subsection.3.2.3}{Constru\347\343o da base de dados}{section.3.2}% 21
+\BOOKMARK [2][-]{subsection.3.2.4}{Programa de transfer\352ncia}{section.3.2}% 22
+\BOOKMARK [2][-]{subsection.3.2.5}{Gest\343o de backups}{section.3.2}% 23
+\BOOKMARK [2][-]{subsection.3.2.6}{Simulador}{section.3.2}% 24
+\BOOKMARK [2][-]{subsection.3.2.7}{Utilizadores}{section.3.2}% 25
+\BOOKMARK [0][-]{chapter.4}{Aplica\347\343o}{}% 26
+\BOOKMARK [1][-]{section.4.1}{Adapta\347\343o da infraestrutura}{chapter.4}% 27
+\BOOKMARK [1][-]{section.4.2}{Interface gr\341fica}{chapter.4}% 28
+\BOOKMARK [2][-]{subsection.4.2.1}{Main}{section.4.2}% 29
+\BOOKMARK [2][-]{subsection.4.2.2}{Login}{section.4.2}% 30
+\BOOKMARK [2][-]{subsection.4.2.3}{Consultas}{section.4.2}% 31
+\BOOKMARK [2][-]{subsection.4.2.4}{Administra\347\343o}{section.4.2}% 32
+\BOOKMARK [2][-]{subsection.4.2.5}{Conex\343o local}{section.4.2}% 33
+\BOOKMARK [0][-]{chapter.5}{Instala\347\343o do Sistema}{}% 34
+\BOOKMARK [0][-]{chapter.6}{Conclus\365es}{}% 35
+\BOOKMARK [1][-]{section.6.1}{Coment\341rios}{chapter.6}% 36
+\BOOKMARK [2][-]{subsection.6.1.1}{Infraestrutura de dados}{section.6.1}% 37
+\BOOKMARK [2][-]{subsection.6.1.2}{Aplica\347\343o}{section.6.1}% 38
+\BOOKMARK [1][-]{section.6.2}{Trabalhos Futuros}{chapter.6}% 39
+\BOOKMARK [0][-]{section.6.3}{Bibliografia}{}% 40
