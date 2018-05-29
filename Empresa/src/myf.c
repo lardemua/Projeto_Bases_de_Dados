@@ -86,8 +86,8 @@ void CONNECT_CENTRAL_DATABASE(void)
 {
 	//Dados da base de dados central
 	static char *host_central = "127.0.0.1"; //ip da base de dados
-	static char *user_central = "sapofree";
-	static char *pass_central = "naopossodizer";
+	static char *user_central = "transferencia";
+	static char *pass_central = "transferencia1234";
 	static char *dbname_central = "central";
 
 	unsigned int port_central = 3306;
