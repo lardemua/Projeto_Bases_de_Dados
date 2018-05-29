@@ -52,15 +52,6 @@ session_start();
     <form action="04_login.php">
         <input type="submit" value="<?php echo $_SESSION['central_status']; ?>">
     </form>
-    <form action="05_login_local.php" style="float: left;">
-        <input type="submit" value="Conectar">
-    </form>
-    <form action="051_criar_local.php" style="float: left;">
-        <input type="submit" value="Criar Local">
-    </form>
-    <form action="052_instalar_local.php">
-        <input type="submit" value="Instalar MySQL">
-    </form>
 
 <p>Página temporariamente indisponivel.</p>
 

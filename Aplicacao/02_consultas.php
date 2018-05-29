@@ -57,7 +57,7 @@ session_start();
 	<fieldset>
 	<legend>Gerar Query</legend>
 	<fieldset style="float: left;">
-	<legend>Escolher Atributos:</legend>
+	<legend>Escolher Atributos a Visualizar:</legend>
     <table style="float: left;" cellspacing = "5" cellpadding = "8">
         <tr>
             <td align="left"><b>Clientes</b></td>
