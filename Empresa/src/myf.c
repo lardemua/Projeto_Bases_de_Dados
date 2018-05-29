@@ -183,7 +183,7 @@ void START_CYCLE(void)
 	{
 		MOVE_VALUES();
 		//intervalo entre valores obtidos, actualmente 1s
-		//usleep(1000000);
+		usleep(20000);
 		//Variável alterada na callback ctrl+c
 	} while (keep_goingG);
 	return;

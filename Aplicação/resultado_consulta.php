@@ -111,15 +111,24 @@ session_start();
 
         if(!empty($_GET['tipo_nome']) && $queryOption == 0)
         {
-            $atributos['tipo_nome'] = "DISTINCT(" . trim($_GET['tipo_nome']) . ")";
-            $queryOption = 4;
+		$query_text = "SELECT tipo_nome FROM tipo";
+            $queryOption = 5;
+        }else if(!empty($_GET['tipo_nome']) && ($queryOption > 0 && $queryOption < 3))
+        {
+            $queryOption = 3;
         }else if(!empty($_GET['r_data_hora']) && $queryOption == 0)
         {
             $atributos['r_data_hora'] = "DISTINCT(" . trim($_GET['r_data_hora']) . ")";
             $queryOption = 4;
+        }else if(!empty($_GET['r_data_hora']) && ($queryOption > 0 && $queryOption < 4))
+        {
+            $queryOption = 4;
         }else if(!empty($_GET['fase_nome']) && $queryOption == 0)
         {
-            $atributos['fase_nome'] = "DISTINCT(" . trim($_GET['fase_nome']) . ")";
+		$query_text = "SELECT fase_nome FROM fase";
+            $queryOption = 5;
+        }else if(!empty($_GET['fase_nome']) && ($queryOption > 0 && $queryOption < 4))
+        {
             $queryOption = 4;
         }
 
