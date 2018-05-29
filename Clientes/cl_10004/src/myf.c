@@ -32,7 +32,7 @@ void START_CYCLE(void)
 	{
 		QUERY_INSERT_INTO_TABLE();
 		//intervalo entre valores obtidos, actualmente 1s
-		//usleep(200000);
+		sleep(30);
 		//Variável alterada na callback ctrl+c
 	} while (keep_goingG);
 }
