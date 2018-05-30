@@ -166,7 +166,7 @@ arquivo e monitorização de moldes.
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[width=0.9\textwidth]{molde} % Include the image placeholder.png
-		\caption{Molde}
+		\caption{Molde de injeção aberto com a peça realizada\cite{molde_imagem}}
 		\label{fig:molde}
 	\end{center}
 \end{figure}
@@ -183,14 +183,16 @@ Em 1868, John Wesley Hyatt inventou uma maneira de fazer bolas de bilhar injetan
 Em 1872 Jonh e o seu irmão Isaiah patentearam a primeira máquina de moldes de injeção. Esta era relativamente simples comparada às que são usadas hoje em dia na indústria. Consistia de um pequeno embolo para injetar plástico num molde através de um cilindro quente\cite{historia,patente1872}.\par
 A indústria cresceu lentamente produzindo artigos de plástico como botões e pentes. Nos anos 40 a utilização de moldes de injeção cresceu por causa da Segunda Guerra Mundial que tinha uma grande procura de produtos baratos e produzidos em massa\cite{historia}.\par
 Em 1946, James Hendry construiu a primeira máquina de moldes de injeção com um sem fim, revolucionando a indústria dos plásticos com um design para substituir o embolo de Hyatt. Este sem fim é colocado dentro do cilindro e mistura o material a ser moldado antes de ser injetado no molde. Isto permitiu que cor ou plástico reciclado fossem adicionados à mistura\cite{historia,patente1946}.\par
-A indústria do moldes de injeção evoluiu bastante sendo desenvolvidos vários métodos de otimização, desde processos mecânicos a processos de monitorização por computador. Neste projeto é dado mais um passo no campo da monitorização remota de moldes, criando um histórico destes para efeitos de análise.\par
+A qualidade de fabrico dos moldes e das peças produzidas evoluiu com o passar do tempo. A industria investiu em técnicas sofisticadas no desenvolvimento de moldes, para que estes não contenham falhas, e no uso de materiais com qualidade elevada para evitar o desgaste da ferramenta. No entanto, dificilmente se atinge peças com a qualidade desejada unicamente através das ferramentas desenvolvidas. É necessário implementar também técnicas de monitorização de qualidade\cite{Woll}.
 
 
-\section{base de dados relacional}
+\section{Base de dados relacional}
+\subsection{Análise de requisitos}
+\subsection{Diagrama Entidade Relação}
+\subsection{Esquema Relacional}
 
 \section{SQL}
 
-\section{internet tcp/ip}
 
 \section{Software utilizado}
 \subsection{Linux}
@@ -325,7 +327,7 @@ Quando se acede à página como \textit{Logout} termina-se a sessão e redirecio
 \end{figure}
 A página de Consultas assiste utilizadores sem conhecimentos de \textit{SQL} a criarem \textit{queries} para consultar a base de dados central. Na \autoref{fig:consultas1} observa-se várias \textit{checkboxes} e três caixas de texto. As \textit{checkboxes} permitem selecionar os atributos que se desejam consultar na base de dados, estes são guardados numa variável @atributos.
 \newpage
-Quando  se prime o botão \textit{Query} gera-se uma das seguintes \textit{queries}:\\
+Quando  se prime o botão \textit{Query} gera-se uma das seguintes \textit{queries}:
 \begin{lstlisting}[language = SQL]
 	SELECT @atributos
 	FROM clientes;

@@ -4,28 +4,28 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Molde\relax }}{3}{figure.caption.4}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Molde de inje\IeC {\c c}\IeC {\~a}o aberto com a pe\IeC {\c c}a realizada\cite {molde_imagem}\relax }}{3}{figure.caption.4}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Esquema liga\IeC {\c c}\IeC {\~a}o Aplica\IeC {\c c}\IeC {\~a}o-bases de dados. A aplica\IeC {\c c}\IeC {\~a}o comunica com a base de dados tempor\IeC {\'a}ria local e depois regista os valores desta nas bases de dados central e local\relax }}{7}{figure.caption.5}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Funcionalidades da p\IeC {\'a}gina \textit {Main} com e sem \textit {login}\relax }}{9}{figure.caption.6}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces P\IeC {\'a}gina de \textit {Login} para iniciar sess\IeC {\~a}o na base de dados central\relax }}{10}{figure.caption.7}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Exemplos de erros retornados quando introduzidas credenciais n\IeC {\~a}o v\IeC {\'a}lidas na p\IeC {\'a}gina \textit {Login}\relax }}{10}{figure.caption.8}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces P\IeC {\'a}gina de Consultas e exemplo de resposta a uma consulta\relax }}{11}{figure.caption.9}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Exemplos de erros retornados na p\IeC {\'a}gina de Resposta da Consulta\relax }}{13}{figure.caption.10}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Funcionalidades da p\IeC {\'a}gina Administra\IeC {\c c}\IeC {\~a}o com e sem conex\IeC {\~a}o local\relax }}{14}{figure.caption.11}
-\contentsline {figure}{\numberline {4.8}{\ignorespaces \IeC {\'A}rea de Gest\IeC {\~a}o de Clientes sem conex\IeC {\~a}o local\relax }}{15}{figure.caption.12}
-\contentsline {figure}{\numberline {4.9}{\ignorespaces \IeC {\'A}rea de Gest\IeC {\~a}o de Moldes\relax }}{16}{figure.caption.13}
-\contentsline {figure}{\numberline {4.10}{\ignorespaces \IeC {\'A}rea de Gest\IeC {\~a}o de Sensores\relax }}{16}{figure.caption.14}
-\contentsline {figure}{\numberline {4.11}{\ignorespaces Fun\IeC {\c c}\IeC {\~a}o do bot\IeC {\~a}o Validar, onde os valores da base de dados tempor\IeC {\'a}ria local s\IeC {\~a}o transferidos de forma permanente para as bases de dados central e local\relax }}{17}{figure.caption.15}
-\contentsline {figure}{\numberline {4.12}{\ignorespaces \IeC {\'A}rea de Gest\IeC {\~a}o de Clientes ap\IeC {\'o}s conex\IeC {\~a}o local onde se visualiza o bot\IeC {\~a}o Atualizar\relax }}{18}{figure.caption.16}
-\contentsline {figure}{\numberline {4.13}{\ignorespaces \IeC {\'A}rea Conectar Local onde se visualiza as bases de dados instaladas no sistema\relax }}{19}{figure.caption.17}
-\contentsline {figure}{\numberline {4.14}{\ignorespaces \textit {Main} com conex\IeC {\~a}o local\relax }}{20}{figure.caption.18}
-\contentsline {figure}{\numberline {4.15}{\ignorespaces \IeC {\'A}rea Criar Local cria a base de dados para o cliente selecionado no sistema em que se acede a aplica\IeC {\c c}\IeC {\~a}o\relax }}{20}{figure.caption.19}
-\contentsline {figure}{\numberline {4.16}{\ignorespaces \textit {Queries} geradas para completar a instala\IeC {\c c}\IeC {\~a}o da base de dados no sistema local. Consistem nas permiss\IeC {\~o}es para os utilizadores que s\IeC {\'o} podem ser garantidas via \textit {root} bem como informa\IeC {\c c}\IeC {\~a}o para completar o sistema de dados\relax }}{21}{figure.caption.20}
-\contentsline {figure}{\numberline {4.17}{\ignorespaces \IeC {\'A}rea Instalar \textit {MySQL} para instalar o \textit {software} com os comandos em \textit {Linux}\relax }}{22}{figure.caption.21}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Esquema liga\IeC {\c c}\IeC {\~a}o Aplica\IeC {\c c}\IeC {\~a}o-bases de dados. A aplica\IeC {\c c}\IeC {\~a}o comunica com a base de dados tempor\IeC {\'a}ria local e depois regista os valores desta nas bases de dados central e local\relax }}{9}{figure.caption.5}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Funcionalidades da p\IeC {\'a}gina \textit {Main} com e sem \textit {login}\relax }}{11}{figure.caption.6}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces P\IeC {\'a}gina de \textit {Login} para iniciar sess\IeC {\~a}o na base de dados central\relax }}{12}{figure.caption.7}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Exemplos de erros retornados quando introduzidas credenciais n\IeC {\~a}o v\IeC {\'a}lidas na p\IeC {\'a}gina \textit {Login}\relax }}{12}{figure.caption.8}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces P\IeC {\'a}gina de Consultas e exemplo de resposta a uma consulta\relax }}{13}{figure.caption.9}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Exemplos de erros retornados na p\IeC {\'a}gina de Resposta da Consulta\relax }}{15}{figure.caption.10}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Funcionalidades da p\IeC {\'a}gina Administra\IeC {\c c}\IeC {\~a}o com e sem conex\IeC {\~a}o local\relax }}{16}{figure.caption.11}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces \IeC {\'A}rea de Gest\IeC {\~a}o de Clientes sem conex\IeC {\~a}o local\relax }}{17}{figure.caption.12}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces \IeC {\'A}rea de Gest\IeC {\~a}o de Moldes\relax }}{18}{figure.caption.13}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces \IeC {\'A}rea de Gest\IeC {\~a}o de Sensores\relax }}{18}{figure.caption.14}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Fun\IeC {\c c}\IeC {\~a}o do bot\IeC {\~a}o Validar, onde os valores da base de dados tempor\IeC {\'a}ria local s\IeC {\~a}o transferidos de forma permanente para as bases de dados central e local\relax }}{19}{figure.caption.15}
+\contentsline {figure}{\numberline {4.12}{\ignorespaces \IeC {\'A}rea de Gest\IeC {\~a}o de Clientes ap\IeC {\'o}s conex\IeC {\~a}o local onde se visualiza o bot\IeC {\~a}o Atualizar\relax }}{20}{figure.caption.16}
+\contentsline {figure}{\numberline {4.13}{\ignorespaces \IeC {\'A}rea Conectar Local onde se visualiza as bases de dados instaladas no sistema\relax }}{21}{figure.caption.17}
+\contentsline {figure}{\numberline {4.14}{\ignorespaces \textit {Main} com conex\IeC {\~a}o local\relax }}{22}{figure.caption.18}
+\contentsline {figure}{\numberline {4.15}{\ignorespaces \IeC {\'A}rea Criar Local cria a base de dados para o cliente selecionado no sistema em que se acede a aplica\IeC {\c c}\IeC {\~a}o\relax }}{22}{figure.caption.19}
+\contentsline {figure}{\numberline {4.16}{\ignorespaces \textit {Queries} geradas para completar a instala\IeC {\c c}\IeC {\~a}o da base de dados no sistema local. Consistem nas permiss\IeC {\~o}es para os utilizadores que s\IeC {\'o} podem ser garantidas via \textit {root} bem como informa\IeC {\c c}\IeC {\~a}o para completar o sistema de dados\relax }}{23}{figure.caption.20}
+\contentsline {figure}{\numberline {4.17}{\ignorespaces \IeC {\'A}rea Instalar \textit {MySQL} para instalar o \textit {software} com os comandos em \textit {Linux}\relax }}{24}{figure.caption.21}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces \IeC {\'A}rea de Criar Local com cria\IeC {\c c}\IeC {\~a}o via \textit {root} em vez de gerar \textit {queries} para o utilizador inserir manualmente no \textit {MySQL}\relax }}{26}{figure.caption.22}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Exemplo de \IeC {\'a}rea de Registar para criar utilizadores com base no ID de trabalhador e email\relax }}{27}{figure.caption.23}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces \IeC {\'A}rea de Criar Local com cria\IeC {\c c}\IeC {\~a}o via \textit {root} em vez de gerar \textit {queries} para o utilizador inserir manualmente no \textit {MySQL}\relax }}{28}{figure.caption.22}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Exemplo de \IeC {\'a}rea de Registar para criar utilizadores com base no ID de trabalhador e email\relax }}{29}{figure.caption.23}
 \addvspace {10\p@ }

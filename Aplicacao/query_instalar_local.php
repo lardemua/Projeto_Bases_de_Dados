@@ -155,6 +155,148 @@
         echo("Erro: " . mysqli_error($dbc3) . "<br>");
     }
     mysqli_close($dbc3);
+
+    $dbc3 = @mysqli_connect(DB_HOST_Local,DB_USER_Local,DB_PASSWORD_Local);
+
+    // Check connection
+    if (!$dbc3) {
+        die('Could not connect to MySQL ' . mysqli_connect_error() . "<br>");
+    }else {
+    }
+
+    // Change character set to utf8
+    mysqli_set_charset($dbc3,"utf8");
+
+    $query = "CREATE DATABASE temp_local";
+
+    if (!mysqli_query($dbc3,$query))
+    {
+        echo("Erro: " . mysqli_error($dbc3)) . "<br>";
+    }
+    mysqli_close($dbc3);
+
+$db = "temp_local";
+
+    $dbc3 = @mysqli_connect(DB_HOST_Local,DB_USER_Local,DB_PASSWORD_Local,$db);
+
+    // Check connection
+    if (!$dbc3) {
+        die('Could not connect to MySQL ' . mysqli_connect_error() . "<br>");
+    }else {
+    }
+
+    // Change character set to utf8
+    mysqli_set_charset($dbc3,"utf8");
+
+    $query = "CREATE TABLE clientes
+    (
+        cl_ID INT NOT NULL,
+        cl_nome VARCHAR(50) NOT NULL,
+        cl_morada VARCHAR(100),
+        cl_IP VARCHAR(50) NOT NULL,
+        cl_port INT NOT NULL,
+        CONSTRAINT REPETIDO_ID_CLIENTE
+        PRIMARY KEY(cl_ID)
+    )";
+
+    if (!mysqli_query($dbc3,$query))
+    {
+        echo("Erro: " . mysqli_error($dbc3) . "<br>");
+    }
+
+    $query = "CREATE TABLE moldes
+    (
+        m_IDCliente INT NOT NULL,
+        m_ID INT NOT NULL,
+        m_nome VARCHAR(30),
+        m_descricao VARCHAR(200),
+        CONSTRAINT REPETIDO_ID_MOLDE
+        PRIMARY KEY(m_ID),
+        CONSTRAINT MOLDE_MAU_ID_CLIENTE
+        FOREIGN KEY(m_IDCliente) REFERENCES clientes(cl_ID)
+            ON DELETE NO ACTION ON UPDATE CASCADE
+    )";
+
+    if (!mysqli_query($dbc3,$query))
+    {
+        echo("Erro: " . mysqli_error($dbc3) . "<br>");
+    }
+
+    $query = "CREATE TABLE tipo
+    (
+        tipo_ID INT NOT NULL,
+        tipo_nome VARCHAR(50) NOT NULL,
+        CONSTRAINT REPETIDO_ID_TIPO
+        PRIMARY KEY(tipo_ID),
+        CONSTRAINT REPETIDO_NOME_TIPO
+        UNIQUE(tipo_nome)
+    )";
+
+    if (!mysqli_query($dbc3,$query))
+    {
+        echo("Erro: " . mysqli_error($dbc3) . "<br>");
+    }
+
+    $query = "CREATE TABLE sensores
+    (
+        s_IDMolde INT NOT NULL,
+        s_num INT NOT NULL,
+        s_tipo INT NOT NULL,
+        s_nome varchar(30),
+        s_descricao varchar(200),
+        CONSTRAINT REPETIDO_NUM_SENSOR
+        PRIMARY KEY(s_IDMolde,s_num),
+        CONSTRAINT SENSOR_MAU_ID_MOLDE_SENSOR
+        FOREIGN KEY(s_IDMolde) REFERENCES moldes(m_ID)
+            ON DELETE CASCADE ON UPDATE CASCADE,
+        CONSTRAINT SENSOR_MAU_NOME_TIPO
+        FOREIGN KEY(s_tipo) REFERENCES tipo(tipo_ID)
+            ON DELETE NO ACTION ON UPDATE CASCADE
+    )";
+
+    if (!mysqli_query($dbc3,$query))
+    {
+        echo("Erro: " . mysqli_error($dbc3) . "<br>");
+    }
+
+    $query = "CREATE TABLE fase
+    (
+        fase_ID INT NOT NULL,
+        fase_nome VARCHAR(50) NOT NULL,
+        CONSTRAINT REPETIDO_ID_FASE
+        PRIMARY KEY(FASE_ID),
+        CONSTRAINT REPETIDO_NOME_FASE
+        UNIQUE(fase_nome)
+    )";
+
+    if (!mysqli_query($dbc3,$query))
+    {
+        echo("Erro: " . mysqli_error($dbc3) . "<br>");
+    }    
+
+    $query = "CREATE TABLE registos
+    (
+        r_IDMolde INT NOT NULL,
+        r_numSensor INT NOT NULL,
+        r_fase INT NOT NULL,
+        r_data_hora DATETIME NOT NULL,
+        r_milissegundos TINYINT NOT NULL,
+        r_valor FLOAT,
+        CONSTRAINT REPETIDO_REGISTO
+        PRIMARY KEY(r_IDMolde, r_numSensor, r_data_hora, r_milissegundos),
+        CONSTRAINT REGISTOS_MAU_ID_MOLDE_SENSOR
+    FOREIGN KEY(r_IDMolde,r_numSensor) REFERENCES sensores(s_IDMolde,s_num)
+            ON DELETE CASCADE ON UPDATE CASCADE,
+        CONSTRAINT REGISTOS_MAU_ID_FASE
+    FOREIGN KEY(r_fase) REFERENCES fase(fase_ID)
+            ON DELETE NO ACTION ON UPDATE CASCADE
+    )";
+
+    if (!mysqli_query($dbc3,$query))
+    {
+        echo("Erro: " . mysqli_error($dbc3) . "<br>");
+    }
+    mysqli_close($dbc3);
 ?>
 
 <p>Base de dados local criada</p>
@@ -169,8 +311,27 @@
     GRANT INSERT ON <?php echo  "cl_" . $_POST['cl_id'];?>.registos TO 'sensores'@'localhost';
     CREATE USER 'transferencia'@'%' IDENTIFIED BY '<font color="azure">transferencia1234</font>';
     GRANT SELECT, DELETE ON <?php echo  "cl_" . $_POST['cl_id'];?>.registos TO 'transferencia'@'%';
+	GRANT SELECT, INSERT, DELETE ON temp_local.* TO 'user'@'localhost';
     FLUSH PRIVILEGES;
     USE <?php echo  "cl_" . $_POST['cl_id'];?>;
+    INSERT INTO tipo
+    VALUES
+    (1, "Termómetro"),
+    (2, "Dinamómetro"),
+    (3, "Extensómetro"),
+    (4, "Vibrómetro"),
+    (5, "Pressão"),
+    (6, "Acelerómetro X"),
+    (7, "Acelerómetro Y"),
+    (8, "Acelerómetro Z");
+    INSERT INTO fase
+    VALUES
+    (1, "Fecho"),
+    (2, "Enchimento"),
+    (3, "Compactação"),
+    (4, "Abertura"),
+    (5, "Extração");
+    USE temp_local;
     INSERT INTO tipo
     VALUES
     (1, "Termómetro"),

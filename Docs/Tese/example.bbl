@@ -1,5 +1,8 @@
 \begin{thebibliography}{10}
 
+\bibitem{molde_imagem}
+colored-part-large-mold-with-part.
+
 \bibitem{definicao_moldagem}
 {moldagem in Dicion{\'{a}}rio infop{\'{e}}dia da L{\'{i}}ngua Portuguesa [em
   linha]. Porto: Porto Editora, 2003-2018. [consult. 2018-05-22 18:20:35].
@@ -75,5 +78,11 @@ hyatt.
 \bibitem{patente1946}
 {Injection molding machine}.
 \newblock may 1949.
+
+\bibitem{Woll}
+Suzanne L.~B. Woll and Douglas~J. Cooper.
+\newblock {Pattern-based closed-loop quality control for the injection molding
+  process}.
+\newblock {\em Polymer Engineering {\&} Science}, 37(5):801--812, may 1997.
 
 \end{thebibliography}
