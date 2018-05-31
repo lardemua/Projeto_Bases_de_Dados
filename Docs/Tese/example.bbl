@@ -85,4 +85,15 @@ Suzanne L.~B. Woll and Douglas~J. Cooper.
   process}.
 \newblock {\em Polymer Engineering {\&} Science}, 37(5):801--812, may 1997.
 
+\bibitem{Elmasri:2010:FDS:1855347}
+Ramez Elmasri and Shamkant Navathe.
+\newblock {\em {Fundamentals of Database Systems}}.
+\newblock Addison-Wesley Publishing Company, USA, 6th edition, 2010.
+
+\bibitem{definicao_base_dados}
+{base de dados in Dicion{\'{a}}rio infop{\'{e}}dia da L{\'{i}}ngua Portuguesa
+  [em linha]. Porto: Porto Editora, 2003-2018. [consult. 2018-05-31 18:24:13].
+  Dispon{\'{i}}vel na Internet:
+  https://www.infopedia.pt/dicionarios/lingua-portuguesa/base de dados}.
+
 \end{thebibliography}
