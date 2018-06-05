@@ -62,6 +62,76 @@ session_start();
         <input type="submit" value="Instalar MySQL">
     </form>
 
+ <div id="secretInfo" style="display: none;">
+<?php
+echo "
+    CREATE DATABASE temp_local;
+    USE temp_local;
+    CREATE TABLE clientes
+    (
+        cl_ID INT NOT NULL,
+        cl_nome VARCHAR(50) NOT NULL,
+        cl_morada VARCHAR(100),
+        cl_IP VARCHAR(50) NOT NULL,
+        cl_port INT NOT NULL,
+        CONSTRAINT REPETIDO_ID_CLIENTE
+        PRIMARY KEY(cl_ID)
+    );
+    CREATE TABLE moldes
+    (
+        m_IDCliente INT NOT NULL,
+        m_ID INT NOT NULL,
+        m_nome VARCHAR(30),
+        m_descricao VARCHAR(200),
+        CONSTRAINT REPETIDO_ID_MOLDE
+        PRIMARY KEY(m_ID),
+        CONSTRAINT MOLDE_MAU_ID_CLIENTE
+        FOREIGN KEY(m_IDCliente) REFERENCES clientes(cl_ID)
+            ON DELETE NO ACTION ON UPDATE CASCADE
+    );
+    CREATE TABLE tipo
+    (
+        tipo_ID INT NOT NULL,
+        tipo_nome VARCHAR(50) NOT NULL,
+        CONSTRAINT REPETIDO_ID_TIPO
+        PRIMARY KEY(tipo_ID),
+        CONSTRAINT REPETIDO_NOME_TIPO
+        UNIQUE(tipo_nome)
+    );
+    CREATE TABLE sensores
+    (
+        s_IDMolde INT NOT NULL,
+        s_num INT NOT NULL,
+        s_tipo INT NOT NULL,
+        s_nome varchar(30),
+        s_descricao varchar(200),
+        CONSTRAINT REPETIDO_NUM_SENSOR
+        PRIMARY KEY(s_IDMolde,s_num),
+        CONSTRAINT SENSOR_MAU_ID_MOLDE_SENSOR
+        FOREIGN KEY(s_IDMolde) REFERENCES moldes(m_ID)
+            ON DELETE CASCADE ON UPDATE CASCADE,
+        CONSTRAINT SENSOR_MAU_NOME_TIPO
+        FOREIGN KEY(s_tipo) REFERENCES tipo(tipo_ID)
+            ON DELETE NO ACTION ON UPDATE CASCADE
+    );
+    INSERT INTO tipo
+    VALUES
+    (1, 'Termómetro'),
+    (2, 'Dinamómetro'),
+    (3, 'Extensómetro'),
+    (4, 'Vibrómetro'),
+    (5, 'Pressão'),
+    (6, 'Acelerómetro X'),
+    (7, 'Acelerómetro Y'),
+    (8, 'Acelerómetro Z');
+    CREATE USER 'user'@'%' IDENTIFIED BY 'password';
+    GRANT SELECT, INSERT, DELETE ON temp_local.* TO 'user'@'%';
+    CREATE USER 'sensores'@'localhost' IDENTIFIED BY 'sensores1234';
+    CREATE USER 'transferencia'@'%' IDENTIFIED BY 'transferencia1234';
+    FLUSH PRIVILEGES;
+";?>
+</div>
+
         <p>Para instalar o MySQL abrir o terminal com Ctrl+Shift+t e introduzir o seguinte comando:</p>
         <pre>       sudo apt-get install mysql-server</pre>
         <p>Permitir ligações externas ao MySQL:</p>
@@ -72,12 +142,27 @@ session_start();
         <pre>      sudo /etc/init.d/mysql restart</pre>
         <p>Inciar sessão no MySQL:</p>
         <pre>      mysql -u root -p</pre>
-        <p>Introduzir a query:</p>
-        <pre>      CREATE USER 'user'@'%' IDENTIFIED BY '<font color="azure">password</font>';
-      GRANT CREATE ON *.* TO 'user'@'%';
-      FLUSH PRIVILEGES;</pre>
+        <p>Introduzir a query, carregar no botão:</p>
+        <pre>---><button type="button" id="btnCopy">Copiar Query</button><---</pre>
         <p>Terminar sessão:</p>
         <pre>      quit</pre>
+
+    <script type="text/javascript">
+      var $body = document.getElementsByTagName('body')[0];
+      var $btnCopy = document.getElementById('btnCopy');
+      var secretInfo = document.getElementById('secretInfo').innerHTML;
+      var copyToClipboard = function(secretInfo) {
+        var $tempInput = document.createElement('INPUT');
+        $body.appendChild($tempInput);
+        $tempInput.setAttribute('value', secretInfo)
+        $tempInput.select();
+        document.execCommand('copy');
+        $body.removeChild($tempInput);
+      }
+      $btnCopy.addEventListener('click', function(ev) {
+        copyToClipboard(secretInfo);
+      });
+    </script>
 
 </body>
 

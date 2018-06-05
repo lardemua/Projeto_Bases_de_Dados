@@ -1,0 +1,1 @@
+/usr/bin/cc      CMakeFiles/transferencia.dir/src/transferencia.c.o CMakeFiles/transferencia.dir/src/myf.c.o  -o transferencia -rdynamic -L/usr/lib/x86_64-linux-gnu -lmysqlclient -lpthread -lz -lm -lrt -ldl 

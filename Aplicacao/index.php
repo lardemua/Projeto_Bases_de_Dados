@@ -60,6 +60,7 @@ session_start();
 		A área de Administração permite gerir a informação dos clientes, moldes e sensores.<br>
 		A área de Conectar Local acede informações no sistema local do cliente.";
     }
+
 /*
         $ID = str_replace("cl_"," ",$_SESSION['local_name']);
         echo $ID;

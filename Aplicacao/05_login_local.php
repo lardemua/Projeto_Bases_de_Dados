@@ -62,7 +62,6 @@ session_start();
         <input type="submit" value="Instalar MySQL">
     </form>
 
-
 <?php
     require('query_databases.php');
 ?>
