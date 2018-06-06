@@ -3,10 +3,6 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: example.aux
 The style file: unsrt.bst
 Database file #1: bib/own/molde.bib.bib
-Repeated entry---line 165 of file bib/own/molde.bib.bib
- : @article{patente1872
- :                     ,
-I'm skipping whatever remains of this entry
 Database file #2: bib/own/base_dados.bib.bib
 Warning--empty author and editor in patente1868
 Warning--empty publisher in patente1868
@@ -15,45 +11,45 @@ Warning--empty author in patente1872
 Warning--empty journal in patente1872
 Warning--empty author in patente1946
 Warning--empty journal in patente1946
-You've used 18 entries,
+You've used 19 entries,
             1791 wiz_defined-function locations,
-            539 strings with 6638 characters,
-and the built_in function-call counts, 2963 in all, are:
-= -- 248
-> -- 90
+            547 strings with 6734 characters,
+and the built_in function-call counts, 3185 in all, are:
+= -- 271
+> -- 94
 < -- 0
-+ -- 39
-- -- 21
-* -- 199
-:= -- 402
-add.period$ -- 37
-call.type$ -- 18
-change.case$ -- 17
++ -- 41
+- -- 22
+* -- 216
+:= -- 436
+add.period$ -- 40
+call.type$ -- 19
+change.case$ -- 18
 chr.to.int$ -- 0
-cite$ -- 25
-duplicate$ -- 135
-empty$ -- 363
-format.name$ -- 21
-if$ -- 669
+cite$ -- 26
+duplicate$ -- 144
+empty$ -- 387
+format.name$ -- 22
+if$ -- 717
 int.to.chr$ -- 0
-int.to.str$ -- 18
-missing$ -- 12
-newline$ -- 76
-num.names$ -- 9
-pop$ -- 76
+int.to.str$ -- 19
+missing$ -- 13
+newline$ -- 81
+num.names$ -- 10
+pop$ -- 77
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 92
+skip$ -- 95
 stack$ -- 0
-substring$ -- 181
-swap$ -- 16
+substring$ -- 206
+swap$ -- 17
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 7
-while$ -- 23
-width$ -- 20
-write$ -- 148
-(There was 1 error message)
+while$ -- 26
+width$ -- 21
+write$ -- 159
+(There were 7 warnings)

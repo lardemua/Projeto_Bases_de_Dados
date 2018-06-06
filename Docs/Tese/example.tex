@@ -187,18 +187,26 @@ A qualidade de fabrico dos moldes e das peças produzidas evoluiu com o passar d
 
 
 \section{Base de dados relacional}
-Bases de dados e sistemas de base de dados são uma componente essencial na vida da sociedade moderna: muitos de nós realizamos ações todos os dias que envolvem interações com bases de dados. Por exemplo, o ato de depositar e levantar dinheiro num banco, reservar estadias e voos ou comprar alguma coisa online podem envolver alguém ou um algum programa informático que acede a uma base de dados.\par
+Bases de dados e sistemas de gestão de bases de dados são uma componente essencial na vida da sociedade moderna: muitos de nós realizamos ações todos os dias que envolvem interações com bases de dados. Por exemplo, o ato de depositar e levantar dinheiro num banco, reservar estadias e voos ou comprar alguma coisa online podem envolver alguém ou um algum programa informático que acede a uma base de dados\cite{Elmasri:2010:FDS:1855347}.\par
 Esta tecnologia tem um impacto cada vez maior no uso dos computadores. É seguro afirmar que as bases de dados desempenham um papel crítico em quase todas as áreas onde são usados computadores\cite{Elmasri:2010:FDS:1855347}.\par
-Uma base de dados é uma coleção organizada de dados que estão relacionados e que podem ser partilhados por múltiplas aplicações\cite{definicao_base_dados}. São considerados dados factos reais que podem ser registados e têm um significado implícito, como por exemplo, nomes, moradas e números de telefone. Uma base de dados tem uma fonte de onde os dados são provenientes, algum grau de interação com eventos do mundo real e uma audiência que está ativamente interessada no seu conteúdo.\par
-A implementação destas é garantida por parte de um sistema de gestão de base de dados. Este é um \textit{software} de que facilita os processos de definir, construir, manipular e partilhar bases de dados entre vários utilizadores e aplicações. Este sistema é a única entidade que opera com a base de dados, ou seja, o acesso a esta é sempre mediado pelo sistema. 
-%•  Entidade única que opera com a BD
-%§  O acesso à BD é sempre mediado pelo SGDB
-%•  Existe uma interface de acesso que esconde os
-%detalhes de armazenamento físico dos dados
-%•  Elevada abstracção ao nível aplicacional
-%•  Os dados estão integrados (nível lógico) numa
-%mesma unidade de armazenamento
-%•  Suporta uma ou mais BD
+Uma base de dados é uma coleção organizada de dados que estão relacionados e que podem ser partilhados por múltiplas aplicações\cite{definicao_base_dados}. São considerados dados factos reais que podem ser registados e têm um significado implícito, como por exemplo, nomes, moradas e números de telefone. Uma base de dados tem uma fonte de onde os dados são provenientes, algum grau de interação com eventos do mundo real e uma audiência que está ativamente interessada no seu conteúdo\cite{Elmasri:2010:FDS:1855347}.\par
+A implementação destas é garantida por parte de um sistema de gestão de base de dados. Este é um \textit{software} de que facilita os processos de definir, construir, manipular e partilhar bases de dados entre vários utilizadores e aplicações. Definir uma base de dados envolve especificar o tipo de dados, estruturas e restrições dos dados a serem armazenados. Construir é o processo de guardar dados e armazena-los num local definido pelo sistema de gestão de bases de dados. Manipular inclui funções como realizar \textit{queries} à base de dados e receber informação específica, altera-la de acordo com mudanças nas variáveis e gerar relatórios a partir dos dados presentes. Partilhar permite que múltiplos utilizadores e programas acedam à base de dados simultaneamente\cite{Elmasri:2010:FDS:1855347}.\par
+Outras funções importantes fornecidas pelos sistemas de gestão de bases de dados incluem proteger e manter a base de dados durante um longo período de tempo. Proteger inclui proteção contra falhas de \textit{hardware} e \textit{software} e segurança contra acessos maliciosos ou não autorizados. Tipicamente uma grande base de dados pode ter um tempo de vida de vários anos, então o sistema de gestão de bases de dados tem de fornecer ferramentas para manter a base de dados de forma a permitir que o sistema evolua com novos requerimentos que surjam ao longo do tempo\cite{Elmasri:2010:FDS:1855347}.
+Para completar estas definições iniciais, chama-mos sistema de base de dados ao conjunto das bases de dados com o sistema de gestão de bases de dados como representado na \autoref{fig:relacional1}.
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.9\textwidth]{placeholder} % Include the image placeholder.png
+		\caption{SDSEGRTRETHRTHERTHRTHERTHRETHRTHRTHR\cite{Elmasri:2010:FDS:1855347}}
+		\label{fig:relacional1}
+	\end{center}
+\end{figure}
+O modelo relacional foi primeiramente introduzido por Ted Codd do \textit{IBM Research} em 1970\cite{Elmasri:2010:FDS:1855347,Codd} e atraiu imediatamente atenção pela sua simplicidade e base matemática. O modelo utiliza o conceito matemático de $ " $relação$ " $ representado por tabelas e é baseado na teoria dos conjuntos\cite{Elmasri:2010:FDS:1855347}.\par
+As primeiras implementações comerciais do modelo relacional ficaram disponíveis no inicio dos anos 80, como o \textit{SQL/DS} no sistema operativo \textit{MVS} do \textit{IBM} e o sistema de gestão de base de dados \textit{Oracle}. Desde aí, o modelo tem sido implementado num grande número de sistemas comerciais. Os sistemas de gestão de bases de dados relacionais populares atualmente incluem \textit{DB2} e \textit{Informix Dynamic Server} (do \textit{IBM}), \textit{Oracle} e \textit{Rdb} (da \textit{Oracle}), \textit{Sybase} (da \textit{Sybase}) e \textit{SQLServer} e \textit{Access} (da \textit{Microsoft}). Existem também vários sistemas grátis como \textit{MySQL} e \textit{PostgreSQL}\cite{Elmasri:2010:FDS:1855347}.\par
+Modelos de dados que procederam o relacional incluem os modelos hierárquicos e de rede. Estes foram propostos nos anos 60 e foram implementados nos primeiros sistemas de gestão de bases de dados nos anos 60 e 70. Estes modelos tiveram bastante importância na história das bases de dados e são referidos atualmente como sistemas de bases de dados \textit{legacy}\cite{Elmasri:2010:FDS:1855347}.
+
+\subsection{Domínios, Atributos, Tuplos e Relações}
+
+
 \subsection{Análise de requisitos}
 \subsection{Diagrama Entidade Relação}
 \subsection{Esquema Relacional}

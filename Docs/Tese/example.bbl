@@ -96,4 +96,9 @@ Ramez Elmasri and Shamkant Navathe.
   Dispon{\'{i}}vel na Internet:
   https://www.infopedia.pt/dicionarios/lingua-portuguesa/base de dados}.
 
+\bibitem{Codd}
+Edgar~Frank Codd.
+\newblock {A Relational Model of Data for Large Shared Data Banks}.
+\newblock {\em Communications of the ACM}, 13(6):377--387, 1970.
+
 \end{thebibliography}

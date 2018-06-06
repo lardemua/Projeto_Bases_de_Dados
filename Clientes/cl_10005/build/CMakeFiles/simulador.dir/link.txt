@@ -1,0 +1,1 @@
+/usr/bin/cc      CMakeFiles/simulador.dir/src/simulador.c.o CMakeFiles/simulador.dir/src/myf.c.o  -o simulador -rdynamic -L/usr/lib/x86_64-linux-gnu -lmysqlclient -lpthread -lz -lm -lrt -ldl 
