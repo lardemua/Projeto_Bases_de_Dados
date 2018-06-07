@@ -205,15 +205,44 @@ As primeiras implementações comerciais do modelo relacional ficaram disponíve
 Modelos de dados que procederam o relacional incluem os modelos hierárquicos e de rede. Estes foram propostos nos anos 60 e foram implementados nos primeiros sistemas de gestão de bases de dados nos anos 60 e 70. Estes modelos tiveram bastante importância na história das bases de dados e são referidos atualmente como sistemas de bases de dados \textit{legacy}\cite{Elmasri:2010:FDS:1855347}.
 
 \subsection{Domínios, Atributos, Tuplos e Relações}
-
+Um domínio é um conjunto atómico de valores. Atómico significa que cada valor num dado domínio é único e indivisível. Um método comum de especificar um domínio é especificar o tipo de dados do mesmo. Além disto, também é útil dar nomes aos domínios. Por exemplo, a informação de números de telemóvel pode ser guardada num domínio onde o seu tipo de dados é um inteiro de nove dígitos\cite{Elmasri:2010:FDS:1855347}.\par
+Um esquema de relação é constituído por um nome de uma relação e uma lista de atributos. Cada atributo é o nome do papel desempenhado por domínio no esquema da relação. É possível múltiplos atributos terem o mesmo domínio\cite{Elmasri:2010:FDS:1855347}.\par 
+A relação do esquema de relação é um grupo de múltiplos tuplos. Cada tuplo é um conjunto de valores ordenados que estão associados diretamente a um atributo.\par 
+A \autoref{fig:relacional2} REPRESENTA UM EXEMPLOEDGDFGDFGDFGDFG.
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.9\textwidth]{placeholder} % Include the image placeholder.png
+		\caption{SDSEGRTRETHRTHERTHRTHERTHRETHRTHRTHR\cite{Elmasri:2010:FDS:1855347}}
+		\label{fig:relacional2}
+	\end{center}
+\end{figure}
 
 \subsection{Análise de requisitos}
+A análise de requisitos é o primeiro passo necessário para definir uma base de dados. Este processo envolve uma comunicação com a entidade que deseja adquirir a base de dados e pode ser sumariza-do nos seguintes passos:
+\begin{enumerate}
+	\item Numa primeira fase realiza-se uma recolha detalhada de toda a informação referente ao problema do mundo real e retirar entidades, atributos, restrições, etc.
+	\item Filtrar a informação de forma a remover redundâncias e informação pouco relevante
+	\item Clarificar aspetos pouco claros
+	\item Completar o problema com informação adicional necessária
+	\item Distinguir dados de operações
+\end{enumerate}
+Este processo é transversal ao modelo de dados escolhido para realizar a base de dados. Para uma base de dados relacional é necessário identificar as chaves de uma relação:
+\begin{itemize}
+	\item Superchave - Conjunto de atributos que identificam de forma única dois tuplos distintos
+	\item Chave candidata - são todas as superchaves que não podem ser mais simplificadas
+	\item Chave primária - escolhida do conjunto de chaves candidatas e identifica de forma única o tuplo
+	\item Chave única - restantes chaves candidatas que não foram escolhidas como chave primária
+	\item Chave estrangeira - conjunto de atributos que é chave primária de outra relação
+\end{itemize}
+Para realizar um Diagrama Entidade Relação são necessárias informações sobre a relação entre as entidades, a cardinalidade e a obrigatoriedade de participação na relação. Estas são deduzidas durante a análise de requisitos mas serão explicadas na \autoref{subchap:DER}.
+
 \subsection{Diagrama Entidade Relação}
+\label{subchap:DER}
 \subsection{Esquema Relacional}
 
 \section{SQL}
 
-
+\section{Tecnologias existentes}
 \section{Software utilizado}
 \subsection{Linux}
 
