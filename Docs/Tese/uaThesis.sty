@@ -11,7 +11,7 @@
 %
 % university logo
 %
-\DeclareOption{oldLogo}{\def\ua@logo{uaLogoOld}}
+\DeclareOption{oldLogo}{\def\ua@logo{uaLogoNew}}
 \DeclareOption{newLogo}{\def\ua@logo{uaLogoNew}}
 
 %
@@ -85,9 +85,24 @@
   \def\ua@textB{Departamento de Fsica,}%
   \def\ua@textC{}%
   \def\ua@textD{}}
+% Mecanica
+\DeclareOption{Mec}{\ua@engineering
+	\let\ua@redT=\ua@red\let\ua@greenT=\ua@green\let\ua@blueT=\ua@blue
+	\let\ua@redM=\ua@red\let\ua@greenM=\ua@green\let\ua@blueM=\ua@blue
+	\let\ua@redB=\ua@red\let\ua@greenB=\ua@green\let\ua@blueB=\ua@blue\ua@engineering
+	\let\ua@redT=\ua@red\let\ua@greenT=\ua@green\let\ua@blueT=\ua@blue
+	\let\ua@redM=\ua@red\let\ua@greenM=\ua@green\let\ua@blueM=\ua@blue
+	\let\ua@redB=\ua@red\let\ua@greenB=\ua@green\let\ua@blueB=\ua@blue\ua@engineering
+	\let\ua@redT=\ua@red\let\ua@greenT=\ua@green\let\ua@blueT=\ua@blue
+	\let\ua@redM=\ua@red\let\ua@greenM=\ua@green\let\ua@blueM=\ua@blue
+	\let\ua@redB=\ua@red\let\ua@greenB=\ua@green\let\ua@blueB=\ua@blue
+	\def\ua@textA{}%
+	\def\ua@textB{Departamento de Engenharia Mecânica}%
+	\def\ua@textC{}%
+	\def\ua@textD{}}
 
-\ExecuteOptions{DETI}    % default!
-\ExecuteOptions{oldLogo} % default!
+\ExecuteOptions{Mec}    % default!
+\ExecuteOptions{newLogo} % default!
 \ProcessOptions
 
 %

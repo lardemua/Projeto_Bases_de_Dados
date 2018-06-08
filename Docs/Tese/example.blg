@@ -4,6 +4,7 @@ The top-level auxiliary file: example.aux
 The style file: unsrt.bst
 Database file #1: bib/own/molde.bib.bib
 Database file #2: bib/own/base_dados.bib.bib
+Database file #3: bib/own/software.bib.bib
 Warning--empty author and editor in patente1868
 Warning--empty publisher in patente1868
 Warning--empty year in patente1868
@@ -11,45 +12,45 @@ Warning--empty author in patente1872
 Warning--empty journal in patente1872
 Warning--empty author in patente1946
 Warning--empty journal in patente1946
-You've used 19 entries,
+You've used 25 entries,
             1791 wiz_defined-function locations,
-            547 strings with 6734 characters,
-and the built_in function-call counts, 3185 in all, are:
-= -- 271
-> -- 94
+            564 strings with 7162 characters,
+and the built_in function-call counts, 3825 in all, are:
+= -- 316
+> -- 103
 < -- 0
-+ -- 41
-- -- 22
-* -- 216
-:= -- 436
-add.period$ -- 40
-call.type$ -- 19
-change.case$ -- 18
++ -- 48
+- -- 23
+* -- 230
+:= -- 497
+add.period$ -- 48
+call.type$ -- 25
+change.case$ -- 24
 chr.to.int$ -- 0
-cite$ -- 26
-duplicate$ -- 144
-empty$ -- 387
-format.name$ -- 22
-if$ -- 717
+cite$ -- 32
+duplicate$ -- 178
+empty$ -- 498
+format.name$ -- 23
+if$ -- 879
 int.to.chr$ -- 0
-int.to.str$ -- 19
-missing$ -- 13
-newline$ -- 81
-num.names$ -- 10
-pop$ -- 77
+int.to.str$ -- 25
+missing$ -- 14
+newline$ -- 101
+num.names$ -- 11
+pop$ -- 108
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 95
+skip$ -- 138
 stack$ -- 0
-substring$ -- 206
-swap$ -- 17
+substring$ -- 222
+swap$ -- 23
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 7
-while$ -- 26
-width$ -- 21
-write$ -- 159
+while$ -- 29
+width$ -- 27
+write$ -- 195
 (There were 7 warnings)

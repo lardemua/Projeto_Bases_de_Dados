@@ -101,4 +101,26 @@ Edgar~Frank Codd.
 \newblock {A Relational Model of Data for Large Shared Data Banks}.
 \newblock {\em Communications of the ACM}, 13(6):377--387, 1970.
 
+\bibitem{Chen}
+Peter Pin-Shan Chen.
+\newblock {The Entity-Relationship Unified View of Data Model-Toward a}.
+\newblock {\em ACM Transactions on Database Systems}, 1(1):9--36, 1976.
+
+\bibitem{ubuntu}
+{Community | Ubuntu}.
+
+\bibitem{mysqlvs}
+{SQLite vs MySQL vs PostgreSQL: A Comparison Of Relational Database Management
+  Systems | DigitalOcean}.
+
+\bibitem{mysql}
+{MySQL :: MySQL 8.0 Reference Manual}.
+
+\bibitem{gcc}
+{GCC, the GNU Compiler Collection - GNU Project - Free Software Foundation
+  (FSF)}.
+
+\bibitem{apache}
+{Welcome! - The Apache HTTP Server Project}.
+
 \end{thebibliography}

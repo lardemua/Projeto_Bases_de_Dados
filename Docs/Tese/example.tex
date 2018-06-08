@@ -7,7 +7,7 @@
 \documentclass[11pt,twoside,a4paper]{report}
 %\documentclass[11pt,twoside,a4paper,openright]{report}    % Estilo relatório
 % openright: página inicial de cada capítulo sempre ímpar
-\usepackage[DETI,newLogo]{uaThesis}
+\usepackage[Mec,newLogo]{uaThesis}
 
 \def\ThesisYear{2018}
 
@@ -21,7 +21,7 @@
 \graphicspath{ {Pictures/} }
     % Símbolos da American Mathematical Society
     \usepackage{mathtools}
-    \usepackage{amsmath}
+    %\usepackage{amsmath}
     %\usepackage[citebordercolor={1 1 1},linkbordercolor={1 1 1}]{hyperref}
     \usepackage{graphicx} % Required for the inclusion of images
     \usepackage{subcaption}   
@@ -30,7 +30,7 @@
     
     \usepackage{enumitem}
     
-%    \usepackage[backend=bibtex, sorting=none]{biblatex}
+%    \usepackage[url = false, backend=biber, style = numeric, sorting=none]{biblatex}
 %    \addbibresource{bib/own/molde.bib}
 
 %encoding
@@ -112,21 +112,20 @@
 \TitlePage
   \vspace*{55mm}
   \TEXT{\textbf{agradecimentos~/\newline acknowledgements}}
-       {ergergerg}
+       {Um obrigado aos que me ajudaram. (Adicionar agradecimentos)}
   \TEXT{}
-       {ergergerg}
+       {}
 \EndTitlePage
 \titlepage\ \endtitlepage % empty page
 
 \TitlePage
   \vspace*{55mm}
-  \TEXT{\textbf{Resumo}}
+  \TEXT{\textbf{Palavras-chave}}
+       {Base de dados relacional; rede de bases de dados; monitorização; monitorização remota; aplicação; \textit{web}.}
+  \TEXT{Resumo}
        {Moldes de injeção têm uma vasta aplicabilidade no mundo industrial. Afim de melhorar a qualidade do produto final e reduzir falhas surgiu a necessidade de instrumentar e monitorizar moldes remotamente. Neste projeto desenvolveu-se uma rede de bases de dados relacionais e uma aplicação em ambiente \textit{Web}. A primeira garante uma transferência de valores segura e permanente de forma a criar um histórico. A segunda permite ao utilizador interagir com as bases de dados desenvolvidas podendo edita-las e consulta-las de forma a gerar relatórios.\\
        	No desenvolvimento deste projeto utilizou-se \textit{MySQL} e \textit{C} para criar e definir a rede de bases de dados resultando numa solução simples e funcional a baixo nível. Utilizou-se \textit{Apache}, \textit{PHP}, e \textit{HTML} para desenvolver e implementar a aplicação de forma a que esta seja multiplataforma e garanta um acesso remoto ao utilizador.\\
-       	A solução proposta cumpre todos os objetivos definidos podendo ser já utilizada numa fase experimental apesar de necessitar alguns melhoramentos a nível de desempenho.
-       	}
-  \TEXT{}
-       {}
+       	A solução proposta cumpre todos os objetivos definidos podendo ser já utilizada numa fase experimental apesar de necessitar alguns melhoramentos a nível de desempenho.}
 \EndTitlePage
 \titlepage\ \endtitlepage % empty page
 
@@ -158,7 +157,10 @@
 \pagenumbering{arabic}
 \chapter{Introdução}
 arquivo e monitorização de moldes.
-
+\newpage
+em branco
+\newpage
+em branco
 
 \cleardoublepage
 \chapter{Estado de Arte}
@@ -195,8 +197,8 @@ Outras funções importantes fornecidas pelos sistemas de gestão de bases de da
 Para completar estas definições iniciais, chama-mos sistema de base de dados ao conjunto das bases de dados com o sistema de gestão de bases de dados como representado na \autoref{fig:relacional1}.
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=0.9\textwidth]{placeholder} % Include the image placeholder.png
-		\caption{SDSEGRTRETHRTHERTHRTHERTHRETHRTHRTHR\cite{Elmasri:2010:FDS:1855347}}
+		\includegraphics[width=0.7\textwidth]{SGBD} % Include the image placeholder.png
+		\caption{Esquema simplificado de um sistema de bases de dados}
 		\label{fig:relacional1}
 	\end{center}
 \end{figure}
@@ -208,11 +210,11 @@ Modelos de dados que procederam o relacional incluem os modelos hierárquicos e 
 Um domínio é um conjunto atómico de valores. Atómico significa que cada valor num dado domínio é único e indivisível. Um método comum de especificar um domínio é especificar o tipo de dados do mesmo. Além disto, também é útil dar nomes aos domínios. Por exemplo, a informação de números de telemóvel pode ser guardada num domínio onde o seu tipo de dados é um inteiro de nove dígitos\cite{Elmasri:2010:FDS:1855347}.\par
 Um esquema de relação é constituído por um nome de uma relação e uma lista de atributos. Cada atributo é o nome do papel desempenhado por domínio no esquema da relação. É possível múltiplos atributos terem o mesmo domínio\cite{Elmasri:2010:FDS:1855347}.\par 
 A relação do esquema de relação é um grupo de múltiplos tuplos. Cada tuplo é um conjunto de valores ordenados que estão associados diretamente a um atributo.\par 
-A \autoref{fig:relacional2} REPRESENTA UM EXEMPLOEDGDFGDFGDFGDFG.
+A \autoref{fig:relacional2} representa um exemplo do que foi dito anteriormente.
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=0.9\textwidth]{placeholder} % Include the image placeholder.png
-		\caption{SDSEGRTRETHRTHERTHRTHERTHRETHRTHRTHR\cite{Elmasri:2010:FDS:1855347}}
+		\includegraphics[width=0.9\textwidth]{exemplo_relacional} % Include the image placeholder.png
+		\caption{Exemplo onde é possível observar a relação com os seus atributos e alguns tuplos}
 		\label{fig:relacional2}
 	\end{center}
 \end{figure}
@@ -234,45 +236,273 @@ Este processo é transversal ao modelo de dados escolhido para realizar a base d
 	\item Chave única - restantes chaves candidatas que não foram escolhidas como chave primária
 	\item Chave estrangeira - conjunto de atributos que é chave primária de outra relação
 \end{itemize}
+A escolha da chave primária pode ser feita de forma aleatória mas, priorizam-se chaves que identifiquem de forma natural um atributo. Por exemplo: uma pessoa pode ser identificada por um número de identificação, número de identificação fiscal ou pelo seu número de telefone dado que estes nunca se repetem. O número de identificação é mais natural para identificar uma pessoa do que o seu número de identificação fiscal e menos volátil do que o seu número de telefone, dado que este pode ser alterado.\par 
 Para realizar um Diagrama Entidade Relação são necessárias informações sobre a relação entre as entidades, a cardinalidade e a obrigatoriedade de participação na relação. Estas são deduzidas durante a análise de requisitos mas serão explicadas na \autoref{subchap:DER}.
 
 \subsection{Diagrama Entidade Relação}
 \label{subchap:DER}
+A representação lógica dos dados é uma componente importante na área das bases de dados. Existem vários modelos para esta representação antes da criação do modelo entidade-relação apresentado por P. P. Chen em 1976, sendo os mais conhecidos os modelos em rede, relacional e entidade. Estes modelos têm as suas vantagens e desvantagens. O modelo em rede permite uma vista mais natural dos dados dividindo-os em entidades e relações (até um determinado ponto), mas a sua capacidade de garantir independência dos dados foi superada. O modelo relacional consegue ter um grande grau de independência dos dados, mas pode perder alguma informação semântica importante sobre o mundo real. O modelo de entidade também consegue um grande grau de independência dos dados, mas a forma visualizar os dados não é tão fácil para algumas pessoas\cite{Chen}.\par
+O modelo entidade-relação adota uma vista mais natural em que o mundo real consiste de entidades e relações, incorpora alguma informação semântica importante sobre o mundo real e consegue ter um grande grau de independência de dados. O modelo entidade-relação é baseado na teoria das relações e foi desenvolvido com o objetivo de servir de base para um sistema de visualização de dados unificado\cite{Chen}.\par
+O diagrama entidade relação é uma representação gráfica da análise de requisitos realizada anteriormente baseada no modelo entidade-relação. Este diagrama não é determinístico pois, para uma mesma análise, podem nascer diferentes diagramas que cumprem todos os requisitos.\par
+Um diagrama é constituído elementos como entidades, atributos e relações. Uma entidade é algo que existe no mundo real como uma pessoa ou um carro. Um atributo é uma característica da entidade como uma pessoa tem um nome e um carro tem uma matricula. Uma relação é como uma ou mais entidades interagem entre si como uma pessoa tem um carro\cite{Chen}.\par 
+Passando à notação, as entidades são representadas por caixas retangulares, os atributos por caixas ovais e as relações por caixas em forma de losango como mostra a \autoref{fig:der1}. Os atributos sublinhados representam a chave primária da entidade.
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=1\textwidth]{notacao1} % Include the image placeholder.png
+		\caption{Representação de entidades, relações e atributos}
+		\label{fig:der1}
+	\end{center}
+\end{figure}
+As entidades e relações podem ser fortes e fracas. Uma entidade forte não depende de outras entidades, enquanto uma entidade fraca necessita de ser identificada em conjunto com uma entidade forte. As relações fortes definem a ou as entidades fortes que identificam uma entidade fraca entre as quais esta se relaciona. As entidades fracas são representadas por caixas retangulares com linha dupla e as relações fortes são identificadas por um losango de linha dupla como representado na \autoref{fig:der2}.
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.8\textwidth]{notacao2} % Include the image placeholder.png
+		\caption{Representação de entidades e relações fortes e fracas}
+		\label{fig:der2}
+	\end{center}
+\end{figure}
+\newpage
+Para completar a relação entre entidades é necessário identificar também o grau, cardinalidade e obrigatoriedade de participação de uma relação. Quanto ao grau uma relação pode ser unária, binária ou ternária como representado na \autoref{fig:der3}. As relações ternárias podem ser decompostas em relações binárias. %como mostra a \autoref{fig:der4}.
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.7\textwidth]{notacao6} % Include the image placeholder.png
+		\caption{Representação dos vários graus das relações (NECESSITA EDIÇÃO)}
+		\label{fig:der3}
+	\end{center}
+\end{figure}
+%\begin{figure}[H]
+%	\begin{center}
+%		\includegraphics[width=0.7\textwidth]{placeholder} % Include the image placeholder.png
+%		\caption{exemplo}
+%		\label{fig:der4}
+%	\end{center}
+%\end{figure}
+As relações podem também ser múltiplas, ou seja, mais do que uma relação entre entidades como demonstrado na \autoref{fig:der8}.
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.7\textwidth]{notacao3} % Include the image placeholder.png
+		\caption{Representação de múltiplas relações entre duas entidades}
+		\label{fig:der8}
+	\end{center}
+\end{figure}
+Quanto à cardinalidade uma relação pode ser de três tipos:
+\begin{itemize}[noitemsep]
+	\item 1 para 1
+	\item N para 1
+	\item N para M
+\end{itemize}
+A \autoref{fig:der5} apresenta uma representação visual destas cardinalidades e a \autopageref{fig:der6} apresenta a notação da cardinalidade definida por Chen.
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.7\textwidth]{notacao4} % Include the image placeholder.png
+		\caption{Diagrama dos vários tipos de cardinalidade}
+		\label{fig:der5}
+	\end{center}
+\end{figure}
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.7\textwidth]{notacao5} % Include the image placeholder.png
+		\caption{Notação da cardinalidade de Chen}
+		\label{fig:der6}
+	\end{center}
+\end{figure}
+A obrigatoriedade de participação numa relação define se uma entidade tem de participar obrigatoriamente numa relação. Esta é representada por uma linha dupla na conexão com a relação como representado na Figura \ref{fig:der9}. %e \ref{fig:der10}. 
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.7\textwidth]{notacao7} % Include the image placeholder.png
+		\caption{Representação da obrigatoriedade de participação}
+		\label{fig:der9}
+	\end{center}
+\end{figure}
+%\begin{figure}[H]
+%	\begin{center}
+%		\includegraphics[width=0.7\textwidth]{placeholder} % Include the image placeholder.png
+%		\caption{exemplo}
+%		\label{fig:der10}
+%	\end{center}
+%\end{figure}
+Os atributos também podem ser de tipos diferentes. Estes podem ser derivados, compostos ou multi-valor como mostra a \autoref{fig:der11}
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.7\textwidth]{notacao8} % Include the image placeholder.png
+		\caption{Representação dos vários tipos de atributos. Os atributos derivados são representados a tracejado, os compostos têm sub-atributos associados a si e os multi-valor são representados com linha dupla}
+		\label{fig:der11}
+	\end{center}
+\end{figure}
+
 \subsection{Esquema Relacional}
+O esquema relacional incluí todas as relações que concretizam uma base de dados. Cada relação é representada pelos seus atributos, tendo os atributos chave sublinhados. Quando atributos de relações diferentes representam o mesmo elemento do mundo real, estes são conectados. Quando um elemento aparece em relações diferentes significa que numa destas, o elemento, é atributo chave da relação e assim sendo, os restantes atributos são considerados chaves estrangeiras. São representados com a ligação ao atributo que serve de chave primária como demonstrado na \autoref{fig:er1}\cite{Chen}.
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.7\textwidth]{notacao9} % Include the image placeholder.png
+		\caption{Representação de um esquema relacional com as ligações das chaves estrangeiras}
+		\label{fig:er1}
+	\end{center}
+\end{figure}
+Este esquema pode ser deduzido a partir do diagrama entidade relação onde as entidades se traduzem em relações e as relações do diagrama representam as chaves estrangeiras no esquema relacional.
 
-\section{SQL}
+\section{\textit{Structured Query Language}}
+A linguagem \textit{SQL} é considerada uma das maiores razões para o sucesso comercial das bases de dados relacionais. Porque se tornou normal a sua utilização em bases de dados relacionais, os utilizadores tiveram menos preocupações a transferir as suas aplicações de outros tipos de bases de dados - por exemplo, bases de dados hierárquicas e em rede - para uma base de dados relacional. Isto porque se um sistema de gestão de bases de dados não cumprisse os requisitos definidos, não era problemático transferir a solução para outro sistema de gestão de bases de dados dado que ambos utilizam a mesma linguagem. Na realidade existem várias sub-versões desta linguagem dependentes de cada sistema de gestão de bases de dados. No entanto, se o utilizador se limitar apenas às funções standard desta linguagem a mudança de sistema é bastante simplificada. Outra vantagem de ter uma linguagem normalizada é que uma aplicação pode utilizar informação de bases de dados em sistemas de gestão de bases de dados diferentes ao mesmo tempo\cite{Elmasri:2010:FDS:1855347}.\par 
+O nome \textit{SQL} atualmente significa \textit{Structured Query Language}. Originalmente era chamado \textit{SQUEL} de \textit{Structured English QUEry Language}, foi desenhado e implementado no \textit{IBM Research} como uma interface experimental para o sistema de bases de dados relacionais \textit{SYSTEM R. SQL}. Um esforço conjunto entre o \textit{American National Standards Institute} (\textit{ANSI}) e a \textit{International Standards Organization} (\textit{ISO}) conduziu à normalização da versão do \textit{SQL} chamado SQL-86 ou SQL1. Surgiu depois uma versão expandida chamada SQL-92 ou SQL2. A seguinte versão reconhecida é o SQL:1999 ou SQL3. Dois \textit{updates} de depois resultaram nas versões SQL:2003 e SQL:2006\cite{Elmasri:2010:FDS:1855347}. Sendo a atualização mais recente em 2016.\par 
+O \textit{SQL} é uma linguagem básica para realizar \textit{queries} dividida em dois campos principais, \textit{DDL} e \textit{DML}. \textit{DDL} ou \textit{Data Definition Language} são as \textit{queries} que permitem definir e construir uma base de dados. \textit{DML} ou \textit{Data Manipulation Language} são as \textit{queries} que permitem interagir com os dados\cite{Elmasri:2010:FDS:1855347}. Estas serão mais exploradas na \autoref{subchap:mysql}.
 
-\section{Tecnologias existentes}
-\section{Software utilizado}
-\subsection{Linux}
+%\section{Tecnologias existentes}
 
-\subsection{MySQL}
+\section{\textit{Software} utilizado}
+Para desenvolver as redes de bases de dados e aplicação escolheram-se os \textit{softwares} e linguagens apresentados neste capítulo. Como a solução será futuramente implementada em ambiente empresarial, definiu-se que não se deve usar \textit{softwares} que estejam em versão \textit{beta}. Além disto sugere-se que sejam também gratuitos.
 
-\subsection{C}
+\subsection{\textit{Ubuntu}}
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.3\textwidth]{ubuntu} % Include the image placeholder.png
+		\caption{Logótipo do \textit{Ubuntu}}
+		\label{fig:linux}
+	\end{center}
+\end{figure}
+Escolheu-se o \textit{Ubuntu} 16.04LTS como sistema operativo para os sistemas usados neste projeto, representado na \autopageref{fig:linux}. Este é uma distribuição do \textit{Linux} baseado no \textit{Debian}. É um sistema operativo grátis e \textit{open source} desenvolvido pela \textit{Canonical}. A liberdade deste sistema operativo na área da programação criou uma comunidade de utilizadores que ajudam a pesquisar e desenvolver este sistema operativo.\cite{ubuntu}.\par 
+A \textit{Canonical} encarrega-se de garantir \textit{updates} de segurança e performance de forma regular. Apesar de não ser infalível o \textit{Linux} é um dos sistemas mais estáveis e menos provável de ser afetado por vírus, dado que a maior parte destes são desenhados para afetar sistemas operativos mais populares como o \textit{Windows}.
 
-\subsection{Apache}
+\subsection{\textit{MySQL}}
+\label{subchap:mysql}
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.5\textwidth]{mysql} % Include the image placeholder.png
+		\caption{Logótipo do \textit{MySQL}}
+		\label{fig:mysql}
+	\end{center}
+\end{figure}
+Escolheu-se o \textit{MySQL}, representado na \autoref{fig:mysql}, como sistema de gestão de bases de dados relacionais para construir e utilizar as bases de dados usadas neste projeto, dada a sua simplicidade e velocidade de resposta. Existem outras ofertas gratuitas como o \textit{SQLite} e o \textit{PostgreSQL}. O \textit{SQLite} funciona apenas localmente e não permite uma conexão remota que se procura como solução para o problema. O \textit{PostgreSQL} é um sistema robusto que permite realizar tarefas que o \textit{MySQL} não consegue realizar. No entanto, dada a simplicidade da base de dados prevista na fase de projeto, não é necessário usar uma ferramenta tão completa e robusta\cite{mysqlvs}.\par 
+O \textit{MySQL} é o mais popular e o sistema de gestão de bases de dados relacionais e o mais usado\cite{mysqlvs}. Garante um acesso múltiplo, rápido e robusto a uma base de dados no servidor. Foi desenvolvido para lidar com grandes quantidades de informação e \textit{softwares} com utilização massiva\cite{mysql}.\par 
+O \textit{MySQL} oferece soluções gratuitas e pagas, \textit{Community} e \textit{Enterprise}, respetivamente. A primeira recebe menos \textit{updates} e correções que a solução paga. Tem também algumas funcionalidades bloqueadas e um limite na capacidade de sensivelmente 4Gb\cite{mysql}. Estas limitações não afetam o projeto e como tal opta-se pela solução gratuita deste \textit{software}.\par
+Como referido anteriormente os vários sistemas de gestão de bases de dados possuem as suas próprias sub-versões da linguagem \textit{SQL} e, o \textit{MySQL}, não é exceção. Existem vários comandos presentes nas componentes \textit{DDL} e \textit{DML} desta linguagem, a seguinte lista enumera os comandos principais utilizados neste projeto:
+\begin{itemize}
+	\item \textbf{SHOW DATABASES/TABLES} - mostra todas as bases de dados ou tabelas da base de dados (\textit{MySQL})
+	\item \textbf{CREATE DATABASE/TABLE} - criar bases de dados ou tabelas
+	\item \textbf{DROP DATABASE/TABLE} - eliminar bases de dados ou tabelas
+	\item \textbf{SELECT FROM} - visualizar tuplos de uma tabela
+	\item \textbf{INSERT} - inserir tuplos numa tabela
+	\begin{itemize}
+		\item \textbf{INTO} - se forem inseridos múltiplos tuplos e um não respeitar as restrições de integridade definidas, nenhum tuplo é inserido
+		\item \textbf{IGNORE} - se forem inseridos múltiplos tuplos e um não respeitar as restrições de integridade, esse é descartado e os restantes são inseridos na tabela (\textit{MySQL})
+	\end{itemize}
+	\item \textbf{DELETE} - elimina tuplos de uma tabela
+	\item \textbf{UPDATE} - altera tuplos de uma tabela
+	\item \textbf{GRANT} - dar privilégios a um utilizador
+\end{itemize}
+A \textit{querie} do tipo SELECT permite adicionar condições do tipo:
+\begin{itemize}
+	\item \textbf{WHERE} - definir parâmetros de busca de um atributo
+	\item \textbf{GROUP BY} - permite agrupar informação permitindo operações matemáticas sobre valores, por exemplo: contagem, soma, média, etc.
+	\item \textbf{ORDER BY} - escolher a ordem dos tuplos
+\end{itemize}
+As \textit{queries} do tipo DELETE e UPDATE  também permitem utilizar a condição WHERE.\par 
+Na criação das tabelas atribuem-se o nome dos atributos e o seu respetivo domínio. O \textit{MySQL} oferece vários tipos de dados, dos quais foram usados:
+\begin{itemize}
+	\item \textbf{VARCHAR(n)} - \textit{string} com tamanho máximo n
+	\item \textbf{INT} - inteiro entre -2147483648 e +2147483647
+	\item \textbf{TINYINT} - inteiro entre -128 e +127
+	\item \textbf{FLOAT} - numérico com casa decimais
+	\item \textbf{DATETIME} - data e hora no formato AAAA-MM-DD HH:MM:SS
+\end{itemize}
+Define-se também as restrições de integridade:
+\begin{itemize}
+	\item \textbf{PRIMARY KEY} - define chave primária
+	\item \textbf{UNIQUE} - define chave única
+	\item \textbf{FOREIGN KEY REFERENCES} - define a chave estrangeira e o atributo de referência
+\end{itemize}
+Estas restrições ou \textbf{CONSTRAINTS} podem e devem ser atribuídas um nome de forma a identifica-las em mensagens de erro. Além disto é possível definir o comportamento de uma restrição de uma chave estrangeira quando o atributo de referencia é alterado (\textbf{ON UPDATE}) ou eliminado (\textbf{ON DELETE}):
+\begin{itemize}
+	\item \textbf{NO ACTION} - não deixa realizar a ação
+	\item \textbf{CASCADE} - todas as chaves estrangeiras dependentes do atributo de referencia são alteradas ou eliminadas de acordo com este
+	\item \textbf{SET NULL} - altera o valor da chave estrangeira para NULL
+	\item \textbf{SET DEFAULT} - altera o valor da chave estrangeira para um valor predefinido
+\end{itemize}
+O valor NULL representa um valor de um atributo que não existe ou é desconhecido, adiciona-se \textbf{NOT NULL} a um atributo quando este não pode assumir este valor.\par 
+Estes são os comandos e conceitos principais que surgem ao longo deste documento. Como referido anteriormente e é possível observar aqui, o \textit{SQL} é uma linguagem simples e auto-explicativa.
 
-\subsection{PHP e HTML}
+\subsection{\textit{C}}
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.4\textwidth]{gcc} % Include the image placeholder.png
+		\caption{Logótipo do \textit{GNU}}
+		\label{fig:gcc}
+	\end{center}
+\end{figure}
+Escolheu-se utilizar \textit{C} no desenvolvimento deste projeto devido à afinidade com esta linguagem e com o facto do \textit{MySQL} disponibilizar protocolos oficiais e documentação de comunicação com esta linguagem\cite{mysql}.\par
+O \textit{C} é uma linguagem para todos os tipos de problemas e importante no mundo da programação. Originalmente desenvolvido por Dennis Ritchie entre 1969 e 1973 no \textit{Bell Labs} e usado para re-implementar o sistema operativo \textit{Unix}. Desde então esta tornou-se uma das linguagens de programação mais popular de sempre com uma oferta de vários compiladores existentes no mercado. O \textit{C} foi então normalizado pelo \textit{ANSI} em 1989 e consequentemente pelo \textit{ISO}.\par 
+No projeto usa-se o \textit{GNU Compiler Collection} (\textit{GCC}), representado na \autoref{fig:gcc}, como compilador dos programas em \textit{C}. Este foi desenvolvido primeiramente para o sistema operativo \textit{GNU} e focou-se em ser gratuito e garantir liberdade de programação ao utilizador. Conta com uma comunidade ativa que desenvolvem constantemente novas soluções e \textit{updates} regulares ao compilador de forma a que este não fique desatualizado\cite{gcc}.
+
+\subsection{\textit{Apache}}
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.6\textwidth]{apache} % Include the image placeholder.png
+		\caption{Logótipo do \textit{Apache}}
+		\label{fig:apache}
+	\end{center}
+\end{figure}
+Escolheu-se utilizar \textit{Apache HTTP Server}, representado na \autoref{fig:apache} como servidor \textit{HTTP} para a aplicação \textit{Web}. Este foca-se em ser um servidor gratuito e garantir uma solução segura, eficiente e extensível\cite{apache}.\par
+Lançado em 1995, tornou-se no \textit{software} mais utilizado pelas empresas para correr os seus \textit{sites}. Atualmente na versão 2.4, realizam \textit{updates} constantes ao programa para o manter estável e atualizado\cite{apache}.
+
+\subsection{\textit{HTML}, \textit{JS} e \textit{PHP}}
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.5\textwidth]{web} % Include the image placeholder.png
+		\caption{Representação da ferramenta mais usada para desenvolver aplicações em ambiente \textit{Web}}
+		\label{fig:web}
+	\end{center}
+\end{figure}
+Escolheu-se \textit{HTML}, \textit{JS} e \textit{PHP} para desenvolver a aplicação \textit{Web} deste projeto. Junto com \textit{SQL} e \textit{CSS} formam o conjunto de ferramentas mais usadas no desenvolvimento de aplicações \textit{Web} no mercado, representado na \autoref{fig:web}.\par 
+\textit{HTML} ou \textit{Hyper Text Markup Language} descreve a estrutura da página \textit{Web} desenvolvida. Possuí elementos que funcionam como blocos para as páginas permitindo a criação de uma interface com um utilizador. \textit{CSS} ou \textit{Cascading Style Sheets} descreve como os elementos HTML devem ser dispostos na página, permitindo o desenvolvimento de uma interface mais apelativa. \textit{JS} ou \textit{JavaScript} permite interagir e alterar o código \textit{HTML} e \textit{CSS} criando uma interface mais interativa. Permite também desenvolver códigos e funções que são executadas no browser do cliente. \textit{PHP} ou \textit{PHP:Hypertext Preprocessor} permite desenvolver funções para aplicação que executam do lado do servidor. \textit{JS} e \textit{PHP} realizam ambos funções diferindo apenas no local onde são executadas. Sem contar com a interação com o \textit{HTML} e \textit{CSS}, o \textit{PHP} pode substituir o \textit{JS} como linguagem para criação de funções do sistema. No entanto, isto pode causar problemas de desempenho dado que o servidor terá de correr funções de todos os utilizadores. Assim sendo define-se que o uso do \textit{PHP} deve ser limitado a funções de sistema mais importantes, como conectar a uma base de dados em \textit{SQL}, e o \textit{JS} deve ser usado no desenvolvimento de funções de aplicação mais triviais.
+
 
 \cleardoublepage
 \chapter{Proposta de Solução}
 \section{Infraestrutura de dados}
+\newpage
+em branco
 
 \section{Base de Dados}
 \subsection{Análise de Requisitos}
+\newpage
+em branco
+\newpage
+em branco
 
+\newpage
+em branco
 \subsection{Desenho conceptual e esquema lógico}
+\newpage
+em branco
 
+\newpage
+em branco
 \subsection{Construção da base de dados}
+\begin{table}
+	\caption{Domínio dos atributos}
+\end{table}
+\newpage
+em branco
 
+\newpage
+em branco
 \subsection{Programa de transferência}
 
+\newpage
+em branco
 \subsection{Gestão de \textit{backups}}
 \label{subchap:backups}
+\newpage
+em branco
+\newpage
+em branco
 
+\newpage
+em branco
 \subsection{Simulador}
 
 \subsection{Utilizadores}
+\newpage
+em branco
 
 \cleardoublepage
 \chapter{Aplicação}
@@ -611,8 +841,8 @@ Terminado a análise das funcionalidades da aplicação com a área de Instalar 
 	\label{fig:local3}
 \end{figure}
 
-\cleardoublepage
-\chapter{Instalação do Sistema}
+%\cleardoublepage
+%\chapter{Instalação do Sistema}
 
 \cleardoublepage
 \chapter{Conclusões}
@@ -660,7 +890,7 @@ A gestão dos \textit{backups} descrita na \autoref{subchap:backups} onde se sep
 %
 \cleardoublepage
 \bibliographystyle{unsrt}
-\bibliography{bib/own/molde.bib,bib/own/base_dados.bib}
+\bibliography{bib/own/molde.bib,bib/own/base_dados.bib,bib/own/software.bib}
 
 %%\sloppy
 %%\printbibliography[prenote=myprenote,title=References]
