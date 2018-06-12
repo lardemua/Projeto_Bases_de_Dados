@@ -156,11 +156,27 @@
 \cleardoublepage
 \pagenumbering{arabic}
 \chapter{Introdução}
-arquivo e monitorização de moldes.
-\newpage
-em branco
-\newpage
-em branco
+\label{chap:intro}
+Para satisfazer as necessidades de uma população cada vez maior, surge a necessidade de produzir artigos em grande escala. Uma das tecnologias que se salientou neste campo, especialmente na produção com plástico, foi a moldagem por injeção.\par
+Os fabricantes de moldes de injeção procuram formas de melhorar as suas ferramentas, como a qualidade do processo de fabrico e a qualidade dos materiais usados na sua construção. No entanto, dada a complexidade do processo e a quantidade de variáveis envolvidas surge a necessidade de instrumentar e monitorizar o molde de forma a garantir um controlo de qualidade. Num esforço conjunto com outros projetos e dissertações
+% do Departamento de Engenharia Mecânica da Universidade de Aveiro 
+procura-se dar mais um passo na monitorização dos moldes de injeção.\par
+O comportamento destas ferramentas pode não se alterar de forma imediata mas alterar-se lentamente ao longo do seu tempo de vida. Para analisar esta alteração do comportamento procura-se uma forma de garantir a criação de um histórico da resposta térmica e integridade estrutural em pontos críticos de um molde de injeção. Dado que os moldes são produzidos para vários clientes pode tornar-se difícil coordenar os históricos desenvolvidos. Este projeto descreve uma solução capaz de coordenar e armazenar tais históricos mantendo a informação organizada e disponível a qualquer momento.\par 
+Propõe-se armazenar a informação gerada localmente nos clientes num sistema central situado na empresa que fabrica os moldes. Esta ligação entre os sistemas locais e central, representada na \autoref{fig:intro1}, visa ser segura, atempada e sem interferência nos processos produtivos. Quanto ao método de armazenamento, propõem-se usar bases de dados relacionais que satisfação os requisitos propostos no projeto.
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.5\textwidth]{placeholder} % Include the image placeholder.png
+		\caption{esquema}
+		\label{fig:intro1}
+	\end{center}
+\end{figure}
+Para consultar a informação nas bases de dados propõem-se uma aplicação em ambiente \textit{Web}, disponível em qualquer momento e dispositivo. A aplicação deve permitir que utilizadores sem conhecimentos sobre bases de dados comuniquem com estas de forma a consultar a informação desejada. Assim sendo enumeram-se os objetivos principais do projeto:
+\begin{enumerate}
+	\item Criar uma infraestrutura de bases de dados
+	\item Criar uma aplicação \textit{Web} para consultar os históricos
+\end{enumerate}
+Como requerimento definiu-se que deve ser dada prioridade à utilização de \textit{software} gratuito. Além disto, dada a quantidade de opções disponíveis no mercado, definiu-se também que a solução desenvolvida deve ser simples de forma a promover a sua portabilidade para outras plataformas e linguagens.\par 
+ADICIONAR A ESTRUTURA AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI AQUI
 
 \cleardoublepage
 \chapter{Estado de Arte}
@@ -457,34 +473,302 @@ Escolheu-se \textit{HTML}, \textit{JS} e \textit{PHP} para desenvolver a aplica�
 
 \cleardoublepage
 \chapter{Proposta de Solução}
-\section{Infraestrutura de dados}
-\newpage
-em branco
+A infraestrutura de dados desenvolvida tem como objetivo ser simples, funcional a baixo nível e sem impor restrições na instrumentação dos moldes. Este capítulo descreve o processo de desenvolvimento das bases de dados, o método de transferência de medições, a gestão de \textit{backups}, as permissões dos utilizadores e um simples simulador de valores.
+
+\section{Infraestrutura de Dados}
+A instrumentação dos moldes geram valores localmente nos clientes e estes devem ser guardados numa base de dados central. A transferência é realizada usando protocolos TCP/IP. A fim de minimizar a perda de valores em caso de falha de conexão, coloca-se uma base de dados local em cada cliente, como representado na \autoref{fig:infra1}.
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=1\textwidth]{placeholder} % Include the image placeholder.png
+		\caption{Diagrama da infraestrutura com múltiplas bases de dados locais conectadas a uma base de dados central}
+		\label{fig:infra1}
+		\end{center}
+\end{figure}
+Para estabelecer o fluxo de informação desenvolveu-se um programa de transferência e um simulador, ambos desenvolvidos em \textit{C}. O programa de transferência envia \textit{queries} para as bases de dados locais e recebe respostas com valores que regista na base de dados central. O simulador gera valores para popular as bases de dados locais. Para simular múltiplos clientes usam-se simuladores independentes entre si, como representado na \autoref{fig:infra2}.
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.5\textwidth]{placeholder} % Include the image placeholder.png
+		\caption{Diagrama do fluxo de informação. Os simuladores substituem provisoriamente sistemas de aquisição de dados}
+		\label{fig:infra2}
+		\end{center}
+\end{figure}
+Para melhorar o desempenho da base de dados central e prevenir falhas críticas do sistema, desenvolveu-se um programa de gestão de \textit{backups}, também em \textit{C}. Este programa limpa e cria \textit{backups} da base de dados e guarda-os num repositório \textit{online}. De forma a não interferir diretamente com a informação da base de dados central criam-se duas bases de dados para a gestão dos \textit{backups}. Com esta adição, o esquema da infraestrutura final está representado na \autoref{fig:infra3}.
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.5\textwidth]{placeholder} % Include the image placeholder.png
+		\caption{Diagrama final da infraestrutura de dados. Os valores gerados nos simuladores são transferidos para a base de dados central. Estes valores são então processados pelo gestor de \textit{backups} que cria e guarda \textit{backups} provisoriamente num repositório online no \textit{GitHub}}
+		\label{fig:infra3}
+		\end{center}
+\end{figure}
 
 \section{Base de Dados}
 \subsection{Análise de Requisitos}
-\newpage
-em branco
-\newpage
-em branco
+Deseja-se, de uma forma geral, um sistema capaz de guardar remotamente medições realizadas em moldes instrumentados. Esta informação não é suficiente para se deduzir uma base de dados. Assim sendo, analisando e completando a informação inicial chega-se ao seguinte enunciado:\par 
+\vspace{2ex}
+\textit{Um cliente, caracterizado por um ID, nome, morada, IP e port, tem moldes. Estes moldes são identificados por um ID, nome e descrição. Os moldes têm sensores com um número referente ao molde, tipo (termómetro, dinamómetro, extensómetro, etc.), nome e descrição. Estes sensores geram registos onde guardam a fase do processo (fecho do molde, enchimento, compactação, abertura e extração), data, hora, milissegundos e o valor num determinado momento.}\par 
+\vspace{2ex}
+Analisando este enunciado identificam-se as seguintes entidades com os seus respetivos atributos:
+\begin{itemize}[noitemsep]
+	\item Tipo
+	\begin{itemize}[noitemsep]
+		\item ID
+		\item Nome
+	\end{itemize}
+	\item Fase
+	\begin{itemize}[noitemsep]
+		\item ID
+		\item Nome
+	\end{itemize}
+	\item Clientes
+	\begin{itemize}[noitemsep]
+		\item ID de cliente único
+		\item Nome
+		\item Morada
+		\item IP
+		\item Port
+	\end{itemize}
+	\item Moldes
+	\begin{itemize}[noitemsep]
+		\item ID do cliente associado
+		\item ID de molde único
+		\item Nome
+		\item Descrição
+	\end{itemize}
+	\item Sensores
+	\begin{itemize}[noitemsep]
+		\item ID do molde associado
+		\item Número do sensor
+		\item ID do tipo de sensor
+		\item Nome
+		\item Descrição
+	\end{itemize}
+	\item Registos
+	\begin{itemize}[noitemsep]
+		\item ID do molde associado
+		\item Número do sensor associado
+		\item ID da fase do processo
+		\item Data
+		\item Hora
+		\item Milissegundos
+		\item Valor
+	\end{itemize}
+\end{itemize}
+Analisando os atributos identificam-se as seguintes chaves primárias, únicas e estrangeiras:
+\begin{itemize}[noitemsep]
+	\item Tipo
+	\begin{itemize}[noitemsep]
+		\item Chave primária: ID
+		\item Chaves únicas:
+		\begin{enumerate}
+			\item Nome
+		\end{enumerate}
+	\end{itemize}
+	\item Fase
+	\begin{itemize}[noitemsep]
+		\item Chave primária: ID
+		\item Chaves únicas:
+		\begin{enumerate}
+			\item Nome
+		\end{enumerate}
+	\end{itemize}
+	\item Clientes
+	\begin{itemize}[noitemsep]
+		\item Chave primária: ID de cliente
+	\end{itemize}
+	\item Moldes
+	\begin{itemize}[noitemsep]
+		\item Chave primária: ID de molde
+		\item Chaves estrangeiras:
+		\begin{enumerate}
+			\item ID do cliente associado
+		\end{enumerate}
+	\end{itemize}
+	\item Sensores
+	\begin{itemize}[noitemsep]
+		\item Chave primária: ID do molde associado, Número do sensor
+		\item Chaves estrangeiras:
+		\begin{enumerate}
+			\item ID do molde associado
+			\item ID do tipo de sensor
+		\end{enumerate}
+	\end{itemize}
+	\item Registos
+	\begin{itemize}[noitemsep]
+		\item Chave primária: ID do molde associado, Número do sensor associado, Data, Hora, Milissegundos
+		\item Chaves estrangeiras:
+		\begin{enumerate}
+			\item ID do molde associado, Número do sensor associado
+			\item ID da fase do processo
+		\end{enumerate}
+	\end{itemize}
+\end{itemize}
+O tipo de sensor e a fase do processo são dicionários ou seja, são entidades que contêm informação predefinida de forma a evitar a adição de dados incorretos nas entidades relacionadas. Os seus dados inicias são:
+\begin{itemize}[noitemsep]
+	\item Tipo
+	\begin{itemize}[noitemsep]
+		\item Termómetro
+		\item Dinamómetro
+		\item Extensómetro
+		\item Vibrómetro
+		\item Pressão
+		\item Acelerómetro X
+		\item Acelerómetro Y
+		\item Acelerómetro Z
+	\end{itemize}
+	\item Fase
+	\begin{itemize}[noitemsep]
+		\item Fecho do molde
+		\item Enchimento
+		\item Compactação
+		\item Abertura de molde
+		\item Extração
+	\end{itemize}
+\end{itemize}
+Ligando as várias entidades entre si identificam-se as seguintes relações com a respetiva cardinalidade:
+\begin{itemize}[noitemsep]
+	\item 1 cliente tem N moldes
+	\item 1 molde tem N sensores
+	\item 1 sensor tem N registos
+	\item 1 tipo define N sensores
+	\item 1 fase define N registos
+\end{itemize}
+Quanto à obrigatoriedade de participação das entidades nas relações anteriores afirma-se:
+\begin{itemize}[noitemsep]
+	\item Não pode existir moldes sem clientes
+	\item Não pode existir sensores sem moldes
+	\item Não pode existir registos sem sensores
+	\item Não pode existir sensores sem tipo
+	\item Não pode existir registos sem fase	
+\end{itemize}
 
-\newpage
-em branco
 \subsection{Desenho conceptual e esquema lógico}
-\newpage
-em branco
+Concatenando a informação descrita na análise de requisitos, obtém-se o diagrama entidade/relação representado na \autoref{fig:der}.
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.5\textwidth]{placeholder} % Include the image placeholder.png
+		\caption{Diagrama Entidade/Relação realizado a partir da análise de requisitos}
+		\label{fig:der}
+	\end{center}
+\end{figure}
+Traduzindo as entidades do diagrama anterior para tabelas e as relações para chaves estrangeiras, obtém-se o esquema lógico da base de dados representado na \autoref{fig:er}.
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.5\textwidth]{placeholder} % Include the image placeholder.png
+		\caption{Esquema Lógico obtido através da análise do diagrama entidade/relação onde as entidades e os seus atributos se traduzem em tabelas e as relações nas chaves estrangeiras destas}
+		\label{fig:er}
+	\end{center}
+\end{figure}
 
-\newpage
-em branco
 \subsection{Construção da base de dados}
-\begin{table}
-	\caption{Domínio dos atributos}
+Avançando para a criação das tabelas em \textit{MySQL}, a fim de evitar ambiguidades no nome dos atributos estes são alterados para campos semânticos específicos a cada entidade a que pertencem. Para cada atributo define-se o domínio e a obrigatoriedade como representado na \autoref{tab:dominio}.
+\begin{table}[H]
+	\begin{tabular}{|l|l|l|l|l|l|}
+		\hline
+		\multicolumn{6}{|l|}{\textbf{tipo}}\\ \hline
+		tipo\texttt{\char`_}ID & tipo\texttt{\char`_}nome & \multicolumn{4}{l|}{}\\ \hline
+		int & varchar(50) & \multicolumn{4}{l|}{}\\ \hline
+		not null & not null & \multicolumn{4}{l|}{}\\ \hline
+		\multicolumn{6}{|l|}{\textbf{fase}}\\ \hline
+		fase\texttt{\char`_}ID & fase\texttt{\char`_}nome & \multicolumn{4}{l|}{}\\ \hline
+		int & varchar(50) & \multicolumn{4}{l|}{}\\ \hline
+		not null & not null & \multicolumn{4}{l|}{}\\ \hline
+		\multicolumn{6}{|l|}{\textbf{clientes}}\\ \hline
+		cl\texttt{\char`_}ID & cl\texttt{\char`_}nome & cl\texttt{\char`_}morada & cl\texttt{\char`_}IP & cl\texttt{\char`_}port & \\ \hline
+		int & varchar(50) & varchar(100) & varchar(50) & int & \\ \hline
+		not null & not null & & not null & not null & \\ \hline
+		\multicolumn{6}{|l|}{\textbf{moldes}}\\ \hline
+		m\texttt{\char`_}IDCliente & m\texttt{\char`_}ID & 
+		m\texttt{\char`_}nome & 
+		m\texttt{\char`_}descricao & \multicolumn{2}{l|}{}\\ \hline
+		int & int & varchar(30) & varchar(200) & \multicolumn{2}{l|}{}\\ \hline
+		not null & not null & & &  \multicolumn{2}{l|}{}\\ \hline
+		\multicolumn{6}{|l|}{\textbf{sensores}}\\ \hline
+		s\texttt{\char`_}IDMolde & s\texttt{\char`_}num & s\texttt{\char`_}tipo & s\texttt{\char`_}nome & s\texttt{\char`_}descricao & \\ \hline
+		int & int & int & varchar(30) & varchar(200) & \\ \hline
+		not null & not null & not null & & & \\ \hline
+		\multicolumn{6}{|l|}{\textbf{registos}}\\ \hline
+		r\texttt{\char`_}IDMolde & r\texttt{\char`_}numSensor & r\texttt{\char`_}fase &  r\texttt{\char`_}data\texttt{\char`_}hora & r\texttt{\char`_}milissegundos & r\texttt{\char`_}valor\\ \hline
+		int & int & int & datetime & tinyint & float\\ \hline
+		not null & not null & not null & not null & not null & \\ \hline
+	\end{tabular}
+	\caption{Tabelas com os seus atributos e respetivos domínios e obrigatoriedades. Os atributos data e hora da entidade registos são fundidos no atributo r\texttt{\char`_}data\texttt{\char`_}hora graças ao tipo de dados datetime}
+	\label{tab:dominio}
 \end{table}
-\newpage
-em branco
+Define-se então nomes para as restrições de integridade definidas pelas chaves das entidades:
+\begin{itemize}[noitemsep]
+	\item Tipo
+	\begin{itemize}[noitemsep]
+		\item Restrição chave primária: REPETIDO\texttt{\char`_}ID\texttt{\char`_}TIPO
+		\item Restrição chaves únicas:
+		\begin{enumerate}
+			\item REPETIDO\texttt{\char`_}NOME\texttt{\char`_}TIPO
+		\end{enumerate}
+	\end{itemize}
+	\item Fase
+	\begin{itemize}[noitemsep]
+		\item Restrição chave primária: REPETIDO\texttt{\char`_}ID\texttt{\char`_}FASE
+		\item Restrição chaves únicas:
+		\begin{enumerate}
+			\item REPETIDO\texttt{\char`_}NOME\texttt{\char`_}FASE
+		\end{enumerate}
+	\end{itemize}
+	\item Clientes
+	\begin{itemize}[noitemsep]
+		\item Restrição chave primária: REPETIDO\texttt{\char`_}ID\texttt{\char`_}CLIENTE
+	\end{itemize}
+	\item Moldes
+	\begin{itemize}[noitemsep]
+		\item Restrição chave primária: REPETIDO\texttt{\char`_}ID\texttt{\char`_}MOLDE
+		\item Restrição chaves estrangeiras:
+		\begin{enumerate}
+			\item MOLDE\texttt{\char`_}MAU\texttt{\char`_}ID\texttt{\char`_}CLIENTE
+		\end{enumerate}
+	\end{itemize}
+	\item Sensores
+	\begin{itemize}[noitemsep]
+		\item Restrição chave primária: REPETIDO\texttt{\char`_}NUM\texttt{\char`_}SENSOR
+		\item Restrição chaves estrangeiras:
+		\begin{enumerate}
+			\item SENSOR\texttt{\char`_}MAU\texttt{\char`_}ID\texttt{\char`_}MOLDE
+			\item SENSOR\texttt{\char`_}MAU\texttt{\char`_}ID\texttt{\char`_}TIPO
+		\end{enumerate}
+	\end{itemize}
+	\item Registos
+	\begin{itemize}[noitemsep]
+		\item Restrição chave primária: REPETIDO\texttt{\char`_}REGISTO
+		\item Restrição chaves estrangeiras:
+		\begin{enumerate}
+			\item REGISTOS\texttt{\char`_}MAU\texttt{\char`_}ID\texttt{\char`_}MOLDE\texttt{\char`_}SENSOR
+			\item REGISTOS\texttt{\char`_}MAU\texttt{\char`_}ID\texttt{\char`_}FASE
+		\end{enumerate}
+	\end{itemize}
+\end{itemize}
+Em relação ao comportamento das restrições das chaves estrangeiras identificam-se as seguintes opções:
+\begin{itemize}
+	\item ON DELETE NO ACTION ON UPDATE CASCADE
+	\begin{itemize}
+		\item MOLDE\texttt{\char`_}MAU\texttt{\char`_}ID\texttt{\char`_}CLIENTE
+		\item SENSOR\texttt{\char`_}MAU\texttt{\char`_}ID\texttt{\char`_}TIPO
+		\item REGISTOS\texttt{\char`_}MAU\texttt{\char`_}ID\texttt{\char`_}FASE
+	\end{itemize}
+	\item ON DELETE CASCADE ON UPDATE CASCADE
+	\begin{itemize}
+		\item SENSOR\texttt{\char`_}MAU\texttt{\char`_}ID\texttt{\char`_}MOLDE
+		\item REGISTOS\texttt{\char`_}MAU\texttt{\char`_}ID\texttt{\char`_}MOLDE\texttt{\char`_}SENSOR
+	\end{itemize}
+\end{itemize}
+Estes comportamentos definem que quando se atualiza a chave primária de um tuplo (\textit{UPDATE}) os restantes tuplos dependentes desta informação devem devidamente atualizados. No entanto, quando se elimina um tuplo são definidos dois comportamentos. Como existe muita informação associada a cada cliente, como segurança, não se permite a eliminação de um tuplo desta tabela se este tiver informação associada a si noutras tabelas. O mesmo se aplica aos dicionários, se se tentar eliminar um tuplo, a informação associada não deve ser comprometida. No caso dos registos, dado que estão associados diretamente a um molde, se um tuplo da tabela moldes for eliminado, os dados dos seus sensores e respetivos registos devem ser também eliminados para manter a base de dados limpa e sem informação desnecessária.\par 
+Revendo as restrições de integridade criadas pelas chaves estrangeiras, como não se pode criar uma tabela que dependa de outra que não tenha sido ainda criada, define-se uma ordem para a criação das tabelas:
+\begin{enumerate}[noitemsep]
+	\item Tipo
+	\item Fase
+	\item Clientes
+	\item Moldes
+	\item Sensores
+	\item Registos
+\end{enumerate}
+Este modelo de dados aplica-se a todas as bases de dados usadas neste projeto com a exceção da base de dados temporária local que será abordada na \autoref{subchap:adap}.
 
-\newpage
-em branco
 \subsection{Programa de transferência}
 
 \newpage
@@ -509,6 +793,7 @@ em branco
 Aplicação desenvolvida em ambiente  \textit{Web} com o objetivo de ser multiplataforma, permitir acesso remoto e sem recorrer a instalação de \textit{softwares} nos dispositivos dos utilizadores. Esta corre num servidor \textit{Apache} e foi desenvolvida com \textit{PHP} e \textit{HTML}. Este capítulo descreve a adaptação da infraestrutura desenvolvida e as várias funcionalidades da aplicação.
 
 \section{Adaptação da infraestrutura}
+\label{subchap:adap}
 Afim de garantir uma maior integridade dos dados inseridos pela aplicação, instala-se no servidor local uma nova base de dados temporária local. Aqui os utilizadores têm a liberdade para adicionar, alterar e apagar informação sem consequências no sistema antes destas serem introduzidas nas bases de dados central e local como representado na \autoref{fig:adap1}. Como referido anteriormente, esta base de dados difere das restantes, não contendo em si as tabelas fase e registos.
 \begin{figure}[H]
 	\begin{center}
