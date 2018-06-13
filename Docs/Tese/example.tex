@@ -27,8 +27,14 @@
     \usepackage{subcaption}   
     \usepackage{float}
     \usepackage{listings}
+    \usepackage{courier}
+    %\renewcommand{\ttdefault}{pcr}
+    \lstset{basicstyle=\ttfamily}
+    
     
     \usepackage{enumitem}
+    \usepackage{makecell}
+    
     
 %    \usepackage[url = false, backend=biber, style = numeric, sorting=none]{biblatex}
 %    \addbibresource{bib/own/molde.bib}
@@ -770,23 +776,229 @@ Revendo as restrições de integridade criadas pelas chaves estrangeiras, como n
 Este modelo de dados aplica-se a todas as bases de dados usadas neste projeto com a exceção da base de dados temporária local que será abordada na \autoref{subchap:adap}.
 
 \subsection{Programa de transferência}
+Este programa prioriza a conservação dos dados e a sua taxa de transferência. O código foi realizado com vista à portabilidade para outras linguagens de programação. Consiste em várias ideias simples que podem ser observadas na \autoref{fig:transferencia1}.
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.5\textwidth]{placeholder} % Include the image placeholder.png
+		\caption{fluxograma}
+		\label{fig:transferencia1}
+	\end{center}
+\end{figure}
+Seguindo a estrutura do programa, primeiramente realiza-se uma conexão à base de dados central, seguida de uma \textit{query} para se saber o número de clientes existentes:
+\begin{lstlisting}[language = SQL]
+	SELECT *
+	FROM clientes;
+\end{lstlisting}
+Guarda-se o número de tuplos retornados numa variável e termina-se a conexão à base de dados central. De seguida replica-se o programa múltiplas vezes até se ter um subprograma para cada cliente com recurso à função:
+\begin{lstlisting}[language = C]
+	fork();
+\end{lstlisting}
+Atribui-se a cada subprograma o número do cliente a que está associado. Cada um realiza uma conexão à base de dados central e obtém os respetivos \textit{IPs} e \textit{ports}, necessários para realizar a conexão à base de dados local de cada cliente:
+\begin{lstlisting}[language = SQL]
+	SELECT cl_ID, cl_IP, cl_port
+	FROM clientes
+	ORDER BY cl_ID;
+\end{lstlisting}
+Com as conexões central e local estabelecidas inicia-se um ciclo infinito para a transferência de valores. Com a \textit{query} à base de dados local:
+\begin{lstlisting}[language = SQL]
+	SELECT CURRENT TIMESTAMP;
+\end{lstlisting}
+Recebe-se a data e hora atual do sistema e guarda-se numa variável \texttt{@datahora\char`_lim}. De seguida obtém-se todos os registos anteriores à data e hora do sistema:
+\begin{lstlisting}[language = SQL]
+	SELECT *
+	FROM registos
+	WHERE r_data_hora < @datahora_lim
+	ORDER BY r_data_hora, r_milissegundos,
+	r_numSensor, r_IDMolde;
+\end{lstlisting}
+Esta organização pela data e hora garante uma transferência uniforme de valores. Por predefinição, o sistema retorna os registos um sensor de cada vez, tornando a transferência de valores menos eficiente para efeitos de análise. Por outras palavras, prefere-se saber os registos de todos os sensores num dado instante do que todos os registos de um sensor até ao momento. Os tuplos retornados são guardados numa \textit{string} e inseridos na base de dados central com uma \textit{query} do tipo:
+\begin{lstlisting}[language = SQL]
+	INSERT IGNORE registos VALUES
+	(tuplo1),
+	(tuplo2),
+	(tuplo3),
+	...,
+	(tuploN);
+\end{lstlisting}
+Inserir múltiplos tuplos permite uma maior taxa de transferência comparativamente a uma inserção individual. A \textit{string} que guarda os tuplos tem uma dimensão limitada, se a resposta proveniente da base de dados local for superior ao tamanho da \textit{string}, o programa divide-a em grupos de informação mais pequenos que respeitem a dimensão desta \textit{string}. A escolha da opção \texttt{IGNORE} garante que não são perdidos valores no caso de serem gerados registos repetidos ou não válidos. Após a transferência ser concluída, os tuplos transferidos da base de dados local são eliminados:
+\begin{lstlisting}[language = SQL]
+	DELETE FROM registos
+	WHERE r_data_hora < @datahora_lim;
+\end{lstlisting}
+Numa utilização a baixo nível, sempre que se desejar um subprograma para um cliente novo, o programa de transferência tem de ser reiniciado manualmente. Reinicia-lo termina o ciclo infinito de transferência de valores, encerra as conexões com as bases de dados central e local e volta a iniciar todo o processo descrito nesta secção.
 
-\newpage
-em branco
 \subsection{Gestão de \textit{backups}}
 \label{subchap:backups}
-\newpage
-em branco
-\newpage
-em branco
+À semelhança do programa anterior, o programa de gestão de \textit{backups} foi realizado com vista à portabilidade para outras linguagens de programação. De forma a organizar a informação armazenada, em vez de se gerar um \textit{backup} de toda a base de dados, gera-se um \textit{backup} específico para cada molde, que inclui a informação dos seus sensores, registos e cliente a que está associado. Além destes, realiza-se um outro \textit{backup} com a informação dos clientes, moldes e sensores mais atual. Assim, em caso de falha crítica, simplifica-se a recuperação do sistema.\par 
+Ao contrário do programa anterior, este programa não executa de forma contínua. Define-se um temporizador para executar o código principal. A \autoref{fig:backups1} representa a estrutura do programa sempre que o temporizador chega ao fim.
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.5\textwidth]{placeholder} % Include the image placeholder.png
+		\caption{fluxograma}
+		\label{fig:backups1}
+	\end{center}
+\end{figure}
+Seguindo a estrutura do programa, realizam-se as conexões às bases de dados central, \textit{backups} e \textit{backups} temporária. Com a \textit{query}:
+\begin{lstlisting}[language = SQL]
+	SELECT CURRENT TIMESTAMP;
+\end{lstlisting}
+Recebe-se a data e hora atual do sistema e guarda-se numa variável \texttt{@datahora\char`_lim}. Para proteger os dados presentes na base de dados central, realiza-se a cópia dos registos para a base de dados \textit{backups}:
+\begin{lstlisting}[language = SQL]
+	INSERT IGNORE backups.clientes
+	SELECT *
+	FROM central.clientes;
+	INSERT IGNORE backups.moldes
+	SELECT *
+	FROM central.moldes;
+	INSERT IGNORE backups.sensores
+	SELECT *
+	FROM central.sensores;
+	INSERT IGNORE backups.registos
+	SELECT *
+	FROM central.registos
+	WHERE r_data_hora < @datahora_lim;
+\end{lstlisting}
+De forma a gerar um \textit{backup} para cada molde filtra-se a informação com base no seu ID:
+\begin{lstlisting}[language = SQL]
+	SELECT m_IDCliente, m_ID
+	FROM backups.moldes;
+\end{lstlisting}
+As respostas são guardadas nas variáveis \texttt{@IDCliente} e \texttt{@IDMolde}. De forma cíclica copia-se a informação para a base de dados \textit{backups} temporária:
+\begin{lstlisting}[language = SQL]
+	INSERT IGNORE backups_temp.clientes
+	SELECT *
+	FROM backups.clientes
+	WHERE cl_ID = @IDCliente;
+	INSERT IGNORE backups_temp.moldes
+	SELECT *
+	FROM backups.moldes
+	WHERE m_ID = @IDMolde;
+	INSERT IGNORE backups_temp.sensores
+	SELECT *
+	FROM backups.sensores
+	WHERE m_ID = @IDMolde;
+	INSERT IGNORE backups_temp.registos
+	SELECT *
+	FROM backups.registos
+	WHERE m_ID = @IDMolde;
+\end{lstlisting}
+Após os valores copiados retiram-se informações sobre a data e hora mais antiga e mais recente:
+\begin{lstlisting}[language = SQL]
+	SELECT r_data_hora
+	FROM backups_temp.registos
+	ORDER BY r_data_hora
+	LIMIT 1;
+	SELECT r_data_hora
+	FROM backups_temp.registos
+	ORDER BY r_data_hora DESC
+	LIMIT 1;
+\end{lstlisting}
+Os valores retornados são guardados nas variáveis \texttt{@dataIni} e \texttt{@dataFim}. Com estes valores e com a função:
+\begin{lstlisting}[language = C]
+	FILE *popen(const char *command, const chat *mode);
+\end{lstlisting}
+Envia-se para o terminal o comando que gera os \textit{backups} num local predefinido:
+\begin{lstlisting}[language = bash]
+	mysqldump -u backupmanager -pbackup1234 backups_temp >
+	~/Backups/backup_@IDCliente_@IDMolde_@dataIni_@dataFim.sql
+\end{lstlisting}
+Depois do ficheiro ser criado com sucesso elimina-se das bases de dados \textit{backups} e \textit{backups} temporária a informação relativa ao molde:
+\begin{lstlisting}[language = SQL]
+	DELETE FROM backups_temp.moldes;
+	DELETE FROM backups_temp.clientes;
+	DELETE FROM bakups.registos
+	WHERE r_IDMolde = @IDMolde;
+\end{lstlisting}
+Quando todos os moldes tiverem sido armazenados, a tabela registos da base de dados \textit{backups} deve estar vazia. Realiza-se então o \textit{backup} da restante informação dos clientes, moldes, sensores, tipo e fase para efeitos de recuperação do sistema:
+\begin{lstlisting}[language = bash]
+	mysqldump -u backupmanager -pbackup1234 backups_temp >
+	~/Backups/backup_geral.sql
+\end{lstlisting}
+Definiu-se um nome estático para este \textit{backup}. Este será rescrito cada vez que o programa executa enquanto os \textit{backups} individuais dos moldes vão acumulando com o tempo. Termina-se o processo apagando os valores armazenados na base de dados central:
+\begin{lstlisting}[language = SQL]
+	DELETE FROM central.registos
+	WHERE r_data_hora < @datahora_lim;
+\end{lstlisting}
+Os \textit{backups} são então transferidos para o repositório \textit{online} no \textit{GitHub}. Esta solução serve apenas para demonstrar a capacidade de mover os \textit{backups} para um sistema diferente. Do ponto de vista prático, não se recomenda guardar informação potencialmente sensível num servidor público.\par 
+Na eventualidade de surgir uma falha crítica no sistema central, e este necessitar de ser formatado ou substituído, os registos cessarão de ser transferidos dos sistemas locais. Isto não significa que a informação esteja comprometida, apenas não está a ser transferida. Após re-instalar utiliza-se manualmente no terminal o comando:
+	\begin{lstlisting}[language = bash]
+	mysql -u backupmanager -pbackup1234 central <
+	~/Backups/backup_geral.sql
+\end{lstlisting}
+Isto faz com que se recupere a informação dos clientes, moldes e sensores presentes no último \textit{backup} de forma a acelerar o processo de restauro comparativamente a uma inserção manual dos dados.
 
-\newpage
-em branco
 \subsection{Simulador}
+Para popular as bases de dados locais foi desenvolvido um simples programa que gera valores. Estes seguem o perfil de uma onda sinusoidal com a expressão:
+\begin{equation}
+v = O + A\sin(\frac{2 \pi x}{t} + \gamma)
+\label{eq:sim1}
+\end{equation}
+Onde \textit{v} é o valor calculado, \textit{O} o \textit{offset} da onda, \textit{A} a amplitude, \textit{t} o período em segundos, \textit{x} a hora atual em segundos e $ \gamma $ o desfasamento. Inicia-se uma conexão à base de dados local e calcula-se a hora atual com recurso às funções:
+\begin{lstlisting}[language = C]
+	struct tm *localtime(const time_t *timer);
+	int gettimeofday(struct timeval *tv, struct timezone *tz);
+\end{lstlisting}
+Os valores das horas, minutos, segundos e milissegundos são guardados nas variáveis \texttt{@hora}, \texttt{@min}, \texttt{@seg} e \texttt{@mseg} respetivamente. Aplicando a expressão:
+\begin{equation}
+x = @hora \times 3600 + @min \times 60 + @seg + @mseg \times 0.001
+\label{eq:sim2}
+\end{equation}
+Obtém-se a hora atual do sistema em segundos. Com as expressões \ref{eq:sim1} e \ref{eq:sim2} gera-se um valor para cada sensor. Para cada valor gerado atribuí-se uma fase do processo. Esta atribuição realiza-se de forma cíclica entre as várias opções disponíveis. Com a informação de cada sensor estabelecida insere-se na base de dados local com uma \textit{query} do estilo:
+\begin{lstlisting}[language = SQL]
+	INSERT INTO registos VALUES
+	(molde1, sensor1, fase, NOW(), @mseg, valor11),
+	(molde1, sensor2, fase, NOW(), @mseg, valor12),
+	(molde2, sensor1, fase, NOW(), @mseg, valor21),
+	...,
+	(moldeI, sensorN, fase, NOW(), @mseg, valorIN);
+\end{lstlisting}
 
 \subsection{Utilizadores}
-\newpage
-em branco
+Para minimizar o risco de erros por parte dos utilizadores que interagem com o sistema, são definidas credenciais com permissões específicas para cada base de dados:
+\begin{itemize}[noitemsep]
+	\item user, password
+	\item transferencia, transferencia1234
+	\item sensores, sensores1234
+	\item backupmanager, backup1234
+\end{itemize}
+\textit{user} representa o utilizador padrão, ou seja, aquele que interage com as bases de dados para gerir os clientes, moldes e sensores bem como consultar a tabela registos. As credenciais \textit{transferencia} utilizam-se no programa de transferência de valores para realizar as conexões com as bases de dados central e locais, \textit{sensores} utiliza-se no simulador para popular as bases de dados locais e, no futuro, pelo sistema de aquisição de dados que substituirá este simulador, \textit{backupmanager} utiliza-se no programa de gestão de \textit{backups}.\par 
+Cada conjunto de credenciais serve um objetivo, a \autoref{tab:utilizadores1} contém as permissões destas definidas em cada base de dados.
+\begin{table}[H]
+	\begin{tabular}{|l|c|c|c|c|c|c|}
+		\hline
+		\multicolumn{7}{|l|}{\textbf{central}} \\ \hline
+		\makecell{clientes/tipo/fase/\\moldes/sensores} & CREATE & DROP & SELECT & INSERT & DELETE & UPDATE \\ \hline
+		user & & & \textbf{X} & \textbf{X} & \textbf{X} & \textbf{X} \\ \hline
+		transferencia & & & & & & \\ \hline
+		sensores & & & & & & \\ \hline
+		backupmanager & & & \textbf{X} & & & \\ \hline
+		registos & CREATE & DROP & SELECT & INSERT & DELETE & UPDATE \\ \hline
+		user & & & \textbf{X} & & \textbf{X} & \\ \hline
+		transferencia & & & & \textbf{X} & & \\ \hline
+		sensores & & & & & & \\ \hline
+		backupmanager & & & \textbf{X} & & \textbf{X} & \\ \hline
+		\multicolumn{7}{|l|}{\textbf{local}} \\ \hline
+		\makecell{clientes/tipo/fase/\\moldes/sensores} & CREATE & DROP & SELECT & INSERT & DELETE & UPDATE \\ \hline
+		user & & & \textbf{X} & \textbf{X} & \textbf{X} & \textbf{X} \\ \hline
+		transferencia & & & & & & \\ \hline
+		sensores & & & & & & \\ \hline
+		backupmanager & & & & & & \\ \hline
+		registos & CREATE & DROP & SELECT & INSERT & DELETE & UPDATE \\ \hline
+		user & & & & & & \\ \hline
+		transferencia & & & \textbf{X} & & \textbf{X} & \\ \hline
+		sensores & & & & \textbf{X} & & \\ \hline
+		backupmanager & & & & & & \\ \hline
+		\multicolumn{7}{|l|}{\textbf{\textit{backups} e \textit{backups} temporária}} \\ \hline
+		\makecell{clientes/tipo/\\fase/moldes/\\sensores/registos} & CREATE & DROP & SELECT & INSERT & DELETE & UPDATE \\ \hline
+		user & & & & & & \\ \hline
+		transferencia & & & & & & \\ \hline
+		sensores & & & & & & \\ \hline
+		backupmanager & & & \textbf{X} & \textbf{X} & \textbf{X} & \\ \hline
+	\end{tabular}
+	\caption{Tabelas com as permissões das credenciais criadas para as várias tabelas das bases de dados}
+	\label{tab:utilizadores1}
+\end{table}
+Estas permissões estabelecem que nenhuma das credenciais estabelecidas pode fazer DROP às bases de dados o que eliminaria com um comando toda a estrutura e a informação nela contida. Além disto, nenhuma tem permissão INSERT e DELETE simultânea na tabela registos das bases de dados central e local protegendo o sistema de adulteração dos valores presentes nesta tabela.
 
 \cleardoublepage
 \chapter{Aplicação}
