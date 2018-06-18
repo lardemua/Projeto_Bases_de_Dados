@@ -27,17 +27,18 @@
 \contentsline {subsection}{\numberline {3.2.5}Gest\IeC {\~a}o de \textit {backups}}{28}{subsection.3.2.5}
 \contentsline {subsection}{\numberline {3.2.6}Simulador}{31}{subsection.3.2.6}
 \contentsline {subsection}{\numberline {3.2.7}Utilizadores}{31}{subsection.3.2.7}
-\contentsline {chapter}{\numberline {4}Aplica\IeC {\c c}\IeC {\~a}o}{35}{chapter.4}
+\contentsline {chapter}{\numberline {4}Aplica\IeC {\c c}\IeC {\~a}o de Gest\IeC {\~a}o do Sistema}{35}{chapter.4}
 \contentsline {section}{\numberline {4.1}Adapta\IeC {\c c}\IeC {\~a}o da infraestrutura}{35}{section.4.1}
-\contentsline {section}{\numberline {4.2}Interface gr\IeC {\'a}fica}{36}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}\textit {Main}}{37}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}\textit {Login}}{38}{subsection.4.2.2}
-\contentsline {subsection}{\numberline {4.2.3}Consultas}{39}{subsection.4.2.3}
-\contentsline {subsection}{\numberline {4.2.4}Administra\IeC {\c c}\IeC {\~a}o}{42}{subsection.4.2.4}
-\contentsline {subsection}{\numberline {4.2.5}Conex\IeC {\~a}o local}{47}{subsection.4.2.5}
-\contentsline {chapter}{\numberline {5}Conclus\IeC {\~o}es}{51}{chapter.5}
-\contentsline {section}{\numberline {5.1}Coment\IeC {\'a}rios}{51}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}Infraestrutura de dados}{51}{subsection.5.1.1}
-\contentsline {subsection}{\numberline {5.1.2}Aplica\IeC {\c c}\IeC {\~a}o}{51}{subsection.5.1.2}
-\contentsline {section}{\numberline {5.2}Trabalhos Futuros}{52}{section.5.2}
-\contentsline {chapter}{Bibliografia}{55}{section.5.3}
+\contentsline {section}{\numberline {4.2}Interface gr\IeC {\'a}fica}{37}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}\textit {Main}}{39}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}\textit {Login}}{40}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}Consultas}{41}{subsection.4.2.3}
+\contentsline {subsection}{\numberline {4.2.4}Administra\IeC {\c c}\IeC {\~a}o Local}{44}{subsection.4.2.4}
+\contentsline {subsubsection}{Administra\IeC {\c c}\IeC {\~a}o}{45}{section*.41}
+\contentsline {subsubsection}{Conectar Local}{49}{section*.46}
+\contentsline {chapter}{\numberline {5}Conclus\IeC {\~o}es}{53}{chapter.5}
+\contentsline {section}{\numberline {5.1}Coment\IeC {\'a}rios}{53}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Infraestrutura de dados}{53}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Aplica\IeC {\c c}\IeC {\~a}o}{53}{subsection.5.1.2}
+\contentsline {section}{\numberline {5.2}Trabalhos Futuros}{54}{section.5.2}
+\contentsline {chapter}{Bibliografia}{57}{section.5.3}

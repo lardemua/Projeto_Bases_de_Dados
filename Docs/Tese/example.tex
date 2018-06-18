@@ -479,6 +479,7 @@ Escolheu-se \textit{HTML}, \textit{JS} e \textit{PHP} para desenvolver a aplica�
 
 \cleardoublepage
 \chapter{Proposta de Solução}
+\label{chap:solucao}
 A infraestrutura de dados desenvolvida tem como objetivo ser simples, funcional a baixo nível e sem impor restrições na instrumentação dos moldes. Este capítulo descreve o processo de desenvolvimento das bases de dados, o método de transferência de medições, a gestão de \textit{backups}, as permissões dos utilizadores e um simples simulador de valores.
 
 \section{Infraestrutura de Dados}
@@ -773,7 +774,7 @@ Revendo as restrições de integridade criadas pelas chaves estrangeiras, como n
 	\item Sensores
 	\item Registos
 \end{enumerate}
-Este modelo de dados aplica-se a todas as bases de dados usadas neste projeto com a exceção da base de dados temporária local que será abordada na \autoref{subchap:adap}.
+Este modelo de dados aplica-se a todas as bases de dados usadas neste projeto com a exceção da base de dados temporária local e notificações que serão abordadas na \autoref{subchap:adap}.
 
 \subsection{Programa de transferência}
 Este programa prioriza a conservação dos dados e a sua taxa de transferência. O código foi realizado com vista à portabilidade para outras linguagens de programação. Consiste em várias ideias simples que podem ser observadas na \autoref{fig:transferencia1}.
@@ -1001,31 +1002,54 @@ Cada conjunto de credenciais serve um objetivo, a \autoref{tab:utilizadores1} co
 Estas permissões estabelecem que nenhuma das credenciais estabelecidas pode fazer DROP às bases de dados o que eliminaria com um comando toda a estrutura e a informação nela contida. Além disto, nenhuma tem permissão INSERT e DELETE simultânea na tabela registos das bases de dados central e local protegendo o sistema de adulteração dos valores presentes nesta tabela.
 
 \cleardoublepage
-\chapter{Aplicação}
-Aplicação desenvolvida em ambiente  \textit{Web} com o objetivo de ser multiplataforma, permitir acesso remoto e sem recorrer a instalação de \textit{softwares} nos dispositivos dos utilizadores. Esta corre num servidor \textit{Apache} e foi desenvolvida com \textit{PHP} e \textit{HTML}. Este capítulo descreve a adaptação da infraestrutura desenvolvida e as várias funcionalidades da aplicação.
+\chapter{Aplicação de Gestão do Sistema}
+A aplicação foi desenvolvida em ambiente  \textit{Web} com o objetivo de ser multiplataforma e permitir acesso remoto e sem recorrer a instalação de \textit{softwares} nos dispositivos dos utilizadores. Corre num servidor \textit{Apache} e foi desenvolvida com \textit{PHP}, \textit{JS} e \textit{HTML}. Este capítulo descreve a adaptação da infraestrutura desenvolvida e as várias funcionalidades da aplicação.
 
 \section{Adaptação da infraestrutura}
 \label{subchap:adap}
-Afim de garantir uma maior integridade dos dados inseridos pela aplicação, instala-se no servidor local uma nova base de dados temporária local. Aqui os utilizadores têm a liberdade para adicionar, alterar e apagar informação sem consequências no sistema antes destas serem introduzidas nas bases de dados central e local como representado na \autoref{fig:adap1}. Como referido anteriormente, esta base de dados difere das restantes, não contendo em si as tabelas fase e registos.
+A infraestrutura desenvolvida no \autoref{chap:solucao} visa uma utilização a baixo a nível. Ainda que funcional, pode haver margem para erros e incoerência dos dados introduzidos manualmente. A aplicação minimiza estas incoerências através da instalação de uma nova base de dados temporária local no servidor local. Aqui os utilizadores têm a liberdade para adicionar, alterar e apagar informação sem consequências no sistema antes desta ser introduzida nas bases de dados central e local como representado na \autoref{fig:adap1}. Como referido anteriormente, esta base de dados difere das restantes, não contendo em si as tabelas fase e registos.
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[width=0.65\textwidth]{Aplicacao_temp_local_central} % Include the image placeholder.png
-		\caption{Esquema ligação Aplicação-bases de dados. A aplicação comunica com a base de dados temporária local e depois regista os valores desta nas bases de dados central e local}
+		\caption{Esquema ligação Aplicação-Bases de Dados. A aplicação comunica com a base de dados temporária local e depois regista os seus valores nas bases de dados central e local}
 		\label{fig:adap1}
+	\end{center}
+\end{figure}
+Relembrando, o programa de transferência de valores, numa utilização a baixo nível, tem de ser reiniciado manualmente. No entanto, como a aplicação gere informação dos clientes, moldes e sensores surge a necessidade que este programa possa ser reinicializado pela aplicação. Para este efeito cria-se uma nova base de dados notificações no sistema central. Tem como objetivo conter variáveis globais importantes para a comunicação entre os vários programas. Nesta fase do projeto serve apenas como ponto de ligação entre a aplicação e o programa de transferência. Esta tem uma tabela transferência com um campo atualizar, como demonstrado na \autoref{fig:adap2}, que pode assumir os valores 0 e 1.
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.65\textwidth]{placeholder} % Include the image placeholder.png
+		\caption{Esquema ligação Aplicação-Bases de Dados. A aplicação comunica com a base de dados temporária local e depois regista os seus valores nas bases de dados central e local}
+		\label{fig:adap2}
+	\end{center}
+\end{figure}
+Adapta-se também o programa de transferência de valores de acordo com a \autoref{fig:adap3}.
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.65\textwidth]{placeholder} % Include the image placeholder.png
+		\caption{Fluxograma 2}
+		\label{fig:adap3}
+	\end{center}
+\end{figure}
+Define-se um temporizador nos subprogramas de cada cliente para consultarem esta nova base de dados. Se atualizar for igual a 1 os subprogramas terminam as suas rotinas e as conexões às bases de dados. Quando todos tiverem terminado, o programa principal reinicia o processo de criação de novos subprogramas e retorna o parâmetro atualizar para 0. A \autoref{fig:adap4} representa a infraestrutura completa numa utilização com a aplicação.
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.65\textwidth]{placeholder} % Include the image placeholder.png
+		\caption{Esquema ligação Aplicação-Bases de Dados. A aplicação comunica com a base de dados temporária local e depois regista os seus valores nas bases de dados central e local}
+		\label{fig:adap4}
 	\end{center}
 \end{figure}
 
 \section{Interface gráfica}
-A aplicação divide-se em cinco partes distintas:
+A aplicação divide-se em quatro partes distintas:
 \begin{itemize}[noitemsep]
-	\item \textit{Main}
-	\item \textit{Login}
+	\item \textit{Main} - Página principal
+	\item \textit{Login} - Página de acesso
 	\item Consultas
-	\item Administração
-	\item Conexão Local
+	\item Administração Local
 \end{itemize}
-As páginas \textit{Main}, \textit{Login}, Consultas e parte das funcionalidades da Administração foram realizadas para uma utilização geral. As páginas Conexão Local e as restantes funcionalidades da Administração foram realizadas para uma utilização local. A primeira visa um uso a partir de qualquer dispositivo e acessível a qualquer momento e a segunda foca-se num acesso local com o objetivo de configurar e definir a informação no servidor local. Por outras palavras, para o utilizador usar as funcionalidades destas páginas tem de aceder à aplicação no sistema local que se situa no cliente.\\
-Instalar um molde é culminar de um projeto de elevada responsabilidade, esta ideia junto com a criação da base de dados temporária local serve para melhorar a qualidade da informação introduzida no sistema e diminuir as falhas.\\
+As páginas \textit{Main}, \textit{Login} e Consultas realizadas para uma utilização geral. A página Administração Local foi realizada para uma utilização local. A primeira visa um uso a partir de qualquer dispositivo e acessível a qualquer momento e a segunda foca-se num acesso local com o objetivo de configurar e definir a informação no servidor local. Por outras palavras, para o utilizador usar as funcionalidades desta página tem de aceder à aplicação num \textit{browser} no sistema local que se situa no cliente.\par 
+Instalar um molde é o culminar de um projeto de elevada responsabilidade e esta ideia junto com a criação da base de dados temporária local serve para melhorar a qualidade da informação introduzida no sistema e diminuir as falhas no processo de instalação deste.
 
 \newpage
 \subsection{\textit{Main}}
@@ -1048,8 +1072,8 @@ Instalar um molde é culminar de um projeto de elevada responsabilidade, esta id
 	\caption{Funcionalidades da página \textit{Main} com e sem \textit{login}}
 	\label{fig:main0}
 \end{figure}
-\textit{Main} serve como página principal da aplicação. Se não houver sessão iniciada todas as restantes páginas redirecionam o utilizador para aqui. Contém apenas algumas informações gerais sobre a aplicação.\\
-Iniciar sessão na página de \textit{Login} desbloqueia funcionalidades na aplicação, como demonstrado nas Figuras \ref{fig:main1} e \ref{fig:main2}. Depois de iniciada sessão navega-se com os botões para as páginas de Consultas, Administração e Conexão Local.
+\textit{Main} serve como página principal da aplicação. Se não houver sessão iniciada, todas as restantes páginas redirecionam o utilizador para aqui. Contém apenas algumas informações gerais sobre a aplicação.\par 
+Iniciar sessão na página de \textit{Login} desbloqueia funcionalidades na aplicação, como demonstrado nas Figuras \ref{fig:main1} e \ref{fig:main2}. Depois de iniciada a sessão, navega-se com os botões para as páginas de Consultas e Administração Local.
 
 \subsection{\textit{Login}}
 \begin{figure}[H]
@@ -1059,8 +1083,8 @@ Iniciar sessão na página de \textit{Login} desbloqueia funcionalidades na apli
 		\label{fig:login0}
 	\end{center}
 \end{figure}
-A página de \textit{Login} consiste num simples formulário constituído por duas caixas de texto e um botão, como demonstrado na \autoref*{fig:login0}. O botão \textit{Login} lê as credenciais introduzidas e realiza uma conexão de teste à base de dados central validando-as diretamente com \textit{MySQL}. Se as credenciais forem validadas com sucesso redireciona-se o utilizador para a página principal e altera-se o botão de \textit{Login} para \textit{Logout}. Se as credenciais introduzidas não forem suficientes ou válidas são retornados erros de forma a informar o utilizador como demonstrado nas Figuras \ref{fig:login2} e \ref{fig:login3}.\\
-Quando se acede à página como \textit{Logout} termina-se a sessão e redireciona-se o utilizador para a página principal.
+A página de \textit{Login} consiste num simples formulário constituído por duas caixas de texto e um botão, como demonstrado na \autoref*{fig:login0}. O botão \textit{Login} lê as credenciais introduzidas e realiza uma conexão de teste à base de dados central validando-as diretamente com \textit{MySQL}. Se as credenciais forem validadas com sucesso redireciona-se o utilizador para a página principal e altera-se o botão de \textit{Login} para \textit{Logout}. Se as credenciais introduzidas não forem suficientes ou válidas são retornados erros de forma a informar o utilizador como demonstrado nas Figuras \ref{fig:login2} e \ref{fig:login3}.\par 
+Quando se acede à página com \textit{Logout} termina-se a sessão e redireciona-se o utilizador para a página principal.
 \begin{figure}[H]
 	\centering
 	\begin{minipage}{.5\textwidth}
@@ -1101,24 +1125,24 @@ Quando se acede à página como \textit{Logout} termina-se a sessão e redirecio
 	\caption{Página de Consultas e exemplo de resposta a uma consulta}
 	\label{fig:consultas0}
 \end{figure}
-A página de Consultas assiste utilizadores sem conhecimentos de \textit{SQL} a criarem \textit{queries} para consultar a base de dados central. Na \autoref{fig:consultas1} observa-se várias \textit{checkboxes} e três caixas de texto. As \textit{checkboxes} permitem selecionar os atributos que se desejam consultar na base de dados, estes são guardados numa variável @atributos.
+A página de Consultas assiste os utilizadores sem conhecimentos de \textit{SQL} a criarem \textit{queries} para consultar a base de dados central. Na \autoref{fig:consultas1} observa-se várias \textit{checkboxes} e três caixas de texto. As \textit{checkboxes} permitem selecionar os atributos que se desejam consultar na base de dados; estes atributos são guardados numa variável \texttt{@atributos}.
 \newpage
-Quando  se prime o botão \textit{Query} gera-se uma das seguintes \textit{queries}:
+Quando  se prime o botão \textit{Query} gera-se uma das seguintes quatro \textit{queries}:
 \begin{lstlisting}[language = SQL]
-	SELECT @atributos
+1-	SELECT @atributos
 	FROM clientes;
 	
-	SELECT @atributos
+2-	SELECT @atributos
 	FROM clientes
 	INNER JOIN moldes ON cl_ID = m_IDCliente;
 	
-	SELECT @atributos
+3-	SELECT @atributos
 	FROM clientes
 	INNER JOIN moldes ON cl_ID = m_IDCliente
 	INNER JOIN sensores ON m_ID = s_IDMolde
 	INNER JOIN tipo ON s_tipo = tipo_ID;
 	
-	SELECT @atributos FROM clientes
+4-	SELECT @atributos FROM clientes
 	INNER JOIN moldes ON cl_ID = m_IDCliente
 	INNER JOIN sensores ON m_ID = s_IDMolde 
 	INNER JOIN tipo ON s_tipo = tipo_ID
@@ -1126,10 +1150,10 @@ Quando  se prime o botão \textit{Query} gera-se uma das seguintes \textit{queri
 	AND s_num = r_numSensor
 	INNER JOIN fase ON r_fase = fase_ID;
 \end{lstlisting}
-Efetua-se esta seleção com base na coluna mais à esquerda a que os atributos pertencem. Explicando melhor com um exemplo: se o utilizador desejar consultar o cl\texttt{\char`_}ID e o cl\texttt{\char`_}nome da tabela clientes gera-se a primeira \textit{query} no entanto, se o utilizador desejar consultar os atributos cl\texttt{\char`_}ID, m\texttt{\char`_}ID e s\texttt{\char`_}num gera-se a terceira \textit{query}.\\
-Além destas, existem três \textit{queries} especificas quando os atributos tipo\texttt{\char`_}nome, fase\texttt{\char`_}nome e r\texttt{\char`_}data\texttt{\char`_}hora são selecionados sozinhos. As primeiras duas permitem consultar as opções disponíveis nos dicionários e a terceira devolve as datas e horas entre o primeiro e último registos.\\
-As caixas de texto Filtros e Ordem permitem adicionar às \textit{queries} geradas as cláusulas WHERE e ORDER BY, respetivamente. Para os utilizadores com conhecimentos em \textit{SQL} está disponibilizada a caixa de texto \textit{Query} que permite a criação direta de uma \textit{query}. Este campo está limitado apenas para \textit{queries} do tipo SELECT.\\
-Depois da \textit{query} ser gerada retorna-se uma resposta num novo separador como demonstrado na \autoref{fig:consultas2}. O \textit{link} deste resposta contém toda a informação da \textit{query} gerada. Este pode ser arquivado ou enviado para outro utilizador sem ser necessário gerar a \textit{query} novamente, isto é útil para \textit{queries} com muitas cláusulas.\\
+A seleção é feita com base na coluna mais à esquerda a que os atributos pertencem. Explicando melhor com um exemplo: se o utilizador desejar consultar o \texttt{cl\char`_ID} e o \texttt{cl\char`_nome} da tabela clientes gera-se a primeira \textit{query} no entanto, se o utilizador desejar consultar os atributos \texttt{cl\char`_ID}, \texttt{m\char`_ID} e \texttt{s\char`_num} gera-se a terceira \textit{query}.\par
+Além destas, foram adicionadas três \textit{queries} especificas quando os atributos \texttt{tipo\char`_}nome, \texttt{fase\char`_nome} e \texttt{r\char`_data}\texttt{\char`_hora} são selecionados sozinhos. As primeiras duas permitem consultar as opções disponíveis nos dicionários e a terceira devolve as datas e horas entre o primeiro e último registos.\par
+As caixas de texto Filtros e Ordem na \autoref{fig:consultas1} permitem adicionar às \textit{queries} geradas as cláusulas WHERE e ORDER BY, respetivamente. Para os utilizadores com conhecimentos em \textit{SQL} está disponibilizada a caixa de texto \textit{Query} que permite a criação direta de uma \textit{query}. Este campo está limitado apenas para \textit{queries} do tipo SELECT.\par
+Depois da \textit{query} ser gerada retorna-se uma resposta num novo separador como demonstrado na \autoref{fig:consultas2}. O \textit{link} desta resposta contém toda a informação da \textit{query} gerada. Este pode ser arquivado ou enviado para outro utilizador sem ser necessário gerar a \textit{query} novamente, isto é útil para \textit{queries} com muitas cláusulas.\par
 Se a \textit{query} não for válida retorna-se um erro de forma a informar o utilizador, como demonstrado nas Figuras \ref{fig:consultas4}, \ref{fig:consultas5} e \ref{fig:consultas6}.
 \newpage
 \begin{figure}[H]
@@ -1159,7 +1183,7 @@ Se a \textit{query} não for válida retorna-se um erro de forma a informar o ut
 	\label{fig:consultas3}
 \end{figure}
 
-\subsection{Administração}
+\subsection{Administração Local}
 \begin{figure}[H]
 	\centering
 	\begin{minipage}{1\textwidth}
@@ -1179,8 +1203,17 @@ Se a \textit{query} não for válida retorna-se um erro de forma a informar o ut
 	\caption{Funcionalidades da página Administração com e sem conexão local}
 	\label{fig:admin0}
 \end{figure}
-\newpage
-A área de Administração permite ao utilizador alterar informações sobre os clientes, moldes e sensores. A partir de qualquer dispositivo só é possível aceder à Gestão de Clientes como demonstrado na \autoref{fig:admin1}. Nesta área a informação dos clientes pode ser alterada com o formulário demonstrado na \autoref{fig:admin3}. Os botões Adicionar Cliente, Alterar Cliente e Eliminar Cliente executam \textit{queries} do tipo INSERT, UPDATE e DELETE, respetivamente.\\
+Esta área está dividida em duas componentes distintas. A componente de Administração permite ao utilizador alterar informações sobre os clientes, moldes e sensores. A componente de Conectar Local permite realizar uma conexão à base de dados local no servidor do cliente. A componente de Administração só pode ser acedida quando for efetuada uma conexão local. Após a conexão ser bem sucedida observa-se informação do cliente com a \textit{query}:
+\begin{lstlisting}[language = SQL]
+	SELECT cl_ID, cl_nome, COUNT(DISTINCT m_ID),
+	COUNT(DISTINCT s_IDMolde, s_num)
+	FROM clientes LEFT OUTER JOIN moldes ON cl_ID = m_IDCliente
+	LEFT OUTER JOIN sensores ON m_ID = s_IDMolde
+	GROUP BY cl_ID;
+\end{lstlisting}
+
+\subsubsection{Administração}
+Esta componente está dividida em três áreas: Gestão de Clientes, Gestão de Moldes e Gestão de Sensores como demonstrado na \autoref{fig:admin1}. Quando se acede a esta componente redireciona-se o utilizador para a área de Gestão de Clientes. Aqui a informação dos clientes pode ser alterada com o formulário demonstrado na \autoref{fig:admin3}. Os botões Adicionar Cliente, Alterar Cliente e Eliminar Cliente executam \textit{queries} do tipo INSERT, UPDATE e DELETE, respetivamente. Quando toda a informação tiver sido inserida e registos tiverem a ser gerados deve-se reiniciar o programa de transferência de valores. O botão Atualizar conecta à base de dados notificações e altera o parâmetro atualizar da tabela transferência para 1.\\
 \\
 \\
 \\
@@ -1199,8 +1232,7 @@ A área de Administração permite ao utilizador alterar informações sobre os 
 	\end{center}
 \end{figure}
 \newpage
-Como referido anteriormente a aplicação divide-se numa utilização geral e local, todas as funcionalidades descritas até agora têm em vista uma utilização geral. As restantes funcionalidades que são descritas até ao final do capítulo visam um uso local.\\
-Após uma conexão bem sucedida ao sistema local do cliente são desbloqueadas novas áreas de gestão como mostra a \autoref{fig:admin2}. As áreas de Gestão de Moldes e Gestão de Sensores demonstradas nas Figuras \ref{fig:admin9} e \ref{fig:admin10}, permitem ao utilizador criar e apagar moldes e sensores, respetivamente. Estes dados são inseridos na base de dados temporária local, aqui o utilizador pode criar e apagar moldes e sensores sem afetar o sistema. Desta forma é possível confirmar a informação introduzida antes de a inserir no sistema. Os botões de Criar e Apagar nestes formulários realizam \textit{queries} do tipo INSERT e DELETE, respetivamente.
+As áreas de Gestão de Moldes e Gestão de Sensores demonstradas nas Figuras \ref{fig:admin9} e \ref{fig:admin10}, permitem ao utilizador criar e apagar moldes e sensores, respetivamente. Estes dados são inseridos na base de dados temporária local, onde o utilizador pode criar e apagar moldes e sensores sem afetar o sistema. Desta forma confirma-se a informação introduzida antes de a inserir no sistema. Os botões de Criar e Apagar nestes formulários realizam \textit{queries} do tipo INSERT e DELETE, respetivamente.
 	\begin{figure}[H]
 		\centering
 			\includegraphics[width=0.8\textwidth]{administracao05} % Include the image placeholder.png
@@ -1213,8 +1245,8 @@ Após uma conexão bem sucedida ao sistema local do cliente são desbloqueadas n
 			\caption{Área de Gestão de Sensores}
 			\label{fig:admin10}
 	\end{figure}
-Quando a informação dos moldes e sensores estiver completa o botão Validar tenta registar os valores presentes na base de dados temporária local nas bases de dados central e local. Se a ação não executar com sucesso é retornado um erro \textit{MySQL} de forma a informar o utilizador. Se a ação executar com sucesso a base de dados temporária local é limpa e os valores são registados permanentemente nas bases de dados central e local, como representado nas Figuras \ref{fig:admin12} e \ref{fig:admin13}.\\
-Depois de inseridos, moldes e sensores, não podem ser eliminados via aplicação. Esta opção foi removida da aplicação para evitar erros, dado que apagar um molde em funcionamento faz com que se percam novos registos.
+Quando a informação dos moldes e sensores estiver completa, o botão Validar tenta registar os valores presentes na base de dados temporária local nas bases de dados central e local. Se a ação não executar com sucesso é retornado um erro \textit{MySQL} de forma a informar o utilizador. Se a ação executar com sucesso a base de dados temporária local é limpa e os valores são registados permanentemente nas bases de dados central e local, como representado nas Figuras \ref{fig:admin12} e \ref{fig:admin13}.\par
+Depois de inseridos, moldes e sensores não podem ser eliminados via aplicação. Esta opção foi removida da aplicação para evitar erros, dado que apagar um molde em funcionamento faz com que se percam novos registos.
 \begin{figure}[H]
 	\centering
 	\begin{minipage}{.5\textwidth}
@@ -1234,29 +1266,9 @@ Depois de inseridos, moldes e sensores, não podem ser eliminados via aplicaçã
 	\caption{Função do botão Validar, onde os valores da base de dados temporária local são transferidos de forma permanente para as bases de dados central e local}
 	\label{fig:admin11}
 \end{figure}
-Voltando a área de Gestão de Clientes, após a conexão local, desbloqueia-se uma nova funcionalidade como demonstra a \autoref{fig:admin7}. O botão Atualizar permite reiniciar o programa de transferência de valores para que este atualize o número de clientes. Com o comando:
-\begin{lstlisting}[language = bash]
-	ps ax | grep transferencia
-\end{lstlisting}
-Obtém-se os números de processo dos programas que estão a transferir valores. Estes valores são armazenados na variável @pids. Para terminar os programas utiliza-se o seguinte comando:
-\begin{lstlisting}[language = bash]
-	kill -2 @pids
-\end{lstlisting}
-A opção -2 permite enviar para o processo escolhido o sinal SIGINT que é o sinal esperado pelo programa para que este termine as suas rotinas antes de encerrar. Para iniciar novamente o comando usar:
-\begin{lstlisting}[language = bash]
-	~/path/transferencia
-\end{lstlisting}
-É necessário garantir permissões ao servidor \textit{Apache} no sistema central para que este possa executar estes comandos.
-\newpage
-\begin{figure}[H]
-	\centering
-			\includegraphics[width=0.9\textwidth]{administracao04} % Include the image placeholder.png
-	\caption{Área de Gestão de Clientes após conexão local onde se visualiza o botão Atualizar}
-	\label{fig:admin7}
-\end{figure}
 Nas várias áreas de gestão existem os botões Ver Clientes, Ver Moldes e Ver Sensores que executam respetivamente as \textit{queries}:
 \begin{lstlisting}[language = SQL]
-	SELECT cl_ID, cl_nome, cl_morada, cl_IP, cl_port,
+1-	SELECT cl_ID, cl_nome, cl_morada, cl_IP, cl_port,
 	COUNT(DISTINCT m_ID), COUNT(DISTINCT s_IDMolde, s_num)
 	FROM clientes
 	LEFT OUTER JOIN moldes ON cl_ID = m_IDCliente
@@ -1264,7 +1276,7 @@ Nas várias áreas de gestão existem os botões Ver Clientes, Ver Moldes e Ver 
 	GROUP BY cl_ID
 	ORDER BY cl_ID
 	
-	SELECT m_IDCliente, m_ID, m_nome, m_descricao,
+2-	SELECT m_IDCliente, m_ID, m_nome, m_descricao,
 	COUNT(DISTINCT s_IDMolde, s_num)
 	FROM clientes
 	INNER JOIN moldes ON cl_ID = m_IDCliente
@@ -1272,16 +1284,16 @@ Nas várias áreas de gestão existem os botões Ver Clientes, Ver Moldes e Ver 
 	GROUP BY m_ID
 	ORDER BY m_IDCliente, m_ID
 	
-	SELECT m_IDCliente, s_IDMolde, s_num, tipo_nome,
+3-	SELECT m_IDCliente, s_IDMolde, s_num, tipo_nome,
 	s_nome, s_descricao
 	FROM moldes
 	INNER JOIN sensores ON m_ID = s_IDMolde
 	INNER JOIN tipo ON s_tipo = tipo_id
 	ORDER BY m_IDCliente, s_IDMolde, s_num
 \end{lstlisting}
-Estas fornecem algumas informações contextuais para facilitar a navegação do utilizador.
+Estas \textit{queries} fornecem algumas informações contextuais para facilitar a navegação do utilizador.
 
-\subsection{Conexão local}
+\subsubsection{Conectar Local}
 \label{subchap:local}
 	\begin{figure}[H]
 		\centering
@@ -1294,7 +1306,7 @@ A área de Conectar Local na \autoref{fig:local1} permite realizar uma conexão 
 	SHOW DATABASES
 \end{lstlisting}
 Obtém-se todas as bases de dados instaladas no servidor local. Do ponto de vista prático, cada cliente só terá uma base de dados local mas, para efeitos de desenvolvimento do projeto adotou-se esta vertente.
-O botão Conectar inicia sessão na base de dados local escolhida e redireciona o utilizador para a página principal como se observar na \autoref{fig:local4}. O botão Desconectar termina esta sessão e redireciona o utilizador também, para a página principal.
+O botão Conectar inicia sessão na base de dados local escolhida e redireciona o utilizador para a página de Administração como se observar na \autoref{fig:local4}. O botão Desconectar termina esta sessão e redireciona o utilizador também para a página de Administração.
 \newpage
 \begin{figure}[H]
 	\begin{center}
@@ -1321,7 +1333,7 @@ A área Criar Local na \autoref{fig:local2} permite instalar uma base de dados p
 		GROUP BY cl_ID) AS contagem
 	WHERE n_moldes = 0
 \end{lstlisting}
-Escolhendo um cliente válido o botão Criar cria a base de dados local com as respetivas tabelas e gera ainda as \textit{queries} observadas na \autoref{fig:local5}.
+Escolhendo um cliente válido o botão Criar gera \textit{queries} para efetuar a instalação da base de dados local e definir as respetivas permissões. Estas \textit{queries} não são visíveis ao utilizador, assim sendo, o botão Copiar Query copia-as para a área de transferência e estas devem ser introduzidas no \textit{MySQL} com o comando colar, como representado na \autoref{fig:local5}.
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[width=0.9\textwidth]{local03} % Include the image placeholder.png
