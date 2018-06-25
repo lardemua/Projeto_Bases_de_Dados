@@ -39,6 +39,6 @@
 \contentsline {chapter}{\numberline {5}Conclus\IeC {\~o}es}{53}{chapter.5}
 \contentsline {section}{\numberline {5.1}Coment\IeC {\'a}rios}{53}{section.5.1}
 \contentsline {subsection}{\numberline {5.1.1}Infraestrutura de dados}{53}{subsection.5.1.1}
-\contentsline {subsection}{\numberline {5.1.2}Aplica\IeC {\c c}\IeC {\~a}o}{53}{subsection.5.1.2}
-\contentsline {section}{\numberline {5.2}Trabalhos Futuros}{54}{section.5.2}
-\contentsline {chapter}{Bibliografia}{57}{section.5.3}
+\contentsline {subsection}{\numberline {5.1.2}Aplica\IeC {\c c}\IeC {\~a}o de gest\IeC {\~a}o do sistema}{55}{subsection.5.1.2}
+\contentsline {section}{\numberline {5.2}Trabalhos Futuros}{56}{section.5.2}
+\contentsline {chapter}{Bibliografia}{59}{section.5.3}

@@ -22,22 +22,11 @@ session_start();
         <input type=\"submit\" value=\"Consultas\">
             </form>
             <form action=\"03_administracao.php\" style=\"float: left;\">
-            <input type=\"submit\" value=\"Administração\">
+            <input type=\"submit\" value=\"Administração Local\">
             </form>";
     }else
     {
         $_SESSION['central_status'] = "Login";
-    }
-    if($_SESSION['central_status'] == "Logout" && $_SESSION['local_status'] == "Disconnect")
-    {
-        echo "<form action=\"05_login_local.php\" style=\"float: left;\">
-        <input type=\"submit\" value=\"" . $_SESSION['local_name'] . "\">
-        </form>";
-    }else if($_SESSION['central_status'] == "Logout" && $_SESSION['local_status'] != "Disconnect")
-    {
-        echo "<form action=\"05_login_local.php\" style=\"float: left;\">
-        <input type=\"submit\" value=\"Conectar Local\">
-        </form>";
     }
     ?>
     <form action="04_login.php" style="float: left;">
@@ -49,7 +38,7 @@ session_start();
 
     <img src="logo_ua.png" alt="logo ua" style="height:15%">
 
-    <p>Aplicação experimental em PHP e HTML para utilizar a base de dados.</p>
+    <p>Aplicação experimental para comunicar com as bases de dados.</p>
 
     <?php
 
@@ -57,11 +46,14 @@ session_start();
     if($_SESSION['central_status'] == "Logout")
     {
         echo "<p>A área de Consultas assiste na geração queries para consultar a base de dados central.<br>
-		A área de Administração permite gerir a informação dos clientes, moldes e sensores.<br>
-		A área de Conectar Local acede informações no sistema local do cliente.";
+		A área de Administração Local permite gerir a informação do cliente e respetivos moldes e sensores.";
     }
 
 /*
+	echo "<br>";
+	echo "<br>";
+	echo "\$_SESSION['local_status']" . $_SESSION['local_status'];
+	echo "<br>";
         $ID = str_replace("cl_"," ",$_SESSION['local_name']);
         echo $ID;
         echo "<br>";

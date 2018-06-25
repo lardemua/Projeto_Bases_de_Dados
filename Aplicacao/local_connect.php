@@ -7,8 +7,10 @@ session_start();
     $DB_HOST_Local=$_SERVER['REMOTE_ADDR'];
     $DB_NAME_Local=$_SESSION['local_name'];
 
+if($_SESSION['local_name']!="")
+{
     $dbc2 = @mysqli_connect($DB_HOST_Local,$DB_USER_Local,$DB_PASSWORD_Local,$DB_NAME_Local);
-
+}
     // Check connection
     if (!$dbc2) {
         $_SESSION['local_status'] = "Connect";
@@ -19,4 +21,5 @@ session_start();
 
     // Change character set to utf8
     mysqli_set_charset($dbc2,"utf8");
+
 ?>

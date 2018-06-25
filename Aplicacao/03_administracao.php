@@ -33,43 +33,27 @@ session_start();
         <input type="submit" value="Consultas">
     </form>
     <form action="03_administracao.php" style="float: left;">
-        <input type="submit" value="Administração">
+        <input type="submit" value="Administração Local">
     </form>
-    <?php
-        if($_SESSION['central_status'] == "Logout" && $_SESSION['local_status'] == "Disconnect")
-        {
-            echo "<form action=\"05_login_local.php\" style=\"float: left;\">
-            <input type=\"submit\" value=\"" . $_SESSION['local_name'] . "\">
-            </form>";
-        }else if($_SESSION['central_status'] == "Logout" && $_SESSION['local_status'] != "Disconnect")
-        {
-            echo "<form action=\"05_login_local.php\" style=\"float: left;\">
-            <input type=\"submit\" value=\"Conectar Local\">
-            </form>";
-        }
-    ?>
     <form action="04_login.php">
         <input type="submit" value="<?php echo $_SESSION['central_status']; ?>">
     </form>
     <?php
         if($_SESSION['central_status'] == "Logout" && $_SESSION['local_status'] == "Disconnect")
         {
-            echo     "<form action=\"031_admin_cliente.php\" style=\"float: left;\">
-                    <input type=\"submit\" value=\"Gestão Clientes\">
-                    </form>
-                    <form action=\"032_admin_molde.php\" style=\"float: left;\">
-                    <input type=\"submit\" value=\"Gestão Moldes\">
-                    </form>
-                    <form action=\"033_admin_sensor.php\">
-                    <input type=\"submit\" value=\"Gestão Sensores\">
-                    </form>
-                    <!-- <form action=\"034_admin_eliminar.php\">
-                    <input type=\"submit\" value=\"Eliminar\">
-                    </form> -->";
-        }else
-        {  
-            echo "<form action=\"031_admin_cliente.php\">
-            <input type=\"submit\" value=\"Gestão Clientes\">
+	echo "<form action=\"031_admin_cliente.php\" style=\"float: left;\">
+            <input type=\"submit\" value=\"Administração\">
+            </form>";
+            echo "<form action=\"05_login_local.php\">
+            <input type=\"submit\" value=\"" . $_SESSION['local_name'] . "\">
+            </form>";
+        }else if($_SESSION['central_status'] == "Logout" && $_SESSION['local_status'] != "Disconnect")
+        {
+	echo "<form action=\"031_admin_cliente.php\" style=\"float: left;\">
+            <input type=\"submit\" value=\"Administração\" disabled>
+            </form>";
+            echo "<form action=\"05_login_local.php\">
+            <input type=\"submit\" value=\"Conectar Local\">
             </form>";
         }
     ?>

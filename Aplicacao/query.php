@@ -10,11 +10,11 @@
 </head>
 <body>
 <?php
-require_once('central_connect.php');
+require_once('local_connect.php');
 
 $query = "SELECT cl_ID, cl_nome, COUNT(DISTINCT m_ID), COUNT(DISTINCT s_IDMolde, s_num) FROM clientes LEFT OUTER JOIN moldes ON cl_ID = m_IDCliente LEFT OUTER JOIN sensores ON m_ID = s_IDMolde GROUP BY cl_ID";
 
-$response = @mysqli_query($dbc,$query);
+$response = @mysqli_query($dbc2,$query);
 
 if($response)
 {
@@ -38,12 +38,12 @@ if($response)
     echo '</table>';
 
 } else{
-    echo "Error";
+    echo "Error: ";
 
-    echo mysqli_error($dbc);
+    echo mysqli_error($dbc2);
 }
 
-mysqli_close($dbc);
+mysqli_close($dbc2);
 
 ?>
 </body>

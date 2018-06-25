@@ -127,11 +127,11 @@
 \TitlePage
   \vspace*{55mm}
   \TEXT{\textbf{Palavras-chave}}
-       {Base de dados relacional; rede de bases de dados; monitorização; monitorização remota; aplicação; \textit{web}.}
+       {Base de dados relacional; rede de bases de dados; múltiplas bases de dados; monitorização remota.}
   \TEXT{Resumo}
-       {Moldes de injeção têm uma vasta aplicabilidade no mundo industrial. Afim de melhorar a qualidade do produto final e reduzir falhas surgiu a necessidade de instrumentar e monitorizar moldes remotamente. Neste projeto desenvolveu-se uma rede de bases de dados relacionais e uma aplicação em ambiente \textit{Web}. A primeira garante uma transferência de valores segura e permanente de forma a criar um histórico. A segunda permite ao utilizador interagir com as bases de dados desenvolvidas podendo edita-las e consulta-las de forma a gerar relatórios.\\
-       	No desenvolvimento deste projeto utilizou-se \textit{MySQL} e \textit{C} para criar e definir a rede de bases de dados resultando numa solução simples e funcional a baixo nível. Utilizou-se \textit{Apache}, \textit{PHP}, e \textit{HTML} para desenvolver e implementar a aplicação de forma a que esta seja multiplataforma e garanta um acesso remoto ao utilizador.\\
-       	A solução proposta cumpre todos os objetivos definidos podendo ser já utilizada numa fase experimental apesar de necessitar alguns melhoramentos a nível de desempenho.}
+       {Os moldes de injeção são uma ferramenta essencial no mundo industrial. A fim de melhorar a qualidade do produto final e reduzir falhas surgiu a necessidade de instrumentar e monitorizar moldes remotamente, este projeto foca-se na parte da monitorização remota. Desenvolveu-se uma rede com múltiplas bases de dados relacionais e uma aplicação em ambiente \textit{Web}. A primeira garante uma transferência remota de valores segura e permanente de forma a criar um histórico de registos, juntamente com um sistema de criação de \textit{backups} para gerir e proteger estes históricos. A segunda permite ao utilizador interagir com as bases de dados desenvolvidas podendo edita-las e consulta-las de forma a gerar relatórios.\\
+       No desenvolvimento deste projeto utilizou-se \textit{MySQL} e \textit{C} para criar e definir a rede de bases de dados resultando numa solução simples e funcional a baixo nível. Utilizou-se \textit{Apache}, \textit{PHP}, e \textit{HTML} para desenvolver e implementar a aplicação de forma a que esta seja multiplataforma e garanta um acesso remoto ao utilizador.\\
+       A solução proposta cumpre todos os objetivos definidos podendo ser já utilizada numa fase experimental. Existe ainda margem para desenvolvimentos futuros como melhoramentos de desempenho e novas aplicações que podem complementar a solução proposta.}
 \EndTitlePage
 \titlepage\ \endtitlepage % empty page
 
@@ -1355,34 +1355,73 @@ Terminado a análise das funcionalidades da aplicação com a área de Instalar 
 
 \cleardoublepage
 \chapter{Conclusões}
-O desafio proposto consiste em monitorizar sensores remotamente. Para isto definiu-se como objetivos principais desenvolver uma rede de bases de dados e uma aplicação que permitisse interagir com estas. Estes objetivos foram concluídos com sucesso. Este capítulo contém comentários sobre o desempenho da solução desenvolvida e propostas para trabalhos futuros.
+O desafio proposto consiste em monitorizar sensores remotamente. Para isto definiu-se como objetivos principais desenvolver uma rede de bases de dados e uma aplicação que permitisse interagir com elas. Estes objetivos foram concluídos com sucesso. Este capítulo contém comentários sobre o desempenho da solução desenvolvida e propostas para trabalhos futuros.
 
 \section{Comentários}
 \subsection{Infraestrutura de dados}
-Em relação à infraestrutura proposta, esta cumpre todos os requisitos propostos de garantir uma transferência segura, confidencial e permanente de valores, criando um histórico dos moldes monitorizados. Os programas desenvolvidos em \textit{C} são simples e funcionais. No entanto, quando estão em funcionamento, o sistema executa-os sem restrições. Isto resulta num elevado consumo do processador e consequente perda de performance do sistema central. Esta perda de performance pode ser por causa do \textit{hardware} utilizado no projeto e a utilização de um sistema devidamente dimensionado para a tarefa em mão pode resolver este problema. Outra solução seria limitar a velocidade de processamento da execução destes programas.\\
-Como definido nos objetivos esta não impõe restrições na instrumentação dos moldes. Para introduzir dados nas bases de dados locais pode ser utilizado qualquer sistema operativo e linguagem de programação desde que esta tenha protocolos de comunicação com \textit{MySQL} e gere \textit{queries} do tipo:
+Em relação à infraestrutura proposta, esta cumpre todos os requisitos propostos de garantir uma transferência segura, confidencial e permanente de valores, criando um histórico dos moldes monitorizados. Consiste numa rede de bases de dados relacionais com uma central e uma local para cada cliente o que minimiza a perda de registos em caso de falha de conexão. Num programa de transferência de valores que coordena a transferência dos registos para o sistema central criando históricos das medições dos moldes. Noutro de gestão de \textit{backups} que limpa a base de dados central dos registos mais antigos e arquiva-os em ficheiros num repositório \textit{online}. Terminando com simuladores que substituem a aquisição de dados reais e permitem popular as bases de dados locais.\par 
+Como definido nos objetivos esta solução não impõe restrições na instrumentação dos moldes. Para introduzir dados nas bases de dados locais pode ser utilizado qualquer sistema operativo e linguagem de programação desde que esta tenha protocolos de comunicação com \textit{MySQL} e gere \textit{queries} do tipo:
 \begin{lstlisting}[language = SQL]
 	INSERT INTO registos
 	VALUES
 	(molde, sensor, fase, data_hora, milissegundos, valor);
 \end{lstlisting}
-Na realidade esta infraestrutura pode ser utilizada em qualquer contexto de monitorização remota de sensores desde que seja desenvolvido um modelo de dados apropriado.
+Na realidade esta infraestrutura pode ser utilizada em qualquer contexto de monitorização remota de sensores desde que seja desenvolvido um modelo de dados apropriado.\par 
+Em relação ao programa de transferência de valores, este cumpriu os objetivos definidos, no entanto, o método para reiniciar o programa remotamente pela aplicação pode ser melhorado. Atualmente, o programa verifica com base num temporizador a base de dados notificações, dependendo deste temporizador pode existir alguma latência entre o ato de enviar a notificação e o reiniciar propriamente dito do programa. Seria interessante desenvolver outro método que garanti-se que o programa de transferência reinicia-se sem latência.\par 
+Além disto, durante o desenvolvimento do projeto, os simuladores nunca geraram registos com maior taxa do que o que o programa de transferência podia transferir. Se esta taxa for superada, a base local de onde provêm os registos ficará cada vez mais cheia o que pode levar a problemas de desempenho e, o programa, não está preparado para responder a situações destas. Sugere-se para futuros desenvolvimentos adaptar o programa de forma a que este possa aumentar automaticamente a sua taxa de transferência de registos. Duas soluções que podem ajudar a atingir este objetivo:
+\begin{itemize}
+	\item Aumentar a capacidade da \textit{string} que guarda os tuplos retornados
+	\item Aumentar a quantidade de subprogramas para cada cliente
+\end{itemize}
+Em relação ao programa de gestão de \textit{backups}, este cumpriu todos os objetivos definidos, no entanto, existem algumas limitações quanto ao método de realizar o \textit{backup}. Atualmente, o programa cria os ficheiros de \textit{backup} executando diretamente no terminal o comando \texttt{mysqldump} que permite definir a pasta de destino para o ficheiro criado:
+\begin{lstlisting}[language = bash]
+	mysqldump -u backupmanager -pbackup1234 backups_temp >
+	~/Backups/backup.sql
+\end{lstlisting}
+Este comando também pode ser usado via \textit{query} para o \textit{MySQL}. No entanto, este não tem permissões para criar ficheiros fora da sua pasta principal, o que torna difícil mover os \textit{backups} para o repositório \textit{online}, dado que esta pasta principal está protegida com permissões de administrador. Na verdade é possível permitir o \textit{MySQL} criar ficheiros fora da sua pasta principal, só que isto pode constituir uma falha de segurança dado que é possível enviar comandos para o terminal via \textit{query}.\par 
+Os ficheiros criados via \texttt{mysqldump} contém toda a informação das tabelas e funcionam como ponto de restauro. Isto significa que quando se usa o comando de recuperação a base de dados selecionada é substituída pela que está no ficheiro \texttt{.sql}:
+\begin{lstlisting}[language = bash]
+	mysql -u backupmanager -pbackup1234 central <
+	~/Backups/backup.sql
+\end{lstlisting}
+Este comportamento dificulta a concatenação de vários \textit{backups} numa única base de dados, dado que isto requer a utilização de uma base de dados intermédia. No entanto, foi a solução que permitiu a interação com um repositório \textit{online}.\par 
+Uma solução explorada inicialmente para criar \textit{backups} consistia em ficheiros \texttt{.csv} que continham apenas registos com uma \textit{query} do estilo:
+\begin{lstlisting}[language = SQL]
+	SELECT *
+	FROM backups.registos
+	WHERE r_IDMolde = @IDMolde
+	INTO OUTFILE
+	'backup_@IDCliente_@IDMolde_@dataini_@datafim.csv'
+	FIELDS TERMINATED BY ','
+	ENCLOSED BY '"'
+	LINES TERMINATED BY '\n'
+\end{lstlisting}
+Esta solução simplifica o processo de criação e concatenação dos \textit{backups} mas tem algumas desvantagens. A desvantagem principal é o facto de não se puder definir o diretório de criação do ficheiro, como foi referido anteriormente. Além disto, para a informação puder ser carregada para uma tabela só se pode fazer \textit{backup} de uma tabela, o que pode levar à perda de informação relativa aos clientes, moldes e sensores se o planeamento dos ficheiros não for bem efetuado. Em futuros desenvolvimentos, se for definido que o diretório de criação dos \textit{backups} não é imperativo, deve-se dar ênfase a esta solução dado que este processo é mais simples e consequentemente mais rápido do que a solução usada neste projeto.
 
-\subsection{Aplicação}
-Em relação à aplicação, esta cumpre os objetivos propostos de ser multiplataforma e garantir um acesso remoto à base de dados central, bem como gerir as informações dos clientes, moldes e sensores. No entanto, o facto da aplicação ter sido desenvolvida na totalidade com \textit{PHP} e \textit{HTML}, causa uma perda de performance no servidor central. Isto aconteceu porque, durante o desenvolvimento do projeto, não foi percebido na totalidade o conceito de lado do servidor e lado do cliente. De forma a melhorar o desempenho sugere-se a alteração de algumas funcionalidades desenvolvidas em \textit{PHP} para \textit{JavaScript}, como por exemplo, as conexões às bases de dados que são particularmente pesadas no servidor. A alteração das conexões de \textit{PHP} para \textit{JavaScript} permite também alterar o método de instalação da base de dados local mencionado na \autoref{subchap:local}. Em vez de serem gerados comandos para o utilizador executar no \textit{MySQL} estes podem ser enviados diretamente pela aplicação desde que seja fornecida a \textit{password} para a \textit{root} do sistema como sugerido na \autoref{fig:conclusoes1}.
+\subsection{Aplicação de gestão do sistema}
+A aplicação cumpre os objetivos propostos de ser multiplataforma e garantir um acesso remoto à base de dados central, bem como gerir as informações dos clientes, moldes e sensores. Durante o desenvolvimento do projeto e testes de usabilidade verificou-se alguma falta de desempenho por parte da aplicação. Após alguns testes chegou-se à conclusão que esta falta de desempenho se devia ao \textit{hardware} utilizado e que um melhor computador e \textit{router} resolviam este problema.\par 
+De momento o processo de instalação dos clientes ainda requer que o utilizador se ligue manualmente ao \textit{MySQL} para introduzir as \textit{queries} para criar os utilizadores e as bases de dados. Seria interessante em futuros desenvolvimentos chegar a uma solução que permitisse uma criação dos clientes diretamente pela aplicação como demonstrado na \autoref{fig:conclusoes1}.
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[width=0.9\textwidth]{futuro01} % Include the image placeholder.png
-		\caption{Área de Criar Local com criação via \textit{root} em vez de gerar \textit{queries} para o utilizador inserir manualmente no \textit{MySQL}}
+		\caption{Exemplo da área Criar Local com criação das bases de dados e utilizadores via \textit{root} em vez de gerar \textit{queries} para o utilizador inserir manualmente no \textit{MySQL}}
 		\label{fig:conclusoes1}
 	\end{center}
 \end{figure}
-Além disto é necessário realizar uma revisão de segurança à aplicação. Por exemplo, o botão Atualizar na área Gestão de Clientes que reinicia o programa de transferência de valores através de comandos no terminal. Se as permissões garantidas ao servidor \textit{Apache} não forem bem definidas, pode constituir uma quebra de segurança. Um programador com intenções maliciosas pode acessar o sistema pela aplicação e realizar comandos no terminal de forma a comprometer o sistema. Para isto não acontecer é necessário garantir que o servidor \textit{Apache} só tem permissões sobre o programa de transferência ou então definir um sistema de notificações entre a aplicação e o programa em \textit{C}.\\
-Apesar de serem necessários alguns ajustes de forma a melhorar performance, a solução proposta da infraestrutura e aplicação é completamente funcional e pode ser já implementada numa fase experimental.
+Além disto é necessário realizar uma revisão de segurança à aplicação. Um programador com intenções maliciosas pode aceder ao sistema pela aplicação e realizar comandos que podem comprometer o sistema.\par 
+Apesar de serem necessários alguns ajustes de forma a melhorar o desempenho, a solução proposta da infraestrutura e aplicação é completamente funcional e pode ser já implementada numa fase experimental.
 
 \section{Trabalhos Futuros}
-Quanto à infraestrutura dos dados não foi definido como os sensores dos moldes serão ligados ao servidor local. No desenvolvimento deste projeto assumiu-se que todos os moldes estão ligados diretamente ao sistema local. Se esta proposta não se demonstrar viável é possível, em vez de se ter um servidor local por cliente, ter um servidor local por molde. Esta adaptação irá criar uma maior quantidade de bases de dados locais mas, isto não é problemático, se o modelo de dados e o programa de transferência forem adaptados para o efeito.\\
-Quanto à aplicação, sugere-se que após uma apresentação inicial desta à empresa promotora, seja iniciado um processo iterativo de desenvolvimento para escolher e desenvolver novas funcionalidades que possam ser úteis e que não tenham sido abrangidas neste projeto, como por exemplo, a criação de utilizadores baseado no ID de trabalhador demonstrado na \autoref{fig:conclusoes2}. Culminando numa estilização da aplicação para que esta tenha um aspeto mais amigável ao utilizador.
+Quanto à infraestrutura dos dados não foi definido como os sensores dos moldes serão ligados ao servidor local. No desenvolvimento deste projeto assumiu-se que todos os moldes estão ligados diretamente ao sistema local. No entanto, isto pode não ser sempre possível de se realizar por motivos físicos como demonstrado na \autoref{fig:conclusoes3}.
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.9\textwidth]{placeholder} % Include the image placeholder.png
+		\caption{Exemplo de problemas fisicos}
+		\label{fig:conclusoes3}
+	\end{center}
+\end{figure}
+Se se justificar, em vez de se ter um servidor local no cliente, ter um em cada molde molde. Esta adaptação irá criar uma maior quantidade de bases de dados locais mas isto não é problemático, se o modelo de dados e o programa de transferência forem adaptados para o efeito.\par
+Quanto à aplicação, sugere-se que após uma apresentação inicial à empresa promotora, seja iniciado um processo iterativo de desenvolvimento para escolher e desenvolver novas funcionalidades que possam ser úteis e que não tenham sido abrangidas neste projeto, como por exemplo, a criação de utilizadores baseado no ID de trabalhador demonstrado na \autoref{fig:conclusoes2}, que pode depois servir para criar históricos das intervenções dos utilizadores nas bases de dados. Culminando numa estilização da aplicação para que esta tenha um aspeto mais amigável ao utilizador.
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[width=0.9\textwidth]{futuro02} % Include the image placeholder.png
@@ -1390,9 +1429,15 @@ Quanto à aplicação, sugere-se que após uma apresentação inicial desta à e
 		\label{fig:conclusoes2}
 	\end{center}
 \end{figure}
-\vspace{-.82cm}
-Além destas alterações sugere-se a criação de um sistema de notificações e monitorização automático dos moldes. É impossível para um utilizador analisar manualmente milhões de registos de um molde e concluir se este está a funcionar corretamente. Para este efeito criar um programa capaz de correr algoritmos que analisem o comportamento dos moldes. Este programa pode ser desenvolvido em \textit{softwares} mais sofisticados, como por exemplo \textit{MATLAB}, desde que estes tenham protocolos de comunicação com \textit{MySQL}.\looseness=-1\\
-A gestão dos \textit{backups} descrita na \autoref{subchap:backups} onde se separa os registos dos moldes em vez de se realizar um \textit{backup} geral foi realizada com este sistema de notificações em mente. Se for necessário, para efeitos de cálculo, que o programa carregue os registos de um molde armazenados em \textit{backups}, este só necessita de carregar a informação do molde que está a ser analisado em vez de ter de carregar a informação de todos os moldes. Este programa deverá correr automaticamente no sistema de forma permanente ou com um temporizador e, no caso de ser necessário, notificar o utilizador via aplicação ou via email.
+Sugere-se a criação de um sistema de notificações e monitorização automático dos moldes. Durante o desenvolvimento do projeto chegou-se à conclusão de que é impossível para um utilizador analisar manualmente milhões de registos de um molde e concluir se este está a funcionar corretamente, como demonstrado na \autoref{fig:conclusoes4}.
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.9\textwidth]{placeholder} % Include the image placeholder.png
+		\caption{Exemplo molde 4 dinamometros a sair da cena}
+		\label{fig:conclusoes4}
+	\end{center}
+\end{figure}
+Para auxiliar os utilizadores sugere-se criar um programa capaz de correr algoritmos que analisem constantemente o comportamento dos moldes. Este programa pode ser desenvolvido em \textit{softwares} mais sofisticados, como por exemplo \textit{MATLAB}, desde que estes tenham protocolos de comunicação com \textit{MySQL}. Mantendo em mente o ambiente \textit{Web}, sugere-se que este programa notifique os utilizadores via aplicação de gestão do sistema ou via email quando um molde começa a demostrar um comportamento errático.
 
 %
 % The bibliography
