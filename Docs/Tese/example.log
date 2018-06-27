@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.5.22)  25 JUN 2018 16:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.5.22)  28 JUN 2018 00:48
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -773,7 +773,7 @@ Package caption Info: float package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count137
- <uaLogoOld.pdf, id=176, 60.225pt x 75.28125pt>
+ <uaLogoOld.pdf, id=172, 60.225pt x 75.28125pt>
 File: uaLogoOld.pdf Graphic file (type pdf)
 
 <use uaLogoOld.pdf>
@@ -804,7 +804,7 @@ pdf uaLogoNew.eps>
 (epstopdf)             \includegraphics on input line 88.
 Package epstopdf Info: Output file is already uptodate.
 
-<uaLogoNew-eps-converted-to.pdf, id=177, 60.225pt x 75.28125pt>
+<uaLogoNew-eps-converted-to.pdf, id=173, 60.225pt x 75.28125pt>
 File: uaLogoNew-eps-converted-to.pdf Graphic file (type pdf)
 
 <use uaLogoNew-eps-converted-to.pdf>
@@ -930,12 +930,12 @@ Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 154.
 
 (./example.lof
-Underfull \vbox (badness 2073) has occurred while \output is active []
+Underfull \vbox (badness 3364) has occurred while \output is active []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 34.
+(babel)             in language  on input line 36.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 34.
+(babel)             in language  on input line 36.
  [3
 
 
@@ -978,365 +978,407 @@ Package babel Info: Redefining portuges shorthand "|
 Cap\'{\i }tulo 1.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 164.
-<Pictures/placeholder.jpg, id=428, 351.3125pt x 193.72375pt>
-File: Pictures/placeholder.jpg Graphic file (type jpg)
+<Pictures/Esquema_Rede.png, id=410, 692.5875pt x 644.4075pt>
+File: Pictures/Esquema_Rede.png Graphic file (type png)
 
-<use Pictures/placeholder.jpg>
-Package pdftex.def Info: Pictures/placeholder.jpg used on input line 174.
-(pdftex.def)             Requested size: 221.32687pt x 122.04955pt.
+<use Pictures/Esquema_Rede.png>
+Package pdftex.def Info: Pictures/Esquema_Rede.png used on input line 174.
+(pdftex.def)             Requested size: 265.59494pt x 247.11928pt.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 181.
+(babel)             in language  on input line 185.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 181.
+(babel)             in language  on input line 185.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.181 	\item
-             Criar uma infraestrutura de bases de dados [1
+l.185 \newpage
+               [1
 
- <./Pictures/placeholder.jpg>]
+]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 188.
+
+ (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 188.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 187.
+(babel)             in language  on input line 196.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 187.
- [2]
+(babel)             in language  on input line 196.
+
+[2 <./Pictures/Esquema_Rede.png>]
 Cap\'{\i }tulo 2.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 188.
+(babel)             in language  on input line 197.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 189.
-<Pictures/molde.jpg, id=439, 3019.28pt x 2007.5pt>
+(babel)             in language  on input line 199.
+<Pictures/molde.jpg, id=428, 3019.28pt x 2007.5pt>
 File: Pictures/molde.jpg Graphic file (type jpg)
  <use Pictures/molde.jpg>
-Package pdftex.def Info: Pictures/molde.jpg used on input line 192.
-(pdftex.def)             Requested size: 398.38567pt x 264.87442pt.
+Package pdftex.def Info: Pictures/molde.jpg used on input line 202.
+(pdftex.def)             Requested size: 331.99031pt x 220.73378pt.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 199.
+(babel)             in language  on input line 209.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 199.
+(babel)             in language  on input line 209.
 
 [3
 
 
  <./Pictures/molde.jpg>]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 200.
-
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
-File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 200.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 213.
+(babel)             in language  on input line 223.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 217.
+(babel)             in language  on input line 227.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 217.
+(babel)             in language  on input line 227.
  [4]
-<Pictures/SGBD.png, id=497, 490.83376pt x 544.0325pt>
+<Pictures/SGBD.png, id=485, 487.8225pt x 544.0325pt>
 File: Pictures/SGBD.png Graphic file (type png)
  <use Pictures/SGBD.png>
-Package pdftex.def Info: Pictures/SGBD.png used on input line 222.
-(pdftex.def)             Requested size: 309.85626pt x 343.44789pt.
+Package pdftex.def Info: Pictures/SGBD.png used on input line 232.
+(pdftex.def)             Requested size: 309.85626pt x 345.56471pt.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 227.
+(babel)             in language  on input line 237.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 227.
+(babel)             in language  on input line 237.
 
 [5 <./Pictures/SGBD.png>]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 231.
+(babel)             in language  on input line 241.
 
-<Pictures/exemplo_relacional.png, id=510, 663.47874pt x 288.07625pt>
+<Pictures/exemplo_relacional.png, id=502, 532.99126pt x 166.6225pt>
 File: Pictures/exemplo_relacional.png Graphic file (type png)
 
 <use Pictures/exemplo_relacional.png>
-Package pdftex.def Info: Pictures/exemplo_relacional.png used on input line 238
+Package pdftex.def Info: Pictures/exemplo_relacional.png used on input line 249
 .
-(pdftex.def)             Requested size: 398.38567pt x 172.97455pt.
+(pdftex.def)             Requested size: 398.38567pt x 124.54706pt.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 244.
-
-Underfull \vbox (badness 3690) has occurred while \output is active []
-
+(babel)             in language  on input line 255.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 247.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 247.
+(babel)             in language  on input line 255.
  [6 <./Pictures/exemplo_relacional.png>]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 264.
+(babel)             in language  on input line 256.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 267.
+(babel)             in language  on input line 276.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 267.
- [7]
-<Pictures/notacao1.png, id=532, 596.2275pt x 119.44624pt>
+(babel)             in language  on input line 279.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 279.
+
+[7] <Pictures/notacao1.png, id=525, 783.92876pt x 181.67876pt>
 File: Pictures/notacao1.png Graphic file (type png)
 
 <use Pictures/notacao1.png>
-Package pdftex.def Info: Pictures/notacao1.png used on input line 273.
-(pdftex.def)             Requested size: 442.65375pt x 88.68044pt.
+Package pdftex.def Info: Pictures/notacao1.png used on input line 285.
+(pdftex.def)             Requested size: 354.12434pt x 82.07071pt.
 
-<Pictures/notacao2.png, id=534, 521.95pt x 102.3825pt>
+<Pictures/notacao2.png, id=527, 824.07875pt x 181.67876pt>
 File: Pictures/notacao2.png Graphic file (type png)
 
 <use Pictures/notacao2.png>
-Package pdftex.def Info: Pictures/notacao2.png used on input line 281.
-(pdftex.def)             Requested size: 354.12434pt x 69.46295pt.
+Package pdftex.def Info: Pictures/notacao2.png used on input line 293.
+(pdftex.def)             Requested size: 354.12434pt x 78.07043pt.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 286.
+(babel)             in language  on input line 298.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 286.
- [8 <./Pictures/notacao1.png> <./Pictures/notacao2.png>] <Pictures/notacao6.png
-, id=541, 329.23pt x 358.33875pt>
-File: Pictures/notacao6.png Graphic file (type png)
-
-<use Pictures/notacao6.png>
-Package pdftex.def Info: Pictures/notacao6.png used on input line 290.
-(pdftex.def)             Requested size: 309.85626pt x 337.25949pt.
-
-<Pictures/notacao3.png, id=543, 481.8pt x 151.56625pt>
+(babel)             in language  on input line 298.
+ [8 <./Pictures/notacao1.png> <./Pictures/notacao2.png>] <Pictures/notacao3.png
+, id=537, 121.45375pt x 141.52875pt>
 File: Pictures/notacao3.png Graphic file (type png)
 
 <use Pictures/notacao3.png>
-Package pdftex.def Info: Pictures/notacao3.png used on input line 305.
-(pdftex.def)             Requested size: 309.85626pt x 97.47847pt.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 312.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 312.
- [9 <./Pictures/notacao6.png> <./Pictures/notacao3.png>] <Pictures/notacao4.png
-, id=551, 636.3775pt x 307.1475pt>
+Package pdftex.def Info: Pictures/notacao3.png used on input line 306.
+(pdftex.def)             Requested size: 55.33171pt x 64.47557pt.
+
+<Pictures/notacao4.png, id=538, 482.80376pt x 81.30376pt>
 File: Pictures/notacao4.png Graphic file (type png)
 
 <use Pictures/notacao4.png>
-Package pdftex.def Info: Pictures/notacao4.png used on input line 319.
-(pdftex.def)             Requested size: 309.85626pt x 149.55219pt.
+Package pdftex.def Info: Pictures/notacao4.png used on input line 313.
+(pdftex.def)             Requested size: 199.19283pt x 33.54317pt.
 
-<Pictures/notacao5.png, id=552, 523.9575pt x 344.28625pt>
+<Pictures/notacao5.png, id=539, 482.80376pt x 191.71625pt>
 File: Pictures/notacao5.png Graphic file (type png)
 
 <use Pictures/notacao5.png>
-Package pdftex.def Info: Pictures/notacao5.png used on input line 326.
-(pdftex.def)             Requested size: 309.85626pt x 203.60518pt.
+Package pdftex.def Info: Pictures/notacao5.png used on input line 321.
+(pdftex.def)             Requested size: 199.19283pt x 79.09563pt.
 
-<Pictures/notacao7.png, id=554, 332.24126pt x 53.19875pt>
+<Pictures/notacao6.png, id=540, 844.15375pt x 333.245pt>
+File: Pictures/notacao6.png Graphic file (type png)
+
+<use Pictures/notacao6.png>
+Package pdftex.def Info: Pictures/notacao6.png used on input line 332.
+(pdftex.def)             Requested size: 331.99031pt x 131.05827pt.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 338.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 338.
+ [9 <./Pictures/notacao3.png> <./Pictures/notacao4.png> <./Pictures/notacao5.pn
+g> <./Pictures/notacao6.png>]
+<Pictures/notacao7.png, id=554, 482.80376pt x 182.6825pt>
 File: Pictures/notacao7.png Graphic file (type png)
 
 <use Pictures/notacao7.png>
-Package pdftex.def Info: Pictures/notacao7.png used on input line 334.
-(pdftex.def)             Requested size: 309.85626pt x 49.61717pt.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 346.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 346.
- [10 <./Pictures/notacao4.png> <./Pictures/notacao5.png>] <Pictures/notacao8.pn
-g, id=560, 461.725pt x 426.59375pt>
+Package pdftex.def Info: Pictures/notacao7.png used on input line 342.
+(pdftex.def)             Requested size: 221.32687pt x 83.74506pt.
+
+<Pictures/notacao8.png, id=557, 161.60374pt x 283.0575pt>
 File: Pictures/notacao8.png Graphic file (type png)
 
 <use Pictures/notacao8.png>
-Package pdftex.def Info: Pictures/notacao8.png used on input line 349.
-(pdftex.def)             Requested size: 309.85626pt x 286.27847pt.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 355.
+Package pdftex.def Info: Pictures/notacao8.png used on input line 359.
+(pdftex.def)             Requested size: 53.11816pt x 93.03781pt.
 
-<Pictures/notacao9.png, id=563, 747.79375pt x 486.81876pt>
+<Pictures/notacao9.png, id=558, 161.60374pt x 283.0575pt>
 File: Pictures/notacao9.png Graphic file (type png)
 
 <use Pictures/notacao9.png>
-Package pdftex.def Info: Pictures/notacao9.png used on input line 359.
-(pdftex.def)             Requested size: 309.85626pt x 201.71404pt.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 364.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 364.
- [11 <./Pictures/notacao7.png> <./Pictures/notacao8.png>]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 366.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 370.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 370.
- [12 <./Pictures/notacao9.png>]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 373.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 376.
+Package pdftex.def Info: Pictures/notacao9.png used on input line 366.
+(pdftex.def)             Requested size: 53.11816pt x 93.03781pt.
 
-<Pictures/ubuntu.png, id=577, 200.75pt x 200.75pt>
+<Pictures/notacao10.png, id=559, 162.6075pt x 283.0575pt>
+File: Pictures/notacao10.png Graphic file (type png)
+
+<use Pictures/notacao10.png>
+Package pdftex.def Info: Pictures/notacao10.png used on input line 373.
+(pdftex.def)             Requested size: 53.11816pt x 92.46336pt.
+
+<Pictures/notacao11.png, id=560, 482.80376pt x 81.30376pt>
+File: Pictures/notacao11.png Graphic file (type png)
+
+<use Pictures/notacao11.png>
+Package pdftex.def Info: Pictures/notacao11.png used on input line 386.
+(pdftex.def)             Requested size: 221.32687pt x 37.27115pt.
+
+<Pictures/notacao12.png, id=561, 482.80376pt x 81.30376pt>
+File: Pictures/notacao12.png Graphic file (type png)
+
+<use Pictures/notacao12.png>
+Package pdftex.def Info: Pictures/notacao12.png used on input line 393.
+(pdftex.def)             Requested size: 221.32687pt x 37.27115pt.
+
+<Pictures/notacao13.png, id=563, 482.80376pt x 81.30376pt>
+File: Pictures/notacao13.png Graphic file (type png)
+
+<use Pictures/notacao13.png>
+Package pdftex.def Info: Pictures/notacao13.png used on input line 404.
+(pdftex.def)             Requested size: 221.32687pt x 37.27115pt.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 408.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 408.
+ [10 <./Pictures/notacao7.png> <./Pictures/notacao8.png> <./Pictures/notacao9.p
+ng> <./Pictures/notacao10.png> <./Pictures/notacao11.png> <./Pictures/notacao12
+.png>]
+<Pictures/notacao14.png, id=575, 387.4475pt x 342.27875pt>
+File: Pictures/notacao14.png Graphic file (type png)
+
+<use Pictures/notacao14.png>
+Package pdftex.def Info: Pictures/notacao14.png used on input line 412.
+(pdftex.def)             Requested size: 221.32687pt x 195.52394pt.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 418.
+
+<Pictures/notacao15.png, id=578, 443.6575pt x 149.55875pt>
+File: Pictures/notacao15.png Graphic file (type png)
+
+<use Pictures/notacao15.png>
+Package pdftex.def Info: Pictures/notacao15.png used on input line 422.
+(pdftex.def)             Requested size: 309.85626pt x 104.45306pt.
+
+Underfull \vbox (badness 3724) has occurred while \output is active []
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 427.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 427.
+ [11 <./Pictures/notacao13.png> <./Pictures/notacao14.png>]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 429.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 437.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 437.
+ [12 <./Pictures/notacao15.png>]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 438.
+<Pictures/ubuntu.png, id=595, 200.75pt x 200.75pt>
 File: Pictures/ubuntu.png Graphic file (type png)
  <use Pictures/ubuntu.png>
-Package pdftex.def Info: Pictures/ubuntu.png used on input line 379.
-(pdftex.def)             Requested size: 132.79747pt x 132.80478pt.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 387.
+Package pdftex.def Info: Pictures/ubuntu.png used on input line 445.
+(pdftex.def)             Requested size: 43.8234pt x 43.82205pt.
 
-<Pictures/mysql.png, id=581, 273.02pt x 185.69376pt>
-File: Pictures/mysql.png Graphic file (type png)
- <use Pictures/mysql.png>
-Package pdftex.def Info: Pictures/mysql.png used on input line 391.
-(pdftex.def)             Requested size: 221.32687pt x 150.53578pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 396.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 396.
- [13 <./Pictures/ubuntu.png>]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 408.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 408.
- [14 <./Pictures/mysql.png>]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 444.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 444.
- [15]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 445.
-
-<Pictures/gcc.png, id=606, 2007.5pt x 2368.85pt>
+<Pictures/gcc.png, id=596, 2007.5pt x 2368.85pt>
 File: Pictures/gcc.png Graphic file (type png)
  <use Pictures/gcc.png>
-Package pdftex.def Info: Pictures/gcc.png used on input line 448.
-(pdftex.def)             Requested size: 177.05879pt x 208.9221pt.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 457.
+Package pdftex.def Info: Pictures/gcc.png used on input line 452.
+(pdftex.def)             Requested size: 58.42972pt x 68.92982pt.
 
-<Pictures/apache.png, id=610, 5162.14285pt x 2179.89919pt>
+<Pictures/apache.png, id=597, 5162.14285pt x 2179.89919pt>
 File: Pictures/apache.png Graphic file (type png)
 
 <use Pictures/apache.png>
 Package pdftex.def Info: Pictures/apache.png used on input line 460.
-(pdftex.def)             Requested size: 265.59494pt x 112.12802pt.
+(pdftex.def)             Requested size: 87.6468pt x 36.98795pt.
+ <Pictures/mysql.png, id=598, 273.02pt x 185.69376pt>
+File: Pictures/mysql.png Graphic file (type png)
 
-Underfull \vbox (badness 7047) has occurred while \output is active []
+<use Pictures/mysql.png>
+Package pdftex.def Info: Pictures/mysql.png used on input line 468.
+(pdftex.def)             Requested size: 110.66344pt x 75.26788pt.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 477.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 482.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 482.
+ [13 <./Pictures/ubuntu.png> <./Pictures/gcc.png> <./Pictures/apache.png> <./Pi
+ctures/mysql.png>]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 486.
 
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 465.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 465.
- [16 <./Pictures/gcc.png>]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 468.
- <Pictures/web.jpg, id=621, 1026.83624pt x 995.72pt>
+<Pictures/web.jpg, id=619, 1026.83624pt x 995.72pt>
 File: Pictures/web.jpg Graphic file (type jpg)
+ <use Pictures/web.jpg>
+Package pdftex.def Info: Pictures/web.jpg used on input line 489.
+(pdftex.def)             Requested size: 177.05879pt x 171.68591pt.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 497.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 499.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 499.
 
-<use Pictures/web.jpg>
-Package pdftex.def Info: Pictures/web.jpg used on input line 471.
-(pdftex.def)             Requested size: 221.32687pt x 214.60739pt.
+[14 <./Pictures/web.jpg>]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 478.
+(babel)             in language  on input line 526.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 478.
- [17 <./Pictures/apache.png> <./Pictures/web.jpg>]
+(babel)             in language  on input line 526.
+ [15]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 480.
+(babel)             in language  on input line 548.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 480.
-
-[18]
+(babel)             in language  on input line 548.
+ [16]
 Cap\'{\i }tulo 3.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 481.
+(babel)             in language  on input line 549.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 485.
-File: Pictures/placeholder.jpg Graphic file (type jpg)
-<use Pictures/placeholder.jpg>
-Package pdftex.def Info: Pictures/placeholder.jpg used on input line 489.
-(pdftex.def)             Requested size: 442.65375pt x 244.11093pt.
-File: Pictures/placeholder.jpg Graphic file (type jpg)
- <use Pictures/placeholder.jpg>
-Package pdftex.def Info: Pictures/placeholder.jpg used on input line 497.
-(pdftex.def)             Requested size: 221.32687pt x 122.04955pt.
+(babel)             in language  on input line 553.
+<Pictures/Esquema_Projeto_4.png, id=651, 227.6505pt x 281.6121pt>
+File: Pictures/Esquema_Projeto_4.png Graphic file (type png)
+
+<use Pictures/Esquema_Projeto_4.png>
+Package pdftex.def Info: Pictures/Esquema_Projeto_4.png used on input line 557.
+
+(pdftex.def)             Requested size: 194.76872pt x 240.94414pt.
+
+<Pictures/Esquema_Projeto_5.png, id=653, 241.8636pt x 281.6121pt>
+File: Pictures/Esquema_Projeto_5.png Graphic file (type png)
+
+<use Pictures/Esquema_Projeto_5.png>
+Package pdftex.def Info: Pictures/Esquema_Projeto_5.png used on input line 565.
+
+(pdftex.def)             Requested size: 243.4609pt x 283.47203pt.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 501.
+(babel)             in language  on input line 569.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 501.
- [19
+(babel)             in language  on input line 569.
+ [17
 
 
-]
-File: Pictures/placeholder.jpg Graphic file (type jpg)
+ <./Pictures/Esquema_Projeto_4.png>]
+<Pictures/Esquema_Projeto_6.png, id=660, 341.3553pt x 281.6121pt>
+File: Pictures/Esquema_Projeto_6.png Graphic file (type png)
 
-<use Pictures/placeholder.jpg>
-Package pdftex.def Info: Pictures/placeholder.jpg used on input line 505.
-(pdftex.def)             Requested size: 221.32687pt x 122.04955pt.
+<use Pictures/Esquema_Projeto_6.png>
+Package pdftex.def Info: Pictures/Esquema_Projeto_6.png used on input line 573.
+
+(pdftex.def)             Requested size: 442.65375pt x 365.18903pt.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 511.
+(babel)             in language  on input line 579.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 512.
+(babel)             in language  on input line 580.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 513.
+(babel)             in language  on input line 583.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 513.
+(babel)             in language  on input line 583.
+ [18 <./Pictures/Esquema_Projeto_5.png>]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 583.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 583.
+
+[19 <./Pictures/Esquema_Projeto_6.png>]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 638.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 638.
  [20]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 567.
+(babel)             in language  on input line 703.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 567.
+(babel)             in language  on input line 703.
  [21]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 631.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 631.
- [22]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 651.
-File: Pictures/placeholder.jpg Graphic file (type jpg)
- <use Pictures/placeholder.jpg>
-Package pdftex.def Info: Pictures/placeholder.jpg used on input line 655.
-(pdftex.def)             Requested size: 221.32687pt x 122.04955pt.
+(babel)             in language  on input line 719.
+
+<Pictures/placeholder.jpg, id=688, 351.3125pt x 193.72375pt>
 File: Pictures/placeholder.jpg Graphic file (type jpg)
 
 <use Pictures/placeholder.jpg>
-Package pdftex.def Info: Pictures/placeholder.jpg used on input line 663.
+Package pdftex.def Info: Pictures/placeholder.jpg used on input line 723.
 (pdftex.def)             Requested size: 221.32687pt x 122.04955pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 668.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 668.
- [23]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 669.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 704.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 704.
- [24]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 732.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 732.
-
-[25]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 779.
 File: Pictures/placeholder.jpg Graphic file (type jpg)
  <use Pictures/placeholder.jpg>
-Package pdftex.def Info: Pictures/placeholder.jpg used on input line 783.
+Package pdftex.def Info: Pictures/placeholder.jpg used on input line 731.
+(pdftex.def)             Requested size: 221.32687pt x 122.04955pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 736.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 736.
+ [22 <./Pictures/placeholder.jpg>]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 737.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 772.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 772.
+ [23]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 800.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 800.
+
+[24]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 847.
+File: Pictures/placeholder.jpg Graphic file (type jpg)
+ <use Pictures/placeholder.jpg>
+Package pdftex.def Info: Pictures/placeholder.jpg used on input line 851.
 (pdftex.def)             Requested size: 221.32687pt x 122.04955pt.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 787.
+(babel)             in language  on input line 855.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 787.
- [26]
+(babel)             in language  on input line 855.
+ [25]
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
 LaTeX Font Info:    Font shape `T1/pcr/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/pcr/b/n' tried instead on input line 790.
+(Font)              Font shape `T1/pcr/b/n' tried instead on input line 858.
 
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
@@ -1345,314 +1387,308 @@ File: lstlang1.sty 2015/06/04 1.6 listings language file
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
 )
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 816.
+(babel)             in language  on input line 884.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 816.
- [27]
+(babel)             in language  on input line 884.
+ [26]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 831.
+(babel)             in language  on input line 899.
 File: Pictures/placeholder.jpg Graphic file (type jpg)
 
 <use Pictures/placeholder.jpg>
-Package pdftex.def Info: Pictures/placeholder.jpg used on input line 837.
+Package pdftex.def Info: Pictures/placeholder.jpg used on input line 905.
 (pdftex.def)             Requested size: 221.32687pt x 122.04955pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 842.
+(babel)             in language  on input line 910.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 842.
- [28]
+(babel)             in language  on input line 910.
+ [27]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 878.
+(babel)             in language  on input line 946.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 878.
+(babel)             in language  on input line 946.
 
-[29] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+[28] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 924.
+(babel)             in language  on input line 992.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 924.
+(babel)             in language  on input line 992.
+ [29]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 999.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 1025.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 1032.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 1032.
  [30]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 931.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 957.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 964.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 964.
- [31]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1002.
+(babel)             in language  on input line 1070.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1002.
- [32]
+(babel)             in language  on input line 1070.
+ [31]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1004.
+(babel)             in language  on input line 1072.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1004.
+(babel)             in language  on input line 1072.
 
-[33]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1004.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1004.
- [34
-
-]
+[32]
 Cap\'{\i }tulo 4.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1005.
+(babel)             in language  on input line 1073.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1008.
-<Pictures/Aplicacao_temp_local_central.png, id=842, 193.4427pt x 137.7948pt>
+(babel)             in language  on input line 1077.
+<Pictures/Aplicacao_temp_local_central.png, id=865, 193.4427pt x 137.7948pt>
 File: Pictures/Aplicacao_temp_local_central.png Graphic file (type png)
 
 <use Pictures/Aplicacao_temp_local_central.png>
 Package pdftex.def Info: Pictures/Aplicacao_temp_local_central.png used on inpu
-t line 1013.
+t line 1082.
 (pdftex.def)             Requested size: 287.72223pt x 204.95705pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1018.
+(babel)             in language  on input line 1087.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1018.
- [35
+(babel)             in language  on input line 1087.
+ [33
+
 
 ]
 File: Pictures/placeholder.jpg Graphic file (type jpg)
 
 <use Pictures/placeholder.jpg>
-Package pdftex.def Info: Pictures/placeholder.jpg used on input line 1021.
+Package pdftex.def Info: Pictures/placeholder.jpg used on input line 1090.
 (pdftex.def)             Requested size: 287.72223pt x 158.67122pt.
 File: Pictures/placeholder.jpg Graphic file (type jpg)
  <use Pictures/placeholder.jpg>
-Package pdftex.def Info: Pictures/placeholder.jpg used on input line 1029.
+Package pdftex.def Info: Pictures/placeholder.jpg used on input line 1098.
 (pdftex.def)             Requested size: 287.72223pt x 158.67122pt.
 
 Underfull \vbox (badness 1024) has occurred while \output is active []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1034.
+(babel)             in language  on input line 1103.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1034.
- [36 <./Pictures/Aplicacao_temp_local_central.png>]
+(babel)             in language  on input line 1103.
+ [34 <./Pictures/Aplicacao_temp_local_central.png>]
 File: Pictures/placeholder.jpg Graphic file (type jpg)
  <use Pictures/placeholder.jpg>
-Package pdftex.def Info: Pictures/placeholder.jpg used on input line 1037.
+Package pdftex.def Info: Pictures/placeholder.jpg used on input line 1106.
 (pdftex.def)             Requested size: 287.72223pt x 158.67122pt.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1043.
+(babel)             in language  on input line 1112.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1051.
+(babel)             in language  on input line 1120.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1051.
- [37]
+(babel)             in language  on input line 1120.
+ [35]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1054.
+(babel)             in language  on input line 1123.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1054.
+(babel)             in language  on input line 1123.
 
-[38]
+[36]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1055.
- <Pictures/main01.png, id=863, 1305.87875pt x 746.79pt>
+(babel)             in language  on input line 1124.
+ <Pictures/main01.png, id=887, 1305.87875pt x 746.79pt>
 File: Pictures/main01.png Graphic file (type png)
 
 <use Pictures/main01.png>
-Package pdftex.def Info: Pictures/main01.png used on input line 1060.
+Package pdftex.def Info: Pictures/main01.png used on input line 1129.
 (pdftex.def)             Requested size: 376.25838pt x 215.16196pt.
 
-<Pictures/main02.png, id=864, 1305.87875pt x 746.79pt>
+<Pictures/main02.png, id=888, 1305.87875pt x 746.79pt>
 File: Pictures/main02.png Graphic file (type png)
 
 <use Pictures/main02.png>
-Package pdftex.def Info: Pictures/main02.png used on input line 1067.
+Package pdftex.def Info: Pictures/main02.png used on input line 1136.
 (pdftex.def)             Requested size: 376.25838pt x 215.16196pt.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1078.
+(babel)             in language  on input line 1147.
 
-<Pictures/login01.png, id=867, 1305.87875pt x 746.79pt>
+<Pictures/login01.png, id=891, 1305.87875pt x 746.79pt>
 File: Pictures/login01.png Graphic file (type png)
 
 <use Pictures/login01.png>
-Package pdftex.def Info: Pictures/login01.png used on input line 1081.
+Package pdftex.def Info: Pictures/login01.png used on input line 1150.
 (pdftex.def)             Requested size: 398.38567pt x 227.82188pt.
 
 Underfull \vbox (badness 7667) has occurred while \output is active []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1086.
+(babel)             in language  on input line 1155.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1086.
- [39 <./Pictures/main01.png> <./Pictures/main02.png>]
-<Pictures/login02.png, id=879, 1305.87875pt x 746.79pt>
+(babel)             in language  on input line 1155.
+ [37 <./Pictures/main01.png> <./Pictures/main02.png>]
+<Pictures/login02.png, id=900, 1305.87875pt x 746.79pt>
 File: Pictures/login02.png Graphic file (type png)
 
 <use Pictures/login02.png>
-Package pdftex.def Info: Pictures/login02.png used on input line 1092.
+Package pdftex.def Info: Pictures/login02.png used on input line 1161.
 (pdftex.def)             Requested size: 210.25984pt x 120.2295pt.
 
-<Pictures/login03.png, id=880, 1305.87875pt x 746.79pt>
+<Pictures/login03.png, id=901, 1305.87875pt x 746.79pt>
 File: Pictures/login03.png Graphic file (type png)
 
 <use Pictures/login03.png>
-Package pdftex.def Info: Pictures/login03.png used on input line 1099.
+Package pdftex.def Info: Pictures/login03.png used on input line 1168.
 (pdftex.def)             Requested size: 210.25984pt x 120.2295pt.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1108.
+(babel)             in language  on input line 1177.
 
-<Pictures/consultas01.png, id=881, 1305.87875pt x 746.79pt>
+<Pictures/consultas01.png, id=902, 1305.87875pt x 746.79pt>
 File: Pictures/consultas01.png Graphic file (type png)
 
 <use Pictures/consultas01.png>
-Package pdftex.def Info: Pictures/consultas01.png used on input line 1113.
+Package pdftex.def Info: Pictures/consultas01.png used on input line 1182.
 (pdftex.def)             Requested size: 398.38567pt x 227.82188pt.
 
-<Pictures/consultas02.png, id=882, 1305.87875pt x 746.79pt>
+<Pictures/consultas02.png, id=903, 1305.87875pt x 746.79pt>
 File: Pictures/consultas02.png Graphic file (type png)
 
 <use Pictures/consultas02.png>
-Package pdftex.def Info: Pictures/consultas02.png used on input line 1120.
+Package pdftex.def Info: Pictures/consultas02.png used on input line 1189.
 (pdftex.def)             Requested size: 398.38567pt x 227.82188pt.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1128.
+(babel)             in language  on input line 1197.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1128.
- [40 <./Pictures/login01.png> <./Pictures/login02.png> <./Pictures/login03.png>
+(babel)             in language  on input line 1197.
+ [38 <./Pictures/login01.png> <./Pictures/login02.png> <./Pictures/login03.png>
 ]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1129.
+(babel)             in language  on input line 1198.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1129.
- [41 <./Pictures/consultas01.png> <./Pictures/consultas02.png>]
+(babel)             in language  on input line 1198.
+ [39 <./Pictures/consultas01.png> <./Pictures/consultas02.png>]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1158.
+(babel)             in language  on input line 1227.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1158.
- [42]
-<Pictures/consultas03.png, id=927, 1305.87875pt x 746.79pt>
+(babel)             in language  on input line 1227.
+ [40]
+<Pictures/consultas03.png, id=949, 1305.87875pt x 746.79pt>
 File: Pictures/consultas03.png Graphic file (type png)
 
 <use Pictures/consultas03.png>
-Package pdftex.def Info: Pictures/consultas03.png used on input line 1163.
+Package pdftex.def Info: Pictures/consultas03.png used on input line 1232.
 (pdftex.def)             Requested size: 309.85626pt x 177.19353pt.
 
-<Pictures/consultas04.png, id=928, 1305.87875pt x 746.79pt>
+<Pictures/consultas04.png, id=950, 1305.87875pt x 746.79pt>
 File: Pictures/consultas04.png Graphic file (type png)
 
 <use Pictures/consultas04.png>
-Package pdftex.def Info: Pictures/consultas04.png used on input line 1170.
+Package pdftex.def Info: Pictures/consultas04.png used on input line 1239.
 (pdftex.def)             Requested size: 309.85626pt x 177.19353pt.
 
-<Pictures/consultas05.png, id=929, 1305.87875pt x 746.79pt>
+<Pictures/consultas05.png, id=951, 1305.87875pt x 746.79pt>
 File: Pictures/consultas05.png Graphic file (type png)
 
 <use Pictures/consultas05.png>
-Package pdftex.def Info: Pictures/consultas05.png used on input line 1177.
+Package pdftex.def Info: Pictures/consultas05.png used on input line 1246.
 (pdftex.def)             Requested size: 309.85626pt x 177.19353pt.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1186.
+(babel)             in language  on input line 1255.
 
-<Pictures/administracao01.png, id=930, 1305.87875pt x 746.79pt>
+<Pictures/administracao01.png, id=952, 1305.87875pt x 746.79pt>
 File: Pictures/administracao01.png Graphic file (type png)
 
 <use Pictures/administracao01.png>
-Package pdftex.def Info: Pictures/administracao01.png used on input line 1191.
+Package pdftex.def Info: Pictures/administracao01.png used on input line 1260.
 (pdftex.def)             Requested size: 398.38567pt x 227.82188pt.
 
-<Pictures/administracao03.png, id=931, 1305.87875pt x 746.79pt>
+<Pictures/administracao03.png, id=953, 1305.87875pt x 746.79pt>
 File: Pictures/administracao03.png Graphic file (type png)
 
 <use Pictures/administracao03.png>
-Package pdftex.def Info: Pictures/administracao03.png used on input line 1198.
+Package pdftex.def Info: Pictures/administracao03.png used on input line 1267.
 (pdftex.def)             Requested size: 398.38567pt x 227.82188pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1206.
+(babel)             in language  on input line 1275.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1206.
- [43 <./Pictures/consultas03.png> <./Pictures/consultas04.png> <./Pictures/cons
+(babel)             in language  on input line 1275.
+ [41 <./Pictures/consultas03.png> <./Pictures/consultas04.png> <./Pictures/cons
 ultas05.png>]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1209.
+(babel)             in language  on input line 1278.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1209.
- [44 <./Pictures/administracao01.png> <./Pictures/administracao03.png>]
+(babel)             in language  on input line 1278.
+ [42 <./Pictures/administracao01.png> <./Pictures/administracao03.png>]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1215.
+(babel)             in language  on input line 1284.
 
-<Pictures/administracao02.png, id=948, 1305.87875pt x 746.79pt>
+<Pictures/administracao02.png, id=969, 1305.87875pt x 746.79pt>
 File: Pictures/administracao02.png Graphic file (type png)
 
 <use Pictures/administracao02.png>
-Package pdftex.def Info: Pictures/administracao02.png used on input line 1229.
+Package pdftex.def Info: Pictures/administracao02.png used on input line 1298.
 (pdftex.def)             Requested size: 398.38567pt x 227.82188pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1216--1233
+Underfull \hbox (badness 10000) in paragraph at lines 1285--1302
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1216--1233
+Underfull \hbox (badness 10000) in paragraph at lines 1285--1302
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1216--1233
+Underfull \hbox (badness 10000) in paragraph at lines 1285--1302
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1216--1233
+Underfull \hbox (badness 10000) in paragraph at lines 1285--1302
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1216--1233
+Underfull \hbox (badness 10000) in paragraph at lines 1285--1302
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1216--1233
+Underfull \hbox (badness 10000) in paragraph at lines 1285--1302
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1216--1233
+Underfull \hbox (badness 10000) in paragraph at lines 1285--1302
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1216--1233
+Underfull \hbox (badness 10000) in paragraph at lines 1285--1302
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1216--1233
+Underfull \hbox (badness 10000) in paragraph at lines 1285--1302
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1216--1233
+Underfull \hbox (badness 10000) in paragraph at lines 1285--1302
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1216--1233
+Underfull \hbox (badness 10000) in paragraph at lines 1285--1302
 
  []
 
@@ -1660,176 +1696,193 @@ Underfull \hbox (badness 10000) in paragraph at lines 1216--1233
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1234.
+(babel)             in language  on input line 1303.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1234.
- [45]
+(babel)             in language  on input line 1303.
+ [43]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1234.
+(babel)             in language  on input line 1303.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1234.
+(babel)             in language  on input line 1303.
 
-[46 <./Pictures/administracao02.png>]
-<Pictures/administracao05.png, id=967, 1305.87875pt x 746.79pt>
+[44 <./Pictures/administracao02.png>]
+<Pictures/administracao05.png, id=988, 1305.87875pt x 746.79pt>
 File: Pictures/administracao05.png Graphic file (type png)
 
 <use Pictures/administracao05.png>
-Package pdftex.def Info: Pictures/administracao05.png used on input line 1238.
+Package pdftex.def Info: Pictures/administracao05.png used on input line 1307.
 (pdftex.def)             Requested size: 354.12434pt x 202.50201pt.
 
-<Pictures/administracao06.png, id=968, 1305.87875pt x 746.79pt>
+<Pictures/administracao06.png, id=989, 1305.87875pt x 746.79pt>
 File: Pictures/administracao06.png Graphic file (type png)
 
 <use Pictures/administracao06.png>
-Package pdftex.def Info: Pictures/administracao06.png used on input line 1244.
+Package pdftex.def Info: Pictures/administracao06.png used on input line 1313.
 (pdftex.def)             Requested size: 354.12434pt x 202.50201pt.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1248.
+(babel)             in language  on input line 1317.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1248.
- [47 <./Pictures/administracao05.png> <./Pictures/administracao06.png>]
-<Pictures/administracao07.png, id=977, 1305.87875pt x 746.79pt>
+(babel)             in language  on input line 1317.
+ [45 <./Pictures/administracao05.png> <./Pictures/administracao06.png>]
+<Pictures/administracao07.png, id=999, 1305.87875pt x 746.79pt>
 File: Pictures/administracao07.png Graphic file (type png)
 
 <use Pictures/administracao07.png>
-Package pdftex.def Info: Pictures/administracao07.png used on input line 1254.
+Package pdftex.def Info: Pictures/administracao07.png used on input line 1323.
 (pdftex.def)             Requested size: 199.19283pt x 113.90524pt.
 
-<Pictures/administracao08.png, id=978, 1305.87875pt x 746.79pt>
+<Pictures/administracao08.png, id=1000, 1305.87875pt x 746.79pt>
 File: Pictures/administracao08.png Graphic file (type png)
 
 <use Pictures/administracao08.png>
-Package pdftex.def Info: Pictures/administracao08.png used on input line 1261.
+Package pdftex.def Info: Pictures/administracao08.png used on input line 1330.
 (pdftex.def)             Requested size: 199.19283pt x 113.90524pt.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1296.
+(babel)             in language  on input line 1365.
 
-<Pictures/local01.png, id=979, 1305.87875pt x 746.79pt>
+<Pictures/local01.png, id=1001, 1305.87875pt x 746.79pt>
 File: Pictures/local01.png Graphic file (type png)
 
 <use Pictures/local01.png>
-Package pdftex.def Info: Pictures/local01.png used on input line 1300.
+Package pdftex.def Info: Pictures/local01.png used on input line 1369.
 (pdftex.def)             Requested size: 398.38567pt x 227.82188pt.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1304.
+(babel)             in language  on input line 1373.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1304.
- [48 <./Pictures/administracao07.png> <./Pictures/administracao08.png>]
+(babel)             in language  on input line 1373.
+ [46 <./Pictures/administracao07.png> <./Pictures/administracao08.png>]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1310.
+(babel)             in language  on input line 1379.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1310.
- [49 <./Pictures/local01.png>]
-<Pictures/main03.png, id=1018, 1305.87875pt x 746.79pt>
+(babel)             in language  on input line 1379.
+ [47 <./Pictures/local01.png>]
+<Pictures/main03.png, id=1040, 1305.87875pt x 746.79pt>
 File: Pictures/main03.png Graphic file (type png)
 
 <use Pictures/main03.png>
-Package pdftex.def Info: Pictures/main03.png used on input line 1313.
+Package pdftex.def Info: Pictures/main03.png used on input line 1382.
 (pdftex.def)             Requested size: 398.38567pt x 227.82188pt.
 
-<Pictures/local02.png, id=1019, 1305.87875pt x 746.79pt>
+<Pictures/local02.png, id=1041, 1305.87875pt x 746.79pt>
 File: Pictures/local02.png Graphic file (type png)
 
 <use Pictures/local02.png>
-Package pdftex.def Info: Pictures/local02.png used on input line 1320.
+Package pdftex.def Info: Pictures/local02.png used on input line 1389.
 (pdftex.def)             Requested size: 398.38567pt x 227.82188pt.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1325.
+(babel)             in language  on input line 1394.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1325.
- [50 <./Pictures/main03.png> <./Pictures/local02.png>] <Pictures/local03.png, i
-d=1028, 1305.87875pt x 746.79pt>
+(babel)             in language  on input line 1394.
+ [48 <./Pictures/main03.png> <./Pictures/local02.png>] <Pictures/local03.png, i
+d=1050, 1305.87875pt x 746.79pt>
 File: Pictures/local03.png Graphic file (type png)
 
 <use Pictures/local03.png>
-Package pdftex.def Info: Pictures/local03.png used on input line 1339.
+Package pdftex.def Info: Pictures/local03.png used on input line 1408.
 (pdftex.def)             Requested size: 398.38567pt x 227.82188pt.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1344.
+(babel)             in language  on input line 1413.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1344.
- [51 <./Pictures/local03.png>]
-<Pictures/local04.png, id=1045, 1305.87875pt x 746.79pt>
+(babel)             in language  on input line 1413.
+ [49 <./Pictures/local03.png>]
+<Pictures/local04.png, id=1066, 1305.87875pt x 746.79pt>
 File: Pictures/local04.png Graphic file (type png)
 
 <use Pictures/local04.png>
-Package pdftex.def Info: Pictures/local04.png used on input line 1348.
+Package pdftex.def Info: Pictures/local04.png used on input line 1417.
 (pdftex.def)             Requested size: 398.38567pt x 227.82188pt.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1356.
+(babel)             in language  on input line 1422.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1356.
- [52 <./Pictures/local04.png>]
+(babel)             in language  on input line 1422.
+ [50 <./Pictures/local04.png>]
 Cap\'{\i }tulo 5.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1357.
+(babel)             in language  on input line 1423.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1360.
+(babel)             in language  on input line 1426.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1361.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1373.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1373.
-[53
+(babel)             in language  on input line 1426.
+[51
 
 
 ]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1400.
+(babel)             in language  on input line 1426.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1400.
+(babel)             in language  on input line 1426.
+ [52
+
+]
+Cap\'{\i }tulo 6.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 1427.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 1431.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 1432.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 1444.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 1444.
+[53
+
+]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 1471.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 1471.
  [54]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1401.
- <Pictures/futuro01.png, id=1080, 1305.87875pt x 746.79pt>
+(babel)             in language  on input line 1472.
+ <Pictures/futuro01.png, id=1110, 1305.87875pt x 746.79pt>
 File: Pictures/futuro01.png Graphic file (type png)
 
 <use Pictures/futuro01.png>
-Package pdftex.def Info: Pictures/futuro01.png used on input line 1406.
+Package pdftex.def Info: Pictures/futuro01.png used on input line 1477.
 (pdftex.def)             Requested size: 398.38567pt x 227.82188pt.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1414.
+(babel)             in language  on input line 1485.
 File: Pictures/placeholder.jpg Graphic file (type jpg)
  <use Pictures/placeholder.jpg>
-Package pdftex.def Info: Pictures/placeholder.jpg used on input line 1418.
+Package pdftex.def Info: Pictures/placeholder.jpg used on input line 1489.
 (pdftex.def)             Requested size: 398.38567pt x 219.69748pt.
 
 Underfull \vbox (badness 2103) has occurred while \output is active []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1422.
+(babel)             in language  on input line 1493.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1422.
- [55 <./Pictures/futuro01.png>] <Pictures/futuro02.png, id=1088, 1305.87875pt x
+(babel)             in language  on input line 1493.
+ [55 <./Pictures/futuro01.png>] <Pictures/futuro02.png, id=1118, 1305.87875pt x
  746.79pt>
 File: Pictures/futuro02.png Graphic file (type png)
 
 <use Pictures/futuro02.png>
-Package pdftex.def Info: Pictures/futuro02.png used on input line 1427.
+Package pdftex.def Info: Pictures/futuro02.png used on input line 1498.
 (pdftex.def)             Requested size: 398.38567pt x 227.82188pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1432.
+(babel)             in language  on input line 1503.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1432.
+(babel)             in language  on input line 1503.
  [56]
 File: Pictures/placeholder.jpg Graphic file (type jpg)
 
 <use Pictures/placeholder.jpg>
-Package pdftex.def Info: Pictures/placeholder.jpg used on input line 1435.
+Package pdftex.def Info: Pictures/placeholder.jpg used on input line 1506.
 (pdftex.def)             Requested size: 398.38567pt x 219.69748pt.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1441.
+(babel)             in language  on input line 1512.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1441.
+(babel)             in language  on input line 1512.
  [57 <./Pictures/futuro02.png>]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1445.
+(babel)             in language  on input line 1516.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1445.
+(babel)             in language  on input line 1516.
  [58]
 (./example.bbl
 Package babel Info: Redefining portuges shorthand "|
@@ -1891,34 +1944,34 @@ is-po-ní-vel na In-ter-net:
 
 )
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1475.
+(babel)             in language  on input line 1546.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1475.
+(babel)             in language  on input line 1546.
  [60]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1477.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1477.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1548.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1548.
  (./example.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1477.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1477.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1548.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1548.
 
 Package rerunfilecheck Info: File `example.out' has not changed.
-(rerunfilecheck)             Checksum: 10820B12B5379F9C47182FD530A78DC6;2915.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1477.
+(rerunfilecheck)             Checksum: D98E2FF85AAFE1DBA0035AC61EBF61F8;2901.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1548.
  ) 
 Here is how much of TeX's memory you used:
- 12278 strings out of 494929
- 176981 string characters out of 6180142
- 291277 words of memory out of 5000000
- 14909 multiletter control sequences out of 15000+600000
+ 12350 strings out of 494929
+ 178593 string characters out of 6180142
+ 292365 words of memory out of 5000000
+ 14974 multiletter control sequences out of 15000+600000
  27719 words of font info for 60 fonts, out of 8000000 for 9000
  16 hyphenation exceptions out of 8191
  42i,16n,51p,1444b,1835s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/sapofree/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1000.600pk> </hom
-e/sapofree/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk> </home/sapofr
-ee/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbi1095.600pk>{/usr/share/texlive/te
-xmf-dist/fonts/enc/dvips/base/8r.enc} </home/sapofree/.texmf-var/fonts/pk/ljfou
-r/jknappen/ec/ecbi1200.600pk> </home/sapofree/.texmf-var/fonts/pk/ljfour/jknapp
-en/ec/ecbi1440.600pk> </home/sapofree/.texmf-var/fonts/pk/ljfour/jknappen/ec/ec
+ </home/sapofree/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbi1095.600pk>{/usr/
+share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc} </home/sapofree/.texmf-va
+r/fonts/pk/ljfour/jknappen/ec/ecbi1200.600pk> </home/sapofree/.texmf-var/fonts/
+pk/ljfour/jknappen/ec/ecti1000.600pk> </home/sapofree/.texmf-var/fonts/pk/ljfou
+r/jknappen/ec/ecbi1440.600pk> </home/sapofree/.texmf-var/fonts/pk/ljfour/jknapp
+en/ec/ecrm1000.600pk> </home/sapofree/.texmf-var/fonts/pk/ljfour/jknappen/ec/ec
 bx1200.600pk> </home/sapofree/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.6
 00pk> </home/sapofree/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2074.600pk> </
 home/sapofree/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1095.600pk> </home/sap
@@ -1935,10 +1988,10 @@ e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/share/texlive/texmf-dist/fonts
 /type1/urw/courier/ucrr8a.pfb>
-Output written on example.pdf (76 pages, 2679991 bytes).
+Output written on example.pdf (76 pages, 3427721 bytes).
 PDF statistics:
- 1902 PDF objects out of 2073 (max. 8388607)
- 1106 compressed objects within 12 object streams
- 399 named destinations out of 1000 (max. 500000)
- 570 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1943 PDF objects out of 2073 (max. 8388607)
+ 1103 compressed objects within 12 object streams
+ 396 named destinations out of 1000 (max. 500000)
+ 612 words of extra memory for PDF output out of 10000 (max. 10000000)
 
