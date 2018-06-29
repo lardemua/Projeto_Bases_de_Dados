@@ -20,7 +20,7 @@
 \BOOKMARK [2][-]{subsection.3.2.1}{An\341lise de requisitos}{section.3.2}% 20
 \BOOKMARK [2][-]{subsection.3.2.2}{Desenho conceptual e esquema l\363gico}{section.3.2}% 21
 \BOOKMARK [2][-]{subsection.3.2.3}{Constru\347\343o da base de dados}{section.3.2}% 22
-\BOOKMARK [2][-]{subsection.3.2.4}{Base de dados notifica\347\365es}{section.3.2}% 23
+\BOOKMARK [2][-]{subsection.3.2.4}{Base de dados regula\347\343o de procedimentos}{section.3.2}% 23
 \BOOKMARK [1][-]{section.3.3}{Programa de transfer\352ncia}{chapter.3}% 24
 \BOOKMARK [1][-]{section.3.4}{Gest\343o de backups}{chapter.3}% 25
 \BOOKMARK [1][-]{section.3.5}{Simulador}{chapter.3}% 26
@@ -32,12 +32,14 @@
 \BOOKMARK [2][-]{subsection.4.2.2}{Login}{section.4.2}% 32
 \BOOKMARK [2][-]{subsection.4.2.3}{Consultas}{section.4.2}% 33
 \BOOKMARK [2][-]{subsection.4.2.4}{Administra\347\343o Local}{section.4.2}% 34
-\BOOKMARK [3][-]{section*.39}{Administra\347\343o}{subsection.4.2.4}% 35
-\BOOKMARK [3][-]{section*.44}{Conectar Local}{subsection.4.2.4}% 36
+\BOOKMARK [3][-]{section*.41}{Administra\347\343o}{subsection.4.2.4}% 35
+\BOOKMARK [3][-]{section*.46}{Conectar Local}{subsection.4.2.4}% 36
 \BOOKMARK [0][-]{chapter.5}{Testes de Usabilidade}{}% 37
 \BOOKMARK [0][-]{chapter.6}{Conclus\365es}{}% 38
 \BOOKMARK [1][-]{section.6.1}{Coment\341rios}{chapter.6}% 39
 \BOOKMARK [2][-]{subsection.6.1.1}{Infraestrutura de dados}{section.6.1}% 40
-\BOOKMARK [2][-]{subsection.6.1.2}{Aplica\347\343o de gest\343o do sistema}{section.6.1}% 41
-\BOOKMARK [1][-]{section.6.2}{Trabalhos Futuros}{chapter.6}% 42
-\BOOKMARK [0][-]{section.6.3}{Bibliografia}{}% 43
+\BOOKMARK [3][-]{section*.52}{Programa de transfer\352ncia}{subsection.6.1.1}% 41
+\BOOKMARK [3][-]{section*.54}{Gest\343o de Backups}{subsection.6.1.1}% 42
+\BOOKMARK [2][-]{subsection.6.1.2}{Aplica\347\343o de gest\343o do sistema}{section.6.1}% 43
+\BOOKMARK [1][-]{section.6.2}{Trabalhos Futuros}{chapter.6}% 44
+\BOOKMARK [0][-]{section.6.3}{Bibliografia}{}% 45

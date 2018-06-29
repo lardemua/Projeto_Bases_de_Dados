@@ -850,16 +850,16 @@ Revendo as restrições de integridade criadas pelas chaves estrangeiras, como n
 	\item Sensores
 	\item Registos
 \end{enumerate}
-Este modelo de dados aplica-se a todas as bases de dados usadas neste projeto com a exceção da base de dados notificações abordada na \autoref{subchap:notificacoes} e temporária local abordada na \autoref{subchap:adap}.
+Este modelo de dados aplica-se a todas as bases de dados usadas neste projeto com a exceção da base de dados regulação de procedimentos abordada na \autoref{subchap:notificacoes} e temporária local abordada na \autoref{subchap:adap}.
 
-\subsection{Base de dados notificações}
+\subsection{Base de dados regulação de procedimentos}
 \label{subchap:notificacoes}
-Com a introdução da aplicação de gestão do sistema surge a necessidade desta comunicar com os programas de transferência e gestão de \textit{backups}. Para este efeito cria-se a base de dados notificações, com a qual a aplicação comunica de forma a ditar o modo de funcionamento dos programas, como representado na \autoref{fig:infra4}.
+Com a introdução da aplicação de gestão do sistema surge a necessidade desta comunicar com os programas de transferência e gestão de \textit{backups}. Para este efeito cria-se a base de dados regulação de procedimentos, com a qual a aplicação comunica de forma a ditar o modo de funcionamento dos programas, como representado na \autoref{fig:infra4}.
 \begin{figure}[H]
 	\centering
 	\begin{center}
 		\includegraphics[width=0.5\textwidth]{Aplicacao_notificacoes} % Include the image placeholder.png
-		\caption[Diagrama da comunicação com a base de dados notificações]{Diagrama da comunicação com a base de dados notificações, onde os programas de transferência e gestão de \textit{backups} verificam parâmetros introduzidos pela aplicação}
+		\caption[Diagrama da comunicação com a base de dados regulação de procedimentos]{Diagrama da comunicação com a base de dados regulação de procedimentos, onde os programas de transferência e gestão de \textit{backups} verificam parâmetros introduzidos pela aplicação}
 		\label{fig:infra4}
 	\end{center}
 \end{figure}
@@ -877,7 +877,7 @@ Esta base de dados contém variáveis globais importantes para a comunicação e
 		int &\multicolumn{1}{l}{}\\ \cline{1-1}
 		 &\multicolumn{1}{l}{}\\ \cline{1-1}
 	\end{tabular}
-	\caption[Tabelas da base de dados notificações com os seus atributos e respetivos domínios e obrigatoriedades]{Tabela base de dados notificações com os seus atributos e respetivos domínios e obrigatoriedades}
+	\caption[Tabelas da base de dados regulação de procedimentos com os seus atributos e respetivos domínios e obrigatoriedades]{Tabela base de dados regulação de procedimentos com os seus atributos e respetivos domínios e obrigatoriedades}
 	\label{tab:notificacoes}
 \end{table}
 A tabela Atualizar só deve ter um tuplo e os valores dos atributos \texttt{a\char`_transferencia} e \texttt{a\char`_backups} só devem ser 0 ou 1. Assim sendo definem-se as restrições:
@@ -906,7 +906,7 @@ Este programa prioriza a conservação dos dados e a sua taxa de transferência.
 \begin{figure}
 	\vspace{-3cm}
 	\begin{center}
-		\includegraphics[width=.75\textwidth]{fluxograma_transferencia_programa3} % Include the image placeholder.png
+		\includegraphics[width=.75\textwidth]{fluxograma_transferencia_programa4} % Include the image placeholder.png
 		%\vspace{9cm}
 		\caption{Fluxograma do programa principal que cria os subprogramas}
 		\label{fig:transferencia_programa}
@@ -914,7 +914,7 @@ Este programa prioriza a conservação dos dados e a sua taxa de transferência.
 \end{figure}
 \begin{figure}
 	\begin{center}
-		\includegraphics[width=0.85\textwidth]{fluxograma_transferencia_subprograma3} % Include the image placeholder.png
+		\includegraphics[width=0.85\textwidth]{fluxograma_transferencia_subprograma4} % Include the image placeholder.png
 		\caption{Fluxograma dos subprogramas criados para transferirem registos de cada cliente para a base de dados central}
 		\label{fig:transferencia_subprograma}
 	\end{center}
@@ -960,25 +960,49 @@ Inserir múltiplos tuplos permite uma maior taxa de transferência comparativame
 	DELETE FROM registos
 	WHERE r_data_hora < @datahora_lim;
 \end{lstlisting}
-Sempre que se desejar um subprograma para um cliente novo, o programa de transferência deve ser reiniciado. Isto pode ser realizado manualmente ou atualizando o valor de \texttt{a\char`_transferencia} para 1. Com base num temporizador o programa principal e os subprogramas realizam a \textit{query} à base de dados notificações:
+Sempre que se desejar um subprograma para um cliente novo, o programa de transferência deve ser reiniciado. Isto pode ser realizado manualmente ou atualizando o valor de \texttt{a\char`_transferencia} para 1. Com base num temporizador o programa principal e os subprogramas realizam a \textit{query} à base de dados regulação de procedimentos:
 \begin{lstlisting}[language = SQL]
 	SELECT a_transferencia
 	FROM atualizar;
 \end{lstlisting}
-Se \texttt{a\char`_transferencia} for igual a 1 os subprogramas terminam após completarem os seus ciclos e o programa principal recomeça do principio como demonstrado nas Figuras \ref{fig:transferencia_programa} e \ref{fig:transferencia_subprograma}.
+Se \texttt{@a\char`_transferencia} for igual a 1 os subprogramas terminam após completarem os seus ciclos e o programa principal recomeça do principio como demonstrado nas Figuras \ref{fig:transferencia_programa} e \ref{fig:transferencia_subprograma}.
 
 \section{Gestão de \textit{backups}}
 \label{subchap:backups}
-À semelhança do programa anterior, o programa de gestão de \textit{backups} foi realizado com vista à portabilidade para outras linguagens de programação. De forma a organizar a informação armazenada, em vez de se gerar um \textit{backup} de toda a base de dados, gera-se um \textit{backup} específico para cada molde, que inclui a informação dos seus sensores, registos e cliente a que está associado. Além destes, realiza-se um outro \textit{backup} com a informação dos clientes, moldes e sensores mais atual. Assim, em caso de falha crítica, simplifica-se a recuperação do sistema.\par 
-Ao contrário do programa anterior, este programa não executa de forma contínua. Define-se um temporizador para executar o código principal. A \autoref{fig:backups1} representa a estrutura do programa sempre que o temporizador chega ao fim.
-\begin{figure}[H]
+À semelhança do programa anterior, o programa de gestão de \textit{backups} foi realizado com vista à portabilidade para outras linguagens de programação. Este programa está dividido nas componentes de gerar e concatenar de \textit{backups}.\par 
+A primeira serve para manter a informação armazenada organizada. Gera \textit{backups} segmentados dos históricos de registos da base de dados central e depois elimina a informação já salvaguardada. Isto aumenta a velocidade de consulta de registos mais recentes e previne que a base de dados central exceda o limite de 4Gb impostos pela versão gratuita do \textit{MySQL}, como referido na \autoref{subchap:mysql}. Em vez de se gerar um \textit{backup} de toda a base de dados, gera-se um \textit{backup} específico para cada molde, que inclui a informação dos seus sensores, registos e cliente a que está associado. Além destes, realiza-se um outro \textit{backup} com a informação dos clientes, moldes e sensores mais atual. Assim, em caso de falha crítica, simplifica-se a recuperação do sistema. A segunda serve para concatenar os \textit{backups} segmentados, produzidos durante o tempo de funcionamento de um molde, num \textit{backup} total do histórico de registos do molde. Quando um molde sai de produção pode ser interessante arquivar o seu histórico e esta ação pode ser facilitada se, em vez de serem arquivados dezenas ou centenas de \textit{backups}, for apenas arquivado um \textit{backup} geral com todo o histórico do molde.\par 
+Ao contrário do programa anterior, este programa não executa de forma contínua. Define-se um temporizador para executar cada componente. Utilizam-se temporizadores diferentes um maior e outro mais pequeno. O temporizador maior porque a primeira componente executa automaticamente e, dependendo do que for definido, em intervalos espaçados. Por exemplo: uma vez por dia ou por semana ou por mês dependendo da quantidade de informação produzida. O temporizador menor porque a segunda componente executa quando o utilizador deseja e deve garantir uma resposta do programa com o menor de latência possível.
+As Figuras \ref{fig:backups_programa}, \ref{fig:backups_gerar} e \ref{fig:backups_concatenar} representam a estrutura do programa.\par 
+\begin{figure}
 	\begin{center}
-		\includegraphics[width=0.5\textwidth]{placeholder} % Include the image placeholder.png
-		\caption{fluxograma}
-		\label{fig:backups1}
+		\includegraphics[width=0.7\textwidth]{fluxograma_backups_programa01} % Include the image placeholder.png
+		\caption{Fluxograma do programa principal com os temporizadores para gerar ou concatenar \textit{backups}}
+		\label{fig:backups_programa}
 	\end{center}
 \end{figure}
-Seguindo a estrutura do programa, realizam-se as conexões às bases de dados central, \textit{backups} e \textit{backups} temporária. Com a \textit{query}:
+\begin{figure}
+	\begin{center}
+		\includegraphics[width=1\textwidth]{fluxograma_backups_gerar01} % Include the image placeholder.png
+		\caption[Fluxograma da componente de gerar \textit{backups}]{Fluxograma da componente de gerar \textit{backups}. Quando esta chega ao fim retorna ao ciclo do programa principal representado na \autoref{fig:backups_programa}}
+		\label{fig:backups_gerar}
+	\end{center}
+\end{figure}
+\begin{figure}
+	\begin{center}
+		\includegraphics[width=1\textwidth]{fluxograma_backups_concatenar01} % Include the image placeholder.png
+		\caption[Fluxograma da componente de concatenar \textit{backups}]{Fluxograma da componente de concatenar \textit{backups}. Quando esta chega ao fim retorna ao ciclo do programa principal representado na \autoref{fig:backups_programa}}
+		\label{fig:backups_concatenar}
+	\end{center}
+\end{figure}
+\newpage
+Seguindo a estrutura da componente de geração de \textit{backups} representado na \autoref{fig:backups_gerar}, realizam-se as conexões às bases de dados central, \textit{backups} e \textit{backups} temporária.  Realiza-se uma limpeza da base de dados \textit{backups} e \textit{backups} temporária para certificar que não existem valores que possam comprometer a informação dos \textit{backups}:
+\begin{lstlisting}[language = SQL]
+	DELETE FROM backups.moldes;
+	DELETE FROM backups.clientes;
+	DELETE FROM backups_temp.moldes;
+	DELETE FROM backups_temp.clientes;
+\end{lstlisting}
+Com a \textit{query}:
 \begin{lstlisting}[language = SQL]
 	SELECT CURRENT TIMESTAMP;
 \end{lstlisting}
@@ -1061,11 +1085,65 @@ Definiu-se um nome estático para este \textit{backup}. Este será rescrito cada
 \end{lstlisting}
 Os \textit{backups} são então transferidos para o repositório \textit{online} no \textit{GitHub}. Esta solução serve apenas para demonstrar a capacidade de mover os \textit{backups} para um sistema diferente. Do ponto de vista prático, não se recomenda guardar informação potencialmente sensível num servidor público.\par 
 Na eventualidade de surgir uma falha crítica no sistema central, e este necessitar de ser formatado ou substituído, os registos cessarão de ser transferidos dos sistemas locais. Isto não significa que a informação esteja comprometida, apenas não está a ser transferida. Após re-instalar utiliza-se manualmente no terminal o comando:
-	\begin{lstlisting}[language = bash]
+\begin{lstlisting}[language = bash]
 	mysql -u backupmanager -pbackup1234 central <
 	~/Backups/backup_geral.sql
 \end{lstlisting}
-Isto faz com que se recupere a informação dos clientes, moldes e sensores presentes no último \textit{backup} de forma a acelerar o processo de restauro comparativamente a uma inserção manual dos dados.
+Isto faz com que se recupere a informação dos clientes, moldes e sensores presentes no último \textit{backup} de forma a acelerar o processo de restauro comparativamente a uma inserção manual dos dados.\par 
+Passando para a componente de concatenação de \textit{backups}, os ficheiros criados com o comando \texttt{mysqldump} contêm toda a informação das tabelas e funcionam como ponto de restauro. Isto significa que quando se usa o comando de recuperação, a base de dados selecionada é substituída pela que está no ficheiro \texttt{.sql}. Este comportamento dificulta a concatenação de vários \textit{backups} numa única base de dados assim sendo, à semelhança da primeira componente, utiliza-se a base de dados \textit{backups} temporária como base de dados intermédia para a concatenação de \textit{backups}.\par 
+Seguindo a estrutura do programa representada na \autoref{fig:backups_concatenar}, realizam-se as conexões às bases de dados central, \textit{backups}, \textit{backups} temporária e regulação de procedimentos. Com a \textit{query}:
+\begin{lstlisting}[language = SQL]
+	SELECT a_backups
+	FROM regulacao_procedimentos.atualizar;
+\end{lstlisting}
+Retira-se o parâmetro \texttt{@a\char`_backups}, se este for igual a 1 o programa tem de concatenar \textit{backups}. Identificam-se os moldes a ser arquivados:
+\begin{lstlisting}[language = SQL]
+	SELECT b_IDMolde
+	FROM regulacao_procedimentos.backups;
+\end{lstlisting}
+As respostas são guardadas numa variável \texttt{@IDMolde}. Realiza-se uma limpeza da base de dados \textit{backups} para certificar que não existem valores que possam comprometer a informação dos \textit{backups}:
+\begin{lstlisting}[language = SQL]
+	DELETE FROM backups.moldes;
+	DELETE FROM backups.clientes;
+\end{lstlisting}
+Identificam-se os \textit{backups} referentes ao molde e, de forma cíclica, carregam-se os ficheiros na base de dados \textit{backups} temporária:
+\begin{lstlisting}[language = bash]
+	mysql -u backupmanager -pbackup1234 backups_temp <
+	~/Backups/backup_IDCliente_@IDMolde_dataIni_dataFim.sql
+\end{lstlisting}
+E copia-se a informação para a base de dados \textit{backups}:
+\begin{lstlisting}[language = SQL]
+	INSERT IGNORE backups.clientes
+	SELECT *
+	FROM backups_temp.clientes;
+	INSERT IGNORE backups.moldes
+	SELECT *
+	FROM backups_temp.moldes;
+	INSERT IGNORE backups.sensores
+	SELECT *
+	FROM backups_temp.sensores;
+	INSERT IGNORE backups.registos
+	SELECT *
+	FROM backups_temp.registos;
+\end{lstlisting}
+Após os valores carregados e copiados para a base de dados \textit{backups} retiram-se informações sobre o cliente, a data e hora mais antiga e mais recente:
+\begin{lstlisting}[language = SQL]
+	SELECT r_data_hora
+	FROM backups.registos
+	ORDER BY r_data_hora
+	LIMIT 1;
+	SELECT r_data_hora
+	FROM backups.registos
+	ORDER BY r_data_hora DESC
+	LIMIT 1;
+\end{lstlisting}
+Estes valores são guardados nas variáveis \texttt{@IDCliente}, \texttt{@dataIni} e \texttt{@dataFim}. Gera-se então o \textit{backup} total do histórico completo do molde:
+\begin{lstlisting}[language = bash]
+	mysqldump -u backupmanager -pbackup1234 backups >
+	~/Backups/Arquivo/
+	backup_@IDCliente_@IDMolde_@dataIni_@dataFim.sql
+\end{lstlisting}
+Com este \textit{backup} gerado deixa de ser necessário manter os \textit{backups} segmentados e procede-se à eliminação destes. Estes operações executam de forma cíclica até todos os moldes selecionados serem arquivados.
 
 \section{Simulador}
 Para popular as bases de dados locais foi desenvolvido um simples programa que gera valores. Estes seguem o perfil de uma onda sinusoidal com a expressão:
@@ -1134,12 +1212,12 @@ Cada conjunto de credenciais serve um objetivo, a \autoref{tab:utilizadores1} co
 		transferencia & & & & & & \\ \hline
 		sensores & & & & & & \\ \hline
 		backupmanager & & & \textbf{X} & \textbf{X} & \textbf{X} & \\ \hline
-		\multicolumn{7}{l}{\textbf{notificações}} \\ \hline
+		\multicolumn{7}{l}{\textbf{regulação de procedimentos}} \\ \hline
 		\makecell{atualizar} & CREATE & DROP & SELECT & INSERT & DELETE & UPDATE \\ \hline
-		user & & & & & & \textbf{X} \\ \hline
-		transferencia & & & & & & \textbf{X} \\ \hline
+		user & & & \textbf{X} & & & \textbf{X} \\ \hline
+		transferencia & & & \textbf{X} & & & \textbf{X} \\ \hline
 		sensores & & & & & & \\ \hline
-		backupmanager & & & & & & \textbf{X} \\ \hline
+		backupmanager & & & \textbf{X} & & & \textbf{X} \\ \hline
 		backups & CREATE & DROP & SELECT & INSERT & DELETE & UPDATE \\ \hline
 		user & & & \textbf{X} & \textbf{X} & \textbf{X} & \textbf{X} \\ \hline
 		transferencia & & & & & & \\ \hline
@@ -1161,7 +1239,7 @@ A aplicação foi desenvolvida em ambiente  \textit{Web} com o objetivo de ser m
 A infraestrutura desenvolvida no \autoref{chap:solucao} visa uma utilização a baixo a nível. Ainda que funcional, pode haver margem para erros e incoerência dos dados introduzidos manualmente. A aplicação minimiza estas incoerências através da instalação de uma nova base de dados temporária local no servidor local. Aqui os utilizadores têm a liberdade para adicionar, alterar e apagar informação sem consequências no sistema antes desta ser introduzida nas bases de dados central e local como representado na \autoref{fig:adap1}. Como referido anteriormente, esta base de dados difere das restantes, não contendo em si as tabelas fase e registos.
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=0.65\textwidth]{Aplicacao_temp_local_central} % Include the image placeholder.png
+		\includegraphics[width=0.62\textwidth]{Aplicacao_temp_local_central} % Include the image placeholder.png
 		\caption{Esquema ligação Aplicação-Bases de Dados. A aplicação comunica com a base de dados temporária local e depois regista os seus valores nas bases de dados central e local}
 		\label{fig:adap1}
 	\end{center}
@@ -1340,7 +1418,7 @@ Esta área está dividida em duas componentes distintas. A componente de Adminis
 \end{lstlisting}
 
 \subsubsection{Administração}
-Esta componente está dividida em três áreas: Gestão de Clientes, Gestão de Moldes e Gestão de Sensores como demonstrado na \autoref{fig:admin1}. Quando se acede a esta componente redireciona-se o utilizador para a área de Gestão de Clientes. Aqui a informação dos clientes pode ser alterada com o formulário demonstrado na \autoref{fig:admin3}. Os botões Adicionar Cliente, Alterar Cliente e Eliminar Cliente executam \textit{queries} do tipo INSERT, UPDATE e DELETE, respetivamente. Quando toda a informação tiver sido inserida e registos tiverem a ser gerados deve-se reiniciar o programa de transferência de valores. O botão Atualizar conecta à base de dados notificações e altera o parâmetro atualizar da tabela transferência para 1.\\
+Esta componente está dividida em três áreas: Gestão de Clientes, Gestão de Moldes e Gestão de Sensores como demonstrado na \autoref{fig:admin1}. Quando se acede a esta componente redireciona-se o utilizador para a área de Gestão de Clientes. Aqui a informação dos clientes pode ser alterada com o formulário demonstrado na \autoref{fig:admin3}. Os botões Adicionar Cliente, Alterar Cliente e Eliminar Cliente executam \textit{queries} do tipo INSERT, UPDATE e DELETE, respetivamente. Quando toda a informação tiver sido inserida e registos tiverem a ser gerados deve-se reiniciar o programa de transferência de valores. O botão Atualizar conecta à base de dados regulação de procedimentos e altera o parâmetro atualizar da tabela transferência para 1.\\
 \\
 \\
 \\
@@ -1495,25 +1573,33 @@ Como definido nos objetivos esta solução não impõe restrições na instrumen
 	VALUES
 	(molde, sensor, fase, data_hora, milissegundos, valor);
 \end{lstlisting}
-Na realidade esta infraestrutura pode ser utilizada em qualquer contexto de monitorização remota de sensores desde que seja desenvolvido um modelo de dados apropriado.\par 
-Em relação ao programa de transferência de valores, este cumpriu os objetivos definidos, no entanto, o método para reiniciar o programa remotamente pela aplicação pode ser melhorado. Atualmente, o programa verifica com base num temporizador a base de dados notificações, dependendo deste temporizador pode existir alguma latência entre o ato de enviar a notificação e o reiniciar propriamente dito do programa. Seria interessante desenvolver outro método que garanti-se que o programa de transferência reinicia-se sem latência.\par 
+Na realidade esta infraestrutura pode ser utilizada em qualquer contexto de monitorização remota de sensores desde que seja desenvolvido um modelo de dados apropriado.\par
+
+\subsubsection{Programa de transferência}
+Este foi desenvolvido como sendo centralizado em vez de descentralizado, como demonstrado na \autoref{fig:conclusoes0}. Na versão centralizada, o sistema central tem de garantir a transferência de todos os clientes o que pode levar a um maior consumo de processador e consequente perda de desempenho. A versão descentralizada divide este consumo de processador pelos clientes dado que tem de ser os sistemas locais a garantir a transferência. Além disto, esta tem a vantagem do programa de transferência ser mais simples dado que não existe necessidade deste se dividir o programa. Assim sendo, na versão descentralizada, o programa assume o aspeto do subprograma da \autoref{fig:transferencia_subprograma} sem a necessidade de ser atualizado pelo utilizador.
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.9\textwidth]{placeholder} % Include the image placeholder.png
+		\caption{Exemplo da área Criar Local com criação das bases de dados e utilizadores via \textit{root} em vez de gerar \textit{queries} para o utilizador inserir manualmente no \textit{MySQL}}
+		\label{fig:conclusoes0}
+	\end{center}
+\end{figure}
+No entanto, esta versão tem desvantagens, se for necessário alterar o programa de transferência para adicionar novas funcionalidades tem de se aceder aos sistemas locais onde estes estão a ser executados. Esta ação de alterar o programa no cliente pode não ser trivial se, por exemplo, o sistema local do cliente estiver situado num país diferente. Outra vantagem da versão centralizada, esta permite limitar os acessos às bases de dados no sistema central. Como os programas comunicam entre si diretamente não se permite acesso remoto ao sistema central sem ser pela aplicação. Na versão descentralizada o sistema central tem de permitir uma conexão remota a partir do sistema local no cliente, isto pode constituir uma falha de segurança se não forem tomadas medidas para prevenir acessos indevidos ao sistema central.\par 
+O programa cumpre os objetivos definidos, no entanto, o método para reiniciar o programa remotamente pela aplicação pode ser melhorado. Atualmente, o programa verifica com base num temporizador a base de dados regulação de procedimentos, dependendo deste temporizador pode existir alguma latência entre o ato de alterar o parâmetro \texttt{a\char`_transferencia} e o reiniciar propriamente dito do programa. Seria interessante desenvolver outro método que garanti-se que o programa de transferência reinicia-se sem latência.\par 
 Além disto, durante o desenvolvimento do projeto, os simuladores nunca geraram registos com maior taxa do que o que o programa de transferência podia transferir. Se esta taxa for superada, a base local de onde provêm os registos ficará cada vez mais cheia o que pode levar a problemas de desempenho e, o programa, não está preparado para responder a situações destas. Sugere-se para futuros desenvolvimentos adaptar o programa de forma a que este possa aumentar automaticamente a sua taxa de transferência de registos. Duas soluções que podem ajudar a atingir este objetivo:
 \begin{itemize}
 	\item Aumentar a capacidade da \textit{string} que guarda os tuplos retornados
 	\item Aumentar a quantidade de subprogramas para cada cliente
 \end{itemize}
-Em relação ao programa de gestão de \textit{backups}, este cumpriu todos os objetivos definidos, no entanto, existem algumas limitações quanto ao método de realizar o \textit{backup}. Atualmente, o programa cria os ficheiros de \textit{backup} executando diretamente no terminal o comando \texttt{mysqldump} que permite definir a pasta de destino para o ficheiro criado:
+
+\subsubsection{Gestão de \textit{Backups}}
+Este cumpre os objetivos definidos, no entanto, existem algumas limitações quanto ao método de realizar o \textit{backup}. Atualmente, o programa cria os ficheiros de \textit{backup} executando diretamente no terminal o comando \texttt{mysqldump} que permite definir a pasta de destino para o ficheiro criado:
 \begin{lstlisting}[language = bash]
 	mysqldump -u backupmanager -pbackup1234 backups_temp >
 	~/Backups/backup.sql
 \end{lstlisting}
 Este comando também pode ser usado via \textit{query} para o \textit{MySQL}. No entanto, este não tem permissões para criar ficheiros fora da sua pasta principal, o que torna difícil mover os \textit{backups} para o repositório \textit{online}, dado que esta pasta principal está protegida com permissões de administrador. Na verdade é possível permitir o \textit{MySQL} criar ficheiros fora da sua pasta principal, só que isto pode constituir uma falha de segurança dado que é possível enviar comandos para o terminal via \textit{query}.\par 
-Os ficheiros criados via \texttt{mysqldump} contém toda a informação das tabelas e funcionam como ponto de restauro. Isto significa que quando se usa o comando de recuperação a base de dados selecionada é substituída pela que está no ficheiro \texttt{.sql}:
-\begin{lstlisting}[language = bash]
-	mysql -u backupmanager -pbackup1234 central <
-	~/Backups/backup.sql
-\end{lstlisting}
-Este comportamento dificulta a concatenação de vários \textit{backups} numa única base de dados, dado que isto requer a utilização de uma base de dados intermédia. No entanto, foi a solução que permitiu a interação com um repositório \textit{online}.\par 
+Como referido anteriormente os ficheiros criados via \texttt{mysqldump} funcionam como ponto de restauro e requerem o uso de uma base de dados intermédia para proceder à sua concatenação. No entanto, foi a solução que permitiu a interação com um repositório \textit{online}.\par 
 Uma solução explorada inicialmente para criar \textit{backups} consistia em ficheiros \texttt{.csv} que continham apenas registos com uma \textit{query} do estilo:
 \begin{lstlisting}[language = SQL]
 	SELECT *
@@ -1525,7 +1611,8 @@ Uma solução explorada inicialmente para criar \textit{backups} consistia em fi
 	ENCLOSED BY '"'
 	LINES TERMINATED BY '\n'
 \end{lstlisting}
-Esta solução simplifica o processo de criação e concatenação dos \textit{backups} mas tem algumas desvantagens. A desvantagem principal é o facto de não se puder definir o diretório de criação do ficheiro, como foi referido anteriormente. Além disto, para a informação puder ser carregada para uma tabela só se pode fazer \textit{backup} de uma tabela, o que pode levar à perda de informação relativa aos clientes, moldes e sensores se o planeamento dos ficheiros não for bem efetuado. Em futuros desenvolvimentos, se for definido que o diretório de criação dos \textit{backups} não é imperativo, deve-se dar ênfase a esta solução dado que este processo é mais simples e consequentemente mais rápido do que a solução usada neste projeto.
+Esta solução simplifica o processo de criação e concatenação dos \textit{backups} dado que esta não necessita de uma base de dados intermédia mas, tem algumas desvantagens. A desvantagem principal, como foi referido anteriormente, não se pode definir o diretório de criação do ficheiro fora da pasta principal do \textit{MySQL}. Além disto, para a informação puder ser carregada para a tabela registos só se pode fazer \textit{backup} desta tabela, o que pode levar à perda de informação relativa aos clientes, moldes e sensores se o planeamento dos ficheiros não for bem efetuado.\par 
+Em futuros desenvolvimentos, se for definido que o diretório de criação dos \textit{backups} não é imperativo, deve-se dar ênfase a esta solução dado que este processo é mais simples e consequentemente mais rápido do que a solução usada neste projeto.
 
 \subsection{Aplicação de gestão do sistema}
 A aplicação cumpre os objetivos propostos de ser multiplataforma e garantir um acesso remoto à base de dados central, bem como gerir as informações dos clientes, moldes e sensores. Durante o desenvolvimento do projeto e testes de usabilidade verificou-se alguma falta de desempenho por parte da aplicação. Após alguns testes chegou-se à conclusão que esta falta de desempenho se devia ao \textit{hardware} utilizado e que um melhor computador e \textit{router} resolviam este problema.\par 
