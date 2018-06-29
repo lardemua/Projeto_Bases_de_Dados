@@ -17,41 +17,40 @@
 \contentsline {figure}{\numberline {2.10}{\ignorespaces Nota\IeC {\c c}\IeC {\~a}o da cardinalidade de Chen\relax }}{10}{figure.caption.14}
 \contentsline {figure}{\numberline {2.11}{\ignorespaces Representa\IeC {\c c}\IeC {\~a}o da obrigatoriedade de participa\IeC {\c c}\IeC {\~a}o}}{11}{figure.caption.15}
 \contentsline {figure}{\numberline {2.12}{\ignorespaces Representa\IeC {\c c}\IeC {\~a}o dos tipos de atributos}}{11}{figure.caption.16}
-\contentsline {figure}{\numberline {2.13}{\ignorespaces Representa\IeC {\c c}\IeC {\~a}o de um esquema relacional com as liga\IeC {\c c}\IeC {\~o}es das chaves estrangeiras\relax }}{12}{figure.caption.17}
+\contentsline {figure}{\numberline {2.13}{\ignorespaces Representa\IeC {\c c}\IeC {\~a}o esquema relacional}}{12}{figure.caption.17}
 \contentsline {figure}{\numberline {2.14}{\ignorespaces Log\IeC {\'o}tipos dos \textit {softwares} utilizados\relax }}{13}{figure.caption.18}
-\contentsline {figure}{\numberline {2.15}{\ignorespaces Representa\IeC {\c c}\IeC {\~a}o da ferramenta mais usada para desenvolver aplica\IeC {\c c}\IeC {\~o}es em ambiente \textit {Web}\relax }}{14}{figure.caption.19}
+\contentsline {figure}{\numberline {2.15}{\ignorespaces Representa\IeC {\c c}o\IeC {\~a} da ferramenta mais usada para desenvolver aplica\IeC {\c c}\IeC {\~o}es \textit {Web}}}{14}{figure.caption.19}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Diagrama das bases de dados}}{17}{figure.caption.20}
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Diagrama do fluxo de informa\IeC {\c c}\IeC {\~a}o}}{18}{figure.caption.21}
 \contentsline {figure}{\numberline {3.3}{\ignorespaces Diagrama final da infraestrutura}}{19}{figure.caption.22}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Diagrama Entidade/Rela\IeC {\c c}\IeC {\~a}o realizado a partir da an\IeC {\'a}lise de requisitos\relax }}{22}{figure.caption.23}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Esquema L\IeC {\'o}gico obtido atrav\IeC {\'e}s da an\IeC {\'a}lise do diagrama entidade/rela\IeC {\c c}\IeC {\~a}o onde as entidades e os seus atributos se traduzem em tabelas e as rela\IeC {\c c}\IeC {\~o}es nas chaves estrangeiras destas\relax }}{23}{figure.caption.24}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces fluxograma\relax }}{26}{figure.caption.26}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces fluxograma\relax }}{28}{figure.caption.27}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Diagrama Entidade/Rela\IeC {\c c}\IeC {\~a}o final do projeto}}{23}{figure.caption.23}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Esquema L\IeC {\'o}gico final do projeto}}{24}{figure.caption.24}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Diagrama da comunica\IeC {\c c}\IeC {\~a}o com a base de dados notifica\IeC {\c c}\IeC {\~o}es}}{27}{figure.caption.26}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Fluxograma do programa principal que cria os subprogramas\relax }}{29}{figure.caption.28}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Fluxograma dos subprogramas criados para transferirem registos de cada cliente para a base de dados central\relax }}{30}{figure.caption.29}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces fluxograma\relax }}{32}{figure.caption.30}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Esquema liga\IeC {\c c}\IeC {\~a}o Aplica\IeC {\c c}\IeC {\~a}o-Bases de Dados. A aplica\IeC {\c c}\IeC {\~a}o comunica com a base de dados tempor\IeC {\'a}ria local e depois regista os seus valores nas bases de dados central e local\relax }}{34}{figure.caption.29}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Esquema liga\IeC {\c c}\IeC {\~a}o Aplica\IeC {\c c}\IeC {\~a}o-Bases de Dados. A aplica\IeC {\c c}\IeC {\~a}o comunica com a base de dados tempor\IeC {\'a}ria local e depois regista os seus valores nas bases de dados central e local\relax }}{34}{figure.caption.30}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Fluxograma 2\relax }}{35}{figure.caption.31}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Esquema liga\IeC {\c c}\IeC {\~a}o Aplica\IeC {\c c}\IeC {\~a}o-Bases de Dados. A aplica\IeC {\c c}\IeC {\~a}o comunica com a base de dados tempor\IeC {\'a}ria local e depois regista os seus valores nas bases de dados central e local\relax }}{35}{figure.caption.32}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Funcionalidades da p\IeC {\'a}gina \textit {Main} com e sem \textit {login}\relax }}{37}{figure.caption.33}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces P\IeC {\'a}gina de \textit {Login} para iniciar sess\IeC {\~a}o na base de dados central\relax }}{38}{figure.caption.34}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Exemplos de erros retornados quando introduzidas credenciais n\IeC {\~a}o v\IeC {\'a}lidas na p\IeC {\'a}gina \textit {Login}\relax }}{38}{figure.caption.35}
-\contentsline {figure}{\numberline {4.8}{\ignorespaces P\IeC {\'a}gina de Consultas e exemplo de resposta a uma consulta\relax }}{39}{figure.caption.36}
-\contentsline {figure}{\numberline {4.9}{\ignorespaces Exemplos de erros retornados na p\IeC {\'a}gina de Resposta da Consulta\relax }}{41}{figure.caption.37}
-\contentsline {figure}{\numberline {4.10}{\ignorespaces Funcionalidades da p\IeC {\'a}gina Administra\IeC {\c c}\IeC {\~a}o com e sem conex\IeC {\~a}o local\relax }}{42}{figure.caption.38}
-\contentsline {figure}{\numberline {4.11}{\ignorespaces \IeC {\'A}rea de Gest\IeC {\~a}o de Clientes sem conex\IeC {\~a}o local\relax }}{44}{figure.caption.40}
-\contentsline {figure}{\numberline {4.12}{\ignorespaces \IeC {\'A}rea de Gest\IeC {\~a}o de Moldes\relax }}{45}{figure.caption.41}
-\contentsline {figure}{\numberline {4.13}{\ignorespaces \IeC {\'A}rea de Gest\IeC {\~a}o de Sensores\relax }}{45}{figure.caption.42}
-\contentsline {figure}{\numberline {4.14}{\ignorespaces Fun\IeC {\c c}\IeC {\~a}o do bot\IeC {\~a}o Validar, onde os valores da base de dados tempor\IeC {\'a}ria local s\IeC {\~a}o transferidos de forma permanente para as bases de dados central e local\relax }}{46}{figure.caption.43}
-\contentsline {figure}{\numberline {4.15}{\ignorespaces \IeC {\'A}rea Conectar Local onde se visualiza as bases de dados instaladas no sistema\relax }}{47}{figure.caption.45}
-\contentsline {figure}{\numberline {4.16}{\ignorespaces \textit {Main} com conex\IeC {\~a}o local\relax }}{48}{figure.caption.46}
-\contentsline {figure}{\numberline {4.17}{\ignorespaces \IeC {\'A}rea Criar Local cria a base de dados para o cliente selecionado no sistema em que se acede a aplica\IeC {\c c}\IeC {\~a}o\relax }}{48}{figure.caption.47}
-\contentsline {figure}{\numberline {4.18}{\ignorespaces \textit {Queries} geradas para completar a instala\IeC {\c c}\IeC {\~a}o da base de dados no sistema local. Consistem nas permiss\IeC {\~o}es para os utilizadores que s\IeC {\'o} podem ser garantidas via \textit {root} bem como informa\IeC {\c c}\IeC {\~a}o para completar o sistema de dados\relax }}{49}{figure.caption.48}
-\contentsline {figure}{\numberline {4.19}{\ignorespaces \IeC {\'A}rea Instalar \textit {MySQL} para instalar o \textit {software} com os comandos em \textit {Linux}\relax }}{50}{figure.caption.49}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Esquema liga\IeC {\c c}\IeC {\~a}o Aplica\IeC {\c c}\IeC {\~a}o-Bases de Dados. A aplica\IeC {\c c}\IeC {\~a}o comunica com a base de dados tempor\IeC {\'a}ria local e depois regista os seus valores nas bases de dados central e local\relax }}{38}{figure.caption.32}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Funcionalidades da p\IeC {\'a}gina \textit {Main} com e sem \textit {login}\relax }}{39}{figure.caption.33}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces P\IeC {\'a}gina de \textit {Login} para iniciar sess\IeC {\~a}o na base de dados central\relax }}{40}{figure.caption.34}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Exemplos de erros retornados quando introduzidas credenciais n\IeC {\~a}o v\IeC {\'a}lidas na p\IeC {\'a}gina \textit {Login}\relax }}{40}{figure.caption.35}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces P\IeC {\'a}gina de Consultas e exemplo de resposta a uma consulta\relax }}{41}{figure.caption.36}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Exemplos de erros retornados na p\IeC {\'a}gina de Resposta da Consulta\relax }}{43}{figure.caption.37}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Funcionalidades da p\IeC {\'a}gina Administra\IeC {\c c}\IeC {\~a}o com e sem conex\IeC {\~a}o local\relax }}{44}{figure.caption.38}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces \IeC {\'A}rea de Gest\IeC {\~a}o de Clientes sem conex\IeC {\~a}o local\relax }}{46}{figure.caption.40}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces \IeC {\'A}rea de Gest\IeC {\~a}o de Moldes\relax }}{47}{figure.caption.41}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces \IeC {\'A}rea de Gest\IeC {\~a}o de Sensores\relax }}{47}{figure.caption.42}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Fun\IeC {\c c}\IeC {\~a}o do bot\IeC {\~a}o Validar, onde os valores da base de dados tempor\IeC {\'a}ria local s\IeC {\~a}o transferidos de forma permanente para as bases de dados central e local\relax }}{48}{figure.caption.43}
+\contentsline {figure}{\numberline {4.12}{\ignorespaces \IeC {\'A}rea Conectar Local onde se visualiza as bases de dados instaladas no sistema\relax }}{49}{figure.caption.45}
+\contentsline {figure}{\numberline {4.13}{\ignorespaces \textit {Main} com conex\IeC {\~a}o local\relax }}{50}{figure.caption.46}
+\contentsline {figure}{\numberline {4.14}{\ignorespaces \IeC {\'A}rea Criar Local cria a base de dados para o cliente selecionado no sistema em que se acede a aplica\IeC {\c c}\IeC {\~a}o\relax }}{50}{figure.caption.47}
+\contentsline {figure}{\numberline {4.15}{\ignorespaces \textit {Queries} geradas para completar a instala\IeC {\c c}\IeC {\~a}o da base de dados no sistema local. Consistem nas permiss\IeC {\~o}es para os utilizadores que s\IeC {\'o} podem ser garantidas via \textit {root} bem como informa\IeC {\c c}\IeC {\~a}o para completar o sistema de dados\relax }}{51}{figure.caption.48}
+\contentsline {figure}{\numberline {4.16}{\ignorespaces \IeC {\'A}rea Instalar \textit {MySQL} para instalar o \textit {software} com os comandos em \textit {Linux}\relax }}{52}{figure.caption.49}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Exemplo da \IeC {\'a}rea Criar Local com cria\IeC {\c c}\IeC {\~a}o das bases de dados e utilizadores via \textit {root} em vez de gerar \textit {queries} para o utilizador inserir manualmente no \textit {MySQL}\relax }}{55}{figure.caption.50}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Exemplo de problemas fisicos\relax }}{56}{figure.caption.51}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Exemplo de \IeC {\'a}rea de Registar para criar utilizadores com base no ID de trabalhador e email\relax }}{57}{figure.caption.52}
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Exemplo molde 4 dinamometros a sair da cena\relax }}{57}{figure.caption.53}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Exemplo da \IeC {\'a}rea Criar Local com cria\IeC {\c c}\IeC {\~a}o das bases de dados e utilizadores via \textit {root} em vez de gerar \textit {queries} para o utilizador inserir manualmente no \textit {MySQL}\relax }}{57}{figure.caption.50}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Exemplo de problemas fisicos\relax }}{58}{figure.caption.51}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Exemplo de \IeC {\'a}rea de Registar para criar utilizadores com base no ID de trabalhador e email\relax }}{59}{figure.caption.52}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Exemplo molde 4 dinamometros a sair da cena\relax }}{59}{figure.caption.53}
 \addvspace {10\p@ }

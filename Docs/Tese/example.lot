@@ -5,8 +5,9 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {3.1}{\ignorespaces Tabelas com os seus atributos e respetivos dom\IeC {\'\i }nios e obrigatoriedades. Os atributos data e hora da entidade registos s\IeC {\~a}o fundidos no atributo r\texttt {\char `_}data\texttt {\char `_}hora gra\IeC {\c c}as ao tipo de dados datetime\relax }}{24}{table.caption.25}
-\contentsline {table}{\numberline {3.2}{\ignorespaces Tabelas com as permiss\IeC {\~o}es das credenciais criadas para as v\IeC {\'a}rias tabelas das bases de dados\relax }}{32}{table.caption.28}
+\contentsline {table}{\numberline {3.1}{\ignorespaces Tabelas das bases de dados com os seus atributos e respetivos dom\IeC {\'\i }nios e obrigatoriedades}}{25}{table.caption.25}
+\contentsline {table}{\numberline {3.2}{\ignorespaces Tabelas da base de dados notifica\IeC {\c c}\IeC {\~o}es com os seus atributos e respetivos dom\IeC {\'\i }nios e obrigatoriedades}}{28}{table.caption.27}
+\contentsline {table}{\numberline {3.3}{\ignorespaces Tabelas com as permiss\IeC {\~o}es das credenciais criadas para as v\IeC {\'a}rias tabelas das bases de dados\relax }}{36}{table.caption.31}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

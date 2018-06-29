@@ -1,5 +1,8 @@
 \begin{thebibliography}{10}
 
+\bibitem{web_logo}
+{Web Development PHP HTML Arrows Royalty Free Vector Image}.
+
 \bibitem{molde_imagem}
 colored-part-large-mold-with-part.
 
@@ -106,12 +109,20 @@ Peter Pin-Shan Chen.
 \newblock {The Entity-Relationship Unified View of Data Model-Toward a}.
 \newblock {\em ACM Transactions on Database Systems}, 1(1):9--36, 1976.
 
+\bibitem{ubuntu_logo}
+ubuntu logo.
+
+\bibitem{gcc_logo}
+{GNU Compiler Collection logo}.
+
+\bibitem{apache_logo}
+apache-logo.
+
+\bibitem{mysql_logo}
+mysql-logo.
+
 \bibitem{ubuntu}
 {Community | Ubuntu}.
-
-\bibitem{mysqlvs}
-{SQLite vs MySQL vs PostgreSQL: A Comparison Of Relational Database Management
-  Systems | DigitalOcean}.
 
 \bibitem{mysql}
 {MySQL :: MySQL 8.0 Reference Manual}.
@@ -122,5 +133,12 @@ Peter Pin-Shan Chen.
 
 \bibitem{apache}
 {Welcome! - The Apache HTTP Server Project}.
+
+\bibitem{web}
+{W3Schools Online Web Tutorials}.
+
+\bibitem{mysqlvs}
+{SQLite vs MySQL vs PostgreSQL: A Comparison Of Relational Database Management
+  Systems | DigitalOcean}.
 
 \end{thebibliography}

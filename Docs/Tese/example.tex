@@ -34,6 +34,7 @@
     
     \usepackage{enumitem}
     \usepackage{makecell}
+    \usepackage{pdflscape}
     
     
 %    \usepackage[url = false, backend=biber, style = numeric, sorting=none]{biblatex}
@@ -230,7 +231,7 @@ Para completar estas definições iniciais, chama-mos sistema de base de dados a
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[width=0.7\textwidth]{SGBD} % Include the image placeholder.png
-		\caption[Esquema de um sistema de bases de dados]{Esquema simplificado de um sistema de bases de dados}
+		\caption[Esquema de um sistema de bases de dados]{Esquema simplificado de um sistema de bases de dados \cite{Elmasri:2010:FDS:1855347}}
 		\label{fig:relacional1}
 	\end{center}
 \end{figure}
@@ -416,11 +417,11 @@ Os atributos também podem ser de tipos diferentes. Estes podem ser derivados, c
 \end{figure}
 
 \subsection{Esquema Relacional}
-O esquema relacional incluí todas as relações que concretizam uma base de dados. Cada relação é representada pelos seus atributos, tendo os atributos chave sublinhados. Quando atributos de relações diferentes representam o mesmo elemento do mundo real, estes são conectados. Quando um elemento aparece em relações diferentes significa que numa destas, o elemento, é atributo chave da relação e assim sendo, os restantes atributos são considerados chaves estrangeiras. São representados com a ligação ao atributo que serve de chave primária como demonstrado na \autoref{fig:er1}\cite{Chen}.
-\begin{figure}[H]
+O esquema relacional incluí todas as relações que concretizam uma base de dados. Cada relação é representada pelos seus atributos, tendo os atributos chave sublinhados. Quando atributos de relações diferentes representam o mesmo elemento do mundo real, estes são conectados. Quando um elemento aparece em relações diferentes significa que numa destas, o elemento, é atributo chave da relação e assim sendo, os restantes atributos são considerados chaves estrangeiras. São representados com a ligação ao atributo que serve de chave primária como demonstrado na \autoref{fig:er1} \cite{Chen}.
+\begin{figure}
 	\begin{center}
 		\includegraphics[width=0.7\textwidth]{notacao15} % Include the image placeholder.png
-		\caption{Representação de um esquema relacional com as ligações das chaves estrangeiras}
+		\caption[Representação esquema relacional]{Representação do esquema relacional com as ligações das chaves estrangeiras deduzido do diagrama entidade relação da \autoref{fig:der61}}
 		\label{fig:er1}
 	\end{center}
 \end{figure}
@@ -443,14 +444,14 @@ Para desenvolver as redes de bases de dados e aplicação escolheram-se os \text
 		\vspace{0.88cm}
 		\begin{center}
 			\includegraphics[width=0.3\textwidth]{ubuntu} % Include the image placeholder.png
-			\subcaption{\textit{Ubuntu}}
+			\subcaption{\textit{Ubuntu} \cite{ubuntu_logo}}
 			\label{fig:linux}
 		\end{center}
 	\end{minipage}%
 	\begin{minipage}{0.33\textwidth}
 		\begin{center}
 			\includegraphics[width=0.4\textwidth]{gcc} % Include the image placeholder.png
-			\subcaption{\textit{GNU}}
+			\subcaption{\textit{GNU} \cite{gcc_logo}}
 			\label{fig:gcc}
 		\end{center}
 	\end{minipage}%
@@ -458,7 +459,7 @@ Para desenvolver as redes de bases de dados e aplicação escolheram-se os \text
 		\vspace{1.1cm}
 		\begin{center}
 			\includegraphics[width=0.6\textwidth]{apache} % Include the image placeholder.png
-			\subcaption{\textit{Apache}}
+			\subcaption{\textit{Apache} \cite{apache_logo}}
 			\label{fig:apache}
 		\end{center}
 	\end{minipage}
@@ -466,7 +467,7 @@ Para desenvolver as redes de bases de dados e aplicação escolheram-se os \text
 		\vspace{0.5cm}
 		\begin{center}
 			\includegraphics[width=0.25\textwidth]{mysql} % Include the image placeholder.png
-			\subcaption{\textit{MySQL}}
+			\subcaption{\textit{MySQL} \cite{mysql_logo}}
 			\label{fig:mysql}
 		\end{center}
 	\end{minipage}
@@ -486,13 +487,13 @@ Lançado em 1995, tornou-se no \textit{software} mais utilizado pelas empresas p
 \subsection{\textit{HTML}, \textit{JS} e \textit{PHP}}
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=0.4\textwidth]{web} % Include the image placeholder.png
-		\caption{Representação da ferramenta mais usada para desenvolver aplicações em ambiente \textit{Web}}
+		\includegraphics[trim={0 2.85cm 0 0},clip,width=0.4\textwidth]{web} % Include the image placeholder.png
+		\caption[Representaçoã da ferramenta mais usada para desenvolver aplicações \textit{Web}]{Representação da ferramenta mais usada para desenvolver aplicações em ambiente \textit{Web} \cite{web_logo}}
 		\label{fig:web}
 	\end{center}
 \end{figure}
 Escolheu-se \textit{HTML}, \textit{JS} e \textit{PHP} para desenvolver a aplicação \textit{Web} deste projeto. Junto com \textit{SQL} e \textit{CSS} formam o conjunto de ferramentas mais usadas no desenvolvimento de aplicações \textit{Web} no mercado, representado na \autoref{fig:web}.\par 
-\textit{HTML} ou \textit{Hyper Text Markup Language} descreve a estrutura da página \textit{Web} desenvolvida. Possuí elementos que funcionam como blocos para as páginas permitindo a criação de uma interface com um utilizador. \textit{CSS} ou \textit{Cascading Style Sheets} descreve como os elementos HTML devem ser dispostos na página, permitindo o desenvolvimento de uma interface mais apelativa. \textit{JS} ou \textit{JavaScript} permite interagir e alterar o código \textit{HTML} e \textit{CSS} criando uma interface mais interativa. Permite também desenvolver códigos e funções que são executadas no browser do cliente. \textit{PHP} ou \textit{PHP:Hypertext Preprocessor} permite desenvolver funções para aplicação que executam do lado do servidor. \textit{JS} e \textit{PHP} realizam ambos funções diferindo apenas no local onde são executadas. Sem contar com a interação com o \textit{HTML} e \textit{CSS}, o \textit{PHP} pode substituir o \textit{JS} como linguagem para criação de funções do sistema. No entanto, isto pode causar problemas de desempenho dado que o servidor terá de correr funções de todos os utilizadores. Assim sendo define-se que o uso do \textit{PHP} deve ser limitado a funções de sistema mais importantes, como conectar a uma base de dados em \textit{SQL}, e o \textit{JS} deve ser usado no desenvolvimento de funções de aplicação mais triviais.
+\textit{HTML} ou \textit{Hyper Text Markup Language} descreve a estrutura da página \textit{Web} desenvolvida. Possuí elementos que funcionam como blocos para as páginas permitindo a criação de uma interface com um utilizador. \textit{CSS} ou \textit{Cascading Style Sheets} descreve como os elementos HTML devem ser dispostos na página, permitindo o desenvolvimento de uma interface mais apelativa. \textit{JS} ou \textit{JavaScript} permite interagir e alterar o código \textit{HTML} e \textit{CSS} criando uma interface mais interativa. Permite também desenvolver códigos e funções que são executadas no browser do cliente. \textit{PHP} ou \textit{PHP:Hypertext Preprocessor} permite desenvolver funções para aplicação que executam do lado do servidor. \textit{JS} e \textit{PHP} realizam ambos funções diferindo apenas no local onde são executadas \cite{web}. Sem contar com a interação com o \textit{HTML} e \textit{CSS}, o \textit{PHP} pode substituir o \textit{JS} como linguagem para criação de funções do sistema. No entanto, isto pode causar problemas de desempenho dado que o servidor terá de correr funções de todos os utilizadores. Assim sendo define-se que o uso do \textit{PHP} deve ser limitado a funções de sistema mais importantes, como conectar a uma base de dados em \textit{SQL}, e o \textit{JS} deve ser usado no desenvolvimento de funções de aplicação mais triviais.
 
 \subsection{\textit{MySQL}}
 \label{subchap:mysql}
@@ -567,7 +568,7 @@ Para estabelecer o fluxo de informação desenvolveu-se um programa de transfer�
 		\label{fig:infra2}
 		\end{center}
 \end{figure}
-Para melhorar o desempenho da base de dados central e prevenir falhas críticas do sistema, desenvolveu-se um programa de gestão de \textit{backups}, também em \textit{C}. Este programa limpa e cria \textit{backups} da base de dados e guarda-os num repositório \textit{online}. De forma a não interferir diretamente com a informação da base de dados central criam-se duas bases de dados para a gestão dos \textit{backups}. Com esta adição, o esquema da infraestrutura final está representado na \autoref{fig:infra3}.
+Para melhorar o desempenho da base de dados central e prevenir falhas críticas do sistema, desenvolveu-se um programa de gestão de \textit{backups}, também em \textit{C}. Este programa limpa e cria \textit{backups} da base de dados e guarda-os num repositório \textit{online}. De forma a não interferir diretamente com a informação da base de dados central criam-se duas bases de dados para a gestão dos \textit{backups}. Com esta adição, o esquema da infraestrutura final está representado na \autoref{fig:infra3}.\par 
 \begin{figure}
 	\begin{center}
 		\includegraphics[width=1\textwidth]{Esquema_Projeto_6} % Include the image placeholder.png
@@ -576,10 +577,10 @@ Para melhorar o desempenho da base de dados central e prevenir falhas críticas 
 		\end{center}
 \end{figure}
 
-\section{Base de Dados}
-\subsection{Análise de Requisitos}
+\section{Base de dados}
+\subsection{Análise de requisitos}
 Deseja-se, de uma forma geral, um sistema capaz de guardar remotamente medições realizadas em moldes instrumentados. Esta informação não é suficiente para se deduzir uma base de dados. Assim sendo, analisando e completando a informação inicial chega-se ao seguinte enunciado:\par 
-\vspace{2ex}
+%\vspace{2ex}
 \textit{Um cliente, caracterizado por um ID, nome, morada, IP e port, tem moldes. Estes moldes são identificados por um ID, nome e descrição. Os moldes têm sensores com um número referente ao molde, tipo (termómetro, dinamómetro, extensómetro, etc.), nome e descrição. Estes sensores geram registos onde guardam a fase do processo (fecho do molde, enchimento, compactação, abertura e extração), data, hora, milissegundos e o valor num determinado momento.}\par 
 \vspace{2ex}
 Analisando este enunciado identificam-se as seguintes entidades com os seus respetivos atributos:
@@ -628,6 +629,7 @@ Analisando este enunciado identificam-se as seguintes entidades com os seus resp
 		\item Valor
 	\end{itemize}
 \end{itemize}
+\newpage
 Analisando os atributos identificam-se as seguintes chaves primárias, únicas e estrangeiras:
 \begin{itemize}[noitemsep]
 	\item Tipo
@@ -690,6 +692,7 @@ O tipo de sensor e a fase do processo são dicionários ou seja, são entidades 
 		\item Acelerómetro Y
 		\item Acelerómetro Z
 	\end{itemize}
+	\newpage
 	\item Fase
 	\begin{itemize}[noitemsep]
 		\item Fecho do molde
@@ -716,27 +719,31 @@ Quanto à obrigatoriedade de participação das entidades nas relações anterio
 	\item Não pode existir registos sem fase	
 \end{itemize}
 
+\begin{landscape}
+	\begin{figure}
+		\begin{center}
+			\includegraphics[width=1.4\textwidth]{diagrama_entidade_relacao} % Include the image placeholder.png
+			\caption[Diagrama Entidade/Relação final do projeto]{Diagrama Entidade/Relação final do projeto realizado a partir da análise de requisitos}
+			\label{fig:der}
+		\end{center}
+	\end{figure}
+\end{landscape}
 \subsection{Desenho conceptual e esquema lógico}
-Concatenando a informação descrita na análise de requisitos, obtém-se o diagrama entidade/relação representado na \autoref{fig:der}.
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics[width=0.5\textwidth]{placeholder} % Include the image placeholder.png
-		\caption{Diagrama Entidade/Relação realizado a partir da análise de requisitos}
-		\label{fig:der}
-	\end{center}
-\end{figure}
+Concatenando a informação descrita na análise de requisitos, obtém-se o diagrama entidade/relação representado na \autoref{fig:der}.\par
 Traduzindo as entidades do diagrama anterior para tabelas e as relações para chaves estrangeiras, obtém-se o esquema lógico da base de dados representado na \autoref{fig:er}.
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=0.5\textwidth]{placeholder} % Include the image placeholder.png
-		\caption{Esquema Lógico obtido através da análise do diagrama entidade/relação onde as entidades e os seus atributos se traduzem em tabelas e as relações nas chaves estrangeiras destas}
+		\includegraphics[width=1\textwidth]{esquema_relacional} % Include the image placeholder.png
+		\caption[Esquema Lógico final do projeto]{Esquema Lógico final do projeto obtido através da análise do diagrama entidade/relação na \autoref{fig:der} onde as entidades e os seus atributos se traduzem em tabelas e as relações nas chaves estrangeiras destas}
 		\label{fig:er}
 	\end{center}
 \end{figure}
 
+\newpage
 \subsection{Construção da base de dados}
 Avançando para a criação das tabelas em \textit{MySQL}, a fim de evitar ambiguidades no nome dos atributos estes são alterados para campos semânticos específicos a cada entidade a que pertencem. Para cada atributo define-se o domínio e a obrigatoriedade como representado na \autoref{tab:dominio}.
 \begin{table}[H]
+	\centering
 	\begin{tabular}{|l|l|l|l|l|l|}
 		%\hline
 		\multicolumn{6}{l}{\textbf{tipo}}\\ \cline{1-2}
@@ -766,7 +773,7 @@ Avançando para a criação das tabelas em \textit{MySQL}, a fim de evitar ambig
 		int & int & int & datetime & tinyint & float\\ \hline
 		not null & not null & not null & not null & not null & \\ \hline
 	\end{tabular}
-	\caption{Tabelas com os seus atributos e respetivos domínios e obrigatoriedades. Os atributos data e hora da entidade registos são fundidos no atributo r\texttt{\char`_}data\texttt{\char`_}hora graças ao tipo de dados datetime}
+	\caption[Tabelas das bases de dados com os seus atributos e respetivos domínios e obrigatoriedades]{Tabelas das bases de dados com os seus atributos e respetivos domínios e obrigatoriedades. Os atributos data e hora da entidade registos são fundidos no atributo r\texttt{\char`_}data\texttt{\char`_}hora graças ao tipo de dados datetime}
 	\label{tab:dominio}
 \end{table}
 Define-se então nomes para as restrições de integridade definidas pelas chaves das entidades:
@@ -820,19 +827,20 @@ Define-se então nomes para as restrições de integridade definidas pelas chave
 \end{itemize}
 Em relação ao comportamento das restrições das chaves estrangeiras identificam-se as seguintes opções:
 \begin{itemize}
-	\item ON DELETE NO ACTION ON UPDATE CASCADE
+	\item ON DELETE NO ACTION ON UPDATE NO ACTION
 	\begin{itemize}
 		\item MOLDE\texttt{\char`_}MAU\texttt{\char`_}ID\texttt{\char`_}CLIENTE
 		\item SENSOR\texttt{\char`_}MAU\texttt{\char`_}ID\texttt{\char`_}TIPO
 		\item REGISTOS\texttt{\char`_}MAU\texttt{\char`_}ID\texttt{\char`_}FASE
 	\end{itemize}
-	\item ON DELETE CASCADE ON UPDATE CASCADE
+	\item ON DELETE CASCADE ON UPDATE NO ACTION
 	\begin{itemize}
 		\item SENSOR\texttt{\char`_}MAU\texttt{\char`_}ID\texttt{\char`_}MOLDE
 		\item REGISTOS\texttt{\char`_}MAU\texttt{\char`_}ID\texttt{\char`_}MOLDE\texttt{\char`_}SENSOR
 	\end{itemize}
 \end{itemize}
-Estes comportamentos definem que quando se atualiza a chave primária de um tuplo (\textit{UPDATE}) os restantes tuplos dependentes desta informação devem devidamente atualizados. No entanto, quando se elimina um tuplo são definidos dois comportamentos. Como existe muita informação associada a cada cliente, como segurança, não se permite a eliminação de um tuplo desta tabela se este tiver informação associada a si noutras tabelas. O mesmo se aplica aos dicionários, se se tentar eliminar um tuplo, a informação associada não deve ser comprometida. No caso dos registos, dado que estão associados diretamente a um molde, se um tuplo da tabela moldes for eliminado, os dados dos seus sensores e respetivos registos devem ser também eliminados para manter a base de dados limpa e sem informação desnecessária.\par 
+Estes comportamentos definem que quando se tenta atualizar a chave primária de um tuplo (\textit{UPDATE}), se esta tiver tuplos associados a ela, a operação não deve ser realizada pois pode comprometer os dados existentes na base de dados. No entanto, quando se tenta eliminar um tuplo são definidos dois comportamentos. Como existe muita informação associada a cada cliente, como segurança, não se permite a eliminação de um tuplo desta tabela se este tiver informação associada a si noutras tabelas. O mesmo se aplica aos dicionários, se se tentar eliminar um tuplo, a informação associada não deve ser comprometida. No caso dos registos, dado que estão associados diretamente a um molde, se um tuplo da tabela moldes for eliminado, os dados dos seus sensores e respetivos registos devem ser também eliminados para manter a base de dados limpa e sem informação desnecessária.\par 
+\newpage
 Revendo as restrições de integridade criadas pelas chaves estrangeiras, como não se pode criar uma tabela que dependa de outra que não tenha sido ainda criada, define-se uma ordem para a criação das tabelas:
 \begin{enumerate}[noitemsep]
 	\item Tipo
@@ -842,15 +850,73 @@ Revendo as restrições de integridade criadas pelas chaves estrangeiras, como n
 	\item Sensores
 	\item Registos
 \end{enumerate}
-Este modelo de dados aplica-se a todas as bases de dados usadas neste projeto com a exceção da base de dados temporária local e notificações que serão abordadas na \autoref{subchap:adap}.
+Este modelo de dados aplica-se a todas as bases de dados usadas neste projeto com a exceção da base de dados notificações abordada na \autoref{subchap:notificacoes} e temporária local abordada na \autoref{subchap:adap}.
 
-\subsection{Programa de transferência}
-Este programa prioriza a conservação dos dados e a sua taxa de transferência. O código foi realizado com vista à portabilidade para outras linguagens de programação. Consiste em várias ideias simples que podem ser observadas na \autoref{fig:transferencia1}.
+\subsection{Base de dados notificações}
+\label{subchap:notificacoes}
+Com a introdução da aplicação de gestão do sistema surge a necessidade desta comunicar com os programas de transferência e gestão de \textit{backups}. Para este efeito cria-se a base de dados notificações, com a qual a aplicação comunica de forma a ditar o modo de funcionamento dos programas, como representado na \autoref{fig:infra4}.
 \begin{figure}[H]
+	\centering
 	\begin{center}
-		\includegraphics[width=0.5\textwidth]{placeholder} % Include the image placeholder.png
-		\caption{fluxograma}
-		\label{fig:transferencia1}
+		\includegraphics[width=0.5\textwidth]{Aplicacao_notificacoes} % Include the image placeholder.png
+		\caption[Diagrama da comunicação com a base de dados notificações]{Diagrama da comunicação com a base de dados notificações, onde os programas de transferência e gestão de \textit{backups} verificam parâmetros introduzidos pela aplicação}
+		\label{fig:infra4}
+	\end{center}
+\end{figure}
+Esta base de dados contém variáveis globais importantes para a comunicação entre a aplicação e os programas. Define-se as entidades com os seus atributos e respetivos domínios e obrigatoriedade como representado na \autoref{tab:notificacoes}. As entidades não se relacionam entre e por isso esta base de dados não se classifica como uma base de dados relacional. No entanto, utiliza-se os mesmos termos para descrever o desenvolvimento desta.
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|l|l|}
+		%\hline
+		\multicolumn{2}{l}{\textbf{atualizar}}\\ \cline{1-2}
+		a\texttt{\char`_}transferencia & a\texttt{\char`_}backups\\ \cline{1-2}
+		int & int\\ \cline{1-2}
+		not null & not null\\ \cline{1-2}
+		\multicolumn{2}{l}{\textbf{backups}}\\ \cline{1-1}
+		b\texttt{\char`_}IDMolde &\multicolumn{1}{l}{}\\ \cline{1-1}
+		int &\multicolumn{1}{l}{}\\ \cline{1-1}
+		 &\multicolumn{1}{l}{}\\ \cline{1-1}
+	\end{tabular}
+	\caption[Tabelas da base de dados notificações com os seus atributos e respetivos domínios e obrigatoriedades]{Tabela base de dados notificações com os seus atributos e respetivos domínios e obrigatoriedades}
+	\label{tab:notificacoes}
+\end{table}
+A tabela Atualizar só deve ter um tuplo e os valores dos atributos \texttt{a\char`_transferencia} e \texttt{a\char`_backups} só devem ser 0 ou 1. Assim sendo definem-se as restrições:
+\begin{itemize}[noitemsep]
+	\item Atualizar
+	\begin{itemize}[noitemsep]
+		\item Restrição valor:
+		\begin{enumerate}
+			\item MAU\texttt{\char`_}VALOR\texttt{\char`_}TRANSFERENCIA
+			\item MAU\texttt{\char`_}VALOR\texttt{\char`_}BACKUPS
+		\end{enumerate}
+	\end{itemize}
+	\item Backups
+	\begin{itemize}[noitemsep]
+		\item Restrição chaves únicas:
+		\begin{enumerate}
+			\item REPETIDO\texttt{\char`_}ID\texttt{\char`_}MOLDE
+		\end{enumerate}
+	\end{itemize}
+\end{itemize}
+Define-se que tabela Atualizar deve ser iniciada com um tuplo onde os seus atributos são iguais a 0. As funcionalidades desta base de dados são exploradas nas Secções \ref{subchap:transferencia} e \ref{subchap:backups}.
+
+\section{Programa de transferência}
+\label{subchap:transferencia}
+Este programa prioriza a conservação dos dados e a sua taxa de transferência. O código foi realizado com vista à portabilidade para outras linguagens de programação. Consiste em várias ideias simples que podem ser observadas nas Figuras \ref{fig:transferencia_programa} e \ref{fig:transferencia_subprograma}.\par 
+\begin{figure}
+	\vspace{-3cm}
+	\begin{center}
+		\includegraphics[width=.75\textwidth]{fluxograma_transferencia_programa3} % Include the image placeholder.png
+		%\vspace{9cm}
+		\caption{Fluxograma do programa principal que cria os subprogramas}
+		\label{fig:transferencia_programa}
+	\end{center}
+\end{figure}
+\begin{figure}
+	\begin{center}
+		\includegraphics[width=0.85\textwidth]{fluxograma_transferencia_subprograma3} % Include the image placeholder.png
+		\caption{Fluxograma dos subprogramas criados para transferirem registos de cada cliente para a base de dados central}
+		\label{fig:transferencia_subprograma}
 	\end{center}
 \end{figure}
 Seguindo a estrutura do programa, primeiramente realiza-se uma conexão à base de dados central, seguida de uma \textit{query} para se saber o número de clientes existentes:
@@ -894,9 +960,14 @@ Inserir múltiplos tuplos permite uma maior taxa de transferência comparativame
 	DELETE FROM registos
 	WHERE r_data_hora < @datahora_lim;
 \end{lstlisting}
-Numa utilização a baixo nível, sempre que se desejar um subprograma para um cliente novo, o programa de transferência tem de ser reiniciado manualmente. Reinicia-lo termina o ciclo infinito de transferência de valores, encerra as conexões com as bases de dados central e local e volta a iniciar todo o processo descrito nesta secção.
+Sempre que se desejar um subprograma para um cliente novo, o programa de transferência deve ser reiniciado. Isto pode ser realizado manualmente ou atualizando o valor de \texttt{a\char`_transferencia} para 1. Com base num temporizador o programa principal e os subprogramas realizam a \textit{query} à base de dados notificações:
+\begin{lstlisting}[language = SQL]
+	SELECT a_transferencia
+	FROM atualizar;
+\end{lstlisting}
+Se \texttt{a\char`_transferencia} for igual a 1 os subprogramas terminam após completarem os seus ciclos e o programa principal recomeça do principio como demonstrado nas Figuras \ref{fig:transferencia_programa} e \ref{fig:transferencia_subprograma}.
 
-\subsection{Gestão de \textit{backups}}
+\section{Gestão de \textit{backups}}
 \label{subchap:backups}
 À semelhança do programa anterior, o programa de gestão de \textit{backups} foi realizado com vista à portabilidade para outras linguagens de programação. De forma a organizar a informação armazenada, em vez de se gerar um \textit{backup} de toda a base de dados, gera-se um \textit{backup} específico para cada molde, que inclui a informação dos seus sensores, registos e cliente a que está associado. Além destes, realiza-se um outro \textit{backup} com a informação dos clientes, moldes e sensores mais atual. Assim, em caso de falha crítica, simplifica-se a recuperação do sistema.\par 
 Ao contrário do programa anterior, este programa não executa de forma contínua. Define-se um temporizador para executar o código principal. A \autoref{fig:backups1} representa a estrutura do programa sempre que o temporizador chega ao fim.
@@ -996,7 +1067,7 @@ Na eventualidade de surgir uma falha crítica no sistema central, e este necessi
 \end{lstlisting}
 Isto faz com que se recupere a informação dos clientes, moldes e sensores presentes no último \textit{backup} de forma a acelerar o processo de restauro comparativamente a uma inserção manual dos dados.
 
-\subsection{Simulador}
+\section{Simulador}
 Para popular as bases de dados locais foi desenvolvido um simples programa que gera valores. Estes seguem o perfil de uma onda sinusoidal com a expressão:
 \begin{equation}
 v = O + A\sin(\frac{2 \pi x}{t} + \gamma)
@@ -1022,7 +1093,7 @@ Obtém-se a hora atual do sistema em segundos. Com as expressões \ref{eq:sim1} 
 	(moldeI, sensorN, fase, NOW(), @mseg, valorIN);
 \end{lstlisting}
 
-\subsection{Utilizadores}
+\section{Utilizadores}
 Para minimizar o risco de erros por parte dos utilizadores que interagem com o sistema, são definidas credenciais com permissões específicas para cada base de dados:
 \begin{itemize}[noitemsep]
 	\item user, password
@@ -1031,8 +1102,8 @@ Para minimizar o risco de erros por parte dos utilizadores que interagem com o s
 	\item backupmanager, backup1234
 \end{itemize}
 \textit{user} representa o utilizador padrão, ou seja, aquele que interage com as bases de dados para gerir os clientes, moldes e sensores bem como consultar a tabela registos. As credenciais \textit{transferencia} utilizam-se no programa de transferência de valores para realizar as conexões com as bases de dados central e locais, \textit{sensores} utiliza-se no simulador para popular as bases de dados locais e, no futuro, pelo sistema de aquisição de dados que substituirá este simulador, \textit{backupmanager} utiliza-se no programa de gestão de \textit{backups}.\par 
-Cada conjunto de credenciais serve um objetivo, a \autoref{tab:utilizadores1} contém as permissões destas definidas em cada base de dados.
-\begin{table}[H]
+Cada conjunto de credenciais serve um objetivo, a \autoref{tab:utilizadores1} contém as permissões destas definidas em cada base de dados.\par 
+\begin{table}
 	\begin{tabular}{|l|c|c|c|c|c|c|}
 		%\hline
 		\multicolumn{7}{l}{\textbf{central}} \\ \hline
@@ -1063,6 +1134,17 @@ Cada conjunto de credenciais serve um objetivo, a \autoref{tab:utilizadores1} co
 		transferencia & & & & & & \\ \hline
 		sensores & & & & & & \\ \hline
 		backupmanager & & & \textbf{X} & \textbf{X} & \textbf{X} & \\ \hline
+		\multicolumn{7}{l}{\textbf{notificações}} \\ \hline
+		\makecell{atualizar} & CREATE & DROP & SELECT & INSERT & DELETE & UPDATE \\ \hline
+		user & & & & & & \textbf{X} \\ \hline
+		transferencia & & & & & & \textbf{X} \\ \hline
+		sensores & & & & & & \\ \hline
+		backupmanager & & & & & & \textbf{X} \\ \hline
+		backups & CREATE & DROP & SELECT & INSERT & DELETE & UPDATE \\ \hline
+		user & & & \textbf{X} & \textbf{X} & \textbf{X} & \textbf{X} \\ \hline
+		transferencia & & & & & & \\ \hline
+		sensores & & & & & & \\ \hline
+		backupmanager & & & \textbf{X} & & \textbf{X} & \\ \hline
 	\end{tabular}
 	\caption{Tabelas com as permissões das credenciais criadas para as várias tabelas das bases de dados}
 	\label{tab:utilizadores1}
@@ -1082,30 +1164,6 @@ A infraestrutura desenvolvida no \autoref{chap:solucao} visa uma utilização a 
 		\includegraphics[width=0.65\textwidth]{Aplicacao_temp_local_central} % Include the image placeholder.png
 		\caption{Esquema ligação Aplicação-Bases de Dados. A aplicação comunica com a base de dados temporária local e depois regista os seus valores nas bases de dados central e local}
 		\label{fig:adap1}
-	\end{center}
-\end{figure}
-Relembrando, o programa de transferência de valores, numa utilização a baixo nível, tem de ser reiniciado manualmente. No entanto, como a aplicação gere informação dos clientes, moldes e sensores surge a necessidade que este programa possa ser reinicializado pela aplicação. Para este efeito cria-se uma nova base de dados notificações no sistema central. Tem como objetivo conter variáveis globais importantes para a comunicação entre os vários programas. Nesta fase do projeto serve apenas como ponto de ligação entre a aplicação e o programa de transferência. Esta tem uma tabela transferência com um campo atualizar, como demonstrado na \autoref{fig:adap2}, que pode assumir os valores 0 e 1.
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics[width=0.65\textwidth]{placeholder} % Include the image placeholder.png
-		\caption{Esquema ligação Aplicação-Bases de Dados. A aplicação comunica com a base de dados temporária local e depois regista os seus valores nas bases de dados central e local}
-		\label{fig:adap2}
-	\end{center}
-\end{figure}
-Adapta-se também o programa de transferência de valores de acordo com a \autoref{fig:adap3}.
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics[width=0.65\textwidth]{placeholder} % Include the image placeholder.png
-		\caption{Fluxograma 2}
-		\label{fig:adap3}
-	\end{center}
-\end{figure}
-Define-se um temporizador nos subprogramas de cada cliente para consultarem esta nova base de dados. Se atualizar for igual a 1 os subprogramas terminam as suas rotinas e as conexões às bases de dados. Quando todos tiverem terminado, o programa principal reinicia o processo de criação de novos subprogramas e retorna o parâmetro atualizar para 0. A \autoref{fig:adap4} representa a infraestrutura completa numa utilização com a aplicação.
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics[width=0.65\textwidth]{placeholder} % Include the image placeholder.png
-		\caption{Esquema ligação Aplicação-Bases de Dados. A aplicação comunica com a base de dados temporária local e depois regista os seus valores nas bases de dados central e local}
-		\label{fig:adap4}
 	\end{center}
 \end{figure}
 

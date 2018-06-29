@@ -16,27 +16,28 @@
 \BOOKMARK [2][-]{subsection.2.4.3}{MySQL}{section.2.4}% 16
 \BOOKMARK [0][-]{chapter.3}{Proposta de Solu\347\343o}{}% 17
 \BOOKMARK [1][-]{section.3.1}{Infraestrutura de Dados}{chapter.3}% 18
-\BOOKMARK [1][-]{section.3.2}{Base de Dados}{chapter.3}% 19
-\BOOKMARK [2][-]{subsection.3.2.1}{An\341lise de Requisitos}{section.3.2}% 20
+\BOOKMARK [1][-]{section.3.2}{Base de dados}{chapter.3}% 19
+\BOOKMARK [2][-]{subsection.3.2.1}{An\341lise de requisitos}{section.3.2}% 20
 \BOOKMARK [2][-]{subsection.3.2.2}{Desenho conceptual e esquema l\363gico}{section.3.2}% 21
 \BOOKMARK [2][-]{subsection.3.2.3}{Constru\347\343o da base de dados}{section.3.2}% 22
-\BOOKMARK [2][-]{subsection.3.2.4}{Programa de transfer\352ncia}{section.3.2}% 23
-\BOOKMARK [2][-]{subsection.3.2.5}{Gest\343o de backups}{section.3.2}% 24
-\BOOKMARK [2][-]{subsection.3.2.6}{Simulador}{section.3.2}% 25
-\BOOKMARK [2][-]{subsection.3.2.7}{Utilizadores}{section.3.2}% 26
-\BOOKMARK [0][-]{chapter.4}{Aplica\347\343o de Gest\343o do Sistema}{}% 27
-\BOOKMARK [1][-]{section.4.1}{Adapta\347\343o da infraestrutura}{chapter.4}% 28
-\BOOKMARK [1][-]{section.4.2}{Interface gr\341fica}{chapter.4}% 29
-\BOOKMARK [2][-]{subsection.4.2.1}{Main}{section.4.2}% 30
-\BOOKMARK [2][-]{subsection.4.2.2}{Login}{section.4.2}% 31
-\BOOKMARK [2][-]{subsection.4.2.3}{Consultas}{section.4.2}% 32
-\BOOKMARK [2][-]{subsection.4.2.4}{Administra\347\343o Local}{section.4.2}% 33
-\BOOKMARK [3][-]{section*.39}{Administra\347\343o}{subsection.4.2.4}% 34
-\BOOKMARK [3][-]{section*.44}{Conectar Local}{subsection.4.2.4}% 35
-\BOOKMARK [0][-]{chapter.5}{Testes de Usabilidade}{}% 36
-\BOOKMARK [0][-]{chapter.6}{Conclus\365es}{}% 37
-\BOOKMARK [1][-]{section.6.1}{Coment\341rios}{chapter.6}% 38
-\BOOKMARK [2][-]{subsection.6.1.1}{Infraestrutura de dados}{section.6.1}% 39
-\BOOKMARK [2][-]{subsection.6.1.2}{Aplica\347\343o de gest\343o do sistema}{section.6.1}% 40
-\BOOKMARK [1][-]{section.6.2}{Trabalhos Futuros}{chapter.6}% 41
-\BOOKMARK [0][-]{section.6.3}{Bibliografia}{}% 42
+\BOOKMARK [2][-]{subsection.3.2.4}{Base de dados notifica\347\365es}{section.3.2}% 23
+\BOOKMARK [1][-]{section.3.3}{Programa de transfer\352ncia}{chapter.3}% 24
+\BOOKMARK [1][-]{section.3.4}{Gest\343o de backups}{chapter.3}% 25
+\BOOKMARK [1][-]{section.3.5}{Simulador}{chapter.3}% 26
+\BOOKMARK [1][-]{section.3.6}{Utilizadores}{chapter.3}% 27
+\BOOKMARK [0][-]{chapter.4}{Aplica\347\343o de Gest\343o do Sistema}{}% 28
+\BOOKMARK [1][-]{section.4.1}{Adapta\347\343o da infraestrutura}{chapter.4}% 29
+\BOOKMARK [1][-]{section.4.2}{Interface gr\341fica}{chapter.4}% 30
+\BOOKMARK [2][-]{subsection.4.2.1}{Main}{section.4.2}% 31
+\BOOKMARK [2][-]{subsection.4.2.2}{Login}{section.4.2}% 32
+\BOOKMARK [2][-]{subsection.4.2.3}{Consultas}{section.4.2}% 33
+\BOOKMARK [2][-]{subsection.4.2.4}{Administra\347\343o Local}{section.4.2}% 34
+\BOOKMARK [3][-]{section*.39}{Administra\347\343o}{subsection.4.2.4}% 35
+\BOOKMARK [3][-]{section*.44}{Conectar Local}{subsection.4.2.4}% 36
+\BOOKMARK [0][-]{chapter.5}{Testes de Usabilidade}{}% 37
+\BOOKMARK [0][-]{chapter.6}{Conclus\365es}{}% 38
+\BOOKMARK [1][-]{section.6.1}{Coment\341rios}{chapter.6}% 39
+\BOOKMARK [2][-]{subsection.6.1.1}{Infraestrutura de dados}{section.6.1}% 40
+\BOOKMARK [2][-]{subsection.6.1.2}{Aplica\347\343o de gest\343o do sistema}{section.6.1}% 41
+\BOOKMARK [1][-]{section.6.2}{Trabalhos Futuros}{chapter.6}% 42
+\BOOKMARK [0][-]{section.6.3}{Bibliografia}{}% 43

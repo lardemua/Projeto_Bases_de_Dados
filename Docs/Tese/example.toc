@@ -17,27 +17,28 @@
 \contentsline {subsection}{\numberline {2.4.3}\textit {MySQL}}{15}{subsection.2.4.3}
 \contentsline {chapter}{\numberline {3}Proposta de Solu\IeC {\c c}\IeC {\~a}o}{17}{chapter.3}
 \contentsline {section}{\numberline {3.1}Infraestrutura de Dados}{17}{section.3.1}
-\contentsline {section}{\numberline {3.2}Base de Dados}{18}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}An\IeC {\'a}lise de Requisitos}{18}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Desenho conceptual e esquema l\IeC {\'o}gico}{22}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}Constru\IeC {\c c}\IeC {\~a}o da base de dados}{23}{subsection.3.2.3}
-\contentsline {subsection}{\numberline {3.2.4}Programa de transfer\IeC {\^e}ncia}{26}{subsection.3.2.4}
-\contentsline {subsection}{\numberline {3.2.5}Gest\IeC {\~a}o de \textit {backups}}{27}{subsection.3.2.5}
-\contentsline {subsection}{\numberline {3.2.6}Simulador}{30}{subsection.3.2.6}
-\contentsline {subsection}{\numberline {3.2.7}Utilizadores}{30}{subsection.3.2.7}
-\contentsline {chapter}{\numberline {4}Aplica\IeC {\c c}\IeC {\~a}o de Gest\IeC {\~a}o do Sistema}{33}{chapter.4}
-\contentsline {section}{\numberline {4.1}Adapta\IeC {\c c}\IeC {\~a}o da infraestrutura}{33}{section.4.1}
-\contentsline {section}{\numberline {4.2}Interface gr\IeC {\'a}fica}{35}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}\textit {Main}}{37}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}\textit {Login}}{38}{subsection.4.2.2}
-\contentsline {subsection}{\numberline {4.2.3}Consultas}{39}{subsection.4.2.3}
-\contentsline {subsection}{\numberline {4.2.4}Administra\IeC {\c c}\IeC {\~a}o Local}{42}{subsection.4.2.4}
-\contentsline {subsubsection}{Administra\IeC {\c c}\IeC {\~a}o}{43}{section*.39}
-\contentsline {subsubsection}{Conectar Local}{47}{section*.44}
-\contentsline {chapter}{\numberline {5}Testes de Usabilidade}{51}{chapter.5}
-\contentsline {chapter}{\numberline {6}Conclus\IeC {\~o}es}{53}{chapter.6}
-\contentsline {section}{\numberline {6.1}Coment\IeC {\'a}rios}{53}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}Infraestrutura de dados}{53}{subsection.6.1.1}
-\contentsline {subsection}{\numberline {6.1.2}Aplica\IeC {\c c}\IeC {\~a}o de gest\IeC {\~a}o do sistema}{55}{subsection.6.1.2}
-\contentsline {section}{\numberline {6.2}Trabalhos Futuros}{56}{section.6.2}
-\contentsline {chapter}{Bibliografia}{59}{section.6.3}
+\contentsline {section}{\numberline {3.2}Base de dados}{18}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}An\IeC {\'a}lise de requisitos}{18}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Desenho conceptual e esquema l\IeC {\'o}gico}{24}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Constru\IeC {\c c}\IeC {\~a}o da base de dados}{25}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}Base de dados notifica\IeC {\c c}\IeC {\~o}es}{27}{subsection.3.2.4}
+\contentsline {section}{\numberline {3.3}Programa de transfer\IeC {\^e}ncia}{28}{section.3.3}
+\contentsline {section}{\numberline {3.4}Gest\IeC {\~a}o de \textit {backups}}{32}{section.3.4}
+\contentsline {section}{\numberline {3.5}Simulador}{34}{section.3.5}
+\contentsline {section}{\numberline {3.6}Utilizadores}{35}{section.3.6}
+\contentsline {chapter}{\numberline {4}Aplica\IeC {\c c}\IeC {\~a}o de Gest\IeC {\~a}o do Sistema}{37}{chapter.4}
+\contentsline {section}{\numberline {4.1}Adapta\IeC {\c c}\IeC {\~a}o da infraestrutura}{37}{section.4.1}
+\contentsline {section}{\numberline {4.2}Interface gr\IeC {\'a}fica}{38}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}\textit {Main}}{39}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}\textit {Login}}{40}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}Consultas}{41}{subsection.4.2.3}
+\contentsline {subsection}{\numberline {4.2.4}Administra\IeC {\c c}\IeC {\~a}o Local}{44}{subsection.4.2.4}
+\contentsline {subsubsection}{Administra\IeC {\c c}\IeC {\~a}o}{45}{section*.39}
+\contentsline {subsubsection}{Conectar Local}{49}{section*.44}
+\contentsline {chapter}{\numberline {5}Testes de Usabilidade}{53}{chapter.5}
+\contentsline {chapter}{\numberline {6}Conclus\IeC {\~o}es}{55}{chapter.6}
+\contentsline {section}{\numberline {6.1}Coment\IeC {\'a}rios}{55}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Infraestrutura de dados}{55}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.2}Aplica\IeC {\c c}\IeC {\~a}o de gest\IeC {\~a}o do sistema}{57}{subsection.6.1.2}
+\contentsline {section}{\numberline {6.2}Trabalhos Futuros}{58}{section.6.2}
+\contentsline {chapter}{Bibliografia}{61}{section.6.3}
