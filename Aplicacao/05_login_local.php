@@ -5,7 +5,7 @@ session_start();
 
 <head>
     <meta charset="UTF-8" />
-    <title>Login</title>
+    <title>Conectar Local</title>
 </head>
 
 <body style="background-color:azure;">
@@ -51,7 +51,7 @@ session_start();
         }else if($_SESSION['central_status'] == "Logout" && $_SESSION['local_status'] != "Disconnect")
         {
 	echo "<form action=\"031_admin_cliente.php\" style=\"float: left;\">
-            <input type=\"submit\" value=\"Administração\" disabled>
+            <input type=\"submit\" value=\"Administração\">
             </form>";
             echo "<form action=\"05_login_local.php\">
             <input type=\"submit\" value=\"Conectar Local\">
@@ -97,6 +97,7 @@ session_start();
             $data_missing[] = 'Nome da Base de Dados';
         }else{
             $_SESSION['local_name'] = trim($_POST['database']);
+		$_SESSION['local_ID'] = trim(str_replace("cl_"," ",$_POST['database']));
         }
 
         if(empty($data_missing))

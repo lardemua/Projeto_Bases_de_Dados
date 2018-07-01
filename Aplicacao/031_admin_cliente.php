@@ -4,7 +4,7 @@ session_start();
 <html lang="pt">
 <head>
     <meta charset="UTF-8" />
-    <title>Administração</title>
+    <title>Administração Local</title>
 </head>
 <body style="background-color:azure;">
 <?php
@@ -47,25 +47,34 @@ session_start();
             echo "<form action=\"05_login_local.php\">
             <input type=\"submit\" value=\"" . $_SESSION['local_name'] . "\">
             </form>";
+	echo "<form action=\"031_admin_cliente.php\" style=\"float: left;\">
+	    <input type=\"submit\" value=\"Gestão Clientes\">
+	    </form>
+	    <form action=\"032_admin_molde.php\" style=\"float: left;\">
+	    <input type=\"submit\" value=\"Gestão Moldes\">
+	    </form>
+	    <form action=\"033_admin_sensor.php\">
+	    <input type=\"submit\" value=\"Gestão Sensores\">
+	    </form>";
         }else if($_SESSION['central_status'] == "Logout" && $_SESSION['local_status'] != "Disconnect")
         {
 	echo "<form action=\"031_admin_cliente.php\" style=\"float: left;\">
-            <input type=\"submit\" value=\"Administração\" disabled>
+            <input type=\"submit\" value=\"Administração\">
             </form>";
             echo "<form action=\"05_login_local.php\">
             <input type=\"submit\" value=\"Conectar Local\">
             </form>";
+	echo "<form action=\"031_admin_cliente.php\" style=\"float: left;\">
+	    <input type=\"submit\" value=\"Gestão Clientes\">
+	    </form>
+	    <form action=\"032_admin_molde.php\" style=\"float: left;\">
+	    <input type=\"submit\" value=\"Gestão Moldes\" disabled>
+	    </form>
+	    <form action=\"033_admin_sensor.php\">
+	    <input type=\"submit\" value=\"Gestão Sensores\" disabled>
+	    </form>";
         }
     ?>
-    <form action="031_admin_cliente.php" style="float: left;">
-        <input type="submit" value="Gestão Clientes">
-    </form>
-    <form action="032_admin_molde.php" style="float: left;">
-        <input type="submit" value="Gestão Moldes">
-    </form>
-    <form action="033_admin_sensor.php">
-        <input type="submit" value="Gestão Sensores">
-    </form>
 
     <?php
 	/*
@@ -100,7 +109,15 @@ session_start();
             <tr>
                 <td>ID:</td>
                 <td>
-                    <input type="text" name="cl_id" value="">
+		<?php
+			if($_SESSION['central_status'] == "Logout" && $_SESSION['local_status'] == "Disconnect")
+			{
+			echo "<input type=\"text\" name=\"cl_id\" value=\"" . $_SESSION['local_ID'] . "\" disabled>";
+			}else if($_SESSION['central_status'] == "Logout" && $_SESSION['local_status'] != "Disconnect")
+			{
+			echo "<input type=\"text\" name=\"cl_id\" value=\"\">";
+			}
+	    	?>
                 </td>
             </tr>
             <tr>
@@ -128,10 +145,22 @@ session_start();
                 </td>
             </tr>
         </table>
-        <input type="submit" name="Adicionar_Cliente" value="Adicionar Cliente">
-        <input type="submit" name="Alterar_Cliente" value="Alterar Cliente">
-        <input type="submit" name="Eliminar_Cliente" value="Eliminar Cliente">
-	<input type="submit" name="Atualizar_Cliente" value="Atualizar">
+	<?php
+		if($_SESSION['central_status'] == "Logout" && $_SESSION['local_status'] == "Disconnect")
+		{
+			echo "
+			<input type=\"submit\" name=\"Adicionar_Cliente\" value=\"Adicionar Cliente\" disabled>
+        		<input type=\"submit\" name=\"Alterar_Cliente\" value=\"Alterar Cliente\">
+			<input type=\"submit\" name=\"Atualizar_Cliente\" value=\"Atualizar\">";
+			//<input type=\"submit\" name=\"Eliminar_Cliente\" value=\"Eliminar Cliente\">
+		}else if($_SESSION['central_status'] == "Logout" && $_SESSION['local_status'] != "Disconnect")
+		{
+			echo "<input type=\"submit\" name=\"Adicionar_Cliente\" value=\"Adicionar Cliente\">
+        		<input type=\"submit\" name=\"Alterar_Cliente\" value=\"Alterar Cliente\" disabled>
+			<input type=\"submit\" name=\"Atualizar_Cliente\" value=\"Atualizar\" disabled>";
+			//<input type=\"submit\" name=\"Eliminar_Cliente\" value=\"Eliminar Cliente\" disabled>
+		}
+    	?>
         <br>
         <br>
         <input type="submit" name="Ver_Cliente" value="Ver Clientes">
@@ -139,11 +168,13 @@ session_start();
             if($_SESSION['central_status'] == "Logout" && $_SESSION['local_status'] == "Disconnect")
             {
                 echo "
-            <input type=\"submit\" name=\"Ver_Molde\" value=\"Ver Moldes\">
-            <input type=\"submit\" name=\"Ver_Sensor\" value=\"Ver Sensores\">";
+            	<input type=\"submit\" name=\"Ver_Molde\" value=\"Ver Moldes\">
+            	<input type=\"submit\" name=\"Ver_Sensor\" value=\"Ver Sensores\">";
             }else
             {
-
+                echo "
+            	<input type=\"submit\" name=\"Ver_Molde\" value=\"Ver Moldes\" disabled>
+            	<input type=\"submit\" name=\"Ver_Sensor\" value=\"Ver Sensores\" disabled>";
             }
         ?>
     </form>

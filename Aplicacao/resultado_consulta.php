@@ -161,6 +161,7 @@ session_start();
             }else
             {
                 echo "Só são aceites queries do tipo SELECT<br>Query anterior: " . $query_text;
+		exit();
             }
         }
 

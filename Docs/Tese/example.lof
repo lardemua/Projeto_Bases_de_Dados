@@ -40,20 +40,21 @@
 \contentsline {figure}{\numberline {4.5}{\ignorespaces P\IeC {\'a}gina de Consultas e exemplo de resposta a uma consulta\relax }}{47}{figure.caption.38}
 \contentsline {figure}{\numberline {4.6}{\ignorespaces Exemplos de erros retornados na p\IeC {\'a}gina de Resposta da Consulta\relax }}{49}{figure.caption.39}
 \contentsline {figure}{\numberline {4.7}{\ignorespaces Funcionalidades da p\IeC {\'a}gina Administra\IeC {\c c}\IeC {\~a}o com e sem conex\IeC {\~a}o local\relax }}{50}{figure.caption.40}
-\contentsline {figure}{\numberline {4.8}{\ignorespaces \IeC {\'A}rea de Gest\IeC {\~a}o de Clientes sem conex\IeC {\~a}o local\relax }}{52}{figure.caption.42}
-\contentsline {figure}{\numberline {4.9}{\ignorespaces \IeC {\'A}rea de Gest\IeC {\~a}o de Moldes\relax }}{53}{figure.caption.43}
-\contentsline {figure}{\numberline {4.10}{\ignorespaces \IeC {\'A}rea de Gest\IeC {\~a}o de Sensores\relax }}{53}{figure.caption.44}
-\contentsline {figure}{\numberline {4.11}{\ignorespaces Fun\IeC {\c c}\IeC {\~a}o do bot\IeC {\~a}o Validar, onde os valores da base de dados tempor\IeC {\'a}ria local s\IeC {\~a}o transferidos de forma permanente para as bases de dados central e local\relax }}{54}{figure.caption.45}
-\contentsline {figure}{\numberline {4.12}{\ignorespaces \IeC {\'A}rea Conectar Local onde se visualiza as bases de dados instaladas no sistema\relax }}{55}{figure.caption.47}
-\contentsline {figure}{\numberline {4.13}{\ignorespaces \textit {Main} com conex\IeC {\~a}o local\relax }}{56}{figure.caption.48}
-\contentsline {figure}{\numberline {4.14}{\ignorespaces \IeC {\'A}rea Criar Local cria a base de dados para o cliente selecionado no sistema em que se acede a aplica\IeC {\c c}\IeC {\~a}o\relax }}{56}{figure.caption.49}
-\contentsline {figure}{\numberline {4.15}{\ignorespaces \textit {Queries} geradas para completar a instala\IeC {\c c}\IeC {\~a}o da base de dados no sistema local. Consistem nas permiss\IeC {\~o}es para os utilizadores que s\IeC {\'o} podem ser garantidas via \textit {root} bem como informa\IeC {\c c}\IeC {\~a}o para completar o sistema de dados\relax }}{57}{figure.caption.50}
-\contentsline {figure}{\numberline {4.16}{\ignorespaces \IeC {\'A}rea Instalar \textit {MySQL} para instalar o \textit {software} com os comandos em \textit {Linux}\relax }}{58}{figure.caption.51}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces \IeC {\'A}rea de Gest\IeC {\~a}o de Clientes sem conex\IeC {\~a}o local\relax }}{51}{figure.caption.42}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces \IeC {\'A}rea de Gest\IeC {\~a}o de Clientes com conex\IeC {\~a}o local\relax }}{52}{figure.caption.43}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces \IeC {\'A}rea de Gest\IeC {\~a}o de Moldes\relax }}{53}{figure.caption.44}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces \IeC {\'A}rea de Gest\IeC {\~a}o de Sensores\relax }}{53}{figure.caption.45}
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Fun\IeC {\c c}\IeC {\~a}o do bot\IeC {\~a}o Validar, onde os valores da base de dados tempor\IeC {\'a}ria local s\IeC {\~a}o transferidos de forma permanente para as bases de dados central e local\relax }}{54}{figure.caption.46}
+\contentsline {figure}{\numberline {4.13}{\ignorespaces \IeC {\'A}rea Conectar Local onde se visualiza as bases de dados instaladas no sistema\relax }}{55}{figure.caption.48}
+\contentsline {figure}{\numberline {4.14}{\ignorespaces \IeC {\'A}rea Instalar \textit {MySQL} para instalar o \textit {software} com os comandos em \textit {Linux}\relax }}{55}{figure.caption.49}
+\contentsline {figure}{\numberline {4.15}{\ignorespaces \IeC {\'A}rea Criar Local cria a base de dados para o cliente selecionado no sistema em que se acede a aplica\IeC {\c c}\IeC {\~a}o\relax }}{56}{figure.caption.50}
+\contentsline {figure}{\numberline {4.16}{\ignorespaces \textit {Queries} geradas para completar a instala\IeC {\c c}\IeC {\~a}o da base de dados no sistema local. Consistem nas permiss\IeC {\~o}es para os utilizadores que s\IeC {\'o} podem ser garantidas via \textit {root} bem como informa\IeC {\c c}\IeC {\~a}o para completar o sistema de dados\relax }}{57}{figure.caption.51}
+\contentsline {figure}{\numberline {4.17}{\ignorespaces \textit {Main} com conex\IeC {\~a}o local\relax }}{58}{figure.caption.52}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Exemplo da \IeC {\'a}rea Criar Local com cria\IeC {\c c}\IeC {\~a}o das bases de dados e utilizadores via \textit {root} em vez de gerar \textit {queries} para o utilizador inserir manualmente no \textit {MySQL}\relax }}{62}{figure.caption.53}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Exemplo da \IeC {\'a}rea Criar Local com cria\IeC {\c c}\IeC {\~a}o das bases de dados e utilizadores via \textit {root} em vez de gerar \textit {queries} para o utilizador inserir manualmente no \textit {MySQL}\relax }}{64}{figure.caption.55}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Exemplo de problemas fisicos\relax }}{65}{figure.caption.56}
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Exemplo de \IeC {\'a}rea de Registar para criar utilizadores com base no ID de trabalhador e email\relax }}{66}{figure.caption.57}
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Exemplo molde 4 dinamometros a sair da cena\relax }}{66}{figure.caption.58}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Exemplo da \IeC {\'a}rea Criar Local com cria\IeC {\c c}\IeC {\~a}o das bases de dados e utilizadores via \textit {root} em vez de gerar \textit {queries} para o utilizador inserir manualmente no \textit {MySQL}\relax }}{62}{figure.caption.54}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Exemplo da \IeC {\'a}rea Criar Local com cria\IeC {\c c}\IeC {\~a}o das bases de dados e utilizadores via \textit {root} em vez de gerar \textit {queries} para o utilizador inserir manualmente no \textit {MySQL}\relax }}{64}{figure.caption.56}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Exemplo de problemas fisicos\relax }}{65}{figure.caption.57}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Exemplo de \IeC {\'a}rea de Registar para criar utilizadores com base no ID de trabalhador e email\relax }}{66}{figure.caption.58}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Exemplo molde 4 dinamometros a sair da cena\relax }}{66}{figure.caption.59}
 \addvspace {10\p@ }

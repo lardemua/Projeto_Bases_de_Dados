@@ -10,11 +10,24 @@
 </head>
 <body>
 <?php
-require('central_connect.php');
+if($_SESSION['central_status'] == "Logout" && $_SESSION['local_status'] == "Disconnect")
+{
+	require('local_connect.php');
+}else
+{
+	require('central_connect.php');
+}
+
 
 $query = "SELECT cl_ID, cl_nome, cl_morada, cl_IP, cl_port, COUNT(DISTINCT m_ID), COUNT(DISTINCT s_IDMolde, s_num) FROM clientes LEFT OUTER JOIN moldes ON cl_ID = m_IDCliente LEFT OUTER JOIN sensores ON m_ID = s_IDMolde GROUP BY cl_ID ORDER BY cl_ID";
 
-$response = @mysqli_query($dbc,$query);
+if($_SESSION['central_status'] == "Logout" && $_SESSION['local_status'] == "Disconnect")
+{
+	$response = @mysqli_query($dbc2,$query);
+}else
+{
+	$response = @mysqli_query($dbc,$query);
+}
 
 if($response)
 {
@@ -48,12 +61,23 @@ if($response)
     echo '</table>';
 
 } else{
-    echo "Error";
-
-    echo mysqli_error($dbc);
+    echo "Error: ";
+	if($_SESSION['central_status'] == "Logout" && $_SESSION['local_status'] == "Disconnect")
+	{
+		echo mysqli_error($dbc2);
+	}else
+	{
+		echo mysqli_error($dbc);
+	}
 }
 
-mysqli_close($dbc);
+if($_SESSION['central_status'] == "Logout" && $_SESSION['local_status'] == "Disconnect")
+{
+	mysqli_close($dbc2);
+}else
+{
+	mysqli_close($dbc);
+}
 
 ?>
 </body>

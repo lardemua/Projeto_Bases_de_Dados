@@ -34,7 +34,7 @@ if($response)
     }
 
 } else{
-    echo "Error";
+    echo "Error: ";
 
     echo mysqli_error($dbc4);
 }
@@ -77,7 +77,7 @@ if($response)
     }
 
 } else{
-    echo "Error";
+    echo "Error: ";
 
     echo mysqli_error($dbc4);
 }
@@ -120,7 +120,7 @@ if($response)
     }
 
 } else{
-    echo "Error";
+    echo "Error: ";
 
     echo mysqli_error($dbc4);
 }

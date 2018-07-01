@@ -48,7 +48,7 @@ if($response)
     echo '</table>';
 
 } else{
-    echo "Error";
+    echo "Error: ";
 
     echo mysqli_error($dbc2);
 }

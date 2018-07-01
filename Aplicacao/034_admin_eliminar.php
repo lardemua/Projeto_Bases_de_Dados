@@ -4,7 +4,7 @@ session_start();
 <html lang="pt">
 <head>
     <meta charset="UTF-8" />
-    <title>Administração</title>
+    <title>Administração Local</title>
 </head>
 <body style="background-color:azure;">
 <?php

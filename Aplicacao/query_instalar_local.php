@@ -30,7 +30,7 @@ if($response)
         $cl_port = $row['cl_port'];
     }
 } else{
-    echo "Error";
+    echo "Error: ";
 
     echo mysqli_error($dbc);
 }
@@ -117,6 +117,8 @@ echo "
     FOREIGN KEY(r_fase) REFERENCES fase(fase_ID)
             ON DELETE NO ACTION ON UPDATE CASCADE
     );
+    INSERT IGNORE clientes VALUES
+    (" . $cl_ID . ",'" .$cl_nome . "','" .$cl_morada . "','" .$cl_IP . "'," .$cl_port . ");
     INSERT INTO tipo
     VALUES
     (1, 'Termómetro'),
@@ -137,6 +139,8 @@ echo "
     GRANT SELECT, INSERT, UPDATE ON cl_" . $_POST['cl_id'] . ".clientes TO 'user'@'%';
     GRANT SELECT, INSERT, DELETE ON cl_" . $_POST['cl_id'] . ".moldes TO 'user'@'%';
     GRANT SELECT, INSERT, DELETE ON cl_" . $_POST['cl_id'] . ".sensores TO 'user'@'%';
+    GRANT SELECT ON cl_" . $_POST['cl_id'] . ".tipo TO 'user'@'%';
+    GRANT SELECT ON cl_" . $_POST['cl_id'] . ".fase TO 'user'@'%';
     GRANT SELECT ON cl_" . $_POST['cl_id'] . ".registos TO 'user'@'%';
     GRANT INSERT ON cl_" . $_POST['cl_id'] . ".registos TO 'sensores'@'localhost';
     GRANT SELECT, DELETE ON cl_" . $_POST['cl_id'] . ".registos TO 'transferencia'@'%';
@@ -144,11 +148,11 @@ echo "
 ";?>
 </div>
 
-<p>Query gerada, carregar no botão:</p>
-<pre>---><button type="button" id="btnCopy">Copiar Query</button><---</pre>
 <p>Inciar sessão no MySQL:</p>
 <pre>      mysql -u root -p</pre>
-<p>Inserir as queries com ctrl+v</p>
+<p>Query gerada, carregar no botão:</p>
+<pre>---><button type="button" id="btnCopy">Copiar Query</button><---</pre>
+<p>Inserir a query com ctrl+v ou colar</p>
 <p>Terminar sessão:</p>
 <pre>      quit</pre>
 
@@ -171,6 +175,7 @@ echo "
 
 <!-- PRIMEIRA TENTATIVA, FUNCIONA MAS DEMORA MUITO TEMPO E CAUSA TIMEOUT DAS CENAS
 <?php
+	/*
     DEFINE('DB_USER_Local',$_SESSION['user']);
     DEFINE('DB_PASSWORD_Local',$_SESSION['password']);
     DEFINE('DB_HOST_Local',$_SERVER['REMOTE_ADDR']);
@@ -458,6 +463,7 @@ $db = "temp_local";
         echo("Erro: " . mysqli_error($dbc3) . "<br>");
     }
     mysqli_close($dbc3);
+*/
 ?>
 
 <p>Base de dados local criada</p>

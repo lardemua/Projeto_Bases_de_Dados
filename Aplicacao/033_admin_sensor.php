@@ -4,7 +4,7 @@ session_start();
 <html lang="pt">
 <head>
     <meta charset="UTF-8" />
-    <title>Administração</title>
+    <title>Administração Local</title>
 </head>
 <body style="background-color:azure;">
 <?php
@@ -181,11 +181,11 @@ session_start();
           if($go)
           {
             require('temp_local_connect.php');
-            $query = "DELETE FROM sensores WHERE s_IDMolde = " . $m_molde . "AND S_num = " . $s_sensor;
+            $query = "DELETE FROM sensores WHERE s_IDMolde = " . $s_molde . " AND s_num = " . $s_sensor;
 
             if (!mysqli_query($dbc4,$query))
             {
-                echo("Erro: " . mysqli_error($dbc4) . "<br>");
+                echo("<br>Erro: " . mysqli_error($dbc4) . "<br>");
             }else
             {
             //echo "sensor eliminado";

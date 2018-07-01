@@ -61,7 +61,7 @@
         }
 
     } else{
-        echo "Error";
+        echo "Error: ";
 
         echo mysqli_error($dbc2);
     }

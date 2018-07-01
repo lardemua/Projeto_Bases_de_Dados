@@ -4,7 +4,7 @@ session_start();
 <html lang="pt">
 <head>
     <meta charset="UTF-8" />
-    <title>Administração</title>
+    <title>Administração Local</title>
 </head>
 <body style="background-color:azure;">
 <?php
@@ -32,9 +32,15 @@ session_start();
     
             if(empty($_POST['m_cliente']))
             {
-                $data_missing[] = 'ID Cliente';
+		if(empty($_SESSION['local_ID']))
+            	{
+                	$data_missing[] = 'ID Cliente';
+	    	}else{
+			$m_cliente = trim($_SESSION['local_ID']);
+	   	 }
             }else{
                 $m_cliente = trim($_POST['m_cliente']);
+		//$m_cliente = trim($_SESSION['local_ID']);
             }
             if(!is_numeric($m_cliente))
             {
@@ -228,7 +234,7 @@ session_start();
             <tr>
                 <td>ID Cliente:</td>
                 <td>
-                    <input type="text" name="m_cliente" value="">
+                    <input type="text" name="m_cliente" value="<?php echo $_SESSION['local_ID'];?>" disabled>
                 </td>
             </tr>
             <tr>
@@ -305,5 +311,6 @@ session_start();
     }
 
 ?>
+
 </body>
 </html>

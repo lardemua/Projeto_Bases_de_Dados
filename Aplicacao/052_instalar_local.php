@@ -5,7 +5,7 @@ session_start();
 
 <head>
     <meta charset="UTF-8" />
-    <title>Login</title>
+    <title>Conectar Local</title>
 </head>
 
 <body style="background-color:azure;">
@@ -51,7 +51,7 @@ session_start();
         }else if($_SESSION['central_status'] == "Logout" && $_SESSION['local_status'] != "Disconnect")
         {
 	echo "<form action=\"031_admin_cliente.php\" style=\"float: left;\">
-            <input type=\"submit\" value=\"Administração\" disabled>
+            <input type=\"submit\" value=\"Administração\">
             </form>";
             echo "<form action=\"05_login_local.php\">
             <input type=\"submit\" value=\"Conectar Local\">
@@ -148,8 +148,9 @@ echo "
         <pre>      sudo /etc/init.d/mysql restart</pre>
         <p>Inciar sessão no MySQL:</p>
         <pre>      mysql -u root -p</pre>
-        <p>Introduzir a query, carregar no botão:</p>
+        <p>Carregar no botão:</p>
         <pre>---><button type="button" id="btnCopy">Copiar Query</button><---</pre>
+	<p>Inserir a query com ctrl+v ou colar</p>
         <p>Terminar sessão:</p>
         <pre>      quit</pre>
 

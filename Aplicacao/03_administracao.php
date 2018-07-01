@@ -4,7 +4,7 @@ session_start();
 <html lang="pt">
 <head>
     <meta charset="UTF-8" />
-    <title>Administração</title>
+    <title>Administração Local</title>
 </head>
 <body style="background-color:azure;">
 <?php
@@ -50,8 +50,8 @@ session_start();
         }else if($_SESSION['central_status'] == "Logout" && $_SESSION['local_status'] != "Disconnect")
         {
 	echo "<form action=\"031_admin_cliente.php\" style=\"float: left;\">
-            <input type=\"submit\" value=\"Administração\" disabled>
-            </form>";
+            <input type=\"submit\" value=\"Administração\">
+            </form>"; //Inserir disabled neste input se se desejar bloquear a Administração
             echo "<form action=\"05_login_local.php\">
             <input type=\"submit\" value=\"Conectar Local\">
             </form>";
