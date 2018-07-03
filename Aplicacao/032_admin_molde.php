@@ -257,7 +257,8 @@ session_start();
             </tr>
         </table>
         <input type="submit" name="Adicionar_Molde" value="Adicionar Molde" style="float: left;">
-        <input type="submit" name="Eliminar_Molde" value="Eliminar Molde">
+        <input type="submit" name="Eliminar_Molde" value="Eliminar Molde" style="float: left;">
+	<input type="submit" name="Arquivar_Molde" value="Arquivar Molde">
         <br>
         <br>
         <input type="submit" name="Ver_Cliente" value="Ver Clientes">

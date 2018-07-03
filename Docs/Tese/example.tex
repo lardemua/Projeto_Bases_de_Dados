@@ -177,7 +177,7 @@ Propõe-se armazenar a informação gerada localmente nos clientes num sistema c
 		\label{fig:intro1}
 	\end{center}
 \end{figure}
-Para consultar a informação nas bases de dados propõem-se uma aplicação em ambiente \textit{Web}, disponível em qualquer momento e dispositivo. A aplicação deve permitir que utilizadores sem conhecimentos sobre bases de dados comuniquem com estas de forma a consultar a informação desejada. Assim sendo enumeram-se os objetivos principais do projeto:
+Para consultar a informação nas bases de dados propõem-se uma aplicação em ambiente \textit{Web}, disponível em qualquer momento, lugar e dispositivo. A aplicação deve permitir que utilizadores sem conhecimentos sobre bases de dados comuniquem com estas de forma a consultar a informação desejada. Assim sendo enumeram-se os objetivos principais do projeto:
 \begin{enumerate}
 	\item Criar uma infraestrutura de bases de dados
 	\item Criar uma aplicação \textit{Web} para consultar os históricos
@@ -866,39 +866,44 @@ Com a introdução da aplicação de gestão do sistema surge a necessidade dest
 Esta base de dados contém variáveis globais importantes para a comunicação entre a aplicação e os programas. Define-se as entidades com os seus atributos e respetivos domínios e obrigatoriedade como representado na \autoref{tab:notificacoes}. As entidades não se relacionam entre e por isso esta base de dados não se classifica como uma base de dados relacional. No entanto, utiliza-se os mesmos termos para descrever o desenvolvimento desta.
 \begin{table}[H]
 	\centering
-	\begin{tabular}{|l|l|}
+	\begin{tabular}{|l|l|l|}
 		%\hline
-		\multicolumn{2}{l}{\textbf{atualizar}}\\ \cline{1-2}
-		a\texttt{\char`_}transferencia & a\texttt{\char`_}backups\\ \cline{1-2}
-		int & int\\ \cline{1-2}
-		not null & not null\\ \cline{1-2}
-		\multicolumn{2}{l}{\textbf{backups}}\\ \cline{1-1}
-		b\texttt{\char`_}IDMolde &\multicolumn{1}{l}{}\\ \cline{1-1}
+		\multicolumn{3}{l}{\textbf{atualizar}}\\ \cline{1-3}
+		a\texttt{\char`_}indice & a\texttt{\char`_}transferencia & a\texttt{\char`_}backups\\ \cline{1-3}
+		int & int & int\\ \cline{1-3}
+		not null & not null & not null\\ \cline{1-3}
+		\multicolumn{3}{l}{\textbf{backups}}\\ \cline{1-1}
+		b\texttt{\char`_}IDMolde &\multicolumn{2}{l}{}\\ \cline{1-1}
 		int &\multicolumn{1}{l}{}\\ \cline{1-1}
-		 &\multicolumn{1}{l}{}\\ \cline{1-1}
+		 &\multicolumn{2}{l}{}\\ \cline{1-1}
 	\end{tabular}
 	\caption[Tabelas da base de dados regulação de procedimentos com os seus atributos e respetivos domínios e obrigatoriedades]{Tabela base de dados regulação de procedimentos com os seus atributos e respetivos domínios e obrigatoriedades}
 	\label{tab:notificacoes}
 \end{table}
-A tabela Atualizar só deve ter um tuplo e os valores dos atributos \texttt{a\char`_transferencia} e \texttt{a\char`_backups} só devem ser 0 ou 1. Assim sendo definem-se as restrições:
+A tabela Atualizar só deve ter um tuplo, considera-se o atributo \texttt{a\char`_indice} como chave primária que só pode ser igual a 1 e os atributos \texttt{a\char`_transferencia} e \texttt{a\char`_backups} só devem ser igual a 0 ou 1. Assim sendo definem-se as restrições:
 \begin{itemize}[noitemsep]
 	\item Atualizar
 	\begin{itemize}[noitemsep]
+		\item Restrição chave primária:
+		\begin{enumerate}
+			\item REPETIDO\texttt{\char`_}INDICE\texttt{\char`_}ATUALIZAR
+		\end{enumerate}
 		\item Restrição valor:
 		\begin{enumerate}
-			\item MAU\texttt{\char`_}VALOR\texttt{\char`_}TRANSFERENCIA
-			\item MAU\texttt{\char`_}VALOR\texttt{\char`_}BACKUPS
+			\item ATUALIZAR{\char`_}MAU\texttt{\char`_}VALOR\texttt{\char`_}INDICE
+			\item ATUALIZAR{\char`_}MAU\texttt{\char`_}VALOR\texttt{\char`_}TRANSFERENCIA
+			\item ATUALIZAR{\char`_}MAU\texttt{\char`_}VALOR\texttt{\char`_}BACKUPS
 		\end{enumerate}
 	\end{itemize}
 	\item Backups
 	\begin{itemize}[noitemsep]
-		\item Restrição chaves únicas:
+		\item Restrição chave primária:
 		\begin{enumerate}
 			\item REPETIDO\texttt{\char`_}ID\texttt{\char`_}MOLDE
 		\end{enumerate}
 	\end{itemize}
 \end{itemize}
-Define-se que tabela Atualizar deve ser iniciada com um tuplo onde os seus atributos são iguais a 0. As funcionalidades desta base de dados são exploradas nas Secções \ref{subchap:transferencia} e \ref{subchap:backups}.
+Define-se que tabela Atualizar deve ser iniciada com um tuplo com \texttt{a\char`_indice} igual a 1 e \texttt{a\char`_transferencia} e \texttt{a\char`_backups} iguais a 0. As funcionalidades desta base de dados são exploradas nas Secções \ref{subchap:transferencia} e \ref{subchap:backups}.
 
 \section{Programa de transferência}
 \label{subchap:transferencia}
@@ -922,7 +927,7 @@ Este programa prioriza a conservação dos dados e a sua taxa de transferência.
 Seguindo a estrutura do programa, primeiramente realiza-se uma conexão à base de dados central, seguida de uma \textit{query} para se saber o número de clientes existentes:
 \begin{lstlisting}[language = SQL]
 	SELECT *
-	FROM clientes;
+	FROM central.clientes;
 \end{lstlisting}
 Guarda-se o número de tuplos retornados numa variável e termina-se a conexão à base de dados central. De seguida replica-se o programa múltiplas vezes até se ter um subprograma para cada cliente com recurso à função:
 \begin{lstlisting}[language = C]
@@ -931,7 +936,7 @@ Guarda-se o número de tuplos retornados numa variável e termina-se a conexão 
 Atribui-se a cada subprograma o número do cliente a que está associado. Cada um realiza uma conexão à base de dados central e obtém os respetivos \textit{IPs} e \textit{ports}, necessários para realizar a conexão à base de dados local de cada cliente:
 \begin{lstlisting}[language = SQL]
 	SELECT cl_ID, cl_IP, cl_port
-	FROM clientes
+	FROM central.clientes
 	ORDER BY cl_ID;
 \end{lstlisting}
 Com as conexões central e local estabelecidas inicia-se um ciclo infinito para a transferência de valores. Com a \textit{query} à base de dados local:
@@ -941,14 +946,14 @@ Com as conexões central e local estabelecidas inicia-se um ciclo infinito para 
 Recebe-se a data e hora atual do sistema e guarda-se numa variável \texttt{@datahora\char`_lim}. De seguida obtém-se todos os registos anteriores à data e hora do sistema:
 \begin{lstlisting}[language = SQL]
 	SELECT *
-	FROM registos
+	FROM local.registos
 	WHERE r_data_hora < @datahora_lim
 	ORDER BY r_data_hora, r_milissegundos,
 	r_numSensor, r_IDMolde;
 \end{lstlisting}
 Esta organização pela data e hora garante uma transferência uniforme de valores. Por predefinição, o sistema retorna os registos um sensor de cada vez, tornando a transferência de valores menos eficiente para efeitos de análise. Por outras palavras, prefere-se saber os registos de todos os sensores num dado instante do que todos os registos de um sensor até ao momento. Os tuplos retornados são guardados numa \textit{string} e inseridos na base de dados central com uma \textit{query} do tipo:
 \begin{lstlisting}[language = SQL]
-	INSERT IGNORE registos VALUES
+	INSERT IGNORE central.registos VALUES
 	(tuplo1),
 	(tuplo2),
 	(tuplo3),
@@ -957,15 +962,22 @@ Esta organização pela data e hora garante uma transferência uniforme de valor
 \end{lstlisting}
 Inserir múltiplos tuplos permite uma maior taxa de transferência comparativamente a uma inserção individual. A \textit{string} que guarda os tuplos tem uma dimensão limitada, se a resposta proveniente da base de dados local for superior ao tamanho da \textit{string}, o programa divide-a em grupos de informação mais pequenos que respeitem a dimensão desta \textit{string}. A escolha da opção \texttt{IGNORE} garante que não são perdidos valores no caso de serem gerados registos repetidos ou não válidos. Após a transferência ser concluída, os tuplos transferidos da base de dados local são eliminados:
 \begin{lstlisting}[language = SQL]
-	DELETE FROM registos
+	DELETE FROM local.registos
 	WHERE r_data_hora < @datahora_lim;
 \end{lstlisting}
 Sempre que se desejar um subprograma para um cliente novo, o programa de transferência deve ser reiniciado. Isto pode ser realizado manualmente ou atualizando o valor de \texttt{a\char`_transferencia} para 1. Com base num temporizador o programa principal e os subprogramas realizam a \textit{query} à base de dados regulação de procedimentos:
 \begin{lstlisting}[language = SQL]
 	SELECT a_transferencia
-	FROM atualizar;
+	FROM reg_proc.atualizar
+	ORDER BY a_indice
+	LIMIT 1;
 \end{lstlisting}
-Se \texttt{@a\char`_transferencia} for igual a 1 os subprogramas terminam após completarem os seus ciclos e o programa principal recomeça do principio como demonstrado nas Figuras \ref{fig:transferencia_programa} e \ref{fig:transferencia_subprograma}.
+Se \texttt{@a\char`_transferencia} for igual a 1 os subprogramas terminam após completarem os seus ciclos e o programa principal recomeça do principio e altera este parâmetro para 0, como demonstrado nas Figuras \ref{fig:transferencia_programa} e \ref{fig:transferencia_subprograma}:
+\begin{lstlisting}[language = SQL]
+	UPDATE reg_proc.atualizar
+	SET a_transferencia = 0
+	WHERE a_indice = 1;
+\end{lstlisting}
 
 \section{Gestão de \textit{backups}}
 \label{subchap:backups}
@@ -989,7 +1001,7 @@ As Figuras \ref{fig:backups_programa}, \ref{fig:backups_gerar} e \ref{fig:backup
 \end{figure}
 \begin{figure}
 	\begin{center}
-		\includegraphics[width=1\textwidth]{fluxograma_backups_concatenar01} % Include the image placeholder.png
+		\includegraphics[width=1\textwidth]{fluxograma_backups_concatenar02} % Include the image placeholder.png
 		\caption[Fluxograma da componente de concatenar \textit{backups}]{Fluxograma da componente de concatenar \textit{backups}. Quando esta chega ao fim retorna ao ciclo do programa principal representado na \autoref{fig:backups_programa}}
 		\label{fig:backups_concatenar}
 	\end{center}
@@ -1089,17 +1101,19 @@ Na eventualidade de surgir uma falha crítica no sistema central, e este necessi
 	mysql -u backupmanager -pbackup1234 central <
 	~/Backups/backup_geral.sql
 \end{lstlisting}
-Isto faz com que se recupere a informação dos clientes, moldes e sensores presentes no último \textit{backup} de forma a acelerar o processo de restauro comparativamente a uma inserção manual dos dados.\par 
+Isto faz com que se recupere a informação dos clientes, moldes e sensores presentes no último \textit{backup} mais rapidamente acelerando o processo de restauro comparativamente a uma inserção manual dos dados.\par 
 Passando para a componente de concatenação de \textit{backups}, os ficheiros criados com o comando \texttt{mysqldump} contêm toda a informação das tabelas e funcionam como ponto de restauro. Isto significa que quando se usa o comando de recuperação, a base de dados selecionada é substituída pela que está no ficheiro \texttt{.sql}. Este comportamento dificulta a concatenação de vários \textit{backups} numa única base de dados assim sendo, à semelhança da primeira componente, utiliza-se a base de dados \textit{backups} temporária como base de dados intermédia para a concatenação de \textit{backups}.\par 
 Seguindo a estrutura do programa representada na \autoref{fig:backups_concatenar}, realizam-se as conexões às bases de dados central, \textit{backups}, \textit{backups} temporária e regulação de procedimentos. Com a \textit{query}:
 \begin{lstlisting}[language = SQL]
 	SELECT a_backups
-	FROM regulacao_procedimentos.atualizar;
+	FROM reg_proc.atualizar
+	ORDER BY a_indice
+	LIMIT 1;
 \end{lstlisting}
 Retira-se o parâmetro \texttt{@a\char`_backups}, se este for igual a 1 o programa tem de concatenar \textit{backups}. Identificam-se os moldes a ser arquivados:
 \begin{lstlisting}[language = SQL]
 	SELECT b_IDMolde
-	FROM regulacao_procedimentos.backups;
+	FROM reg_proc.backups;
 \end{lstlisting}
 As respostas são guardadas numa variável \texttt{@IDMolde}. Realiza-se uma limpeza da base de dados \textit{backups} para certificar que não existem valores que possam comprometer a informação dos \textit{backups}:
 \begin{lstlisting}[language = SQL]
@@ -1143,7 +1157,17 @@ Estes valores são guardados nas variáveis \texttt{@IDCliente}, \texttt{@dataIn
 	~/Backups/Arquivo/
 	backup_@IDCliente_@IDMolde_@dataIni_@dataFim.sql
 \end{lstlisting}
-Com este \textit{backup} gerado deixa de ser necessário manter os \textit{backups} segmentados e procede-se à eliminação destes. Estes operações executam de forma cíclica até todos os moldes selecionados serem arquivados.
+Com este \textit{backup} gerado deixa de ser necessário manter os \textit{backups} segmentados e procede-se à eliminação destes. Estando o processo terminado para um molde remove-se este da lista de moldes a concatenar:
+\begin{lstlisting}[language = SQL]
+	DELETE FROM reg_proc.backups
+	WHERE b_IDMolde = @IDMolde;
+\end{lstlisting}
+Estes operações executam de forma cíclica até todos os moldes selecionados serem arquivados. Quando todos os moldes tiverem sido arquivados altera-se o parâmetro \texttt{a\char`_backups} de volta para 0:
+\begin{lstlisting}[language = SQL]
+	UPDATE reg_proc.atualizar
+	SET a_backups = 0
+	WHERE a_indice = 1;
+\end{lstlisting}
 
 \section{Simulador}
 Para popular as bases de dados locais foi desenvolvido um simples programa que gera valores. Estes seguem o perfil de uma onda sinusoidal com a expressão:
@@ -1180,7 +1204,7 @@ Para minimizar o risco de erros por parte dos utilizadores que interagem com o s
 	\item backupmanager, backup1234
 \end{itemize}
 \textit{user} representa o utilizador padrão, ou seja, aquele que interage com as bases de dados para gerir os clientes, moldes e sensores bem como consultar a tabela registos. As credenciais \textit{transferencia} utilizam-se no programa de transferência de valores para realizar as conexões com as bases de dados central e locais, \textit{sensores} utiliza-se no simulador para popular as bases de dados locais e, no futuro, pelo sistema de aquisição de dados que substituirá este simulador, \textit{backupmanager} utiliza-se no programa de gestão de \textit{backups}.\par 
-Cada conjunto de credenciais serve um objetivo, a \autoref{tab:utilizadores1} contém as permissões destas definidas em cada base de dados.\par 
+Cada conjunto de credenciais serve um objetivo, a \autoref{tab:utilizadores1} contém as permissões destas definidas em cada base de dados.
 \begin{table}
 	\begin{tabular}{|l|c|c|c|c|c|c|}
 		%\hline
@@ -1227,19 +1251,47 @@ Cada conjunto de credenciais serve um objetivo, a \autoref{tab:utilizadores1} co
 	\caption{Tabelas com as permissões das credenciais criadas para as várias tabelas das bases de dados}
 	\label{tab:utilizadores1}
 \end{table}
-Estas permissões estabelecem que nenhuma das credenciais estabelecidas pode fazer DROP às bases de dados o que eliminaria com um comando toda a estrutura e a informação nela contida. Além disto, nenhuma tem permissão INSERT e DELETE simultânea na tabela registos das bases de dados central e local protegendo o sistema de adulteração dos valores presentes nesta tabela.
+Estas permissões estabelecem que nenhuma das credenciais estabelecidas pode fazer DROP às bases de dados o que eliminaria com um comando toda a estrutura e a informação nela contida. Além disto, nenhuma tem permissão INSERT e DELETE simultânea na tabela registos das bases de dados central e local protegendo o sistema de adulteração dos valores presentes nesta tabela.\par 
+De forma a proteger o sistema de acessos não autorizados, define-se também os endereços pelos quais as credenciais podem aceder aos sistemas central e locais. Existem três endereços principais neste projeto: o endereço do sistema central, do sistema local e do servidor \textit{Apache} que corre a aplicação de gestão do sistema, como representado na \autoref{fig:utilizadores2}. A \autoref{tab:utilizadores3} contém as limitações das credenciais em cada sistema. Estas definem que os sistemas só podem ser acedidos pelos endereços principais, protegendo a informação de acessos externos.
+%Como referido no \autoref{chap:intro}, deseja-se uma aplicação de gestão do sistema que seja disponível em qualquer lugar, o que parece entrar em conflito com o que aqui se define. Esclarece-se este tópico na \autoref{subchap:login}.
+\begin{table}
+	\begin{tabular}{|l|c|c|c|}
+		%\hline
+		\multicolumn{4}{l}{\textbf{sistema central}} \\ \hline
+		\makecell{} & localhost & apachehost & sistemalocalhost \\ \hline
+		user & \textbf{X} & \textbf{X} & \\ \hline
+		transferencia & \textbf{X} & & \\ \hline
+		sensores & & & \\ \hline
+		backupmanager & \textbf{X} & & \\ \hline
+		\multicolumn{4}{l}{\textbf{sistemas locais}} \\ \hline
+		\makecell{} & localhost & apachehost & sistemacentralhost \\ \hline
+		user & \textbf{X} & \textbf{X} & \\ \hline
+		transferencia & & & \textbf{X} \\ \hline
+		sensores & \textbf{X} & & \\ \hline
+		backupmanager & & & \\ \hline
+	\end{tabular}
+	\caption[Tabelas com as limitações dos endereços de conexão das credenciais criadas nos sistemas do projeto]{Tabelas com as limitações dos endereços de conexão das credenciais criadas nos sistemas do projeto. \texttt{localhost}, \texttt{apachehost}, \texttt{sistemalocalhost} e \texttt{sistemacentralhost} representam os endereços do próprio sistema, do servidor \textit{Apache}, dos sistemas locais e do sistema central, respetivamente}
+	\label{tab:utilizadores3}
+\end{table}
+\begin{figure}
+	\begin{center}
+		\includegraphics[width=0.9\textwidth]{placeholder} % Include the image placeholder.png
+		\caption{Representação da ligação entre os sistemas utilizados no projeto e respetivos endereços}
+		\label{fig:utilizadores2}
+	\end{center}
+\end{figure}
 
 \cleardoublepage
 \chapter{Aplicação de Gestão do Sistema}
 \label{chap:aplicacao}
-A aplicação foi desenvolvida em ambiente  \textit{Web} com o objetivo de ser multiplataforma e permitir acesso remoto e sem recorrer a instalação de \textit{softwares} nos dispositivos dos utilizadores. Corre num servidor \textit{Apache} e foi desenvolvida com \textit{PHP}, \textit{JS} e \textit{HTML}. Este capítulo descreve a adaptação da infraestrutura desenvolvida e as várias funcionalidades da aplicação.
+A aplicação foi desenvolvida em ambiente  \textit{Web} com o objetivo de ser multiplataforma e permitir acesso remoto e sem recorrer a instalação de \textit{softwares} nos dispositivos dos utilizadores. Corre num servidor \textit{Apache} no sistema central e foi desenvolvida com \textit{PHP}, \textit{JS} e \textit{HTML}. Este capítulo descreve a adaptação da infraestrutura desenvolvida e as várias funcionalidades da aplicação.
 
 \section{Adaptação da infraestrutura}
 \label{subchap:adap}
 A infraestrutura desenvolvida no \autoref{chap:solucao} visa uma utilização a baixo a nível. Ainda que funcional, pode haver margem para erros e incoerência dos dados introduzidos manualmente. A aplicação minimiza estas incoerências através da instalação de uma nova base de dados temporária local no servidor local. Aqui os utilizadores têm a liberdade para adicionar, alterar e apagar informação sem consequências no sistema antes desta ser introduzida nas bases de dados central e local como representado na \autoref{fig:adap1}. Como referido anteriormente, esta base de dados difere das restantes, não contendo em si as tabelas fase e registos.
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=0.62\textwidth]{Aplicacao_temp_local_central} % Include the image placeholder.png
+		\includegraphics[width=0.60\textwidth]{Aplicacao_temp_local_central} % Include the image placeholder.png
 		\caption{Esquema ligação Aplicação-Bases de Dados. A aplicação comunica com a base de dados temporária local e depois regista os seus valores nas bases de dados central e local}
 		\label{fig:adap1}
 	\end{center}
@@ -1254,13 +1306,24 @@ A aplicação divide-se em quatro partes distintas:
 	\item Administração Local
 \end{itemize}
 As páginas \textit{Main}, \textit{Login} e Consultas realizadas para uma utilização geral. A página Administração Local foi realizada para uma utilização local. A primeira visa um uso a partir de qualquer dispositivo e acessível a qualquer momento e a segunda foca-se num acesso local com o objetivo de configurar e definir a informação no servidor local. Por outras palavras, para o utilizador usar as funcionalidades desta página tem de aceder à aplicação num \textit{browser} no sistema local que se situa no cliente.\par 
-Instalar um molde é o culminar de um projeto de elevada responsabilidade e esta ideia junto com a criação da base de dados temporária local serve para melhorar a qualidade da informação introduzida no sistema e diminuir as falhas no processo de instalação deste.
-\\
-\\
-\\
-\\
-\\
-CRIAR FLUXOGRAMAS PARA A APLICAÇÃO
+Instalar um molde é o culminar de um projeto de elevada responsabilidade e esta ideia junto com a criação da base de dados temporária local serve para melhorar a qualidade da informação introduzida no sistema e diminuir as falhas no processo de instalação deste.\par
+As Figuras \ref{fig:aplicacao_consultas} e \ref{fig:aplicacao_admin} representam os processos de realizar consultas e de configurar e definir a informação nos sistemas locais dos clientes, respetivamente.
+\begin{figure}
+	\vspace{-1.5cm}
+	\begin{center}
+		\includegraphics[width=0.6\textwidth]{fluxograma_consultas01} % Include the image placeholder.png
+		\caption[Fluxograma do processo de realizar consultas à base de dados]{Fluxograma do processo de realizar consultas à base de dados e receber respostas}
+		\label{fig:aplicacao_consultas}
+	\end{center}
+\end{figure}
+\begin{figure}
+	\vspace{-1.5cm}
+	\begin{center}
+		\includegraphics[width=1\textwidth]{fluxograma_administracao01} % Include the image placeholder.png
+		\caption[Fluxograma do processo de configurar e definir informação no sistema local do cliente]{Fluxograma do processo de configurar e definir informação no sistema local do cliente}
+		\label{fig:aplicacao_admin}
+	\end{center}
+\end{figure}
 
 \newpage
 \subsection{\textit{Main}}
@@ -1443,20 +1506,33 @@ Após ser estabelecida uma conexão local, a opção de Adicionar Cliente não p
 		\label{fig:admin4}
 	\end{center}
 \end{figure}
-O botão Alterar Cliente executa uma \textit{query} do tipo UPDATE, dando ao utilizador a capacidade de alterar a informação dos clientes. Esta ação está limitada ao cliente presente no sistema local conectado. O botão Atualizar reinicia o programa de transferência de registos. Este realiza uma conexão à base de dados regulação de procedimentos e altera o parâmetro transferência da tabela atualizar de 0 para 1.\par 
-As áreas de Gestão de Moldes e Gestão de Sensores demonstradas nas Figuras \ref{fig:admin9} e \ref{fig:admin10}, permitem ao utilizador criar e apagar moldes e sensores, respetivamente. Estes dados são inseridos na base de dados temporária local, onde o utilizador pode criar e apagar moldes e sensores sem afetar o sistema. Desta forma confirma-se a informação introduzida antes de a inserir no sistema. Os botões de Criar e Apagar nestes formulários realizam \textit{queries} do tipo INSERT e DELETE, respetivamente. Se as informações introduzidas não forem suficientes ou válidas são retornados erros de forma a informar o utilizador, como na \autoref{subchap:login}.
-	\begin{figure}[H]
-		\centering
-			\includegraphics[width=0.8\textwidth]{administracao05} % Include the image placeholder.png
-			\caption{Área de Gestão de Moldes}
-			\label{fig:admin9}
-	\end{figure}
-	\begin{figure}[H]
-		\centering
-			\includegraphics[width=0.8\textwidth]{administracao06} % Include the image placeholder.png
-			\caption{Área de Gestão de Sensores}
-			\label{fig:admin10}
-	\end{figure}
+O botão Alterar Cliente executa uma \textit{query} do tipo UPDATE, dando ao utilizador a capacidade de alterar a informação dos clientes. Esta ação está limitada ao cliente presente no sistema local conectado. O botão Atualizar reinicia o programa de transferência de registos. Este realiza uma conexão à base de dados regulação de procedimentos e altera o parâmetro transferência da tabela atualizar de 0 para 1:
+\begin{lstlisting}[language = SQL]
+	UPDATE reg_proc.atualizar
+	SET a_transferencia = 1
+	WHERE a_indice = 1;
+\end{lstlisting} 
+As áreas de Gestão de Moldes e Gestão de Sensores demonstradas nas Figuras \ref{fig:admin9} e \ref{fig:admin10}, permitem ao utilizador criar e apagar moldes e sensores, respetivamente. Estes dados são inseridos na base de dados temporária local, onde o utilizador pode criar e apagar moldes e sensores sem afetar o sistema. Desta forma confirma-se a informação introduzida antes de a inserir no sistema. Os botões de Adicionar e Eliminar nestes formulários realizam \textit{queries} do tipo INSERT e DELETE, respetivamente. Se as informações introduzidas não forem suficientes ou válidas são retornados erros de forma a informar o utilizador, como na \autoref{subchap:login}.
+\begin{figure}[H]
+	\centering
+		\includegraphics[width=0.8\textwidth]{administracao05} % Include the image placeholder.png
+		\caption{Área de Gestão de Moldes}
+		\label{fig:admin9}
+\end{figure}
+\begin{figure}[H]
+	\centering
+		\includegraphics[width=0.8\textwidth]{administracao06} % Include the image placeholder.png
+		\caption{Área de Gestão de Sensores}
+		\label{fig:admin10}
+\end{figure}
+O botão Arquivar Molde permite ao utilizador iniciar para o molde selecionado a componente de concatenar \textit{backups} do programa de gestão de \textit{backups} remotamente:
+\begin{lstlisting}[language = SQL]
+	UPDATE reg_proc.atualizar
+	SET a_backups = 1
+	WHERE a_indice = 1;
+	INSERT INTO reg_proc.backups VALUES
+	(@molde_selecionado);
+\end{lstlisting} 
 Quando a informação dos moldes e sensores estiver completa, o botão Validar tenta registar os valores presentes na base de dados temporária local nas bases de dados central e local. Se a ação não executar com sucesso retorna-se um erro \textit{MySQL} de forma a informar o utilizador. Se a ação executar com sucesso, limpa-se a base de dados temporária local e os valores são registados permanentemente nas bases de dados central e local, como representado nas Figuras \ref{fig:admin12} e \ref{fig:admin13}.\par
 Depois de inseridos, moldes e sensores não podem ser eliminados via aplicação. Esta opção foi removida da aplicação para evitar erros, dado que apagar um molde em funcionamento faz com que se percam novos registos.
 \begin{figure}[H]
@@ -1521,7 +1597,7 @@ Inicialmente o sistema local do cliente não está preparado para fazer parte da
 	\caption{Área Instalar \textit{MySQL} para instalar o \textit{software} com os comandos em \textit{Linux}}
 	\label{fig:local2}
 \end{figure}
-A área Criar Local na \autoref{fig:local3} permite instalar uma base de dados para um novo cliente. São considerados novos clientes todos os que não tenham moldes associados a si, esta informação obtém-se com a \textit{query}:
+A área Criar Local na \autoref{fig:local3} gera \textit{queries} para criar uma base de dados para um novo cliente. São considerados novos clientes todos os que não tenham moldes associados a si, esta informação obtém-se com a \textit{query}:
 \begin{lstlisting}[language = SQL]
 	SELECT cl_ID, cl_nome, cl_morada, cl_IP, cl_port
 	FROM
@@ -1571,7 +1647,7 @@ O desafio proposto consiste em monitorizar sensores remotamente. Para isto defin
 \section{Comentários}
 \subsection{Infraestrutura de dados}
 Em relação à infraestrutura proposta, esta cumpre todos os requisitos propostos de garantir uma transferência segura, confidencial e permanente de valores, criando um histórico dos moldes monitorizados. Consiste numa rede de bases de dados relacionais com uma central e uma local para cada cliente o que minimiza a perda de registos em caso de falha de conexão. Num programa de transferência de valores que coordena a transferência dos registos para o sistema central criando históricos das medições dos moldes. Noutro de gestão de \textit{backups} que limpa a base de dados central dos registos mais antigos e arquiva-os em ficheiros num repositório \textit{online}. Terminando com simuladores que substituem a aquisição de dados reais e permitem popular as bases de dados locais.\par 
-Como definido nos objetivos esta solução não impõe restrições na instrumentação dos moldes. Para introduzir dados nas bases de dados locais pode ser utilizado qualquer sistema operativo e linguagem de programação desde que esta tenha protocolos de comunicação com \textit{MySQL} e gere \textit{queries} do tipo:
+Como definido nos objetivos, esta solução não impõe restrições na instrumentação dos moldes. Para introduzir dados nas bases de dados locais pode ser utilizado qualquer sistema operativo e linguagem de programação desde que esta tenha protocolos de comunicação com \textit{MySQL} e gere \textit{queries} do tipo:
 \begin{lstlisting}[language = SQL]
 	INSERT INTO registos
 	VALUES
@@ -1580,29 +1656,32 @@ Como definido nos objetivos esta solução não impõe restrições na instrumen
 Na realidade esta infraestrutura pode ser utilizada em qualquer contexto de monitorização remota de sensores desde que seja desenvolvido um modelo de dados apropriado.\par
 
 \subsubsection{Programa de transferência}
-Este foi desenvolvido como sendo centralizado em vez de descentralizado, como demonstrado na \autoref{fig:conclusoes0}. Na versão centralizada, o sistema central tem de garantir a transferência de todos os clientes o que pode levar a um maior consumo de processador e consequente perda de desempenho. A versão descentralizada divide este consumo de processador pelos clientes dado que tem de ser os sistemas locais a garantir a transferência. Além disto, esta tem a vantagem do programa de transferência ser mais simples dado que não existe necessidade deste se dividir o programa. Assim sendo, na versão descentralizada, o programa assume o aspeto do subprograma da \autoref{fig:transferencia_subprograma} sem a necessidade de ser atualizado pelo utilizador.
+O programa cumpre os objetivos definidos de garantir a conservação e taxa de transferência dos dados gerados, bem como ser simples para permitir a sua portabilidade para outras linguagens de programação.\par
+Este foi desenvolvido como sendo centralizado em vez de descentralizado, como demonstrado na \autoref{fig:conclusoes0}. 
+Na versão centralizada, o sistema central tem de garantir a transferência de todos os clientes o que pode levar a um maior consumo de processador e consequente perda de desempenho. A versão descentralizada divide este consumo de processador pelos clientes dado que têm de ser os sistemas locais a garantir a transferência. Além disto, nesta versão, o programa de transferência pode ser mais simples dado que não existe necessidade do programa principal se dividir em subprogramas, podendo-se resumir aos passos representados na \autoref{fig:transferencia_subprograma}.
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[width=0.9\textwidth]{placeholder} % Include the image placeholder.png
-		\caption{Exemplo da área Criar Local com criação das bases de dados e utilizadores via \textit{root} em vez de gerar \textit{queries} para o utilizador inserir manualmente no \textit{MySQL}}
+		\caption{Infraestrutura descentralizada}
 		\label{fig:conclusoes0}
 	\end{center}
 \end{figure}
-No entanto, esta versão tem desvantagens, se for necessário alterar o programa de transferência para adicionar novas funcionalidades tem de se aceder aos sistemas locais onde estes estão a ser executados. Esta ação de alterar o programa no cliente pode não ser trivial se, por exemplo, o sistema local do cliente estiver situado num país diferente. Outra vantagem da versão centralizada, esta permite limitar os acessos às bases de dados no sistema central. Como os programas comunicam entre si diretamente não se permite acesso remoto ao sistema central sem ser pela aplicação. Na versão descentralizada o sistema central tem de permitir uma conexão remota a partir do sistema local no cliente, isto pode constituir uma falha de segurança se não forem tomadas medidas para prevenir acessos indevidos ao sistema central.\par 
-O programa cumpre os objetivos definidos, no entanto, o método para reiniciar o programa remotamente pela aplicação pode ser melhorado. Atualmente, o programa verifica com base num temporizador a base de dados regulação de procedimentos, dependendo deste temporizador pode existir alguma latência entre o ato de alterar o parâmetro \texttt{a\char`_transferencia} e o reiniciar propriamente dito do programa. Seria interessante desenvolver outro método que garanti-se que o programa de transferência reinicia-se sem latência.\par 
-Além disto, durante o desenvolvimento do projeto, os simuladores nunca geraram registos com maior taxa do que o que o programa de transferência podia transferir. Se esta taxa for superada, a base local de onde provêm os registos ficará cada vez mais cheia o que pode levar a problemas de desempenho e, o programa, não está preparado para responder a situações destas. Sugere-se para futuros desenvolvimentos adaptar o programa de forma a que este possa aumentar automaticamente a sua taxa de transferência de registos. Duas soluções que podem ajudar a atingir este objetivo:
+No entanto, a versão descentralizada tem desvantagens, o aumento do consumo de processador dos sistemas locais, por causa do programa de transferência, pode comprometer o desempenho da aquisição de dados, se esta necessitar de uma elevada cadência de registos. Outra desvantagem, se for necessário alterar o programa de transferência para adicionar novas funcionalidades tem de se aceder aos sistemas locais onde estes estão a ser executados. Esta ação de alterar o programa no cliente pode não ser trivial se, por exemplo, o sistema local do cliente estiver situado num país diferente. Terminando com a questão das permissões das credenciais do programa de transferência na \autoref{tab:utilizadores3}. Na versão centralizada, o sistema central não tem de garantir permissões aos endereços dos sistemas locais, ao contrário da versão descentralizada, que tem de garantir permissões aos endereços de todos os sistemas locais. Esta versão requer um maior controlo dos acessos que complica o processo de criação e definição das credenciais do programa de transferência. Por causa destas desvantagens escolheu-se seguir pela versão centralizada.\par 
+O método para reiniciar o programa remotamente pela aplicação pode ser melhorado. Atualmente, o programa verifica com base num temporizador a base de dados regulação de procedimentos. Dependendo deste temporizador pode existir alguma latência entre o ato de alterar o parâmetro \texttt{a\char`_transferencia} e o reiniciar propriamente dito do programa. Seria interessante desenvolver outro método que garanti-se que este reinicia-se sem latência.\par 
+Além disto, durante o desenvolvimento do projeto, os simuladores nunca geraram registos com maior taxa do que o que o programa de transferência podia transferir. Se esta taxa for superada, a base de dados local de onde provêm os registos ficará cada vez mais cheia, o que pode levar a problemas de desempenho, e, o programa, não está preparado para responder a situações destas. Sugere-se para futuros desenvolvimentos adaptar o programa de forma a que este possa aumentar automaticamente a sua taxa de transferência de registos. Duas soluções que podem ajudar a atingir este objetivo:
 \begin{itemize}
 	\item Aumentar a capacidade da \textit{string} que guarda os tuplos retornados
 	\item Aumentar a quantidade de subprogramas para cada cliente
 \end{itemize}
 
 \subsubsection{Gestão de \textit{Backups}}
-Este cumpre os objetivos definidos, no entanto, existem algumas limitações quanto ao método de realizar o \textit{backup}. Atualmente, o programa cria os ficheiros de \textit{backup} executando diretamente no terminal o comando \texttt{mysqldump} que permite definir a pasta de destino para o ficheiro criado:
+Este cumpre os objetivos definidos de gerar \textit{backups}, organizar e limpar a base de dados central, bem como ser simples  para permitir a sua portabilidade para outras linguagens de programação.\par 
+Quanto à componente de gerar \textit{backups}, existem algumas limitações no método utilizado. Atualmente, o programa cria os ficheiros de \textit{backup} executando diretamente no terminal o comando \texttt{mysqldump} que permite definir a pasta de destino para o ficheiro criado:
 \begin{lstlisting}[language = bash]
 	mysqldump -u backupmanager -pbackup1234 backups_temp >
 	~/Backups/backup.sql
 \end{lstlisting}
-Este comando também pode ser usado via \textit{query} para o \textit{MySQL}. No entanto, este não tem permissões para criar ficheiros fora da sua pasta principal, o que torna difícil mover os \textit{backups} para o repositório \textit{online}, dado que esta pasta principal está protegida com permissões de administrador. Na verdade é possível permitir o \textit{MySQL} criar ficheiros fora da sua pasta principal, só que isto pode constituir uma falha de segurança dado que é possível enviar comandos para o terminal via \textit{query}.\par 
+Este comando também pode ser usado via \textit{query} para o \textit{MySQL}. No entanto, este não tem permissões para criar ficheiros fora da sua pasta principal. Esta pasta está protegida com permissões de administrador do sistema operativo, o que torna difícil mover os \textit{backups} para o repositório \textit{online}. Na verdade é possível permitir o \textit{MySQL} criar ficheiros fora da sua pasta principal, só que isto pode constituir uma falha de segurança dado que se podem enviar comandos para o terminal via \textit{query}.\par 
 Como referido anteriormente os ficheiros criados via \texttt{mysqldump} funcionam como ponto de restauro e requerem o uso de uma base de dados intermédia para proceder à sua concatenação. No entanto, foi a solução que permitiu a interação com um repositório \textit{online}.\par 
 Uma solução explorada inicialmente para criar \textit{backups} consistia em ficheiros \texttt{.csv} que continham apenas registos com uma \textit{query} do estilo:
 \begin{lstlisting}[language = SQL]
@@ -1615,12 +1694,15 @@ Uma solução explorada inicialmente para criar \textit{backups} consistia em fi
 	ENCLOSED BY '"'
 	LINES TERMINATED BY '\n'
 \end{lstlisting}
-Esta solução simplifica o processo de criação e concatenação dos \textit{backups} dado que esta não necessita de uma base de dados intermédia mas, tem algumas desvantagens. A desvantagem principal, como foi referido anteriormente, não se pode definir o diretório de criação do ficheiro fora da pasta principal do \textit{MySQL}. Além disto, para a informação puder ser carregada para a tabela registos só se pode fazer \textit{backup} desta tabela, o que pode levar à perda de informação relativa aos clientes, moldes e sensores se o planeamento dos ficheiros não for bem efetuado.\par 
-Em futuros desenvolvimentos, se for definido que o diretório de criação dos \textit{backups} não é imperativo, deve-se dar ênfase a esta solução dado que este processo é mais simples e consequentemente mais rápido do que a solução usada neste projeto.
+Esta solução simplifica o processo de criação e concatenação dos \textit{backups} dado que esta não necessita de uma base de dados intermédia mas, tem algumas desvantagens. A desvantagem principal, como foi referido anteriormente, não se pode definir o diretório de criação do ficheiro fora da pasta principal do \textit{MySQL}. Além disto, para a informação puder ser carregada devidamente, a informação dos clientes, moldes, sensores e registos têm de ser armazenadas separadamente, o que vai gerar uma maior diversidade de ficheiros de \textit{backup}. Isto pode constituir um problema se o planeamento dos ficheiros não for bem efetuado.\par 
+Em futuros desenvolvimentos, se for definido que o diretório de criação dos \textit{backups} não é imperativo, deve-se dar ênfase a esta solução dado que o processo de gerar e concatenar \textit{backups} é mais simples e consequentemente mais rápido do que a solução usada neste projeto.\par 
+Quanto à componente de concatenar \textit{backups}, esta solução pode não se ter demonstrado útil. Se um molde tiver muitos registos, concatenar os seus \textit{backups} pode ultrapassar a capacidade máxima da base de dados, referida na \autoref{subchap:mysql}. Além disto, se se desejar consultar o histórico de um molde arquivado, pode ser interessante manter os \textit{backups} segmentados. Carregar os \textit{backups} necessários para a consulta é mais rápido do que ter de carregar um \textit{backup} total.\par 
+Eventualmente, chegou-se à conclusão que esta solução para arquivar moldes não era útil, ainda assim escolheu-se manter o código neste relatório. Concatenar \textit{backups} pode ser útil noutras circunstâncias, como por exemplo, realizar uma consulta que envolvam registos mais antigos que já tenham sido guardados. Dada a relativa complexidade de realizar a concatenação decidiu-se que as ideias desenvolvidas podem servir de base para trabalhos futuros.
 
 \subsection{Aplicação de gestão do sistema}
-A aplicação cumpre os objetivos propostos de ser multiplataforma e garantir um acesso remoto à base de dados central, bem como gerir as informações dos clientes, moldes e sensores. Durante o desenvolvimento do projeto e testes de usabilidade verificou-se alguma falta de desempenho por parte da aplicação. Após alguns testes chegou-se à conclusão que esta falta de desempenho se devia ao \textit{hardware} utilizado e que um melhor computador e \textit{router} resolviam este problema.\par 
-De momento o processo de instalação dos clientes ainda requer que o utilizador se ligue manualmente ao \textit{MySQL} para introduzir as \textit{queries} para criar os utilizadores e as bases de dados. Seria interessante em futuros desenvolvimentos chegar a uma solução que permitisse uma criação dos clientes diretamente pela aplicação como demonstrado na \autoref{fig:conclusoes1}.
+A aplicação cumpre os objetivos propostos de ser multiplataforma e garantir um acesso remoto à base de dados central, bem como gerir as informações dos clientes, moldes e sensores.\par
+%Durante o desenvolvimento do projeto e testes de usabilidade verificou-se alguma falta de desempenho por parte da aplicação. Após alguns testes chegou-se à conclusão que esta falta de desempenho se devia ao \textit{hardware} utilizado e que um melhor computador e \textit{router} resolviam este problema.\par 
+De momento está preparada para ter mais que um cliente no sistema local. Quando se transitar para a situação real em que cada sistema só tem cliente pode-se concatenar o processo de adicionar um cliente, instalar \textit{MySQL}, criar bases de dados locais e conectar ao sistema local num processo só, como demonstrado nas Figuras \ref{fig:conclusoes1}, \ref{fig:conclusoes11} e \ref{fig:conclusoes12}.
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[width=0.9\textwidth]{futuro01} % Include the image placeholder.png
@@ -1628,11 +1710,33 @@ De momento o processo de instalação dos clientes ainda requer que o utilizador
 		\label{fig:conclusoes1}
 	\end{center}
 \end{figure}
-Além disto é necessário realizar uma revisão de segurança à aplicação. Um programador com intenções maliciosas pode aceder ao sistema pela aplicação e realizar comandos que podem comprometer o sistema.\par 
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.9\textwidth]{futuro01} % Include the image placeholder.png
+		\caption{Exemplo da área Criar Local com criação das bases de dados e utilizadores via \textit{root} em vez de gerar \textit{queries} para o utilizador inserir manualmente no \textit{MySQL}}
+		\label{fig:conclusoes11}
+	\end{center}
+\end{figure}
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.9\textwidth]{futuro01} % Include the image placeholder.png
+		\caption{Exemplo da área Criar Local com criação das bases de dados e utilizadores via \textit{root} em vez de gerar \textit{queries} para o utilizador inserir manualmente no \textit{MySQL}}
+		\label{fig:conclusoes12}
+	\end{center}
+\end{figure}
+A aplicação só está preparada para adicionar informação à infraestrutura e instalar o sistema local. Sugere-se para futuros desenvolvimentos, preparar a aplicação para eliminar informação da infraestrutura. Na \autoref{fig:conclusoes5}, está um exemplo de um botão Eliminar Cliente que eliminaria a informação relativa do cliente e desinstalaria automaticamente o sistema local.
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.9\textwidth]{futuro01} % Include the image placeholder.png
+		\caption{Exemplo da área Criar Local com criação das bases de dados e utilizadores via \textit{root} em vez de gerar \textit{queries} para o utilizador inserir manualmente no \textit{MySQL}}
+		\label{fig:conclusoes5}
+	\end{center}
+\end{figure}
+Deve ser realizada uma revisão de segurança à aplicação. Um programador com intenções maliciosas pode aceder ao sistema pela aplicação e realizar comandos que podem comprometer o sistema.\par 
 Apesar de serem necessários alguns ajustes de forma a melhorar o desempenho, a solução proposta da infraestrutura e aplicação é completamente funcional e pode ser já implementada numa fase experimental.
 
 \section{Trabalhos Futuros}
-Quanto à infraestrutura dos dados não foi definido como os sensores dos moldes serão ligados ao servidor local. No desenvolvimento deste projeto assumiu-se que todos os moldes estão ligados diretamente ao sistema local. No entanto, isto pode não ser sempre possível de se realizar por motivos físicos como demonstrado na \autoref{fig:conclusoes3}.
+Quanto à infraestrutura dos dados não foi definido como os sensores dos moldes serão ligados ao servidor local. No desenvolvimento deste projeto assumiu-se que todos os moldes estão ligados diretamente ao sistema local. No entanto, isto pode não ser sempre possível de se realizar por motivos físicos como demonstrado na \autoref{fig:conclusoes3}. Se se justificar, em vez de se ter um servidor local no cliente, ter um em cada molde molde. Esta adaptação irá criar uma maior quantidade de bases de dados locais mas isto não é problemático, se o modelo de dados e o programa de transferência forem adaptados para o efeito.\par
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[width=0.9\textwidth]{placeholder} % Include the image placeholder.png
@@ -1640,7 +1744,6 @@ Quanto à infraestrutura dos dados não foi definido como os sensores dos moldes
 		\label{fig:conclusoes3}
 	\end{center}
 \end{figure}
-Se se justificar, em vez de se ter um servidor local no cliente, ter um em cada molde molde. Esta adaptação irá criar uma maior quantidade de bases de dados locais mas isto não é problemático, se o modelo de dados e o programa de transferência forem adaptados para o efeito.\par
 Quanto à aplicação, sugere-se que após uma apresentação inicial à empresa promotora, seja iniciado um processo iterativo de desenvolvimento para escolher e desenvolver novas funcionalidades que possam ser úteis e que não tenham sido abrangidas neste projeto, como por exemplo, a criação de utilizadores baseado no ID de trabalhador demonstrado na \autoref{fig:conclusoes2}, que pode depois servir para criar históricos das intervenções dos utilizadores nas bases de dados. Culminando numa estilização da aplicação para que esta tenha um aspeto mais amigável ao utilizador.
 \begin{figure}[H]
 	\begin{center}
