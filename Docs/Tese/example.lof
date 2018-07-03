@@ -54,13 +54,15 @@
 \contentsline {figure}{\numberline {4.18}{\ignorespaces \textit {Queries} geradas para completar a instala\IeC {\c c}\IeC {\~a}o da base de dados no sistema local. Consistem nas permiss\IeC {\~o}es para os utilizadores que s\IeC {\'o} podem ser garantidas via \textit {root} bem como informa\IeC {\c c}\IeC {\~a}o para completar o sistema de dados\relax }}{59}{figure.caption.55}
 \contentsline {figure}{\numberline {4.19}{\ignorespaces \textit {Main} com conex\IeC {\~a}o local\relax }}{60}{figure.caption.56}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Diagrama da montagem dos testes de usabilidade}}{62}{figure.caption.57}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Infraestrutura descentralizada\relax }}{64}{figure.caption.58}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Exemplo da \IeC {\'a}rea Criar Local com cria\IeC {\c c}\IeC {\~a}o das bases de dados e utilizadores via \textit {root} em vez de gerar \textit {queries} para o utilizador inserir manualmente no \textit {MySQL}\relax }}{66}{figure.caption.60}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Exemplo da \IeC {\'a}rea Criar Local com cria\IeC {\c c}\IeC {\~a}o das bases de dados e utilizadores via \textit {root} em vez de gerar \textit {queries} para o utilizador inserir manualmente no \textit {MySQL}\relax }}{67}{figure.caption.61}
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Exemplo da \IeC {\'a}rea Criar Local com cria\IeC {\c c}\IeC {\~a}o das bases de dados e utilizadores via \textit {root} em vez de gerar \textit {queries} para o utilizador inserir manualmente no \textit {MySQL}\relax }}{67}{figure.caption.62}
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Exemplo da \IeC {\'a}rea Criar Local com cria\IeC {\c c}\IeC {\~a}o das bases de dados e utilizadores via \textit {root} em vez de gerar \textit {queries} para o utilizador inserir manualmente no \textit {MySQL}\relax }}{68}{figure.caption.63}
-\contentsline {figure}{\numberline {6.6}{\ignorespaces Exemplo de problemas fisicos\relax }}{69}{figure.caption.64}
-\contentsline {figure}{\numberline {6.7}{\ignorespaces Exemplo de \IeC {\'a}rea de Registar para criar utilizadores com base no ID de trabalhador e email\relax }}{70}{figure.caption.65}
-\contentsline {figure}{\numberline {6.8}{\ignorespaces Exemplo molde 4 dinamometros a sair da cena\relax }}{70}{figure.caption.66}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Infraestrutura descentralizada\relax }}{64}{figure.caption.59}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Exemplo da \IeC {\'a}rea Criar Local com cria\IeC {\c c}\IeC {\~a}o das bases de dados e utilizadores via \textit {root} em vez de gerar \textit {queries} para o utilizador inserir manualmente no \textit {MySQL}\relax }}{66}{figure.caption.61}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Exemplo da \IeC {\'a}rea Criar Local com cria\IeC {\c c}\IeC {\~a}o das bases de dados e utilizadores via \textit {root} em vez de gerar \textit {queries} para o utilizador inserir manualmente no \textit {MySQL}\relax }}{67}{figure.caption.62}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Exemplo da \IeC {\'a}rea Criar Local com cria\IeC {\c c}\IeC {\~a}o das bases de dados e utilizadores via \textit {root} em vez de gerar \textit {queries} para o utilizador inserir manualmente no \textit {MySQL}\relax }}{67}{figure.caption.63}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Exemplo da \IeC {\'a}rea Criar Local com cria\IeC {\c c}\IeC {\~a}o das bases de dados e utilizadores via \textit {root} em vez de gerar \textit {queries} para o utilizador inserir manualmente no \textit {MySQL}\relax }}{68}{figure.caption.64}
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Exemplo de problemas fisicos\relax }}{69}{figure.caption.65}
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Exemplo de \IeC {\'a}rea de Registar para criar utilizadores com base no ID de trabalhador e email\relax }}{70}{figure.caption.66}
+\contentsline {figure}{\numberline {6.8}{\ignorespaces Exemplo molde 4 dinamometros a sair da cena\relax }}{70}{figure.caption.67}
+\addvspace {10\p@ }
 \addvspace {10\p@ }

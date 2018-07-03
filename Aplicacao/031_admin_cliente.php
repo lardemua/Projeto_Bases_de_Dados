@@ -286,7 +286,12 @@ session_start();
 
         if(empty($_POST['cl_id']))
         {
-            $data_missing[] = 'ID Cliente';
+		if(empty($_SESSION['local_ID']))
+            	{
+                	$data_missing[] = 'ID Cliente';
+	    	}else{
+			$cl_id = trim($_SESSION['local_ID']);
+	   	 }
         }else{
             $cl_id = trim($_POST['cl_id']);
         }
@@ -352,6 +357,7 @@ session_start();
         }
         if($go)
         {
+	//echo "$cl_nome, $cl_morada, $cl_ip, $cl_port, $cl_id";
             require('central_connect.php');
 
             $query = "UPDATE clientes SET cl_nome = ?, cl_morada = ?, cl_ip = ?, cl_port = ? WHERE cl_id = ?";
@@ -362,17 +368,32 @@ session_start();
 
             mysqli_stmt_execute($stmt);
 
-            $affected_rows = mysqli_stmt_affected_rows($stmt);
+            $affected_rowscentral = mysqli_stmt_affected_rows($stmt);
 
-            if($affected_rows == 1)
+            mysqli_stmt_close($stmt);
+            mysqli_close($dbc);
+
+	require('local_connect.php');
+
+            $query = "UPDATE clientes SET cl_nome = ?, cl_morada = ?, cl_ip = ?, cl_port = ? WHERE cl_id = ?";
+
+            $stmt = mysqli_prepare($dbc2,$query);
+
+            mysqli_stmt_bind_param($stmt, "sssii", $cl_nome, $cl_morada, $cl_ip, $cl_port, $cl_id);
+
+            mysqli_stmt_execute($stmt);
+
+            $affected_rowslocal = mysqli_stmt_affected_rows($stmt);
+
+            if($affected_rowscentral == 1 && $affected_rowslocal == 1)
             {
                 echo "Cliente alterado com sucesso";
             }else
             {
-                echo "Erro: " . mysqli_error($dbc);
+                echo "Erro: " . mysqli_error($dbc2);
             }
             mysqli_stmt_close($stmt);
-            mysqli_close($dbc);
+            mysqli_close($dbc2);
         }
     }
 

@@ -1,8 +1,5 @@
 \begin{thebibliography}{10}
 
-\bibitem{web_logo}
-{Web Development PHP HTML Arrows Royalty Free Vector Image}.
-
 \bibitem{molde_imagem}
 colored-part-large-mold-with-part.
 
@@ -133,6 +130,9 @@ mysql-logo.
 
 \bibitem{apache}
 {Welcome! - The Apache HTTP Server Project}.
+
+\bibitem{web_logo}
+{Web Development PHP HTML Arrows Royalty Free Vector Image}.
 
 \bibitem{web}
 {W3Schools Online Web Tutorials}.

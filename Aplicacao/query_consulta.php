@@ -73,6 +73,8 @@ if($response)
     <tr>';
     for ($x = 0; $x < $numeroDeAtributos; $x++)
     {
+	$potato = $atributos[1];
+echo $potato;
         echo '<td align="left"><b>' . trim($atributos[$x]) .'</b></td>';
     }
     echo '</tr>';

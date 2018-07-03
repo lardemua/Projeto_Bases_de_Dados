@@ -36,11 +36,14 @@
 \contentsline {subsubsection}{Administra\IeC {\c c}\IeC {\~a}o}{53}{section*.45}
 \contentsline {subsubsection}{Conectar Local}{57}{section*.51}
 \contentsline {chapter}{\numberline {5}Testes de Usabilidade}{61}{chapter.5}
+\contentsline {section}{\numberline {5.1}Prepara\IeC {\c c}\IeC {\~a}o dos testes}{61}{section.5.1}
+\contentsline {section}{\numberline {5.2}Plano dos testes}{62}{section.5.2}
 \contentsline {chapter}{\numberline {6}Conclus\IeC {\~o}es}{63}{chapter.6}
 \contentsline {section}{\numberline {6.1}Coment\IeC {\'a}rios}{63}{section.6.1}
 \contentsline {subsection}{\numberline {6.1.1}Infraestrutura de dados}{63}{subsection.6.1.1}
-\contentsline {subsubsection}{Programa de transfer\IeC {\^e}ncia}{63}{section*.57}
-\contentsline {subsubsection}{Gest\IeC {\~a}o de \textit {Backups}}{65}{section*.59}
+\contentsline {subsubsection}{Programa de transfer\IeC {\^e}ncia}{63}{section*.58}
+\contentsline {subsubsection}{Gest\IeC {\~a}o de \textit {Backups}}{65}{section*.60}
 \contentsline {subsection}{\numberline {6.1.2}Aplica\IeC {\c c}\IeC {\~a}o de gest\IeC {\~a}o do sistema}{66}{subsection.6.1.2}
 \contentsline {section}{\numberline {6.2}Trabalhos Futuros}{68}{section.6.2}
 \contentsline {chapter}{Bibliografia}{73}{section.6.3}
+\contentsline {chapter}{\numberline {A}Dados iniciais dos testes de usabilidade}{75}{appendix.A}

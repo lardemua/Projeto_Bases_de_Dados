@@ -1,0 +1,71 @@
+%
+% uaThesis example (for a thesis written in Portuguese)
+%
+% the complete list of options and commands can be found in uaThesis.sty
+%
+
+\documentclass[11pt,twoside,a4paper]{report}
+%\documentclass[11pt,twoside,a4paper,openright]{report}    % Estilo relatório
+% openright: página inicial de cada capítulo sempre ímpar
+
+% optional packages
+
+\usepackage[portuguese]{babel}
+
+
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{xspace}% used by \sigla
+
+%\graphicspath{ {Pictures/} }
+    % Símbolos da American Mathematical Society
+    \usepackage{mathtools}
+    %\usepackage{amsmath}
+    %\usepackage[citebordercolor={1 1 1},linkbordercolor={1 1 1}]{hyperref}
+    \usepackage{graphicx} % Required for the inclusion of images
+    \usepackage{subcaption}   
+    \usepackage{float}
+    \usepackage{listings}
+    \usepackage{courier}
+    %\renewcommand{\ttdefault}{pcr}
+    \lstset{basicstyle=\ttfamily}
+    
+    
+    \usepackage{enumitem}
+    \usepackage{makecell}
+    \usepackage{pdflscape}
+    
+    
+    
+%    \usepackage[url = false, backend=biber, style = numeric, sorting=none]{biblatex}
+%    \addbibresource{bib/own/molde.bib}
+
+%encoding
+%--------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+%--------------------------------------
+\usepackage[toc,page]{appendix}
+\usepackage{hyperref}
+\usepackage{bookmark}
+
+\newcommand{\hello}{potato}
+
+\begin{document}
+	\tableofcontents
+\chapter{Hello World}
+cão çç\par 
+fwefwf
+
+
+\cleardoublepage
+\appendix
+	
+	\chapter{Dados iniciais dos testes de usabilidade}
+	\label{apen:usabilidade}
+	
+	\chapter{potato}
+
+\end{document}

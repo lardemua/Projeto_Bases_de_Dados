@@ -1,0 +1,284 @@
+////////////////////////////////////Geral:
+Contagem - 4
+
+Ocupação:
+Professor - 2
+Estudante - 1
+Outro - 1
+
+Conhece o funcionamento do projeto:
+Conheço o funcionamento do projeto - 2
+Conheço o projeto mas nao o funcionamento - 1
+Não conheço o projeto - 1
+
+No fim: AQUI FALTAM AS OPINIOES DOS PROFS JORGE E VITOR
+Acha que a aplicação cumpre os objetivos propostos:
+Concordo plenamente - 2
+Concordo em parte - 
+Não concordo nem discordo - 
+Discordo em parte - 
+Discordo totalmente - 
+
+//////////////////////////////////PRIMEIRA PARTE
+Utilizou dispositivo pessoal:
+Sim - 3
+Nao - 1
+
+Qual:
+smartphone - 1
+tablet - 1
+portatil - 1
+computador - 0
+
+Realizar Login:
+Conseguiu à primeira - 3
+Não conseguiu à primeira por erro do utilizador - 1
+Não conseguiu à primeira por erro da aplicação - 0
+Não conseguiu de todo - 0
+
+Realizar a primeira query:
+Conseguiu à primeira - 4
+Não conseguiu à primeira por erro do utilizador - 0
+Não conseguiu à primeira por erro da aplicação - 0
+Não conseguiu de todo - 0
+
+Filtrar a informação:
+Conseguiu à primeira - 3
+Não conseguiu à primeira por erro do utilizador - 1
+Não conseguiu à primeira por erro da aplicação - 0
+Não conseguiu de todo - 0
+no smartphone nao da para ver a tooltip
+
+Terminar sessão e tentar reutilizar a query:
+Conseguiu à primeira - 4
+Não conseguiu à primeira por erro do utilizador - 0
+Não conseguiu à primeira por erro da aplicação - 0
+Não conseguiu de todo - 0
+
+Utilizar de forma livre:
+Observações: Nenhum utilizador usou a opção de criar query sem assistencia
+Comentários:
+Sugestões: adicionar tooltip aso filtros e ordem
+uma checkbox para selecionar e descelecionar tudo de uma coluna
+qd se usa o link, dar redirect para o login e depois voltar a abrir o link
+dividir a resposta por páginas em vez de tudo corrida
+gerar gráficos
+tornar a interface mais user friendly seem cl_ m_ s_, etc
+Filtrar depois de ter a resposta gerada
+
+////////////////////////////////////SEGUNDA PARTE
+Verificar que este nao existe na base de dados:
+Conseguiu à primeira - 4
+Não conseguiu à primeira por erro do utilizador - 0
+Não conseguiu à primeira por erro da aplicação - 0
+Não conseguiu de todo - 0
+
+Adicionar Cliente:
+Conseguiu à primeira - 3
+Não conseguiu à primeira por erro do utilizador - 0
+Não conseguiu à primeira por erro da aplicação - 0
+Não conseguiu de todo - 0
+
+Instalar e configurar MySQL:
+Conseguiu à primeira - 1
+Não conseguiu à primeira por erro do utilizador - 0
+Não conseguiu à primeira por erro da aplicação - 0
+Não conseguiu de todo - 3
+
+Criar base de dados temporária:
+Conseguiu à primeira - 4
+Não conseguiu à primeira por erro do utilizador - 0
+Não conseguiu à primeira por erro da aplicação - 0
+Não conseguiu de todo - 0
+
+Criar Local:
+Conseguiu à primeira - 4
+Não conseguiu à primeira por erro do utilizador - 0
+Não conseguiu à primeira por erro da aplicação - 0
+Não conseguiu de todo - 0
+
+Conectar Local:
+Conseguiu à primeira - 4
+Não conseguiu à primeira por erro do utilizador - 0
+Não conseguiu à primeira por erro da aplicação - 0
+Não conseguiu de todo - 0
+
+Alterar Cliente:
+Conseguiu à primeira - 3
+Não conseguiu à primeira por erro do utilizador - 0
+Não conseguiu à primeira por erro da aplicação - 1
+Não conseguiu de todo - 0
+
+Adicionar Moldes e Sensores:
+Conseguiu à primeira - 4
+Não conseguiu à primeira por erro do utilizador - 0
+Não conseguiu à primeira por erro da aplicação - 0
+Não conseguiu de todo - 0
+
+Validar:
+Conseguiu à primeira - 2
+Não conseguiu à primeira por erro do utilizador - 0
+Não conseguiu à primeira por erro da aplicação - 2
+Não conseguiu de todo - 0
+
+Atualizar:
+Conseguiu à primeira - 2
+Não conseguiu à primeira por erro do utilizador - 0
+Não conseguiu à primeira por erro da aplicação - 0
+Não conseguiu de todo - 2
+
+Verificar registos a serem produzidos:
+Conseguiu à primeira - 4
+Não conseguiu à primeira por erro do utilizador - 0
+Não conseguiu à primeira por erro da aplicação - 0
+Não conseguiu de todo - 0
+
+Utilizar de forma livre:
+Observações: 
+Comentários:
+Sugestões: adicionar autocomplete no alterar cliente, adicionar um tutorial, warning no botão validar, warning no botão Atualizar
+
+\chapter{Teste}
+\begin{table}
+\centering
+\begin{tabular}{|l|l|}
+%\hline
+\multicolumn{2}{l}{\textbf{tipo}}\\ \cline{1-2}
+tipo\texttt{\char`_}ID & tipo\texttt{\char`_}nome\\ \cline{1-2}
+1 & Termómetro\\ \cline{1-2}
+2 & Dinamómetro\\ \cline{1-2}
+3 & Extensómetro\\ \cline{1-2}
+4 & Vibrómetro\\ \cline{1-2}
+5 & Pressão\\ \cline{1-2}
+6 & Acelerómetro X\\ \cline{1-2}
+7 & Acelerómetro Y\\ \cline{1-2}
+8 & Acelerómetro Z\\ \cline{1-2}
+\end{tabular}
+\caption[Tabela com os valores iniciais da tabela tipo]{Tabela com os valores iniciais da tabela tipo}
+\label{tab:usabilidade2}
+\end{table}
+\begin{table}
+\centering
+\begin{tabular}{|l|l|}
+%\hline
+\multicolumn{2}{l}{\textbf{fase}}\\ \cline{1-2}
+fase\texttt{\char`_}ID & fase\texttt{\char`_}nome\\ \cline{1-2}
+1 & Fecho\\ \cline{1-2}
+2 & Enchimento\\ \cline{1-2}
+3 & Compactação\\ \cline{1-2}
+4 & Abertura\\ \cline{1-2}
+5 & Extração\\ \cline{1-2}
+\end{tabular}
+\caption[Tabela com os valores iniciais da tabela fase]{Tabela com os valores iniciais da tabela fase}
+\label{tab:usablidade3}
+\end{table}
+\begin{table}
+\centering
+\begin{tabular}{|l|l|l|l|l|}
+%\hline
+\multicolumn{5}{l}{\textbf{clientes}}\\ \cline{1-5}
+cl\texttt{\char`_}ID & cl\texttt{\char`_}nome & cl\texttt{\char`_}morada & cl\texttt{\char`_}IP & cl\texttt{\char`_}port\\ \cline{1-5}
+10001 & Autocolismos \& Company & Rua das sanita, nº 2 & 127.0.0.1 & 3306\\ \cline{1-5}
+10002 & Máscaras de Carnaval LDA & Rua de Elm street, nº 13 & 127.0.0.1 & 3306\\ \cline{1-5}
+%10003 & Aperture Science & Travessa de bolo, nº 404 & 127.0.0.1 & 3306\\ \cline{1-5}
+10004 & Black Mesa & Área 51 & 127.0.0.1 & 3306\\ \cline{1-5}
+10005 & Vault-Tec Corporation & Rua da caixa-forte, nº 1234 & 127.0.0.1 & 3306\\ \cline{1-5}
+\end{tabular}
+\caption[Tabela com os valores iniciais da tabela clientes]{Tabela com os valores iniciais da tabela clientes}
+\label{tab:usabilidade4}
+\end{table}
+\begin{table}
+\centering
+\begin{tabular}{|l|l|l|l|}
+%\hline
+\multicolumn{4}{l}{\textbf{moldes}}\\ \cline{1-4}
+m\texttt{\char`_}IDCliente & m\texttt{\char`_}ID & 
+m\texttt{\char`_}nome & 
+m\texttt{\char`_}descricao\\ \cline{1-4}
+10001 & 9000 & NULL & NULL\\ \cline{1-4}
+10001 & 9001 & NULL & NULL\\ \cline{1-4}
+10001 & 9002 & NULL & NULL\\ \cline{1-4}
+10001 & 9003 & NULL & NULL\\ \cline{1-4}
+10002 & 9004 & NULL & NULL\\ \cline{1-4}
+10002 & 9005 & NULL & NULL\\ \cline{1-4}
+10002 & 9006 & NULL & NULL\\ \cline{1-4}
+%10003 & 9007 & NULL & NULL\\ \cline{1-4}
+%10003 & 9008 & NULL & NULL\\ \cline{1-4}
+10004 & 9009 & NULL & NULL\\ \cline{1-4}
+10002 & 9010 & NULL & NULL\\ \cline{1-4}
+10002 & 9011 & NULL & NULL\\ \cline{1-4}
+10002 & 9012 & NULL & NULL\\ \cline{1-4}
+10005 & 9013 & NULL & NULL\\ \cline{1-4}
+\end{tabular}
+\caption[Tabela com os valores iniciais da tabela moldes]{Tabela com os valores iniciais da tabela moldes}
+\label{tab:usabilidade5}
+\end{table}
+\begin{table}
+\centering
+\begin{tabular}{|l|l|l|l|l|}
+%\hline
+\multicolumn{5}{l}{\textbf{sensores}}\\ \cline{1-5}
+s\texttt{\char`_}IDMolde & s\texttt{\char`_}num & s\texttt{\char`_}tipo & s\texttt{\char`_}nome & s\texttt{\char`_}descricao\\ \cline{1-5}
+9000 & 1 & 1 & NULL & NULL\\ \cline{1-5}
+9000 & 2 & 2 & NULL & NULL\\ \cline{1-5}
+9000 & 3 & 2 & NULL & NULL\\ \cline{1-5}
+9000 & 4 & 2 & NULL & NULL\\ \cline{1-5}
+9000 & 5 & 2 & NULL & NULL\\ \cline{1-5}
+9001 & 1 & 1 & NULL & NULL\\ \cline{1-5}
+9001 & 2 & 2 & NULL & NULL\\ \cline{1-5}
+9001 & 3 & 2 & NULL & NULL\\ \cline{1-5}
+9001 & 4 & 2 & NULL & NULL\\ \cline{1-5}
+9001 & 5 & 2 & NULL & NULL\\ \cline{1-5}
+9002 & 1 & 5 & NULL & NULL\\ \cline{1-5}
+9002 & 2 & 3 & NULL & NULL\\ \cline{1-5}
+9002 & 3 & 3 & NULL & NULL\\ \cline{1-5}
+9003 & 1 & 5 & NULL & NULL\\ \cline{1-5}
+9003 & 2 & 3 & NULL & NULL\\ \cline{1-5}
+9003 & 3 & 3 & NULL & NULL\\ \cline{1-5}
+9004 & 1 & 1 & NULL & NULL\\ \cline{1-5}
+9004 & 2 & 2 & NULL & NULL\\ \cline{1-5}
+9004 & 3 & 3 & NULL & NULL\\ \cline{1-5}
+9004 & 4 & 4 & NULL & NULL\\ \cline{1-5}
+9004 & 5 & 5 & NULL & NULL\\ \cline{1-5}
+9005 & 1 & 1 & NULL & NULL\\ \cline{1-5}
+9005 & 2 & 2 & NULL & NULL\\ \cline{1-5}
+9005 & 3 & 3 & NULL & NULL\\ \cline{1-5}
+9005 & 4 & 4 & NULL & NULL\\ \cline{1-5}
+9005 & 5 & 5 & NULL & NULL\\ \cline{1-5}
+9006 & 1 & 1 & NULL & NULL\\ \cline{1-5}
+9006 & 2 & 2 & NULL & NULL\\ \cline{1-5}
+9006 & 3 & 3 & NULL & NULL\\ \cline{1-5}
+9006 & 4 & 4 & NULL & NULL\\ \cline{1-5}
+9006 & 5 & 5 & NULL & NULL\\ \cline{1-5}
+%9007 & 1 & 5 & NULL & NULL\\ \cline{1-5}
+%9008 & 1 & 5 & NULL & NULL\\ \cline{1-5}
+9009 & 1 & 1 & NULL & NULL\\ \cline{1-5}
+9009 & 2 & 1 & NULL & NULL\\ \cline{1-5}
+9009 & 3 & 2 & NULL & NULL\\ \cline{1-5}
+9009 & 4 & 2 & NULL & NULL\\ \cline{1-5}
+9009 & 5 & 3 & NULL & NULL\\ \cline{1-5}
+9009 & 6 & 3 & NULL & NULL\\ \cline{1-5}
+9009 & 7 & 4 & NULL & NULL\\ \cline{1-5}
+9009 & 8 & 4 & NULL & NULL\\ \cline{1-5}
+9009 & 9 & 5 & NULL & NULL\\ \cline{1-5}
+9009 & 10 & 5 & NULL & \\ \cline{1-5}
+9010 & 1 & 1 & NULL & NULL\\ \cline{1-5}
+9010 & 2 & 2 & NULL & NULL\\ \cline{1-5}
+9010 & 3 & 3 & NULL & NULL\\ \cline{1-5}
+9010 & 4 & 4 & NULL & NULL\\ \cline{1-5}
+9010 & 5 & 5 & NULL & NULL\\ \cline{1-5}
+9011 & 1 & 1 & NULL & NULL\\ \cline{1-5}
+9011 & 2 & 2 & NULL & NULL\\ \cline{1-5}
+9011 & 3 & 3 & NULL & NULL\\ \cline{1-5}
+9011 & 4 & 4 & NULL & NULL\\ \cline{1-5}
+9011 & 5 & 5 & NULL & NULL\\ \cline{1-5}
+9012 & 1 & 1 & NULL & NULL\\ \cline{1-5}
+9012 & 2 & 2 & NULL & NULL\\ \cline{1-5}
+9012 & 3 & 3 & NULL & NULL\\ \cline{1-5}
+9012 & 4 & 4 & NULL & NULL\\ \cline{1-5}
+9012 & 5 & 5 & NULL & NULL\\ \cline{1-5}
+9013 & 1 & 3 & NULL & NULL\\ \cline{1-5}
+\end{tabular}
+\caption[Tabela com os valores iniciais da tabela sensores]{Tabela com os valores iniciais da tabela sensores}
+\label{tab:usabilidade6}
+\end{table}
