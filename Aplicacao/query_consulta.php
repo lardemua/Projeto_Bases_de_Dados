@@ -71,12 +71,11 @@ if($response)
 {
     echo '<table class = "query" table_align = "left" cellspacing = "5" cellpadding = "8">
     <tr>';
-    for ($x = 0; $x < $numeroDeAtributos; $x++)
-    {
-	$potato = $atributos[1];
-echo $potato;
-        echo '<td align="left"><b>' . trim($atributos[$x]) .'</b></td>';
-    }
+	foreach($atributos as $potato)
+        {
+                    echo '<td align="left"><b>' . $potato .'</b></td>';
+        }
+
     echo '</tr>';
 
     while($row = mysqli_fetch_array($response))

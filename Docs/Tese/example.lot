@@ -5,18 +5,22 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {3.1}{\ignorespaces Tabelas das bases de dados com os seus atributos e respetivos dom\IeC {\'\i }nios e obrigatoriedades}}{25}{table.caption.25}
+\contentsline {table}{\numberline {3.1}{\ignorespaces Tabelas da BD com os seus atributos e respetivos dom\IeC {\'\i }nios e obrigatoriedades}}{25}{table.caption.25}
 \contentsline {table}{\numberline {3.2}{\ignorespaces Tabelas da base de dados regula\IeC {\c c}\IeC {\~a}o de procedimentos com os seus atributos e respetivos dom\IeC {\'\i }nios e obrigatoriedades}}{28}{table.caption.27}
-\contentsline {table}{\numberline {3.3}{\ignorespaces Tabelas com as permiss\IeC {\~o}es das credenciais criadas para as v\IeC {\'a}rias tabelas das bases de dados\relax }}{41}{table.caption.33}
-\contentsline {table}{\numberline {3.4}{\ignorespaces Tabelas com as limita\IeC {\c c}\IeC {\~o}es dos endere\IeC {\c c}os de conex\IeC {\~a}o das credenciais criadas nos sistemas do projeto}}{42}{table.caption.34}
+\contentsline {table}{\numberline {3.3}{\ignorespaces Tabelas com as permiss\IeC {\~o}es das credenciais criadas para as tabelas das bases de dados}}{41}{table.caption.33}
+\contentsline {table}{\numberline {3.4}{\ignorespaces Tabelas com as limita\IeC {\c c}\IeC {\~o}es dos endere\IeC {\c c}os de conex\IeC {\~a}o das credenciais criadas nos sistemas do projeto}}{42}{table.caption.35}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {6.1}{\ignorespaces Tabela com os dados utilizados para testar a taxa de transfer\IeC {\^e}ncia de registos}}{75}{table.caption.79}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {A.1}{\ignorespaces Tabela com os valores iniciais da tabela tipo}}{75}{table.caption.69}
-\contentsline {table}{\numberline {A.2}{\ignorespaces Tabela com os valores iniciais da tabela fase}}{75}{table.caption.70}
-\contentsline {table}{\numberline {A.3}{\ignorespaces Tabela com os valores iniciais da tabela clientes}}{76}{table.caption.71}
-\contentsline {table}{\numberline {A.4}{\ignorespaces Tabela com os valores iniciais da tabela moldes}}{76}{table.caption.72}
-\contentsline {table}{\numberline {A.5}{\ignorespaces Parte 1 de 2 da tabela com os valores iniciais da tabela sensores}}{77}{table.caption.73}
-\contentsline {table}{\numberline {A.6}{\ignorespaces Parte 2 de 2 da tabela com os valores iniciais da tabela sensores}}{78}{table.caption.74}
+\contentsline {table}{\numberline {D.1}{\ignorespaces Tabela com os valores iniciais da tabela tipo}}{88}{table.caption.88}
+\contentsline {table}{\numberline {D.2}{\ignorespaces Tabela com os valores iniciais da tabela fase}}{88}{table.caption.89}
+\contentsline {table}{\numberline {D.3}{\ignorespaces Tabela com os valores iniciais da tabela clientes}}{89}{table.caption.90}
+\contentsline {table}{\numberline {D.4}{\ignorespaces Tabela com os valores iniciais da tabela moldes}}{89}{table.caption.91}
+\contentsline {table}{\numberline {D.5}{\ignorespaces Parte 1 de 2 da tabela com os valores iniciais da tabela sensores}}{90}{table.caption.92}
+\contentsline {table}{\numberline {D.6}{\ignorespaces Parte 2 de 2 da tabela com os valores iniciais da tabela sensores}}{91}{table.caption.93}

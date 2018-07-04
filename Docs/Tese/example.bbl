@@ -85,6 +85,13 @@ Suzanne L.~B. Woll and Douglas~J. Cooper.
   process}.
 \newblock {\em Polymer Engineering {\&} Science}, 37(5):801--812, may 1997.
 
+\bibitem{Cook}
+D.F. Cook, C.T. Ragsdale, and R.L. Major.
+\newblock {Combining a neural network with a genetic algorithm for process
+  parameter optimization}.
+\newblock {\em Engineering Applications of Artificial Intelligence},
+  13(4):391--396, aug 2000.
+
 \bibitem{Elmasri:2010:FDS:1855347}
 Ramez Elmasri and Shamkant Navathe.
 \newblock {\em {Fundamentals of Database Systems}}.
