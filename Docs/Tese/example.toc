@@ -38,11 +38,11 @@
 \contentsline {chapter}{\numberline {5}Testes de Usabilidade}{61}{chapter.5}
 \contentsline {section}{\numberline {5.1}Prepara\IeC {\c c}\IeC {\~a}o dos testes}{61}{section.5.1}
 \contentsline {section}{\numberline {5.2}Plano dos testes}{62}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Primeira parte - Consultas}{63}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.1}Primeira parte - Consultas}{62}{subsection.5.2.1}
 \contentsline {subsection}{\numberline {5.2.2}Segunda parte - Sistema Local}{63}{subsection.5.2.2}
 \contentsline {section}{\numberline {5.3}Resultados dos testes}{64}{section.5.3}
 \contentsline {subsection}{\numberline {5.3.1}Resultados da primeira parte}{65}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}Resultados da segunda parte}{68}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.2}Resultados da segunda parte}{67}{subsection.5.3.2}
 \contentsline {chapter}{\numberline {6}Conclus\IeC {\~o}es}{73}{chapter.6}
 \contentsline {section}{\numberline {6.1}Coment\IeC {\'a}rios}{73}{section.6.1}
 \contentsline {subsection}{\numberline {6.1.1}Infraestrutura de dados}{73}{subsection.6.1.1}
@@ -51,7 +51,9 @@
 \contentsline {subsection}{\numberline {6.1.4}Aplica\IeC {\c c}\IeC {\~a}o de gest\IeC {\~a}o do sistema}{76}{subsection.6.1.4}
 \contentsline {section}{\numberline {6.2}Trabalhos Futuros}{79}{section.6.2}
 \contentsline {chapter}{Bibliografia}{83}{section.6.3}
-\contentsline {chapter}{\numberline {A}Evolu\IeC {\c c}\IeC {\~a}o dos Diagramas Entidade/Rela\IeC {\c c}\IeC {\~a}o}{85}{appendix.A}
-\contentsline {chapter}{\numberline {B}\textit {Queries} para criar as bases de dados}{86}{appendix.B}
-\contentsline {chapter}{\numberline {C}Infraestrutura total}{87}{appendix.C}
-\contentsline {chapter}{\numberline {D}Dados iniciais dos testes de usabilidade}{88}{appendix.D}
+\contentsline {chapter}{\numberline {A}\textit {Queries} para instalar a solu\IeC {\c c}\IeC {\~a}o desenvolvida}{85}{appendix.A}
+\contentsline {section}{\numberline {A.1}Sistema Central}{85}{section.A.1}
+\contentsline {section}{\numberline {A.2}Sistema Local}{89}{section.A.2}
+\contentsline {chapter}{\numberline {B}Evolu\IeC {\c c}\IeC {\~a}o dos Diagramas Entidade/Rela\IeC {\c c}\IeC {\~a}o}{93}{appendix.B}
+\contentsline {chapter}{\numberline {C}Infraestrutura com todas as bases de dados}{97}{appendix.C}
+\contentsline {chapter}{\numberline {D}Dados iniciais dos testes de usabilidade}{101}{appendix.D}

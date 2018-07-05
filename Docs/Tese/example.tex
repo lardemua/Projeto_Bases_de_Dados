@@ -563,13 +563,13 @@ Estes são os comandos e conceitos principais que surgem ao longo deste document
 \cleardoublepage
 \chapter{Proposta de Solução}
 \label{chap:solucao}
-A infraestrutura de dados desenvolvida tem como objetivo ser simples, funcional a baixo nível e sem impor restrições na instrumentação dos moldes. Este capítulo descreve o processo de desenvolvimento das bases de dados relacionais, o método de transferência de registos, a gestão de \textit{backups}, as permissões dos utilizadores e um simples simulador de registos.
+A infraestrutura de dados desenvolvida tem como objetivo ser simples, funcional a baixo nível e sem impor restrições na instrumentação dos moldes. Este capítulo descreve o processo de desenvolvimento das bases de dados relacionais, o método de transferência de registos, a gestão de \textit{backups}, as permissões dos utilizadores e um simples simulador de registos. No \autoref{apen:queries} encontram-se as \textit{queries} desenvolvidas para construir a solução proposta, com base na informação deste capítulo.
 
 \section{Infraestrutura de Dados}
 A instrumentação dos moldes geram registos localmente nos clientes e estes devem ser guardados numa base de dados central. Realiza-se a transferência usando protocolos TCP/IP. A fim de minimizar a perda de registos em caso de falha de conexão, coloca-se uma base de dados local em cada cliente, como representado na \autoref{fig:infra1}.
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=0.44\textwidth]{Esquema_Projeto_4} % Include the image placeholder.png
+		\includegraphics[width=0.40\textwidth]{Esquema_Projeto_4} % Include the image placeholder.png
 		\caption[Diagrama das bases de dados]{Diagrama da infraestrutura com múltiplas BDs locais conectadas a uma BD central}
 		\label{fig:infra1}
 		\end{center}
@@ -582,7 +582,7 @@ Para estabelecer o fluxo de informação desenvolveu-se um programa de transfer�
 		\label{fig:infra2}
 		\end{center}
 \end{figure}
-Para melhorar o desempenho da BD central e prevenir falhas críticas do sistema, desenvolveu-se um programa de gestão de \textit{backups}, também em \textit{C}. Este programa limpa e cria \textit{backups} da BD e guarda-os num repositório \textit{online}. De forma a não interferir diretamente com a informação da BD central criam-se duas BDs para a gestão dos \textit{backups}. Com esta adição, o esquema da infraestrutura final está representado na \autoref{fig:infra3}.\par 
+Para melhorar o desempenho da BD central e prevenir falhas críticas do sistema, desenvol-\\veu-se um programa de gestão de \textit{backups}, também em \textit{C}. Este programa limpa e cria \textit{backups} da BD e guarda-os num repositório \textit{online}. De forma a não interferir diretamente com a informação da BD central criam-se duas BDs para a gestão dos \textit{backups}. Com esta adição, o esquema da infraestrutura final está representado na \autoref{fig:infra3}.\par 
 \begin{figure}
 	\begin{center}
 		\includegraphics[width=1\textwidth]{Esquema_Projeto_6} % Include the image placeholder.png
@@ -593,6 +593,7 @@ Para melhorar o desempenho da BD central e prevenir falhas críticas do sistema,
 
 \section{Base de dados}
 \subsection{Análise de requisitos}
+\label{subchap:analise}
 Deseja-se, de uma forma geral, um sistema capaz de guardar remotamente medições realizadas em moldes instrumentados. Esta informação não é suficiente para se deduzir uma base de dados. Assim sendo, analisando e completando a informação inicial chega-se ao seguinte enunciado:\par 
 %\vspace{2ex}
 \textit{Um cliente, caracterizado por um ID único, nome, morada, IP e port, tem moldes. Estes moldes são identificados por um ID único, nome e descrição. Os moldes têm sensores com um número referente ao molde, tipo (termómetro, dinamómetro, extensómetro, etc.), nome e descrição. Estes sensores geram registos onde guardam a fase do processo (fecho do molde, enchimento, compactação, abertura e extração), data, hora, milissegundos e o valor num determinado momento.}\par 
@@ -743,7 +744,7 @@ Quanto à obrigatoriedade de participação das entidades nas relações anterio
 	\end{figure}
 \end{landscape}
 \subsection{Desenho conceptual e esquema lógico}
-Concatenando a informação descrita na análise de requisitos, obtém-se o DER representado na \autoref{fig:der}.\par
+Concatenando a informação descrita na análise de requisitos, obtém-se o DER representado na \autoref{fig:der}. No \autoref{apen:DER} encontra-se um histórico dos DERs realizados durante o desenvolvimento do projeto\par
 Traduzindo as entidades do diagrama anterior para tabelas e as relações para chaves estrangeiras, obtém-se o esquema lógico da BD representado na \autoref{fig:er}.
 \begin{figure}[H]
 	\begin{center}
@@ -1273,7 +1274,7 @@ De forma a proteger o sistema de acessos não autorizados, define-se também os 
 %Como referido no \autoref{chap:intro}, deseja-se uma aplicação de gestão do sistema que seja disponível em qualquer lugar, o que parece entrar em conflito com o que aqui se define. Esclarece-se este tópico na \autoref{subchap:login}.
 \begin{figure}
 	\begin{center}
-		\includegraphics[width=0.9\textwidth]{placeholder} % Include the image placeholder.png
+		\includegraphics[width=0.7\textwidth]{ligacao_entre_sistemas} % Include the image placeholder.png
 		\caption{Representação da ligação entre os sistemas utilizados no projeto e respetivos endereços}
 		\label{fig:utilizadores2}
 	\end{center}
@@ -1306,11 +1307,11 @@ A aplicação de gestão do sistema (AGS) foi desenvolvida em ambiente \textit{W
 
 \section{Adaptação da infraestrutura}
 \label{subchap:adap}
-A infraestrutura desenvolvida no \autoref{chap:solucao} visa uma utilização a baixo a nível. Ainda que funcional, pode haver margem para erros e incoerência dos dados introduzidos manualmente. A AGS minimiza estas incoerências através da instalação de uma nova BD temporária local no servidor local. Aqui os utilizadores têm a liberdade para adicionar, alterar e apagar informação sem consequências na infraestrutura de dados, antes desta ser introduzida nas BDs central e local como representado na \autoref{fig:adap1}. Como referido anteriormente, esta BD difere das restantes, não contendo em si as tabelas fase e registos.
+A infraestrutura desenvolvida no \autoref{chap:solucao} visa uma utilização a baixo a nível. Ainda que funcional, pode haver margem para erros e incoerência dos dados introduzidos manualmente. A AGS minimiza estas incoerências através da instalação de uma nova BD temporária local no servidor local. Aqui os utilizadores têm a liberdade para adicionar, alterar e apagar informação sem consequências na infraestrutura de dados, antes desta ser introduzida nas BDs central e local como representado na \autoref{fig:adap1}. No \autoref{apen:infra} encontram-se os diagramas da infraestrutura com todas as bases de dados envolvidas. Como referido anteriormente, esta BD difere das restantes, não contendo em si as tabelas fase e registos.
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=0.60\textwidth]{Aplicacao_temp_local_central} % Include the image placeholder.png
-		\caption[Esquema de ligação AGS-BDs]{Esquema ligação AGS-BDs. A AGS comunica com a BD temporária local e depois regista os seus valores nas BDs central e local}
+		\includegraphics[width=0.56\textwidth]{Aplicacao_temp_local_central} % Include the image placeholder.png
+		\caption[Diagrama da ligação AGS-BDs]{Diagrama da ligação AGS-BDs. A AGS comunica com a BD temporária local e depois regista os seus valores nas BDs central e local}
 		\label{fig:adap1}
 	\end{center}
 \end{figure}
@@ -1662,8 +1663,9 @@ Foram realizados testes de usabilidade em várias alturas durante o desenvolvime
 \section{Preparação dos testes}
 Na \autoref{fig:usabilidade1} está representada a montagem dos testes de usabilidade, que simula a infraestrutura real com um sistema central e outro local. Como referido no \autoref{chap:aplicacao}, a AGS está dividida em dois tipos de utilizações. A utilização geral tem de garantir um acesso a partir de qualquer lugar e dispositivo. Assim sendo, pede-se aos utilizadores que, quando possível, utilizem também os seus dispositivos pessoais nestes testes.
 \begin{figure}[H]
+	\vspace{0.5cm}
 	\begin{center}
-		\includegraphics[width=0.9\textwidth]{placeholder} % Include the image placeholder.png
+		\includegraphics[width=0.9\textwidth]{montagem_testes} % Include the image placeholder.png
 		\caption[Diagrama da montagem dos testes de usabilidade]{Diagrama da montagem dos testes de usabilidade. O sistema central está ligado por cabo ao \textit{router} e os restantes dispositivos estão ligados via \textit{Wi-Fi}. Para o sistema central usou-se um \textit{Lenovo ideapad 110}, para o sistema local um \textit{Lenovo Y50}, usou-se o \textit{router} \textit{Conceptronic C300BRS4A} e o dispositivo pessoal do utilizador pode ser um \textit{smartphone}, \textit{tablet}, portátil ou computador pessoal}
 		\label{fig:usabilidade1}
 	\end{center}
@@ -2276,7 +2278,7 @@ Este foi desenvolvido como sendo centralizado em vez de descentralizado, como de
 Na versão centralizada, o sistema central tem de garantir a transferência de todos os clientes o que pode levar a um maior consumo de processador e consequente perda de desempenho. A versão descentralizada divide este consumo de processador pelos clientes dado que têm de ser os sistemas locais a garantir a transferência dos registos. Além disto, nesta versão, o programa de transferência pode ser mais simples dado que não existe necessidade do programa principal se dividir em subprogramas, podendo-se resumir aos passos representados na \autoref{fig:transferencia_subprograma}.
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=0.9\textwidth]{placeholder} % Include the image placeholder.png
+		\includegraphics[width=0.9\textwidth]{Esquema_Projeto_Descentralizado} % Include the image placeholder.png
 		\caption{Diagrama da infraestrutura com múltiplas BDs locais conectadas a uma BD central, com o programa de transferência de registos descentralizado}
 		\label{fig:conclusoes0}
 	\end{center}
@@ -2321,7 +2323,7 @@ Uma solução explorada inicialmente para criar \textit{backups} consistia em fi
 	FROM backups.registos
 	WHERE r_IDMolde = @IDMolde
 	INTO OUTFILE
-	'backup_@IDCliente_@IDMolde_@dataini_@datafim.csv'
+	'backup_@IDCliente_@IDMolde_@dataIni_@dataFim.csv'
 	FIELDS TERMINATED BY ','
 	ENCLOSED BY '"'
 	LINES TERMINATED BY '\n'
@@ -2338,22 +2340,22 @@ As mensagens de erro retornadas diretamente pelo \textit{MySQL}, apesar de conte
 De momento a AGS está preparada para ter mais que um cliente no sistema local. Quando se transitar para a situação real em que cada sistema só tem um cliente pode-se concatenar o processo de Adicionar Cliente, Instalar \textit{MySQL}, Criar Local e Conectar Local num processo só, como demonstrado nas Figuras \ref{fig:conclusoes1}, \ref{fig:conclusoes11} e \ref{fig:conclusoes12}.
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=0.9\textwidth]{futuro01} % Include the image placeholder.png
-		\caption{Exemplo da área Criar Local com criação das bases de dados e utilizadores via \textit{root} em vez de gerar \textit{queries} para o utilizador inserir manualmente no \textit{MySQL}}
+		\includegraphics[width=0.9\textwidth]{futuro03} % Include the image placeholder.png
+		\caption[Exemplo de quando se clica em Conectar Local pela primeira vez]{Exemplo de quando se clica em Conectar Local pela primeira vez e o sistema local não tem o \textit{MySQL} instalado}
 		\label{fig:conclusoes1}
 	\end{center}
 \end{figure}
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=0.9\textwidth]{futuro01} % Include the image placeholder.png
-		\caption{Exemplo da área Criar Local com criação das bases de dados e utilizadores via \textit{root} em vez de gerar \textit{queries} para o utilizador inserir manualmente no \textit{MySQL}}
+		\includegraphics[width=0.9\textwidth]{futuro04} % Include the image placeholder.png
+		\caption[Exemplo de quando se clica em Conectar Local pela segunda vez]{Exemplo de quando se clica em Conectar Local pela segunda vez para criar as BDs no sistema local}
 		\label{fig:conclusoes11}
 	\end{center}
 \end{figure}
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=0.9\textwidth]{futuro01} % Include the image placeholder.png
-		\caption{Exemplo da área Criar Local com criação das bases de dados e utilizadores via \textit{root} em vez de gerar \textit{queries} para o utilizador inserir manualmente no \textit{MySQL}}
+		\includegraphics[width=0.9\textwidth]{administracao02} % Include the image placeholder.png
+		\caption[Exemplo de quando se clica em Conectar Local pela terceira vez]{Exemplo de quando se clica em Conectar Local pela terceira vez em que a conexão é realizada diretamente, sem ser necessário escolher o cliente}
 		\label{fig:conclusoes12}
 	\end{center}
 \end{figure}
@@ -2361,7 +2363,7 @@ A AGS só está preparada para adicionar informação à infraestrutura e instal
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[width=0.9\textwidth]{futuro01} % Include the image placeholder.png
-		\caption{Exemplo da área Criar Local com criação das bases de dados e utilizadores via \textit{root} em vez de gerar \textit{queries} para o utilizador inserir manualmente no \textit{MySQL}}
+		\caption[Exemplo da área Gestão de Clientes com a funcionalidade Eliminar Cliente]{Exemplo da área Gestão de Clientes com a funcionalidade Eliminar Cliente, que irá remover toda a informação relativa do cliente e eliminar as BDs locais}
 		\label{fig:conclusoes5}
 	\end{center}
 \end{figure}
@@ -2369,11 +2371,12 @@ Deve ser realizada uma revisão de segurança à AGS. Um programador com intenç
 Apesar de serem necessários alguns ajustes de forma a melhorar o desempenho, a solução proposta da infraestrutura de dados e AGS é completamente funcional e pode ser já implementada numa fase experimental.
 
 \section{Trabalhos Futuros}
-Quanto à infraestrutura dos dados não foi definido como os sensores dos moldes serão ligados ao servidor local. No desenvolvimento deste projeto assumiu-se que todos os moldes estão ligados diretamente ao sistema local. No entanto, isto pode não ser sempre possível de se realizar por motivos físicos como demonstrado na \autoref{fig:conclusoes3}. Se se justificar, em vez de se ter um servidor local no cliente, ter um em cada molde. Esta adaptação irá criar uma maior quantidade de BDs locais mas isto não é problemático, se o modelo de dados e o programa de transferência forem adaptados para o efeito.\par
+Quanto à infraestrutura dos dados não foi definido como os sensores dos moldes serão ligados ao servidor local. No desenvolvimento deste projeto assumiu-se que todos os moldes estão ligados diretamente ao sistema local. No entanto, isto pode não ser sempre possível de se realizar por motivos físicos. Na \autoref{fig:conclusoes3} está representado um exemplo de um cliente que adquiriu quatro moldes que estão situados em pavilhões diferentes. Os moldes 1 e 2 podem ser facilmente ligados ao sistema local no entanto, dada a distancia aos moldes 3 e 4 pode ser difícil liga-los ao sistema local.\par 
+Se se justificar, em vez de se ter um servidor local no cliente, ter um em cada molde. Esta adaptação irá criar uma maior quantidade de BDs locais mas isto não é problemático, se o modelo de dados e o programa de transferência forem adaptados para o efeito.\par
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=0.9\textwidth]{placeholder} % Include the image placeholder.png
-		\caption{Exemplo de problemas fisicos}
+		\includegraphics[width=0.9\textwidth]{exemplo_pavilhoes} % Include the image placeholder.png
+		\caption[Exemplo de um cliente com moldes em pavilhões diferentes]{Exemplo de um cliente com moldes em pavilhões diferentes, que pode dificultar as ligações ao sistema local}
 		\label{fig:conclusoes3}
 	\end{center}
 \end{figure}
@@ -2385,15 +2388,16 @@ Quanto à AGS, sugere-se que após uma apresentação inicial à empresa promoto
 		\label{fig:conclusoes2}
 	\end{center}
 \end{figure}
-Sugere-se a criação de um sistema de notificações e monitorização automático dos moldes. Durante o desenvolvimento do projeto chegou-se à conclusão de que é impossível para um utilizador analisar manualmente milhões de registos de um molde e concluir se este está a funcionar corretamente, como demonstrado na \autoref{fig:conclusoes4}.
+Sugere-se a criação de um sistema de notificações e monitorização automático dos moldes. Durante o desenvolvimento do projeto chegou-se à conclusão de que é impossível para um utilizador analisar manualmente milhões de registos de um molde e concluir se este está a funcionar corretamente. Na \autoref{fig:conclusoes4} está representado um exemplo de um possível comportamento de um molde. Cada ponto representa a média dos registos recolhidos em cada dinamómetro, durante um mês na fase de compactação. Estão representados 10 pontos simbolizando 10 meses de funcionamento de um molde. Observa-se um desvio do centróide do molde ao longo do tempo, até este sair fora da área de funcionamento.\par 
+Com uma representação visual parece fácil identificar o comportamento errático do molde no entanto, o utilizador teria de o identificar através de consultas e análise respostas do estilo da \autoref{fig:consultas1}, todos os meses.
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=0.9\textwidth]{placeholder} % Include the image placeholder.png
+		\includegraphics[width=0.9\textwidth]{exemplo_molde} % Include the image placeholder.png
 		\caption{Exemplo molde 4 dinamometros a sair da cena}
 		\label{fig:conclusoes4}
 	\end{center}
 \end{figure}
-Para auxiliar os utilizadores sugere-se criar um programa capaz de correr algoritmos que analisem constantemente o comportamento dos moldes. Este programa pode ser desenvolvido em \textit{softwares} mais sofisticados, como por exemplo \textit{MATLAB}, desde que estes tenham protocolos de comunicação com \textit{MySQL}. Mantendo em mente o ambiente \textit{Web}, sugere-se que este programa notifique os utilizadores via AGS ou via email quando um molde começa a demonstrar um comportamento errático.
+Para auxiliar os utilizadores a identificar este comportamento, sugere-se criar um programa capaz de correr algoritmos que analisem constantemente o comportamento dos moldes. Este programa pode ser desenvolvido em \textit{softwares} mais sofisticados, como por exemplo \textit{MATLAB}, desde que estes tenham protocolos de comunicação com \textit{MySQL}. Mantendo em mente o ambiente \textit{Web}, sugere-se que este programa notifique os utilizadores via AGS ou via email quando um molde começa a demonstrar um comportamento errático.
 
 %
 % The bibliography
@@ -2431,12 +2435,347 @@ Para auxiliar os utilizadores sugere-se criar um programa capaz de correr algori
 
 \cleardoublepage
 \appendix
+\chapter{\textit{Queries} para instalar a solução desenvolvida}
+\label{apen:queries}
+A informação contida no \autoref{chap:solucao} permite a realização das \textit{queries} presentes neste apêndice.\par 
+\section{Sistema Central}
+Para criar as BDs central, \textit{backups} e \textit{backups} temporária:
+\begin{lstlisting}[language = SQL]
+CREATE TABLE tipo
+(
+	tipo_ID INT NOT NULL,
+	tipo_nome VARCHAR(50) NOT NULL,
+	CONSTRAINT REPETIDO_ID_TIPO
+		PRIMARY KEY(tipo_ID),
+	CONSTRAINT REPETIDO_NOME_TIPO
+		UNIQUE(tipo_nome)
+);
+CREATE TABLE fase
+(
+	fase_ID INT NOT NULL,
+	fase_nome VARCHAR(50) NOT NULL,
+	CONSTRAINT REPETIDO_ID_FASE
+		PRIMARY KEY(FASE_ID),
+	CONSTRAINT REPETIDO_NOME_FASE
+		UNIQUE(fase_nome)
+);
+CREATE TABLE clientes
+(
+	cl_ID INT NOT NULL,
+	cl_nome VARCHAR(50) NOT NULL,
+	cl_morada VARCHAR(100),
+	cl_IP VARCHAR(50) NOT NULL,
+	cl_port INT NOT NULL,
+	CONSTRAINT REPETIDO_ID_CLIENTE
+		PRIMARY KEY(cl_ID)
+);
+CREATE TABLE moldes
+(
+	m_IDCliente INT NOT NULL,
+	m_ID INT NOT NULL,
+	m_nome VARCHAR(30),
+	m_descricao VARCHAR(200),
+	CONSTRAINT REPETIDO_ID_MOLDE
+		PRIMARY KEY(m_ID),
+	CONSTRAINT MOLDE_MAU_ID_CLIENTE
+		FOREIGN KEY(m_IDCliente)
+		REFERENCES clientes(cl_ID)
+			ON DELETE NO ACTION ON UPDATE NO ACTION
+);
+CREATE TABLE sensores
+(
+	s_IDMolde INT NOT NULL,
+	s_num INT NOT NULL,
+	s_tipo INT NOT NULL,
+	s_nome varchar(30),
+	s_descricao varchar(200),
+	CONSTRAINT REPETIDO_NUM_SENSOR
+		PRIMARY KEY(s_IDMolde,s_num),
+	CONSTRAINT SENSOR_MAU_ID_MOLDE
+		FOREIGN KEY(s_IDMolde)
+		REFERENCES moldes(m_ID)
+			ON DELETE CASCADE ON UPDATE NO ACTION,
+	CONSTRAINT SENSOR_MAU_ID_TIPO
+		FOREIGN KEY(s_tipo)
+		REFERENCES tipo(tipo_ID)
+			ON DELETE NO ACTION ON UPDATE NO ACTION
+);
+CREATE TABLE registos
+(
+	r_IDMolde INT NOT NULL,
+	r_numSensor INT NOT NULL,
+	r_fase INT NOT NULL,
+	r_data_hora DATETIME NOT NULL,
+	r_milissegundos TINYINT NOT NULL,
+	r_valor FLOAT,
+	CONSTRAINT REPETIDO_REGISTO
+		PRIMARY KEY(r_IDMolde, r_numSensor,
+			r_data_hora, r_milissegundos),
+	CONSTRAINT REGISTOS_MAU_ID_MOLDE_SENSOR
+		FOREIGN KEY(r_IDMolde,r_numSensor)
+		REFERENCES sensores(s_IDMolde,s_num)
+			ON DELETE CASCADE ON UPDATE NO ACTION,
+	CONSTRAINT REGISTOS_MAU_ID_FASE
+		FOREIGN KEY(r_fase)
+		REFERENCES fase(fase_ID)
+			ON DELETE NO ACTION ON UPDATE NO ACTION
+);
+INSERT INTO tipo
+VALUES
+	(1, "Term\'ometro"),
+	(2, "Dinam\'ometro"),
+	(3, "Extens\'metro"),
+	(4, "Vibr\'metro"),
+	(5, "Press\~ao"),
+	(6, "Aceler\'metro X"),
+	(7, "Aceler\'metro Y"),
+	(8, "Aceler\'metro Z");
+INSERT INTO fase
+VALUES
+	(1, "Fecho"),
+	(2, "Enchimento"),
+	(3, "Compacta\231\~ao"),
+	(4, "Abertura"),
+	(5, "Extra\231\~ao");
+\end{lstlisting}
+A BD regulação de procedimentos
+\begin{lstlisting}[language = SQL]
+CREATE TABLE atualizar
+(
+	a_indice INT NOT NULL,
+	a_transferencia INT NOT NULL,
+	a_backups INT NOT NULL,
+	CONSTRAINT REPETIDO_INDICE_ATUALIZAR
+		PRIMARY KEY(a_indice),
+	CONSTRAINT ATUALIZAR_MAU_INDICE
+		CHECK a_indice = 1,
+	CONSTRAINT ATUALIZAR_MAU_TRANSFERENCIA
+		CHECK a_transferencia = 0 OR a_transferencia = 1,
+	CONSTRAINT ATUALIZAR_MAU_BACKUPS
+		CHECK a_backups = 0 OR a_backups = 1
+);
+CREATE TABLE atualizar
+(
+	a_indice INT NOT NULL,
+	a_transferencia INT NOT NULL,
+	a_backups INT NOT NULL,
+	CONSTRAINT REPETIDO_INDICE_ATUALIZAR
+		PRIMARY KEY(a_indice),
+	CONSTRAINT ATUALIZAR_MAU_INDICE
+		CHECK a_indice = 1,
+	CONSTRAINT ATUALIZAR_MAU_TRANSFERENCIA
+		CHECK a_transferencia = 0 OR a_transferencia = 1,
+	CONSTRAINT ATUALIZAR_MAU_BACKUPS
+		CHECK a_backups = 0 OR a_backups = 1
+);
+CREATE TABLE backups
+(
+	b_IDMolde INT NOT NULL,
+	CONSTRAINT REPETIDO_ID_MOLDE
+		PRIMARY KEY(a_indice)
+);
+INSERT INTO atualizar
+VALUES
+	(1, 0, 0);
+\end{lstlisting}
+E definem-se as credenciais com as respetivas permissões. Como o servidor \textit{Apache} está a correr no sistema central, o endereço do servidor é igual ao endereço do sistema central:
+\begin{lstlisting}[language = SQL]
+CREATE USER 'user'@'localhost'
+	IDENTIFIED BY 'password';
+GRANT SELECT, INSERT, DELETE, UPDATE
+	ON central.tipo TO 'user'@'localhost';
+GRANT SELECT, INSERT, DELETE, UPDATE
+	ON central.fase TO 'user'@'localhost';
+GRANT SELECT, INSERT, DELETE, UPDATE
+	ON central.clientes TO 'user'@'localhost';
+GRANT SELECT, INSERT, DELETE, UPDATE
+	ON central.moldes TO 'user'@'localhost';
+GRANT SELECT, INSERT, DELETE, UPDATE
+	ON central.sensores TO 'user'@'localhost';
+GRANT SELECT, DELETE
+	ON central.registos TO 'user'@'localhost';
+GRANT SELECT, UPDATE
+	ON reg_proc.atualizar TO 'user'@'localhost';
+GRANT SELECT, INSERT, DELETE, UPDATE
+	ON reg_proc.backups TO 'user'@'localhost';
+CREATE USER 'transferencia'@'localhost'
+	IDENTIFIED BY 'transferencia1234';
+GRANT INSERT
+	ON central.registos TO 'transferencia'@'localhost';
+GRANT SELECT, UPDATE
+	ON reg_proc.atualizar TO 'transferencia'@'localhost';
+CREATE USER 'backupmanager'@'localhost'
+	IDENTIFIED BY 'backup1234';
+GRANT SELECT
+	ON central.clientes TO 'backupmanager'@'localhost';
+GRANT SELECT
+	ON central.moldes TO 'backupmanager'@'localhost';
+GRANT SELECT
+	ON central.sensores TO 'backupmanager'@'localhost';
+GRANT SELECT, DELETE
+	ON central.registos TO 'backupmanager'@'localhost';
+GRANT SELECT, INSERT, DELETE
+	ON backups.* TO 'backupmanager'@'localhost';
+GRANT SELECT, INSERT, DELETE
+	ON backups_temp.* TO 'backupmanager'@'localhost';
+GRANT SELECT, UPDATE
+	ON reg_proc.atualizar TO 'backupmanager'@'localhost';
+GRANT SELECT, DELETE
+	ON reg_proc.backups TO 'backupmanager'@'localhost';
+FLUSH PRIVILEGES;
+\end{lstlisting}
+
+\section{Sistema Local}
+Para criar a BD local utiliza-se as mesmas \textit{queries} para criar a BD central. A BD temporária local assume a forma:
+\begin{lstlisting}[language = SQL]
+CREATE TABLE tipo
+(
+	tipo_ID INT NOT NULL,
+	tipo_nome VARCHAR(50) NOT NULL,
+	CONSTRAINT REPETIDO_ID_TIPO
+		PRIMARY KEY(tipo_ID),
+	CONSTRAINT REPETIDO_NOME_TIPO
+		UNIQUE(tipo_nome)
+);
+CREATE TABLE clientes
+(
+	cl_ID INT NOT NULL,
+	cl_nome VARCHAR(50) NOT NULL,
+	cl_morada VARCHAR(100),
+	cl_IP VARCHAR(50) NOT NULL,
+	cl_port INT NOT NULL,
+	CONSTRAINT REPETIDO_ID_CLIENTE
+		PRIMARY KEY(cl_ID)
+);
+CREATE TABLE moldes
+(
+	m_IDCliente INT NOT NULL,
+	m_ID INT NOT NULL,
+	m_nome VARCHAR(30),
+	m_descricao VARCHAR(200),
+	CONSTRAINT REPETIDO_ID_MOLDE
+	PRIMARY KEY(m_ID),
+	CONSTRAINT MOLDE_MAU_ID_CLIENTE
+		FOREIGN KEY(m_IDCliente) REFERENCES clientes(cl_ID)
+			ON DELETE NO ACTION ON UPDATE CASCADE
+);
+CREATE TABLE sensores
+(
+	s_IDMolde INT NOT NULL,
+	s_num INT NOT NULL,
+	s_tipo INT NOT NULL,
+	s_nome varchar(30),
+	s_descricao varchar(200),
+	CONSTRAINT REPETIDO_NUM_SENSOR
+		PRIMARY KEY(s_IDMolde,s_num),
+	CONSTRAINT SENSOR_MAU_ID_MOLDE
+		FOREIGN KEY(s_IDMolde) REFERENCES moldes(m_ID)
+			ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT SENSOR_MAU_ID_TIPO
+		FOREIGN KEY(s_tipo) REFERENCES tipo(tipo_ID)
+			ON DELETE NO ACTION ON UPDATE CASCADE
+);
+INSERT INTO tipo
+VALUES
+	(1, "Term\'ometro"),
+	(2, "Dinam\'ometro"),
+	(3, "Extens\'metro"),
+	(4, "Vibr\'metro"),
+	(5, "Press\~ao"),
+	(6, "Aceler\'metro X"),
+	(7, "Aceler\'metro Y"),
+	(8, "Aceler\'metro Z");
+\end{lstlisting}
+Definem-se as credenciais com as respetivas permissões. Como o servidor \textit{Apache} está a correr no sistema central, o endereço do servidor é igual ao endereço do sistema central:
+\begin{lstlisting}[language = SQL]
+CREATE USER 'user'@'localhost'
+	IDENTIFIED BY 'password';
+GRANT SELECT, INSERT, DELETE, UPDATE
+	ON local.tipo TO 'user'@'localhost';
+GRANT SELECT, INSERT, DELETE, UPDATE
+	ON local.fase TO 'user'@'localhost';
+GRANT SELECT, INSERT, DELETE, UPDATE
+	ON local.clientes TO 'user'@'localhost';
+GRANT SELECT, INSERT, DELETE, UPDATE
+	ON local.moldes TO 'user'@'localhost';
+GRANT SELECT, INSERT, DELETE, UPDATE
+	ON local.sensores TO 'user'@'localhost';
+GRANT SELECT, INSERT, DELETE, UPDATE
+	ON local.tipo TO 'user'@'centralhost';
+GRANT SELECT, INSERT, DELETE, UPDATE
+	ON local.fase TO 'user'@'centralhost';
+GRANT SELECT, INSERT, DELETE, UPDATE
+	ON local.clientes TO 'user'@'centralhost';
+GRANT SELECT, INSERT, DELETE, UPDATE
+	ON local.moldes TO 'user'@'centralhost';
+GRANT SELECT, INSERT, DELETE, UPDATE
+	ON local.sensores TO 'user'@'centralhost';
+GRANT SELECT, INSERT, DELETE, UPDATE
+	ON temp_local.* TO 'user'@'centralhost';
+CREATE USER 'transferencia'@'centralhost'
+	IDENTIFIED BY 'transferencia1234';
+GRANT SELECT, DELETE
+	ON local.registos TO 'transferencia'@'centralhost';
+CREATE USER 'sensores'@'localhost'
+	IDENTIFIED BY 'sensores1234';
+GRANT INSERT
+	ON local.registos TO 'sensores'@'localhost';
+FLUSH PRIVILEGES;
+\end{lstlisting}
+
+\cleardoublepage
+\begin{landscape}
 \chapter{Evolução dos Diagramas Entidade/Relação}
+\label{apen:DER}
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=1.4\textwidth]{evolucao_der2} % Include the image placeholder.png
+		\caption[Primeira iteração do Diagrama Entidade/Relação]{Primeira iteração do DER, esta versão considerava os registos como um atributo multi-valor e composto da entidade sensores. Apesar das tabelas serem as mesmas que a versão presente na \autoref{fig:evolucao_der2}, não se consegue perceber a relação entre sensores e registos}
+		\label{fig:evolucao_der1}
+	\end{center}
+\end{figure}
+\begin{figure}
+	\begin{center}
+		\includegraphics[width=1.4\textwidth]{evolucao_der1} % Include the image placeholder.png
+		\caption[Segunda iteração do Diagrama Entidade/Relação]{Segunda iteração do DER, simplificação do DER representado na \autoref{fig:evolucao_der1} onde se traduz o atributo multi-valor composto registos numa entidade, permitindo especificar a chave primária, relação com sensores, cardinalidade e obrigatoriedade}
+		\label{fig:evolucao_der2}
+	\end{center}
+\end{figure}
+\begin{figure}
+	\begin{center}
+		\includegraphics[width=1.4\textwidth]{diagrama_entidade_relacao} % Include the image placeholder.png
+		\caption[Terceira iteração do Diagrama Entidade/Relação]{Terceira iteração do DER, com a adição dos dicionários pelos motivos referidos na \autoref{subchap:analise}}
+		\label{fig:evolucao_der3}
+	\end{center}
+\end{figure}
+\end{landscape}
 
-\chapter{\textit{Queries} para criar as bases de dados}
+\cleardoublepage
+\chapter{Infraestrutura com todas as bases de dados}
+\label{apen:infra}
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=1\textwidth]{Esquema_Projeto_Total01} % Include the image placeholder.png
+		\caption[Diagrama da infraestrutura completa sem aplicação de gestão do sistema]{Diagrama da infraestrutura completa, numa utilização de baixo nível, sem AGS. A preto está representado o fluxo de registos e a verde o fluxo de regulação de procedimentos}
+		\label{fig:infra_total1}
+	\end{center}
+\end{figure}
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=1\textwidth]{Esquema_Projeto_Total02} % Include the image placeholder.png
+		\caption[Diagrama da infraestrutra completa com uma utilização geral da aplicação de gestão do sistema]{Diagrama da infraestrutra completa com uma utilização geral da AGS. A preto está representado o fluxo de registos. Apesar de não estar representado, os programas de transferência e gestão de \textit{backups} continuam a consultar a BD regulação de procedimentos. Escolheu-se esta representação para salientar que a AGS não interage com estes programas, dado que as funcionalidades Atualizar e Arquivar Molde só estão disponíveis numa utilização local}
+		\label{fig:infra_total2}
+	\end{center}
+\end{figure}
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=1\textwidth]{Esquema_Projeto_Total03} % Include the image placeholder.png
+		\caption[Diagrama da infraestrutra completa com uma utilização local da aplicação de gestão do sistema]{Diagrama da infraestrutra completa com uma utilização local da AGS. A preto está representado o fluxo de registos, a verde o fluxo de regulação de procedimentos e a vermelho o fluxo da informação dos clientes, moldes e sensores. Apesar de não estar representado, a AGS continua a puder consultar informação diretamente à BD central como na \autoref{fig:infra_total2}. Escolheu-se não representar para evitar uma saturação da imagem}
+		\label{fig:infra_total3}
+	\end{center}
+\end{figure}
 
-\chapter{Infraestrutura total}
-
+\cleardoublepage
 \chapter{Dados iniciais dos testes de usabilidade}
 %\addcontentsline{toc}{chapter}{Dados iniciais dos testes de usabilidade}
 %\renewcommand{\thesubsection}{\Alph{subsection}}
