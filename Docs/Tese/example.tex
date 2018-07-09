@@ -56,6 +56,38 @@
 \usepackage[T1]{fontenc}
 %--------------------------------------
 
+%-------------------------------------------------------------
+% Preâmbulo do documento - Definições da tese
+% -------------------------------------------------------------
+\newcommand{\authorname}{Bruno Manuel \newline de Moura Ramos}         % Nome do autor da tese
+\newcommand{\thesistitle}{Sistema de Recolha e Armazenamento Remoto de Informação Sensorial de um Processo Industrial usando Bases de Dados Múltiplas} % Título da tese
+\newcommand{\thesisyear}{2018}                                % Ano da tese
+\newcommand{\thesisdegree}{Mestrado}                          % Grau
+\newcommand{\sciarea}{Engenharia Mecânica}                    % Área científica da tese
+% -------------------------------------------------------------\usepackage{forest}
+
+% Preâmbulo do documento - Equipa de orientação
+% -------------------------------------------------------------
+\newcommand{\profdoc}{Prof. Doutor}                            % Grau geral
+\newcommand{\supervisor}{Vitor Manuel Ferreira dos Santos}                  % Orientador
+\newcommand{\supdegree}{Professor Associado}                   % Grau académico do orientador
+\newcommand{\supfili}{Departamento de Engenharia Mecânica}    % Filiação do orientador
+\newcommand{\cosupervisor}{Jorge Augusto Fernandes Ferreira}        % Co-orientadorScreenshot from 2017-06-06 17-44-04
+\newcommand{\cosupdegree}{Professor Auxiliar}              % Grau académico do co-orientador
+\newcommand{\cosupfili}{Departamento de Engenharia Mecânica}     % Filiação do co-orientador
+\newcommand{\cosupuni}{Universidade de Aveiro}                 % Instituição do co-orientador
+% -------------------------------------------------------------
+% Preâmbulo do documento - Membros do júri
+% -------------------------------------------------------------
+\newcommand{\tribpresident}{Presidente}                    % Presidente do júri
+\newcommand{\tribpresidentcat}{Professor Catedrático}         % Categoria do presidente do júri
+\newcommand{\tribi}{Juri1}                  % Elemento do júri 1
+\newcommand{\tribicat}{Professor Associado}                   % Categoria do elemento do júri 1
+\newcommand{\tribifili}{Universidade do Algarve}              % Filiação do elemento do júri 1
+\newcommand{\tribii}{Juri2}                      % Elemento do júri 2
+\newcommand{\tribiicat}{Professor Auxiliar}                   % Categoria do elemento do júri 2
+\newcommand{\tribiifili}{Instituto Superior de Gestão}        % Filiação do elemento do júri 2
+
 
 \setlength{\parskip}{0em}
 % optional (comment to use default)s
@@ -103,28 +135,49 @@
 \titlepage\ \endtitlepage % empty page
 
 
+% Definição da capa interior
+% -------------------------------------------------------------
 \TitlePage
-  \vspace*{55mm}
-  \TEXT{\textbf{o juri/the jury\newline}}
-       {}
-  \TEXT{presidente/president}
-       {\textbf{ABC}\newline {\small
-        Professor Catedratico da Universidade de Aveiro (por delegacao da Reitora da
-        Universidade de Aveiro)}}
-  \vspace*{5mm}
-  \TEXT{vogais/examiners committee}
-       {\textbf{DEF}\newline {\small
-        Professor Catedratico da Universidade de Aveiro (orientador)}}
-  \vspace*{5mm}
-  \TEXT{}
-       {\textbf{GHI}\newline {\small
-        Professor associado da Universidade J (co-orientador)}}
-  \vspace*{5mm}
-  \TEXT{}
-       {\textbf{KLM}\newline {\small
-        Professor Catedratico da Universidade N}}
+%   \PGRID                                       % Desenha grelha rectangular de 3mm
+\HEADER{}{\thesisyear}
+\TITLE{\authorname}
+{\thesistitle}
+\vspace*{15mm}
+\TEXT{}
+{Dissertação apresentada à Universidade de Aveiro para cumprimento dos requisitos necessários à obtenção do grau de \thesisdegree{} em \sciarea, realizada sob orientação científica de \supervisor, \supdegree{} do \supfili{} da Universidade de Aveiro e de \cosupervisor, \cosupdegree{} do \cosupfili{} da \cosupuni.}
 \EndTitlePage
-\titlepage\ \endtitlepage % empty page
+\titlepage\ \endtitlepage                        % Página de verso em branco
+
+
+% -------------------------------------------------------------
+% Definição da página do júri da dissertação (PT/EN)
+% -------------------------------------------------------------
+\TitlePage
+\vspace*{55mm}
+\TEXT{\textbf{O júri~/~The jury\newline}}
+{}
+\TEXT{Presidente~/~President}
+{\textbf{\profdoc{} \tribpresident}\newline {\small
+		\tribpresidentcat{} da Universidade de Aveiro}}
+\vspace*{5mm}
+\TEXT{Vogais~/~Committee}
+{\textbf{\profdoc{} \supervisor}\newline {\small
+		\supdegree{} da Universidade de Aveiro (orientador)}}
+\vspace*{5mm}
+\TEXT{}
+{\textbf{\profdoc{} \cosupervisor}\newline {\small
+		\cosupdegree{} da \cosupfili{} (co-orientador)}}
+\vspace*{5mm}
+%\TEXT{}
+%{\textbf{\profdoc{} \tribi}\newline {\small
+%		\tribicat{} da \tribifili}}
+%\vspace*{5mm}
+%\TEXT{}
+%{\textbf{\profdoc{} \tribii}\newline {\small
+%		\tribiicat{} da \tribiifili}}
+\EndTitlePage
+
+\titlepage\ \endtitlepage                        % Página de verso em branco
 
 \TitlePage
   \vspace*{55mm}
