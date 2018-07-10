@@ -79,11 +79,11 @@
 % -------------------------------------------------------------
 % Preâmbulo do documento - Membros do júri
 % -------------------------------------------------------------
-\newcommand{\tribpresident}{Presidente}                    % Presidente do júri
-\newcommand{\tribpresidentcat}{Professor Catedrático}         % Categoria do presidente do júri
-\newcommand{\tribi}{Juri1}                  % Elemento do júri 1
-\newcommand{\tribicat}{Professor Associado}                   % Categoria do elemento do júri 1
-\newcommand{\tribifili}{Universidade do Algarve}              % Filiação do elemento do júri 1
+\newcommand{\tribpresident}{José Paulo Oliveira Santos}                    % Presidente do júri
+\newcommand{\tribpresidentcat}{Professor Auxiliar}         % Categoria do presidente do júri
+\newcommand{\tribi}{Carlos Manuel Azevedo Costa}                  % Elemento do júri 1
+\newcommand{\tribicat}{Professor Auxiliar}                   % Categoria do elemento do júri 1
+\newcommand{\tribifili}{Universidade de Aveiro }              % Filiação do elemento do júri 1
 \newcommand{\tribii}{Juri2}                      % Elemento do júri 2
 \newcommand{\tribiicat}{Professor Auxiliar}                   % Categoria do elemento do júri 2
 \newcommand{\tribiifili}{Instituto Superior de Gestão}        % Filiação do elemento do júri 2
@@ -163,14 +163,14 @@
 \TEXT{Vogais~/~Committee}
 {\textbf{\profdoc{} \supervisor}\newline {\small
 		\supdegree{} da Universidade de Aveiro (orientador)}}
+%\vspace*{5mm}
+%\TEXT{}
+%{\textbf{\profdoc{} \cosupervisor}\newline {\small
+%		\cosupdegree{} da \cosupfili{} (co-orientador)}}
 \vspace*{5mm}
 \TEXT{}
-{\textbf{\profdoc{} \cosupervisor}\newline {\small
-		\cosupdegree{} da \cosupfili{} (co-orientador)}}
-\vspace*{5mm}
-%\TEXT{}
-%{\textbf{\profdoc{} \tribi}\newline {\small
-%		\tribicat{} da \tribifili}}
+{\textbf{\profdoc{} \tribi}\newline {\small
+		\tribicat{} da \tribifili (arguente principal)}}
 %\vspace*{5mm}
 %\TEXT{}
 %{\textbf{\profdoc{} \tribii}\newline {\small
@@ -207,7 +207,7 @@
   \TEXT{Resumo}
        {Os moldes de injeção são uma ferramenta essencial no mundo industrial. A fim de melhorar a qualidade do produto final e reduzir falhas, surgiu a necessidade de instrumentar e monitorizar moldes remotamente. Este projeto foca-se na parte da monitorização remota.\\
        Desenvolveu-se uma rede com múltiplas bases de dados relacionais e uma aplicação de gestão do sistema em ambiente \textit{Web}. A primeira garante uma transferência remota de valores segura e permanente de forma a criar um histórico de registos, juntamente com um gestor de \textit{backups} para organizar e proteger estes históricos. A segunda permite ao utilizador interagir com as bases de dados desenvolvidas podendo edita-las e consulta-las de forma a gerar relatórios.\\
-       No desenvolvimento deste projeto utilizou-se \textit{MySQL} e \textit{C} para criar e definir a rede de bases de dados, resultando numa solução simples e funcional a baixo nível. Utilizou-se um servidor \textit{Apache}, \textit{PHP}, \textit{JS} e \textit{HTML} para desenvolver e implementar a aplicação de forma a que esta seja multiplataforma e garanta um acesso remoto ao utilizador.\\
+       No desenvolvimento deste projeto utilizou-se \textit{MySQL} e a linguagem \textit{C} para criar e definir a rede de bases de dados, resultando numa solução simples e funcional a baixo nível. Utilizou-se um servidor \textit{Apache} e as linguagens \textit{PHP}, \textit{JS} e \textit{HTML} para desenvolver e implementar a aplicação de forma a que esta seja multiplataforma e garanta um acesso remoto ao utilizador.\\
        A solução proposta cumpre todos os objetivos definidos podendo ser já utilizada numa fase experimental. Existe ainda margem para desenvolvimentos futuros como melhoramentos de desempenho e novas aplicações que podem complementar a solução proposta.}
 \EndTitlePage
 \titlepage\ \endtitlepage % empty page
@@ -217,9 +217,9 @@
   \TEXT{\textbf{Keywords}}
   {Relational database; database network; multiple databases; remote monitoring.}
   \TEXT{Abstract}
-  {The injection molds are tools essential in the industrial world. In order to improve de quality of the final product and reduce fails, surged the need to instrument and monitor molds remotely. This project focuses on the remote monitoring part.\\
-  It was developed a network with multiple relational databases and an application of system management in a Web environment. The first one ensures a secure and permanent remote transfer of values in order to create an history of records, together with a backup manager to organize and protect these histories. The second one allows the user to interact with the developed databases, editing and consulting them in order to generate reports.\\
-  On this project's development it was used MySQL and C to create and define de database network, resulting on a simple solution and functional on a low level. It was used an Apache server, PHP, JS and HTML to develop and implement the aplication of system managment in order for it to be multiplatform and ensures a remote access to the user.\\
+  {The injection molds are essential tools in the industrial world. In order to improve de quality of the final product and reduce fails, there is a need to instrument and monitor molds remotely. This project focuses on the remote monitoring part.\\
+  A network with multiple relational databases and an application of system management was developed in a Web environment. The first one ensures a secure and permanent remote transfer of values in order to create a history of records, together with a backup manager to organize and protect these histories. The second one allows the user to interact with the developed databases, editing and consulting them in order to generate reports.\\
+  On this project's development it was used MySQL and C language to create and define the database network, resulting on a simple solution and functional on a low level. It was used an Apache server and PHP, JS and HTML languages to develop and implement the aplication of system managment in order to be multiplatform and ensures a remote access to the user.\\
   The proposed solution fulfills all the objectives defined making it usable for an experimental trial. There is still room for future developments like performance improvement and new applications that can complement the proposed solution.}
 \EndTitlePage
 \titlepage\ \endtitlepage % empty page
@@ -245,49 +245,44 @@
 \pagenumbering{arabic}
 \chapter{Introdução}
 \label{chap:intro}
-Para satisfazer as necessidades de uma população cada vez maior, surge a necessidade de produzir artigos em grande escala. Uma das tecnologias que se salientou neste campo, especialmente na produção com plástico, foi a moldagem por injeção.\par
+\vspace{-0.5cm}
+Para satisfazer as necessidades de uma população cada vez maior, surge a necessidade de produzir artigos em grande escala. Uma das tecnologias que se salientou neste campo, especialmente na produção com plástico, é a moldação por injeção.\par
 Os fabricantes de moldes de injeção procuram formas de melhorar as suas ferramentas, como a qualidade do processo de fabrico e a qualidade dos materiais usados na sua construção. No entanto, dada a complexidade do processo e a quantidade de variáveis envolvidas surge a necessidade de instrumentar e monitorizar o molde de forma a garantir um controlo de qualidade. Num esforço conjunto com outros projetos e dissertações
 % do Departamento de Engenharia Mecânica da Universidade de Aveiro 
 procura-se dar mais um passo na monitorização dos moldes de injeção.\par
 O comportamento destas ferramentas pode não se alterar de forma imediata mas alterar-se lentamente ao longo do seu tempo de vida. Para analisar esta alteração do comportamento procura-se uma forma de garantir a criação de um histórico da resposta térmica e integridade estrutural em pontos críticos de um molde de injeção. Dado que os moldes são produzidos para vários clientes pode tornar-se difícil coordenar os históricos desenvolvidos. Este projeto descreve uma solução capaz de coordenar e armazenar tais históricos mantendo a informação organizada e disponível a qualquer momento.\par 
-Propõe-se armazenar a informação gerada localmente nos clientes num sistema central situado na empresa que fabrica os moldes. Esta ligação entre os sistemas locais e central, representada na \autoref{fig:intro1}, visa ser segura, atempada e sem interferência nos processos produtivos. Quanto ao método de armazenamento, propõem-se usar bases de dados relacionais que satisfação os requisitos propostos no projeto.
-\begin{figure}
+Propõe-se armazenar a informação gerada localmente nos clientes num sistema central situado na empresa que fabrica os moldes. Esta ligação entre os sistemas locais e central, representada na \autoref{fig:intro1}, visa ser segura, atempada e sem interferência nos processos produtivos. Quanto ao método de armazenamento, propõem-se usar bases de dados relacionais que satisfaçam os requisitos propostos no projeto.\par
+Para consultar a informação nas bases de dados propõem-se uma aplicação de gestão do sistema em ambiente \textit{Web}, disponível em qualquer momento, lugar e dispositivo. Esta aplicação deve permitir que utilizadores sem conhecimentos sobre bases de dados comuniquem com elas de forma a consultar a informação desejada. Assim sendo, enumeram-se os objetivos principais do projeto:
+\begin{enumerate}
+	\item Criar uma infraestrutura de bases de dados adequada à recolha e armazenamento em tempo real de dados sensoriais
+	\item Criar uma aplicação de gestão do sistema \textit{Web} para consultar os históricos
+\end{enumerate}
+Como requerimento definiu-se que deve ser dada prioridade à utilização de \textit{software} aberto. Além disto, dada a quantidade de opções disponíveis no mercado, definiu-se também que a solução desenvolvida deve ser simples de forma a promover a sua portabilidade para outras plataformas e linguagens.
+\begin{figure}[H]
 	\begin{center}
 		\includegraphics[width=0.6\textwidth]{Esquema_Rede} % Include the image placeholder.png
-		\caption[Esquema de rede]{Esquema da rede criada com o sistema central na empresa promotora e os sistemas locais nos clientes}
+		\caption[Esquema de rede]{Esquema da rede criada com o sistema central na empresa promotora e os sistemas locais nos clientes\footnotemark}
 		\label{fig:intro1}
 	\end{center}
 \end{figure}
-Para consultar a informação nas bases de dados propõem-se uma aplicação de gestão do sistema em ambiente \textit{Web}, disponível em qualquer momento, lugar e dispositivo. Esta deve permitir que utilizadores sem conhecimentos sobre bases de dados comuniquem com estas de forma a consultar a informação desejada. Assim sendo enumeram-se os objetivos principais do projeto:
-\begin{enumerate}
-	\item Criar uma infraestrutura de bases de dados
-	\item Criar uma aplicação de gestão de sistema\textit{Web} para consultar os históricos
-\end{enumerate}
-Como requerimento definiu-se que deve ser dada prioridade à utilização de \textit{software} gratuito. Além disto, dada a quantidade de opções disponíveis no mercado, definiu-se também que a solução desenvolvida deve ser simples de forma a promover a sua portabilidade para outras plataformas e linguagens.
-\newpage
-Este relatório está divido em capítulos, divididos da seguinte maneira:
+\footnotetext{\textit{Ícones usados em esquemas e diagramas do projeto}. URL: \textbf{https://www.flaticon.com}}
+Este relatório está divido em 6 capítulos, distribuídos da seguinte maneira:
 \begin{itemize}
-	\item \autoref{chap:intro} descreveu-se os objetivos do projeto e apresentou-se a solução proposta
-	\item \autoref{chap:conceitos} consiste na explicação de alguns conceitos necessários importantes para a criação de bases de dados relacionais e na apresentação das ferramentas utilizadas para desenvolver este projeto
-	\item \autoref{chap:solucao} explica a infraestrutura de bases de dados proposta, desenvolvida para uma utilização a baixo nível
-	\item \autoref{chap:aplicacao} descreve algumas adições à infraestrutura proposta e as funcionalidades da aplicação de gestão do sistema
-	\item \autoref{chap:usabilidade} apresenta resultados de testes realizados com utilizadores à aplicação de gestão do sistema
-	\item \autoref{chap:conclusoes} contém comentários sobre a solução desenvolvida e ideias para trabalhos futuros que a possam complementar
+	\item No \autoref{chap:intro} descreveu-se os objetivos do projeto e apresentou-se a solução proposta
+	\item O \autoref{chap:conceitos} consiste na explicação de alguns conceitos necessários importantes para a criação de bases de dados relacionais e na apresentação das ferramentas utilizadas para desenvolver este projeto
+	\item O \autoref{chap:solucao} explica a infraestrutura de bases de dados proposta, desenvolvida para uma utilização a baixo nível
+	\item O \autoref{chap:aplicacao} descreve algumas adaptações à infraestrutura proposta e as funcionalidades da aplicação de gestão do sistema
+	\item O \autoref{chap:usabilidade} apresenta resultados de testes realizados com utilizadores à aplicação de gestão do sistema
+	\item O \autoref{chap:conclusoes} contém comentários sobre a solução desenvolvida e ideias para trabalhos futuros que a possam complementar
 \end{itemize}
 
 \cleardoublepage
 \chapter{Conceitos e Ferramentas de Desenvolvimento}
 \label{chap:conceitos}
 \section{Moldes de injeção}
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics[width=0.75\textwidth]{molde} % Include the image placeholder.png
-		\caption[Molde de injeção]{Molde de injeção aberto com a peça realizada \cite{molde_imagem}}
-		\label{fig:molde}
-	\end{center}
-\end{figure}
 Moldagem é o processo mecânico de dar forma a um material no estado líquido usando um molde \cite{definicao_moldagem,definicao_moldar}. Um molde é uma ferramenta sólida oca desenvolvida para efeitos de fundição \cite{definicao_molde}. Esta é enchida com um material em estado liquido ou em pó como plástico, metal, cerâmica ou vidro \cite{Williams1975,Trovant1998,JanneyMarkA.Knoxville1991,Yan2009}.\par
-A moldagem por injeção é particularmente útil na produção em massa de peças de plástico com elevada complexidade geométrica \cite{Shen,Shelesh}. Estas podem ser encontradas em todas as áreas da industria como por exemplo empacotamento, aviação, construção e eletrónica \cite{Ozcelik}. Neste processo, plástico quente é forçado para dentro de um molde frio com a forma desejada. O material cobre todas as feições do molde e vai endurecendo sobre o efeito de altas pressões. O processo de injeção pode ser divido em fases distintas \cite{Shen}:
+A moldação por injeção é particularmente útil na produção em massa de peças de plástico com elevada complexidade geométrica \cite{Shen,Shelesh}. Estas podem ser encontradas em todas as áreas da indústria como por exemplo empacotamento, aviação, construção e eletrónica \cite{Ozcelik}. Neste processo, plástico quente é forçado para dentro de um molde frio com a forma desejada. O material ocupa todas as cavidades do molde e vai endurecendo sobre o efeito de altas pressões e arrefecimento do material. O processo de injeção pode ser divido em fases distintas \cite{Shen}:
+\vspace{-0.5cm}
 \begin{itemize}[noitemsep]
 	\item Fecho do molde
 	\item Enchimento
@@ -295,21 +290,29 @@ A moldagem por injeção é particularmente útil na produção em massa de peç
 	\item Abertura do molde
 	\item Extração
 \end{itemize}
+\vspace{-0.5cm}
 Em 1868, John Wesley Hyatt inventou uma maneira de fazer bolas de bilhar injetando celuloide para dentro de um molde \cite{historia,patente1868}.\par
 Em 1872 Jonh e o seu irmão Isaiah patentearam a primeira máquina de moldes de injeção. Esta era relativamente simples comparada às que são usadas hoje em dia na indústria. Consistia de um pequeno embolo para injetar plástico num molde através de um cilindro quente \cite{historia,patente1872}.\par
-A indústria cresceu lentamente produzindo artigos de plástico como botões e pentes. Nos anos 40 a utilização de moldes de injeção cresceu por causa da Segunda Guerra Mundial que tinha uma grande procura de produtos baratos e produzidos em massa \cite{historia}.\par
-Em 1946, James Hendry construiu a primeira máquina de moldes de injeção com um sem fim, revolucionando a indústria dos plásticos com um design para substituir o embolo de Hyatt. Este sem fim é colocado dentro do cilindro e mistura o material a ser moldado antes de ser injetado no molde. Isto permitiu que cor ou plástico reciclado fossem adicionados à mistura \cite{historia,patente1946}.\par
-A qualidade de fabrico dos moldes e das peças produzidas evoluiu com o passar do tempo. A industria investiu em técnicas sofisticadas no desenvolvimento de moldes, para que estes não contenham falhas, e no uso de materiais com qualidade elevada para evitar o desgaste da ferramenta. No entanto, dificilmente se atinge peças com a qualidade desejada unicamente através das ferramentas desenvolvidas. É necessário implementar também técnicas de monitorização de qualidade \cite{Woll}.\par 
-As técnicas de monitorização e controlo de qualidade dos moldes de injeção envolvem principalmente \textit{Artificial Neural Networks} (\textit{ANNs}) e algoritmos genéricos (em inglês \textit{GA}), que analisam variáveis geradas no molde e adaptam o comportamento da ferramenta. Estes sistemas são aplicados diretamente durante a produção do molde e em circuito fechado \cite{Cook,Woll}. Neste projeto procura-se uma solução que crie um histórico das variáveis dos moldes para determinar alterações no comportamento da ferramenta devido ao desgaste. Apesar de terem objetivos diferentes, prevê-se que no futuro, a solução desenvolvida possa complementar, de alguma forma, as tecnologias de controlo de qualidade existentes na industria.
-
+A indústria cresceu lentamente produzindo artigos de plástico como botões e pentes. Nos anos 40 a utilização de moldes de injeção cresceu devido à Segunda Guerra Mundial que tinha uma grande procura de produtos baratos e produzidos em massa \cite{historia}.\par
+Em 1946, James Hendry construiu a primeira máquina de moldes de injeção com um sem fim, revolucionando a indústria dos plásticos com um design para substituir o êmbolo de Hyatt. Este sem fim é colocado dentro do cilindro e mistura o material a ser moldado antes de ser injetado no molde. Isto permitiu que cor ou plástico reciclado pudessem ser adicionados à mistura \cite{historia,patente1946}.\par
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.70\textwidth]{molde} % Include the image placeholder.png
+		\caption[Molde de injeção]{Molde de injeção aberto com a peça realizada \footnotemark}
+		\label{fig:molde}
+	\end{center}
+\end{figure}
+\footnotetext{\textit{Imagem Molde de Injeção Aberto}. URL: \textbf{https://i1.wp.com/www.teameliteonline.com/wp-content/uploads/2015/08/colored-part-large-mold-with-part.jpg?fit=3008\%2C2000\&ssl=1}}
+A qualidade de fabrico dos moldes e das peças produzidas evoluiu com o passar do tempo. A indústria investiu em técnicas sofisticadas no desenvolvimento de moldes, para que estes não contenham falhas, e no uso de materiais com qualidade elevada para evitar o desgaste da ferramenta. No entanto, dificilmente se atinge peças com a qualidade desejada unicamente através das ferramentas desenvolvidas. É necessário implementar também técnicas de monitorização de qualidade \cite{Woll}.\par 
+As técnicas de monitorização e controlo de qualidade dos moldes de injeção envolvem principalmente \textit{Artificial Neural Networks} (\textit{ANNs}) e algoritmos genéricos (em inglês \textit{GA}), que analisam variáveis geradas no molde e adaptam o comportamento da ferramenta. Estes sistemas são aplicados diretamente durante a produção do molde e em circuito fechado \cite{Cook,Woll}. Neste projeto, procura-se uma solução que crie um histórico das variáveis dos moldes para determinar alterações no comportamento da ferramenta devido ao desgaste. Apesar de terem objetivos diferentes, prevê-se que, no futuro, a solução desenvolvida possa complementar, de alguma forma, as tecnologias de controlo de qualidade existentes na indústria.
 
 \section{Base de dados relacional}
-Bases de dados (BDs) e sistemas de gestão de bases de dados (SGBDs) são uma componente essencial na vida da sociedade moderna: muitos de nós realizamos ações todos os dias que envolvem interações com bases de dados. Por exemplo, o ato de depositar e levantar dinheiro num banco, reservar estadias e voos ou comprar alguma coisa online podem envolver alguém ou um algum programa informático que acede a uma BD \cite{Elmasri:2010:FDS:1855347}.\par
+Bases de dados (BDs) e sistemas de gestão de bases de dados (SGBDs) são uma componente essencial na vida da sociedade moderna: muitos de nós realizamos ações todos os dias que envolvem interações com bases de dados. Por exemplo, o ato de depositar e levantar dinheiro num banco, reservar estadias e voos ou comprar alguma coisa \textit{online}, podem envolver alguém ou um algum programa informático que acede a uma BD \cite{Elmasri:2010:FDS:1855347}.\par
 Esta tecnologia tem um impacto cada vez maior no uso dos computadores. É seguro afirmar que as BDs desempenham um papel crítico em quase todas as áreas onde são usados computadores \cite{Elmasri:2010:FDS:1855347}.\par
 Uma base de dados é uma coleção organizada de dados que estão relacionados e que podem ser partilhados por múltiplas aplicações \cite{definicao_base_dados}. São considerados dados factos reais que podem ser registados e têm um significado implícito, como por exemplo, nomes, moradas e números de telefone. Uma BD tem uma fonte de onde os dados são provenientes, algum grau de interação com eventos do mundo real e uma audiência que está ativamente interessada no seu conteúdo \cite{Elmasri:2010:FDS:1855347}.\par
-A implementação destas é garantida por parte de um SGBD. Este é um \textit{software} de que facilita os processos de definir, construir, manipular e partilhar bases de dados entre vários utilizadores e aplicações. Definir uma BD envolve especificar o tipo de dados, estruturas e restrições dos dados a serem armazenados. Construir é o processo de guardar dados e armazena-los num local definido pelo SGBD. Manipular inclui funções como realizar \textit{queries} à BD e receber informação específica, altera-la de acordo com mudanças nas variáveis e gerar relatórios a partir dos dados presentes. Partilhar permite que múltiplos utilizadores e programas acedam à BD simultaneamente \cite{Elmasri:2010:FDS:1855347}.\par
-Outras funções importantes fornecidas pelos SGBDs incluem proteger e manter a base de dados durante um longo período de tempo. Proteger inclui proteção contra falhas de \textit{hardware} e \textit{software} e segurança contra acessos maliciosos ou não autorizados. Tipicamente uma grande BD pode ter um tempo de vida de vários anos, então o SGBD tem de fornecer ferramentas para manter a BD de forma a permitir que o sistema evolua com novos requerimentos que surjam ao longo do tempo \cite{Elmasri:2010:FDS:1855347}.
-Para completar estas definições iniciais, chama-mos sistema de base de dados ao conjunto das BDs com o SGBD como representado na \autoref{fig:relacional1}.
+A implementação destas é garantida por parte de um SGBD. Este é um \textit{software} que facilita os processos de definir, construir, manipular e partilhar bases de dados entre vários utilizadores e aplicações. Definir uma BD envolve especificar o tipo de dados, as estruturas e as restrições dos dados a serem armazenados. Construir é o processo de guardar dados e armazená-los num local definido pelo SGBD. Manipular inclui funções como realizar \textit{queries} à BD e receber informação específica, alterá-la de acordo com mudanças nas variáveis e gerar relatórios a partir dos dados presentes. Partilhar permite que múltiplos utilizadores e programas acedam à BD simultaneamente \cite{Elmasri:2010:FDS:1855347}.\par
+Outras funções importantes fornecidas pelos SGBDs incluem proteger e manter a base de dados durante um longo período de tempo. Proteger inclui proteção contra falhas de \textit{hardware} e \textit{software} e segurança contra acessos maliciosos ou não autorizados. Tipicamente uma grande BD pode ter um tempo de vida de vários anos, pelo que o SGBD tem de fornecer ferramentas para manter a BD de forma a permitir que o sistema evolua com novos requerimentos que surjam ao longo do tempo \cite{Elmasri:2010:FDS:1855347}.
+Para completar estas definições iniciais, chamamos sistema de base de dados ao conjunto das BDs com o SGBD como representado na \autoref{fig:relacional1}.
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[width=0.6\textwidth]{SGBD} % Include the image placeholder.png
@@ -318,8 +321,8 @@ Para completar estas definições iniciais, chama-mos sistema de base de dados a
 	\end{center}
 \end{figure}
 O modelo relacional foi primeiramente introduzido por Ted Codd do \textit{IBM Research} em 1970 \cite{Elmasri:2010:FDS:1855347,Codd} e atraiu imediatamente atenção pela sua simplicidade e base matemática. O modelo utiliza o conceito matemático de $ " $relação$ " $ representado por tabelas e baseia-se na teoria dos conjuntos \cite{Elmasri:2010:FDS:1855347}.\par
-As primeiras implementações comerciais do modelo relacional ficaram disponíveis no inicio dos anos 80, como o \textit{SQL/DS} no sistema operativo \textit{MVS} do \textit{IBM} e o SGBD \textit{Oracle}. Desde aí, o modelo tem sido implementado num grande número de sistemas comerciais. Os SGBDs relacionais populares atualmente incluem \textit{DB2} e \textit{Informix Dynamic Server} (do \textit{IBM}), \textit{Oracle} e \textit{Rdb} (da \textit{Oracle}), \textit{Sybase} (da \textit{Sybase}) e \textit{SQLServer} e \textit{Access} (da \textit{Microsoft}). Existem também vários sistemas grátis como \textit{MySQL} e \textit{PostgreSQL} \cite{Elmasri:2010:FDS:1855347}.\par
-Modelos de dados que procederam o relacional incluem os modelos hierárquicos e de rede. Estes foram propostos nos anos 60 e foram implementados nos primeiros SGBDs nos anos 60 e 70. Estes modelos tiveram bastante importância na história das bases de dados e são referidos atualmente como SGBDs \textit{legacy} \cite{Elmasri:2010:FDS:1855347}.
+As primeiras implementações comerciais do modelo relacional ficaram disponíveis no início dos anos 80, como o \textit{SQL/DS} no sistema operativo \textit{MVS} do \textit{IBM} e o SGBD \textit{Oracle}. Desde aí, o modelo tem sido implementado num grande número de sistemas comerciais. Os SGBDs relacionais populares atualmente incluem \textit{DB2} e \textit{Informix Dynamic Server} (do \textit{IBM}), \textit{Oracle} e \textit{Rdb} (da \textit{Oracle}), \textit{Sybase} (da \textit{Sybase}) e \textit{SQLServer} e \textit{Access} (da \textit{Microsoft}). Existem também vários sistemas gratuitos como \textit{MySQL} e \textit{PostgreSQL} \cite{Elmasri:2010:FDS:1855347}.\par
+Modelos de dados que procederam o relacional, incluem os modelos hierárquicos e de rede. Estes foram propostos e implementados nos primeiros SGBDs nos anos 60 e 70. Estes modelos tiveram bastante importância na história das bases de dados e são referidos atualmente como SGBDs \textit{legacy} \cite{Elmasri:2010:FDS:1855347}.
 
 \subsection{Domínios, Atributos, Tuplos e Relações}
 Um domínio é um conjunto atómico de valores. Atómico significa que cada valor num dado domínio é único e indivisível. Um método comum de especificar um domínio é especificar o tipo de dados do mesmo. Além disto, também é útil dar nomes aos domínios. Por exemplo, a informação de números de telemóvel pode ser guardada num domínio onde o seu tipo de dados é um inteiro de nove dígitos \cite{Elmasri:2010:FDS:1855347}.\par
@@ -352,7 +355,7 @@ Este processo é transversal ao modelo de dados escolhido para construir a BD. P
 	\item Chave única - restantes chaves candidatas que não foram escolhidas como chave primária
 	\item Chave estrangeira - conjunto de atributos que é chave primária de outra relação
 \end{itemize}
-A escolha da chave primária pode ser feita de forma aleatória mas, priorizam-se chaves que identifiquem de forma natural um atributo. Por exemplo: uma pessoa pode ser identificada por um número de identificação, número de identificação fiscal ou pelo seu número de telefone dado que estes nunca se repetem. O número de identificação é mais natural para identificar uma pessoa do que o seu número de identificação fiscal e menos volátil do que o seu número de telefone, dado que este pode ser alterado.\par 
+A escolha da chave primária pode ser feita de forma aleatória mas priorizam-se chaves que identifiquem de forma natural um atributo. Por exemplo, uma pessoa pode ser identificada por um número de identificação, por um número de identificação fiscal ou pelo seu número de telefone dado que estes nunca se repetem. O número de identificação é mais natural para identificar uma pessoa do que o seu número de identificação fiscal e menos volátil do que o seu número de telefone, dado que este pode ser alterado.\par 
 Para realizar um Diagrama Entidade/Relação são necessárias informações sobre a relação entre as entidades, a cardinalidade e a obrigatoriedade de participação na relação. Estas são deduzidas durante a análise de requisitos mas serão explicadas na \autoref{subchap:DER}.
 
 \subsection{Diagrama Entidade Relação}
@@ -361,7 +364,7 @@ A representação lógica dos dados é uma componente importante na área das ba
 O modelo entidade-relação adota uma vista mais natural em que o mundo real consiste de entidades e relações, incorpora alguma informação semântica importante sobre o mundo real e consegue ter um grande grau de independência de dados. O modelo entidade-relação é baseado na teoria das relações e foi desenvolvido com o objetivo de servir de base para um sistema de visualização de dados unificado \cite{Chen}.\par
 O Diagrama Entidade/Relação (DER) é uma representação gráfica da análise de requisitos realizada anteriormente baseada no modelo entidade-relação. Este diagrama não é determinístico pois, para uma mesma análise, podem nascer diferentes diagramas que cumprem todos os requisitos.\par
 Um diagrama é constituído elementos como entidades, atributos e relações. Uma entidade é algo que existe no mundo real como uma pessoa ou um carro. Um atributo é uma característica da entidade como uma pessoa tem um nome e um carro tem uma matricula. Uma relação é como uma ou mais entidades interagem entre si, como uma pessoa tem um carro \cite{Chen}.\par 
-Passando à notação, as entidades são representadas por caixas retangulares, os atributos por caixas ovais e as relações por caixas em forma de losango como mostra a \autoref{fig:der1}. Os atributos sublinhados representam a chave primária da entidade.
+Passando à notação, as entidades são representadas por caixas retangulares, os atributos por caixas ovais e as relações por caixas em forma de losango, como mostra a \autoref{fig:der1}. Os atributos sublinhados representam a chave primária da entidade.
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[width=0.8\textwidth]{notacao1} % Include the image placeholder.png
@@ -439,18 +442,19 @@ A \autoref{fig:der5} apresenta uma representação visual destas cardinalidades 
 		\vspace{-.5cm}
 		\begin{center}
 			\includegraphics[width=0.4\textwidth]{notacao8} % Include the image placeholder.png
-			\subcaption{Relação 1 para 1}
+			\subcaption{Relação 1 para 1\\ou um para um}
 			\label{fig:der51}
 		\end{center}
 	\end{minipage}%
 	\begin{minipage}{0.3\textwidth}
 		\begin{center}
 			\includegraphics[width=0.4\textwidth]{notacao9} % Include the image placeholder.png
-			\subcaption{Relação 1 para N\\ou N para 1}
+			\subcaption{Relação 1 para N\\ou N para 1\\ou um para muitos}
 			\label{fig:der52}
 		\end{center}
 	\end{minipage}%
 	\begin{minipage}{0.3\textwidth}
+		\vspace{-.5cm}
 		\begin{center}
 			\includegraphics[width=0.4\textwidth]{notacao10} % Include the image placeholder.png
 			\subcaption{Relação N para M\\ou muitos para muitos}
@@ -498,7 +502,7 @@ Os atributos também podem ser de tipos diferentes. Estes podem ser derivados, c
 \end{figure}
 
 \subsection{Esquema Relacional}
-O esquema relacional incluí todas as relações que concretizam uma base de dados. Cada relação é representada pelos seus atributos, tendo os atributos chave sublinhados. Quando um ou mais atributos de relações diferentes representam o mesmo elemento do mundo real, estes são conectados. Neste caso o conjunto de atributos é chave primária de uma relação e, nas restantes relações, estes são considerados chaves estrangeiras. São representados com uma ligação da chave estrangeira para a chave primária como demonstrado na \autoref{fig:er1} \cite{Chen}.
+O esquema relacional inclui todas as relações que concretizam uma base de dados. Cada relação é representada pelos seus atributos, tendo os atributos chave sublinhados. Quando um ou mais atributos de relações diferentes representam o mesmo elemento do mundo real, estes são conectados. Neste caso o conjunto de atributos é chave primária de uma relação e, nas restantes relações, estes são considerados chaves estrangeiras. São representados com uma ligação da chave estrangeira para a chave primária como demonstrado na \autoref{fig:er1} \cite{Chen}.
 %Quando um elemento aparece em relações diferentes significa que numa destas, o elemento, é atributo chave da relação e assim sendo, os restantes atributos são considerados chaves estrangeiras. São representados com a ligação ao atributo que serve de chave primária como demonstrado na \autoref{fig:er1} \cite{Chen}.
 \begin{figure}
 	\begin{center}
@@ -511,7 +515,7 @@ Este esquema pode ser deduzido a partir do DER onde as entidades se traduzem em 
 
 \section{\textit{Structured Query Language}}
 \label{subchap:sql}
-A linguagem \textit{SQL} é considerada uma das maiores razões para o sucesso comercial das bases de dados relacionais. Porque se tornou normal a sua utilização em BDs relacionais, os utilizadores tiveram menos preocupações a transferir as suas aplicações de outros tipos de BDs - por exemplo, BDs hierárquicas e em rede - para uma BD relacional. Isto porque se um SGBD não cumprisse os requisitos definidos, não era problemático transferir a solução para outro SGBD dado que ambos utilizam a mesma linguagem. Na realidade existem várias sub-versões desta linguagem dependentes de cada SGBD. No entanto, se o utilizador se limitar apenas às funções standard desta linguagem a mudança de sistema é bastante simplificada. Outra vantagem de ter uma linguagem normalizada é que uma aplicação pode utilizar informação de BDs em SGBDs diferentes ao mesmo tempo \cite{Elmasri:2010:FDS:1855347}.\par 
+A linguagem \textit{Structured Query Language} (\textit{SQL}) é considerada uma das maiores razões para o sucesso comercial das bases de dados relacionais. Porque se tornou normal a sua utilização em BDs relacionais, os utilizadores tiveram menos preocupações a transferir as suas aplicações de outros tipos de BDs - por exemplo, BDs hierárquicas e em rede - para uma BD relacional. Isto porque se um SGBD não cumprisse os requisitos definidos, não era problemático transferir a solução para outro SGBD dado que ambos utilizam a mesma linguagem. Na realidade existem várias sub-versões desta linguagem dependentes de cada SGBD. No entanto, se o utilizador se limitar apenas às funções standard desta linguagem a mudança de sistema é bastante simplificada. Outra vantagem de ter uma linguagem normalizada é que uma aplicação pode utilizar informação de BDs em SGBDs diferentes ao mesmo tempo \cite{Elmasri:2010:FDS:1855347}.\par 
 O nome \textit{SQL} atualmente significa \textit{Structured Query Language}. Originalmente era chamado \textit{SEQUEL} de \textit{Structured English QUEry Language}, foi desenhado e implementado no \textit{IBM Research} como uma interface experimental para o sistema de bases de dados relacionais \textit{SYSTEM R. SQL}. Um esforço conjunto entre o \textit{American National Standards Institute} (\textit{ANSI}) e a \textit{International Standards Organization} (\textit{ISO}) conduziu à normalização da versão do \textit{SQL} chamado SQL-86 ou SQL1. Surgiu depois uma versão expandida chamada SQL-92 ou SQL2. A seguinte versão reconhecida é o SQL:1999 ou SQL3. Duas atualizações depois resultaram nas versões SQL:2003 e SQL:2006  \cite{Elmasri:2010:FDS:1855347}. Sendo a atualização mais recente em 2016.\par 
 O \textit{SQL} é uma linguagem básica para realizar \textit{queries} que permitem definir e construir uma BD, bem como interagir com os dados presentes nas BDs \cite{Elmasri:2010:FDS:1855347}.
 %O \textit{SQL} é uma linguagem básica para realizar \textit{queries} dividida em dois campos principais, \textit{DDL} e \textit{DML}. \textit{DDL} ou \textit{Data Definition Language} são as \textit{queries} que permitem definir e construir uma base de dados. \textit{DML} ou \textit{Data Manipulation Language} são as \textit{queries} que permitem interagir com os dados\cite{Elmasri:2010:FDS:1855347}. Estas serão mais exploradas na \autoref{subchap:mysql}.
@@ -520,29 +524,29 @@ O \textit{SQL} é uma linguagem básica para realizar \textit{queries} que permi
 
 \newpage
 \section{\textit{Software} utilizado}
-Para desenvolver as redes de bases de dados e aplicação de gestão do sistema escolheram-se os \textit{softwares} apresentados na \autoref{fig:softwares}. Como a solução será futuramente implementada em ambiente empresarial, definiu-se que não se deve usar \textit{softwares} que estejam em versão \textit{beta}. Além disto definiu-se que estes devem ser gratuitos.
+Para desenvolver as redes de bases de dados e aplicação de gestão do sistema escolheram-se os \textit{softwares} apresentados na \autoref{fig:softwares}. Como a solução será futuramente implementada em ambiente empresarial, definiu-se que não se deve usar \textit{softwares} que estejam em versão \textit{beta}. Além disto definiu-se que estes devem ser abertos.
 \begin{figure}[H]
 	\centering
 	\begin{minipage}{0.33\textwidth}
-		\vspace{0.88cm}
+		\vspace{.87cm}
 		\begin{center}
 			\includegraphics[width=0.3\textwidth]{ubuntu} % Include the image placeholder.png
-			\subcaption{\textit{Ubuntu} \cite{ubuntu_logo}}
+			\subcaption{\textit{Ubuntu} \footnotemark}
 			\label{fig:linux}
 		\end{center}
 	\end{minipage}%
 	\begin{minipage}{0.33\textwidth}
 		\begin{center}
 			\includegraphics[width=0.4\textwidth]{gcc} % Include the image placeholder.png
-			\subcaption{\textit{GNU} \cite{gcc_logo}}
+			\subcaption{\textit{GNU} \footnotemark}
 			\label{fig:gcc}
 		\end{center}
 	\end{minipage}%
 	\begin{minipage}{0.33\textwidth}
-		\vspace{1.1cm}
+		\vspace{0.9cm}
 		\begin{center}
 			\includegraphics[width=0.6\textwidth]{apache} % Include the image placeholder.png
-			\subcaption{\textit{Apache} \cite{apache_logo}}
+			\subcaption{\textit{Apache} \footnotemark}
 			\label{fig:apache}
 		\end{center}
 	\end{minipage}
@@ -550,33 +554,38 @@ Para desenvolver as redes de bases de dados e aplicação de gestão do sistema 
 		\vspace{0.5cm}
 		\begin{center}
 			\includegraphics[width=0.25\textwidth]{mysql} % Include the image placeholder.png
-			\subcaption{\textit{MySQL} \cite{mysql_logo}}
+			\subcaption{\textit{MySQL} \footnotemark}
 			\label{fig:mysql}
 		\end{center}
 	\end{minipage}
 	\caption{Logótipos dos \textit{softwares} utilizados}
 	\label{fig:softwares}
 \end{figure}
+\footnotetext[2]{\textit{Logo Ubuntu}. URL: \textbf{https://assets.ubuntu.com/v1/29985a98-ubuntu-logo32.png}}
+\footnotetext[3]{\textit{Logo GNU}. URL: \textbf{https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/GNU \texttt{\char`_}Compiler\texttt{\char`_}Collection\texttt{\char`_}logo.svg/2000px-GNU\texttt{\char`_}Compiler\texttt{\char`_}Collection\texttt{\char`_}logo.svg.png}}
+\footnotetext[4]{\textit{Logo Apache}. URL: \textbf{https://logodownload.org/wp-content/uploads/2018/03/apache-logo.png}}
+\footnotetext{\textit{Logo MySQL}. URL: \textbf{https://logodownload.org/wp-content/uploads/2016/10/mysql-logo.png}}
 
 \subsection{Ferramentas auxiliares}
 Escolheu-se o \textit{Ubuntu} 16.04LTS como sistema operativo para os sistemas usados neste projeto, representado na \autoref{fig:linux}. Este é uma distribuição do \textit{Linux} baseado no \textit{Debian}. É um sistema operativo grátis e \textit{open source} desenvolvido pela \textit{Canonical}. A liberdade deste sistema operativo na área da programação criou uma comunidade de utilizadores que ajudam a pesquisar e desenvolver este sistema operativo \cite{ubuntu}.\par 
 A \textit{Canonical} encarrega-se de garantir \textit{updates} de segurança e performance de forma regular. Apesar de não ser infalível o \textit{Linux} é um dos sistemas mais estáveis e menos provável de ser afetado por vírus, dado que a maior parte destes são desenhados para afetar sistemas operativos mais populares como o \textit{Windows} \cite{ubuntu}.\par
 Escolheu-se utilizar \textit{C} no desenvolvimento deste projeto devido à afinidade com esta linguagem e com o facto do \textit{MySQL} disponibilizar protocolos oficiais de comunicação com esta linguagem e documentação apropriada \cite{mysql}.\par
-O \textit{C} é uma linguagem para todos os tipos de problemas e importante no mundo da programação. Originalmente desenvolvido por Dennis Ritchie entre 1969 e 1973 no \textit{Bell Labs} e usado para re-implementar o sistema operativo \textit{Unix}. Desde então esta tornou-se uma das linguagens de programação mais popular de sempre com uma oferta de vários compiladores existentes no mercado. O \textit{C} foi então normalizado pelo \textit{ANSI} em 1989 e consequentemente pelo \textit{ISO}.\par 
+O \textit{C} é uma linguagem para todos os tipos de problemas e importante no mundo da programação. Originalmente desenvolvida por Dennis Ritchie entre 1969 e 1973 no \textit{Bell Labs} e usada para re-implementar o sistema operativo \textit{Unix}. Desde então esta tornou-se uma das linguagens de programação mais popular de sempre com uma oferta de vários compiladores existentes no mercado. O \textit{C} foi então normalizado pelo \textit{ANSI} em 1989 e consequentemente pelo \textit{ISO}.\par 
 No projeto usa-se o \textit{GNU Compiler Collection} (\textit{GCC}), representado na \autoref{fig:gcc}, como compilador dos programas em \textit{C}. Este foi desenvolvido primeiramente para o sistema operativo \textit{GNU} e focou-se em ser gratuito e garantir liberdade de programação ao utilizador. Conta com uma comunidade ativa que desenvolvem constantemente novas soluções e \textit{updates} regulares ao compilador de forma a que este não fique desatualizado \cite{gcc}.\par 
 Escolheu-se utilizar \textit{Apache HTTP Server}, representado na \autoref{fig:apache} como servidor \textit{HTTP} para a aplicação \textit{Web}. Este foca-se em ser um servidor gratuito e garantir uma solução segura, eficiente e extensível \cite{apache}.\par
 Lançado em 1995, tornou-se no \textit{software} mais utilizado pelas empresas para correr os seus \textit{sites}. Atualmente na versão 2.4, realizam \textit{updates} constantes ao programa para o manter estável e atualizado \cite{apache}.
 
 \subsection{\textit{HTML}, \textit{JS} e \textit{PHP}}
+Escolheu-se \textit{HTML}, \textit{JS} e \textit{PHP} para desenvolver a aplicação de gestão de sistema deste projeto. Junto com \textit{SQL} e \textit{CSS} formam o conjunto de ferramentas mais usadas no desenvolvimento de aplicações \textit{Web} no mercado, representado na \autoref{fig:web}.\par 
+\textit{HTML} ou \textit{Hyper Text Markup Language} descreve a estrutura da página \textit{Web} desenvolvida. Possuí elementos que funcionam como blocos para as páginas permitindo a criação de uma interface com um utilizador. \textit{CSS} ou \textit{Cascading Style Sheets} descreve como os elementos HTML devem ser dispostos na página, permitindo o desenvolvimento de uma interface mais apelativa. \textit{JS} ou \textit{JavaScript} permite interagir e alterar o código \textit{HTML} e \textit{CSS} criando uma interface mais interativa. Permite também desenvolver códigos e funções que são executadas no browser do cliente. \textit{PHP} ou \textit{PHP:Hypertext Preprocessor} permite desenvolver funções para aplicação que executam do lado do servidor. \textit{JS} e \textit{PHP} realizam ambos funções diferindo apenas no local onde são executadas \cite{web}.\par
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[trim={0 3cm 0 0},clip,width=0.4\textwidth]{web} % Include the image placeholder.png
-		\caption[Representaçoã da ferramenta mais usada para desenvolver aplicações \textit{Web}]{Representação da ferramenta mais usada para desenvolver aplicações em ambiente \textit{Web} \cite{web_logo}}
+		\includegraphics[trim={0 3cm 0 0},clip,width=0.35\textwidth]{web} % Include the image placeholder.png
+		\caption[Representação das ferramentas mais usadas para desenvolver aplicações \textit{Web}]{Representação das ferramentas mais usadas para desenvolver aplicações em ambiente \textit{Web} \footnotemark}
 		\label{fig:web}
 	\end{center}
 \end{figure}
-Escolheu-se \textit{HTML}, \textit{JS} e \textit{PHP} para desenvolver a aplicação de gestão de sistema deste projeto. Junto com \textit{SQL} e \textit{CSS} formam o conjunto de ferramentas mais usadas no desenvolvimento de aplicações \textit{Web} no mercado, representado na \autoref{fig:web}.\par 
-\textit{HTML} ou \textit{Hyper Text Markup Language} descreve a estrutura da página \textit{Web} desenvolvida. Possuí elementos que funcionam como blocos para as páginas permitindo a criação de uma interface com um utilizador. \textit{CSS} ou \textit{Cascading Style Sheets} descreve como os elementos HTML devem ser dispostos na página, permitindo o desenvolvimento de uma interface mais apelativa. \textit{JS} ou \textit{JavaScript} permite interagir e alterar o código \textit{HTML} e \textit{CSS} criando uma interface mais interativa. Permite também desenvolver códigos e funções que são executadas no browser do cliente. \textit{PHP} ou \textit{PHP:Hypertext Preprocessor} permite desenvolver funções para aplicação que executam do lado do servidor. \textit{JS} e \textit{PHP} realizam ambos funções diferindo apenas no local onde são executadas \cite{web}.\par
+\footnotetext{\textit{Imagem Web Development}. URL: \textbf{https://www.vectorstock.com/royalty-free-vector/web-development-php-html-arrows-vector-1713552}}
 Sem contar com a interação com o \textit{HTML} e \textit{CSS}, o \textit{PHP} pode substituir o \textit{JS} como linguagem para criação de funções do sistema. No entanto, isto pode causar problemas de desempenho dado que o servidor terá de correr funções de todos os utilizadores. Assim sendo define-se que o uso do \textit{PHP} deve ser limitado a funções de sistema mais importantes, como conectar a uma base de dados em \textit{SQL}, e o \textit{JS} deve ser usado no desenvolvimento de funções da aplicação mais triviais.
 
 \subsection{\textit{MySQL}}
@@ -667,6 +676,7 @@ Para melhorar o desempenho da BD central e prevenir falhas críticas do sistema,
 \label{subchap:analise}
 Deseja-se, de uma forma geral, um sistema capaz de guardar remotamente medições realizadas em moldes instrumentados. Esta informação não é suficiente para se deduzir uma base de dados. Assim sendo, analisando e completando a informação inicial chega-se ao seguinte enunciado:\par 
 %\vspace{2ex}
+\newpage
 \textit{Um cliente, caracterizado por um ID único, nome, morada, IP e port, tem moldes. Estes moldes são identificados por um ID único, nome e descrição. Os moldes têm sensores com um número referente ao molde, tipo (termómetro, dinamómetro, extensómetro, etc.), nome e descrição. Estes sensores geram registos onde guardam a fase do processo (fecho do molde, enchimento, compactação, abertura e extração), data, hora, milissegundos e o valor num determinado momento.}\par 
 \vspace{2ex}
 Analisando este enunciado identificam-se as seguintes entidades com os seus respetivos atributos:

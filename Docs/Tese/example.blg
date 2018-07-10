@@ -12,45 +12,45 @@ Warning--empty author in patente1872
 Warning--empty journal in patente1872
 Warning--empty author in patente1946
 Warning--empty journal in patente1946
-You've used 32 entries,
+You've used 31 entries,
             1791 wiz_defined-function locations,
-            585 strings with 7579 characters,
-and the built_in function-call counts, 4614 in all, are:
-= -- 370
-> -- 120
+            583 strings with 7534 characters,
+and the built_in function-call counts, 4525 in all, are:
+= -- 365
+> -- 119
 < -- 0
-+ -- 58
++ -- 57
 - -- 26
 * -- 254
-:= -- 573
-add.period$ -- 57
-call.type$ -- 32
-change.case$ -- 31
+:= -- 567
+add.period$ -- 56
+call.type$ -- 31
+change.case$ -- 30
 chr.to.int$ -- 0
-cite$ -- 39
-duplicate$ -- 217
-empty$ -- 630
+cite$ -- 38
+duplicate$ -- 212
+empty$ -- 612
 format.name$ -- 26
-if$ -- 1077
+if$ -- 1053
 int.to.chr$ -- 0
-int.to.str$ -- 32
+int.to.str$ -- 31
 missing$ -- 15
-newline$ -- 124
+newline$ -- 121
 num.names$ -- 12
-pop$ -- 145
+pop$ -- 139
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 189
+skip$ -- 181
 stack$ -- 0
 substring$ -- 247
-swap$ -- 30
+swap$ -- 29
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 7
 while$ -- 32
-width$ -- 34
-write$ -- 236
+width$ -- 33
+write$ -- 231
 (There were 7 warnings)
