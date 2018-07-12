@@ -1,24 +1,24 @@
 ////////////////////////////////////Geral:
-Contagem - 5
+Contagem - 8
 
 Ocupação:
 Professor - 2
 Estudante - 1
-Outro - 2
+Outro - 5
 
 Conhece o funcionamento do projeto:
 Conheço o funcionamento do projeto - 2
 Conheço o projeto mas nao o funcionamento - 2
-Não conheço o projeto - 1
+Não conheço o projeto - 4
 
 Conhecimentos de SQL:
 Tem conhecimentos - 0
 alguns - 1
-nenhuns - 4
+nenhuns - 7
 
 No fim: AQUI FALTAM AS OPINIOES DOS PROFS JORGE E VITOR
 Acha que a aplicação cumpre os objetivos propostos:
-Concordo plenamente - 3
+Concordo plenamente - 8
 Concordo em parte - 
 Não concordo nem discordo - 
 Discordo em parte - 
@@ -26,43 +26,43 @@ Discordo totalmente -
 
 //////////////////////////////////PRIMEIRA PARTE
 Utilizou dispositivo pessoal:
-Sim - 5
+Sim - 8
 Nao - 0
 
 Qual:
-smartphone - 2
+smartphone - 5
 tablet - 1
 portatil - 2
 computador - 0
 
 Realizar Login:
-Conseguiu à primeira - 4
+Conseguiu à primeira - 7
 Não conseguiu à primeira por erro do utilizador - 1
 Não conseguiu à primeira por erro da aplicação - 0
 Não conseguiu de todo - 0
 
 Realizar a primeira query:
-Conseguiu à primeira - 5
+Conseguiu à primeira - 8
 Não conseguiu à primeira por erro do utilizador - 0
 Não conseguiu à primeira por erro da aplicação - 0
 Não conseguiu de todo - 0
 
 Filtrar a informação:
 Conseguiu à primeira - 4
-Não conseguiu à primeira por erro do utilizador - 1
+Não conseguiu à primeira por erro do utilizador - 4
 Não conseguiu à primeira por erro da aplicação - 0
 Não conseguiu de todo - 0
 no smartphone nao da para ver a tooltip
 
 Terminar sessão e tentar reutilizar a query:
-Conseguiu à primeira - 5
-Não conseguiu à primeira por erro do utilizador - 0
+Conseguiu à primeira - 6
+Não conseguiu à primeira por erro do utilizador - 2
 Não conseguiu à primeira por erro da aplicação - 0
 Não conseguiu de todo - 0
 
 Utilizar de forma livre:
 Observações: Nenhum utilizador usou a opção de criar query sem assistencia
-Comentários:
+Comentários: gralha na main geração DE queries
 Sugestões:
 adicionar tooltip aos filtros e ordem
 uma checkbox para selecionar e descelecionar tudo de uma coluna
@@ -75,14 +75,14 @@ esconder query anterior
 
 ////////////////////////////////////SEGUNDA PARTE
 Verificar que este nao existe na base de dados:
-Conseguiu à primeira - 5
+Conseguiu à primeira - 8
 Não conseguiu à primeira por erro do utilizador - 0
 Não conseguiu à primeira por erro da aplicação - 0
 Não conseguiu de todo - 0
 
 Adicionar Cliente:
-Conseguiu à primeira - 5
-Não conseguiu à primeira por erro do utilizador - 0
+Conseguiu à primeira - 7
+Não conseguiu à primeira por erro do utilizador - 1
 Não conseguiu à primeira por erro da aplicação - 0
 Não conseguiu de todo - 0
 
@@ -90,54 +90,54 @@ Instalar e configurar MySQL:
 Conseguiu à primeira - 1
 Não conseguiu à primeira por erro do utilizador - 0
 Não conseguiu à primeira por erro da aplicação - 0
-Não conseguiu de todo - 4
+Não conseguiu de todo - 7
 
 Criar base de dados temporária:
-Conseguiu à primeira - 5
+Conseguiu à primeira - 8
 Não conseguiu à primeira por erro do utilizador - 0
 Não conseguiu à primeira por erro da aplicação - 0
 Não conseguiu de todo - 0
 
 Criar Local:
-Conseguiu à primeira - 5
-Não conseguiu à primeira por erro do utilizador - 0
+Conseguiu à primeira - 7
+Não conseguiu à primeira por erro do utilizador - 1
 Não conseguiu à primeira por erro da aplicação - 0
 Não conseguiu de todo - 0
 
 Conectar Local:
-Conseguiu à primeira - 5
-Não conseguiu à primeira por erro do utilizador - 0
+Conseguiu à primeira - 6
+Não conseguiu à primeira por erro do utilizador - 2
 Não conseguiu à primeira por erro da aplicação - 0
 Não conseguiu de todo - 0
 
 Alterar Cliente:
-Conseguiu à primeira - 3
-Não conseguiu à primeira por erro do utilizador - 1
+Conseguiu à primeira - 4
+Não conseguiu à primeira por erro do utilizador - 3
 Não conseguiu à primeira por erro da aplicação - 1
 Não conseguiu de todo - 0
 
 Adicionar Moldes e Sensores:
-Conseguiu à primeira - 5
+Conseguiu à primeira - 8
 Não conseguiu à primeira por erro do utilizador - 0
 Não conseguiu à primeira por erro da aplicação - 0
 Não conseguiu de todo - 0
 
 Validar:
-Conseguiu à primeira - 3
+Conseguiu à primeira - 6
 Não conseguiu à primeira por erro do utilizador - 0
 Não conseguiu à primeira por erro da aplicação - 2
 Não conseguiu de todo - 0
 timout e bug
 
 Atualizar:
-Conseguiu à primeira - 2
+Conseguiu à primeira - 5
 Não conseguiu à primeira por erro do utilizador - 0
 Não conseguiu à primeira por erro da aplicação - 1
 Não conseguiu de todo - 2
 bug
 
 Verificar registos a serem produzidos:
-Conseguiu à primeira - 3
+Conseguiu à primeira - 6
 Não conseguiu à primeira por erro do utilizador - 0
 Não conseguiu à primeira por erro da aplicação - 0
 Não conseguiu de todo - 2

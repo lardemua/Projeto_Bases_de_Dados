@@ -63,18 +63,24 @@ Babur Ozcelik and Ibrahim Sonat.
 \newblock {\em Materials {\&} Design}, 30(2):367--375, feb 2009.
 
 \bibitem{historia}
-{About Injection Molding | Xcentric Mold {\&} Engineering}.
+Xcentric.
+\newblock {About Injection Molding}.
+\newblock URL: https://www.xcentricmold.com/aboutinjectmold.php.
 
 \bibitem{patente1868}
-{\em {Polymer Process Engineering - R. Griskey - Google Livros}}.
+Richard~G. Griskey.
+\newblock {\em {Polymer Process Engineering}}.
+\newblock Chapman {\&} Hall, 1st edition, 1995.
 
 \bibitem{patente1872}
-hyatt.
-\newblock nov 1872.
+J.~S Hyatt {\&} J.~W. Hyatt.
+\newblock {Improvement in Process and Apparatus for Manufacturing Pyroxyline.
+  Patente N{\'{u}}mero: US133229A}, nov 1872.
 
 \bibitem{patente1946}
-{Injection molding machine}.
-\newblock may 1949.
+James~W Hendry.
+\newblock {Injection Molding Machine. Patente N{\'{u}}mero: US2705342A}, may
+  1949.
 
 \bibitem{Woll}
 Suzanne L.~B. Woll and Douglas~J. Cooper.
@@ -105,44 +111,58 @@ Edgar~Frank Codd.
 \newblock {A Relational Model of Data for Large Shared Data Banks}.
 \newblock {\em Communications of the ACM}, 13(6):377--387, 1970.
 
+\bibitem{analise_requisitos}
+Scholz Hinze.
+\newblock {Requirement Analysis {\&} Conceptual Database Design}.
+\newblock URL:
+  https://www.google.com/url?sa=t{\&}rct=j{\&}q={\&}esrc=s{\&}source=web{\&}cd=1{\&}ved=0ahUKEwijp6nAyZfcAhUIWxQKHbUNAmsQFggpMAA{\&}url=https{\%}3A{\%}2F{\%}2Fpdfs.semanticscholar.org{\%}2Fpresentation{\%}2F882e{\%}2F4064bde7062d1a2adf12df311b4946439304.pdf{\&}usg=AOvVaw3NwLzsfnPA{\_}7buhAfgztyt,
+  2006.
+
+\bibitem{chaves}
+Autor Desconhecido.
+\newblock {Relational Data Model}.
+\newblock URL:
+  https://www.google.com/url?sa=t{\&}rct=j{\&}q={\&}esrc=s{\&}source=web{\&}cd=1{\&}ved=0ahUKEwjj{\_}uDmz5fcAhXIXRQKHczMBD8QFggpMAA{\&}url=http{\%}3A{\%}2F{\%}2Fwww.cs.man.ac.uk{\%}2F{\~{}}horrocks{\%}2FTeaching{\%}2Fcs2312{\%}2FLectures{\%}2FPPT{\%}2Frelational.ppt{\&}usg=AOvVaw3chVcROWZlJeUgbsnILL51.
+
 \bibitem{Chen}
 Peter Pin-Shan Chen.
 \newblock {The Entity-Relationship Unified View of Data Model-Toward a}.
 \newblock {\em ACM Transactions on Database Systems}, 1(1):9--36, 1976.
 
-\bibitem{ubuntu_logo}
-ubuntu logo.
-
-\bibitem{gcc_logo}
-{GNU Compiler Collection logo}.
-
-\bibitem{apache_logo}
-apache-logo.
-
-\bibitem{mysql_logo}
-mysql-logo.
-
 \bibitem{ubuntu}
-{Community | Ubuntu}.
+Canonical.
+\newblock {Ubuntu Community}.
+\newblock URL: https://www.ubuntu.com/community.
 
 \bibitem{mysql}
-{MySQL :: MySQL 8.0 Reference Manual}.
+MySQL.
+\newblock {Reference Manual 8.0}.
+\newblock URL: https://dev.mysql.com/doc/refman/8.0/en/.
+
+\bibitem{c}
+Autor Desconhecido.
+\newblock {C (Programming Language)}.
+\newblock URL: https://en.wikipedia.org/wiki/C{\_}(programming{\_}language).
 
 \bibitem{gcc}
-{GCC, the GNU Compiler Collection - GNU Project - Free Software Foundation
-  (FSF)}.
+{GNU Compiler Collection}.
+\newblock {GNU Project}.
+\newblock URL: https://gcc.gnu.org/.
 
 \bibitem{apache}
-{Welcome! - The Apache HTTP Server Project}.
-
-\bibitem{web_logo}
-{Web Development PHP HTML Arrows Royalty Free Vector Image}.
+{Apache Software Foundation. Apache HTTP Server Project}.
+\newblock URL: https://httpd.apache.org/.
 
 \bibitem{web}
-{W3Schools Online Web Tutorials}.
+W3Schools.
+\newblock {Web Development Tutorials}.
+\newblock URL: https://www.w3schools.com/.
 
 \bibitem{mysqlvs}
-{SQLite vs MySQL vs PostgreSQL: A Comparison Of Relational Database Management
-  Systems | DigitalOcean}.
+DigitalOcean.
+\newblock {SQLite vs MySQL vs PostgreSQL: A Comparison Of Relational Database
+  Management Systems}.
+\newblock URL:
+  https://www.digitalocean.com/community/tutorials/sqlite-vs-mysql-vs-postgresql-a-comparison-of-relational-database-management-systems.
 
 \end{thebibliography}
