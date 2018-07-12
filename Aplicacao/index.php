@@ -45,7 +45,7 @@ session_start();
 
     if($_SESSION['central_status'] == "Logout")
     {
-        echo "<p>A área de Consultas assiste na geração queries para consultar a base de dados central.<br>
+        echo "<p>A área de Consultas assiste na geração de queries para consultar a base de dados central.<br>
 		A área de Administração Local permite gerir a informação do cliente e respetivos moldes e sensores.";
     }
 

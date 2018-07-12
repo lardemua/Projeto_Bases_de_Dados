@@ -138,7 +138,7 @@ echo "
 ";?>
 </div>
 
-        <p>Para instalar o MySQL abrir o terminal com Ctrl+Shift+t e introduzir o seguinte comando:</p>
+        <p>Para instalar o MySQL abrir o terminal com Ctrl+Alt+t e introduzir o seguinte comando:</p>
         <pre>       sudo apt-get install mysql-server</pre>
         <p>Permitir ligações externas ao MySQL:</p>
         <pre>      sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf</pre>
@@ -146,11 +146,10 @@ echo "
         <pre>       bind-address = 127.0.0.1</pre>
         <p>Reiniciar o servidor:</p>
         <pre>      sudo /etc/init.d/mysql restart</pre>
-        <p>Inciar sessão no MySQL:</p>
+        <p>Iniciar sessão no MySQL:</p>
         <pre>      mysql -u root -p</pre>
-        <p>Carregar no botão:</p>
+        <p>Carregar no botão e inserir a query com ctrl+v ou colar:</p>
         <pre>---><button type="button" id="btnCopy">Copiar Query</button><---</pre>
-	<p>Inserir a query com ctrl+v ou colar</p>
         <p>Terminar sessão:</p>
         <pre>      quit</pre>
 

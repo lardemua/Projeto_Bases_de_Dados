@@ -148,11 +148,10 @@ echo "
 ";?>
 </div>
 
-<p>Inciar sessão no MySQL:</p>
+<p>Iniciar sessão no MySQL:</p>
 <pre>      mysql -u root -p</pre>
-<p>Query gerada, carregar no botão:</p>
+<p>Query gerada, carregar no botão e inserir a query com ctrl+v ou colar:</p>
 <pre>---><button type="button" id="btnCopy">Copiar Query</button><---</pre>
-<p>Inserir a query com ctrl+v ou colar</p>
 <p>Terminar sessão:</p>
 <pre>      quit</pre>
 

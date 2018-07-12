@@ -33,13 +33,13 @@
 \contentsline {figure}{\numberline {3.10}{\ignorespaces Fluxograma reduzido do programa principal de \textit {backups}}}{34}{figure.caption.31}
 \contentsline {figure}{\numberline {3.11}{\ignorespaces Fluxograma reduzido da componente de gerar \textit {backups}}}{35}{figure.caption.32}
 \contentsline {figure}{\numberline {3.12}{\ignorespaces Fluxograma reduzido da componente de concatenar \textit {backups}}}{36}{figure.caption.33}
-\contentsline {figure}{\numberline {3.13}{\ignorespaces Representa\IeC {\c c}\IeC {\~a}o da liga\IeC {\c c}\IeC {\~a}o entre os sistemas utilizados no projeto e respetivos endere\IeC {\c c}os\relax }}{43}{figure.caption.35}
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Representa\IeC {\c c}\IeC {\~a}o da liga\IeC {\c c}\IeC {\~a}o entre os sistemas}}{43}{figure.caption.35}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Diagrama da liga\IeC {\c c}\IeC {\~a}o AGS-BDs}}{45}{figure.caption.37}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Diagrama da infraestrutura completa com uma utiliza\IeC {\c c}\IeC {\~a}o geral da aplica\IeC {\c c}\IeC {\~a}o de gest\IeC {\~a}o do sistema}}{47}{figure.caption.38}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Diagrama da infraestrutura completa com uma utiliza\IeC {\c c}\IeC {\~a}o local da aplica\IeC {\c c}\IeC {\~a}o de gest\IeC {\~a}o do sistema}}{48}{figure.caption.39}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Diagrama da infraestrutura completa com uma utiliza\IeC {\c c}\IeC {\~a}o geral da AGS}}{47}{figure.caption.38}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Diagrama da infraestrutura completa com uma utiliza\IeC {\c c}\IeC {\~a}o local da AGS}}{48}{figure.caption.39}
 \contentsline {figure}{\numberline {4.4}{\ignorespaces Fluxograma reduzido do processo de realizar consultas \IeC {\`a} base de dados}}{49}{figure.caption.40}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Fluxograma reduzido do processo de configurar e definir informa\IeC {\c c}\IeC {\~a}o no sistema local do cliente}}{50}{figure.caption.41}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Fluxograma reduzido do processo de configurar informa\IeC {\c c}\IeC {\~a}o do cliente}}{50}{figure.caption.41}
 \contentsline {figure}{\numberline {4.6}{\ignorespaces Funcionalidades da p\IeC {\'a}gina \textit {Main} com e sem \textit {login}\relax }}{51}{figure.caption.42}
 \contentsline {figure}{\numberline {4.7}{\ignorespaces P\IeC {\'a}gina de \textit {Login} para iniciar sess\IeC {\~a}o na base de dados central\relax }}{52}{figure.caption.43}
 \contentsline {figure}{\numberline {4.8}{\ignorespaces Exemplo de erro de falta de informa\IeC {\c c}\IeC {\~a}o}}{52}{figure.caption.44}
@@ -81,13 +81,13 @@
 \contentsline {figure}{\numberline {5.20}{\ignorespaces Gr\IeC {\'a}fico do resultado de atualizar o programa de transfer\IeC {\^e}ncia\relax }}{75}{figure.caption.81}
 \contentsline {figure}{\numberline {5.21}{\ignorespaces Gr\IeC {\'a}fico do resultado de verificar registos a serem gerados e transferidos\relax }}{75}{figure.caption.82}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Diagrama da infraestrutura com m\IeC {\'u}ltiplas BDs locais conectadas a uma BD central, com o programa de transfer\IeC {\^e}ncia de registos descentralizado\relax }}{78}{figure.caption.83}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Diagrama da infraestrutura com o programa de transfer\IeC {\^e}ncia descentralizado}}{78}{figure.caption.83}
 \contentsline {figure}{\numberline {6.2}{\ignorespaces Exemplo de quando se clica em Conectar Local pela primeira vez}}{81}{figure.caption.85}
 \contentsline {figure}{\numberline {6.3}{\ignorespaces Exemplo de quando se clica em Conectar Local pela segunda vez}}{81}{figure.caption.86}
 \contentsline {figure}{\numberline {6.4}{\ignorespaces Exemplo de quando se clica em Conectar Local pela terceira vez}}{82}{figure.caption.87}
 \contentsline {figure}{\numberline {6.5}{\ignorespaces Exemplo da \IeC {\'a}rea Gest\IeC {\~a}o de Clientes com a funcionalidade Eliminar Cliente}}{82}{figure.caption.88}
 \contentsline {figure}{\numberline {6.6}{\ignorespaces Exemplo de um cliente com moldes em pavilh\IeC {\~o}es diferentes}}{83}{figure.caption.89}
-\contentsline {figure}{\numberline {6.7}{\ignorespaces Exemplo de \IeC {\'a}rea de Registar para criar utilizadores com base no ID de trabalhador e email\relax }}{83}{figure.caption.89}
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Exemplo de \IeC {\'a}rea de Registar Utilizador}}{83}{figure.caption.89}
 \contentsline {figure}{\numberline {6.8}{\ignorespaces Exemplo molde com 4 dinam\IeC {\'o}metros em pontos cr\IeC {\'\i }ticos}}{84}{figure.caption.90}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
@@ -102,5 +102,5 @@
 \contentsline {figure}{\numberline {C.4}{\ignorespaces Fluxograma da componente de gerar \textit {backups}}}{103}{figure.caption.98}
 \contentsline {figure}{\numberline {C.5}{\ignorespaces Fluxograma da componente de concatenar \textit {backups}}}{104}{figure.caption.99}
 \contentsline {figure}{\numberline {C.6}{\ignorespaces Fluxograma do processo de realizar consultas \IeC {\`a} base de dados}}{105}{figure.caption.100}
-\contentsline {figure}{\numberline {C.7}{\ignorespaces Fluxograma do processo de configurar e definir informa\IeC {\c c}\IeC {\~a}o no sistema local do cliente}}{106}{figure.caption.101}
+\contentsline {figure}{\numberline {C.7}{\ignorespaces Fluxograma do processo de configurar informa\IeC {\c c}\IeC {\~a}o do cliente}}{106}{figure.caption.101}
 \addvspace {10\p@ }

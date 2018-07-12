@@ -72,8 +72,8 @@
 % Preâmbulo do documento - Equipa de orientação
 % -------------------------------------------------------------
 \newcommand{\profdoc}{Prof. Doutor}                            % Grau geral
-\newcommand{\supervisor}{Vitor Manuel Ferreira dos Santos}                  % Orientador
-\newcommand{\supdegree}{Professor Associado}                   % Grau académico do orientador
+\newcommand{\supervisor}{Vítor Manuel Ferreira dos Santos}                  % Orientador
+\newcommand{\supdegree}{Professor Associado C/ Agregação}                   % Grau académico do orientador
 \newcommand{\supfili}{Departamento de Engenharia Mecânica}    % Filiação do orientador
 \newcommand{\cosupervisor}{Jorge Augusto Fernandes Ferreira}        % Co-orientadorScreenshot from 2017-06-06 17-44-04
 \newcommand{\cosupdegree}{Professor Auxiliar}              % Grau académico do co-orientador
@@ -891,7 +891,7 @@ Avançando para a criação das tabelas em \textit{MySQL}, a fim de evitar ambig
 		int & int & int & datetime & tinyint & float\\ \hline
 		not null & not null & not null & not null & not null & \\ \hline
 	\end{tabular}
-	\caption[Tabelas da BD com os seus atributos e respetivos domínios e obrigatoriedades]{Tabelas da BD com os seus atributos e respetivos domínios e obrigatoriedades. Os atributos data e hora da entidade registos são fundidos no atributo r\texttt{\char`_}data\texttt{\char`_}hora graças ao tipo de dados \texttt{datetime}}
+	\caption[Tabelas da base de dados]{Tabelas da BD com os seus atributos e respetivos domínios e obrigatoriedades. Os atributos data e hora da entidade registos são fundidos no atributo r\texttt{\char`_}data\texttt{\char`_}hora graças ao tipo de dados \texttt{datetime}}
 	\label{tab:dominio}
 \end{table}
 Define-se então nomes para as restrições de integridade definidas pelas chaves das entidades:
@@ -1003,7 +1003,7 @@ Esta BD contém variáveis globais importantes para a comunicação entre a apli
 		int &\multicolumn{1}{l}{}\\ \cline{1-1}
 		 &\multicolumn{2}{l}{}\\ \cline{1-1}
 	\end{tabular}
-	\caption[Tabelas da base de dados regulação de procedimentos com os seus atributos e respetivos domínios e obrigatoriedades]{Tabela BD regulação de procedimentos com os seus atributos e respetivos domínios e obrigatoriedades}
+	\caption[Tabelas da base de dados regulação de procedimentos]{Tabela BD regulação de procedimentos com os seus atributos e respetivos domínios e obrigatoriedades}
 	\label{tab:notificacoes}
 \end{table}
 \newpage
@@ -1379,7 +1379,7 @@ Cada conjunto de credenciais serve um objetivo, a \autoref{tab:utilizadores1} co
 		sensores & & & & & & \\ \hline
 		backupmanager & & & \textbf{X} & & \textbf{X} & \\ \hline
 	\end{tabular}
-	\caption[Tabelas com as permissões das credenciais criadas para as tabelas das bases de dados]{Tabelas com as permissões das credenciais criadas para as tabelas das BDs}
+	\caption[Tabelas com as permissões criadas para as bases de dados]{Tabelas com as permissões das credenciais criadas para as tabelas das BDs}
 	\label{tab:utilizadores1}
 \end{table}
 Estas permissões estabelecem que nenhuma das credenciais estabelecidas pode fazer DROP às BDs o que eliminaria com um comando toda a estrutura e a informação nela contida. Além disto, nenhuma tem permissão INSERT e DELETE simultânea na tabela registos das BDs central e local protegendo o sistema de adulteração dos registos presentes nesta tabela.\par 
@@ -1388,7 +1388,7 @@ De forma a proteger o sistema de acessos não autorizados, define-se também os 
 \begin{figure}
 	\begin{center}
 		\includegraphics[width=0.7\textwidth]{ligacao_entre_sistemas} % Include the image placeholder.png
-		\caption{Representação da ligação entre os sistemas utilizados no projeto e respetivos endereços}
+		\caption[Representação da ligação entre os sistemas]{Representação da ligação entre os sistemas utilizados no projeto e respetivos endereços}
 		\label{fig:utilizadores2}
 	\end{center}
 \end{figure}
@@ -1409,7 +1409,7 @@ De forma a proteger o sistema de acessos não autorizados, define-se também os 
 		sensores & \textbf{X} & & \\ \hline
 		backupmanager & & & \\ \hline
 	\end{tabular}
-	\caption[Tabelas com as limitações dos endereços de conexão das credenciais criadas nos sistemas do projeto]{Tabelas com as limitações dos endereços de conexão das credenciais criadas nos sistemas do projeto. \texttt{localhost}, \texttt{apachehost}, \texttt{sistemalocalhost} e \texttt{sistemacentralhost} representam os endereços do próprio sistema, do servidor \textit{Apache}, dos sistemas locais e do sistema central, respetivamente}
+	\caption[Tabelas com as limitações dos endereços de conexão das credenciais nos sistemas]{Tabelas com as limitações dos endereços de conexão das credenciais criadas nos sistemas do projeto. \texttt{localhost}, \texttt{apachehost}, \texttt{sistemalocalhost} e \texttt{sistemacentralhost} representam os endereços do próprio sistema, do servidor \textit{Apache}, dos sistemas locais e do sistema central, respetivamente}
 	\label{tab:utilizadores3}
 \end{table}
 
@@ -1444,7 +1444,7 @@ As Figuras \ref{fig:aplicacao_simples_consultas} e \ref{fig:aplicacao_simples_ad
 	\vspace{0cm}
 	\begin{center}
 		\includegraphics[width=0.95\textwidth]{Esquema_Projeto_Total02} % Include the image placeholder.png
-		\caption[Diagrama da infraestrutura completa com uma utilização geral da aplicação de gestão do sistema]{Diagrama da infraestrutura completa com uma utilização geral da AGS. A preto está representado o fluxo de registos. Apesar de não estar representado, os programas de transferência e gestão de \textit{backups} continuam a consultar a BD regulação de procedimentos. Escolheu-se esta representação para salientar que a AGS não interage com estes programas, dado que as funcionalidades Atualizar e Arquivar Molde só estão disponíveis numa utilização local}
+		\caption[Diagrama da infraestrutura completa com uma utilização geral da AGS]{Diagrama da infraestrutura completa com uma utilização geral da AGS. A preto está representado o fluxo de registos. Apesar de não estar representado, os programas de transferência e gestão de \textit{backups} continuam a consultar a BD regulação de procedimentos. Escolheu-se esta representação para salientar que a AGS não interage com estes programas, dado que as funcionalidades Atualizar e Arquivar Molde só estão disponíveis numa utilização local}
 		\label{fig:infra_total2}
 	\end{center}
 \end{figure}
@@ -1452,7 +1452,7 @@ As Figuras \ref{fig:aplicacao_simples_consultas} e \ref{fig:aplicacao_simples_ad
 	\vspace{0cm}
 	\begin{center}
 		\includegraphics[width=0.95\textwidth]{Esquema_Projeto_Total03} % Include the image placeholder.png
-		\caption[Diagrama da infraestrutura completa com uma utilização local da aplicação de gestão do sistema]{Diagrama da infraestrutura completa com uma utilização local da AGS. A preto está representado o fluxo de registos, a verde o fluxo de regulação de procedimentos e a vermelho o fluxo da informação dos clientes, moldes e sensores. Apesar de não estar representado, a AGS continua a poder consultar informação diretamente à BD central como na \autoref{fig:infra_total2}. Escolheu-se não representar para evitar uma saturação da imagem}
+		\caption[Diagrama da infraestrutura completa com uma utilização local da AGS]{Diagrama da infraestrutura completa com uma utilização local da AGS. A preto está representado o fluxo de registos, a verde o fluxo de regulação de procedimentos e a vermelho o fluxo da informação dos clientes, moldes e sensores. Apesar de não estar representado, a AGS continua a poder consultar informação diretamente à BD central como na \autoref{fig:infra_total2}. Escolheu-se não representar para evitar uma saturação da imagem}
 		\label{fig:infra_total3}
 	\end{center}
 \end{figure}
@@ -1470,7 +1470,7 @@ As Figuras \ref{fig:aplicacao_simples_consultas} e \ref{fig:aplicacao_simples_ad
 	\begin{center}
 		\hspace{3.5cm}
 		\includegraphics[width=0.5\textwidth]{fluxograma_simples_administracao01} % Include the image placeholder.png
-		\caption[Fluxograma reduzido do processo de configurar e definir informação no sistema local do cliente]{Fluxograma reduzido do processo de configurar e definir informação no sistema local do cliente}
+		\caption[Fluxograma reduzido do processo de configurar informação do cliente]{Fluxograma reduzido do processo de configurar e definir informação no sistema local do cliente}
 		\label{fig:aplicacao_simples_admin}
 	\end{center}
 \end{figure}
@@ -1790,7 +1790,7 @@ Obtém-se todas as BDs instaladas no servidor local, como demonstrado na \autore
 \cleardoublepage
 \chapter{Testes de Usabilidade}
 \label{chap:usabilidade}
-Para testar as funcionalidades e robustez da AGS, convidaram-se 5 pessoas para realizar testes de usabilidade. Assim, foi possível avaliar o comportamento da AGS, bem como recolher comentários e sugestões para futuros desenvolvimentos.\par 
+Para testar as funcionalidades e robustez da AGS, convidaram-se 9 pessoas para realizar testes de usabilidade. Assim, foi possível avaliar o comportamento da AGS, bem como recolher comentários e sugestões para futuros desenvolvimentos.\par 
 Foram realizados testes de usabilidade em várias alturas durante o desenvolvimento do projeto. As sugestões recolhidas levaram a AGS até ao seu aspeto atual. Este capítulo descreve a preparação, o plano e os resultados dos testes de usabilidade na versão atual da AGS.
 
 \section{Preparação dos testes}
@@ -1857,13 +1857,13 @@ Passando para o dispositivo que simula o sistema local, inicia-se o simulador do
 Mais uma vez, depois do teste ser realizado, pede-se aos utilizadores que repitam o processo de forma livre para se obter mais informação sobre a experiência do utilizador. Quando o utilizador tiver terminado recolhem-se comentários e sugestões para implementar em trabalhos futuros.
 
 \section{Resultados dos testes}
-Para testar funcionalidades e robustez da AGS, foram convidadas 5 pessoas para participarem nos testes. Em relação aos utilizadores, 20\% eram estudantes, 40\% eram professores e 40\% tinham outra ocupação, como representado na \autoref{fig:resultados01}. Quanto ao grau de acompanhamento do projeto, 20\% não conheciam o projeto, 40\% conheciam o projeto mas não o seu funcionamento e 40\% conheciam o funcionamento do projeto, como representado na \autoref{fig:resultados02}. Uma auto-avaliação dos utilizadores do grau de conhecimentos sobre \textit{SQL} mostrou que 80\% não tinham conhecimentos, 20\% tinham algum conhecimento e nenhum tinha bons conhecimentos, como demonstrado na \autoref{fig:resultados03}.
+Para testar funcionalidades e robustez da AGS, foram convidadas 9 pessoas para participarem nos testes. Em relação aos utilizadores, 22.2\% eram estudantes, 22.2\% eram professores e 55.6\% tinham outra ocupação, como representado na \autoref{fig:resultados01}. Quanto ao grau de acompanhamento do projeto, 55.6\% não conheciam o projeto, 22.2\% conheciam o projeto mas não o seu funcionamento e 22.2\% conheciam o funcionamento do projeto, como representado na \autoref{fig:resultados02}. Uma auto-avaliação dos utilizadores do grau de conhecimentos sobre \textit{SQL} mostrou que 88.9\% não tinham conhecimentos, 11.1\% tinham algum conhecimento e nenhum tinha bons conhecimentos, como demonstrado na \autoref{fig:resultados03}.
 \begin{figure}[H]
 	\centering
-	\hspace{-.25cm}
+	\hspace{-0.75cm}
 	\begin{tikzpicture}
-	\pie [rotate = 180]{40/Outro,
-	40/Professor,20/Estudante}
+	\pie [rotate = 180]{55.6/Outro,
+	22.2/Professor,22.2/Estudante}
 	\end{tikzpicture}
 	\caption{Gráfico da ocupação profissional dos utilizadores}
 	\label{fig:resultados01}
@@ -1872,29 +1872,29 @@ Para testar funcionalidades e robustez da AGS, foram convidadas 5 pessoas para p
 	\centering
 	\begin{tikzpicture}
 	\pie [/tikz/every pin/.style={align=center},
-	text=pin,rotate = 180] {40/Conheciam o Projeto, 40/Conheciam o Projeto\\Mas Não o Funcionamento, 20/Não Conheciam o Projeto}
+	text=pin,rotate = 180] {22.2/Conheciam o Projeto, 22.2/Conheciam o Projeto\\Mas Não o Funcionamento, 55.6/Não Conheciam o Projeto}
 	\end{tikzpicture}
 	\caption{Gráfico do grau de acompanhamento do projeto dos utilizadores}
 	\label{fig:resultados02}
 \end{figure}
 \begin{figure}[H]
 	\centering
-	\hspace{-.75cm}
+	\hspace{-.5cm}
 	\begin{tikzpicture}
 	\pie [/tikz/every pin/.style={align=center},
-	text=pin,rotate = 180] {0/Tinham\\Conhecimentos, 20/Tinham Alguns\\Conhecimentos, 80/Não Tinham\\Conhecimentos}
+	text=pin,rotate = 180] {0/Tinham\\Conhecimentos, 11.1/Tinham Alguns\\Conhecimentos, 88.9/Não Tinham\\Conhecimentos}
 	\end{tikzpicture}
 	\caption{Gráfico do grau de conhecimentos sobre \textit{SQL} dos utilizadores}
 	\label{fig:resultados03}
 \end{figure}
 
 \subsection{Resultados da primeira parte}
-Na primeira parte, 100\% dos utilizadores usaram um dispositivo pessoal, dos quais 40\% eram \textit{smartphones}, 20\% \textit{tablets} e 40\% portáteis, como demonstrado na \autoref{fig:resultados04}.
+Na primeira parte, 100\% dos utilizadores usaram um dispositivo pessoal, dos quais 66.7\% eram \textit{smartphones}, 11.1\% \textit{tablets} e 22.2\% portáteis, como demonstrado na \autoref{fig:resultados04}.
 \begin{figure}[H]
 	\centering
-	\hspace{1cm}
+	\hspace{-0.5cm}
 	\begin{tikzpicture}
-	\pie [rotate = 180] {40/Portáteis, 20/Tablets,40/Smartphones}
+	\pie [rotate = 180] {22.2/Portáteis, 11.1/Tablets,66.7/Smartphones}
 	\end{tikzpicture}
 	\caption{Gráfico dos dispositivos pessoais utilizados nos testes}
 	\label{fig:resultados04}
@@ -1902,9 +1902,10 @@ Na primeira parte, 100\% dos utilizadores usaram um dispositivo pessoal, dos qua
 \newpage
 Passando às etapas desta parte do teste, os resultados são apresentados da \autoref{fig:resultados05} a \autoref{fig:resultados08}:
 \begin{enumerate}
-	\item Iniciar sessão, 20\% dos utilizadores introduziram credenciais erradas
+	\item Iniciar sessão, 11.1\% dos utilizadores introduziram credenciais erradas
 	\begin{figure}[H]
 		\centering
+		\hspace{-0.5cm}
 		\begin{tikzpicture}
 		\begin{axis}[ 
 		xbar, xmin=0, xmax=100,
@@ -1924,8 +1925,8 @@ Passando às etapas desta parte do teste, os resultados são apresentados da \au
 		\addplot coordinates {
 			(0,{Não Conseguiu Terminar})
 			(0,{Após Erro da AGS})
-			(20,{Após Erro do Utilizador})
-			(80,Sem Problemas)};
+			(11.1,{Após Erro do Utilizador})
+			(88.9,Sem Problemas)};
 		\end{axis}
 		\end{tikzpicture}
 		\caption{Gráfico do resultado de iniciar sessão}
@@ -1960,9 +1961,10 @@ Passando às etapas desta parte do teste, os resultados são apresentados da \au
 		\caption{Gráfico do resultado de gerar uma \textit{query}}
 		\label{fig:resultados06}
 	\end{figure}
-	\item Filtrar a resposta retornada, 20\% dos utilizadores tiveram dificuldades em filtrar a \textit{query}. Estes utilizadores tinham em comum o facto de estarem a utilizar os seus \textit{smartphones} que não permitem visualizar o exemplo da caixa de texto Filtrar
+	\item Filtrar a resposta retornada, 44.4\% dos utilizadores tiveram dificuldades em filtrar a \textit{query}. Estes utilizadores tinham em comum o facto de estarem a utilizar os seus \textit{smartphones} que não permitem visualizar o exemplo da caixa de texto Filtrar
 \begin{figure}[H]
 	\centering
+	\hspace{-0.5cm}
 	\begin{tikzpicture}
 	\begin{axis}[ 
 	xbar, xmin=0, xmax=100,
@@ -1982,17 +1984,18 @@ Passando às etapas desta parte do teste, os resultados são apresentados da \au
 	\addplot coordinates {
 		(0,{Não Conseguiu Terminar})
 		(0,{Após Erro da AGS})
-		(20,{Após Erro do Utilizador})
-		(80,Sem Problemas)};
+		(44.4,{Após Erro do Utilizador})
+		(55.6,Sem Problemas)};
 	\end{axis}
 	\end{tikzpicture}
 	\caption{Gráfico do resultado de filtrar a resposta retornada}
 	\label{fig:resultados07}
 \end{figure}
 \newpage
-	\item Reabrir a reposta anterior pelo \textit{link} após terminar sessão, 100\% dos utilizadores concluíram a tarefa sem problemas
+	\item Reabrir a reposta anterior pelo \textit{link} após terminar sessão, 33.3\% dos utilizadores tiveram dificuldades em realizar a tarefa. Tentaram inserir o \textit{link} na caixa de texto Query
 \begin{figure}[H]
 	\centering
+	\hspace{-0.5cm}
 	\begin{tikzpicture}
 	\begin{axis}[ 
 	xbar, xmin=0, xmax=100,
@@ -2012,15 +2015,15 @@ Passando às etapas desta parte do teste, os resultados são apresentados da \au
 	\addplot coordinates {
 		(0,{Não Conseguiu Terminar})
 		(0,{Após Erro da AGS})
-		(0,{Após Erro do Utilizador})
-		(100,Sem Problemas)};
+		(33.3,{Após Erro do Utilizador})
+		(66.7,Sem Problemas)};
 	\end{axis}
 	\end{tikzpicture}
 	\caption{Gráfico do resultado de reabrir a reposta anterior pelo \textit{link} após terminar sessão}
 	\label{fig:resultados08}
 \end{figure}
 \end{enumerate}
-No final do teste pediu-se aos utilizadores que repetissem o processo de forma livre. Durante toda esta parte do teste, notou-se que nenhum utilizador usou a componente de introduzir uma \textit{query} diretamente. Isto seria de esperar dado que a maioria dos utilizadores não tem conhecimentos de \textit{SQL} e confirma que aplicação cumpre o objetivo de assistir estes utilizadores na geração de \textit{queries}.
+No final do teste pediu-se aos utilizadores que repetissem o processo de forma livre. Durante toda esta parte do teste, notou-se que nenhum utilizador usou a componente de introduzir uma \textit{query} diretamente. Isto seria de esperar dado que a maioria dos utilizadores não tem conhecimentos de \textit{SQL} e confirma que AGS cumpre o objetivo de assistir estes utilizadores na geração de \textit{queries}.
 Para a componente das Consultas foram recolhidas as seguintes sugestões:
 \begin{itemize}
 	\item Tornar o exemplo de ajuda nas caixas de texto Filtrar e Ordenar mais visíveis, especialmente para os utilizadores dos \textit{smartphones}
@@ -2064,9 +2067,10 @@ Seguindo as etapas desta parte do teste, os resultados são apresentados da \aut
 		\caption{Gráfico do resultado de verificar que o cliente não se encontra no sistema}
 		\label{fig:resultados09}
 	\end{figure}
-	\item Adicionar o cliente, 100\% dos utilizadores concluíram a tarefa sem problemas
+	\item Adicionar o cliente, 11.1\% dos utilizadores introduziram informação não válida
 	\begin{figure}[H]
 		\centering
+		\hspace{-0.5cm}
 		\begin{tikzpicture}
 		\begin{axis}[ 
 		xbar, xmin=0, xmax=100,
@@ -2086,16 +2090,17 @@ Seguindo as etapas desta parte do teste, os resultados são apresentados da \aut
 		\addplot coordinates {
 			(0,{Não Conseguiu Terminar})
 			(0,{Após Erro da AGS})
-			(0,{Após Erro do Utilizador})
-			(100,Sem Problemas)};
+			(11.1,{Após Erro do Utilizador})
+			(88.9,Sem Problemas)};
 		\end{axis}
 		\end{tikzpicture}
 		\caption{Gráfico do resultado de adicionar o cliente}
 		\label{fig:resultados10}
 	\end{figure}
-	\item Instalar e configurar o \textit{MySQL}, 80\% dos utilizadores não conseguiram realizar a tarefa porque, mesmo desinstalando o programa, os seus ficheiros de configuração não eram removidos do sistema
+	\item Instalar e configurar o \textit{MySQL}, 88.9\% dos utilizadores não conseguiram realizar a tarefa porque, mesmo desinstalando o programa, os seus ficheiros de configuração não eram removidos do sistema
 	\begin{figure}[H]
 		\centering
+		\hspace{-0.5cm}
 		\begin{tikzpicture}
 		\begin{axis}[ 
 		xbar, xmin=0, xmax=100,
@@ -2113,10 +2118,10 @@ Seguindo as etapas desta parte do teste, os resultados são apresentados da \aut
 		height=4.5cm,
 		]
 		\addplot coordinates {
-			(80,{Não Conseguiu Terminar})
+			(88.9,{Não Conseguiu Terminar})
 			(0,{Após Erro da AGS})
 			(0,{Após Erro do Utilizador})
-			(20,Sem Problemas)};
+			(11.1,Sem Problemas)};
 		\end{axis}
 		\end{tikzpicture}
 		\caption{Gráfico do resultado de instalar e configurar o \textit{MySQL}}
@@ -2152,9 +2157,10 @@ Seguindo as etapas desta parte do teste, os resultados são apresentados da \aut
 		\caption{Gráfico do resultado de criar base de dados temporária}
 		\label{fig:resultados12}
 	\end{figure}
-	\item Criar base de dados local do cliente, 100\% dos utilizadores concluíram a tarefa sem problemas
+	\item Criar base de dados local do cliente, 11.1\% dos utilizadores introduziram um ID de cliente não válido
 	\begin{figure}[H]
 		\centering
+		\hspace{-0.5cm}
 		\begin{tikzpicture}
 		\begin{axis}[ 
 		xbar, xmin=0, xmax=100,
@@ -2174,16 +2180,17 @@ Seguindo as etapas desta parte do teste, os resultados são apresentados da \aut
 		\addplot coordinates {
 			(0,{Não Conseguiu Terminar})
 			(0,{Após Erro da AGS})
-			(0,{Após Erro do Utilizador})
-			(100,Sem Problemas)};
+			(11.1,{Após Erro do Utilizador})
+			(88.9,Sem Problemas)};
 		\end{axis}
 		\end{tikzpicture}
 		\caption{Gráfico do resultado de criar base de dados local do cliente}
 		\label{fig:resultados13}
 	\end{figure}
-	\item Conectar à base de dados local, 100\% dos utilizadores concluíram a tarefa sem problemas
+	\item Conectar à base de dados local, 22.2\% dos utilizadores introduziram um nome da base de dados não válido
 	\begin{figure}[H]
 		\centering
+		\hspace{-0.5cm}
 		\begin{tikzpicture}
 		\begin{axis}[ 
 		xbar, xmin=0, xmax=100,
@@ -2203,17 +2210,18 @@ Seguindo as etapas desta parte do teste, os resultados são apresentados da \aut
 		\addplot coordinates {
 			(0,{Não Conseguiu Terminar})
 			(0,{Após Erro da AGS})
-			(0,{Após Erro do Utilizador})
-			(100,Sem Problemas)};
+			(22.2,{Após Erro do Utilizador})
+			(77.8,Sem Problemas)};
 		\end{axis}
 		\end{tikzpicture}
 		\caption{Gráfico do resultado de conectar à base de dados local}
 		\label{fig:resultados14}
 	\end{figure}
 	\newpage
-	\item Alterar cliente, 20\% dos utilizadores não inseriram toda a informação necessária para alterar um cliente e 20\% dos utilizadores detetaram erros na AGS que tiveram de ser corrigidos a fim de terminar a tarefa
+	\item Alterar cliente, 33.3\% dos utilizadores não inseriram toda a informação necessária para alterar um cliente e 11.1\% dos utilizadores detetaram erros na AGS que tiveram de ser corrigidos a fim de terminar a tarefa
 	\begin{figure}[H]
 		\centering
+		\hspace{-0.5cm}
 		\begin{tikzpicture}
 		\begin{axis}[ 
 		xbar, xmin=0, xmax=100,
@@ -2232,9 +2240,9 @@ Seguindo as etapas desta parte do teste, os resultados são apresentados da \aut
 		]
 		\addplot coordinates {
 			(0,{Não Conseguiu Terminar})
-			(20,{Após Erro da AGS})
-			(20,{Após Erro do Utilizador})
-			(60,Sem Problemas)};
+			(11.1,{Após Erro da AGS})
+			(33.3,{Após Erro do Utilizador})
+			(55.6,Sem Problemas)};
 		\end{axis}
 		\end{tikzpicture}
 		\caption{Gráfico do resultado de alterar cliente}
@@ -2299,9 +2307,10 @@ Seguindo as etapas desta parte do teste, os resultados são apresentados da \aut
 		\label{fig:resultados17}
 	\end{figure}
 	\newpage
-	\item Validar a informação, 40\% dos utilizadores detetaram erros na AGS que tiveram de ser corrigidos a fim de terminar a tarefa. Um dos utilizadores teve um pico de latência do servidor que causou o fecho da aplicação no \textit{browser}, deduziu-se que este pico foi falha do \textit{hardware} utilizado
+	\item Validar a informação, 22.2\% dos utilizadores detetaram erros na AGS que tiveram de ser corrigidos a fim de terminar a tarefa. Um dos utilizadores teve um pico de latência do servidor que causou o fecho da aplicação no \textit{browser}, deduziu-se que este pico foi falha do \textit{hardware} utilizado
 	\begin{figure}[H]
 		\centering
+		\hspace{-0.5cm}
 		\begin{tikzpicture}
 		\begin{axis}[ 
 		xbar, xmin=0, xmax=100,
@@ -2320,17 +2329,18 @@ Seguindo as etapas desta parte do teste, os resultados são apresentados da \aut
 		]
 		\addplot coordinates {
 			(0,{Não Conseguiu Terminar})
-			(40,{Após Erro da AGS})
+			(22.2,{Após Erro da AGS})
 			(0,{Após Erro do Utilizador})
-			(60,Sem Problemas)};
+			(77.8,Sem Problemas)};
 		\end{axis}
 		\end{tikzpicture}
 		\caption{Gráfico do resultado de validar a informação}
 		\label{fig:resultados18}
 	\end{figure}
-	\item Atualizar o programa de transferência, 40\% dos utilizadores não conseguiram terminar a tarefa porque foi detetado um conflito entre programas que não se pode resolver durante o teste e 20\% dos utilizadores encontraram erros na aplicação que tiveram de ser corrigidos a fim de terminar a tarefa
+	\item Atualizar o programa de transferência, 22.2\% dos utilizadores não conseguiram terminar a tarefa porque foi detetado um conflito entre programas que não se pode resolver durante o teste e 11.1\% dos utilizadores encontraram erros na AGS que tiveram de ser corrigidos a fim de terminar a tarefa
 	\begin{figure}[H]
 		\centering
+		\hspace{-0.5cm}
 		\begin{tikzpicture}
 		\begin{axis}[ 
 		xbar, xmin=0, xmax=100,
@@ -2348,18 +2358,19 @@ Seguindo as etapas desta parte do teste, os resultados são apresentados da \aut
 		height=4.5cm,
 		]
 		\addplot coordinates {
-			(40,{Não Conseguiu Terminar})
-			(20,{Após Erro da AGS})
+			(22.2,{Não Conseguiu Terminar})
+			(11.1,{Após Erro da AGS})
 			(0,{Após Erro do Utilizador})
-			(40,Sem Problemas)};
+			(66.7,Sem Problemas)};
 		\end{axis}
 		\end{tikzpicture}
 		\caption{Gráfico do resultado de atualizar o programa de transferência}
 		\label{fig:resultados19}
 	\end{figure}
-	\item Verificar registos a serem gerados e transferidos, 40\% dos utilizadores não conseguiram terminar a tarefa por não terem tido sucesso no passo anterior
+	\item Verificar registos a serem gerados e transferidos, 22.2\% dos utilizadores não conseguiram terminar a tarefa por não terem tido sucesso no passo anterior
 	\begin{figure}[H]
 		\centering
+		\hspace{-0.5cm}
 		\begin{tikzpicture}
 		\begin{axis}[ 
 		xbar, xmin=0, xmax=100,
@@ -2377,10 +2388,10 @@ Seguindo as etapas desta parte do teste, os resultados são apresentados da \aut
 		height=4.5cm,
 		]
 		\addplot coordinates {
-			(40,{Não Conseguiu Terminar})
+			(22.2,{Não Conseguiu Terminar})
 			(0,{Após Erro da AGS})
 			(0,{Após Erro do Utilizador})
-			(60,Sem Problemas)};
+			(77.8,Sem Problemas)};
 		\end{axis}
 		\end{tikzpicture}
 		\caption{Gráfico do resultado de verificar registos a serem gerados e transferidos}
@@ -2388,14 +2399,14 @@ Seguindo as etapas desta parte do teste, os resultados são apresentados da \aut
 	\end{figure}
 \end{enumerate}
 \newpage
-Durante a segunda parte do teste, verificou-se que os utilizadores estavam mais à vontade para gerar \textit{queries} comparativamente à primeira parte. Isto demonstra que a aplicação requer alguma experiência por parte dos utilizadores para puder ser usada eficazmente.\par 
+Durante a segunda parte do teste, verificou-se que os utilizadores estavam mais à vontade para gerar \textit{queries} comparativamente à primeira parte. Isto demonstra que a AGS requer alguma experiência por parte dos utilizadores para puder ser usada eficazmente.\par 
 Para a componente da Administração Local foram recolhidas as seguintes sugestões:
 \begin{itemize}
 	\item Completar automaticamente a informação para alterar o cliente
-	\item Adicionar um tutorial na aplicação de como preparar o sistema local
+	\item Adicionar um tutorial na AGS de como preparar o sistema local
 	\item Criar avisos nos botões Validar e Atualizar para que o utilizador não realize estas ações por engano
 \end{itemize}
-Terminado com a avaliação por parte dos utilizadores, 100\% dos utilizadores concordam que a aplicação cumpre os objetivos de assistir na geração de \textit{queries} e de configurar e definir o sistema local do cliente.
+Terminado com a avaliação por parte dos utilizadores, 100\% dos utilizadores concordam que a AGS cumpre os objetivos de assistir na geração de \textit{queries} e de configurar e definir o sistema local do cliente.
 
 \cleardoublepage
 \chapter{Conclusões}
@@ -2421,11 +2432,11 @@ Na versão centralizada, o sistema central tem de garantir a transferência de t
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[width=0.9\textwidth]{Esquema_Projeto_Descentralizado} % Include the image placeholder.png
-		\caption{Diagrama da infraestrutura com múltiplas BDs locais conectadas a uma BD central, com o programa de transferência de registos descentralizado}
+		\caption[Diagrama da infraestrutura com o programa de transferência descentralizado]{Diagrama da infraestrutura com múltiplas BDs locais conectadas a uma BD central, com o programa de transferência de registos descentralizado}
 		\label{fig:conclusoes0}
 	\end{center}
 \end{figure}
-No entanto, a versão descentralizada tem desvantagens, o aumento do consumo de processador dos sistemas locais, por causa do programa de transferência, pode comprometer o desempenho da aquisição de dados no caso desta necessitar de uma elevada cadência de registos. Outra desvantagem, se for necessário alterar o programa de transferência para adicionar novas funcionalidades, tem de se aceder aos sistemas locais onde estes estão a ser executados. Se o programador encarregue de fazer estas alterações não poder aceder diretamente ao sistema local, porque, por exemplo, o sistema local do cliente está situado num país diferente, tem de se garantir uma conexão remota para se poderem realizar estas alterações. Através desta conexão remota o operador pode modificar o sistema local e as BDs como administrador, o que permite contornar as restrições e seguranças definidas e, consequentemente, comprometer a infraestrutura de dados. Terminando com a questão das permissões das credenciais do programa de transferência na \autoref{tab:utilizadores3}. Na versão centralizada, o sistema central não tem de garantir permissões aos endereços dos sistemas locais, ao contrário da versão descentralizada, que tem de garantir permissões aos endereços de todos os sistemas locais. Esta versão requer um maior controlo dos acessos que complica o processo de criação e definição das credenciais do programa de transferência. Por causa destas desvantagens escolheu-se seguir pela versão centralizada.\par 
+No entanto, a versão descentralizada tem desvantagens, o aumento do tempo de utilização do processador dos sistemas locais, por causa do programa de transferência, pode comprometer o desempenho da aquisição de dados no caso desta necessitar de uma elevada cadência de registos. Outra desvantagem, se for necessário alterar o programa de transferência para adicionar novas funcionalidades, tem de se aceder aos sistemas locais onde estes estão a ser executados. Se o programador encarregue de fazer estas alterações não poder aceder diretamente ao sistema local, porque, por exemplo, o sistema local do cliente está situado num país diferente, tem de se garantir uma conexão remota para se poderem realizar estas alterações. Através desta conexão remota o operador pode modificar o sistema local e as BDs como administrador, o que permite contornar as restrições e seguranças definidas e, consequentemente, comprometer a infraestrutura de dados. Terminando com a questão das permissões das credenciais do programa de transferência na \autoref{tab:utilizadores3}. Na versão centralizada, o sistema central não tem de garantir permissões aos endereços dos sistemas locais, ao contrário da versão descentralizada, que tem de garantir permissões aos endereços de todos os sistemas locais. Esta versão requer um maior controlo dos acessos que complica o processo de criação e definição das credenciais do programa de transferência. Por causa destas desvantagens escolheu-se seguir pela versão centralizada.\par 
 O método para reiniciar o programa remotamente pela AGS pode, no entanto, ser melhorado. Atualmente, o programa verifica com base num temporizador a BD regulação de procedimentos. Dependendo deste temporizador pode existir alguma latência entre o ato de alterar o parâmetro \texttt{a\char`_transferencia} e o reiniciar propriamente dito do programa. Seria interessante desenvolver outro método que garanta que este se reinicie sem latência.\par 
 A taxa de transferência de registos é definida pela capacidade de processamento do sistema utilizado. Durante o desenvolvimento do projeto testou-se a taxa de transferência do programa com os dados presentes na \autoref{tab:conclusoes0}.
 \begin{table}[H]
@@ -2530,7 +2541,7 @@ Se se justificar, em vez de se ter um servidor local no cliente, ter um em cada 
 		\begin{center}
 			\includegraphics[trim={0 9cm 35cm 0},clip,width=0.55\textwidth]{futuro02} % Include the image placeholder.png
 			\vspace{0.55cm}
-			\caption{Exemplo de área de Registar para criar utilizadores com base no ID de trabalhador e email}
+			\caption[Exemplo de área de Registar Utilizador]{Exemplo de área de Registar Utilizador para criar utilizadores com base no ID de trabalhador e email}
 			\label{fig:conclusoes2}
 		\end{center}
 	\end{minipage}
@@ -2944,7 +2955,7 @@ Este apêndice contém os fluxogramas completos dos programas e processos desenv
 	\vspace{-0.25cm}
 	\begin{center}
 		\includegraphics[width=0.9\textwidth]{fluxograma_administracao03} % Include the image placeholder.png
-		\caption[Fluxograma do processo de configurar e definir informação no sistema local do cliente]{Fluxograma do processo de configurar e definir informação no sistema local do cliente}
+		\caption[Fluxograma do processo de configurar informação do cliente]{Fluxograma do processo de configurar e definir informação no sistema local do cliente}
 		\label{fig:aplicacao_admin}
 	\end{center}
 \end{figure}
@@ -3089,7 +3100,7 @@ Este apêndice contém as tabelas que representam os dados iniciais no sistema c
 		9009 & 7 & 4 & NULL & NULL\\ \cline{1-5}
 		9009 & 8 & 4 & NULL & NULL\\ \cline{1-5}
 		9009 & 9 & 5 & NULL & NULL\\ \cline{1-5}
-		9009 & 10 & 5 & NULL & \\ \cline{1-5}
+		9009 & 10 & 5 & NULL & NULL\\ \cline{1-5}
 		9010 & 1 & 1 & NULL & NULL\\ \cline{1-5}
 		9010 & 2 & 2 & NULL & NULL\\ \cline{1-5}
 		9010 & 3 & 3 & NULL & NULL\\ \cline{1-5}
