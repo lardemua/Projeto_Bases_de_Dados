@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.7.4)  12 JUL 2018 16:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.7.4)  26 JUL 2018 20:45
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1471,6 +1471,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 200--200
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 200--200
+
+ []
+
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 203.
 Package babel Info: Redefining portuges shorthand "|
@@ -1875,12 +1880,12 @@ Package pdftex.def Info: Pictures/notacao14.png used on input line 518.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 524.
 
-<Pictures/notacao15.png, id=616, 443.6575pt x 149.55875pt>
+<Pictures/notacao15.png, id=616, 442.65375pt x 149.55875pt>
 File: Pictures/notacao15.png Graphic file (type png)
 
 <use Pictures/notacao15.png>
 Package pdftex.def Info: Pictures/notacao15.png used on input line 529.
-(pdftex.def)             Requested size: 309.85626pt x 104.45306pt.
+(pdftex.def)             Requested size: 309.85626pt x 104.69496pt.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 536.
 
@@ -2003,7 +2008,7 @@ Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 665.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 669.
-<Pictures/Esquema_Projeto_4.png, id=717, 227.6505pt x 281.6121pt>
+<Pictures/Esquema_Projeto_4.png, id=716, 227.6505pt x 281.6121pt>
 File: Pictures/Esquema_Projeto_4.png Graphic file (type png)
 
 <use Pictures/Esquema_Projeto_4.png>
@@ -2011,7 +2016,7 @@ Package pdftex.def Info: Pictures/Esquema_Projeto_4.png used on input line 673.
 
 (pdftex.def)             Requested size: 177.05879pt x 219.03348pt.
 
-<Pictures/Esquema_Projeto_5.png, id=719, 241.8636pt x 281.6121pt>
+<Pictures/Esquema_Projeto_5.png, id=718, 241.8636pt x 281.6121pt>
 File: Pictures/Esquema_Projeto_5.png Graphic file (type png)
 
 <use Pictures/Esquema_Projeto_5.png>
@@ -2026,11 +2031,11 @@ Package babel Info: Redefining portuges shorthand "|
 
 
  <./Pictures/Esquema_Projeto_4.png>]
-<Pictures/Esquema_Projeto_6.png, id=727, 341.3553pt x 281.6121pt>
-File: Pictures/Esquema_Projeto_6.png Graphic file (type png)
+<Pictures/Esquema_Projeto_8.png, id=726, 341.3553pt x 281.6121pt>
+File: Pictures/Esquema_Projeto_8.png Graphic file (type png)
 
-<use Pictures/Esquema_Projeto_6.png>
-Package pdftex.def Info: Pictures/Esquema_Projeto_6.png used on input line 689.
+<use Pictures/Esquema_Projeto_8.png>
+Package pdftex.def Info: Pictures/Esquema_Projeto_8.png used on input line 689.
 
 (pdftex.def)             Requested size: 442.65375pt x 365.18903pt.
 Package babel Info: Redefining portuges shorthand "|
@@ -2059,7 +2064,7 @@ Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 700.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 700.
-[19 <./Pictures/Esquema_Projeto_6.png>]
+[19 <./Pictures/Esquema_Projeto_8.png>]
 
 Package Fancyhdr Warning: \headheight is too small (12.5pt): 
  Make it at least 13.59999pt.
@@ -2096,7 +2101,7 @@ Package babel Info: Redefining portuges shorthand "|
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 841.
 [22]
-<Pictures/diagrama_entidade_relacao.png, id=759, 1426.32875pt x 532.99126pt>
+<Pictures/diagrama_entidade_relacao.png, id=758, 1426.32875pt x 532.99126pt>
 File: Pictures/diagrama_entidade_relacao.png Graphic file (type png)
 
 <use Pictures/diagrama_entidade_relacao.png>
@@ -2115,7 +2120,7 @@ Package babel Info: Redefining portuges shorthand "|
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 850.
 [23 <./Pictures/diagrama_entidade_relacao.png>]
-<Pictures/esquema_relacional.png, id=767, 551.05875pt x 470.75874pt>
+<Pictures/esquema_relacional.png, id=766, 551.05875pt x 470.75874pt>
 File: Pictures/esquema_relacional.png Graphic file (type png)
 
 <use Pictures/esquema_relacional.png>
@@ -2214,18 +2219,18 @@ Package pdftex.def Info: Pictures/fluxograma_simples_transferencia_programa01.p
 ng used on input line 1041.
 (pdftex.def)             Requested size: 442.65375pt x 496.18459pt.
 
-<Pictures/fluxograma_simples_transferencia_subprograma01.png, id=822, 595.22375
-pt x 1035.87pt>
+<Pictures/fluxograma_simples_transferencia_subprograma01.png, id=822, 600.2425p
+t x 1035.87pt>
 File: Pictures/fluxograma_simples_transferencia_subprograma01.png Graphic file 
 (type png)
 
 <use Pictures/fluxograma_simples_transferencia_subprograma01.png>
 Package pdftex.def Info: Pictures/fluxograma_simples_transferencia_subprograma0
 1.png used on input line 1050.
-(pdftex.def)             Requested size: 354.12434pt x 616.27917pt.
+(pdftex.def)             Requested size: 354.12434pt x 611.1422pt.
 
 
-LaTeX Warning: Float too large for page by 14.65253pt on input line 1054.
+LaTeX Warning: Float too large for page by 9.51555pt on input line 1054.
 
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
@@ -3874,7 +3879,7 @@ r/sfsx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1000.pfb></usr
 /share/texmf/fonts/type1/public/cm-super/sfti1095.pfb></usr/share/texlive/texmf
 -dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/urw/courier/ucrr8a.pfb>
-Output written on example.pdf (130 pages, 5435753 bytes).
+Output written on example.pdf (130 pages, 5422673 bytes).
 PDF statistics:
  2387 PDF objects out of 2487 (max. 8388607)
  2030 compressed objects within 21 object streams

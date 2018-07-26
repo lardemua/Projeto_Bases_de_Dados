@@ -191,7 +191,7 @@
         \\
        Um obrigado aos colegas do Laboratório de Automação e Robótica pela companhia e ajuda sempre que precisei.\\
         \\
-       Um obrigado muito especial para os meus colegas e amigos de curso por me terem ajudado ao longo destes anos a chegar tão longe.
+       Um obrigado muito especial para os meus colegas e amigos de curso por me terem ajudado ao longo destes anos a chegar tão longe.\\
         \\
        Obrigado também aos que me apoiaram quando apaguei a tese sem querer e perdi o documento escrito e me convenceram que passar 5 noites sem dormir a reescrever tudo era melhor do que ir trabalhar para o \textit{McDonald's}.\\
         \\
@@ -611,7 +611,7 @@ Sem contar com a interação com o \textit{HTML} e \textit{CSS}, o \textit{PHP} 
 
 \subsection{\textit{MySQL}}
 \label{subchap:mysql}
-Escolheu-se o \textit{MySQL}, representado na \autoref{fig:mysql}, como SGBD relacional para construir e utilizar as BDs relacionais usadas neste projeto, dada a sua simplicidade e velocidade de resposta. Existem outras ofertas gratuitas como o \textit{SQLite} e o \textit{PostgreSQL}. O \textit{SQLite} funciona apenas localmente e não permite uma conexão remota que se procura como solução para o problema. O \textit{PostgreSQL} é um sistema robusto que permite realizar tarefas que o \textit{MySQL} não consegue realizar. No entanto, dada a simplicidade da BD prevista nesta fase do projeto, não é necessário usar uma ferramenta tão completa e robusta \cite{mysqlvs}.\par 
+Escolheu-se o \textit{MySQL} como SGBD relacional para construir e utilizar as BDs relacionais usadas neste projeto, dada a sua simplicidade e velocidade de resposta. Existem outras ofertas gratuitas como o \textit{SQLite} e o \textit{PostgreSQL}. O \textit{SQLite} funciona apenas localmente e não permite uma conexão remota que se procura como solução para o problema. O \textit{PostgreSQL} é um sistema robusto que permite realizar tarefas que o \textit{MySQL} não consegue realizar. No entanto, dada a simplicidade da BD prevista nesta fase do projeto, não é necessário usar uma ferramenta tão completa e robusta \cite{mysqlvs}.\par 
 O \textit{MySQL} é o mais popular e o SGBD relacional mais usado \cite{mysqlvs}. Garante um acesso múltiplo, rápido e robusto a uma BD no servidor. Foi desenvolvido para lidar com grandes quantidades de informação e \textit{softwares} com utilização massiva \cite{mysql}.\par 
 O \textit{MySQL} oferece soluções gratuitas e pagas, \textit{Community} e \textit{Enterprise}, respetivamente. A primeira recebe menos atualizações e correções que a solução paga. Tem também algumas funcionalidades bloqueadas e um limite na capacidade de sensivelmente 4Gb \cite{mysql}. Estas limitações não afetam o projeto e como tal opta-se pela solução gratuita deste \textit{software}.\par
 Como referido na \autoref{subchap:sql}, os vários SGBDs possuem as suas próprias sub-versões da linguagem \textit{SQL} e, o \textit{MySQL}, não é exceção. Segue-se a lista com os comandos principais utilizados neste projeto \cite{mysql}:
@@ -686,8 +686,8 @@ Para estabelecer o fluxo de informação desenvolveu-se um programa de transfer�
 Para melhorar o desempenho da BD central e prevenir falhas críticas do sistema, desenvol-\\veu-se um programa de gestão de \textit{backups}, também em \textit{C}. Este programa limpa e cria \textit{backups} da BD e guarda-os num repositório \textit{online}. De forma a não interferir diretamente com a informação da BD central criam-se duas BDs para a gestão dos \textit{backups}. Com esta adição, o esquema da infraestrutura final está representado na \autoref{fig:infra3}.\par 
 \begin{figure}
 	\begin{center}
-		\includegraphics[width=1\textwidth]{Esquema_Projeto_6} % Include the image placeholder.png
-		\caption[Diagrama final da infraestrutura]{Diagrama final da infraestrutura de dados. Os registos gerados nos simuladores são transferidos para a BD central. Estes registos são então processados pelo gestor de \textit{backups} que cria e guarda \textit{backups} provisoriamente num repositório online no \textit{GitHub}}
+		\includegraphics[width=1\textwidth]{Esquema_Projeto_8} % Include the image placeholder.png
+		\caption[Diagrama final da infraestrutura]{Diagrama final da infraestrutura de dados. Os registos gerados nos simuladores são transferidos para a BD central. Estes registos são então processados pelo gestor de \textit{backups} que cria e guarda \textit{backups} num repositório \textit{online}}
 		\label{fig:infra3}
 		\end{center}
 \end{figure}
@@ -698,7 +698,7 @@ Para melhorar o desempenho da BD central e prevenir falhas críticas do sistema,
 Deseja-se, de uma forma geral, um sistema capaz de guardar remotamente medições realizadas em moldes instrumentados. Esta informação não é suficiente para se deduzir uma base de dados. Assim sendo, analisando e completando a informação inicial chega-se ao seguinte enunciado:\par 
 %\vspace{2ex}
 \newpage
-\textit{Um cliente, caracterizado por um ID único, nome, morada, IP e port, tem moldes. Estes moldes são identificados por um ID único, nome e descrição. Os moldes têm sensores com um número referente ao molde, tipo (termómetro, dinamómetro, extensómetro, etc.), nome e descrição. Estes sensores geram registos onde guardam a fase do processo (fecho do molde, enchimento, compactação, abertura e extração), data, hora, milissegundos e o valor num determinado momento.}\par 
+\textit{Um cliente, caraterizado por um ID único, nome, morada, IP e port, tem moldes. Estes moldes são identificados por um ID único, nome e descrição. Os moldes têm sensores com um número referente ao molde, tipo (termómetro, dinamómetro, extensómetro, etc.), nome e descrição. Estes sensores geram registos onde guardam a fase do processo (fecho do molde, enchimento, compactação, abertura do molde e extração), data, hora, milissegundos e o valor num determinado momento.}\par 
 \vspace{2ex}
 Analisando este enunciado identificam-se as seguintes entidades com os seus respetivos atributos:
 \begin{itemize}[noitemsep]
@@ -848,11 +848,11 @@ Concatenando a informação descrita na análise de requisitos, obtém-se o DER 
 		\end{center}
 	\end{figure}
 \end{landscape}
-Traduzindo as entidades do diagrama anterior para tabelas e as relações para chaves estrangeiras, obtém-se o esquema lógico da BD representado na \autoref{fig:er}.
+Traduzindo as entidades do diagrama anterior para tabelas e as relações para chaves estrangeiras, obtém-se o esquema relacional da BD representado na \autoref{fig:er}.
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[width=1\textwidth]{esquema_relacional} % Include the image placeholder.png
-		\caption[Esquema Lógico final do projeto]{Esquema Lógico final do projeto obtido através da análise do DER na \autoref{fig:der} onde as entidades e os seus atributos se traduzem em tabelas e as relações nas chaves estrangeiras destas}
+		\caption[Esquema Relacional final do projeto]{Esquema Relacional final do projeto obtido através da análise do DER na \autoref{fig:der} onde as entidades e os seus atributos se traduzem em tabelas e as relações nas chaves estrangeiras destas}
 		\label{fig:er}
 	\end{center}
 \end{figure}
@@ -2128,7 +2128,7 @@ Seguindo as etapas desta parte do teste, os resultados são apresentados da \aut
 		\label{fig:resultados11}
 	\end{figure}
 	\newpage
-	\item Criar base de dados temporária, 100\% dos utilizadores concluíram a tarefa sem problemas
+	\item Criar base de dados temporária local, 100\% dos utilizadores concluíram a tarefa sem problemas
 	\begin{figure}[H]
 		\centering
 		\begin{tikzpicture}
