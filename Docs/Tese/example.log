@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.7.4)  26 JUL 2018 20:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.7.4)  27 JUL 2018 18:26
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -2387,9 +2387,9 @@ Package Fancyhdr Warning: \headheight is too small (12.5pt):
  This may cause the page layout to be inconsistent, however.
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1233.
+(babel)             in language  on input line 1234.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1233.
+(babel)             in language  on input line 1234.
 [38]
 
 Package Fancyhdr Warning: \headheight is too small (12.5pt): 
@@ -3303,20 +3303,20 @@ Package babel Info: Redefining portuges shorthand "|
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 2527.
 
-<Pictures/exemplo_pavilhoes.png, id=1510, 207.6558pt x 218.9781pt>
+<Pictures/exemplo_pavilhoes.png, id=1511, 207.6558pt x 218.9781pt>
 File: Pictures/exemplo_pavilhoes.png Graphic file (type png)
 
 <use Pictures/exemplo_pavilhoes.png>
-Package pdftex.def Info: Pictures/exemplo_pavilhoes.png used on input line 2534
+Package pdftex.def Info: Pictures/exemplo_pavilhoes.png used on input line 2543
 .
-(pdftex.def)             Requested size: 221.32687pt x 233.40877pt.
+(pdftex.def)             Requested size: 287.72223pt x 303.45311pt.
 
-<Pictures/futuro02.png, id=1511, 1305.87875pt x 746.79pt>
+<Pictures/futuro02.png, id=1512, 1305.87875pt x 746.79pt>
 File: Pictures/futuro02.png Graphic file (type png)
 
 <use Pictures/futuro02.png>
-Package pdftex.def Info: Pictures/futuro02.png used on input line 2542.
-(pdftex.def)             Requested size: 121.73045pt x 192.67352pt.
+Package pdftex.def Info: Pictures/futuro02.png used on input line 2550.
+(pdftex.def)             Requested size: 154.9315pt x 245.22221pt.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.5pt): 
@@ -3325,15 +3325,26 @@ Package Fancyhdr Warning: \headheight is too small (12.5pt):
  This may cause the page layout to be inconsistent, however.
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2550.
+(babel)             in language  on input line 2556.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2550.
-[83 <./Pictures/futuro02.png> <./Pictures/exemplo_pavilhoes.png>]
-<Pictures/exemplo_molde.png, id=1524, 250.2951pt x 218.9781pt>
+(babel)             in language  on input line 2556.
+[83]
+
+Package Fancyhdr Warning: \headheight is too small (12.5pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 2556.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 2556.
+[84 <./Pictures/futuro02.png> <./Pictures/exemplo_pavilhoes.png>]
+<Pictures/exemplo_molde.png, id=1531, 250.2951pt x 218.9781pt>
 File: Pictures/exemplo_molde.png Graphic file (type png)
 
 <use Pictures/exemplo_molde.png>
-Package pdftex.def Info: Pictures/exemplo_molde.png used on input line 2555.
+Package pdftex.def Info: Pictures/exemplo_molde.png used on input line 2561.
 (pdftex.def)             Requested size: 354.12434pt x 309.83171pt.
 
 
@@ -3343,10 +3354,23 @@ Package Fancyhdr Warning: \headheight is too small (12.5pt):
  This may cause the page layout to be inconsistent, however.
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2565.
+(babel)             in language  on input line 2571.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2565.
-[84 <./Pictures/exemplo_molde.png>] (./example.bbl
+(babel)             in language  on input line 2571.
+[85 <./Pictures/exemplo_molde.png>]
+
+Package Fancyhdr Warning: \headheight is too small (12.5pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 2571.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 2571.
+[86
+
+] (./example.bbl
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 1.
 
@@ -3395,8 +3419,7 @@ Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 85.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 85.
-[85
-
+[87
 
 ]
 Underfull \hbox (badness 1264) in paragraph at lines 104--108
@@ -3465,20 +3488,20 @@ Package Fancyhdr Warning: \headheight is too small (12.5pt):
  This may cause the page layout to be inconsistent, however.
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2596.
+(babel)             in language  on input line 2602.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2596.
-[86]
+(babel)             in language  on input line 2602.
+[88]
 Ap\^endice A.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2598.
+(babel)             in language  on input line 2604.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2601.
+(babel)             in language  on input line 2607.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2630.
+(babel)             in language  on input line 2636.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2630.
-[87
+(babel)             in language  on input line 2636.
+[89
 
 
 ]
@@ -3489,35 +3512,10 @@ Package Fancyhdr Warning: \headheight is too small (12.5pt):
  This may cause the page layout to be inconsistent, however.
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2677.
+(babel)             in language  on input line 2683.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2677.
-[88]
-
-Package Fancyhdr Warning: \headheight is too small (12.5pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2725.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2725.
-[89]
-
-Package Fancyhdr Warning: \headheight is too small (12.5pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2772.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2772.
+(babel)             in language  on input line 2683.
 [90]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2774.
-
 
 Package Fancyhdr Warning: \headheight is too small (12.5pt): 
  Make it at least 13.59999pt.
@@ -3525,9 +3523,9 @@ Package Fancyhdr Warning: \headheight is too small (12.5pt):
  This may cause the page layout to be inconsistent, however.
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2818.
+(babel)             in language  on input line 2731.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2818.
+(babel)             in language  on input line 2731.
 [91]
 
 Package Fancyhdr Warning: \headheight is too small (12.5pt): 
@@ -3536,10 +3534,13 @@ Package Fancyhdr Warning: \headheight is too small (12.5pt):
  This may cause the page layout to be inconsistent, however.
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2865.
+(babel)             in language  on input line 2778.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2865.
+(babel)             in language  on input line 2778.
 [92]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 2780.
+
 
 Package Fancyhdr Warning: \headheight is too small (12.5pt): 
  Make it at least 13.59999pt.
@@ -3547,9 +3548,9 @@ Package Fancyhdr Warning: \headheight is too small (12.5pt):
  This may cause the page layout to be inconsistent, however.
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2872.
+(babel)             in language  on input line 2824.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2872.
+(babel)             in language  on input line 2824.
 [93]
 
 Package Fancyhdr Warning: \headheight is too small (12.5pt): 
@@ -3558,39 +3559,61 @@ Package Fancyhdr Warning: \headheight is too small (12.5pt):
  This may cause the page layout to be inconsistent, however.
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2872.
+(babel)             in language  on input line 2871.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2872.
-[94
+(babel)             in language  on input line 2871.
+[94]
+
+Package Fancyhdr Warning: \headheight is too small (12.5pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 2878.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 2878.
+[95]
+
+Package Fancyhdr Warning: \headheight is too small (12.5pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 2878.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 2878.
+[96
 
 ]
 Ap\^endice B.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2874.
-<Pictures/evolucao_der2.png, id=1834, 1426.32875pt x 323.2075pt>
+(babel)             in language  on input line 2880.
+<Pictures/evolucao_der2.png, id=1846, 1426.32875pt x 323.2075pt>
 File: Pictures/evolucao_der2.png Graphic file (type png)
 
 <use Pictures/evolucao_der2.png>
-Package pdftex.def Info: Pictures/evolucao_der2.png used on input line 2878.
+Package pdftex.def Info: Pictures/evolucao_der2.png used on input line 2884.
 (pdftex.def)             Requested size: 619.71254pt x 140.42644pt.
 
-<Pictures/evolucao_der1.png, id=1837, 1426.32875pt x 323.2075pt>
+<Pictures/evolucao_der1.png, id=1849, 1426.32875pt x 323.2075pt>
 File: Pictures/evolucao_der1.png Graphic file (type png)
 
 <use Pictures/evolucao_der1.png>
-Package pdftex.def Info: Pictures/evolucao_der1.png used on input line 2885.
+Package pdftex.def Info: Pictures/evolucao_der1.png used on input line 2891.
 (pdftex.def)             Requested size: 619.71254pt x 140.42644pt.
 File: Pictures/diagrama_entidade_relacao.png Graphic file (type png)
  <use Pictures/diagrama_entidade_relacao.png>
 Package pdftex.def Info: Pictures/diagrama_entidade_relacao.png used on input l
-ine 2892.
+ine 2898.
 (pdftex.def)             Requested size: 619.71254pt x 231.57281pt.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2897.
+(babel)             in language  on input line 2903.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2897.
+(babel)             in language  on input line 2903.
 
-[95
+[97
 
 
  <./Pictures/evolucao_der2.png>]
@@ -3601,10 +3624,10 @@ Package Fancyhdr Warning: \headheight is too small (12.5pt):
  This may cause the page layout to be inconsistent, however.
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2897.
+(babel)             in language  on input line 2903.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2897.
-[96 <./Pictures/evolucao_der1.png>]
+(babel)             in language  on input line 2903.
+[98 <./Pictures/evolucao_der1.png>]
 
 Package Fancyhdr Warning: \headheight is too small (12.5pt): 
  Make it at least 13.59999pt.
@@ -3612,10 +3635,10 @@ Package Fancyhdr Warning: \headheight is too small (12.5pt):
  This may cause the page layout to be inconsistent, however.
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2897.
+(babel)             in language  on input line 2903.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2897.
-[97]
+(babel)             in language  on input line 2903.
+[99]
 
 Package Fancyhdr Warning: \headheight is too small (12.5pt): 
  Make it at least 13.59999pt.
@@ -3623,92 +3646,92 @@ Package Fancyhdr Warning: \headheight is too small (12.5pt):
  This may cause the page layout to be inconsistent, however.
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2899.
+(babel)             in language  on input line 2905.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2899.
-[98
+(babel)             in language  on input line 2905.
+[100
 
 
 ]
 Ap\^endice C.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2900.
+(babel)             in language  on input line 2906.
 
-<Pictures/fluxograma_transferencia_programa4.png, id=1868, 631.35875pt x 1226.5
+<Pictures/fluxograma_transferencia_programa4.png, id=1880, 631.35875pt x 1226.5
 825pt>
 File: Pictures/fluxograma_transferencia_programa4.png Graphic file (type png)
  <use Pictures/fluxograma_transferencia_programa4.png>
 Package pdftex.def Info: Pictures/fluxograma_transferencia_programa4.png used o
-n input line 2912.
+n input line 2918.
 (pdftex.def)             Requested size: 309.85626pt x 601.98521pt.
 
 
-LaTeX Warning: Float too large for page by 0.98492pt on input line 2917.
+LaTeX Warning: Float too large for page by 0.98492pt on input line 2923.
 
 
-<Pictures/fluxograma_transferencia_subprograma4.png, id=1869, 698.61pt x 1068.9
+<Pictures/fluxograma_transferencia_subprograma4.png, id=1881, 698.61pt x 1068.9
 9374pt>
 File: Pictures/fluxograma_transferencia_subprograma4.png Graphic file (type png
 )
  <use Pictures/fluxograma_transferencia_subprograma4.png>
 Package pdftex.def Info: Pictures/fluxograma_transferencia_subprograma4.png use
-d on input line 2920.
+d on input line 2926.
 (pdftex.def)             Requested size: 376.25838pt x 575.74738pt.
 
-<Pictures/fluxograma_backups_programa01.png, id=1870, 443.6575pt x 845.1575pt>
+<Pictures/fluxograma_backups_programa01.png, id=1882, 443.6575pt x 845.1575pt>
 File: Pictures/fluxograma_backups_programa01.png Graphic file (type png)
 
 <use Pictures/fluxograma_backups_programa01.png>
 Package pdftex.def Info: Pictures/fluxograma_backups_programa01.png used on inp
-ut line 2927.
+ut line 2933.
 (pdftex.def)             Requested size: 309.85626pt x 590.26503pt.
 
 
-LaTeX Warning: Float too large for page by 2.86475pt on input line 2931.
+LaTeX Warning: Float too large for page by 2.86475pt on input line 2937.
 
-<Pictures/fluxograma_backups_gerar02.png, id=1871, 943.525pt x 873.2625pt>
+<Pictures/fluxograma_backups_gerar02.png, id=1883, 943.525pt x 873.2625pt>
 File: Pictures/fluxograma_backups_gerar02.png Graphic file (type png)
 
 <use Pictures/fluxograma_backups_gerar02.png>
 Package pdftex.def Info: Pictures/fluxograma_backups_gerar02.png used on input 
-line 2934.
+line 2940.
 (pdftex.def)             Requested size: 442.65375pt x 409.68724pt.
 
-<Pictures/fluxograma_backups_concatenar03.png, id=1874, 960.58875pt x 1227.5862
+<Pictures/fluxograma_backups_concatenar03.png, id=1886, 960.58875pt x 1227.5862
 4pt>
 File: Pictures/fluxograma_backups_concatenar03.png Graphic file (type png)
  <use Pictures/fluxograma_backups_concatenar03.png>
 Package pdftex.def Info: Pictures/fluxograma_backups_concatenar03.png used on i
-nput line 2941.
+nput line 2947.
 (pdftex.def)             Requested size: 442.65375pt x 565.6893pt.
 
-<Pictures/fluxograma_consultas01.png, id=1877, 571.13374pt x 1357.07pt>
+<Pictures/fluxograma_consultas01.png, id=1889, 571.13374pt x 1357.07pt>
 File: Pictures/fluxograma_consultas01.png Graphic file (type png)
 
 <use Pictures/fluxograma_consultas01.png>
 Package pdftex.def Info: Pictures/fluxograma_consultas01.png used on input line
- 2949.
+ 2955.
 (pdftex.def)             Requested size: 265.59494pt x 631.07245pt.
 
 
-LaTeX Warning: Float too large for page by 22.95898pt on input line 2953.
+LaTeX Warning: Float too large for page by 22.95898pt on input line 2959.
 
-<Pictures/fluxograma_administracao03.png, id=1878, 1045.9075pt x 1587.9325pt>
+<Pictures/fluxograma_administracao03.png, id=1890, 1045.9075pt x 1587.9325pt>
 File: Pictures/fluxograma_administracao03.png Graphic file (type png)
 
 <use Pictures/fluxograma_administracao03.png>
 Package pdftex.def Info: Pictures/fluxograma_administracao03.png used on input 
-line 2957.
+line 2963.
 (pdftex.def)             Requested size: 398.38567pt x 604.85019pt.
 
 
-LaTeX Warning: Float too large for page by 10.33673pt on input line 2961.
+LaTeX Warning: Float too large for page by 10.33673pt on input line 2967.
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2963.
+(babel)             in language  on input line 2969.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2963.
-[99
+(babel)             in language  on input line 2969.
+[101
 
 ]
 
@@ -3718,10 +3741,10 @@ Package Fancyhdr Warning: \headheight is too small (12.5pt):
  This may cause the page layout to be inconsistent, however.
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2963.
+(babel)             in language  on input line 2969.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2963.
-[100 <./Pictures/fluxograma_transferencia_programa4.png>]
+(babel)             in language  on input line 2969.
+[102 <./Pictures/fluxograma_transferencia_programa4.png>]
 
 Package Fancyhdr Warning: \headheight is too small (12.5pt): 
  Make it at least 13.59999pt.
@@ -3729,10 +3752,10 @@ Package Fancyhdr Warning: \headheight is too small (12.5pt):
  This may cause the page layout to be inconsistent, however.
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2963.
+(babel)             in language  on input line 2969.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2963.
-[101 <./Pictures/fluxograma_transferencia_subprograma4.png>]
+(babel)             in language  on input line 2969.
+[103 <./Pictures/fluxograma_transferencia_subprograma4.png>]
 
 Package Fancyhdr Warning: \headheight is too small (12.5pt): 
  Make it at least 13.59999pt.
@@ -3740,10 +3763,10 @@ Package Fancyhdr Warning: \headheight is too small (12.5pt):
  This may cause the page layout to be inconsistent, however.
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2963.
+(babel)             in language  on input line 2969.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2963.
-[102 <./Pictures/fluxograma_backups_programa01.png>]
+(babel)             in language  on input line 2969.
+[104 <./Pictures/fluxograma_backups_programa01.png>]
 
 Package Fancyhdr Warning: \headheight is too small (12.5pt): 
  Make it at least 13.59999pt.
@@ -3751,10 +3774,10 @@ Package Fancyhdr Warning: \headheight is too small (12.5pt):
  This may cause the page layout to be inconsistent, however.
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2963.
+(babel)             in language  on input line 2969.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2963.
-[103 <./Pictures/fluxograma_backups_gerar02.png>]
+(babel)             in language  on input line 2969.
+[105 <./Pictures/fluxograma_backups_gerar02.png>]
 
 Package Fancyhdr Warning: \headheight is too small (12.5pt): 
  Make it at least 13.59999pt.
@@ -3762,10 +3785,10 @@ Package Fancyhdr Warning: \headheight is too small (12.5pt):
  This may cause the page layout to be inconsistent, however.
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2963.
+(babel)             in language  on input line 2969.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2963.
-[104 <./Pictures/fluxograma_backups_concatenar03.png>]
+(babel)             in language  on input line 2969.
+[106 <./Pictures/fluxograma_backups_concatenar03.png>]
 
 Package Fancyhdr Warning: \headheight is too small (12.5pt): 
  Make it at least 13.59999pt.
@@ -3773,10 +3796,10 @@ Package Fancyhdr Warning: \headheight is too small (12.5pt):
  This may cause the page layout to be inconsistent, however.
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2963.
+(babel)             in language  on input line 2969.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2963.
-[105 <./Pictures/fluxograma_consultas01.png>]
+(babel)             in language  on input line 2969.
+[107 <./Pictures/fluxograma_consultas01.png>]
 
 Package Fancyhdr Warning: \headheight is too small (12.5pt): 
  Make it at least 13.59999pt.
@@ -3784,18 +3807,18 @@ Package Fancyhdr Warning: \headheight is too small (12.5pt):
  This may cause the page layout to be inconsistent, however.
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2963.
+(babel)             in language  on input line 2969.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2963.
-[106 <./Pictures/fluxograma_administracao03.png>]
+(babel)             in language  on input line 2969.
+[108 <./Pictures/fluxograma_administracao03.png>]
 Ap\^endice D.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 2964.
+(babel)             in language  on input line 2970.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 3125.
+(babel)             in language  on input line 3131.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 3125.
-[107
+(babel)             in language  on input line 3131.
+[109
 
 
 ]
@@ -3806,42 +3829,42 @@ Package Fancyhdr Warning: \headheight is too small (12.5pt):
  This may cause the page layout to be inconsistent, however.
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 3125.
+(babel)             in language  on input line 3131.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 3125.
-[108]
-
-Package Fancyhdr Warning: \headheight is too small (12.5pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 3125.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 3125.
-[109]
-
-Package Fancyhdr Warning: \headheight is too small (12.5pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 3125.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 3125.
+(babel)             in language  on input line 3131.
 [110]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3127.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 3127.
+
+Package Fancyhdr Warning: \headheight is too small (12.5pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 3131.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 3131.
+[111]
+
+Package Fancyhdr Warning: \headheight is too small (12.5pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 3131.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 3131.
+[112]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3133.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 3133.
  (./example.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 3127.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 3127.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 3127.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 3133.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 3133.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 3133.
  ) 
 Here is how much of TeX's memory you used:
- 36954 strings out of 493029
- 831938 string characters out of 6136235
+ 36959 strings out of 493029
+ 832000 string characters out of 6136235
  1050444 words of memory out of 5000000
  38849 multiletter control sequences out of 15000+600000
  33806 words of font info for 79 fonts, out of 8000000 for 9000
@@ -3879,10 +3902,10 @@ r/sfsx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1000.pfb></usr
 /share/texmf/fonts/type1/public/cm-super/sfti1095.pfb></usr/share/texlive/texmf
 -dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/urw/courier/ucrr8a.pfb>
-Output written on example.pdf (130 pages, 5422673 bytes).
+Output written on example.pdf (132 pages, 5424506 bytes).
 PDF statistics:
- 2387 PDF objects out of 2487 (max. 8388607)
- 2030 compressed objects within 21 object streams
- 887 named destinations out of 1000 (max. 500000)
+ 2399 PDF objects out of 2487 (max. 8388607)
+ 2040 compressed objects within 21 object streams
+ 892 named destinations out of 1000 (max. 500000)
  1023 words of extra memory for PDF output out of 10000 (max. 10000000)
 

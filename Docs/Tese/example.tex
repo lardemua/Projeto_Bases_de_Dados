@@ -1111,7 +1111,7 @@ Se \texttt{@a\char`_transferencia} for igual a 1, os subprogramas terminam após
 \section{Gestão de \textit{backups}}
 \label{subchap:backups}
 À semelhança do programa anterior, o programa de gestão de \textit{backups} foi realizado com vista à portabilidade para outras linguagens de programação. Este programa está dividido nas componentes de gerar e concatenar \textit{backups}.\par 
-A primeira serve para manter a informação armazenada organizada. Gera \textit{backups} segmentados dos históricos de registos da BD central e depois elimina a informação já salvaguardada. Isto aumenta a velocidade da consulta de registos mais recentes e previne que a base de dados central exceda o limite de 4Gb impostos pela versão gratuita do \textit{MySQL}, como referido na \autoref{subchap:mysql}. Em vez de se gerar um \textit{backup} de toda a base de dados, gera-se um \textit{backup} específico para cada molde, que inclui a informação dos seus sensores, registos e cliente a que está associado. Além destes, realiza-se um outro \textit{backup} com a informação dos clientes, moldes e sensores mais atual. Assim, em caso de falha crítica, simplifica-se a recuperação do sistema.\par 
+A primeira serve para manter a informação armazenada organizada. Gera \textit{backups} segmentados dos históricos de registos da BD central e depois elimina a informação já salvaguardada. Isto diminui o tempo de consulta de registos mais recentes e previne que a base de dados central exceda o limite de 4Gb impostos pela versão gratuita do \textit{MySQL}, como referido na \autoref{subchap:mysql}. Em vez de se gerar um \textit{backup} de toda a base de dados, gera-se um \textit{backup} específico para cada molde, que inclui a informação dos seus sensores, registos e cliente a que está associado. Além destes, realiza-se um outro \textit{backup} com a informação dos clientes, moldes e sensores mais atual. Assim, em caso de falha crítica, simplifica-se a recuperação do sistema.\par 
 A segunda serve para concatenar os \textit{backups} segmentados, produzidos durante o tempo de funcionamento de um molde, num \textit{backup} total do histórico de registos deste molde. Quando um molde sai de produção pode ser interessante arquivar o seu histórico e esta ação pode ser facilitada se, em vez de serem arquivados dezenas ou centenas de \textit{backups}, for apenas arquivado um \textit{backup} geral com todo o histórico do molde.\par 
 Ao contrário do programa anterior, este não executa de forma contínua. Define-se um temporizador para executar cada componente. Utilizam-se temporizadores diferentes: o temporizador para gerar \textit{backups} e o temporizador para concatenar \textit{backups}. O temporizador para gerar \textit{backups} fica associado à primeira componente, esta executa automaticamente e em intervalos espaçados. Por exemplo, podem ser gerados \textit{backups} uma vez por dia ou uma vez por semana ou uma vez por mês dependendo da quantidade de informação produzida. O temporizador para concatenar \textit{backups} fica associado à segunda componente, esta deve executar quando o utilizador deseja e deve garantir uma resposta do programa com a menor latência possível.
 As Figuras \ref{fig:backups_simples_programa}, \ref{fig:backups_simples_gerar} e \ref{fig:backups_simples_concatenar} representam de forma reduzida a estrutura do programa. As versões completas destes fluxogramas podem ser encontradas no \autoref{apen:fluxogramas}.\par 
@@ -1226,13 +1226,13 @@ Definiu-se um nome estático para este \textit{backup}. Este será rescrito cada
 	DELETE FROM central.registos
 	WHERE r_data_hora < @datahora_lim;
 \end{lstlisting}
-Os \textit{backups} são então transferidos para o repositório \textit{online} no \textit{GitHub}. Esta solução serve apenas para demonstrar a capacidade de mover os \textit{backups} para um sistema diferente. Do ponto de vista prático, não se recomenda guardar informação potencialmente sensível num servidor público.\par 
+Os \textit{backups} são então transferidos para o repositório \textit{online}. Esta solução serve apenas para demonstrar a capacidade de mover os \textit{backups} para um sistema diferente. Do ponto de vista prático, não se recomenda guardar informação potencialmente sensível num servidor público.\par 
 Na eventualidade de surgir uma falha crítica no sistema central, e este necessitar de ser formatado ou substituído, os registos cessarão de ser transferidos dos sistemas locais. Isto não significa que a informação esteja comprometida, apenas não está a ser transferida. Após re-instalar utiliza-se manualmente no terminal o comando:
 \begin{lstlisting}[language = bash]
 	mysql -u backupmanager -pbackup1234 central <
 	~/Backups/backup_geral.sql
 \end{lstlisting}
-Isto faz com que se recupere a informação dos clientes, moldes e sensores presentes no último \textit{backup} geral mais rapidamente acelerando o processo de restauro, comparativamente a uma inserção manual dos dados.\par 
+Isto faz com que se recupere a informação dos clientes, moldes e sensores presentes no último \textit{backup} geral acelerando o processo de restauro, comparativamente a uma inserção manual dos dados.\par 
 Passando para a componente de concatenação de \textit{backups}, os ficheiros criados com o comando \texttt{mysqldump} contêm toda a informação das tabelas e funcionam como ponto de restauro. Isto significa que quando se usa o comando de recuperação, a BD selecionada é substituída pela que está no ficheiro \texttt{.sql}. Este comportamento dificulta a concatenação de vários \textit{backups} numa única BD. Assim sendo, à semelhança da primeira componente, utiliza-se a BD \textit{backups} temporária como BD intermédia para a concatenação de \textit{backups}.\par 
 Seguindo a estrutura do programa representada na \autoref{fig:backups_simples_concatenar}, realizam-se as conexões às BDs central, \textit{backups}, \textit{backups} temporária e regulação de procedimentos. Com a \textit{query}:
 \begin{lstlisting}[language = SQL]
@@ -1708,10 +1708,10 @@ Nas várias áreas de gestão existem os botões Ver Clientes, Ver Moldes e Ver 
 1-	SELECT cl_ID, cl_nome, cl_morada, cl_IP, cl_port,
 	COUNT(DISTINCT m_ID), COUNT(DISTINCT s_IDMolde, s_num)
 	FROM clientes
-	LEFT OUTER JOIN moldes ON cl_ID = m_IDCliente
-	LEFT OUTER JOIN sensores ON m_ID = s_IDMolde
+	INNER JOIN moldes ON cl_ID = m_IDCliente
+	INNER JOIN sensores ON m_ID = s_IDMolde
 	GROUP BY cl_ID
-	ORDER BY cl_ID
+	ORDER BY cl_ID;
 \end{lstlisting}
 \newpage
 \begin{lstlisting}[language = SQL]
@@ -1719,16 +1719,16 @@ Nas várias áreas de gestão existem os botões Ver Clientes, Ver Moldes e Ver 
 	COUNT(DISTINCT s_IDMolde, s_num)
 	FROM clientes
 	INNER JOIN moldes ON cl_ID = m_IDCliente
-	LEFT OUTER JOIN sensores ON m_ID = s_IDMolde
+	INNER JOIN sensores ON m_ID = s_IDMolde
 	GROUP BY m_ID
-	ORDER BY m_IDCliente, m_ID
+	ORDER BY m_IDCliente, m_ID;
 	
 3-	SELECT m_IDCliente, s_IDMolde, s_num, tipo_nome,
 	s_nome, s_descricao
 	FROM moldes
 	INNER JOIN sensores ON m_ID = s_IDMolde
 	INNER JOIN tipo ON s_tipo = tipo_id
-	ORDER BY m_IDCliente, s_IDMolde, s_num
+	ORDER BY m_IDCliente, s_IDMolde, s_num;
 \end{lstlisting}
 Estas \textit{queries} fornecem algumas informações contextuais para facilitar a navegação do utilizador. Sem conexão local, o botão Ver Clientes retorna a informação de todos os clientes existentes na BD central. Com conexão local, o botão retorna apenas a informação do cliente a que a AGS está conectada.
 
@@ -1758,7 +1758,7 @@ A área Criar Local na \autoref{fig:local3} gera \textit{queries} para criar uma
 	FROM clientes
 	LEFT OUTER JOIN moldes ON cl_ID = m_IDCliente
 	GROUP BY cl_ID) AS contagem
-	WHERE n_moldes = 0
+	WHERE n_moldes = 0;
 \end{lstlisting}
 \begin{figure}[H]
 	\centering
@@ -1776,7 +1776,7 @@ Escolhendo um cliente válido o botão Criar gera \textit{queries} para efetuar 
 \end{figure}
 Voltando a área de Conectar, com recurso à \textit{query}:
 \begin{lstlisting}[language = SQL]
-	SHOW DATABASES
+	SHOW DATABASES;
 \end{lstlisting}
 Obtém-se todas as BDs instaladas no servidor local, como demonstrado na \autoref{fig:local5}. Do ponto de vista prático, cada cliente só terá uma BD local mas, para efeitos de desenvolvimento do projeto adotou-se esta vertente. O botão Conectar inicia sessão na BD local escolhida e redireciona o utilizador para a página de Administração Local na \autoref{fig:admin2}. O botão Desconectar termina esta sessão e redireciona o utilizador também para a página de Administração Local.
 \begin{figure}[H]
@@ -2525,28 +2525,34 @@ Apesar de serem necessários alguns ajustes de forma a melhorar o desempenho, a 
 
 \newpage
 \section{Trabalhos Futuros}
-Quanto à infraestrutura dos dados não foi definido como os sensores dos moldes serão ligados ao servidor local. No desenvolvimento deste projeto assumiu-se que todos os moldes estão ligados diretamente ao sistema local. No entanto, isto pode não ser sempre possível de se realizar por motivos físicos. Na \autoref{fig:conclusoes3} está representado um exemplo de um cliente que adquiriu quatro moldes que estão situados em pavilhões diferentes. Os moldes 1 e 2 podem ser facilmente ligados ao sistema local no entanto, dada a distancia aos moldes 3 e 4 pode ser difícil liga-los ao sistema local.\par 
+De uma forma geral, o trabalho foi desenvolvido com ferramentas algo ultrapassadas como o \textit{C} e o \textit{PHP}. Isto deveu-se à afinidade com estas linguagens assim sendo, para trabalhos futuros, sugere-se refazer a solução desenvolvida utilizando ferramentas mais atuais e que eventualmente abrirão portas para novas funcionalidades. Nesta componente de utilizar ferramentas mais atuais, sugere-se investigar alguns \textit{softwares} como \textit{CockroachDB} e \textit{Apache Cassandra} que são  permitem criar BDs distribuídas.\par 
+Em relação à infraestrutura de dados, as BDs locais nos clientes funcionam essencialmente como \textit{buffers}. Assim sendo, sugere-se para trabalhos futuros simplificar a infraestrutura desenvolvida trocando as BDs locais por \textit{buffers} mais simples. Esta vertente tem a vantagem de permitir maiores taxas de geração de registos. Sugere-se investigar se compensa desenvolver estes \textit{buffers} em \textit{Memcached} e realizar uma transferência de registos via \textit{webservice}.\par
+Neste tópico da taxa máxima de geração de registos, não foi testado quantos registos por segundo podem ser inseridos na infraestrutura. Isto deveu-se à falta de informação sobre o número de sensores que cada molde teria e a sua respetiva taxa de geração de valores. Todos os SGBDs têm limites quanto a inserção de tuplos numa tabela, seja por limite de \textit{software} ou \textit{hardware}, sendo assim necessário procurar formas de aumentar estas taxas de inserção. Uma sugestão seria, na tabela registos, em vez de se inserir um tuplo, inserir um vetor (em inglês \textit{array}) com toda a informação:
+\begin{lstlisting}[language = SQL]
+	INSERT INTO registos VALUES
+	("molde_sensor_data_hora_milissegundos_valor");
+\end{lstlisting}
+Isto aumenta as taxas de inserção mas diminuí a acessibilidade à informação dado que deixa de ser possível realizar \textit{queries} com clausulas nos atributos, pelo que devem ser realizados testes para verificar qual das abordagens deve ser tomada.\par
+Ainda na infraestrutura dos dados não foi definido como os sensores dos moldes serão ligados ao servidor local. No desenvolvimento deste projeto assumiu-se que todos os moldes estão ligados diretamente ao sistema local. No entanto, isto pode não ser sempre possível de se realizar por motivos físicos. Na \autoref{fig:conclusoes3} está representado um exemplo de um cliente que adquiriu quatro moldes que estão situados em pavilhões diferentes. Os moldes 1 e 2 podem ser facilmente ligados ao sistema local no entanto, dada a distancia aos moldes 3 e 4 pode ser difícil liga-los ao sistema local.\par 
 Se se justificar, em vez de se ter um servidor local no cliente, ter um em cada molde. Esta adaptação irá criar uma maior quantidade de BDs locais mas isto não é problemático, se o modelo de dados e o programa de transferência forem adaptados para o efeito.\par
-\begin{figure}[H]
+Quanto à AGS, sugere-se que após uma apresentação inicial à empresa promotora, seja iniciado um processo iterativo de desenvolvimento para escolher e desenvolver novas funcionalidades que possam ser úteis e que não tenham sido abrangidas neste projeto, como por exemplo, a criação de utilizadores baseado no ID de trabalhador demonstrado na \autoref{fig:conclusoes2}, que pode depois servir para criar históricos das intervenções dos utilizadores nas BDs. Culminando numa estilização da AGS para que esta tenha um aspeto mais amigável ao utilizador.\par
+\begin{figure}
 	\centering
-	\begin{minipage}{0.5\textwidth}
-	\begin{center}
-		\includegraphics[width=1\textwidth]{exemplo_pavilhoes} % Include the image placeholder.png
-		\caption[Exemplo de um cliente com moldes em pavilhões diferentes]{Exemplo de um cliente com\\moldes em pavilhões diferentes, que pode\\dificultar as ligações ao sistema local}
-		\label{fig:conclusoes3}
-	\end{center}
-	\end{minipage}%
-	\begin{minipage}{0.5\textwidth}
-		\vspace{0.8cm}
+	\begin{minipage}{1\textwidth}
 		\begin{center}
-			\includegraphics[trim={0 9cm 35cm 0},clip,width=0.55\textwidth]{futuro02} % Include the image placeholder.png
-			\vspace{0.55cm}
+			\includegraphics[width=0.65\textwidth]{exemplo_pavilhoes} % Include the image placeholder.png
+			\caption[Exemplo de um cliente com moldes em pavilhões diferentes]{Exemplo de um cliente com moldes em pavilhões diferentes, que pode dificultar as ligações ao sistema local}
+			\label{fig:conclusoes3}
+		\end{center}
+	\end{minipage}
+	\begin{minipage}{1\textwidth}
+		\begin{center}
+			\includegraphics[trim={0 9cm 35cm 0},clip,width=0.35\textwidth]{futuro02} % Include the image placeholder.png
 			\caption[Exemplo de área de Registar Utilizador]{Exemplo de área de Registar Utilizador para criar utilizadores com base no ID de trabalhador e email}
 			\label{fig:conclusoes2}
 		\end{center}
 	\end{minipage}
 \end{figure}
-Quanto à AGS, sugere-se que após uma apresentação inicial à empresa promotora, seja iniciado um processo iterativo de desenvolvimento para escolher e desenvolver novas funcionalidades que possam ser úteis e que não tenham sido abrangidas neste projeto, como por exemplo, a criação de utilizadores baseado no ID de trabalhador demonstrado na \autoref{fig:conclusoes2}, que pode depois servir para criar históricos das intervenções dos utilizadores nas BDs. Culminando numa estilização da AGS para que esta tenha um aspeto mais amigável ao utilizador.\par 
 \newpage
 Sugere-se a criação de um sistema de notificações e monitorização automático dos moldes. Durante o desenvolvimento do projeto chegou-se à conclusão de que é impossível para um utilizador analisar manualmente milhões de registos de um molde e concluir se este está a funcionar corretamente. Na \autoref{fig:conclusoes4} está representado um exemplo de um possível comportamento de um molde. Cada ponto representa a média dos registos recolhidos em cada dinamómetro, durante um mês na fase de compactação. Estão representados 10 pontos simbolizando 10 meses de funcionamento de um molde. Observa-se um desvio do centróide do molde ao longo do tempo, até este sair fora da área de funcionamento.\par 
 Com uma representação visual parece fácil identificar o comportamento errático do molde no entanto, o utilizador teria de o identificar através de consultas e análise de respostas do estilo da \autoref{fig:consultas1}, todos os meses.
@@ -2557,7 +2563,7 @@ Com uma representação visual parece fácil identificar o comportamento erráti
 		\label{fig:conclusoes4}
 	\end{center}
 \end{figure}
-Para auxiliar os utilizadores a identificar este comportamento, sugere-se criar um programa capaz de correr algoritmos que analisem constantemente o comportamento dos moldes. Este programa pode ser desenvolvido em \textit{softwares} mais sofisticados, como por exemplo \textit{MATLAB}, desde que estes tenham protocolos de comunicação com \textit{MySQL}. Mantendo em mente o ambiente \textit{Web}, sugere-se que este programa notifique os utilizadores via AGS ou via email quando um molde começa a demonstrar um comportamento errático.
+Para auxiliar os utilizadores a identificar este comportamento, sugere-se criar um programa capaz de correr algoritmos que analisem constantemente o comportamento dos moldes. Este programa pode ser desenvolvido em \textit{softwares} mais sofisticados, como por exemplo \textit{MATLAB} ou \textit{Apache Storm}, desde que estes tenham protocolos de comunicação com \textit{MySQL}. Mantendo em mente o ambiente \textit{Web}, sugere-se que este programa notifique os utilizadores via AGS ou via email quando um molde começa a demonstrar um comportamento errático.
 
 %
 % The bibliography
