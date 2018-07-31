@@ -1,0 +1,1 @@
+/usr/bin/cc      CMakeFiles/gestor_backups.dir/src/gestor_backups.c.o CMakeFiles/gestor_backups.dir/src/myf.c.o CMakeFiles/gestor_backups.dir/src/gerar.c.o  -o gestor_backups -rdynamic -L/usr/lib/x86_64-linux-gnu -lmysqlclient -lpthread -lz -lm -lrt -ldl 

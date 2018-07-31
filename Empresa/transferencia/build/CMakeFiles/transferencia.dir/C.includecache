@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/sapofree/Projeto_Bases_de_Dados/Empresa/transferencia/src/myf.c
+unistd.h
+-
+string.h
+-
+myf.h
+/home/sapofree/Projeto_Bases_de_Dados/Empresa/transferencia/src/myf.h
+
+/home/sapofree/Projeto_Bases_de_Dados/Empresa/transferencia/src/myf.h
+stdio.h
+-
+mysql/mysql.h
+-
+prototypes.h
+/home/sapofree/Projeto_Bases_de_Dados/Empresa/transferencia/src/prototypes.h
+
+/home/sapofree/Projeto_Bases_de_Dados/Empresa/transferencia/src/prototypes.h
+
+/home/sapofree/Projeto_Bases_de_Dados/Empresa/transferencia/src/transferencia.c
+signal.h
+-
+myf.h
+/home/sapofree/Projeto_Bases_de_Dados/Empresa/transferencia/src/myf.h
+

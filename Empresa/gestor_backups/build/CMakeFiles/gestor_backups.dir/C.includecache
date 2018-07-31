@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/sapofree/Projeto_Bases_de_Dados/Empresa/gestor_backups/src/gerar.c
+unistd.h
+-
+string.h
+-
+myf.h
+/home/sapofree/Projeto_Bases_de_Dados/Empresa/gestor_backups/src/myf.h
+
+/home/sapofree/Projeto_Bases_de_Dados/Empresa/gestor_backups/src/gestor_backups.c
+signal.h
+-
+myf.h
+/home/sapofree/Projeto_Bases_de_Dados/Empresa/gestor_backups/src/myf.h
+
+/home/sapofree/Projeto_Bases_de_Dados/Empresa/gestor_backups/src/myf.c
+unistd.h
+-
+string.h
+-
+myf.h
+/home/sapofree/Projeto_Bases_de_Dados/Empresa/gestor_backups/src/myf.h
+
+/home/sapofree/Projeto_Bases_de_Dados/Empresa/gestor_backups/src/myf.h
+stdio.h
+-
+mysql/mysql.h
+-
+prototypes.h
+/home/sapofree/Projeto_Bases_de_Dados/Empresa/gestor_backups/src/prototypes.h
+
+/home/sapofree/Projeto_Bases_de_Dados/Empresa/gestor_backups/src/prototypes.h
+

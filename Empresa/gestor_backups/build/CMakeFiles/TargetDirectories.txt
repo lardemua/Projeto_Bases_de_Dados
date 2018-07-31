@@ -1,0 +1,3 @@
+/home/sapofree/Projeto_Bases_de_Dados/Empresa/gestor_backups/build/CMakeFiles/edit_cache.dir
+/home/sapofree/Projeto_Bases_de_Dados/Empresa/gestor_backups/build/CMakeFiles/rebuild_cache.dir
+/home/sapofree/Projeto_Bases_de_Dados/Empresa/gestor_backups/build/CMakeFiles/gestor_backups.dir

@@ -1183,11 +1183,11 @@ As respostas são guardadas nas variáveis \texttt{@IDCliente} e \texttt{@IDMold
 	INSERT IGNORE backups_temp.sensores
 	SELECT *
 	FROM backups.sensores
-	WHERE m_ID = @IDMolde;
+	WHERE s_IDMolde = @IDMolde;
 	INSERT IGNORE backups_temp.registos
 	SELECT *
 	FROM backups.registos
-	WHERE m_ID = @IDMolde;
+	WHERE r_IDMolde = @IDMolde;
 \end{lstlisting}
 Após os valores copiados retiram-se informações sobre a data e hora mais antiga e mais recente:
 \begin{lstlisting}[language = SQL]
@@ -2714,17 +2714,17 @@ CREATE TABLE atualizar
 	CONSTRAINT REPETIDO_INDICE_ATUALIZAR
 		PRIMARY KEY(a_indice),
 	CONSTRAINT ATUALIZAR_MAU_INDICE
-		CHECK a_indice = 1,
+		CHECK (a_indice = 1),
 	CONSTRAINT ATUALIZAR_MAU_TRANSFERENCIA
-		CHECK a_transferencia = 0 OR a_transferencia = 1,
+		CHECK (a_transferencia = 0 OR a_transferencia = 1),
 	CONSTRAINT ATUALIZAR_MAU_BACKUPS
-		CHECK a_backups = 0 OR a_backups = 1
+		CHECK (a_backups = 0 OR a_backups = 1)
 );
 CREATE TABLE backups
 (
 	b_IDMolde INT NOT NULL,
 	CONSTRAINT REPETIDO_ID_MOLDE
-		PRIMARY KEY(a_indice)
+		PRIMARY KEY(b_IDMolde)
 );
 INSERT INTO atualizar
 VALUES
@@ -2768,7 +2768,7 @@ GRANT SELECT, DELETE
 	ON central.registos TO 'backupmanager'@'localhost';
 GRANT SELECT, INSERT, DELETE
 	ON backups.* TO 'backupmanager'@'localhost';
-GRANT SELECT, INSERT, DELETE
+GRANT LOCK TABLES, SELECT, INSERT, DELETE
 	ON backups_temp.* TO 'backupmanager'@'localhost';
 GRANT SELECT, UPDATE
 	ON reg_proc.atualizar TO 'backupmanager'@'localhost';
