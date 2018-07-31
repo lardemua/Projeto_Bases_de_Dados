@@ -6,6 +6,8 @@
  * O programa só termina pressionando ctrl+c.
 
  * Para adicionar novos clientes ao programa é necessário reiniciar o programa manualmente com ctrl+c ou através da base de dados regulação de procedimentos
+ * 
+ * Os "timers" utilizados são muito rudimentares feitos com sleeps, o que significa que os vários programas com o passar do tempo ficarão dessincronizados. Isto vai fazer que quando se desejar atualizar o programa para adicionar novos clientes pode acontecer dar erro. Convém trocar por timers a sério para evitar esta situação. De qualquer forma esta solução com sleeps funcionou sempre para um tempo de utilização continuo menor que 1h
  *
  *     @author  Bruno Ramos, B.Ramos@ua.pt
  *
@@ -25,8 +27,9 @@ int client_number = 0, num_clients = 0;
 
 int main(void)
 {
-	//do //Ciclo para reiniciar o programa
-	//{
+	do //Ciclo para reiniciar o programa
+////IMPORTANTE: comentar este do while enquanto se edita o código, se o programa terminar sem keep_goingG = 0 vais causar um loop infinito de forks causando um crash do computador
+	{
 		//Reset nas variáveis globais para quando se reinicia o programa
 		keep_goingG = 1;
 		atualizarG = 0;
@@ -84,6 +87,6 @@ int main(void)
 			mysql_close(connG_local);
 			mysql_library_end();
 		}
-	//}while(keep_goingG); //Ciclo para reiniciar o programa
+	}while(keep_goingG); //Ciclo para reiniciar o programa
 	return 0;
 }

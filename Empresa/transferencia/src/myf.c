@@ -214,13 +214,11 @@ void START_CYCLE_PROGRAMA_PRINCIPAL(void)
 		//Variável alterada na callback ctrl+c
 		
 		// "Timer" feito às 3 pancadas, trocar por um timer decente 
-		if(count > 1000) //Com um sleep de 0.02 segundos, 3000 é sensivelmente 1 minuto
+		if(count > 3000) //Com um sleep de 0.02 segundos, 3000 é sensivelmente 1 minuto
 		{
 			count = 0;
 			//Para terminar o subprograma no caso de ser necessário adicionar um novo cliente
 			TESTAR_ATUALIZAR_PROGRAMA_PRINCIPAL();
-			sleep(30);
-			printf("A Reiniciar o Programa de Transferência\n");
 		}else
 		{
 			count ++;
@@ -229,6 +227,7 @@ void START_CYCLE_PROGRAMA_PRINCIPAL(void)
 	} while (!atualizarG && keep_goingG);
 	return;
 }
+
 
 /**
  * @brief Ciclo infinito dos subprogramas
@@ -247,7 +246,7 @@ void START_CYCLE_SUBPROGRAMA(void)
 		//Variável alterada na callback ctrl+c
 		
 		// "Timer" feito às 3 pancadas, trocar por um timer decente 
-		if(count > 1000) //Com um sleep de 0.02 segundos, 3000 é sensivelmente 1 minuto
+		if(count > 3000) //Com um sleep de 0.02 segundos, 3000 é sensivelmente 1 minuto
 		{
 			count = 0;
 			//Para terminar o subprograma no caso de ser necessário adicionar um novo cliente
@@ -471,10 +470,33 @@ void TESTAR_ATUALIZAR_PROGRAMA_PRINCIPAL(void)
 	{
 		printf("Sim\n");
 		printf("Terminar o Programa Principal para Atualizar o Programa de Transferência\n");
+		sleep(60);
+		printf("\n\n\n\n-------------------------------\nA Reiniciar o Programa de Transferência\n");
+		RESET_ATUALIZAR_TRANSFERENCIA();
 	}else
 	{
 		printf("Não\n");
 	}
+}
+
+
+/**
+ * @brief Limpar as bds backups e backups_temp para evitar dados residuais
+ * @param void
+ * @return void
+ */
+void RESET_ATUALIZAR_TRANSFERENCIA(void)
+{
+	char query[500];
+
+	//Altera o parâmetro atualizar tansferência novamente para 0 da bd reg_proc
+	sprintf(query, "UPDATE atualizar SET a_transferencia = 0 WHERE a_indice = 1");
+	if (mysql_real_query(connG_reg_proc, query, (unsigned long)strlen(query)))
+	{
+		fprintf(stderr, "Error: %s [%d]\n", mysql_error(connG_reg_proc), mysql_errno(connG_reg_proc));
+	}
+
+	return;
 }
 
 /**
