@@ -1,0 +1,8 @@
+
+- Instalar todos os programas e livrarias necessárias para compilar o código c, usar o MySQL e o Apache
+
+- Criar as bases de dados com a informação fornecida na pasta Queries e inserir os datasets
+
+- Executar todos os programas desenvolvidos em c em terminais diferentes (não interessa a ordem). NOTA: O modo automático do gestor de backups está desativado
+
+- Abrir a aplicação de gestão de sistema no browser e utilizar :)

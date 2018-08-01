@@ -460,7 +460,7 @@ void TESTAR_ATUALIZAR_PROGRAMA_PRINCIPAL(void)
 		{
 			sprintf(str, "%.*s", (int)lengths[i],
 					row[i] ? row[i] : "NULL");
-			//Guarda a data e hora que vai ser usada para copiar os registos para a bd backups e depois para eliminar registos da bd central
+			//Guarda atualizarG para definir o comportamento do programa
 			atualizarG = atoi(str);
 		}
 	}
@@ -481,7 +481,7 @@ void TESTAR_ATUALIZAR_PROGRAMA_PRINCIPAL(void)
 
 
 /**
- * @brief Limpar as bds backups e backups_temp para evitar dados residuais
+ * @brief Altera o parâmetro atualizar tansferência novamente para 0 da bd reg_proc
  * @param void
  * @return void
  */

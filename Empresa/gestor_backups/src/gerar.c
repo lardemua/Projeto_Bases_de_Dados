@@ -19,46 +19,6 @@
 #include "myf.h"
 
 /**
- * @brief Limpar as bds backups e backups_temp para evitar dados residuais
- * @param void
- * @return void
- */
-void LIMPAR_BDS(void)
-{
-	char query[500];
-
-	//Apaga moldes, sensores e registos da bd backups
-	sprintf(query, "DELETE FROM backups.moldes");
-	if (mysql_real_query(connG_central_system, query, (unsigned long)strlen(query)))
-	{
-		fprintf(stderr, "Error: %s [%d]\n", mysql_error(connG_central_system), mysql_errno(connG_central_system));
-	}
-
-	//Apaga clientes da bd backups
-	sprintf(query, "DELETE FROM backups.clientes");
-	if (mysql_real_query(connG_central_system, query, (unsigned long)strlen(query)))
-	{
-		fprintf(stderr, "Error: %s [%d]\n", mysql_error(connG_central_system), mysql_errno(connG_central_system));
-	}
-
-	//Apaga moldes, sensores e registos da bd backups_temp
-	sprintf(query, "DELETE FROM backups_temp.moldes");
-	if (mysql_real_query(connG_central_system, query, (unsigned long)strlen(query)))
-	{
-		fprintf(stderr, "Error: %s [%d]\n", mysql_error(connG_central_system), mysql_errno(connG_central_system));
-	}
-
-	//Apaga clientes da bd backups_temp
-	sprintf(query, "DELETE FROM backups_temp.clientes");
-	if (mysql_real_query(connG_central_system, query, (unsigned long)strlen(query)))
-	{
-		fprintf(stderr, "Error: %s [%d]\n", mysql_error(connG_central_system), mysql_errno(connG_central_system));
-	}
-
-	return;
-}
-
-/**
  * @brief Ler data e hora do sistema para evitar perda de registos
  * @param void
  * @return void
@@ -95,6 +55,8 @@ void TIMESTAMP(void)
 		}
 	}
 	mysql_free_result(res);
+
+	return ;
 }
 
 /**
@@ -133,6 +95,8 @@ void COPY_CENTRAL_TO_BACKUPS(void)
 	{
 		fprintf(stderr, "Error: %s [%d]\n", mysql_error(connG_central_system), mysql_errno(connG_central_system));
 	}
+
+	return ;
 }
 
 /**
@@ -189,7 +153,7 @@ void FILTRAR_E_GERAR_BACKUPS_INDIVIDUAIS(void)
 				sprintf(IDMolde, "%s", str);
 		}
 
-///////////////////////Mover Backups de cada molde individual para backups temporária//////////////////////////////
+///////////////////////Copiar Backups de cada molde individual para backups temporária//////////////////////////////
 	//Copia clientes onde o cliente é igual a IDCliente da bd backups para a bd backups_temp
 	sprintf(query, "INSERT IGNORE backups_temp.clientes SELECT * FROM backups.clientes WHERE cl_ID = %s", IDCliente);
 	if (mysql_real_query(connG_central_system, query, (unsigned long)strlen(query)))
@@ -274,7 +238,7 @@ void FILTRAR_E_GERAR_BACKUPS_INDIVIDUAIS(void)
 ///////////////////////Gerar ficheiros mysqldump///////////////////////////////////////////////////////////////////
 	printf("\nMolde %s tem registos? ", IDMolde);
 
-	//Se o número de linhas retornadas na componente anterior forem 0, significa que o molde a ser analisado não tem registos e por este motivo não se realiza backup individual.
+	//Se o número de linhas (rows) retornadas na componente anterior forem 0, significa que o molde a ser analisado não tem registos e por este motivo não se realiza backup individual
 	if(num_rows_data_ini && num_rows_data_fim)
 	{
 		printf("Sim\n");

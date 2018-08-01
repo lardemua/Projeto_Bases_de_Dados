@@ -1,0 +1,21 @@
+Para este projeto funcionar é necessário realizar os seguintes comandos:
+
+- sudo apt-get install mysql-server
+
+- sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
+	comentar a linha "bind-address = 127.0.0.1"
+
+- sudo /etc/init.d/mysql restart
+
+- sudo apt-get install libmysqlclient-dev
+
+- sudo apt-get install apache2
+
+- sudo apt-get -y install php7.0 libapache2-mod-php7.0
+
+- sudo apt-get install php-mysql
+
+- sudo service apache2 restart OU sudo /etc/init.d/apache2 restart
+
+
+Poderam faltar algumas librarias referentes ao código em c

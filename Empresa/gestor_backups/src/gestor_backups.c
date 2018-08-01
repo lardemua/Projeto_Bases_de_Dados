@@ -29,11 +29,16 @@ int main(void)
 	//callback para o sinal ctrl+c para terminar ciclo infinito
 	//signal(SIGINT, InterceptCTRL_C);
 
+///////////////////////////////Modo automático removido/////////////////////////////////////////////////
+//É necessário refazer o modo automático utilizando timers
+//Cada componente deve ser executada com base num timer
+//Gerar backups por exemplo 1x por dia
+//Concatenar backups por exemplo 1x por minuto (dado que este é ativado por comando do utilizador através da bd reg_proc
 	//Componente para gerar backups
 	GERAR_BACKUPS();
 
 	//Componente para conctenar backups
-	//CONCATENAR_BACKUPS();
+	CONCATENAR_BACKUPS();
 
 	//Desconectar do sistema central
 	printf("\nCentral System Disconnected\n");

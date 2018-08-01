@@ -1,4 +1,0 @@
-\select@language {portuguese}
-\contentsline {chapter}{\numberline {1}Hello World}{2}{chapter.1}
-\contentsline {chapter}{\numberline {A}Dados iniciais dos testes de usabilidade}{3}{appendix.A}
-\contentsline {chapter}{\numberline {B}potato}{4}{appendix.B}

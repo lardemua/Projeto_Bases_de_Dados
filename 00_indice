@@ -1,0 +1,11 @@
+Indice:
+
+Aplicacao - Ficheiros HTML e PHP que constituem a Aplicação de Gestão do Sistema
+
+Clientes - Contém os simuladores para os clientes pertencentes aos datasets fornecidos. contém também um programa para iniciar todos os simuladores ao mesmo tempo
+
+Docs - Contém algumas notas importantes para o bom funcionamento do projeto como o relatório final e ficheiros com informação relativa à instalação do sistema
+
+Empresa - Contém os programas de transferência e gestor de backups que executam no sistema central
+
+Queries - Contém as queries para criar as bases de dados desenvolidas, bem como datasets para se testar a infraestrutura desenvolvida

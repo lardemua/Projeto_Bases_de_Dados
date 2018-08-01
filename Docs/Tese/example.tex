@@ -1366,7 +1366,7 @@ Cada conjunto de credenciais serve um objetivo, a \autoref{tab:utilizadores1} co
 		user & & & & & & \\ \hline
 		transferencia & & & & & & \\ \hline
 		sensores & & & & & & \\ \hline
-		backupmanager & & & \textbf{X} & \textbf{X} & \textbf{X} & \\ \hline
+		backupmanager & \textbf{X} & \textbf{X} & \textbf{X} & \textbf{X} & \textbf{X} & \\ \hline
 		\multicolumn{7}{l}{\textbf{regulação de procedimentos}} \\ \hline
 		\makecell{atualizar} & CREATE & DROP & SELECT & INSERT & DELETE & UPDATE \\ \hline
 		user & & & \textbf{X} & & & \textbf{X} \\ \hline
@@ -1382,7 +1382,7 @@ Cada conjunto de credenciais serve um objetivo, a \autoref{tab:utilizadores1} co
 	\caption[Tabelas com as permissões criadas para as bases de dados]{Tabelas com as permissões das credenciais criadas para as tabelas das BDs}
 	\label{tab:utilizadores1}
 \end{table}
-Estas permissões estabelecem que nenhuma das credenciais estabelecidas pode fazer DROP às BDs o que eliminaria com um comando toda a estrutura e a informação nela contida. Além disto, nenhuma tem permissão INSERT e DELETE simultânea na tabela registos das BDs central e local protegendo o sistema de adulteração dos registos presentes nesta tabela.\par 
+Estas permissões estabelecem que o utilizador padrão não pode fazer DROP às BDs o que eliminaria com um comando toda a estrutura e a informação nela contida. Além disto, nenhumas credenciais têm permissão INSERT e DELETE simultânea na tabela registos das BDs central e local protegendo o sistema de adulteração dos registos presentes nesta tabela.\par 
 De forma a proteger o sistema de acessos não autorizados, define-se também os endereços pelos quais as credenciais podem aceder aos sistemas central e locais. Existem três endereços principais neste projeto: o endereço do sistema central, dos sistemas locais e do servidor \textit{Apache} que corre a aplicação de gestão do sistema, como representado na \autoref{fig:utilizadores2}. A \autoref{tab:utilizadores3} contém as limitações das credenciais em cada sistema. Estas definem que os sistemas só podem ser acedidos pelos endereços principais, protegendo a informação de acessos externos.
 %Como referido no \autoref{chap:intro}, deseja-se uma aplicação de gestão do sistema que seja disponível em qualquer lugar, o que parece entrar em conflito com o que aqui se define. Esclarece-se este tópico na \autoref{subchap:login}.
 \begin{figure}
@@ -2768,7 +2768,7 @@ GRANT SELECT, DELETE
 	ON central.registos TO 'backupmanager'@'localhost';
 GRANT SELECT, INSERT, DELETE
 	ON backups.* TO 'backupmanager'@'localhost';
-GRANT LOCK TABLES, SELECT, INSERT, DELETE
+GRANT DROP, CREATE, ALTER, REFERENCES, LOCK TABLES, SELECT, INSERT, DELETE
 	ON backups_temp.* TO 'backupmanager'@'localhost';
 GRANT SELECT, UPDATE
 	ON reg_proc.atualizar TO 'backupmanager'@'localhost';

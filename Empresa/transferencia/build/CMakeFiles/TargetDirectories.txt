@@ -1,3 +1,0 @@
-/home/sapofree/Projeto_Bases_de_Dados/Empresa/transferencia/build/CMakeFiles/rebuild_cache.dir
-/home/sapofree/Projeto_Bases_de_Dados/Empresa/transferencia/build/CMakeFiles/edit_cache.dir
-/home/sapofree/Projeto_Bases_de_Dados/Empresa/transferencia/build/CMakeFiles/transferencia.dir

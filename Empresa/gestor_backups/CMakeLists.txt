@@ -3,7 +3,7 @@ cmake_minimum_required (VERSION 2.8)
 project ("Projeto Final Empresa")
 set(PROG1 gestor_backups)
 
-set(SOURCES1 src/gestor_backups.c src/myf.c src/gerar.c)
+set(SOURCES1 src/gestor_backups.c src/myf.c src/gerar.c src/concatenar.c)
 
 add_executable(${PROG1} ${SOURCES1})
 

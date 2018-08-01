@@ -1,0 +1,8 @@
+
+
+Uma forma de criar backups (pontos de restauro):
+mysqldump -u user -ppassword central > ~/backup.sql
+
+Uma forma de recuperar a base de dados usando o ponto de restauro:
+mysql -u user -ppassword central < ~/backup.sql
+
