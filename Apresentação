@@ -1,0 +1,28 @@
+Boas,
+
+Se estás a ler isto é porque não vou continuar o projeto.
+Tentei deixar tudo o mais organizado possível no entanto, recomendo que ler o meu relatório final antes de avançar.
+Deixei também a sebenta da cadeira de bases de dados do DETI, os slides são um pouco vagos mas podem ajudar quem está a começar agora.
+
+
+
+Eu notei alguns erros na versão final que entreguei, especialmente no código dos anexos, por este motivo recomendo ler a tese que se encontra na pasta Docs deste projeto (example.pdf) em vez da versão que entreguei à UA (Tese Bruno Ramos.pdf).
+
+
+
+
+Quanto à infraestrutura o código é bem simples tendo em conta a confusão em que os fluxogramas ficaram (Apêndice C). Deixei o código comentado para ajudar a perceber.
+
+Quanto ao gestor de backups eu desativei o modo automático porque os timers que usei não estavam a funcionar corretamente e, por este motivo, têm de ser refeitos.
+
+O programa de transferência é que vai definir se a infraestrutura de dados é capaz de lidar com o problema. Neste código tem uma parte importante (bem identificado no ficheiro myf.c) que é o que define a taxa máxima de transferência de registos dos sistemas locais para o sistema central. É necessário testar se é possível atingir uma taxa de transferência que satisfaçam os requerimentos dos sensores dos moldes. Se depois de testes e ajustes o programa de transferência não for capaz de lidar com a quantidade de informação, temo que terás de desenvolver uma nova infraestrutura para o problema. Recomendo analisares o uso de softwares para Big Data como CockroachDB e Apache Cassandra como digo na Conclusão do relatório final.
+
+
+
+Quanto à aplicação de gestão do sistema, apesar de funcional está um pouco rudimentar. É capaz de ser mais simples refazer a aplicação usando soluções mais interativas, tendo em conta as funcionalidades da aplicação já desenvolvida.
+
+
+Assim sendo, espero que o que desenvolvi se mostre útil para a continuação deste projeto.
+
+Boa Sorte e Bom Trabalho,
+Bruno Ramos

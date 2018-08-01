@@ -1,6 +1,10 @@
 Indice:
 
+Apresentação - Pequena mensagem de boas vindas ao sucessor do projeto
+
 Aplicacao - Ficheiros HTML e PHP que constituem a Aplicação de Gestão do Sistema
+
+Base de Dados - Sebenta da cadeira de base de dados do DETI
 
 Clientes - Contém os simuladores para os clientes pertencentes aos datasets fornecidos. contém também um programa para iniciar todos os simuladores ao mesmo tempo
 
